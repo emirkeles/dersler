@@ -1,0 +1,30 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Üslü ve Köklü Gösterimlerle İşlemler</title>
+<link rel="stylesheet" href="ortak/ders.css">
+<style>
+  /* Renk rolleri (ders boyunca sabit): amber = taban, camgöbeği = üs, mor = kök, mercan = tuzak, yeşil = sonuç, turuncu = geri sar */
+  :root{ --bg:#0b101c; --surface:#131b2e; --surface2:#1b2640; --line:#2a3858; }
+  .tb{color:#F2B134}.tu{color:#4DD0E1}.tk{color:#B69CFF}.tw{color:#FF7A70}.tg{color:#6BE3A0}.tr{color:#FFA45C}.tl{color:#8FB8FF}
+  .stage{background:radial-gradient(1100px 520px at 50% -10%,#1d2a52 0%,#10172a 58%,#0b101c 100%)}
+  .kb{background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 14px;font-weight:600;margin:2px 6px 2px 0}
+  .kb:hover{border-color:#4DD0E1}
+  .kb.on{background:#4DD0E1;color:#06101f;border-color:#4DD0E1}
+  .kb.bad{border-color:#FF7A70}
+  .note .m{font-size:1.05em}
+  .caption .m{font-size:1.1em}
+  .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  .row .lbl{color:var(--muted);margin-right:4px}
+  .rot{display:none}
+  .ders .stage svg text{user-select:none;-webkit-user-select:none}
+  @media (max-width:900px){
+    .stage{aspect-ratio:16/9 !important}
+    .top{flex-wrap:wrap}.tools{flex-wrap:wrap}
+  }
+  @media (max-width:700px) and (orientation:portrait){
+    .rot{display:block;margin:8px 18px 0;padding:8px 12px;border:1px solid #2a3858;border-radius:10px;color:#8f9bc4;font-size:.85rem;background:#131b2e}
+  }
+</style></head>
+<body><div class="rot">📱 Animasyonlar yatay (geniş) ekranda daha okunur: telefonu yan çevir.</div><div id="app"></div>
+<script src="ortak/ders.js"></script>
+<script src="dersler/01-uslu-ve-koklu.js"></script></body></html>

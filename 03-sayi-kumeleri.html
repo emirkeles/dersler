@@ -1,0 +1,33 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sayı Kümeleri ve İşlem Özellikleri — Matruşka Sayılar</title>
+<link rel="stylesheet" href="ortak/ders.css">
+<style>
+  /* Matruşka Sayılar — renk jetonları */
+  :root{--n:#F2B84B;--z:#4FB3A9;--q:#6C8CF0;--r:#B58CF0;--irr:#E96BA8;--ok:#3DDC97;--err:#FF4D5E;--ink:#E8ECF4;--ink2:#0F1420}
+  .ov{text-decoration:overline;text-decoration-thickness:2px;text-underline-offset:3px}
+  .lb{font:inherit;color:var(--text);background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:8px 12px;min-width:44px;min-height:44px;cursor:pointer;line-height:1.1}
+  .lb:hover:not(:disabled){border-color:var(--accent)}
+  .lb.on{background:color-mix(in srgb,var(--accent) 30%,var(--surface2));border-color:var(--accent)}
+  .lb:disabled{opacity:.4;cursor:default}
+  .lb.go{background:var(--accent);color:#06101f;font-weight:700;border-color:var(--accent)}
+  .rowc{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:6px 0}
+  .rowc .lbl{color:var(--muted);font-size:.85rem;min-width:70px}
+  .tn{color:var(--n)}.tz{color:var(--z)}.tq{color:var(--q)}.tr{color:var(--r)}.ti{color:var(--irr)}
+  .ptab{border-collapse:collapse;font-size:.74rem;width:100%}
+  .ptab td,.ptab th{border:1px solid var(--line);padding:3px 4px;text-align:center}
+  .ptab td:first-child{text-align:left}
+  .stage svg{touch-action:manipulation}
+  .stage svg .dd{touch-action:none;cursor:grab}
+  .stage svg [tabindex]:focus:not(:focus-visible){outline:none}
+  .stage svg [tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  /* dar ekran: tuvali okunur boyutta tut, yatay kaydır */
+  @media (max-width:640px){
+    .stage{aspect-ratio:auto!important;height:min(62vh,400px);max-height:none;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+    .stage svg.canvas{width:auto!important;height:100%!important;max-width:none}
+    .top{flex-wrap:wrap} .top h1{font-size:1rem} .tools{flex-wrap:wrap}
+  }
+</style></head>
+<body><div id="app"></div>
+<script src="ortak/ders.js"></script>
+<script src="dersler/03-sayi-kumeleri.js"></script></body></html>
