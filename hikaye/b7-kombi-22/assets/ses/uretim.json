@@ -1,0 +1,72 @@
+{
+ "10": {
+  "metin": "Yirmi bir virgül dört, sıfır virgül altı uzakta.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "11": {
+  "metin": "Yirmi iki virgül sekiz, sıfır virgül sekiz. İkisi de payın içinde.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "12": {
+  "metin": "Yirmi virgül dokuz ise bir virgül bir uzakta. Pay aşıldı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "13": {
+  "metin": "Yirmi ikiye uzaklık birden küçükse kombi dinlenir.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "14": {
+  "metin": "Mutlak değer, hedefe uzaklıktır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "01": {
+  "metin": "Kış akşamı, dışarıda kar yağıyor. Mert'lerin kombisi yirmi iki dereceye ayarlı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "02": {
+  "metin": "Ama oda hiç tam yirmi ikide durmuyor; biraz iner, biraz çıkar.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "03": {
+  "metin": "[curious] Mert merak eder: Kombi ne zaman çalışacağını nereden biliyor?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "04": {
+  "metin": "Sıcaklık yirmi bir virgül dört. Kombi çalışmıyor.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "05": {
+  "metin": "Yirmi iki virgül sekiz. Yine çalışmıyor.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "06": {
+  "metin": "Mert pencereyi açar. Oda soğur: yirmi virgül dokuz.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "07": {
+  "metin": "Kombi hemen çalışır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "08": {
+  "metin": "[curious] Termostatın derdi tek: Oda yirmi ikiden ne kadar uzaklaştı?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "09": {
+  "metin": "İzin verdiği pay, bir derece.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ }
+}
