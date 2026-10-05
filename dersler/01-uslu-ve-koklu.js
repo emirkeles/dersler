@@ -1533,13 +1533,13 @@
     c.note(`<b>√a</b>: kendisiyle çarpılınca <b>a</b> veren, negatif olmayan sayı.<br>√1024 = 32, çünkü 32·32 = 1024`, 'Karekök');
   }
 
-  /* ---------- ortak: karışık (kök + yazı) satır ---------- */
+  /* ---------- ortak: karışık (kök + yazı) satır. Parça: rich metni ya da { r: kök içi, n: derece, col } ---------- */
   function mixLine(K, p, cx, y, size, segs, o = {}) {
     const g = K.g(p, 0, y, { o: o.o });
     let x = 0;
     segs.forEach((s) => {
       if (typeof s === 'string') { const t = K.rich(g, x, 0, size, s, { a: 'start' }); x += K.len(t); }
-      else { const r = K.rad(g, x, 0, s.r, size, { col: s.col || C.root }); x += r._w + size * 0.08; }
+      else { const o2 = { col: s.col || C.root }; const r = s.n ? nrad(K, g, x, 0, s.r, size, s.n, o2) : K.rad(g, x, 0, s.r, size, o2); x += r._w + size * 0.08; }
     });
     g._w = x; g._x = cx - x / 2; K.place(g);
     return g;
@@ -2589,6 +2589,837 @@
   }
 
   /* ============================================================
+     A5–A8 — ORTAK YARDIMCILAR
+     ============================================================ */
+  /* n. dereceden kök: K.rad + derece. x: sol kenar. Dönen grup ._w = toplam genişlik */
+  function nrad(K, p, x, y, spec, size, n, o = {}) {
+    const g = K.g(p, x, y, { o: o.o, s: o.s });
+    const pad = size * 0.16;
+    const r = K.rad(g, pad, 0, spec, size, { col: o.col, fill: o.fill, w: o.w });
+    K.t(g, pad + size * 0.06, -size * 0.34, String(n), { size: size * 0.46, fill: o.col || C.root, w: 800 });
+    g._w = pad + r._w;
+    return g;
+  }
+
+  /* Eşit parçalara bölünen yol (A5). o: x0,x1,y,N,base · tur: numarası yazılacak turlar · kisi: baştan görünen değerler
+     sade: tur satırı ve satır adları yok (yalnızca değerler) */
+  function yol(K, c, o) {
+    const { S } = K;
+    const g = K.g(K.svg, 0, 0, { o: 0 });
+    const X = (n) => o.x0 + (o.x1 - o.x0) * n / o.N;
+    const W = o.x1 - o.x0 + 28;
+    S('rect', { x: o.x0 - 14, y: o.y - 7, width: W, height: 14, rx: 7, fill: 'rgba(255,255,255,.1)' }, g);
+    const dolgu = S('rect', { x: o.x0 - 14, y: o.y - 7, width: 0, height: 14, rx: 7, fill: C.root }, g);
+    const deger = {}, yd = o.y + (o.sade ? 44 : 78);
+    for (let n = 0; n <= o.N; n++) {
+      const buyuk = o.sade || o.tur.includes(n);
+      K.line(g, X(n), o.y - (buyuk ? 14 : 8), X(n), o.y + (buyuk ? 14 : 8), C.soft, buyuk ? 3 : 2);
+      if (!o.sade && buyuk) K.t(g, X(n), o.y + 40, String(n), { size: 28, fill: C.exp, w: 800 });
+      deger[n] = K.t(g, X(n), yd, fmt(o.base ** n), { size: 28, fill: C.base, w: 700, o: o.kisi.includes(n) ? 1 : 0 });
+    }
+    if (!o.sade) {
+      K.t(g, o.x0 - 50, o.y + 40, 'tur', { size: 24, fill: C.soft, a: 'end' });
+      K.t(g, o.x0 - 50, o.y + 78, 'kişi', { size: 24, fill: C.soft, a: 'end' });
+    }
+    /* parca tane eşit yay; her biri etiketli. Dönen gruplar görünmez başlar; ._et etiket metni */
+    const yaylar = (parca, etiket, col = C.root) => {
+      const adim = o.N / parca, out = [];
+      for (let i = 0; i < parca; i++) {
+        const a = X(i * adim), b = X((i + 1) * adim), yg = K.g(g, 0, 0, { o: 0 });
+        const hgt = Math.min(90, (b - a) * 0.42);
+        S('path', { d: `M${a + 6},${o.y - 22} Q${(a + b) / 2},${o.y - 22 - hgt * 1.6} ${b - 8},${o.y - 24}`, fill: 'none', stroke: col, 'stroke-width': 4, 'stroke-linecap': 'round', 'marker-end': K.mk(col) }, yg);
+        yg._et = K.t(yg, (a + b) / 2, o.y - 22 - hgt * 0.8 - 26, etiket, { size: 28, fill: col, w: 800 });
+        out.push(yg);
+      }
+      return out;
+    };
+    const doldur = (ms = 900) => c.tween(ms, (t) => dolgu.setAttribute('width', t * W), ease.inOut);
+    return { g, X, deger, yaylar, doldur };
+  }
+
+  /* Kartları kutulara sürükle (A5, A7). cards: [{ g, bin }] · bins: [{ x, y, w, h }] (merkez ve boyut)
+     yer(kart) → bırakılınca duracağı nokta · dogru(kart) · yanlis(kart, kutuNo) */
+  function eslestir(K, c, o) {
+    let kalan = o.cards.length, bitir;
+    const bitti = new Promise((r) => (bitir = r));
+    const kutu = (p) => o.bins.findIndex((b) => Math.abs(p.x - b.x) < b.w / 2 && Math.abs(p.y - b.y) < b.h / 2);
+    const yerlestir = async (k) => {
+      k.tamam = true; k.g.style.cursor = 'default';
+      const q = o.yer(k);
+      await K.goto(k.g, q.x, q.y, 300);
+      if (--kalan === 0) bitir();
+    };
+    o.cards.forEach((k) => {
+      k.ev = { x: k.g._x, y: k.g._y };
+      K.drag(k.g, {
+        down: (p) => { if (k.tamam) return; k.g._tk = (k.g._tk || 0) + 1; k.dx = k.g._x - p.x; k.dy = k.g._y - p.y; },
+        move: (p) => { if (!k.tamam) K.set(k.g, { x: p.x + k.dx, y: p.y + k.dy }); },
+        up: () => {
+          if (k.tamam) return;
+          const b = kutu({ x: k.g._x, y: k.g._y });
+          if (b === k.bin) { ding(true); o.dogru && o.dogru(k); nf(yerlestir(k)); return; }
+          if (b >= 0) { ding(false); o.yanlis && o.yanlis(k, b); }
+          nf(K.goto(k.g, k.ev.x, k.ev.y, 350));
+        },
+      });
+    });
+    return { bitti, coz: async () => { for (const k of o.cards) if (!k.tamam) await yerlestir(k); } };
+  }
+
+  /* ============================================================
+     A5 · SAHNE 1 — Üçe böl: küpkök
+     ============================================================ */
+  async function sceneA5_1(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    const Y = yol(K, c, { x0: 220, x1: 1100, y: 230, N: 9, base: 2, tur: [0, 3, 6, 9], kisi: [0, 9] });
+    const p1 = nf(c.say('Video bu kez <b>9 turda 512 kişiye</b> ulaştı.', { speak: 'Video bu kez dokuz turda beş yüz on iki kişiye ulaştı.' }));
+    await K.fade(Y.g, 1, 500);
+    await Y.doldur();
+    await p1;
+    const yay = Y.yaylar(3, '3 tur');
+    const p2 = nf(c.say('Yolu <b>üç eşit parçaya</b> böl: 3 tur, 3 tur, 3 tur.', { speak: 'Bu yolu üç eşit parçaya bölelim: üç tur, üç tur, üç tur.' }));
+    await K.stagger(yay, 350, (a) => K.fade(a, 1, 400));
+    await p2;
+    const soru = K.t(Y.g, Y.X(3), 308, '?', { size: 34, fill: C.root, w: 800 });
+    await c.choice({
+      q: 'İlk parçanın sonunda, 3. turda kaç kişi vardı?',
+      options: ['171', '8', '64'], answer: 1,
+      hints: ['512’yi 3’e bölmüşsün. Her parçada sayı aynı miktar artmaz, aynı <b>katına</b> çıkar.', '', '64 ikinci parçanın sonu, yani 6. tur. İlk parçanın sonu daha küçük.'],
+      right: 'Evet: 3. turda 2·2·2 = 8 kişi.',
+    });
+    soru.remove();
+    yay.forEach((a) => { a._et.textContent = '×8'; });
+    const p3 = nf(c.say('Her parçada sayı 8 katına çıkar: <b>8·8·8 = 512</b>.', { speak: 'Her parçada sayı sekiz katına çıkar. Sekiz çarpı sekiz çarpı sekiz, beş yüz on iki eder.' }));
+    await K.fade([Y.deger[3], Y.deger[6]], 1, 500);
+    const e1 = K.rich(svg, 640, 430, 60, '{b 8}{t ·}{b 8}{t ·}{b 8}{t  = }{g 512}', { o: 0 });
+    await K.fade(e1, 1, 500);
+    await p3;
+    const p4 = nf(c.say('Üç kez çarpılınca 512 veren sayı: <b>küpkök</b>.', { speak: 'Üç kez yan yana çarpılınca beş yüz on iki veren sayıya, beş yüz on ikinin küpkökü denir.' }));
+    const e2 = mixLine(K, svg, 640, 560, 60, [{ r: '{t 512}', n: 3 }, '{t  = }{g 8}'], { o: 0 });
+    await K.fade(e2, 1, 500);
+    await p4;
+
+    /* üs dili: x + x + x = 1 */
+    await K.fade(e1, 0, 400); e1.remove();
+    const p5 = nf(c.say('Üs dilinde: üç eşit üs toplanınca 1 etmeli.', { speak: 'Aynı şeyi üs diliyle yazalım. Üç eşit üs toplanınca bir etmeli.' }));
+    const e3 = K.rich(svg, 640, 400, 52, '{b 512}{e^ x}{t ·}{b 512}{e^ x}{t ·}{b 512}{e^ x}{t  = }{b 512}{e^ 1}', { o: 0 });
+    await K.fade(e3, 1, 500);
+    const e4 = K.rich(svg, 640, 472, 44, '{e x+x+x = 1}', { o: 0 });
+    await K.fade(e4, 1, 400);
+    await p5;
+    const p6 = nf(c.say('Her biri 1/3. Küpkök, <b>üs 1/3</b> demek.', { speak: 'Demek ki her biri üçte bir. Küpkök almak, üssü üçte bir yapmaktır.' }));
+    await K.fade([e2, e3, e4], 0, 400); e2.remove(); e3.remove(); e4.remove();
+    const e5 = mixLine(K, svg, 640, 480, 68, [{ r: '{t 512}', n: 3 }, '{t  = }{b 512}{e^ 1}{t^ /}{k^ 3}{t  = }{g 8}'], { o: 0 });
+    await K.fade(e5, 1, 600);
+    await p6;
+    c.note(`<b>${M.m(M.sqrt('a', 3))} = ${P('a', '1/3')}</b><br>${M.m(M.sqrt(512, 3))} = 8, çünkü 8·8·8 = 512`, 'Küpkök');
+  }
+
+  /* ============================================================
+     A5 · SAHNE 2 — n'ye böl: n. kök
+     ============================================================ */
+  async function sceneA5_2(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    const Y = yol(K, c, { x0: 300, x1: 980, y: 230, N: 4, base: 2, tur: [0, 4], kisi: [0, 4] });
+    const p1 = nf(c.say('Yeni yol: 4 turda 16 kişi. <b>Dört</b> eşit parçaya böl.', { speak: 'Yeni bir yol: dört turda on altı kişi. Bu kez yolu dört eşit parçaya bölelim.' }));
+    await K.fade(Y.g, 1, 500);
+    await Y.doldur();
+    const yay = Y.yaylar(4, '×?');
+    await K.stagger(yay, 200, (a) => K.fade(a, 1, 300));
+    await p1;
+    await c.choice({
+      q: 'Hangi sayı 4 kez yan yana çarpılınca 16 eder?',
+      options: ['4', '2', '8'], answer: 1,
+      hints: ['4·4·4·4 = 256. Çok büyük.', '', '8·8·8·8 = 4096. Çok büyük.'],
+      right: 'Evet: 2·2·2·2 = 16.',
+    });
+    yay.forEach((a) => { a._et.textContent = '×2'; });
+    await K.fade([1, 2, 3].map((n) => Y.deger[n]), 1, 500);
+    const p2 = nf(c.say('Dört kez çarpılınca 16 veren sayı: <b>dördüncü kök</b>.', { speak: 'Dört kez yan yana çarpılınca on altı veren sayıya, on altının dördüncü kökü denir.' }));
+    const e1 = mixLine(K, svg, 640, 440, 68, [{ r: '{t 16}', n: 4 }, '{t  = }{g 2}'], { o: 0 });
+    await K.fade(e1, 1, 500);
+    await p2;
+    const p3 = nf(c.say('Üs dilinde parça sayısı <b>paydaya</b> iner: 16 üzeri 1/4.', { speak: 'Üs dilinde parça sayısı paydaya iner: on altı üzeri dörtte bir.' }));
+    const e2 = mixLine(K, svg, 640, 440, 68, [{ r: '{t 16}', n: 4 }, '{t  = }{b 16}{e^ 1}{t^ /}{k^ 4}{t  = }{g 2}'], { o: 0 });
+    await K.fade(e1, 0, 300); e1.remove();
+    await K.fade(e2, 1, 500);
+    await p3;
+    const p4 = nf(c.say('Kural: <b>n. kök</b>, üssü 1/n yapmaktır.', { speak: 'Kural şu: n’inci kökü almak, üssü n’de bir yapmaktır.' }));
+    const kural = mixLine(K, svg, 640, 590, 60, [{ r: '{t a}', n: 'n' }, '{t  = }{b a}{e^ 1}{t^ /}{k^ n}'], { o: 0 });
+    await K.fade(kural, 1, 500);
+    await p4;
+    c.note(`<b>${M.m(M.sqrt('a', 'n'))} = ${P('a', '1/n')}</b><br>${M.m(M.sqrt(16, 4))} = 2, çünkü 2·2·2·2 = 16`, 'n. kök');
+
+    /* dene: 64'ü 2, 3 ya da 6 parçaya böl */
+    await K.fade([Y.g, e2, kural], 0, 400); Y.g.remove(); e2.remove(); kural.remove();
+    const Z = yol(K, c, { x0: 220, x1: 1100, y: 280, N: 6, base: 2, sade: true, kisi: [0, 6] });
+    await K.fade(Z.g, 1, 400);
+    nf(Z.doldur(500));
+    let cizim = [], satir = null;
+    const dugme = [2, 3, 6].map((n) => kbtn(n + ' parça', () => sec(n)));
+    function sec(n) {
+      cizim.forEach((a) => a.remove()); if (satir) satir.remove();
+      const r = Math.round(64 ** (1 / n));
+      cizim = Z.yaylar(n, '×' + r); cizim.forEach((a) => K.set(a, { o: 1 }));
+      for (let k = 0; k <= 6; k++) Z.deger[k].setAttribute('opacity', k % (6 / n) === 0 ? 1 : 0);
+      satir = mixLine(K, svg, 640, 540, 68, [n === 2 ? { r: '{t 64}' } : { r: '{t 64}', n }, `{t  = }{b 64}{e^ 1}{t^ /}{k^ ${n}}{t  = }{g ${r}}`]);
+      dugme.forEach((b, i) => b.classList.toggle('on', [2, 3, 6][i] === n));
+    }
+    c.panel('Dene', h('p', { class: 'q', html: '64’e giden yolu kaç eşit parçaya bölelim?' }), h('div', { class: 'row' }, ...dugme));
+    sec(2);
+    c.say('Parça sayısını değiştir: kök nasıl değişiyor?', { noWait: true });
+    await c.cont();
+  }
+
+  /* ============================================================
+     A5 · SAHNE 3 — m adım yürü: a^(m/n)
+     ============================================================ */
+  async function sceneA5_3(c) {
+    const K = kit(c); const { svg, S } = K;
+    K.dots();
+    let buyuk = K.rich(svg, 640, 100, 84, '{b 8}{e^ 2}{t^ /}{k^ 3}{t  = ?}', { o: 0 });
+    const p1 = nf(c.say('Şimdi üs bir kesir: 8 üzeri 2/3.', { speak: 'Şimdi üs bir kesir olsun: sekiz üzeri üçte iki.' }));
+    await K.fade(buyuk, 1, 500);
+    await p1;
+    await c.choice({
+      q: `${P(8, '2/3')} sence kaç eder?`,
+      options: [FR(16, 3), '4', '2'], answer: 1,
+      hints: ['8 ile 2/3’ü çarpmışsın. Üs çarpan değildir.', '', '2 yalnızca ilk adım. Üssün payı 2: bir adım daha var.'],
+      right: 'Evet, 4. Nedenini yolda görelim.',
+    });
+    const Y = yol(K, c, { x0: 340, x1: 940, y: 340, N: 3, base: 2, tur: [0, 3], kisi: [0, 3] });
+    const p2 = nf(c.say('<b>Payda 3:</b> yolu üçe böl. Her adım ×2.', { speak: 'Önce paydaya bak: üç. Sekize giden yolu üç eşit parçaya böl. Her adımda sayı iki katına çıkar.' }));
+    await K.fade(Y.g, 1, 500);
+    await Y.doldur(600);
+    const yay = Y.yaylar(3, '×2');
+    await K.stagger(yay, 250, (a) => K.fade(a, 1, 350));
+    await p2;
+    const p3 = nf(c.say('<b>Pay 2:</b> iki adım yürü. 2·2 = 4.', { speak: 'Sonra paya bak: iki. İki adım yürü: iki çarpı iki, dört.' }));
+    const yuru = K.g(svg, Y.X(0), 340, { o: 0 });
+    S('circle', { r: 16, fill: C.exp, stroke: '#fff', 'stroke-width': 3 }, yuru);
+    await K.fade(yuru, 1, 300);
+    for (const n of [1, 2]) { await K.to(yuru, { x: Y.X(n) }, 600); await K.fade(Y.deger[n], 1, 300); }
+    await K.fade(yay[2], 0.25, 300);
+    buyuk.remove();
+    buyuk = K.rich(svg, 640, 100, 84, '{b 8}{e^ 2}{t^ /}{k^ 3}{t  = }{g 4}');
+    await p3;
+    const p4 = nf(c.say('Önce kök, sonra kuvvet: (∛8)² = 2² = 4.', { speak: 'Yani önce küpkök al, sonra karesini al. Sekizin küpkökü iki, ikinin karesi dört.' }));
+    const e1 = mixLine(K, svg, 640, 540, 56, ['{b 8}{e^ 2}{t^ /}{k^ 3}{t  = (}', { r: '{b 8}', n: 3 }, '{t )}{e^ 2}{t  = }{b 2}{e^ 2}{t  = }{g 4}'], { o: 0 });
+    await K.fade(e1, 1, 500);
+    await p4;
+    await K.fade([Y.g, yuru, buyuk], 0, 400); Y.g.remove(); yuru.remove(); buyuk.remove();
+    await K.to(e1, { y: 250 }, 500);
+    const p5 = nf(c.say('<b>Payda kökü, pay kuvveti söyler.</b>', { speak: 'Kural şu: payda kökü, pay kuvveti söyler.' }));
+    const kural = mixLine(K, svg, 640, 430, 72, ['{b a}{e^ m}{t^ /}{k^ n}{t  = (}', { r: '{b a}', n: 'n' }, '{t )}{e^ m}'], { o: 0 });
+    await K.fade(kural, 1, 500);
+    await p5;
+    c.note(`<b>${P('a', 'm/n')} = (${M.m(M.sqrt('a', 'n'))})<sup>m</sup></b><br>${P(8, '2/3')} = 2² = 4`, 'Rasyonel üs');
+
+    /* dene: 64^(m/n) */
+    await K.fade([e1, kural], 0, 400); e1.remove(); kural.remove();
+    const Z = yol(K, c, { x0: 220, x1: 1100, y: 280, N: 6, base: 2, sade: true, kisi: [0, 6] });
+    await K.fade(Z.g, 1, 400);
+    nf(Z.doldur(500));
+    const top = K.g(svg, Z.X(0), 280);
+    S('circle', { r: 16, fill: C.exp, stroke: '#fff', 'stroke-width': 3 }, top);
+    const PAYDA = [2, 3, 6];
+    let cizim = [], satir = null, hazir = false, n = 3, m = 2, sPay = null;
+    const ciz = () => {
+      cizim.forEach((a) => a.remove()); if (satir) satir.remove();
+      const r = Math.round(64 ** (1 / n)), adim = 6 / n;
+      cizim = Z.yaylar(n, '×' + r);
+      cizim.forEach((a, i) => { K.set(a, { o: i < m ? 1 : 0.3 }); if (i >= m) a._et.setAttribute('opacity', 0); });
+      for (let k = 0; k <= 6; k++) Z.deger[k].setAttribute('opacity', k === 0 || k === 6 || (k % adim === 0 && k <= m * adim) ? 1 : 0);
+      K.set(top, { x: Z.X(m * adim) });
+      satir = mixLine(K, svg, 640, 540, 60, [`{b 64}{e^ ${m}}{t^ /}{k^ ${n}}{t  = (}`, n === 2 ? { r: '{b 64}' } : { r: '{b 64}', n }, `{t )}{e^ ${m}}{t  = }{b ${r}}{e^ ${m}}{t  = }{g ${fmt(r ** m)}}`]);
+    };
+    c.slider({ label: 'Payda: kaç parçaya böl', min: 0, max: 2, step: 1, value: 1, fmt: (i) => PAYDA[i], onInput: (i) => { n = PAYDA[i]; if (!hazir) return; if (m > n) sPay.set(n); else ciz(); } });
+    sPay = c.slider({ label: 'Pay: kaç adım yürü', tag: false, min: 1, max: 6, step: 1, value: 2, onInput: (v) => { if (!hazir) return; if (v > n) { sPay.set(n); return; } m = v; ciz(); } });
+    hazir = true; ciz();
+    c.say('Paydayı ve payı değiştir; yolda izle.', { noWait: true });
+    await c.cont();
+  }
+
+  /* ============================================================
+     A5 · SAHNE 4 — Sıra sende: ifadeyi değerine sürükle
+     ============================================================ */
+  async function sceneA5_4(c) {
+    const K = kit(c, { touch: true }); const { svg, S } = K;
+    K.dots();
+    const KUTU = [2, 3, 8, 9, 18];
+    const bins = KUTU.map((v, i) => {
+      const x = 160 + i * 240, y = 500, g = K.g(svg, x, y, { o: 0 });
+      g._rect = S('rect', { x: -100, y: -90, width: 200, height: 180, rx: 16, fill: 'rgba(255,255,255,.04)', stroke: C.soft, 'stroke-width': 2, 'stroke-dasharray': '8 8' }, g);
+      g._txt = K.t(g, 0, 50, String(v), { size: 52, fill: C.ok, w: 800 });
+      return { g, x, y, w: 200, h: 180 };
+    });
+    const KART = [
+      { spec: '{b 27}{e^ 2}{t^ /}{k^ 3}', v: 9, yol: 'Önce ∛27’yi bul, sonra karesini al.', tam: '∛27 = 3, sonra 3² = 9.' },
+      { spec: '{b 32}{e^ 1}{t^ /}{k^ 5}', v: 2, yol: 'Hangi sayı 5 kez çarpılınca 32 eder?', tam: '2·2·2·2·2 = 32.' },
+      { spec: '{b 4}{e^ 3}{t^ /}{k^ 2}', v: 8, yol: 'Önce √4’ü bul, sonra küpünü al.', tam: '√4 = 2, sonra 2³ = 8.' },
+      { spec: '{b 81}{e^ 1}{t^ /}{k^ 4}', v: 3, yol: 'Hangi sayı 4 kez çarpılınca 81 eder?', tam: '3·3·3·3 = 81.' },
+    ];
+    const cards = KART.map((k, i) => {
+      const g = K.g(svg, 250 + i * 260, 170, { o: 0 });
+      S('rect', { x: -95, y: -48, width: 190, height: 96, rx: 14, fill: C.panel2, stroke: 'rgba(255,255,255,.25)', 'stroke-width': 2 }, g);
+      K.rich(g, 0, 6, 46, k.spec);
+      return { ...k, g, bin: KUTU.indexOf(k.v) };
+    });
+    const p1 = nf(c.say('Dört ifade, beş kutu. Kutulardan biri tuzak.', { speak: 'Dört ifade, beş kutu var. Kutulardan biri tuzak.' }));
+    await K.stagger(cards.map((k) => k.g), 120, (g) => K.fade(g, 1, 300));
+    await K.stagger(bins.map((b) => b.g), 80, (g) => K.fade(g, 1, 300));
+    await p1;
+    const fb = h('div', { class: 'fb info', html: 'Payda kökü, pay kuvveti söyler.' });
+    const pnl = c.panel('Sıra sende', h('p', { class: 'q', html: 'Her ifadeyi değerine sürükle.' }), fb);
+    const E = eslestir(K, c, {
+      cards, bins, yer: (k) => ({ x: bins[k.bin].x, y: bins[k.bin].y - 36 }),
+      dogru: (k) => c.feedback(fb, 'ok', 'Doğru: ' + k.tam),
+      yanlis: (k, b) => c.feedback(fb, 'no', KUTU[b] === 18 && k.v === 9 ? '27 ile 2/3’ü çarpmışsın. Üs çarpan değildir.' : k.yol),
+    });
+    const goster = h('button', { class: 'btn ghost', onclick: () => { goster.remove(); nf(E.coz()); } }, 'Çözümü göster ›');
+    c.act.appendChild(goster);
+    await E.bitti;
+    goster.remove(); pnl.remove();
+    const tuzak = bins[4].g;
+    tuzak._rect.setAttribute('stroke', C.bad); tuzak._txt.style.fill = C.bad;
+    nf(K.shake(tuzak));
+    await c.say('Boş kalan 18 tuzaktı: üs çarpan değildir.', { speak: 'Boş kalan on sekiz tuzaktı. Yirmi yediyi üçte ikiyle çarpmıyoruz; üs çarpan değildir.' });
+  }
+
+  /* ============================================================
+     A6 · SAHNE 1 — Eski yöntem tutmuyor
+     ============================================================ */
+  async function sceneA6_1(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    /* hatırlatma: 6/√3 · √3/√3 = 2√3 */
+    const g1 = K.g(svg, 0, 0, { o: 0 });
+    fracMix(K, g1, 420, 250, 68, ['{t 6}'], [{ r: '{t 3}' }]);
+    K.t(g1, 525, 250, '·', { size: 68 });
+    fracMix(K, g1, 630, 250, 68, [{ r: '{e 3}', col: C.exp }], [{ r: '{e 3}', col: C.exp }]);
+    mixLine(K, g1, 850, 250, 68, ['{t = }{g 2}', { r: '{g 3}', col: C.ok }]);
+    const p1 = nf(c.say('Daha önce 6/√3’ü √3 ile genişletip kökten kurtulmuştuk.', { speak: 'Daha önce altı bölü karekök üçü, karekök üçle genişletip paydadaki kökten kurtulmuştuk.' }));
+    await K.fade(g1, 1, 500);
+    await p1;
+    await K.fade(g1, 0, 400); g1.remove();
+    const hedef = fracMix(K, svg, 640, 170, 76, ['{t 1}'], [{ r: '{t 3}' }, '{t  − 1}'], { o: 0 });
+    const p2 = nf(c.say('Peki payda <b>√3 − 1</b> olursa? Aynısını deneyelim.', { speak: 'Peki payda karekök üç eksi bir olursa? Aynı yöntemi deneyelim.' }));
+    await K.fade(hedef, 1, 500);
+    await p2;
+    await c.choice({
+      q: `(${RT(3)} − 1) · ${RT(3)} kaç eder?`,
+      options: [`3 − ${RT(3)}`, '2', `${RT(3)} − 1`], answer: 0,
+      hints: ['', 'Yalnızca √3·√3 = 3 aldın. −1 de √3 ile çarpılır.', 'Bu, çarpılmamış hâli. Dağıt: √3·√3 − 1·√3.'],
+      right: 'Evet: √3·√3 − 1·√3 = 3 − √3.',
+    });
+    const dene = mixLine(K, svg, 640, 400, 64, ['{t (}', { r: '{t 3}' }, '{t  − 1)·}', { r: '{e 3}', col: C.exp }, '{t  = 3 − }', { r: '{w 3}', col: C.bad }], { o: 0 });
+    const p3 = nf(c.say('Olmadı: <b>3 − √3</b>. Kök hâlâ orada.', { speak: 'Olmadı. Sonuç üç eksi karekök üç; kök hâlâ orada.' }));
+    await K.fade(dene, 1, 500);
+    await K.shake(dene);
+    await p3;
+    const p4 = nf(c.say('Tek kökle çarpmak yetmiyor. Başka bir çarpan gerek.', { speak: 'Tek bir kökle çarpmak yetmiyor. Başka bir çarpan gerek.' }));
+    const ara = mixLine(K, svg, 640, 560, 64, ['{t (}', { r: '{t 3}' }, '{t  − 1)·}{e ?}{t  = }{g köksüz}'], { o: 0 });
+    await K.fade(dene, 0.35, 400);
+    await K.fade(ara, 1, 500);
+    await p4;
+  }
+
+  /* ============================================================
+     A6 · SAHNE 2 — İkizini bul: dört parça
+     ============================================================ */
+  async function sceneA6_2(c) {
+    const K = kit(c); const { svg, S } = K;
+    K.dots();
+    const bas = mixLine(K, svg, 470, 66, 52, ['{t (}', { r: '{t 3}' }, '{r  − 1}{t )(}', { r: '{t 3}' }, '{e  + 1}{t )}'], { o: 0 });
+    const p1 = nf(c.say('Bu kez işareti değişmiş <b>ikiziyle</b> çarp: √3 + 1.', { speak: 'Bu kez onu, işareti değişmiş ikiziyle çarpalım: karekök üç artı bir.' }));
+    await K.fade(bas, 1, 500);
+    /* çarpım tablosu: sütunlar √3 ve +1, satırlar √3 ve −1 */
+    const X0 = 250, Y0 = 200, WA = 280, WB = 160, HA = 200, HB = 116;
+    const tab = K.g(svg, 0, 0, { o: 0 });
+    const ust = K.rad(tab, 0, Y0 - 44, '{t 3}', 44); K.set(ust, { x: X0 + WA / 2 - ust._w / 2 });
+    K.t(tab, X0 + WA + WB / 2, Y0 - 44, '+1', { size: 44, fill: C.exp, w: 800 });
+    const sol = K.rad(tab, 0, Y0 + HA / 2, '{t 3}', 44); K.set(sol, { x: X0 - 36 - sol._w });
+    K.t(tab, X0 - 36, Y0 + HA + HB / 2, '−1', { size: 44, fill: C.back, w: 800, a: 'end' });
+    S('rect', { x: X0, y: Y0, width: WA + WB, height: HA + HB, fill: 'none', stroke: 'rgba(255,255,255,.35)', 'stroke-width': 2 }, tab);
+    const hucre = (x, y, w, hh, fill) => {
+      const g = K.g(svg, 0, 0, { o: 0 });
+      S('rect', { x, y, width: w, height: hh, fill, stroke: 'rgba(255,255,255,.35)', 'stroke-width': 2 }, g);
+      return g;
+    };
+    const mor = 'rgba(182,156,255,.18)';
+    const cA = hucre(X0, Y0, WA, HA, 'rgba(107,227,160,.16)');
+    K.t(cA, X0 + WA / 2, Y0 + HA / 2, '3', { size: 64, fill: C.ok, w: 800 });
+    const cB = hucre(X0 + WA, Y0, WB, HA, mor);
+    const tB = mixLine(K, svg, X0 + WA + WB / 2, Y0 + HA / 2, 44, ['{t +}', { r: '{t 3}' }], { o: 0 });
+    const cC = hucre(X0, Y0 + HA, WA, HB, mor);
+    const tC = mixLine(K, svg, X0 + WA / 2, Y0 + HA + HB / 2, 44, ['{t −}', { r: '{t 3}' }], { o: 0 });
+    const cD = hucre(X0 + WA, Y0 + HA, WB, HB, 'rgba(255,164,92,.16)');
+    K.t(cD, X0 + WA + WB / 2, Y0 + HA + HB / 2, '−1', { size: 44, fill: C.back, w: 800 });
+    await K.fade(tab, 1, 500);
+    await p1;
+    const p2 = nf(c.say('Her parça, iki kenarının çarpımı. Dört parça var.', { speak: 'Her parça, iki kenarının çarpımıdır. Dört parça var: üç, artı karekök üç, eksi karekök üç ve eksi bir.' }));
+    for (const [g, t] of [[cA], [cB, tB], [cC, tC], [cD]]) { await K.fade(t ? [g, t] : g, 1, 400); await c.wait(350); }
+    await p2;
+    const p3 = nf(c.say('Köklü iki parça birbirini götürür: +√3 ve −√3.', { speak: 'Köklü iki parça birbirini götürür: artı karekök üç ve eksi karekök üç.' }));
+    await par(K.pop(tB), K.pop(tC));
+    await par(
+      K.to(tB, { x: X0 + WA - tB._w / 2, y: Y0 + HA, o: 0 }, 900), K.to(tC, { x: X0 + WA - tC._w / 2, y: Y0 + HA, o: 0 }, 900),
+      K.fade([cB, cC], 0.3, 900));
+    nf(K.ring(X0 + WA, Y0 + HA, C.root, 90, 700));
+    await p3;
+    const p4 = nf(c.say('Geriye <b>3 − 1 = 2</b> kaldı. Kök yok.', { speak: 'Geriye üç eksi bir kaldı, yani iki. Kök yok.' }));
+    const son = K.rich(svg, 970, 280, 76, '{g 3}{t  − }{r 1}{t  = }{g 2}', { o: 0 });
+    await K.fade(son, 1, 500);
+    await p4;
+    const p5 = nf(c.say('Bu ikize <b>eşlenik</b> denir: yalnızca ortadaki işaret değişir.', { speak: 'Bu ikize eşlenik denir. Eşlenikte yalnızca ortadaki işaret değişir.' }));
+    const es = K.g(svg, 0, 0, { o: 0 });
+    mixLine(K, es, 970, 420, 52, [{ r: '{t 3}' }, '{r  − }{t 1}']);
+    K.t(es, 970, 478, '↕', { size: 34, fill: C.soft });
+    mixLine(K, es, 970, 540, 52, [{ r: '{t 3}' }, '{e  + }{t 1}']);
+    await K.fade(es, 1, 500);
+    await p5;
+    await c.choice({
+      tag: 'Dene', q: `${RT(5)} + 2 ifadesinin eşleniği hangisi?`,
+      options: [`−${RT(5)} − 2`, `${RT(5)} − 2`, `${RT(5)} + 2`], answer: 1,
+      hints: ['İki işareti de değiştirdin. Çarpınca kök kalır; yalnızca ortadaki işaret değişir.', '', 'Bu kendisi. Karesi 9 + 4√5 eder, kök kalır.'],
+      right: 'Evet: (√5 + 2)(√5 − 2) = 5 − 4 = 1.',
+    });
+    c.note(`Ortadaki işaret değişir.<br>(${RT(3)} − 1)(${RT(3)} + 1) = 2`, 'Eşlenik');
+  }
+
+  /* ============================================================
+     A6 · SAHNE 3 — Uygula: pay ve payda birlikte
+     ============================================================ */
+  async function sceneA6_3(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    const v = 1 / (Math.sqrt(3) - 1);
+    const f0 = fracMix(K, svg, 250, 210, 64, ['{t 1}'], [{ r: '{t 3}' }, '{t  − 1}'], { o: 0 });
+    const carp = K.t(svg, 392, 210, '·', { size: 64, o: 0 });
+    const f1 = fracMix(K, svg, 540, 210, 64, [{ r: '{e 3}', col: C.exp }, '{e  + 1}'], [{ r: '{e 3}', col: C.exp }, '{e  + 1}'], { o: 0 });
+    const p1 = nf(c.say('Paydayı eşleniğiyle çarp. Değer bozulmasın diye <b>payı da</b>.', { speak: 'Paydayı eşleniğiyle çarp. Değer bozulmasın diye payı da aynı ifadeyle çarp.' }));
+    await K.fade(f0, 1, 500);
+    await c.wait(500);
+    await K.fade([carp, f1], 1, 500);
+    await p1;
+    const p2 = nf(c.say('Payda 3 − 1 = 2 oldu; pay √3 + 1.', { speak: 'Payda üç eksi bir, yani iki oldu. Pay ise karekök üç artı bir.' }));
+    const es = K.t(svg, 720, 210, '=', { size: 64, o: 0 });
+    const f2 = fracMix(K, svg, 880, 210, 64, [{ r: '{t 3}' }, '{t  + 1}'], ['{g 3 − 1}'], { o: 0 });
+    await K.fade([es, f2], 1, 500);
+    await c.wait(1500);
+    const f3 = fracMix(K, svg, 880, 210, 64, [{ r: '{t 3}' }, '{t  + 1}'], ['{g 2}'], { o: 0 });
+    await par(K.fade(f2, 0, 400), K.fade(f3, 1, 400)); f2.remove();
+    await p2;
+    const p3 = nf(c.say(`Değer aynı kaldı: ikisi de yaklaşık ${fmt(v)}.`, { speak: 'Değer aynı kaldı: ikisi de yaklaşık bir virgül otuz yedi.' }));
+    const y1 = K.t(svg, 250, 350, '≈ ' + fmt(v), { size: 40, fill: C.soft, o: 0 });
+    const y2 = K.t(svg, 880, 350, '≈ ' + fmt(v), { size: 40, fill: C.soft, o: 0 });
+    await K.fade([y1, y2], 1, 500);
+    await p3;
+    await c.choice({
+      tag: 'Düşün', q: 'Payı çarpmayı unutursak 1/2 buluruz. Bu, baştaki sayıyla aynı mı?',
+      options: ['Aynı', 'Farklı'], answer: 1,
+      hints: [`Baştaki sayı ≈ ${fmt(v)}, ama 1/2 = 0,5. Pay da çarpılmalı.`, ''],
+      right: `Evet: ${fmt(v)} ≠ 0,5. Pay ve payda birlikte çarpılır.`,
+    });
+    c.note(`${FR(1, RT(3) + ' − 1')} = ${FR(RT(3) + ' + 1', 2)}<br>Pay ve payda eşlenikle çarpılır.`, 'Paydayı kökten kurtar');
+  }
+
+  /* ============================================================
+     A6 · SAHNE 4 — Sıra sende: 4/(√5 + 1)
+     ============================================================ */
+  async function sceneA6_4(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    const f0 = fracMix(K, svg, 250, 210, 64, ['{t 4}'], [{ r: '{t 5}' }, '{t  + 1}'], { o: 0 });
+    const p1 = nf(c.say('Sıra sende: bu ifadenin paydasını kökten kurtar.', { speak: 'Sıra sende. Dört bölü karekök beş artı bir ifadesinin paydasını kökten kurtar.' }));
+    await K.fade(f0, 1, 500);
+    await p1;
+    await c.choice({
+      tag: '1. adım', q: 'Pay ve paydayı hangisiyle çarpalım?',
+      options: [`${RT(5)} + 1`, RT(5), `${RT(5)} − 1`], answer: 2,
+      hints: ['Bu paydanın kendisi. Karesinde 2√5 kalır; işaret değişmeli.', '(√5 + 1)·√5 = 5 + √5. Kök kaldı.', ''],
+      right: 'Evet, eşleniği: √5 − 1.',
+    });
+    const carp = K.t(svg, 392, 210, '·', { size: 64, o: 0 });
+    const f1 = fracMix(K, svg, 540, 210, 64, [{ r: '{e 5}', col: C.exp }, '{e  − 1}'], [{ r: '{e 5}', col: C.exp }, '{e  − 1}'], { o: 0 });
+    await K.fade([carp, f1], 1, 500);
+    await c.choice({
+      tag: '2. adım', q: `(${RT(5)} + 1)(${RT(5)} − 1) kaç eder?`,
+      options: ['6', '4', '24'], answer: 1,
+      hints: ['5 + 1 yapmışsın. Köklü parçalar götürür; geriye 5 − 1 kalır.', '', '5² − 1 almışsın. √5·√5 = 5’tir.'],
+      right: 'Evet: 5 − 1 = 4.',
+    });
+    const es = K.t(svg, 716, 210, '=', { size: 64, o: 0 });
+    const f2 = fracMix(K, svg, 930, 210, 64, ['{t 4(}', { r: '{t 5}' }, '{t  − 1)}'], ['{g 4}'], { o: 0 });
+    await K.fade([es, f2], 1, 500);
+    await c.choice({
+      tag: '3. adım', q: 'Dörtler sadeleşince ne kalır?',
+      options: [`${RT(5)} − 1`, `4${RT(5)} − 1`, `${RT(5)} − 4`], answer: 0,
+      hints: ['', 'Pay 4·(√5 − 1): 4 bütün parantezi çarpıyor, sadeleşince parantez kalır.', 'Sadeleşen 4, parantezin içine girmez.'],
+      right: 'Evet: √5 − 1.',
+    });
+    const son = mixLine(K, svg, 640, 470, 84, ['{t = }', { r: '{g 5}', col: C.ok }, '{g  − 1}'], { o: 0 });
+    await K.fade(son, 1, 500);
+    nf(K.ring(680, 470, C.ok, 150, 900));
+    await c.say('<b>4/(√5 + 1) = √5 − 1</b>. Paydada kök kalmadı.', { speak: 'Dört bölü karekök beş artı bir, karekök beş eksi bire eşit. Paydada kök kalmadı.' });
+  }
+
+  /* ---------- ortak (A7): basamak satırı. Rakamlar yerinde durur, virgül kayar; her kayışta 10'un üssü değişir.
+     o: rakam (dizgi) · x0, dx, bosluk, y, size · grup(i): i. rakamın üçlü grup numarası · v0: virgül başta kaç rakamın sağında
+     Virgül ve "× 10ⁿ" görünmez başlar (vg, us). kay(k): virgülü k rakamın sağına taşır; üs = v0 − k olur. ---------- */
+  function basamak(K, c, o) {
+    const { S } = K;
+    const g = K.g(K.svg, 0, 0, { o: 0 });
+    const n = o.rakam.length;
+    const X = (i) => o.x0 + i * o.dx + o.grup(i) * o.bosluk;
+    const VX = (k) => (k <= 0 ? X(0) - o.dx / 2 : k >= n ? X(n - 1) + o.dx / 2 : (X(k - 1) + X(k)) / 2);
+    const rak = [...o.rakam].map((ch, i) => K.t(g, X(i), o.y, ch, { size: o.size, w: 800 }));
+    const iz = K.g(g);
+    const vg = K.g(g, VX(o.v0), o.y, { o: 0 });
+    /* virgül çizimdir (yazı değil): rakamların altından geçerken üstlerine binmez */
+    S('circle', { cx: 0, cy: o.size * 0.3, r: o.size * 0.075, fill: C.exp }, vg);
+    S('line', { x1: o.size * 0.03, y1: o.size * 0.33, x2: -o.size * 0.06, y2: o.size * 0.52, stroke: C.exp, 'stroke-width': o.size * 0.075, 'stroke-linecap': 'round' }, vg);
+    const us = K.g(g, X(n - 1) + o.dx / 2 + 56, o.y, { o: 0 });
+    const ut = K.rich(us, 0, 0, o.size * 0.9, '{t × }{b 10}{e^ 0}', { a: 'start' });
+    let yer = o.v0;
+    const kay = async (k, ms = 520) => {
+      const a = VX(yer), b = VX(k), yb = o.y + o.size * 0.62;
+      await c.tween(ms, (e) => { vg._x = lerp(a, b, e); vg._y = o.y + Math.sin(e * Math.PI) * 24; K.place(vg); }, ease.inOut);
+      S('path', { d: `M${a},${yb} Q${(a + b) / 2},${yb + 30} ${b},${yb}`, fill: 'none', stroke: C.exp, 'stroke-width': 3, 'stroke-linecap': 'round', opacity: 0.8 }, iz);
+      yer = k;
+      ut._spans[2].textContent = String(o.v0 - k).replace('-', '−');
+    };
+    return { g, rak, vg, us, kay };
+  }
+
+  /* ============================================================
+     A7 · SAHNE 1 — Büyük sayı: virgül sola, üs artar
+     ============================================================ */
+  async function sceneA7_1(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    const B = basamak(K, c, { rakam: '150000000', x0: 210, dx: 72, bosluk: 26, y: 220, size: 76, grup: (i) => Math.floor(i / 3), v0: 9 });
+    const p1 = nf(c.say('Güneş 150 000 000 km uzakta. Bu kadar sıfırı saymak zor.', { speak: 'Güneş yüz elli milyon kilometre uzakta. Bu kadar sıfırı her seferinde saymak zor.' }));
+    await K.fade(B.g, 1, 500);
+    await p1;
+    await c.choice({
+      q: 'Virgülü 1 ile 5’in arasına taşıyacağız. Kaç basamak kayar?',
+      options: ['7', '8', '9'], answer: 1,
+      hints: ['Sıfırlar 7 tane; ama virgül 5’in üstünden de geçecek.', '', 'Rakam sayısı 9; ama virgül 1’in soluna geçmiyor.'],
+      right: 'Evet, 8 basamak. Birlikte sayalım.',
+    });
+    const p2 = nf(c.say('Virgül şimdi en sonda. Sola kaydıralım.', { speak: 'Virgül şimdi en sonda duruyor. Onu sola kaydıralım.' }));
+    await K.fade([B.vg, B.us], 1, 400);
+    await p2;
+    const p3 = nf(c.say('Bir basamak sola: sayı 10’a bölündü. Dengelemek için ×10.', { speak: 'Virgül bir basamak sola kayınca sayı ona bölünür. Eşitlik bozulmasın diye yanına bir çarpı on yazarız.' }));
+    await B.kay(8, 900);
+    await p3;
+    const p4 = nf(c.say('Her kayışta sayaç bir artar.', { speak: 'Her kayışta on’un üssündeki sayaç bir artar.' }));
+    for (let k = 7; k >= 1; k--) { await B.kay(k); await c.wait(120); }
+    await p4;
+    await K.fade(B.rak.slice(2), 0.25, 500);
+    const p5 = nf(c.say('<b>150 000 000 = 1,5 × 10⁸</b>. Sayaç yine üs.', { speak: 'Yüz elli milyon, bir virgül beş çarpı on üzeri sekize eşit. Sayaç yine üs.' }));
+    const son = K.rich(svg, 640, 500, 72, '{t 150 000 000 = }{g 1,5}{t  × }{b 10}{e^ 8}', { o: 0 });
+    await K.fade(son, 1, 500);
+    await p5;
+    c.note(`150 000 000 = 1,5 × ${Pc(10, 8)}<br>Virgül 8 basamak sola.`, 'Büyük sayı');
+  }
+
+  /* ============================================================
+     A7 · SAHNE 2 — Küçük sayı: virgül sağa, üs negatif
+     ============================================================ */
+  async function sceneA7_2(c) {
+    const K = kit(c); const { svg } = K;
+    K.dots();
+    const B = basamak(K, c, { rakam: '0000000003', x0: 190, dx: 66, bosluk: 24, y: 220, size: 72, grup: (i) => (i === 0 ? 0 : Math.floor((i - 1) / 3)), v0: 1 });
+    K.set(B.vg, { o: 1 });
+    const p1 = nf(c.say('Telefon çipindeki en küçük parça: 0,000 000 003 metre.', { speak: 'Telefonundaki çipin en küçük parçası, metrenin milyarda üçü kadar.' }));
+    await K.fade(B.g, 1, 500);
+    await p1;
+    const p2 = nf(c.say('Bu kez virgül sağa kayar; sayaç geri sayar.', { speak: 'Bu kez virgül sağa kayar. Her kayışta sayı onla çarpılır; dengelemek için sayaç bir geri sayar.' }));
+    await K.fade(B.us, 1, 400);
+    await B.kay(2, 900);
+    for (let k = 3; k <= 10; k++) { await B.kay(k); await c.wait(120); }
+    await p2;
+    await K.fade(B.rak.slice(0, 9), 0.25, 500);
+    const p3 = nf(c.say('<b>0,000 000 003 = 3 × 10⁻⁹</b>: 3’ü dokuz kez 10’a böl.', { speak: 'Sonuç: üç çarpı on üzeri eksi dokuz. Yani üçü dokuz kez ona böl.' }));
+    const son = K.rich(svg, 640, 500, 72, '{t 0,000 000 003 = }{g 3}{t  × }{b 10}{e^ −9}', { o: 0 });
+    await K.fade(son, 1, 500);
+    await p3;
+    await c.choice({
+      tag: 'Dene', q: `${P(10, '−3')} hangisine eşittir?`,
+      options: ['−1000', '0,001', '−0,003'], answer: 1,
+      hints: ['Eksi üs sayıyı negatif yapmaz; ters çevirir: 1/1000.', '', 'Üs çarpan değildir. 10⁻³ = 1/10³.'],
+      right: 'Evet: 10⁻³ = 1/1000 = 0,001.',
+    });
+    c.note(`0,000 000 003 = 3 × ${Pc(10, '−9')}<br>Virgül 9 basamak sağa.`, 'Küçük sayı');
+  }
+
+  /* ============================================================
+     A7 · SAHNE 3 — Kural ve tuzak: 1 ≤ a < 10
+     ============================================================ */
+  async function sceneA7_3(c) {
+    const K = kit(c, { touch: true }); const { svg, S } = K;
+    K.dots();
+    const g1 = K.g(svg, 0, 0, { o: 0 });
+    const a1 = K.rich(g1, 400, 150, 68, '{t 15 × }{b 10}{e^ 7}');
+    const a2 = K.rich(g1, 880, 150, 68, '{t 1,5 × }{b 10}{e^ 8}');
+    K.t(g1, 640, 250, 'ikisi de 150 000 000', { size: 32, fill: C.soft });
+    const p1 = nf(c.say('İkisi de 150 000 000 eder. Hangisi bilimsel gösterim?', { speak: 'İkisi de yüz elli milyon eder. Sence hangisi bilimsel gösterim?' }));
+    await K.fade(g1, 1, 500);
+    await p1;
+    await c.choice({
+      q: 'Hangisi bilimsel gösterim?',
+      options: [`15 × ${P(10, 7)}`, `1,5 × ${P(10, 8)}`, 'İkisi de'], answer: 1,
+      hints: ['Değeri doğru; ama baştaki sayı 10’dan küçük olmalı.', '', 'Değerleri eşit; ama yalnızca birinde baştaki sayı 10’dan küçük.'],
+      right: 'Evet: baştaki sayı 1,5.',
+    });
+    a1.setAttribute('opacity', 0.35); a2.style.fill = C.ok;
+    const p2 = nf(c.say('Kural: baştaki sayı <b>1 ile 10 arasında</b> olur.', { speak: 'Kural şu: bilimsel gösterimde baştaki sayı bir ile on arasında olur.' }));
+    const kural = K.rich(svg, 640, 420, 80, '{g a}{t  × }{b 10}{e^ n}', { o: 0 });
+    const sinir = K.rich(svg, 640, 540, 52, '{t 1 ≤ }{g a}{t  < 10}', { o: 0 });
+    await K.fade(kural, 1, 500);
+    await K.fade(sinir, 1, 500);
+    await p2;
+    await c.say('10 dahil değil: 10 × 10² yerine 1 × 10³ yazılır.', { speak: 'On dahil değil. On çarpı on üzeri iki yerine, bir çarpı on üzeri üç yazılır.' });
+    c.note(`a × ${Pc(10, 'n')}, 1 ≤ a &lt; 10<br>Virgül kayar, üs sayar.`, 'Bilimsel gösterim');
+
+    /* sürükle: bilimsel mi, değil mi? */
+    await K.fade([g1, kural, sinir], 0, 400); g1.remove(); kural.remove(); sinir.remove();
+    const bins = [['bilimsel gösterim', C.ok, 340], ['değil', C.bad, 940]].map(([ad, col, x]) => {
+      const g = K.g(svg, x, 510, { o: 0 });
+      S('rect', { x: -270, y: -160, width: 540, height: 320, rx: 18, fill: 'rgba(255,255,255,.04)', stroke: col, 'stroke-width': 2, 'stroke-dasharray': '8 8' }, g);
+      K.t(g, 0, -122, ad, { size: 30, fill: col, w: 700 });
+      return { g, x, y: 510, w: 540, h: 320 };
+    });
+    const KART = [
+      { spec: '{t 12 × }{b 10}{e^ 3}', bin: 1, ok: '12, 10’dan büyük. Doğrusu 1,2 × 10⁴.', no: 'Baştaki sayıya bak: 12, 10’dan büyük.' },
+      { spec: '{t 4,5 × }{b 10}{e^ −4}', bin: 0, ok: '4,5, 1 ile 10 arasında.', no: 'Baştaki sayı 4,5: 1 ile 10 arasında. Üssün eksi olması sorun değil.' },
+      { spec: '{t 0,7 × }{b 10}{e^ 5}', bin: 1, ok: '0,7, 1’den küçük. Doğrusu 7 × 10⁴.', no: 'Baştaki sayıya bak: 0,7, 1’den küçük.' },
+      { spec: '{t 8 × }{b 10}{e^ 6}', bin: 0, ok: '8, 1 ile 10 arasında.', no: 'Baştaki sayı 8: 1 ile 10 arasında.' },
+      { spec: '{t 10 × }{b 10}{e^ 2}', bin: 1, ok: '10 dahil değil. Doğrusu 1 × 10³.', no: '10 dahil değil: baştaki sayı 10’dan küçük olmalı.' },
+    ];
+    const cards = KART.map((k, i) => {
+      const g = K.g(svg, 160 + i * 240, 150, { o: 0 });
+      S('rect', { x: -108, y: -42, width: 216, height: 84, rx: 14, fill: C.panel2, stroke: 'rgba(255,255,255,.25)', 'stroke-width': 2 }, g);
+      K.rich(g, 0, 4, 38, k.spec);
+      return { ...k, g };
+    });
+    const p3 = nf(c.say('Beş kart var. Hangileri bilimsel gösterim?', { speak: 'Beş kart var. Hangileri bilimsel gösterim, hangileri değil?' }));
+    await K.stagger(bins.map((b) => b.g), 100, (g) => K.fade(g, 1, 300));
+    await K.stagger(cards.map((k) => k.g), 100, (g) => K.fade(g, 1, 300));
+    await p3;
+    const fb = h('div', { class: 'fb info', html: 'Baştaki sayı 1 ile 10 arasında mı?' });
+    const pnl = c.panel('Sıra sende', h('p', { class: 'q', html: 'Her kartı doğru kutuya sürükle.' }), fb);
+    const dolu = [0, 0];
+    const E = eslestir(K, c, {
+      cards, bins,
+      yer: (k) => { const i = dolu[k.bin]++; return { x: bins[k.bin].x - 124 + (i % 2) * 248, y: 470 + Math.floor(i / 2) * 104 }; },
+      dogru: (k) => c.feedback(fb, 'ok', 'Doğru: ' + k.ok),
+      yanlis: (k) => c.feedback(fb, 'no', k.no),
+    });
+    const goster = h('button', { class: 'btn ghost', onclick: () => { goster.remove(); nf(E.coz()); } }, 'Çözümü göster ›');
+    c.act.appendChild(goster);
+    await E.bitti;
+    goster.remove(); pnl.remove();
+    await c.say('Değer aynı kalsa da bilimsel gösterimin tek bir yazımı var.', { speak: 'Değer aynı kalsa da, bir sayının bilimsel gösterimi tek bir biçimde yazılır.' });
+  }
+
+  /* ============================================================
+     A8 · SAHNE 1 — Tam çıkmıyor: iki tam sayının arası
+     ============================================================ */
+  async function sceneA8_1(c) {
+    const K = kit(c); const { svg, S } = K;
+    K.dots();
+    const T = { x: 100, y: 150, s: 380 };
+    const tarla = K.g(svg, 0, 0, { o: 0 });
+    S('rect', { x: T.x, y: T.y, width: T.s, height: T.s, rx: 6, fill: 'rgba(107,227,160,.14)', stroke: C.ok, 'stroke-width': 3 }, tarla);
+    K.t(tarla, T.x + T.s / 2, T.y + T.s / 2, '1000 m²', { size: 52, fill: C.ok, w: 800 });
+    let kenar = K.t(tarla, T.x + T.s / 2, T.y + T.s + 46, '? m', { size: 44, fill: C.root, w: 800 });
+    const p1 = nf(c.say('Alanı 1000 m² olan kare tarlanın kenarı kaç metre?', { speak: 'Alanı bin metrekare olan kare bir tarlanın kenarı kaç metredir?' }));
+    await K.fade(tarla, 1, 500);
+    await p1;
+    await c.choice({
+      q: 'Kenar yaklaşık kaç metre olabilir?',
+      options: ['500', '31 ile 32 arası', '33 ile 34 arası'], answer: 1,
+      hints: ['500·500 = 250 000 eder. Kök, sayının yarısı değildir.', '', '33·33 = 1089. 1000’i geçti.'],
+      right: 'Evet. Nedenine bakalım.',
+    });
+    const p2 = nf(c.say('31·31 = 961: az. Tarla daha büyük.', { speak: 'Otuz bir çarpı otuz bir, dokuz yüz altmış bir eder. Az; tarla bundan büyük.' }));
+    const d1 = K.rich(svg, 610, 200, 54, '{b 31}{t ·}{b 31}{t  = 961   }{r az}', { a: 'start', o: 0 });
+    await K.fade(d1, 1, 500);
+    await p2;
+    const p3 = nf(c.say('32·32 = 1024: fazla.', { speak: 'Otuz iki çarpı otuz iki, bin yirmi dört eder. Bu da fazla.' }));
+    const d2 = K.rich(svg, 610, 290, 54, '{b 32}{t ·}{b 32}{t  = 1024   }{w fazla}', { a: 'start', o: 0 });
+    await K.fade(d2, 1, 500);
+    await p3;
+    /* sayı doğrusu: 31 ile 32, altlarında kareleri */
+    const D = { x0: 640, x1: 1160, y: 450 }, xk = D.x0 + (D.x1 - D.x0) * (Math.sqrt(1000) - 31);
+    const dog = K.g(svg, 0, 0, { o: 0 });
+    K.line(dog, D.x0 - 30, D.y, D.x1 + 30, D.y, C.soft, 4);
+    [[D.x0, '31', '961'], [D.x1, '32', '1024']].forEach(([x, a, b]) => {
+      K.line(dog, x, D.y - 18, x, D.y + 18, C.text, 4);
+      K.t(dog, x, D.y - 46, a, { size: 36, fill: C.base, w: 800 });
+      K.t(dog, x, D.y + 50, b, { size: 30, fill: C.soft, w: 700 });
+    });
+    K.t(dog, D.x0 - 60, D.y - 46, 'kenar', { size: 24, fill: C.soft, a: 'end' });
+    K.t(dog, D.x0 - 60, D.y + 50, 'alan', { size: 24, fill: C.soft, a: 'end' });
+    const nokta = K.g(dog, xk, D.y);
+    S('circle', { r: 11, fill: C.root, stroke: '#fff', 'stroke-width': 3 }, nokta);
+    K.t(nokta, 0, 50, '1000', { size: 30, fill: C.ok, w: 800 });
+    let ust = K.t(nokta, 0, -46, '?', { size: 40, fill: C.root, w: 800 });
+    const p4 = nf(c.say('Kenar 31 ile 32 arasında; tam sayı değil.', { speak: 'Demek ki kenar otuz bir ile otuz iki arasında. Bir tam sayı değil.' }));
+    await K.fade(dog, 1, 600);
+    await p4;
+    const p5 = nf(c.say('Bu kenarın adı <b>√1000</b>. Tam çıkmayan bir kök.', { speak: 'Bu kenarın adı karekök bin. Tam çıkmayan bir kök.' }));
+    ust.remove(); kenar.remove();
+    ust = K.rad(nokta, 0, -50, '{t 1000}', 36); K.set(ust, { x: -ust._w / 2 });
+    kenar = mixLine(K, tarla, T.x + T.s / 2, T.y + T.s + 46, 44, [{ r: '{t 1000}' }, '{t  m}']);
+    nf(K.ring(xk, D.y, C.root, 80, 800));
+    await p5;
+    c.note(`31 &lt; ${RT(1000)} &lt; 32<br>çünkü 961 &lt; 1000 &lt; 1024`, 'İki tam sayının arası');
+  }
+
+  /* ============================================================
+     A8 · SAHNE 2 — Yakınlaş: onda birler, yüzde birler
+     ============================================================ */
+  async function sceneA8_2(c) {
+    const K = kit(c); const { svg, S } = K;
+    K.dots();
+    const X0 = 140, X1 = 1140, YL = 260;
+    let va = 30.5, vb = 32.5, gor = 0;   // görünen aralık ve en ince çentik düzeyi
+    const X = (v) => X0 + (v - va) / (vb - va) * (X1 - X0);
+    K.line(svg, X0 - 40, YL, X1 + 40, YL, C.soft, 4);
+    const cent = [];
+    const ekle = (k, lev) => {   // k: yüzde bir cinsinden (3160 = 31,60)
+      const g = K.g(svg, X(k / 100), YL, { o: 0 }), hgt = [22, 16, 12][lev];
+      K.line(g, 0, -hgt, 0, hgt, lev ? C.soft : C.text, lev ? 3 : 4);
+      K.t(g, 0, 54, fmt(k / 100), { size: lev ? 26 : 34, fill: lev ? C.soft : C.text, w: lev ? 600 : 800 });
+      cent.push({ v: k / 100, g, lev });
+    };
+    [3100, 3200].forEach((k) => ekle(k, 0));
+    for (let k = 3110; k < 3200; k += 10) ekle(k, 1);
+    for (let k = 3161; k < 3170; k++) ekle(k, 2);
+    const isaret = K.g(svg, X(31.5), YL, { o: 0 });
+    S('path', { d: 'M0,-24 L-14,-50 L14,-50 Z', fill: C.exp }, isaret);
+    const isT = K.t(isaret, 0, -76, '', { size: 34, fill: C.exp, w: 800 });
+    let kNow = 3150;
+    const yerles = () => {
+      cent.forEach((t) => { const x = X(t.v), ic = x >= X0 - 1 && x <= X1 + 1; K.set(t.g, { x: clamp(x, -300, 1600), o: ic && t.lev <= gor ? 1 : 0 }); });
+      K.set(isaret, { x: X(kNow / 100) });
+    };
+    const zoom = (a2, b2, ms = 1300) => { const a1 = va, b1 = vb; return c.tween(ms, (e) => { va = lerp(a1, a2, e); vb = lerp(b1, b2, e); yerles(); }, ease.inOut); };
+    const ac = async (lev) => { gor = lev; const yeni = cent.filter((t) => t.lev === lev); yeni.forEach((t) => K.set(t.g, { x: X(t.v), o: 0 })); await K.fade(yeni.map((t) => t.g), 1, 400); };
+    yerles();
+
+    /* alttaki hesap: x² ve 1000'e uzaklığı */
+    let satir = null, durum = null;
+    const hesap = (k, y, tek) => {
+      const kare = k * k / 10000, az = kare < 1000;
+      return K.rich(svg, 640, y, tek ? 60 : 50, `{b ${fmt(k / 100)}}{e^ 2}{t  = }{${az ? 'r' : 'w'} ${fmt(kare)}}${tek ? '' : `{t    }{${az ? 'r' : 'w'} ${az ? 'az' : 'fazla'}}`}`);
+    };
+    const goster = (k) => {
+      kNow = k; K.set(isaret, { x: X(k / 100) }); isT.textContent = fmt(k / 100);
+      if (satir) satir.remove(); if (durum) durum.remove();
+      const kare = k * k / 10000, fark = Math.abs(1000 - kare);
+      satir = hesap(k, 450, true);
+      durum = K.t(svg, 640, 540, fark === 0 ? 'tam 1000' : `1000’den ${fmt(fark)} ${kare < 1000 ? 'az' : 'fazla'}`, { size: 36, fill: kare < 1000 ? C.back : C.bad, w: 700 });
+    };
+    const temizle = () => { if (satir) satir.remove(); if (durum) durum.remove(); satir = durum = null; K.set(isaret, { o: 0 }); };
+    const komsu = async (a, b) => {   // iki komşuyu alt alta yaz, aralarını boya
+      const bant = S('rect', { x: X(a / 100), y: YL - 7, width: X(b / 100) - X(a / 100), height: 14, rx: 7, fill: C.root, opacity: 0 }, svg);
+      const r1 = hesap(a, 440, false), r2 = hesap(b, 530, false);
+      r1.setAttribute('opacity', 0); r2.setAttribute('opacity', 0);
+      await K.fade([bant, r1], 1, 500);
+      await c.wait(900);
+      await K.fade(r2, 1, 500);
+      return [bant, r1, r2];
+    };
+
+    const p1 = nf(c.say('√1000, 31 ile 32 arasında. Yakınlaşalım: <b>onda birler</b>.', { speak: 'Karekök bin, otuz bir ile otuz iki arasında. Bu aralığa yakınlaşalım: onda birler.' }));
+    await c.wait(900);
+    await zoom(31, 32);
+    await ac(1);
+    await p1;
+    K.set(isaret, { o: 1 });
+    let sl = c.slider({ label: 'Kenar (m)', min: 3100, max: 3200, step: 10, value: 3150, fmt: (k) => fmt(k / 100), onInput: goster });
+    c.say('Karesi 1000’e en yakın iki komşuyu bul.', { noWait: true });
+    await c.cont();
+    sl.remove(); temizle();
+    const p2 = nf(c.say('31,6² = 998,56: az. 31,7² = 1004,89: fazla.', { speak: 'Otuz bir virgül altının karesi dokuz yüz doksan sekiz virgül elli altı: az. Otuz bir virgül yedinin karesi bin dört virgül seksen dokuz: fazla.' }));
+    let iz = await komsu(3160, 3170);
+    await p2;
+    await K.fade(iz, 0, 400); iz.forEach((e) => e.remove());
+    const p3 = nf(c.say('Bir basamak daha yakınlaş: <b>yüzde birler</b>.', { speak: 'Bir basamak daha yakınlaşalım: yüzde birler.' }));
+    await zoom(31.6, 31.7);
+    await ac(2);
+    await p3;
+    kNow = 3165; K.set(isaret, { o: 1 });
+    sl = c.slider({ label: 'Kenar (m)', min: 3160, max: 3170, step: 1, value: 3165, fmt: (k) => fmt(k / 100), onInput: goster });
+    c.say('Yine iki komşuyu bul.', { noWait: true });
+    await c.cont();
+    sl.remove(); temizle();
+    const p4 = nf(c.say('31,62² = 999,82: az. 31,63² = 1000,46: fazla.', { speak: 'Otuz bir virgül altmış ikinin karesi az, otuz bir virgül altmış üçün karesi fazla.' }));
+    iz = await komsu(3162, 3163);
+    await p4;
+    await K.fade(iz.slice(1), 0, 400); iz[1].remove(); iz[2].remove();
+    const p5 = nf(c.say('Her basamakta aralık daralır. Şimdilik: √1000 ≈ 31,62.', { speak: 'Her basamakta aralık biraz daha daralır. Şimdilik karekök bin, yaklaşık otuz bir virgül altmış iki.' }));
+    const son = mixLine(K, svg, 640, 480, 72, [{ r: '{t 1000}' }, '{e  ≈ }{g 31,62}'], { o: 0 });
+    await K.fade(son, 1, 500);
+    await p5;
+  }
+
+  /* ============================================================
+     A8 · SAHNE 3 — Yaklaşık, eşit değil
+     ============================================================ */
+  async function sceneA8_3(c) {
+    const K = kit(c); const { svg, S } = K;
+    K.dots();
+    const sat = K.g(svg, 0, 0, { o: 0 });
+    const kok = K.rad(sat, 355, 110, '{t 1000}', 80);
+    const sx = 355 + kok._w + 62;
+    const isaret = K.t(sat, sx, 110, '=', { size: 80, w: 800 });
+    K.t(sat, sx + 56, 110, '31,6', { size: 80, fill: C.ok, w: 800, a: 'start' });
+    const p1 = nf(c.say('Çit için 31,6 metre yeter. Ama dikkat: <b>eşit değil</b>.', { speak: 'Çit için otuz bir virgül altı metre yeter. Ama dikkat: bu eşitlik değil.' }));
+    await K.fade(sat, 1, 500);
+    await c.wait(1400);
+    isaret.textContent = '≈'; isaret.style.fill = C.exp;
+    nf(K.ring(sx, 110, C.exp, 80, 700));
+    await p1;
+    const p2 = nf(c.say('≈ işareti “yaklaşık eşit” demek.', { speak: 'Bu dalgalı işaret, yaklaşık eşit demek.' }));
+    const ad = K.t(svg, sx, 180, 'yaklaşık eşit', { size: 28, fill: C.exp, w: 700, o: 0 });
+    await K.fade(ad, 1, 400);
+    await p2;
+    /* 1000 m²'lik kare ile 31,6'lık kare: fark abartılı çizilir */
+    const Q = { x: 150, y: 270, s: 340, i: 300 };
+    const kare = K.g(svg, 0, 0, { o: 0 });
+    const fark = S('path', { d: `M${Q.x},${Q.y} h${Q.s} v${Q.s} h${-(Q.s - Q.i)} v${-Q.i} h${-Q.i} Z`, fill: 'rgba(255,122,112,.0)', stroke: 'none' }, kare);
+    S('rect', { x: Q.x, y: Q.y + Q.s - Q.i, width: Q.i, height: Q.i, fill: 'rgba(107,227,160,.16)', stroke: C.ok, 'stroke-width': 3 }, kare);
+    S('rect', { x: Q.x, y: Q.y, width: Q.s, height: Q.s, fill: 'none', stroke: C.soft, 'stroke-width': 2, 'stroke-dasharray': '8 8' }, kare);
+    K.t(kare, Q.x + Q.i / 2, Q.y + Q.s - Q.i / 2, '998,56 m²', { size: 36, fill: C.ok, w: 800 });
+    K.t(kare, Q.x + Q.s + 18, Q.y + 16, '1000 m²', { size: 28, fill: C.soft, a: 'start' });
+    K.t(kare, Q.x + Q.s / 2, Q.y + Q.s + 34, 'ölçekli değil', { size: 22, fill: C.soft });
+    const p3 = nf(c.say('Çünkü 31,6·31,6 = 998,56. Tam 1000 değil.', { speak: 'Çünkü otuz bir virgül altı çarpı otuz bir virgül altı, dokuz yüz doksan sekiz virgül elli altı eder. Tam bin değil.' }));
+    const e1 = K.rich(svg, 900, 370, 50, '{b 31,6}{t ·}{b 31,6}{t  = }{g 998,56}', { o: 0 });
+    await K.fade([kare, e1], 1, 600);
+    await p3;
+    const p4 = nf(c.say('Aradaki küçük farka <b>hata payı</b> denir.', { speak: 'Aradaki bu küçük farka hata payı denir.' }));
+    const e2 = K.rich(svg, 900, 470, 44, '{t 1000 − 998,56 = }{w 1,44 m²}', { o: 0 });
+    const hp = K.t(svg, 900, 540, 'hata payı', { size: 30, fill: C.bad, w: 700, o: 0 });
+    await par(c.tween(600, (t) => fark.setAttribute('fill', `rgba(255,122,112,${0.45 * t})`)), K.fade([e2, hp], 1, 600));
+    await p4;
+    await c.choice({
+      tag: 'Dene', q: `${RT(10)} ≈ 3,16. Öyleyse 3,16·3,16 kaç eder?`,
+      options: ['Tam 10', '9,9856', '6,32'], answer: 1,
+      hints: ['Yaklaşık değer tam değer değildir. 3,16·3,16 biraz eksik kalır.', '', 'İki katını almışsın. Kare, sayıyı kendisiyle çarpmaktır.'],
+      right: 'Evet: 10’a çok yakın ama eşit değil.',
+    });
+    c.note(`${RT(1000)} ≈ 31,6<br>≈ : yaklaşık eşit. 31,6² = 998,56`, 'Yaklaşık değer');
+  }
+
+  /* ============================================================
      DERS TANIMI
      ============================================================ */
   const rt = (x) => RT(x);
@@ -2608,7 +3439,7 @@
     { title: 'Videoyu geri sar: toparlama', goal: 'Kök = geri sarma; tüm kurallar tek fikir.', run: scene13 },
   ];
 
-  /* Bölüm A dört kısa derse ayrılır. Sayfa, hangi parçayı oynatacağını window.DERS_PARCA ile söyler. */
+  /* Bölüm A kısa derslere ayrılır. Sayfa, hangi parçayı oynatacağını window.DERS_PARCA ile söyler. */
   const PARCALAR = {
     a1: {
       title: 'Üs bir sayaçtır',
@@ -2737,6 +3568,155 @@
         '<b>Kök çarpmaya dağılır, toplamaya dağılmaz.</b> √(9+16) = 5, ama √9 + √16 = 7.',
         '<b>Çiftler dışarı:</b> √72 = 6√2. <b>Aynı kökler toplanır:</b> √8 + √18 = 5√2.',
         '<b>Rasyonel payda:</b> 6/√3 = 2√3.',
+      ],
+      next: { href: 'a5-rasyonel-us.html', label: 'Sonraki: Rasyonel üs ›' },
+    },
+    a5: {
+      title: 'Rasyonel üs ve n. kök',
+      hook: 'Video 9 turda 512 kişiye ulaştı. Yolu <b>üçe</b> bölersek ilk parçanın sonunda kaç kişi vardı?',
+      scenes: [
+        { title: 'Üçe böl: küpkök', goal: 'Küpkökü “üç kez çarpılınca a veren sayı” olarak gör; ∛a = a^(1/3).', run: sceneA5_1 },
+        { title: 'n’ye böl: n. kök', goal: 'ⁿ√a = a^(1/n) kuralını yolun n eşit parçasıyla kur.', run: sceneA5_2 },
+        { title: 'Payda kökü, pay kuvveti söyler', goal: 'a^(m/n) = (ⁿ√a)^m: böl, sonra yürü.', run: sceneA5_3 },
+        { title: 'Sıra sende: değerini bul', goal: 'Rasyonel üslü ifadeleri değerleriyle eşle; üssü çarpan sanma.', run: sceneA5_4 },
+      ],
+      quiz: [
+        {
+          q: `${P(27, '1/3')} kaçtır?`,
+          options: ['9', '3', '81', FR(1, 27)], answer: 1,
+          why: [
+            '27’yi 3’e bölmüşsün. Üs 1/3 bölme değil, küpkök demektir.',
+            '3·3·3 = 27, yani ∛27 = 3.',
+            '27 ile 3’ü çarpmışsın. Üssün paydası kök demektir.',
+            'Ters çevirmek eksi üssün işidir. Kesirli üs kök aldırır.'],
+          scene: 1,
+        },
+        {
+          q: `${P(16, '3/4')} kaçtır?`,
+          options: ['12', '64', '8', '6'], answer: 2,
+          why: [
+            '16 ile 3/4’ü çarpmışsın. Üs çarpan değildir.',
+            'Karekök almışsın (√16 = 4, 4³ = 64). Payda 4: dördüncü kök, yani 2.',
+            'Payda 4: ⁴√16 = 2. Pay 3: 2·2·2 = 8.',
+            '⁴√16 = 2 doğru; ama 2³ = 2·2·2 = 8’dir, 2·3 değil.'],
+          scene: 2,
+        },
+      ],
+      summary: [
+        `<b>Payda kökü, pay kuvveti söyler.</b> ${P(8, '2/3')} = (${M.m(M.sqrt(8, 3))})² = 4`,
+        `<b>${M.m(M.sqrt('a', 'n'))} = ${P('a', '1/n')}</b>: ${M.m(M.sqrt(16, 4))} = 2, çünkü 2·2·2·2 = 16.`,
+      ],
+      next: { href: 'a6-eslenik.html', label: 'Sonraki: Eşlenik ›' },
+    },
+    a6: {
+      title: 'Eşlenik',
+      hook: `6/√3’te paydayı √3 ile çarpmak yetmişti. Payda <b>√3 − 1</b> olursa da yeter mi?`,
+      scenes: [
+        { title: 'Eski yöntem tutmuyor', goal: 'İki terimli paydada tek kökle çarpmanın kökü yok etmediğini gör.', run: sceneA6_1 },
+        { title: 'İkizini bul: dört parça', goal: '(√3 − 1)(√3 + 1) çarpımında köklü parçaların götürdüğünü gör.', run: sceneA6_2 },
+        { title: 'Pay ve payda birlikte', goal: 'Paydayı eşlenikle rasyonel yap; değerin değişmediğini doğrula.', run: sceneA6_3 },
+        { title: 'Sıra sende: paydayı kökten kurtar', goal: '4/(√5 + 1) ifadesini adım adım sadeleştir.', run: sceneA6_4 },
+      ],
+      quiz: [
+        {
+          q: `${rt(7)} − 2 ifadesinin eşleniği hangisidir?`,
+          options: [`−${rt(7)} + 2`, `${rt(7)} + 2`, `${rt(7)} − 2`, rt(7)], answer: 1,
+          why: [
+            'İki işareti de değiştirdin; bu, ifadenin eksilisi. Çarpınca kök kalır.',
+            'Yalnızca ortadaki işaret değişir: (√7 − 2)(√7 + 2) = 7 − 4 = 3.',
+            'Bu kendisi. Karesi 11 − 4√7 eder, kök kalır.',
+            '(√7 − 2)·√7 = 7 − 2√7. Kök kaldı.'],
+          scene: 1,
+        },
+        {
+          q: `${FR(2, rt(3) + ' + 1')} neye eşittir?`,
+          options: [`${rt(3)} + 1`, FR(rt(3) + ' − 1', 2), `${rt(3)} − 1`, '1'], answer: 2,
+          why: [
+            `Kontrol et: baştaki sayı ≈ ${fmt(2 / (Math.sqrt(3) + 1))}, √3 + 1 ≈ ${fmt(Math.sqrt(3) + 1)}.`,
+            'Payı çarpmayı unutmuşsun. Pay 2·(√3 − 1), payda 2; sadeleşince √3 − 1.',
+            'Eşlenik √3 − 1: pay 2(√3 − 1), payda 3 − 1 = 2. Sadeleşince √3 − 1.',
+            `Paydayı 2 saymışsın. √3 + 1 ≈ ${fmt(Math.sqrt(3) + 1)}.`],
+          scene: 2,
+        },
+      ],
+      summary: [
+        `<b>Eşlenik, kökü yok eden ikizdir.</b> (${rt(3)} − 1)(${rt(3)} + 1) = 3 − 1 = 2`,
+        `<b>Pay ve payda birlikte çarpılır:</b> ${FR(1, rt(3) + ' − 1')} = ${FR(rt(3) + ' + 1', 2)}`,
+      ],
+      next: { href: 'a7-bilimsel-gosterim.html', label: 'Sonraki: Bilimsel gösterim ›' },
+    },
+    a7: {
+      title: 'Bilimsel gösterim',
+      hook: 'Güneş 150 000 000 km uzakta; çipteki en küçük parça 0,000 000 003 metre. Bu sıfırları her seferinde yazacak mıyız?',
+      scenes: [
+        { title: 'Büyük sayı: virgül sola kayar', goal: 'Virgül her sola kayışta 10’un üssü bir artar: 1,5 × 10⁸.', run: sceneA7_1 },
+        { title: 'Küçük sayı: virgül sağa kayar', goal: 'Çok küçük sayıda üs negatiftir: 3 × 10⁻⁹.', run: sceneA7_2 },
+        { title: 'Kural: 1 ile 10 arasında', goal: 'a × 10ⁿ biçiminde 1 ≤ a < 10 koşulunu uygula.', run: sceneA7_3 },
+      ],
+      quiz: [
+        {
+          q: '0,00045 sayısının bilimsel gösterimi hangisidir?',
+          options: [`45 × ${P(10, '−5')}`, `4,5 × ${P(10, 4)}`, `4,5 × ${P(10, '−4')}`, `4,5 × ${P(10, '−3')}`], answer: 2,
+          why: [
+            'Değeri doğru; ama 45, 10’dan büyük. Bilimsel gösterim değil.',
+            'Üs pozitif olursa 45 000 eder. Küçük sayıda üs negatiftir.',
+            'Virgül 4 basamak sağa kayar: 0,00045 = 4,5 × 10⁻⁴.',
+            '10⁻³ ile 0,0045 olur. Virgül 4 basamak kaymalı.'],
+          scene: 1,
+        },
+        {
+          q: `3,2 × ${P(10, 5)} hangi sayıdır?`,
+          options: ['320 000', '3 200 000', '32 000', '0,000032'], answer: 0,
+          why: [
+            'Virgül 5 basamak sağa kayar: 3,2 → 320 000.',
+            'Virgülü 6 basamak kaydırmışsın.',
+            'Virgülü 4 basamak kaydırmışsın. Üs 5.',
+            'Üs pozitif: sayı büyür. Virgül sağa kayar.'],
+          scene: 0,
+        },
+      ],
+      summary: [
+        `<b>Virgül kayar, üs sayar.</b> 150 000 000 = 1,5 × ${P(10, 8)}`,
+        `<b>Küçük sayıda üs negatif:</b> 0,000 000 003 = 3 × ${P(10, '−9')}`,
+        `<b>Kural:</b> a × ${P(10, 'n')}, 1 ≤ a &lt; 10. 15 × ${P(10, 7)} bilimsel gösterim değildir.`,
+      ],
+      next: { href: 'a8-yaklasik-deger.html', label: 'Sonraki: Yaklaşık değer ›' },
+    },
+    a8: {
+      title: 'Yaklaşık değer',
+      hook: 'Alanı <b>1000 m²</b> olan kare bir tarlanın kenarı kaç metre?',
+      scenes: [
+        { title: 'Tam çıkmıyor', goal: '√1000’i ardışık iki tam sayının arasına sıkıştır.', run: sceneA8_1 },
+        { title: 'Yakınlaş', goal: 'Aralığı onda birlere, sonra yüzde birlere daralt.', run: sceneA8_2 },
+        { title: 'Yaklaşık, eşit değil', goal: '≈ işaretini ve hata payını tanı.', run: sceneA8_3 },
+        { title: 'Hikâye: Bir dönüm tarla, kaç metre çit?', goal: 'Yaklaşık değerin hayattaki yerini gör.', video: 'hikaye/a8-tarla-cit/renders/sesli-taslak.mp4' },
+      ],
+      quiz: [
+        {
+          q: `${rt(50)} hangi iki tam sayının arasındadır?`,
+          options: ['6 ile 7', '7 ile 8', '24 ile 26', '49 ile 51'], answer: 1,
+          why: [
+            '7·7 = 49 hâlâ 50’den küçük. Kök 7’den büyük.',
+            '7·7 = 49 < 50 < 64 = 8·8.',
+            '50’nin yarısını almışsın. Kök, sayının yarısı değildir: 25·25 = 625.',
+            'Bunlar 50’nin komşuları. Aranan, karesi 50 eden sayı.'],
+          scene: 0,
+        },
+        {
+          q: `${rt(2)} ≈ 1,41 ise hangisi doğrudur?`,
+          options: ['1,41·1,41 tam 2 eder.', '1,41·1,41, 2’ye çok yakındır ama eşit değildir.', '1,41·1,41 = 2,82 eder.', `${rt(2)} ile 1,41 aynı sayıdır.`], answer: 1,
+          why: [
+            '1,41·1,41 = 1,9881. Yaklaşık değer tam değer değildir.',
+            '1,41·1,41 = 1,9881. Fark küçük ama var.',
+            'İki katını almışsın. Kare, sayıyı kendisiyle çarpmaktır.',
+            '≈ işareti eşit demek değildir; 1,41 yalnızca yaklaşık değerdir.'],
+          scene: 2,
+        },
+      ],
+      summary: [
+        `<b>Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz.</b> ${rt(1000)} ≈ 31,6`,
+        `<b>Sıkıştır:</b> 961 &lt; 1000 &lt; 1024, yani 31 &lt; ${rt(1000)} &lt; 32.`,
+        '<b>≈ eşit demek değildir:</b> 31,6² = 998,56.',
       ],
       next: { href: '02-araliklar-ve-kume-sembolleri.html', label: 'Sonraki bölüm: Aralıklar ›' },
     },
