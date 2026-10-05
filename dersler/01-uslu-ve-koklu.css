@@ -1,0 +1,12 @@
+/* Bölüm A (Üslü ve köklü) derslerine özel stiller */
+/* Renk rolleri (ders boyunca sabit): amber = taban, camgöbeği = üs, mor = kök, mercan = tuzak, yeşil = sonuç, turuncu = geri sar */
+.tb{color:#F2B134}.tu{color:#4DD0E1}.tk{color:#B69CFF}.tw{color:#FF7A70}.tg{color:#6BE3A0}.tr{color:#FFA45C}.tl{color:#8FB8FF}
+.kb{background:var(--surface2);border:1px solid var(--line);color:var(--text);border-radius:10px;padding:8px 14px;font-weight:600;margin:2px 6px 2px 0}
+.kb:hover{border-color:#4DD0E1}
+.kb.on{background:#4DD0E1;color:#06101f;border-color:#4DD0E1}
+.kb.bad{border-color:#FF7A70}
+.note .m{font-size:1.05em}
+.caption .m{font-size:1.1em}
+.row{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.row .lbl{color:var(--muted);margin-right:4px}
+.ders .stage svg text{user-select:none;-webkit-user-select:none}

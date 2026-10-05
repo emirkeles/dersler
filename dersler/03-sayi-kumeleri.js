@@ -1616,7 +1616,7 @@
         <tr><td class="tz"><b>Z</b></td><td>✓</td><td>✓</td><td>✓</td><td>✗ (3÷4)</td></tr>
         <tr><td class="tq"><b>Q</b></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
         <tr><td class="tr"><b>R</b></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr></table>
-        <p><b>Kırmızı bir örnek yeter.</b> Yeşil örnekler yetmez, “neden?” gerekir. (R satırı S13’te açılır.)</p>`, 'Kapalılık tablosu', 's6');
+        <p><b>Kırmızı bir örnek yeter.</b> Yeşil örnekler yetmez, “neden?” gerekir. (R satırı S11’de açılır.)</p>`, 'Kapalılık tablosu', 's6');
     },
   });
 
@@ -1889,181 +1889,6 @@
       pnD.remove();
       await c.say('Dördü de <b>rasyonel</b>: ondalık açılımı bitiyor ya da devrediyor.', { ms: 3200 });
       c.note(`Uzun bölmede <b>kalan 0</b> olursa ondalık <b>biter</b>, <b>kalan tekrar ederse devreder</b>.<br><b>${F(1, 3)} = 0,${ov('3')}</b> ; <b>${F(1, 7)} = 0,${ov('142857')}</b> (devir 6 basamak). Paydası <i>b</i> olan kesirde devir en fazla <i>b − 1</i> basamaktır.<br><b>Her rasyonelin ondalık açılımı ya biter ya devreder.</b> Devreden ondalık da rasyoneldir.`, 'Devreden ondalıklar', 's8');
-    },
-  });
-
-  /* ================= SAHNE 9 — 0,999… = 1 ve devirliden kesre ================= */
-  function tailRow(p, y, label, str, o = {}) {
-    const size = o.size || 46, cw = size * 0.6, xc = o.xc || 700; const idx = str.indexOf(',');
-    const x0 = xc - (idx + 0.5) * cw; const g = E('g', {}, p);
-    if (label) T(g, o.lx || 470, y, label, size, o.lcol || 'var(--ink)', { anchor: 'end', bold: 700 });
-    const split = o.split != null ? o.split : idx + 3;
-    T(g, x0, y, str.slice(0, split), size, o.col || 'var(--ink)', { anchor: 'start', mono: true, bold: 700 });
-    g._tail = T(g, x0 + split * cw, y, str.slice(split), size, o.tcol || 'var(--q)', { anchor: 'start', mono: true, bold: 700 });
-    g._x0 = x0; g._cw = cw; return g;
-  }
-
-  SCENES.push({
-    title: '0,999… = 1 ve devirliden kesre',
-    goal: 'Devirli ondalık tamamen bir kesirdir. 0,999… ile 1 aynı sayının iki yazılışıdır.',
-    run: async (c) => {
-      const svg = newSvg(c); const root = E('g', {}, svg);
-      /* ---------- A: soru ve yakınsama ---------- */
-      const A = E('g', {}, root); op(A, 0);
-      T(A, 640, 90, '0,999…  <  1  mi?', 72, 'var(--ink)', { bold: 800 });
-      const nl = numLine(A, { y: 470, x0: 240, u: 800, a: 0, b: 1, step: 1, size: 40, arrow: false, pad: 30, padR: 50 });
-      nl.ticks.forEach((t) => { t.tk.setAttribute('y1', 470 - 16); t.tk.setAttribute('y2', 470 + 16); });
-      await fade(c, A, 1, 700);
-      c.say('Şimdi bir şaşırtmaca: <b>0,999…</b> sayısı acaba 1’den küçük mü? 0,9 → 0,99 → 0,999 → … sayı doğrusunda 1’e yaklaşıyor.', { ms: 1000, noWait: true, speak: 'Şimdi bir şaşırtmaca: sıfır virgül dokuz dokuz dokuz sayısı acaba birden küçük mü? Sıfır virgül dokuz, sıfır virgül doksan dokuz, sıfır virgül dokuz yüz doksan dokuz… sayı doğrusunda bire yaklaşıyor.' });
-      const fark = E('g', {}, A);
-      const pts = []; let valStr = '0,';
-      for (let k = 1; k <= 5; k++) {
-        valStr += '9';
-        const x = nl.X(1 - Math.pow(10, -k));
-        const dg = G(A, x, 470); E('circle', { r: k <= 2 ? 11 : 8 - (k - 2), fill: 'var(--q)', stroke: '#0F1420', 'stroke-width': 2 }, dg);
-        if (k <= 3) { E('line', { x1: 0, x2: 0, y1: -14, y2: -28 - k * 44 + 10, stroke: 'var(--q)', 'stroke-width': 2, opacity: 0.6 }, dg); T(dg, 0, -30 - k * 44, valStr, 30, 'var(--q)', { bold: 700 }); }
-        pts.push(dg); await pop(c, dg, 1, 400);
-        fark.innerHTML = '';
-        const fz = '0,' + '0'.repeat(k - 1) + '1';
-        T(fark, 640, 190, `1 − ${valStr} = ${fz}`, 46, 'var(--warn)', { bold: 700 });
-        await c.wait(900);
-      }
-      T(A, 1040, 410, '1', 1, 'var(--ink)');
-      const ring1 = E('circle', { cx: nl.X(1), cy: 470, r: 24, fill: 'none', stroke: 'var(--ok)', 'stroke-width': 4 }, A); op(ring1, 0);
-      await fade(c, ring1, 1, 500);
-      fark.innerHTML = ''; T(fark, 640, 190, 'fark gittikçe 0’a yaklaşıyor…', 42, 'var(--warn)', { bold: 700 });
-      await c.say('Fark her adımda 10 kat küçülüyor. Peki sonsuza kadar giderse? Bunu cebirle görelim.', { ms: 4200 });
-      // M12 balonu
-      const bub = balloon(A, 250, 640, 440, 78, '', 26); T(bub, 0, -14, '“Çok yaklaşıyor ama 1 değil”', 28, 'var(--ink)', { bold: 600 }); T(bub, 0, 20, '(dokun)', 22, MUTED, {});
-      bub.style.cursor = 'pointer'; let bubOpen = false;
-      const openBub = () => { if (bubOpen) return; bubOpen = true; c.say('<b>“Çok yakın” ile “eşit” farklı şeylerdir.</b> 0,999… ile 1 arasında hiçbir fark kalmıyor: aynı sayının iki yazılışı.', { ms: 1000, noWait: true }); };
-      c.on(bub, 'pointerdown', openBub);
-      await c.wait(2500);
-
-      /* ---------- B: kanıt 1 ---------- */
-      await fade(c, A, 0, 500); A.remove();
-      const B = E('g', {}, root); op(B, 0);
-      T(B, 640, 70, 'Kanıt 1: üçle çarp', 44, MUTED, { bold: 700 });
-      const rw1 = rich(B, 640, 190, 62, [{ frac: ['1', '3'], col: 'var(--q)' }, { t: '  =  0,333…' }]);
-      const rw2 = rich(B, 640, 320, 62, [{ t: '3 · ' }, { frac: ['1', '3'], col: 'var(--q)' }, { t: '  =  3 · 0,333…' }]);
-      const rw3 = rich(B, 640, 450, 70, [{ t: '1  =  0,999…', col: 'var(--ok)' }]);
-      const ar1 = arrow(B, 300, 235, 300, 285, 'warn', 5); const x3 = T(B, 340, 260, '× 3', 36, 'var(--warn)', { bold: 700, anchor: 'start' });
-      const ar2 = arrow(B, 300, 365, 300, 415, 'warn', 5);
-      [rw1, rw2, rw3, ar1, x3, ar2].forEach((el) => op(el, 0));
-      await fade(c, B, 1, 400);
-      c.say('Bir bölü üç, 0,333…. Bunu üçle çarp: bir, 0,999….', { ms: 1000, noWait: true });
-      await fade(c, rw1, 1, 600); await c.wait(900);
-      await par(fade(c, ar1, 1, 400), fade(c, x3, 1, 400)); await fade(c, rw2, 1, 600); await c.wait(900);
-      await fade(c, ar2, 1, 400); await fade(c, rw3, 1, 600);
-      const bx3 = E('rect', { x: 340, y: 405, width: 600, height: 90, rx: 22, fill: 'none', stroke: 'var(--ok)', 'stroke-width': 4 }, B); op(bx3, 0); await fade(c, bx3, 1, 400);
-      await c.say('Yani bu iki yazılış <b>aynı sayı</b>: 0,999… = 1.', { ms: 3600 });
-      await fade(c, B, 0, 500); B.remove();
-
-      /* ---------- C: kanıt 2 (örtüştürme) ---------- */
-      const Cg = E('g', {}, root); op(Cg, 0);
-      T(Cg, 640, 66, 'Kanıt 2: kuyrukları örtüştür', 44, MUTED, { bold: 700 });
-      const r1 = tailRow(Cg, 190, 'x  =', '0,9999999999…', {});
-      const r2 = tailRow(Cg, 270, '10x  =', '9,9999999999…', {}); op(r2, 0);
-      await fade(c, Cg, 1, 400);
-      c.say('Bir de örtüştürme: x = 0,999… diyelim. 10 ile çarparsak 10x = 9,999… Kuyruklar aynı!', { ms: 1000, noWait: true });
-      await c.wait(1400); await fade(c, r2, 1, 600); await c.wait(900);
-      const ln = E('line', { x1: 190, x2: 1010, y1: 308, y2: 308, stroke: 'var(--ink)', 'stroke-width': 4, 'stroke-linecap': 'round' }, Cg);
-      const mi = T(Cg, 210, 270, '−', 54, 'var(--err)', { bold: 800 }); op(mi, 0);
-      await par(drawIn(c, ln, 600), fade(c, mi, 1, 500));
-      const r3 = rich(Cg, 640, 372, 56, [{ t: '10x − x  =  9,999… − 0,999…  =  9' }]); op(r3, 0);
-      const tailsDim = [r1._tail, r2._tail];
-      await par(fade(c, r3, 1, 600), c.tween(900, (e) => tailsDim.forEach((t) => t.setAttribute('opacity', 1 - e))));
-      const r4 = rich(Cg, 640, 460, 62, [{ t: '9x  =  9    ⇒    ' }, { t: 'x  =  1', col: 'var(--ok)' }]); op(r4, 0); await fade(c, r4, 1, 600);
-      await c.say('Çıkarınca kuyruklar “kayıp gidiyor”: <b>9x = 9</b>, yani <b>x = 1</b>. Devreden her ondalık, bu yöntemle bir kesre dönüşür.', { ms: 5000, speak: 'Çıkarınca kuyruklar kayıp gidiyor: dokuz x eşittir dokuz, yani x eşittir bir. Devreden her ondalık, bu yöntemle bir kesre dönüşür.' });
-      await fade(c, Cg, 0, 500); Cg.remove();
-
-      /* ---------- D: 0,4545… = ? ---------- */
-      const D = E('g', {}, root); op(D, 0);
-      T(D, 640, 66, 'Devirliden kesre:  0,4545…', 44, MUTED, { bold: 700 });
-      const base = tailRow(D, 160, 'x  =', decPlain(5, 11, 5), {});
-      const att = E('g', {}, D);
-      await fade(c, D, 1, 500);
-      const mults = [10, 100, 1000];
-      const showAttempt = (k) => {
-        att.innerHTML = '';
-        const kx = decPlain(5 * k, 11, 5);
-        const rB = tailRow(att, 240, `${k}x  =`, kx, { lx: 470 });
-        E('line', { x1: 190, x2: 1010, y1: 280, y2: 280, stroke: 'var(--ink)', 'stroke-width': 4 }, att);
-        T(att, 210, 240, '−', 54, 'var(--err)', { bold: 800 });
-        if (k === 100) {
-          const rC = rich(att, 640, 340, 56, [{ t: `${k}x − x  =  45` }]);
-          const rC2 = rich(att, 640, 410, 56, [{ t: '99x  =  45     ⇒     x  =  ' }, { frac: ['45', '99'], col: 'var(--ink)' }, { t: '  =  ' }, { frac: ['5', '11'], col: 'var(--ok)' }]);
-        } else {
-          const d = decPlain(5 * (k - 1), 11, 4);
-          const rC = tailRow(att, 340, `${k}x − x  =`, d, { lx: 470, tcol: 'var(--warn)', split: d.indexOf(',') + 1 });
-          T(att, 640, 420, 'kuyruk yok olmadı: 0,0909… kaldı', 34, 'var(--warn)', { bold: 700 });
-        }
-      };
-      const pr = c.choice({
-        tag: 'Tahmin et', q: 'x = 0,4545… için kuyrukların örtüşmesi (yok olması) için <b>x’i kaçla çarpmalıyız?</b>', options: ['10', '100', '1000'], answer: 1,
-        hints: ['10x = 4,5454… ve x = 0,4545…: kuyruklar farklı (5454… ≠ 4545…). Devir <b>iki basamak</b> → 100 ile çarp.', '', '1000x − x = 454,0909…: kuyruk yine yok olmuyor. Kuyruğu yok etmek için <b>devrin basamak sayısı kadar</b> kaydır: devir 2 basamak → 100.'],
-        right: 'Evet: devir 2 basamak, <b>100</b> ile çarp. 100x − x = 45 ⇒ 99x = 45 ⇒ x = 45/99 = 5/11.',
-        onPick: (i) => showAttempt(mults[i]), next: 'Uzun bölmeyle doğrula ›',
-      });
-      await pr;
-      await c.say('Uzun bölmeyle doğrulayalım: 5 ÷ 11 → kalanlar 5, 6, 5 … tekrar ediyor, bölüm 0,4545…', { ms: 800, noWait: true });
-      att.innerHTML = '';
-      await remChain(c, att, 220, 280, 5, 11, 4);
-      const eq5 = rich(att, 640, 400, 56, [{ frac: ['5', '11'], col: 'var(--ok)' }, { t: '  =  0,4545…  =  ' }]); const d5 = decG(att, 880, 400, 56, [{ t: '0,' }, { t: '45', over: true, col: 'var(--q)' }], 'var(--ink)', 'start');
-      await c.wait(2800);
-      await fade(c, D, 0, 500); D.remove();
-
-      /* ---------- E: pratik kural ---------- */
-      const Eg = E('g', {}, root); op(Eg, 0);
-      T(Eg, 640, 70, 'Pratik kural', 44, MUTED, { bold: 700 });
-      const k1 = G(Eg, 640, 200); const rk1 = rich(k1, 0, 0, 62, [{ t: '0,' }, { t: '3', col: 'var(--q)', over: true }, { t: '  =  ' }, { frac: ['3', '9'], col: 'var(--q)' }, { t: '  =  ' }, { frac: ['1', '3'], col: 'var(--ok)' }]);
-      const k2 = G(Eg, 640, 340); const rk2 = rich(k2, 0, 0, 62, [{ t: '0,' }, { t: '45', col: 'var(--q)', over: true }, { t: '  =  ' }, { frac: ['45', '99'], col: 'var(--q)' }, { t: '  =  ' }, { frac: ['5', '11'], col: 'var(--ok)' }]);
-      const k3 = T(Eg, 640, 480, 'Devir kaç basamaksa paydada o kadar 9:  devir / 99…9', 36, 'var(--warn)', { bold: 700 });
-      [k1, k2, k3].forEach((el) => op(el, 0));
-      await fade(c, Eg, 1, 300);
-      for (const el of [k1, k2, k3]) { await fade(c, el, 1, 600); await c.wait(900); }
-      await c.say('<b>Devir kaç basamaksa paydada o kadar 9</b> olur: 0,3̅ = 3/9 = 1/3 ; 0,4̅5̅ = 45/99 = 5/11.', { ms: 4800, speak: 'Devir kaç basamaksa paydada o kadar dokuz olur: sıfır virgül üç devirli, dokuzda üç, yani üçte bir; sıfır virgül kırk beş devirli, doksan dokuzda kırk beş, yani on birde beş.' });
-      await fade(c, Eg, 0, 500); Eg.remove();
-
-      /* ---------- F: eşleştirme ---------- */
-      const Fg = E('g', {}, root); op(Fg, 0);
-      T(Fg, 640, 56, 'Devirli ondalığı kesriyle eşleştir', 40, 'var(--ink)', { bold: 700 });
-      const targets = [[2, 3], [6, 10], [1, 9], [7, 9]];
-      const tShuf = [targets[3], targets[1], targets[0], targets[2]];
-      const zonesF = tShuf.map(([a, b], i) => {
-        const xx = 120 + i * 280, g = G(Fg, xx + 110, 470);
-        const r = E('rect', { x: -110, y: -60, width: 220, height: 120, rx: 22, fill: 'rgba(255,255,255,.04)', stroke: 'var(--line)', 'stroke-width': 3, 'stroke-dasharray': '9 7' }, g);
-        const pl = pill(g, { k: 'q', n: a, d: b, color: 'var(--q)' }, { x: 0, y: 0, size: 38, color: 'var(--q)', shadow: false });
-        return { id: a + '/' + b, a, b, g, el: r, cx: xx + 110, cy: 470, hit: (x, y) => Math.abs(x - (xx + 110)) < 120 && Math.abs(y - 470) < 70 };
-      });
-      const decs = [{ rep: '6', fr: [2, 3] }, { rep: '1', fr: [1, 9] }, { rep: '7', fr: [7, 9] }];
-      const decItems = decs.map((d, i) => {
-        const xx = 270 + i * 370; const g = pill(Fg, { dec: [{ t: '0,' }, { t: d.rep, over: true, col: 'var(--q)' }] }, { x: xx, y: 210, size: 44, color: 'var(--q)' });
-        return { g, d, home: { x: xx, y: 210, s: 1 }, id: 'dec' + d.rep, aria: `0,${d.rep} devirli` };
-      });
-      await fade(c, Fg, 1, 500);
-      const pnF = c.panel('Eşleştir', h('p', { class: 'q', html: 'Her devirli ondalığı <b>kesre</b> sürükle (ya da ondalığa, sonra kesre dokun). 4 kesirden biri fazla!' }));
-      const fbF = h('div'); pnF.appendChild(fbF);
-      let leftF = 3, doneF; const pF = new Promise((r) => { doneF = r; });
-      const sorterF = Sorter(c, svg, {
-        items: decItems, zones: zonesF,
-        onDrop: async (it, zid) => {
-          const z = zonesF.find((zz) => zz.id === zid); const [fa, fb2] = it.d.fr;
-          const dn = `0,${ov(it.d.rep)}`;
-          if (z.a * fb2 === fa * z.b) {
-            c.feedback(fbF, 'ok', `Doğru: ${dn} = ${F(it.d.rep, 9)} = ${F(fa, fb2)}. Uzun bölme: ${fa} ÷ ${fb2} = ${decPlain(fa, fb2, 3)}`);
-            leftF--; if (leftF <= 0) doneF();
-            return { x: z.cx, y: z.cy - 105 + 0, s: 0.95 };
-          }
-          const dz = decHtml(z.a, z.b);
-          c.feedback(fbF, 'no', `${F(z.a, z.b)} = <b>${dz}</b>${terminates(z.a, z.b) ? ' biter' : ''}. Oysa ${dn} = ${F(it.d.rep, 9)} = <b>${F(fa, fb2)}</b>: kuyruk sonsuza kadar tekrar eder.`);
-          return false;
-        },
-      });
-      await withSkip(c, pF);
-      pnF.remove();
-      c.note(`<b>0,${ov('9')} = 1</b> (aynı sayının iki yazılışı): 0,999… = 3 · 0,333… = 3 · ${F(1, 3)} = 1.<br>Devirli ondalık = kesir: devir kadar 9. <b>0,${ov('3')} = ${F(3, 9)} = ${F(1, 3)}</b> ; <b>0,${ov('45')} = ${F(45, 99)} = ${F(5, 11)}</b>.<br>Devreden her ondalık bir kesirdir, yani rasyoneldir.`, '0,999… = 1', 's9');
-      await c.say('Devreden her ondalık bir kesir, yani <b>rasyonel</b>. Sıra bitmeyen ve devretmeyen sayılarda.', { ms: 3600 });
     },
   });
 
@@ -2442,135 +2267,7 @@
       await fade(c, TF, 0, 400); TF.remove();
       const fin = T(root, 640, 330, 'Yaklaşık değer, değerin kendisi değildir.', 46, 'var(--warn)', { bold: 800 }); op(fin, 0); await fade(c, fin, 1, 700);
       c.note(`<b>√2 = 1,41421356…</b> Ondalık açılımı <b>ne biter ne devreder</b>.<br>Ondalık açılımı <b>ne biten ne devreden</b> sayılar irrasyoneldir. Biten ya da devreden sayılar rasyoneldir.<br><b>Yaklaşık değer ≠ değerin kendisi:</b> √2 ≈ 1,414.`, '√2’nin ondalığı', 's11');
-      await c.say('Yaklaşık değer, değerin kendisi değildir. Sırada bir başka ünlü sayı: π.', { ms: 3200 });
-    },
-  });
-
-  /* ================= SAHNE 12 — π: tekerlek ve 22/7 tuzağı ================= */
-  SCENES.push({
-    title: 'π: tekerlek ve 22/7 tuzağı',
-    goal: 'π çevre/çap oranıdır, sayı doğrusunda vardır ama irrasyoneldir. 22/7 ve 3,14 yalnız yaklaşımdır.',
-    run: async (c) => {
-      const svg = newSvg(c); const root = E('g', {}, svg);
-      const Y0 = 560, X0 = 240, U = 250, R0 = 125;
-      const MG = E('g', {}, root); op(MG, 0);
-      const nl = numLine(MG, { y: Y0, x0: X0, u: U, a: 0, b: 3, size: 32, pad: 60, padR: 160, ly: 40 });
-      const trace = E('line', { x1: X0, x2: X0, y1: Y0, y2: Y0, stroke: 'var(--irr)', 'stroke-width': 9, 'stroke-linecap': 'round' }, MG);
-      const W = G(MG, X0, Y0 - R0);
-      E('circle', { r: R0, fill: 'rgba(181,140,240,.12)', stroke: 'var(--r)', 'stroke-width': 5 }, W);
-      for (let k = 0; k < 4; k++) { const an = (k * Math.PI) / 4; E('line', { x1: -R0 * Math.cos(an), y1: -R0 * Math.sin(an), x2: R0 * Math.cos(an), y2: R0 * Math.sin(an), stroke: 'var(--r)', 'stroke-width': 2.5, opacity: 0.45 }, W); }
-      E('circle', { r: 9, fill: 'var(--r)' }, W);
-      const mark = E('circle', { cx: 0, cy: R0, r: 12, fill: 'var(--irr)', stroke: '#0F1420', 'stroke-width': 3 }, W);
-      const diam = E('g', {}, MG);
-      await fade(c, MG, 1, 600);
-      const dlab = G(MG, X0, Y0 - R0 - 12); E('line', { x1: 0, y1: -R0, x2: 0, y2: R0, stroke: 'var(--ink)', 'stroke-width': 3, 'stroke-dasharray': '7 6', opacity: 0.6 }, dlab);
-      const dtag = tag(MG, X0 + 105, Y0 - R0 - 12, 'çap = 1', 30, 'var(--ink)');
-      put(dlab, { x: X0, y: Y0 - R0 - 12 });
-      c.say('Çapı bir birim olan bir tekerleği sayı doğrusunda bir tur yuvarla. Tekerleğin çevresi kadar yol gider: işte <b>π</b>.', { ms: 1000, noWait: true, speak: 'Çapı bir birim olan bir tekerleği sayı doğrusunda bir tur yuvarla. Tekerleğin çevresi kadar yol gider: işte pi.' });
-      await c.wait(1800);
-      await fade(c, dtag, 0, 300);
-      const TH = 2 * Math.PI;
-      await c.tween(3600, (e) => {
-        const th = TH * e;
-        put(W, { x: X0 + R0 * th, r: (th * 180) / Math.PI });
-        put(dlab, { x: X0 + R0 * th, r: (th * 180) / Math.PI });
-        trace.setAttribute('x2', X0 + R0 * th);
-      }, ease.inOut);
-      const px = X0 + U * Math.PI;
-      const piDot = G(MG, px, Y0); E('circle', { r: 24, fill: 'var(--irr)', opacity: 0.35, filter: 'url(#blur6)' }, piDot); E('circle', { r: 12, fill: 'none', stroke: 'var(--irr)', 'stroke-width': 4 }, piDot);
-      await pop(c, piDot, 1, 450);
-      const piTag = tag(MG, px - 230, 262, 'π ≈ 3,14159265…', 38, 'var(--irr)'); op(piTag, 0); await fade(c, piTag, 1, 500);
-      await c.say('Bu sayı <b>π ≈ 3,14159265…</b> (çevre ÷ çap). Okulda 22 bölü 7 diye öğrendik, ama o π değil.', { ms: 4600, speak: 'Bu sayı pi, yaklaşık üç virgül on dört bir beş dokuz iki altı beş. Okulda yirmi iki bölü yedi diye öğrendik, ama o pi değil.' });
-
-      /* ---------- yaklaşım kartları ---------- */
-      const cards2 = G(root, 0, 0); op(cards2, 0);
-      const c314 = G(cards2, 360, 130); card(c314, -150, -50, 300, 100, { rx: 20, stroke: 'var(--q)' }); T(c314, 0, 0, '3,14', 52, 'var(--ink)', { bold: 800 });
-      const c227 = G(cards2, 920, 130); card(c227, -150, -50, 300, 100, { rx: 20, stroke: 'var(--q)' }); fracG(c227, 0, 0, '22', '7', 40, 'var(--ink)');
-      await fade(c, cards2, 1, 500);
-      // π ile karşılaştırma yapmadan önce tahmin
-      await c.choice({
-        tag: 'Tahmin et', q: `${F(22, 7)} ile π <b>aynı sayı mı</b>?`, options: ['Evet', 'Hayır', 'Yakın ama aynı değil'], answer: 1,
-        hints: ['Büyüteç altına bakalım: ayrılıyorlar! Aynı olsalardı tek nokta olurdu.', '', 'Çok yakınlar, ama aynı değiller: cevap <b>Hayır</b>. Devir ve devir olmayışı farkı belli eder.'],
-        right: `Hayır: ${F(22, 7)} devreden bir kesir; π’nin ondalığı devretmiyor.`, next: '22/7’yi bölelim ›',
-      });
-      // 22/7 uzun bölme (kalan zinciri)
-      await fade(c, MG, 0.1, 500);
-      const ch = await remChain(c, cards2, 240, 270, 22, 7, 6);
-      const res227 = rich(cards2, 640, 370, 44, [{ frac: ['22', '7'], col: 'var(--q)' }, { t: '  =  3,142857142857…  =  3 + ' }, { frac: ['1', '7'], col: 'var(--q)' }]); op(res227, 0); await fade(c, res227, 1, 600);
-      await c.say('22/7 = 3,142857142857…: devir <b>142857</b>, yani 1/7’nin devri! Devreden bir kesir, <b>rasyonel</b>.', { ms: 4800, speak: 'Yirmi iki bölü yedi, üç virgül bir dört iki sekiz beş yedi bir dört iki sekiz beş yedi… Devir bir dört iki sekiz beş yedi, yani yedide birin devri. Devreden bir kesir, rasyonel.' });
-      await par(fade(c, cards2, 0, 400), fade(c, MG, 0, 500));
-      cards2.remove(); MG.remove();
-
-      /* ---------- büyüteç ---------- */
-      const LG = E('g', {}, root); op(LG, 0);
-      T(LG, 640, 70, 'Büyüteç: 3,140 ile 3,145 arası', 40, MUTED, { bold: 700 });
-      const MXA = 240, MS = 160000; const mx = (v) => MXA + MS * (v - 3.14);
-      E('line', { x1: 150, x2: 1130, y1: 360, y2: 360, stroke: 'var(--ink)', 'stroke-width': 4, 'stroke-linecap': 'round' }, LG);
-      for (let i = 0; i <= 5; i++) { const v = 3.14 + i * 0.001; E('line', { x1: mx(v), x2: mx(v), y1: 346, y2: 374, stroke: 'var(--ink)', 'stroke-width': 3 }, LG); T(LG, mx(v), 404, v.toFixed(3).replace('.', ','), 28, 'var(--ink)', { bold: 600 }); }
-      const pts3 = [[3.14, '3,14', 'var(--q)', -70], [Math.PI, 'π', 'var(--irr)', -70], [22 / 7, '22/7', 'var(--q)', -70]];
-      await fade(c, LG, 1, 500);
-      c.say('Büyüteçle bakınca üçü <b>ayrı noktalar</b>: 3,14, π ve 22/7.', { ms: 1000, noWait: true });
-      for (const [v, nm, col, dy] of pts3) {
-        const g = G(LG, mx(v), 360); E('circle', { r: 22, fill: col, opacity: 0.3, filter: 'url(#blur6)' }, g); E('circle', { r: 12, fill: col, stroke: '#0F1420', 'stroke-width': 3 }, g);
-        if (nm === '22/7') fracG(g, 0, dy, '22', '7', 34, col); else T(g, 0, dy, nm, 42, col, { bold: 800 });
-        await pop(c, g, 1, 450); await c.wait(900);
-      }
-      const bx1 = mx(Math.PI), bx2 = mx(22 / 7);
-      const br = E('path', { d: `M${bx1},470 v14 H${bx2} v-14`, fill: 'none', stroke: 'var(--warn)', 'stroke-width': 4, 'stroke-linecap': 'round' }, LG); await drawIn(c, br, 700);
-      const diff = T(LG, (bx1 + bx2) / 2, 530, '22/7 − π ≈ 0,00126', 38, 'var(--warn)', { bold: 800 }); op(diff, 0); await fade(c, diff, 1, 500);
-      await c.say('Aralarında <b>22/7 − π ≈ 0,00126</b> fark var. Yakın, ama aynı değil.', { ms: 3600 });
-      await fade(c, LG, 0, 400); LG.remove();
-
-      /* ---------- sonuç tablosu ---------- */
-      const TG = E('g', {}, root); op(TG, 0);
-      const rows = [
-        { n: 'π', d: [{ t: '3,14159265358979…' }], r: 'irrasyonel', ok: false, sub: 'ne biter ne devreder' },
-        { n: '22/7', d: [{ t: '3,' }, { t: '142857', over: true, col: 'var(--q)' }], r: 'rasyonel', ok: true, sub: 'devreden kesir' },
-        { n: '3,14', d: [{ t: '3,14 = 314/100 = 157/50' }], r: 'rasyonel', ok: true, sub: 'biten ondalık' },
-      ];
-      rows.forEach((r, i) => {
-        const y = 200 + i * 130, g = G(TG, 0, y);
-        card(g, 90, -52, 1100, 104, { rx: 22, stroke: r.ok ? 'var(--q)' : 'var(--irr)' });
-        T(g, 190, 0, r.n, 48, r.ok ? 'var(--q)' : 'var(--irr)', { bold: 800 });
-        decG(g, 330, 0, 38, r.d, 'var(--ink)', 'start');
-        T(g, 1160, -14, r.r, 36, r.ok ? 'var(--q)' : 'var(--irr)', { anchor: 'end', bold: 800 }); T(g, 1160, 24, r.sub, 26, MUTED, { anchor: 'end' });
-      });
-      T(TG, 640, 60, '22/7 ve 3,14: π’ye yakın rasyonel sayılar', 38, 'var(--ink)', { bold: 700 });
-      await fade(c, TG, 1, 600);
-      await c.say('π ne biter ne devreder: <b>irrasyonel</b>. 22/7 ve 3,14 ise yalnız π’ye yakın <b>rasyonel</b> sayılardır.', { ms: 5000 });
-      await fade(c, TG, 0, 400); TG.remove();
-
-      /* ---------- sürükle-bırak: rasyonel / irrasyonel ---------- */
-      const ZG = E('g', {}, root); op(ZG, 0);
-      const zr = [{ id: 'rat', x: 70, col: 'var(--q)', label: 'RASYONEL' }, { id: 'irr', x: 670, col: 'var(--irr)', label: 'İRRASYONEL' }];
-      const zEl = zr.map((z) => {
-        const g = G(ZG, 0, 0); const r = E('rect', { x: z.x, y: 100, width: 540, height: 280, rx: 26, fill: z.id === 'rat' ? 'rgba(108,140,240,.08)' : 'rgba(233,107,168,.08)', stroke: z.col, 'stroke-width': 3, 'stroke-dasharray': z.id === 'irr' ? '10 7' : null }, g);
-        T(g, z.x + 270, 138, z.label, 38, z.col, { bold: 800 });
-        return { ...z, el: r, g, n: 0, hit: (x, y) => x > z.x && x < z.x + 540 && y > 100 && y < 380 };
-      });
-      const cardsZ = [{ id: 'pi', tok: { k: 'x', txt: 'π', color: 'var(--ink)' }, truth: 'irr', dec: 'π = 3,14159265…' }, { id: '227', tok: { k: 'x', fn: '22', fd: '7', color: 'var(--ink)' }, truth: 'rat', dec: '22/7 = 3,142857…' }, { id: '314', tok: { k: 'x', txt: '3,14', color: 'var(--ink)' }, truth: 'rat', dec: '3,14 = 157/50' }];
-      const itZ = cardsZ.map((cz, i) => { const xx = 280 + i * 360; const g = pill(ZG, cz.tok, { x: xx, y: 560, size: 42, color: 'var(--ink)' }); return { g, ...cz, home: { x: xx, y: 560, s: 1 }, aria: cz.id }; });
-      await fade(c, ZG, 1, 500);
-      const pnZ = c.panel('Sürükle', h('p', { class: 'q', html: 'Üç sayıyı <b>Rasyonel</b> ya da <b>İrrasyonel</b> kutusuna sürükle.' }));
-      const fbZ = h('div'); pnZ.appendChild(fbZ);
-      let leftZ = 3, doneZ; const pZ = new Promise((r) => { doneZ = r; });
-      Sorter(c, svg, {
-        items: itZ, zones: zEl,
-        onDrop: async (it, zid) => {
-          if (zid !== it.truth) {
-            c.feedback(fbZ, 'no', it.id === 'pi' ? 'π’nin ondalığı ne biter ne devreder → <b>irrasyonel</b>.' : it.id === '227' ? '22/7 bir kesir ve ondalığı devrediyor (3,142857…) → <b>rasyonel</b>; π değil.' : '3,14 = 314/100 = 157/50 bir kesir → <b>rasyonel</b>. Yalnız π’ye yakın.');
-            return false;
-          }
-          const z = zEl.find((zz) => zz.id === zid); const k = z.n++;
-          c.feedback(fbZ, 'ok', `Doğru: ${it.dec} → <b>${zid === 'rat' ? 'rasyonel' : 'irrasyonel'}</b>.`);
-          leftZ--; if (leftZ <= 0) doneZ();
-          return { x: z.x + 150 + (k % 2) * 250, y: 200 + Math.floor(k / 2) * 100, s: 0.95 };
-        },
-      });
-      await withSkip(c, pZ);
-      pnZ.remove();
-      c.note(`<b>π = çevre / çap ≈ 3,14159265…</b> İrrasyoneldir.<br><b>22/7 ≈ 3,142857…</b> ve <b>3,14</b> yalnız π’ye yakın <b>rasyonel</b> sayılardır. <b>π ≠ 22/7.</b>`, 'π', 's12');
-      await c.say('π irrasyonel; 22/7 ve 3,14 sadece yakın rasyoneller. Sırada irrasyonellerin kapalılığı.', { ms: 3600 });
+      await c.say('Yaklaşık değer, değerin kendisi değildir.', { ms: 3200 });
     },
   });
 
@@ -2780,16 +2477,16 @@
         { id: '-7', tok: T0(MINUS + '7'), truth: 'Z', reason: 'Eksi tam sayı: Z’de, N’de değil.', scene: 'S3', w: { N: '−7 eksi bir sayı; N’de eksi sayı yok.', Qp: '−7 = −7/1 bir kesir; irrasyonel olamaz.' } },
         { id: '12/4', tok: { k: 'x', fn: '12', fd: '4', color: 'var(--ink)' }, truth: 'N', reason: '12 ÷ 4 = 3 → bir doğal sayıdır. Kılık değiştirmiş!', scene: 'S4', wide: '12/4 = 3 ∈ N', w: { Qp: '12/4 = 3 bir kesir olarak yazılabiliyor; irrasyonel olamaz.' } },
         { id: '0,25', tok: T0('0,25'), truth: 'Q', reason: '0,25 = 1/4: biten ondalık → rasyonel; tam sayı değil.', scene: 'S7', w: { N: '0,25 tam sayı değil; N’de yok.', Z: '0,25 tam sayı değil; Z’de yok.', Qp: '0,25 = 1/4 bir kesir → rasyonel.' } },
-        { id: '0,3d', tok: D([{ t: '0,' }, { t: '3', over: true }]), truth: 'Q', reason: 'Devreden ondalık: 0,3̅ = 1/3 → rasyonel.', scene: 'S8–S9', w: { N: '0,3̅ = 1/3 tam sayı değil.', Z: '0,3̅ = 1/3 tam sayı değil.', Qp: 'Devreden ondalık irrasyonel olmaz: 0,3̅ = 1/3 bir kesirdir.' } },
-        { id: '0,9d', tok: D([{ t: '0,' }, { t: '9', over: true }]), truth: 'N', reason: '0,9̅ = 1 → doğal sayı!', scene: 'S9', wide: '0,9̅ = 1. En küçük kutu: N.', w: { Qp: '0,9̅ = 1. En küçük kutu: N.' } },
-        { id: 'sqrt9', tok: T0('√9'), truth: 'N', reason: '√9 = 3 → doğal sayı. Kök içi tam kare.', scene: 'S10', wide: '√9 = 3 ∈ N', w: { Qp: '√9 = 3 irrasyonel olamaz; 3 = 3/1.' } },
-        { id: '22/7', tok: { k: 'x', fn: '22', fd: '7', color: 'var(--ink)' }, truth: 'Q', reason: '22/7 = 3,142857…: devreden → rasyonel; π değil.', scene: 'S12', w: { N: '22/7 tam sayı değil.', Z: '22/7 tam sayı değil.', Qp: '22/7 bir kesir: kesir olarak yazılan sayı rasyoneldir.' } },
-        { id: 'sqrt2', tok: T0('√2'), truth: 'Qp', reason: 'Ondalık açılımı ne biter ne devreder: irrasyonel.', scene: 'S10–S11', w: {}, wAny: '√2’nin ondalığı ne biter ne devreder: hiçbir kesir değil → Q′.' },
-        { id: 'pi', tok: T0('π'), truth: 'Qp', reason: 'π ≈ 3,14159265…: ne biter ne devreder: irrasyonel.', scene: 'S12', w: {}, wAny: 'π ≈ 3,14159265… ne biter ne devreder → Q′. (22/7 değil, o rasyonel.)' },
+        { id: '0,3d', tok: D([{ t: '0,' }, { t: '3', over: true }]), truth: 'Q', reason: 'Devreden ondalık: 0,3̅ = 1/3 → rasyonel.', scene: 'S8', w: { N: '0,3̅ = 1/3 tam sayı değil.', Z: '0,3̅ = 1/3 tam sayı değil.', Qp: 'Devreden ondalık irrasyonel olmaz: 0,3̅ = 1/3 bir kesirdir.' } },
+        { id: 'm8/2', tok: { k: 'x', fn: MINUS + '8', fd: '2', color: 'var(--ink)' }, truth: 'Z', reason: '−8 ÷ 2 = −4 → bir tam sayıdır. Kılık değiştirmiş!', scene: 'S3–S4', wide: '−8/2 = −4 ∈ Z', w: { N: '−8/2 = −4 eksi bir sayı; N’de eksi sayı yok.', Qp: '−8/2 = −4 bir kesir olarak yazılabiliyor; irrasyonel olamaz.' } },
+        { id: 'sqrt9', tok: T0('√9'), truth: 'N', reason: '√9 = 3 → doğal sayı. Kök içi tam kare.', scene: 'S9', wide: '√9 = 3 ∈ N', w: { Qp: '√9 = 3 irrasyonel olamaz; 3 = 3/1.' } },
+        { id: '22/7', tok: { k: 'x', fn: '22', fd: '7', color: 'var(--ink)' }, truth: 'Q', reason: '22/7 = 3,142857…: devreden → rasyonel.', scene: 'S7–S8', w: { N: '22/7 tam sayı değil.', Z: '22/7 tam sayı değil.', Qp: '22/7 bir kesir: kesir olarak yazılan sayı rasyoneldir.' } },
+        { id: 'sqrt2', tok: T0('√2'), truth: 'Qp', reason: 'Ondalık açılımı ne biter ne devreder: irrasyonel.', scene: 'S9–S10', w: {}, wAny: '√2’nin ondalığı ne biter ne devreder: hiçbir kesir değil → Q′.' },
+        { id: 'pi', tok: T0('π'), truth: 'Qp', reason: 'π ≈ 3,14159265…: ne biter ne devreder: irrasyonel.', scene: 'S10', w: {}, wAny: 'π ≈ 3,14159265… ne biter ne devreder → Q′.' },
       ];
       const bonus = [
-        { id: 'm16', tok: T0(MINUS + '√16'), truth: 'Z', reason: '√16 = 4 → −√16 = −4 ∈ Z.', scene: 'S10', w: { N: '−4 eksi bir sayı: N’de değil.', Qp: '√16 = 4 olduğundan −√16 = −4 tam sayıdır.' } },
-        { id: 'rq', tok: T0('√(1/4)'), truth: 'Q', reason: '√(1/4) = 1/2 → rasyonel.', scene: 'S10', w: { N: '√(1/4) = 1/2 tam sayı değil.', Z: '√(1/4) = 1/2 tam sayı değil.', Qp: '√(1/4) = 1/2 bir kesir → rasyonel.' } },
+        { id: 'm16', tok: T0(MINUS + '√16'), truth: 'Z', reason: '√16 = 4 → −√16 = −4 ∈ Z.', scene: 'S9', w: { N: '−4 eksi bir sayı: N’de değil.', Qp: '√16 = 4 olduğundan −√16 = −4 tam sayıdır.' } },
+        { id: 'rq', tok: T0('√(1/4)'), truth: 'Q', reason: '√(1/4) = 1/2 → rasyonel.', scene: 'S9', w: { N: '√(1/4) = 1/2 tam sayı değil.', Z: '√(1/4) = 1/2 tam sayı değil.', Qp: '√(1/4) = 1/2 bir kesir → rasyonel.' } },
         { id: 'lw', tok: T0('0,101001…'), truth: 'Qp', reason: '0,101001000100001… biçiminde aralardaki sıfırlar her seferinde artıyor: kalıp var ama devreden bir blok yok → irrasyonel.', scene: 'S8', w: {}, wAny: 'Kalıp var ama devreden bir blok yok; ne biter ne devreder → Q′.' },
       ];
       const valid = { N: ['N', 'Z', 'Q'], Z: ['Z', 'Q'], Q: ['Q'], Qp: ['Qp'] };
@@ -2849,7 +2546,7 @@
       await fade(c, rg, 1, 600);
       if (!good && wrongCards.length) {
         const sc2 = [...new Set(wrongCards.map((x) => x.scene))].join(', ');
-        c.feedback(fb, 'info', `Tekrar için: <b>${sc2}</b>. (Ters kılıklı sayılar: 12/4, 0,9̅, √9.)`);
+        c.feedback(fb, 'info', `Tekrar için: <b>${sc2}</b>. (Kılık değiştirenler: 12/4, −8/2, √9.)`);
         c.act.appendChild(h('div', { class: 'fb info', html: `İpucu sahneleri: <b>${sc2}</b>` }));
       }
       await c.say(good ? 'Harika! Kılık değiştiren sayıları da yakaladın.' : 'Küçük bir tekrarla bu kutular oturur.', { ms: 2600 });
@@ -2867,7 +2564,7 @@
       fbB.appendChild(fb);
       await withSkip(c, bp, 'Bonusu atla ›');
       pnB.remove();
-      c.note(`<b>En küçük kutu kuralı:</b> sayının önce kesir/ondalık/kök biçimini sadeleştir (12/4 = 3, 0,9̅ = 1, √9 = 3), sonra yerleştir.<br><b>Biten ya da devreden ondalık → Q. Ne biten ne devreden ondalık → Q′. Kök içi tam kare → rasyonel; değilse irrasyonel.</b>`, 'Büyük sınıflandırma', 's14');
+      c.note(`<b>En küçük kutu kuralı:</b> sayının önce kesir/ondalık/kök biçimini sadeleştir (12/4 = 3, −8/2 = −4, √9 = 3), sonra yerleştir.<br><b>Biten ya da devreden ondalık → Q. Ne biten ne devreden ondalık → Q′. Kök içi tam kare → rasyonel; değilse irrasyonel.</b>`, 'Büyük sınıflandırma', 's14');
       await c.say('<b>Biten ya da devreden → Q. Ne biter ne devreder → Q′.</b> Kök içi tam kare rasyoneldir. Mini sınava hazırsın!', { ms: 4400, speak: 'Biten ya da devreden ondalık, Q. Ne biten ne devreden ondalık, Q üssü. Kök içi tam kare ise sonuç rasyoneldir. Mini sınava hazırsın!' });
     },
   });
@@ -2896,11 +2593,11 @@
       answer: 3,
       why: [
         `0,${ov('27')} = ${F(27, 99)} = ${F(3, 11)}: devreden ondalık rasyoneldir.`,
-        `22/7 bir kesirdir (= 3,142857…, devreden). π değil, π’ye yakın bir rasyonel.`,
+        `22/7 bir kesirdir (= 3,142857…, devreden); her kesir rasyoneldir.`,
         '√16 = 4 ∈ N ⊂ Q. Kök içi tam kare.',
         '7 tam kare değil: √7 = 2,6457513… ne biter ne devreder.',
       ],
-      scene: 10,
+      scene: 9,
     },
     {
       q: `${F(3, 8)} ve ${F(5, 6)} sayılarının ondalık açılımları için hangisi <b>doğrudur</b>?`,
@@ -2929,7 +2626,7 @@
         '√4 = 2, √9 = 3, √(1/4) = 1/2. √5 = 2,2360679… irrasyonel.',
         '√5’in hesap makinesindeki değeri (2,236068) yaklaşıktır; ondalık açılımı bitmez, devretmez.',
       ],
-      scene: 9,
+      scene: 8,
     },
     {
       q: `3’ün <b>çarpma işlemine göre tersi</b> olan ${F(1, 3)} sayısının bulunabilmesi için kümenin <b>en küçüğü</b> hangisidir?`,
@@ -2947,8 +2644,7 @@
   const SUMMARY = [
     `<b>Her kutu bir ihtiyaçtan doğdu:</b> 3 − 5 yapılamayınca <b class="tz">Z</b>, 3 ÷ 4 yapılamayınca <b class="tq">Q</b>, kenarı 1 olan karenin köşegeni (√2) hiçbir kesirle yazılamayınca <b class="tr">R</b> geldi. Ters eleman yoksa ters işlem kapalı değildir.`,
     `<b>Kapalılık testi:</b> sonuç hep kutuda kalıyorsa kapalıdır; <b>tek karşı örnek</b> yeter. N: +, × ; Z: +, −, × ; Q ve R: dört işlem (0’a bölme hariç). Q′ hiçbirinde kapalı değildir (√2 + (−√2) = 0 ; √2 · √2 = 2).`,
-    `<b>Ondalık açılım adresi:</b> biten ya da devreden → rasyonel (${F(1, 4)} = 0,25 ; ${F(1, 3)} = 0,${ov('3')} ; 0,${ov('9')} = 1). Ne biter ne devreder → irrasyonel (√2, π). <b>22/7 ≠ π.</b> R = Q ∪ Q′.`,
-    `<b>Merak köşesi:</b> R’de bile çözülemeyen bir denklem var: x² = −1. Kutular burada bitmiyor: yeni bir matruşka daha var (11. sınıf).`,
+    `<b>Ondalık açılım adresi:</b> biten ya da devreden → rasyonel (${F(1, 4)} = 0,25 ; ${F(1, 3)} = 0,${ov('3')}). Ne biter ne devreder → irrasyonel (√2, π). R = Q ∪ Q′.`,
   ];
 
   /* ================= sesli anlatım: sembolleri kelimeye çevir ================= */

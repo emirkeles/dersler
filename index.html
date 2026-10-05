@@ -6,52 +6,65 @@
 <title>9. Sınıf Matematik — Sayılar</title>
 <link rel="stylesheet" href="ortak/ders.css">
 <style>
-  .hub{max-width:1040px;margin:0 auto;padding:44px 20px 60px}
-  .hub .k{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800}
-  .hub h1{font-size:clamp(1.9rem,5vw,3rem);margin:8px 0 10px;letter-spacing:-.02em;line-height:1.1}
-  .hub p.lead{color:var(--muted);font-size:1.08rem;line-height:1.6;max-width:62ch;margin:0 0 30px}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-  .lesson{position:relative;display:flex;flex-direction:column;gap:10px;padding:20px;border-radius:16px;text-decoration:none;color:inherit;border:1px solid var(--line);background:linear-gradient(160deg,color-mix(in srgb,var(--a) 16%,var(--surface)) 0%,var(--surface) 60%);transition:transform .2s,border-color .2s,box-shadow .2s;overflow:hidden}
-  .lesson:hover{transform:translateY(-3px);border-color:var(--a);box-shadow:0 10px 30px -12px var(--a)}
-  .lesson .no{font-family:var(--mono);font-size:.78rem;color:var(--a);font-weight:700}
-  .lesson h2{margin:0;font-size:1.3rem;line-height:1.25}
-  .lesson .hook{color:var(--muted);font-size:.95rem;line-height:1.5;flex:1}
-  .lesson .glyph{position:absolute;right:14px;top:6px;font-size:3.4rem;opacity:.16;font-family:"Cambria Math",Georgia,serif;color:var(--a);pointer-events:none}
-  .lesson .meta{display:flex;justify-content:space-between;align-items:center;font-size:.82rem;color:var(--muted);margin-top:4px}
-  .bar{height:5px;background:var(--surface2);border-radius:99px;overflow:hidden}
-  .bar i{display:block;height:100%;background:var(--a);width:0;transition:width .6s}
-  .badge{font-family:var(--mono);color:var(--good)}
-  .method{margin-top:36px;padding:18px 20px;border:1px dashed var(--line);border-radius:14px;color:var(--muted);line-height:1.6;font-size:.95rem}
-  .method b{color:var(--text)}
+  .hub{max-width:860px;margin:0 auto;padding:clamp(28px,7vh,72px) 24px 64px}
+  .hub .k{color:var(--muted);font-size:.95rem}
+  .hub h1{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:700;margin:6px 0 14px;letter-spacing:-.02em;line-height:1.05}
+  .hub .lead{font-size:1.15rem;line-height:1.55;max-width:54ch;margin:0 0 36px;text-wrap:pretty}
+  .list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+  .bolum{padding:34px 4px 10px;font-size:.95rem;font-weight:600;color:var(--a)}
+  .bolum:first-child{padding-top:0}
+  .lesson{display:grid;grid-template-columns:2.6rem minmax(0,1fr) auto;gap:4px 18px;align-items:baseline;padding:16px 4px;border-top:1px solid var(--line);text-decoration:none;color:inherit}
+  .lesson:hover{background:var(--surface)}
+  .lesson .no{font-size:1.5rem;font-weight:600;color:var(--a);font-variant-numeric:tabular-nums}
+  .lesson h2{margin:0;font-size:1.25rem;font-weight:600;line-height:1.25}
+  .lesson .hook{grid-column:2;color:var(--muted);font-size:1rem;line-height:1.5;max-width:60ch;text-wrap:pretty}
+  .lesson .st{grid-row:1;grid-column:3;font-size:.9rem;color:var(--muted);white-space:nowrap;text-align:right}
+  .lesson .st b{color:var(--text);font-weight:600}
+  .lesson .go{grid-column:3;grid-row:2;justify-self:end;align-self:start;color:var(--text);font-weight:600;font-size:.95rem;white-space:nowrap}
+  .lesson:hover .go{color:var(--a)}
+  .how{margin-top:28px;color:var(--muted);font-size:.95rem;line-height:1.6;max-width:62ch}
+  @media (max-width:640px){.lesson{grid-template-columns:2rem minmax(0,1fr)}.lesson .st,.lesson .go{grid-column:2;grid-row:auto;justify-self:start;text-align:left}}
 </style>
 </head>
 <body>
-<div class="hub">
+<main class="hub">
   <div class="k">9. Sınıf Matematik · 1. Tema</div>
   <h1>Sayılar</h1>
-  <p class="lead">Kuralları ezberlemek yerine nedenini görerek öğren. Her ders bir hikâyeyle başlar, kuralı gözünün önünde kurar, seni tahmin etmeye ve denemeye çağırır; sonunda mini bir sınavla pekiştirir.</p>
-  <div class="grid" id="grid"></div>
-  <div class="method"><b>Nasıl çalışır?</b> Dersin altındaki oklarla ya da <kbd>←</kbd> <kbd>→</kbd> tuşlarıyla sahneler arasında gezin, <kbd>Boşluk</kbd> ile duraklat. “Sesli anlatım” düğmesi tarayıcının Türkçe sesiyle altyazıları okur. Öğrendiğin kurallar sağdaki <b>Defterim</b>’e yazılır.</div>
-</div>
+  <p class="lead">Kuralı ezberleme, nereden geldiğini gör. Her ders bir soruyla başlar; önce sen tahmin edersin, sonra tahtada birlikte bakarız.</p>
+  <ul class="list" id="list"></ul>
+  <p class="how">Sahneler arasında <kbd>←</kbd> <kbd>→</kbd> ile gez, <kbd>Boşluk</kbd> ile duraklat. Öğrendiğin kurallar derste sağdaki deftere yazılır.</p>
+</main>
 <script>
-const LESSONS = [
-  { id:'sayilar-01', file:'01-uslu-ve-koklu.html', a:'#f5b04c', glyph:'2¹⁰', title:'Üslü ve Köklü Gösterimler', hook:'Bir video 10 turda neden 1024 kişiye ulaşır? Kökü almak videoyu geri sarmak demekse, üs yasaları nereden çıkar?', scenes:13 },
-  { id:'sayilar-02', file:'02-araliklar-ve-kume-sembolleri.html', a:'#5eead4', glyph:'[ )', title:'Aralıklar ve Küme Sembolleri', hook:'Lunapark kapısında boy sınırı: tam 140 cm girer mi? Dolu ve boş noktanın, parantezin ve ∩ ∪ işaretlerinin mantığı.', scenes:12 },
-  { id:'sayilar-03', file:'03-sayi-kumeleri.html', a:'#c792ff', glyph:'ℚ', title:'Sayı Kümeleri', hook:'İç içe matruşkalar: her yeni sayı kümesi, bir öncekinde yapılamayan bir işlemin ihtiyacından doğdu.', scenes:14 },
-  { id:'sayilar-04', file:'04-islem-ozellikleri-cebirsel.html', a:'#ff8a5b', glyph:'a(b+c)', title:'İşlem Özellikleri ve Cebirsel İfade', hook:'Kasiyer 7×98’i saniyede nasıl çözer? Dağılma, değişme ve birleşme: örnekten harfle genellemeye.', scenes:12 },
+const BOLUMLER = [
+  { ad: 'A · Üslü ve köklü gösterimler', a: '#f5b04c', dersler: [
+    { id:'sayilar-a1', file:'a1-us-bir-sayactir.html', title:'Üs bir sayaçtır', hook:'Bir video 10 turda neden 1024 kişiye ulaşır?', scenes:5 },
+    { id:'sayilar-a2', file:'a2-geri-sar.html', title:'Geri sar: sıfır ve negatif üs', hook:'Videoyu başlangıcın da gerisine sararsak ne olur?', scenes:2 },
+    { id:'sayilar-a3', file:'a3-kok-yarim-us.html', title:'Kök = yarım üs', hook:'Yolculuğun tam ortasında kaç kişi vardı?', scenes:2 },
+    { id:'sayilar-a4', file:'a4-koklerle-islem.html', title:'Köklerle işlem', hook:'√9 + √16 ile √(9+16) aynı mı?', scenes:4 },
+  ] },
+  { ad: 'B · Aralıklar ve kümeler', a: '#ffc857', dersler: [
+    { id:'sayilar-02', file:'02-araliklar-ve-kume-sembolleri.html', title:'Aralıklar ve Küme Sembolleri', hook:'Lunapark kapısında boy sınırı 140 cm. Tam 140 olan girer mi?', scenes:12 },
+  ] },
+  { ad: 'C · Sayı kümeleri', a: '#c792ff', dersler: [
+    { id:'sayilar-03', file:'03-sayi-kumeleri.html', title:'Sayı Kümeleri', hook:'İç içe matruşkalar: her yeni sayı kümesi, bir öncekinde yapılamayan bir işlemden doğdu.', scenes:12 },
+  ] },
+  { ad: 'D · İşlem özellikleri ve cebir', a: '#3cc8e8', dersler: [
+    { id:'sayilar-04', file:'04-islem-ozellikleri-cebirsel.html', title:'İşlem Özellikleri ve Cebirsel İfade', hook:'Kasiyer 7 × 98’i hesap makinesinden önce nasıl buluyor?', scenes:12 },
+  ] },
 ];
-const g = document.getElementById('grid');
-for (const L of LESSONS) {
-  let p = null; try { p = JSON.parse(localStorage.getItem('ders:' + L.id)); } catch (e) {}
-  const done = p && p.done ? p.done.length : 0;
-  const total = L.scenes ? L.scenes + 2 : 0;
-  const pct = total ? Math.min(100, Math.round(done / total * 100)) : 0;
-  const score = p && p.total ? `<span class="badge">sınav ${p.score}/${p.total}</span>` : '';
-  const a = document.createElement('a');
-  a.className = 'lesson'; a.href = L.file; a.style.setProperty('--a', L.a);
-  a.innerHTML = `<span class="glyph">${L.glyph}</span><span class="no">DERS ${L.id.slice(-2)}</span><h2>${L.title}</h2><div class="hook">${L.hook}</div><div class="bar"><i style="width:${pct}%"></i></div><div class="meta"><span>${done ? '%' + pct + ' tamamlandı' : 'Henüz başlamadın'}</span>${score}</div>`;
-  g.appendChild(a);
+const kok = document.getElementById('list');
+for (const B of BOLUMLER) {
+  kok.insertAdjacentHTML('beforeend', `<li class="bolum" style="--a:${B.a}">${B.ad}</li>`);
+  B.dersler.forEach((L, k) => {
+    let p = null; try { p = JSON.parse(localStorage.getItem('ders:' + L.id)); } catch (e) {}
+    const done = p && p.done ? p.done.length : 0;
+    const total = L.scenes + 2;
+    const st = !done ? '' : done >= total ? '<b>Tamamlandı</b>' : `<b>${done}</b> / ${total} sahne`;
+    const score = p && p.total ? ` · sorular <b>${p.score}/${p.total}</b>` : '';
+    kok.insertAdjacentHTML('beforeend', `<li><a class="lesson" href="${L.file}" style="--a:${B.a}"><span class="no">${k + 1}</span><h2>${L.title}</h2><span class="st">${st}${score}</span><span class="hook">${L.hook}</span><span class="go">${done ? 'Devam et' : 'Başla'} ›</span></a></li>`);
+  });
 }
 </script>
+
 </body>
 </html>

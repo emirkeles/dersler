@@ -1,120 +1,154 @@
-/* Ortak ders tasarımı — koyu, sakin, interaktif ders estetiği */
+/* Ortak ders tasarımı.
+   Fikir: "tahta" (sahne) ekrandaki tek aydınlık yüzeydir; çevresi düz, sessiz ve yazı ağırlıklıdır.
+   Parlama, degrade, sürekli titreşen düğme yok. Dizüstünde sayfa kaymaz: tahta + altyazı + sıra sende aynı ekranda. */
+@font-face{font-family:"Plex Sans";src:url(fonts/plex-sans-latin.woff2) format("woff2");font-weight:100 700;font-display:swap;
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Plex Sans";src:url(fonts/plex-sans-latin-ext.woff2) format("woff2");font-weight:100 700;font-display:swap;
+  unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
 :root{
-  --bg:#0a0f1e; --surface:#111936; --surface2:#182247; --line:#26325f;
-  --text:#e9edfb; --muted:#8f9bc4; --accent:#6ea8ff;
+  /* çevre: nötr mürekkep; tahta: lacivert (ders çizimleri bu zemine göre boyandı) */
+  --bg:#0c0e13; --surface:#141822; --surface2:#1c2130; --line:#2a3040; --board:#10162b;
+  --text:#eceef3; --muted:#8d94a6; --accent:#6ea8ff;
   --good:#3ddc97; --bad:#ff6b7a; --warn:#ffc857;
   --c1:#6ea8ff; --c2:#ff8a5b; --c3:#3ddc97; --c4:#c792ff; --c5:#ffd166; --c6:#5eead4;
-  --radius:14px;
-  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
-  --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --radius:8px; --rail:clamp(320px,28vw,400px);
+  /* Sayılarda çizgili/noktalı sıfır ∅ ile karışır; bu yüzden sayaçlar da aynı yazı tipiyle, eş genişlikli rakamla yazılır. */
+  --sans:"Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:var(--sans);
 }
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+.cnt,.no,.score,.ctl output,.card .meta{font-variant-numeric:tabular-nums}
 body{min-height:100vh}
-button{font:inherit;color:inherit;cursor:pointer}
-.ders{max-width:1280px;margin:0 auto;padding:14px 18px 24px;display:flex;flex-direction:column;gap:12px}
+button,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
-/* üst bar */
-.top{display:flex;align-items:center;gap:16px}
-.top .back{color:var(--muted);text-decoration:none;font-size:.9rem;padding:6px 10px;border:1px solid var(--line);border-radius:999px;white-space:nowrap}
-.top .back:hover{color:var(--text);border-color:var(--accent)}
-.top .ttl{flex:1;min-width:0}
-.top .kick{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700}
-.top h1{margin:2px 0 0;font-size:1.25rem;font-weight:700;letter-spacing:-.01em}
-.tools{display:flex;gap:8px;align-items:center}
-.tool{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:7px 11px;font-size:.85rem;color:var(--muted);line-height:1}
-.tool:hover{color:var(--text);border-color:var(--accent)}
-.tool.on{color:var(--bg);background:var(--accent);border-color:var(--accent)}
-select.tool{padding:6px 8px}
+.ders{max-width:1680px;margin:0 auto;padding:12px 20px 16px;display:flex;flex-direction:column;gap:10px}
 
-/* ilerleme */
-.prog{display:flex;gap:5px}
-.prog button{flex:1;height:8px;border-radius:99px;border:0;background:var(--surface2);padding:0;position:relative;transition:background .3s}
-.prog button.done{background:color-mix(in srgb,var(--accent) 45%,var(--surface2))}
-.prog button.cur{background:var(--accent);box-shadow:0 0 12px color-mix(in srgb,var(--accent) 60%,transparent)}
-.prog button:hover::after{content:attr(data-t);position:absolute;top:14px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--surface2);border:1px solid var(--line);padding:4px 8px;border-radius:8px;font-size:.75rem;z-index:20;color:var(--text)}
+/* üst çubuk: ‹ ders adı · sahne no + sahne adı · araçlar */
+.top{display:flex;align-items:center;gap:20px;min-height:36px}
+.top .back{color:var(--muted);text-decoration:none;font-size:.95rem;white-space:nowrap;flex:none}
+.top .back:hover{color:var(--text)}
+.scenehead{flex:1;min-width:0;display:flex;align-items:baseline;gap:10px;white-space:nowrap;overflow:hidden;padding-left:20px;border-left:1px solid var(--line)}
+.scenehead:empty{border-left-color:transparent}
+.scenehead .no{color:var(--muted);font-size:.95rem}
+.scenehead .no:empty{display:none}
+.scenehead .nm{font-size:1.08rem;font-weight:600;overflow:hidden;text-overflow:ellipsis}
+.tools{display:flex;gap:6px;align-items:center;flex:none}
+.tool{background:transparent;border:1px solid var(--line);border-radius:6px;padding:7px 11px;font-size:.85rem;color:var(--muted);line-height:1}
+.tool:hover{color:var(--text);border-color:var(--muted)}
+.tool.on{color:var(--bg);background:var(--text);border-color:var(--text)}
+select.tool{padding:6px 6px;background:var(--bg)}
+
+/* ilerleme: sahne başına bir çentik */
+.prog{display:flex;gap:4px}
+.prog button{flex:1;height:14px;border:0;background:transparent;padding:5px 0;position:relative}
+.prog button::before{content:"";display:block;height:4px;border-radius:2px;background:var(--surface2)}
+.prog button.done::before{background:var(--muted)}
+.prog button.cur::before{background:var(--accent)}
+.prog button:hover::before{background:var(--text)}
+.prog button:hover::after{content:attr(data-t);position:absolute;top:16px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--surface2);border:1px solid var(--line);padding:4px 8px;border-radius:6px;font-size:.78rem;z-index:20;color:var(--text)}
+.prog button:first-child:hover::after{left:0;transform:none}
+.prog button:last-child:hover::after{left:auto;right:0;transform:none}
 
 /* yerleşim */
-.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:14px;align-items:start}
+.layout{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
 .main{display:flex;flex-direction:column;gap:10px;min-width:0}
-.scenehead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
-.scenehead .no{font-family:var(--mono);color:var(--accent);font-size:.8rem;font-weight:700}
-.scenehead .nm{font-size:1.05rem;font-weight:700}
-.scenehead .goal{color:var(--muted);font-size:.85rem;flex-basis:100%}
-
-.stage{position:relative;background:radial-gradient(1200px 500px at 50% 0%,#16204a 0%,var(--surface) 55%);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;max-height:64vh;width:100%}
-.stage.enter{animation:fadein .5s ease}
-@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.stagewrap{min-width:0}
+.stage{position:relative;background:var(--board);border-radius:10px;overflow:hidden;aspect-ratio:16/9;width:min(100%,calc((100dvh - 190px)*16/9));margin:0 auto}
+.stage.enter{animation:fadein .25s ease-out}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
 .stage svg.canvas{width:100%;height:100%;display:block}
 .stage svg text{font-family:var(--sans);fill:var(--text)}
 .stage .layer{position:absolute;inset:0}
-.stage .scroll{position:absolute;inset:0;overflow:auto;padding:22px}
+.stage .scroll{position:absolute;inset:0;overflow:auto;padding:28px 32px}
 
-.caption{min-height:3.4em;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px 16px;font-size:1.08rem;line-height:1.5}
-.caption.swap{animation:capin .45s ease}
-@keyframes capin{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-.caption:empty{opacity:.4}
-.caption b,.caption strong{color:var(--accent)}
+/* altyazı: kart değil, tahtanın altındaki düz satır */
+.caption{min-height:3em;font-size:1.2rem;line-height:1.5;font-weight:450;padding:2px 2px 0;text-wrap:pretty}
+.caption.swap{animation:capin .2s ease-out}
+@keyframes capin{from{opacity:0}to{opacity:1}}
+.caption b,.caption strong{color:var(--accent);font-weight:650}
 
-.act{display:flex;flex-direction:column;gap:10px}
+/* yan sütun: sıra sende + defter + gezinme */
+.rail{display:flex;flex-direction:column;gap:14px;min-width:0}
+.act{display:flex;flex-direction:column;gap:12px}
 .act:empty{display:none}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.panel .tag{display:inline-block;font-size:.68rem;letter-spacing:.12em;font-weight:800;text-transform:uppercase;color:var(--bg);background:var(--warn);padding:2px 8px;border-radius:99px;margin-bottom:8px}
-.panel .tag.explore{background:var(--c6)}
-.panel .q{font-size:1.05rem;margin:0 0 10px;line-height:1.45}
-.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px}
-.opt{background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:left;font-size:1rem;transition:.15s}
-.opt:hover:not(:disabled){border-color:var(--accent);transform:translateY(-1px)}
-.opt.right{background:color-mix(in srgb,var(--good) 25%,var(--surface2));border-color:var(--good)}
-.opt.wrong{background:color-mix(in srgb,var(--bad) 22%,var(--surface2));border-color:var(--bad);opacity:.85}
+.panel{min-width:0}
+.panel + .panel{border-top:1px solid var(--line);padding-top:12px}
+.panel .tag{display:block;font-size:.82rem;font-weight:650;color:var(--accent);margin-bottom:6px}
+.panel .tag.explore{color:var(--accent)}
+.panel .q{font-size:1.08rem;margin:0 0 12px;line-height:1.45;text-wrap:pretty}
+.opts{display:grid;grid-template-columns:1fr;gap:6px}
+.opt{background:transparent;border:1px solid var(--line);border-radius:var(--radius);padding:10px 12px;text-align:left;font-size:1rem;line-height:1.35;transition:border-color .12s,background .12s}
+.opt:hover:not(:disabled){border-color:var(--text);background:var(--surface)}
+.opt.right{background:color-mix(in srgb,var(--good) 18%,transparent);border-color:var(--good)}
+.opt.wrong{border-color:var(--bad);color:var(--muted);text-decoration:line-through;text-decoration-color:var(--bad)}
 .opt:disabled{cursor:default}
-.fb{margin-top:10px;padding:10px 12px;border-radius:10px;font-size:.98rem;line-height:1.45;animation:capin .3s ease}
-.fb.ok{background:color-mix(in srgb,var(--good) 16%,transparent);border:1px solid var(--good)}
-.fb.no{background:color-mix(in srgb,var(--bad) 14%,transparent);border:1px solid var(--bad)}
-.fb.info{background:color-mix(in srgb,var(--accent) 14%,transparent);border:1px solid var(--accent)}
+.fb{margin-top:10px;padding:9px 12px;border-radius:var(--radius);font-size:.98rem;line-height:1.45}
+.fb:empty{display:none}
+.fb.ok{background:color-mix(in srgb,var(--good) 14%,transparent)}
+.fb.no{background:color-mix(in srgb,var(--bad) 14%,transparent)}
+.fb.info{background:var(--surface)}
 
-.ctl{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:4px 0}
-.ctl label{color:var(--muted);font-size:.95rem;white-space:nowrap}
-.ctl output{font-family:var(--mono);font-weight:700;min-width:5ch;text-align:right;color:var(--accent)}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;background:var(--surface2);border-radius:99px;outline:none}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);box-shadow:0 0 0 2px var(--accent);cursor:grab}
-input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--accent);border:3px solid var(--bg);cursor:grab}
+.ctl{display:grid;grid-template-columns:1fr auto;gap:4px 12px;align-items:baseline;padding:4px 0}
+.ctl label{color:var(--muted);font-size:.95rem;grid-row:1;grid-column:1}
+.ctl output{font-weight:600;min-width:4ch;text-align:right;color:var(--text);grid-row:1;grid-column:2}
+.ctl input{grid-row:2;grid-column:1/-1}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:4px;background:var(--line);border-radius:2px;outline-offset:6px;margin:10px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--accent);border:0;cursor:grab}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--accent);border:0;cursor:grab}
 
-.btn{background:var(--accent);color:#06101f;border:0;border-radius:10px;padding:10px 18px;font-weight:700;align-self:flex-start}
-.btn:hover{filter:brightness(1.1)}
-.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
-.btn.pulse{animation:pulse 1.6s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.btn{background:var(--accent);color:#0b0d12;border:1px solid var(--accent);border-radius:var(--radius);padding:9px 16px;font-weight:650;align-self:flex-start;text-decoration:none;display:inline-block;line-height:1.2}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--muted);filter:none}
+/* "pulse": öğrenciyi bekleyen düğme. Sürekli titreşmez; bir kez belirir. */
+.btn.pulse{animation:arrive .25s ease-out}
+@keyframes arrive{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 
 /* defter */
-.side{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:12px 14px;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
-.side h2{margin:0 0 10px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-.notes:empty::after{content:"Öğrendiğin kurallar buraya yazılacak.";color:var(--muted);font-size:.88rem}
-.note{background:var(--surface2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:9px 11px;margin-bottom:9px;font-size:.95rem;line-height:1.5;animation:notein .6s cubic-bezier(.2,.9,.3,1.2)}
-.note .nt{display:block;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
-@keyframes notein{from{opacity:0;transform:translateX(24px) scale(.96)}to{opacity:1;transform:none}}
+.defter{min-width:0}
+.defter .dh{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:6px}
+.defter h2{margin:0;font-size:.82rem;font-weight:650;color:var(--muted)}
+.defter .all{background:none;border:0;padding:0;color:var(--muted);font-size:.82rem;text-decoration:underline;text-underline-offset:3px}
+.defter .all:hover{color:var(--text)}
+.defter .all[hidden]{display:none}
+.notes:empty::after{content:"Öğrendiğin kurallar burada birikecek.";color:var(--muted);font-size:.9rem}
+.note{padding:10px 0;border-top:1px solid var(--line);font-size:.98rem;line-height:1.5}
+.note .nt{display:block;font-size:.8rem;color:var(--muted);margin-bottom:2px}
+.notes:not(.open) .note:not(:last-child){display:none}
+.note.new{animation:notein .5s ease-out}
+@keyframes notein{from{opacity:0;background:var(--surface2)}to{opacity:1;background:transparent}}
+.rail:has(.act:not(:empty)) .defter{display:none}
 
-/* alt gezinme */
+/* gezinme */
 .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.nav .cnt{color:var(--muted);font-size:.85rem;font-family:var(--mono)}
+.nav .cnt{color:var(--muted);font-size:.9rem}
 .nav .btn{align-self:auto}
 .nav .btn:disabled{opacity:.3;cursor:default}
+.nav .next{background:transparent;color:var(--text);border-color:var(--line)}
+.nav .next.ready{background:var(--accent);color:#0b0d12;border-color:var(--accent)}
 
-/* giriş kartı */
-.intro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:28px;gap:14px;background:radial-gradient(900px 400px at 50% 30%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%)}
-.intro .k{font-size:.78rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:800}
-.intro h2{margin:0;font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:-.02em;max-width:22ch}
-.intro p{margin:0;color:var(--muted);max-width:52ch;font-size:1.05rem;line-height:1.55}
-.intro ul{margin:0;padding:0;list-style:none;display:grid;gap:6px;text-align:left;font-size:.95rem;color:var(--text)}
-.intro li::before{content:"✓ ";color:var(--good)}
+/* giriş */
+.intro{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:safe center;padding:clamp(20px,5%,56px) clamp(20px,7%,84px);gap:14px;overflow:auto}
+.intro .k{font-size:.9rem;color:var(--muted)}
+.intro h2{margin:0;font-size:clamp(1.6rem,3.6vw,2.7rem);font-weight:700;letter-spacing:-.015em;line-height:1.1;max-width:20ch;text-wrap:balance}
+.intro p{margin:0;max-width:56ch;font-size:1.12rem;line-height:1.5;text-wrap:pretty}
+.intro details{color:var(--muted);font-size:.95rem;max-width:60ch}
+.intro summary{cursor:pointer}
+.intro ul{margin:8px 0 0;padding:0 0 0 1.1em;display:grid;gap:4px;color:var(--text)}
+.intro .btn{font-size:1.05rem;padding:11px 20px;margin-top:4px}
 
-/* quiz / özet */
-.card{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
-.card h3{margin:0;font-size:1.25rem}
-.card .meta{color:var(--muted);font-size:.85rem;font-family:var(--mono)}
-.score{font-size:3rem;font-weight:800;color:var(--accent);letter-spacing:-.03em}
+/* sınav / özet */
+.card{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
+.card h3{margin:0;font-size:1.3rem;font-weight:650;line-height:1.35;text-wrap:pretty}
+.card .meta{color:var(--muted);font-size:.9rem}
+.card .note:first-of-type{border-top:0}
+.score{font-size:3rem;font-weight:700;letter-spacing:-.02em}
 .review{display:grid;gap:8px}
-.review a{color:var(--accent);cursor:pointer;text-decoration:underline}
+.review a{color:var(--accent);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 
 /* matematik tipografisi (HTML) */
 .m{font-family:"Cambria Math","STIX Two Math",Georgia,serif;font-size:1.12em;white-space:nowrap}
@@ -127,21 +161,34 @@ input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;bac
 .rad>span{border-top:1.5px solid currentColor;padding:0 .15em;margin-top:.12em}
 .t1{color:var(--c1)}.t2{color:var(--c2)}.t3{color:var(--c3)}.t4{color:var(--c4)}.t5{color:var(--c5)}.t6{color:var(--c6)}
 .good{color:var(--good)}.bad{color:var(--bad)}.warn{color:var(--warn)}.muted{color:var(--muted)}
-kbd{font-family:var(--mono);background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.85em}
+kbd{font-family:inherit;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:1px 6px;font-size:.85em}
 
 /* sürükle-bırak yardımcıları */
 .drag{touch-action:none;user-select:none;cursor:grab}
 .drag.dragging{cursor:grabbing}
 
-@media (max-width:900px){
-  .layout{grid-template-columns:1fr}
-  .side{position:static;max-height:none}
-  .stage{aspect-ratio:4/3;max-height:none}
-  .top h1{font-size:1.05rem}
+/* Dizüstü ve üstü: tek ekran. Sayfa kaymaz; tahta kalan yüksekliğe sığar, sıra sende tahtanın yanında açılır. */
+@media (min-width:1000px) and (min-height:540px){
+  html,body{height:100%;overflow:hidden}
+  .ders{height:100dvh}
+  /* 196px = üst çubuk + ilerleme + altyazı + boşluklar. Tahta sütunu yüksekliğe sığan 16:9 genişliği aşmaz; artan yer yan sütuna kalır. */
+  .layout{flex:1;min-height:0;grid-template-columns:minmax(0,calc((100dvh - 196px)*16/9)) minmax(var(--rail),1fr);gap:22px}
+  .main{min-height:0}
+  .stagewrap{flex:none}
+  .stage{width:100%;margin:0}
+  .caption{flex:none;height:5.4rem;min-height:0;overflow:hidden}
+  .rail{min-height:0;border-left:1px solid var(--line);padding-left:22px}
+  .act{flex:0 1 auto;min-height:0;overflow:auto;padding-right:4px}
+  .defter{flex:1 1 0;min-height:0;overflow:auto;padding-right:4px}
+  .rail:has(.act:not(:empty)) .act{flex:1 1 0}
+  .nav{flex:none;border-top:1px solid var(--line);padding-top:12px}
 }
-@media (max-width:700px){
-  .top{flex-wrap:wrap;gap:8px}
-  .top .ttl{flex-basis:100%;order:3}
-  .tools{margin-left:auto;flex-wrap:wrap}
+/* Dar ekran: tek sütun, sayfa kayar; gezinme altta sabit. */
+@media not ((min-width:1000px) and (min-height:540px)){
+  .ders{padding:10px 14px 76px}
+  .top{flex-wrap:wrap;gap:6px 14px}
+  .tools{margin-left:auto}
+  .scenehead{flex-basis:100%;order:3;padding-left:0;border-left:0;white-space:normal}
+  .nav{position:fixed;left:0;right:0;bottom:0;background:var(--bg);border-top:1px solid var(--line);padding:10px 14px;z-index:30}
 }
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important}}

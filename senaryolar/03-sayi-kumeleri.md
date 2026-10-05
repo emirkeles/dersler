@@ -2,6 +2,8 @@
 
 > 9. Sınıf Matematik · 1. Sayılar teması · Alt konu 03
 > Bu belge, web animasyonuna (interaktif ders) dönüştürülecek ders senaryosudur. Matematiksel tüm örnekler tek tek doğrulanmıştır.
+>
+> **Güncelleme (5 Ekim 2026):** Sahne 9 (0,999… = 1 ve devirliden kesre) ve Sahne 12 (π ve 22/7 tuzağı) dersten çıkarıldı: program bunları ön bilgi sayıyor ve öğrencinin kafasını karıştırıyordu. Derste sonraki sahneler birer/ikişer numara yukarı kaydı (eski 10 → 9, 11 → 10, 13 → 11, 14 → 12). Sınıflandırma oyunundaki 0,9̄ kartının yerine −8/2 geldi; özetteki "merak köşesi" kaldırıldı.
 
 ---
 

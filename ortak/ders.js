@@ -98,6 +98,17 @@
 
   const plainText = (html) => { const d = document.createElement('div'); d.innerHTML = html; return (d.textContent || '').replace(/\s+/g, ' ').trim(); };
 
+  /* Kayıtlı anlatım: her altyazının seslendirilecek metni bir anahtara (FNV-1a) çevrilir;
+     ses/<ders-id>.js dosyası hangi anahtarın hangi ses dosyasına karşılık geldiğini bildirir.
+     Klipler araclar/ses-uret.js ile üretilir. */
+  const ses = {};
+  const sesKey = (text) => {
+    const s_ = String(text).replace(/\s+/g, ' ').trim();
+    let hsh = 0x811c9dc5;
+    for (let i = 0; i < s_.length; i++) { hsh ^= s_.charCodeAt(i); hsh = Math.imul(hsh, 0x01000193); }
+    return (hsh >>> 0).toString(16).padStart(8, '0');
+  };
+
   /* ================= ANA MOTOR ================= */
   function start(cfg) {
     const root = document.getElementById('app');
@@ -108,10 +119,16 @@
     const state = { i: -1, token: 0, paused: false, speed: 1, voice: false, noteMap: new Map(), done: new Set() };
     const saved = store.get('ders:' + cfg.id) || {};
     (saved.done || []).forEach((i) => state.done.add(i));
+    const clips = (ses[cfg.id] && ses[cfg.id].clips) || {};
+    const clipBase = (ses[cfg.id] && ses[cfg.id].base) || ('ses/' + cfg.id + '/');
+    const hasClips = Object.keys(clips).length > 0;
+    const prefs = store.get('ders:tercih') || {};
+    // Kayıtlı anlatımı olan derste ses varsayılan olarak açıktır (öğrenci kapatırsa tercihi hatırlanır).
+    state.voice = hasClips ? prefs.voice !== false : false;
 
     // sahne listesi: kullanıcı sahneleri + (quiz) + özet
     const scenes = cfg.scenes.map((sc) => ({ ...sc }));
-    if (cfg.quiz && cfg.quiz.length) scenes.push({ title: 'Mini sınav', goal: 'Öğrendiklerini sına.', run: quizRun, internal: true });
+    if (cfg.quiz && cfg.quiz.length) scenes.push({ title: cfg.quizTitle || 'Mini sınav', goal: 'Öğrendiklerini sına.', run: quizRun, internal: true });
     scenes.push({ title: 'Özet', goal: 'Bugün ne öğrendik?', run: summaryRun, internal: true });
 
     /* ---- iskelet ---- */
@@ -119,29 +136,52 @@
     root.innerHTML = '';
     root.append(
       h('header', { class: 'top' },
-        h('a', { class: 'back', href: cfg.back || 'index.html' }, '‹ Dersler'),
-        h('div', { class: 'ttl' }, h('div', { class: 'kick' }, cfg.kicker || ''), h('h1', {}, cfg.title)),
+        h('a', { class: 'back', href: cfg.back || 'index.html', title: 'Tüm dersler' }, '‹ ' + cfg.title),
+        (el.head = h('div', { class: 'scenehead' })),
         (el.tools = h('div', { class: 'tools' }))),
       (el.prog = h('nav', { class: 'prog', 'aria-label': 'Sahneler' })),
       h('div', { class: 'layout' },
         (el.main = h('main', { class: 'main' },
-          (el.head = h('div', { class: 'scenehead' })),
-          (el.stage = h('div', { class: 'stage' })),
-          (el.cap = h('div', { class: 'caption', 'aria-live': 'polite' })),
-          (el.act = h('div', { class: 'act' })))),
-        h('aside', { class: 'side' }, h('h2', {}, 'Defterim'), (el.notes = h('div', { class: 'notes' })))),
-      h('footer', { class: 'nav' },
-        (el.prev = h('button', { class: 'btn ghost', onclick: () => go(state.i - 1) }, '‹ Önceki')),
-        (el.cnt = h('span', { class: 'cnt' })),
-        (el.next = h('button', { class: 'btn', onclick: () => go(state.i + 1) }, 'Sonraki ›'))));
+          h('div', { class: 'stagewrap' }, (el.stage = h('div', { class: 'stage' }))),
+          (el.cap = h('div', { class: 'caption', 'aria-live': 'polite' })))),
+        h('aside', { class: 'rail' },
+          (el.act = h('div', { class: 'act' })),
+          h('section', { class: 'defter' },
+            h('div', { class: 'dh' }, h('h2', {}, 'Defter'), (el.notesAll = h('button', { class: 'all', hidden: true, onclick: toggleNotes }))),
+            (el.notes = h('div', { class: 'notes' }))),
+          h('footer', { class: 'nav' },
+            (el.prev = h('button', { class: 'btn ghost', onclick: () => go(state.i - 1) }, '‹ Önceki')),
+            (el.cnt = h('span', { class: 'cnt' })),
+            (el.next = h('button', { class: 'btn next', onclick: () => go(state.i + 1) }, 'Sonraki ›'))))));
 
-    el.pauseBtn = h('button', { class: 'tool', title: 'Duraklat / devam (boşluk)', onclick: togglePause }, '⏸ Duraklat');
-    el.speedSel = h('select', { class: 'tool', title: 'Hız', onchange: (e) => (state.speed = parseFloat(e.target.value)) },
-      ...[[0.75, '0.75×'], [1, '1×'], [1.5, '1.5×'], [2, '2×']].map(([v, t]) => h('option', { value: v, selected: v === 1 }, t)));
-    el.voiceBtn = h('button', { class: 'tool', title: 'Sesli anlatım (tarayıcının Türkçe sesi)', onclick: toggleVoice }, '🔈 Sesli anlatım');
-    el.replayBtn = h('button', { class: 'tool', title: 'Sahneyi baştan oynat', onclick: () => go(state.i, true) }, '↻ Tekrar');
-    if (!('speechSynthesis' in window)) el.voiceBtn.style.display = 'none';
-    el.tools.append(el.pauseBtn, el.speedSel, el.voiceBtn, el.replayBtn);
+    el.pauseBtn = h('button', { class: 'tool', title: 'Duraklat / devam (boşluk tuşu)', onclick: togglePause }, 'Duraklat');
+    el.speedSel = h('select', { class: 'tool', title: 'Hız', 'aria-label': 'Hız', onchange: (e) => (state.speed = parseFloat(e.target.value)) },
+      ...[[0.75, '0,75×'], [1, '1×'], [1.5, '1,5×'], [2, '2×']].map(([v, t]) => h('option', { value: v, selected: v === 1 }, t)));
+    el.voiceBtn = h('button', { class: 'tool', title: 'Sesli anlatım', onclick: toggleVoice });
+    el.replayBtn = h('button', { class: 'tool', title: 'Sahneyi baştan oynat', onclick: () => go(state.i, true) }, 'Baştan');
+    if (!hasClips) el.voiceBtn.style.display = 'none'; // anlatımı kaydedilmemiş derste ses düğmesi görünmez
+    const paintVoice = () => { el.voiceBtn.textContent = state.voice ? 'Ses açık' : 'Ses kapalı'; el.voiceBtn.classList.toggle('on', state.voice); };
+    paintVoice();
+    el.tools.append(el.voiceBtn, el.speedSel, el.replayBtn, el.pauseBtn);
+
+    /* Defter: varsayılan olarak yalnızca son kural görünür; tamamı istenince açılır. Kurallar kalıcıdır. */
+    const noteKey = 'ders:' + cfg.id + ':defter';
+    function toggleNotes() { el.notes.classList.toggle('open'); paintNotes(); }
+    function paintNotes() {
+      const n = el.notes.children.length;
+      el.notesAll.hidden = n < 2;
+      el.notesAll.textContent = el.notes.classList.contains('open') ? 'Yalnızca son kural' : `Tümü (${n})`;
+    }
+    function addNote(key, title, html, fresh) {
+      if (state.noteMap.has(key)) return;
+      const card = h('div', { class: 'note' + (fresh ? ' new' : '') }, title ? h('span', { class: 'nt' }, title) : null);
+      card.insertAdjacentHTML('beforeend', html);
+      el.notes.appendChild(card);
+      state.noteMap.set(key, { title, html });
+      paintNotes();
+      if (fresh) { el.notes.scrollTop = el.notes.scrollHeight; store.set(noteKey, [...state.noteMap].map(([k, v]) => ({ key: k, title: v.title, html: v.html }))); }
+    }
+    (store.get(noteKey) || []).forEach((n) => addNote(n.key, n.title, n.html, false));
 
     scenes.forEach((sc, i) => {
       el.prog.append(h('button', { 'data-t': (i + 1) + '. ' + sc.title, 'aria-label': sc.title, onclick: () => go(i) }));
@@ -149,14 +189,14 @@
 
     function togglePause() {
       state.paused = !state.paused;
-      el.pauseBtn.textContent = state.paused ? '▶ Devam' : '⏸ Duraklat';
+      el.pauseBtn.textContent = state.paused ? 'Devam et' : 'Duraklat';
       el.pauseBtn.classList.toggle('on', state.paused);
-      if ('speechSynthesis' in window) state.paused ? speechSynthesis.pause() : speechSynthesis.resume();
     }
     function toggleVoice() {
       state.voice = !state.voice;
-      el.voiceBtn.classList.toggle('on', state.voice);
-      if (!state.voice && 'speechSynthesis' in window) speechSynthesis.cancel();
+      paintVoice();
+      store.set('ders:tercih', { ...(store.get('ders:tercih') || {}), voice: state.voice });
+      if (!state.voice && state.audio) state.audio.pause();
     }
     document.addEventListener('keydown', (e) => {
       if (/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)) return;
@@ -182,18 +222,25 @@
       });
     }
 
-    function speak(text, tok) {
+    /* Kayıtlı klip: duraklat/hız/sahne değişimiyle uyumlu çalar; bitince (ya da çalınamazsa) çözülür. */
+    function playClip(file, tok) {
       return new Promise((res, rej) => {
-        if (!('speechSynthesis' in window)) return res();
-        speechSynthesis.cancel();
-        const u = new SpeechSynthesisUtterance(text);
-        u.lang = 'tr-TR'; u.rate = clamp(state.speed, 0.7, 1.6);
-        let done = false;
-        const fin = () => { if (!done) { done = true; clearInterval(poll); res(); } };
-        u.onend = fin; u.onerror = fin;
-        const poll = setInterval(() => { if (tok !== state.token) { clearInterval(poll); speechSynthesis.cancel(); done = true; rej(new Cancelled()); } }, 80);
-        speechSynthesis.speak(u);
-        setTimeout(fin, Math.max(4000, text.length * 160)); // güvenlik
+        if (state.audio) state.audio.pause();
+        const a = new Audio(clipBase + file);
+        state.audio = a;
+        let over = false;
+        const fin = (fn) => { if (over) return; over = true; clearInterval(poll); a.pause(); if (state.audio === a) state.audio = null; fn(); };
+        a.addEventListener('ended', () => fin(res));
+        a.addEventListener('error', () => fin(res));
+        const poll = setInterval(() => {
+          if (tok !== state.token) return fin(() => rej(new Cancelled()));
+          if (!state.voice || state.audio !== a) return fin(res);
+          a.playbackRate = clamp(state.speed, 0.75, 2);
+          if (state.paused && !a.paused) a.pause();
+          else if (!state.paused && a.paused && !a.ended) a.play().catch(() => fin(res));
+        }, 80);
+        a.playbackRate = clamp(state.speed, 0.75, 2);
+        if (!state.paused) a.play().catch(() => fin(res));
       });
     }
 
@@ -213,9 +260,15 @@
           el.cap.classList.remove('swap'); void el.cap.offsetWidth; el.cap.classList.add('swap');
           el.cap.innerHTML = html;
           const txt = opts.speak || plainText(html);
-          if (opts.noWait) { if (state.voice) speak(txt, tok).catch(() => {}); return; }
-          if (state.voice) { await speak(txt, tok); await ticker(250, tok); }
-          else await ticker(opts.ms != null ? opts.ms : clamp(txt.length * 52, 1300, 9000), tok);
+          const key = sesKey(txt);
+          if (global.__dersSay) global.__dersSay({ scene: idx, key, text: txt, noWait: !!opts.noWait });
+          const clip = clips[key];
+          // Okuma süresi: karakter başına 75 ms (≈13 karakter/sn); elle verilen süre de 60 ms/karakterin altına inemez.
+          const shown = plainText(html).length;
+          const read = opts.ms != null ? Math.max(opts.ms, Math.min(shown * 60, 9000)) : clamp(shown * 75, 1800, 11000);
+          if (opts.noWait) { if (state.voice && clip) playClip(clip, tok).catch(() => {}); return; }
+          if (state.voice && clip) { await playClip(clip, tok); await ticker(300, tok); }
+          else await ticker(read, tok);
         },
         clearSay: () => { el.cap.innerHTML = ''; },
         svg: (w = 1000, hh = 562, parent) => {
@@ -226,15 +279,7 @@
         layer: () => { const d = h('div', { class: 'layer' }); el.stage.appendChild(d); return d; },
         on: (target, ev, fn, opt) => { target.addEventListener(ev, fn, opt); listeners.push(() => target.removeEventListener(ev, fn, opt)); },
         /* Defter: kalıcı kural kartı. id verilirse tekrar eklenmez. */
-        note: (html, title, id) => {
-          const key = id || ('s' + idx + ':' + html);
-          if (state.noteMap.has(key)) return;
-          const card = h('div', { class: 'note' }, title ? h('span', { class: 'nt' }, title) : null);
-          card.insertAdjacentHTML('beforeend', html);
-          el.notes.appendChild(card);
-          state.noteMap.set(key, card);
-          card.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-        },
+        note: (html, title, id) => { addNote(id || ('s' + idx + ':' + html), title, html, true); },
         /* "Devam" düğmesi: öğrenci tıklayana kadar bekler */
         cont: (label = 'Devam ›') => new Promise((res) => {
           guard();
@@ -315,18 +360,18 @@
       if (curCtx) curCtx._cleanup();
       state.token++;
       const tok = state.token;
-      if ('speechSynthesis' in window) speechSynthesis.cancel();
+      if (state.audio) state.audio.pause();
       state.i = i;
       const sc = scenes[i];
       el.stage.innerHTML = ''; el.cap.innerHTML = ''; el.act.innerHTML = '';
       el.stage.classList.remove('enter'); void el.stage.offsetWidth; el.stage.classList.add('enter');
       el.head.innerHTML = '';
-      el.head.append(h('span', { class: 'no' }, sc.internal ? '' : `SAHNE ${i + 1}`), h('span', { class: 'nm' }, sc.title), h('span', { class: 'goal' }, sc.goal || ''));
+      el.head.append(h('span', { class: 'no' }, sc.internal ? '' : String(i + 1).padStart(2, '0')), h('span', { class: 'nm', title: sc.goal || '' }, sc.title));
       [...el.prog.children].forEach((b, k) => { b.classList.toggle('cur', k === i); b.classList.toggle('done', k !== i && state.done.has(k)); });
       el.cnt.textContent = `${i + 1} / ${scenes.length}`;
       el.prev.disabled = i === 0;
       el.next.disabled = i === scenes.length - 1;
-      el.next.classList.remove('pulse');
+      el.next.classList.remove('ready');
       const c = (curCtx = makeCtx(tok, i));
       try {
         await sc.run(c);
@@ -340,7 +385,7 @@
       state.done.add(i);
       el.prog.children[i].classList.add('done');
       store.set('ders:' + cfg.id, { done: [...state.done], score: (store.get('ders:' + cfg.id) || {}).score });
-      if (i < scenes.length - 1) el.next.classList.add('pulse');
+      if (i < scenes.length - 1) el.next.classList.add('ready');
     }
 
     /* ---- giriş ekranı ---- */
@@ -350,14 +395,15 @@
       el.stage.innerHTML = '';
       el.stage.classList.add('enter');
       const box = h('div', { class: 'intro' },
-        h('div', { class: 'k' }, cfg.kicker || ''),
+        h('div', { class: 'k' }, (cfg.kicker ? cfg.kicker + ' · ' : '') + cfg.title),
         h('h2', {}, it.title || cfg.title),
         it.hook ? h('p', { html: it.hook }) : null,
-        (cfg.goals && cfg.goals.length) ? h('ul', {}, cfg.goals.map((g) => h('li', { html: g }))) : null,
-        h('button', { class: 'btn pulse', onclick: () => go(0) }, it.button || 'Derse başla ›'));
+        h('button', { class: 'btn', onclick: () => go(0) }, it.button || 'Derse başla ›'),
+        (cfg.goals && cfg.goals.length) ? h('details', {}, h('summary', {}, 'Bu derste neler var?'), h('ul', {}, cfg.goals.map((g) => h('li', { html: g })))) : null);
       el.stage.appendChild(box);
       el.cnt.textContent = '';
       el.prev.disabled = true; el.next.disabled = false;
+      el.next.classList.add('ready');
     }
     if (cfg.intro || cfg.goals) showIntro(); else go(0);
 
@@ -406,7 +452,6 @@
       });
       sc.appendChild(h('div', { class: 'card', style: { textAlign: 'center', alignItems: 'center' } },
         h('div', { class: 'meta' }, 'Sonuç'), h('div', { class: 'score' }, `${score} / ${quiz.length}`), h('p', {}, msg), review));
-      await c.say(msg, { noWait: true });
     }
 
     /* ---- yerleşik: özet ---- */
@@ -429,10 +474,10 @@
       card.appendChild(h('a', { class: 'btn ghost', style: { textDecoration: 'none', alignSelf: 'flex-start' }, href: cfg.back || 'index.html' }, 'Tüm dersler'));
     }
 
-    const api = { go, state, scenes };
+    const api = { id: cfg.id, go, state, scenes };
     global.Ders.current = api;
     return api;
   }
 
-  global.Ders = { start, h, s, M, ease, lerp, clamp, mathText, Cancelled, store };
+  global.Ders = { start, h, s, M, ease, lerp, clamp, mathText, Cancelled, store, ses, sesKey };
 })(window);

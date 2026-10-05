@@ -2340,7 +2340,7 @@
 
   /* ============ DERS TANIMI ============ */
   Ders.start({
-    id: 'sayilar-04-islem-ozellikleri',
+    id: 'sayilar-04',
     kicker: '9. Sınıf · Sayılar',
     title: 'İşlem Özelliklerinin Cebirsel İfadesi',
     accent: '#3CC8E8',
