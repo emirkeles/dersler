@@ -127,7 +127,7 @@
     state.voice = hasClips ? prefs.voice !== false : false;
 
     // sahne listesi: kullanıcı sahneleri + (quiz) + özet
-    const scenes = cfg.scenes.map((sc) => ({ ...sc }));
+    const scenes = cfg.scenes.map((sc) => (sc.video ? { ...sc, run: videoRun(sc) } : { ...sc }));
     if (cfg.quiz && cfg.quiz.length) scenes.push({ title: cfg.quizTitle || 'Mini sınav', goal: 'Öğrendiklerini sına.', run: quizRun, internal: true });
     scenes.push({ title: 'Özet', goal: 'Bugün ne öğrendik?', run: summaryRun, internal: true });
 
@@ -406,6 +406,32 @@
       el.next.classList.add('ready');
     }
     if (cfg.intro || cfg.goals) showIntro(); else go(0);
+
+    /* ---- yerleşik: video sahnesi (hikâye) ----
+       Tahtada oynar; Duraklat, hız ve sahne değişimiyle uyumludur. Bitince ya da geçilince sahne tamamlanır. */
+    function videoRun(sc) {
+      return (c) => new Promise((res, rej) => {
+        const v = h('video', { src: sc.video, playsinline: true, preload: 'auto' });
+        if (sc.altyazi) v.append(h('track', { kind: 'subtitles', srclang: 'tr', label: 'Türkçe', src: sc.altyazi, default: true }));
+        c.stage.appendChild(h('div', { class: 'layer video' }, v));
+        const tok = state.token;
+        let over = false, durdu = state.paused;
+        const fin = (fn) => { if (over) return; over = true; clearInterval(poll); v.pause(); gec.remove(); fn(); };
+        const gec = h('button', { class: 'btn ghost', onclick: () => fin(res) }, 'Videoyu geç ›');
+        c.act.appendChild(gec);
+        // Tarayıcı kendiliğinden oynatmaya izin vermezse öğrenci videonun kendi düğmesiyle başlatır.
+        const oynat = () => v.play().catch((e) => { if (e && e.name === 'NotAllowedError') v.controls = true; });
+        v.addEventListener('ended', () => fin(res));
+        v.addEventListener('error', () => { c.cap.innerHTML = '<span class="bad">Video yüklenemedi.</span>'; fin(res); });
+        const poll = setInterval(() => {
+          if (tok !== state.token) return fin(() => rej(new Cancelled()));
+          v.playbackRate = clamp(state.speed, 0.75, 2);
+          if (state.paused !== durdu) { durdu = state.paused; if (durdu) v.pause(); else oynat(); }
+        }, 80);
+        v.playbackRate = clamp(state.speed, 0.75, 2);
+        if (!state.paused) oynat();
+      });
+    }
 
     /* ---- yerleşik: mini sınav ---- */
     async function quizRun(c) {

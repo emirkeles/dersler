@@ -28,6 +28,8 @@ Ders.start({
   nextLesson: { href: '02-….html', label: 'Sonraki ders ›' }
 });
 ```
+Video sahnesi: `run` yerine `{ title, goal, video: 'hikaye/…mp4', altyazi: '…vtt' }` verilirse sahne videoyu tahtada oynatır (hikâye animasyonları). Duraklat ve hız düğmeleriyle uyumludur; video bitince ya da “Videoyu geç” ile sahne tamamlanır.
+
 Quiz ve Özet sahneleri otomatik eklenir. İlerleme `localStorage`'a yazılır.
 
 Kısa dersler: bir bölümün sahneleri tek JS dosyasında durur, her kısa dersin kendi HTML sayfası vardır. Sayfa `<script>window.DERS_PARCA = 'a1';</script>` ile hangi parçayı istediğini söyler; JS dosyası sondaki `PARCALAR` tablosundan o parçanın sahnelerini, 2 çıkış sorusunu (`quizTitle: 'Çıkış soruları'`) ve özetini seçer (örnek: `dersler/01-uslu-ve-koklu.js`, sayfalar `a1-…html` – `a4-…html`). Ders kimliği `sayilar-a1` biçimindedir; araçlar `node olc.js a1` diye çağrılır.

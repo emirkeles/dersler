@@ -63,6 +63,8 @@ select.tool{padding:6px 6px;background:var(--bg)}
 .stage svg.canvas{width:100%;height:100%;display:block}
 .stage svg text{font-family:var(--sans);fill:var(--text)}
 .stage .layer{position:absolute;inset:0}
+.stage .layer.video{background:#000}
+.stage .layer.video video{width:100%;height:100%;display:block;object-fit:contain}
 .stage .scroll{position:absolute;inset:0;overflow:auto;padding:28px 32px}
 
 /* altyazı: kart değil, tahtanın altındaki düz satır */
