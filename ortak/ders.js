@@ -359,8 +359,6 @@
       el.cnt.textContent = '';
       el.prev.disabled = true; el.next.disabled = false;
     }
-    el.next.onclick = () => (state.i < 0 ? go(0) : go(state.i + 1));
-    el.prev.onclick = () => go(state.i - 1);
     if (cfg.intro || cfg.goals) showIntro(); else go(0);
 
     /* ---- yerleşik: mini sınav ---- */
