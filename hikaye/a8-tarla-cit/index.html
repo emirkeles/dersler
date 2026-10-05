@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Bir dönüm tarla, kaç metre çit?</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
+    <style>
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin-ext.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+          U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      :root {
+        /* guaj paleti: kâğıt, mürekkep, tek vurgu (kiremit) */
+        --kagit: #f6ecd6;
+        --murekkep: #2e2a3a;
+        --vurgu: #c8553d;
+        --vurgu-koyu: #a63d29;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #e7d3a0;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Plex Sans", sans-serif;
+        color: var(--murekkep);
+      }
+      .katman {
+        position: absolute;
+        inset: 0;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      svg text {
+        font-family: "Plex Sans", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      #sahne {
+        z-index: 1;
+      }
+      #gunbatimi {
+        z-index: 2;
+        background: #e8823a;
+        mix-blend-mode: multiply;
+        opacity: 0;
+        pointer-events: none;
+      }
+      #telefon {
+        z-index: 3;
+      }
+      #kapanis {
+        z-index: 4;
+      }
+      /* kâğıt dokusu: bütün karelerin üstünde, öğe değil (denetim onu örtü saymasın) */
+      #root::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 6;
+        background: url(assets/doku-kagit.png) center / cover;
+        mix-blend-mode: soft-light;
+        opacity: 0.85;
+        pointer-events: none;
+      }
+      #altyazilar {
+        z-index: 7;
+      }
+      #tel-yikama {
+        background: #f3e7cf;
+        opacity: 0;
+      }
+      #kapanis-yazi {
+        position: absolute;
+        left: 214px;
+        top: 776px;
+        width: 760px;
+        font-size: 62px;
+        line-height: 76px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--murekkep);
+      }
+      #kapanis-yazi span {
+        display: block;
+        white-space: nowrap;
+      }
+      /* Taslak altyazısı: ses gelene kadar anlatımı okutmak için. Son kurguda kaldırılır. */
+      .altyazi {
+        position: absolute;
+        inset: auto;
+        top: 30px;
+        left: 50%;
+        width: 1500px;
+        margin-left: -750px;
+        text-align: center;
+        font-size: 38px;
+        line-height: 50px;
+        font-weight: 500;
+        color: var(--murekkep);
+      }
+      .altyazi b {
+        display: inline-block;
+        font-weight: 500;
+        padding: 6px 26px 8px;
+        background: var(--kagit);
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-e4mq" id="root" data-composition-id="main" data-start="0" data-duration="66" data-width="1920" data-height="1080">
+      <!-- Dünya: resimli harita. Klip değil, baştan sona durur; kamera viewBox ile gezer. -->
+      <div data-hf-id="hf-gppi" id="sahne" class="katman" data-layout-allow-overflow="">
+        <svg data-hf-id="hf-ct0m" id="dunya" viewBox="640 440 1280 720" preserveAspectRatio="xMidYMid slice" data-layout-allow-overflow="" />
+      </div>
+      <div data-hf-id="hf-mj40" id="gunbatimi" class="katman"></div>
+
+      <section data-hf-id="hf-kafe" id="telefon" class="clip" data-start="12.2" data-duration="12.6" data-track-index="1">
+        <div data-hf-id="hf-g8sy" id="tel-yikama" class="katman" data-layout-allow-occlusion=""></div>
+        <div data-hf-id="hf-eu7e" id="tel-ic" class="katman">
+          <svg data-hf-id="hf-7jdi" id="tel-svg" viewBox="0 0 1920 1080" />
+        </div>
+      </section>
+
+      <section data-hf-id="hf-h2vg" id="kapanis" class="clip" data-start="58" data-duration="8" data-track-index="2">
+        <div data-hf-id="hf-6afs" id="kapanis-ic" class="katman">
+          <svg data-hf-id="hf-jl7w" id="kapanis-svg" viewBox="0 0 1920 1080" />
+          <p data-hf-id="hf-cagv" id="kapanis-yazi">
+            <span data-hf-id="hf-ur5u">Kök tam çıkmazsa</span><span data-hf-id="hf-4vmr">yaklaşığıyla ölçer,</span><span data-hf-id="hf-i0cx">biçeriz.</span>
+          </p>
+        </div>
+      </section>
+
+
+      <div data-hf-id="hf-7dsf" id="altyazilar" class="katman">
+        <p data-hf-id="hf-ni4w" id="altyazi-01" class="clip altyazi" data-start="0.4" data-duration="3.3" data-track-index="3"><b data-hf-id="hf-nedg">Elif'in dedesi tarlasını çitle çevirecek.</b></p>
+        <p data-hf-id="hf-51ew" id="altyazi-02" class="clip altyazi" data-start="3.9" data-duration="4.9" data-track-index="3"><b data-hf-id="hf-85p1">Tarla tam bir kare. Alanı bir dönüm; yani bin metrekare.</b></p>
+        <p data-hf-id="hf-mfrx" id="altyazi-03" class="clip altyazi" data-start="9" data-duration="3.1" data-track-index="3"><b data-hf-id="hf-pp44">Dedesi sorar: Kaç metre çit alayım?</b></p>
+        <p data-hf-id="hf-3rwt" id="altyazi-04" class="clip altyazi" data-start="12.5" data-duration="3.5" data-track-index="3"><b data-hf-id="hf-lieu">Elif önce bir kenarı bulmalı: karekök bin.</b></p>
+        <p data-hf-id="hf-s5nv" id="altyazi-05" class="clip altyazi" data-start="16.1" data-duration="6.1" data-track-index="3"><b data-hf-id="hf-muk4">Telefona yazar. Otuz bir virgül altı, iki, iki, yedi… Rakamlar bitmiyor.</b></p>
+        <p data-hf-id="hf-oxv4" id="altyazi-06" class="clip altyazi" data-start="22.3" data-duration="2" data-track-index="3"><b data-hf-id="hf-j893">Kök tam çıkmadı.</b></p>
+        <p data-hf-id="hf-itog" id="altyazi-07" class="clip altyazi" data-start="24.7" data-duration="4.9" data-track-index="3"><b data-hf-id="hf-64rv">Otuz bir metre desek? Dört kenar, yüz yirmi dört metre eder.</b></p>
+        <p data-hf-id="hf-ioak" id="altyazi-08" class="clip altyazi" data-start="29.8" data-duration="4" data-track-index="3"><b data-hf-id="hf-kql9">Çit yetmez. İki buçuk metre açık kalır.</b></p>
+        <p data-hf-id="hf-uf6q" id="altyazi-09" class="clip altyazi" data-start="34.5" data-duration="3.7" data-track-index="3"><b data-hf-id="hf-vj41">Otuz iki desek? Yüz yirmi sekiz metre.</b></p>
+        <p data-hf-id="hf-8g38" id="altyazi-10" class="clip altyazi" data-start="38.3" data-duration="4.2" data-track-index="3"><b data-hf-id="hf-l6cx">Bu kez bir buçuk metre çit artar. Boşa para.</b></p>
+        <p data-hf-id="hf-1d3j" id="altyazi-11" class="clip altyazi" data-start="43.1" data-duration="5.1" data-track-index="3"><b data-hf-id="hf-jmtk">Otuz bir virgül altı alalım: yüz yirmi altı virgül dört metre.</b></p>
+        <p data-hf-id="hf-0g83" id="altyazi-12" class="clip altyazi" data-start="48.4" data-duration="4.3" data-track-index="3"><b data-hf-id="hf-9ggi">Eksik, yalnızca dokuz santim. Bir karış bile değil.</b></p>
+        <p data-hf-id="hf-4p4p" id="altyazi-13" class="clip altyazi" data-start="52.9" data-duration="4.2" data-track-index="3"><b data-hf-id="hf-y39y">Otuz bir virgül altı tam değer değil; ama işi görüyor.</b></p>
+      </div>
+    </div>
+
+    <script>
+      /* ============================================================
+         Bir dönüm tarla, kaç metre çit?  ·  A8 Yaklaşık değer
+         Tek dünya, tek zaman çizelgesi. Her şey zamanın saf fonksiyonu.
+         ============================================================ */
+      const NS = "http://www.w3.org/2000/svg";
+      const R = {
+        kagit: "#f6ecd6", krem: "#fbf6ea", murekkep: "#2e2a3a", vurgu: "#c8553d", vurguKoyu: "#a63d29",
+        zemin: "#e7d3a0", yol: "#d9b584", yolIz: "#c29a64", toprak: "#a9683a", karik: "#8a5230",
+        fide: "#6e8f3e", yesil: "#4f6b3a", yesilAcik: "#6e8f3e", govde: "#6b4a2e",
+        tel: "#5b3a24", direk: "#7a4b2a", direkUst: "#c89b6a", ten: "#e0a77b", tenAcik: "#e6b08a",
+      };
+
+      /* Anlatım cümlelerinin başlangıçları (sn). Gerçek ses gelince yalnızca bu tablo düzeltilir. */
+      const T = {
+        l1: 0.5, l2: 4.0, l3: 9.1, l4: 12.6, l5: 16.2, l6: 22.4, l7: 24.8,
+        l8: 29.9, l9: 34.6, l10: 38.4, l11: 43.2, l12: 48.5, l13: 53.0, l14: 58.2, son: 66,
+      };
+
+      /* ---------- çizim yardımcıları ---------- */
+      function el(tag, attrs, parent) {
+        const e = document.createElementNS(NS, tag);
+        for (const k in attrs) e.setAttribute(k, attrs[k]);
+        if (parent) parent.appendChild(e);
+        return e;
+      }
+      function yazi(parent, x, y, metin, boyut, renk, ek) {
+        const t = el("text", Object.assign({ x, y, "font-size": boyut, fill: renk, "text-anchor": "middle", "font-weight": 600 }, ek || {}), parent);
+        t.textContent = metin;
+        return t;
+      }
+      /* tohumlu sözde rastgele: her karede aynı sonuç */
+      function tohum(s) {
+        let v = s >>> 0;
+        return function () {
+          v = (Math.imul(v, 1664525) + 1013904223) >>> 0;
+          return v / 4294967296;
+        };
+      }
+      /* makasla kesilmiş kenar: köşeler arası hafif titrek çokgen */
+      function kesik(noktalar, s, genlik, adim) {
+        const r = tohum(s);
+        const a0 = genlik == null ? 3 : genlik;
+        const st = adim || 54;
+        let d = "";
+        for (let i = 0; i < noktalar.length; i++) {
+          const a = noktalar[i], b = noktalar[(i + 1) % noktalar.length];
+          const dx = b[0] - a[0], dy = b[1] - a[1], L = Math.hypot(dx, dy);
+          const n = Math.max(1, Math.round(L / st));
+          for (let k = 0; k < n; k++) {
+            const t = k / n, j = (k === 0 ? 0.35 : 1) * (r() * 2 - 1) * a0;
+            d += (d ? "L" : "M") + (a[0] + dx * t - (dy / L) * j).toFixed(1) + " " + (a[1] + dy * t + (dx / L) * j).toFixed(1);
+          }
+        }
+        return d + "Z";
+      }
+      function dikdortgen(x, y, w, h) {
+        return [[x, y], [x + w, y], [x + w, y + h], [x, y + h]];
+      }
+      /* yumuşak leke: ağaç tacı, bulut, gölge */
+      function leke(cx, cy, rx, ry, s, n, genlik) {
+        const r = tohum(s), N = n || 10, g = genlik == null ? 0.12 : genlik, P = [];
+        for (let i = 0; i < N; i++) {
+          const a = (i / N) * Math.PI * 2, k = 1 + (r() * 2 - 1) * g;
+          P.push([cx + Math.cos(a) * rx * k, cy + Math.sin(a) * ry * k]);
+        }
+        let d = "M" + ((P[N - 1][0] + P[0][0]) / 2).toFixed(1) + " " + ((P[N - 1][1] + P[0][1]) / 2).toFixed(1);
+        for (let i = 0; i < N; i++) {
+          const p = P[i], q = P[(i + 1) % N];
+          d += "Q" + p[0].toFixed(1) + " " + p[1].toFixed(1) + " " + ((p[0] + q[0]) / 2).toFixed(1) + " " + ((p[1] + q[1]) / 2).toFixed(1);
+        }
+        return d + "Z";
+      }
+      /* karekök işareti: çizgi olarak (yazı tipinde √ yok) */
+      function kok(parent, x, taban, boyut, genislik, renk, kalinlik) {
+        const d = "M" + x + " " + (taban - 0.4 * boyut) + "L" + (x + 0.1 * boyut) + " " + (taban - 0.45 * boyut) +
+          "L" + (x + 0.25 * boyut) + " " + (taban + 0.02 * boyut) + "L" + (x + 0.44 * boyut) + " " + (taban - 0.9 * boyut) +
+          "L" + (x + 0.5 * boyut + genislik) + " " + (taban - 0.9 * boyut);
+        return el("path", { d, fill: "none", stroke: renk, "stroke-width": kalinlik, "stroke-linecap": "round", "stroke-linejoin": "round" }, parent);
+      }
+      /* kâğıt etiket: gölge + kesik kenarlı zemin */
+      function etiket(parent, x, y, w, h, s) {
+        el("path", { d: kesik(dikdortgen(x + 5, y + 7, w, h), s, 2.5, 60), fill: R.murekkep, opacity: 0.18 }, parent);
+        el("path", { d: kesik(dikdortgen(x, y, w, h), s, 2.5, 60), fill: R.kagit }, parent);
+      }
+
+      /* ============================================================
+         DÜNYA
+         ============================================================ */
+      const dunya = document.getElementById("dunya");
+      const SOL = 360, UST = 250, KENAR = 600;            // tarla: 600 px = √1000 m
+      const SAG = SOL + KENAR, ALT = UST + KENAR;
+      const KOK1000 = Math.sqrt(1000);                    // 31,6227766…
+      const PX_M = KENAR / KOK1000;                       // 18,97 px = 1 m
+
+      /* --- zemin, gök, tepeler --- */
+      el("rect", { x: -900, y: -800, width: 4200, height: 2600, fill: R.zemin }, dunya);
+      el("rect", { id: "gok", x: -900, y: -800, width: 4200, height: 830, fill: "#bcd6d2" }, dunya);
+      const gunes = el("g", { id: "gunes" }, dunya);
+      el("circle", { cx: 2050, cy: -190, r: 104, fill: "#f6d06a", opacity: 0.32 }, gunes);
+      el("circle", { cx: 2050, cy: -190, r: 62, fill: "#f6d06a" }, gunes);
+      [[260, -215, 1], [1240, -238, 0.8], [-240, -170, 0.9]].forEach(function (b, i) {
+        const g = el("g", { class: "bulut" }, dunya);
+        el("path", { d: leke(b[0], b[1], 120 * b[2], 26 * b[2], 40 + i, 9, 0.2), fill: R.krem }, g);
+        el("path", { d: leke(b[0] + 50 * b[2], b[1] - 20 * b[2], 70 * b[2], 24 * b[2], 50 + i, 8, 0.2), fill: R.krem }, g);
+      });
+      el("path", { d: "M-900 -40Q-500 -210 -60 -120T720 -160T1540 -125T2360 -185T3300 -70L3300 80L-900 80Z", fill: "#a9bfa6" }, dunya);
+      el("path", { d: "M-900 0Q-420 -150 60 -70T900 -110T1700 -60T2500 -120T3300 -20L3300 80L-900 80Z", fill: "#93ab86" }, dunya);
+      el("path", { d: "M-900 30Q-300 -70 300 -20T1300 -50T2200 -10T3300 20L3300 90L-900 90Z", fill: "#7f9a5e" }, dunya);
+      el("rect", { x: -900, y: 22, width: 4200, height: 1800, fill: R.zemin }, dunya);
+
+      /* --- yamalı tarlalar --- */
+      const yamalar = [
+        [-700, 46, 800, 174, "#e3b04b", "v", "#c9953a", "12 16"],
+        [140, 46, 690, 174, "#b9c48a", "h", "#8fa263", "3 15"],
+        [870, 46, 650, 174, "#b8743c", "h", "#96592b", ""],
+        [1560, 46, 1200, 174, "#8e9c5a", "v", "#6f7f42", "3 13"],
+        [-700, 260, 560, 590, "#ebc56d", "h", "#cfa347", "12 16"],
+        [-100, 260, 410, 590, "#a7b46e", "v", "#84944f", "3 14"],
+        [1010, 260, 760, 330, "#efd98f", "h", "#dcc06c", "14 18"],
+        [1810, 260, 950, 590, "#b8743c", "v", "#96592b", ""],
+        [-700, 1000, 880, 560, "#b8743c", "h", "#96592b", ""],
+        [220, 1000, 800, 560, "#e3b04b", "v", "#c9953a", "12 16"],
+        [1060, 1000, 560, 560, "#a7b46e", "h", "#84944f", "3 14"],
+        [1660, 1000, 1100, 560, "#8e9c5a", "v", "#6f7f42", "3 13"],
+      ];
+      function sirala(parent, x, y, w, h, yon, renk, kesikli, s, aralik) {
+        const r = tohum(s), ar = aralik || 30;
+        if (yon === "h") {
+          for (let yy = y + 22; yy < y + h - 14; yy += ar) {
+            el("path", { d: "M" + (x + 18) + " " + (yy + (r() * 4 - 2)).toFixed(1) + "Q" + (x + w / 2) + " " + (yy + (r() * 10 - 5)).toFixed(1) + " " + (x + w - 18) + " " + (yy + (r() * 4 - 2)).toFixed(1), fill: "none", stroke: renk, "stroke-width": 5, "stroke-linecap": "round", "stroke-dasharray": kesikli, opacity: 0.8 }, parent);
+          }
+        } else {
+          for (let xx = x + 22; xx < x + w - 14; xx += ar) {
+            el("path", { d: "M" + (xx + (r() * 4 - 2)).toFixed(1) + " " + (y + 18) + "Q" + (xx + (r() * 10 - 5)).toFixed(1) + " " + (y + h / 2) + " " + (xx + (r() * 4 - 2)).toFixed(1) + " " + (y + h - 18), fill: "none", stroke: renk, "stroke-width": 5, "stroke-linecap": "round", "stroke-dasharray": kesikli, opacity: 0.8 }, parent);
+          }
+        }
+      }
+      const gYama = el("g", { id: "yamalar" }, dunya);
+      yamalar.forEach(function (f, i) {
+        el("path", { d: kesik(dikdortgen(f[0], f[1], f[2], f[3]), 100 + i, 4), fill: f[4] }, gYama);
+        sirala(gYama, f[0], f[1], f[2], f[3], f[5], f[6], f[7], 200 + i);
+      });
+
+      /* --- yol --- */
+      el("path", { d: "M-900 884Q-200 868 500 882T1900 876T3300 890L3300 972Q2400 962 1700 968T400 974T-900 966Z", fill: R.yol }, dunya);
+      el("path", { d: "M-900 912Q-200 898 500 910T1900 904T3300 918", fill: "none", stroke: R.yolIz, "stroke-width": 4, "stroke-dasharray": "26 22", "stroke-linecap": "round", opacity: 0.8 }, dunya);
+      el("path", { d: "M-900 942Q-200 930 500 942T1900 938T3300 948", fill: "none", stroke: R.yolIz, "stroke-width": 4, "stroke-dasharray": "22 26", "stroke-linecap": "round", opacity: 0.8 }, dunya);
+
+      /* --- kahraman tarla --- */
+      const gTarla = el("g", { id: "tarla" }, dunya);
+      el("path", { d: kesik(dikdortgen(SOL - 6, UST - 4, KENAR + 12, KENAR + 12), 11, 3), fill: R.murekkep, opacity: 0.14 }, gTarla);
+      el("path", { d: kesik(dikdortgen(SOL - 10, UST - 10, KENAR + 20, KENAR + 20), 12, 2.5), fill: R.toprak }, gTarla);
+      sirala(gTarla, SOL, UST, KENAR, KENAR, "h", R.karik, "", 13, 40);
+      (function () {
+        const r = tohum(14);
+        for (let yy = UST + 42; yy < ALT - 20; yy += 40) {
+          el("path", { d: "M" + (SOL + 26) + " " + yy + "Q" + (SOL + KENAR / 2) + " " + (yy + (r() * 8 - 4)).toFixed(1) + " " + (SAG - 26) + " " + yy, fill: "none", stroke: R.fide, "stroke-width": 11, "stroke-linecap": "round", "stroke-dasharray": "2 24" }, gTarla);
+        }
+      })();
+
+      /* --- kareyi gösteren tebeşir çizgisi, dik açılar, eşit kenar çentikleri --- */
+      const gTebesir = el("g", { id: "tebesir-grup" }, dunya);
+      const tebesir = el("path", { id: "tebesir", d: "M" + SOL + " " + ALT + "L" + SOL + " " + UST + "L" + SAG + " " + UST + "L" + SAG + " " + ALT + "Z", fill: "none", stroke: R.krem, "stroke-width": 8, "stroke-linejoin": "round", "stroke-dasharray": 2400, "stroke-dashoffset": 2400 }, gTebesir);
+      [[SOL, UST, 1, 1], [SAG, UST, -1, 1], [SAG, ALT, -1, -1], [SOL, ALT, 1, -1]].forEach(function (c) {
+        el("path", { class: "dik-aci", d: "M" + (c[0] + 34 * c[2]) + " " + c[1] + "L" + (c[0] + 34 * c[2]) + " " + (c[1] + 34 * c[3]) + "L" + c[0] + " " + (c[1] + 34 * c[3]), fill: "none", stroke: R.krem, "stroke-width": 5, opacity: 0 }, gTebesir);
+      });
+      [[SOL + 300, UST, 0], [SAG, UST + 300, 1], [SOL + 300, ALT, 0], [SOL, UST + 300, 1]].forEach(function (m) {
+        [-8, 8].forEach(function (k) {
+          el("path", { class: "centik", d: m[2] ? "M" + (m[0] - 20) + " " + (m[1] + k) + "L" + (m[0] + 20) + " " + (m[1] + k) : "M" + (m[0] + k) + " " + (m[1] - 20) + "L" + (m[0] + k) + " " + (m[1] + 20), stroke: R.krem, "stroke-width": 6, "stroke-linecap": "round", opacity: 0 }, gTebesir);
+        });
+      });
+
+      /* --- çevre yolu: A (sol alt) → yukarı → sağa → aşağı → A'ya dönüş → taşma payı --- */
+      const YOL = [[SOL, ALT], [SOL, UST], [SAG, UST], [SAG, ALT], [SOL, ALT], [SOL - 60, ALT]];
+      const YOL_D = "M" + YOL.map(function (p) { return p[0] + " " + p[1]; }).join("L");
+      const YOL_BOY = 4 * KENAR + 60;
+      function konum(s) {
+        let kalan = Math.max(0, Math.min(YOL_BOY, s));
+        for (let i = 0; i < YOL.length - 1; i++) {
+          const a = YOL[i], b = YOL[i + 1], L = Math.hypot(b[0] - a[0], b[1] - a[1]);
+          if (kalan <= L) return [a[0] + ((b[0] - a[0]) * kalan) / L, a[1] + ((b[1] - a[1]) * kalan) / L];
+          kalan -= L;
+        }
+        return YOL[YOL.length - 1];
+      }
+      /* soru anındaki hayalî direkler */
+      const gHayal = el("g", { id: "hayal" }, dunya);
+      for (let s = 0; s < 4 * KENAR; s += 60) {
+        const p = konum(s);
+        el("circle", { class: "hayal", cx: p[0], cy: p[1], r: 7, fill: R.krem, opacity: 0 }, gHayal);
+      }
+
+      /* --- çit: üç deneme, üç ayrı grup --- */
+      function citKur(ad, metre, ondalik) {
+        const g = el("g", { id: "cit-" + ad, opacity: 0 }, dunya);
+        const boy = metre * PX_M;
+        const telAlt = el("path", { d: YOL_D, fill: "none", stroke: R.tel, "stroke-width": 7, "stroke-linejoin": "round", "stroke-dasharray": YOL_BOY + 10, "stroke-dashoffset": YOL_BOY + 10 }, g);
+        const telUst = el("path", { d: YOL_D, fill: "none", stroke: "#b98a5c", "stroke-width": 2, "stroke-linejoin": "round", "stroke-dasharray": YOL_BOY + 10, "stroke-dashoffset": YOL_BOY + 10 }, g);
+        const direkler = [];
+        for (let s = 0; s < 4 * KENAR; s += 60) {
+          const p = konum(s);
+          const d = el("g", { opacity: s === 0 ? 1 : 0 }, g);
+          el("rect", { x: p[0] - 9, y: p[1] - 9, width: 18, height: 18, rx: 3, fill: R.direk }, d);
+          el("rect", { x: p[0] - 4.5, y: p[1] - 4.5, width: 9, height: 9, rx: 2, fill: R.direkUst }, d);
+          direkler.push([s, d]);
+        }
+        const makara = el("g", {}, g);
+        el("circle", { cx: 0, cy: 0, r: 15, fill: R.tel }, makara);
+        el("circle", { cx: 0, cy: 0, r: 8.5, fill: "none", stroke: "#d9b584", "stroke-width": 3 }, makara);
+        el("circle", { cx: 0, cy: 0, r: 3, fill: "#d9b584" }, makara);
+        const sayac = document.getElementById("sayi-" + ad);
+        const durum = { p: 0 };
+        function guncelle() {
+          const s = durum.p * boy;
+          telAlt.setAttribute("stroke-dashoffset", (YOL_BOY + 10 - s).toFixed(2));
+          telUst.setAttribute("stroke-dashoffset", (YOL_BOY + 10 - s).toFixed(2));
+          for (let i = 1; i < direkler.length; i++) {
+            const o = Math.max(0, Math.min(1, (s - direkler[i][0] + 12) / 14));
+            direkler[i][1].setAttribute("opacity", o.toFixed(2));
+          }
+          const p = konum(s);
+          makara.setAttribute("transform", "translate(" + p[0].toFixed(1) + " " + p[1].toFixed(1) + ")");
+          const m = durum.p * metre;
+          sayac.textContent = (ondalik ? m.toFixed(1).replace(".", ",") : String(Math.round(m))) + " m";
+        }
+        return { g, durum, guncelle, boy };
+      }
+
+      /* --- ev ve duman --- */
+      const gEv = el("g", { id: "ev" }, dunya);
+      el("ellipse", { cx: 1585, cy: 852, rx: 150, ry: 12, fill: R.murekkep, opacity: 0.15 }, gEv);
+      el("rect", { x: 1632, y: 652, width: 26, height: 60, fill: "#b5654a" }, gEv);
+      el("path", { d: kesik(dikdortgen(1480, 730, 210, 120), 21, 2), fill: R.krem }, gEv);
+      el("path", { d: kesik([[1456, 738], [1585, 650], [1714, 738]], 22, 2), fill: R.vurgu }, gEv);
+      el("rect", { x: 1508, y: 768, width: 44, height: 44, rx: 3, fill: "#3e7c7b" }, gEv);
+      el("path", { d: "M1530 768V812M1508 790H1552", stroke: R.krem, "stroke-width": 4 }, gEv);
+      el("rect", { x: 1606, y: 772, width: 46, height: 78, rx: 4, fill: R.govde }, gEv);
+      el("circle", { cx: 1642, cy: 814, r: 3.5, fill: R.direkUst }, gEv);
+      for (let i = 0; i < 3; i++) el("circle", { class: "duman", cx: 1645, cy: 640, r: 13 + i * 3, fill: R.krem, opacity: 0 }, gEv);
+
+      /* --- ağaçlar --- */
+      const gAgac = el("g", { id: "agaclar" }, dunya);
+      const agaclar = [
+        [1410, 856, 1, "y"], [1750, 846, 1, "k"], [1800, 858, 0.9, "k"], [1548, 240, 0.9, "y"], [1840, 340, 1, "k"],
+        [1880, 620, 1, "y"], [990, 238, 0.8, "k"], [110, 244, 0.85, "y"], [-160, 874, 1, "y"], [2230, 880, 1.1, "y"],
+        [2380, 884, 1, "k"], [-560, 872, 1, "k"], [2540, 250, 1, "y"], [-330, 250, 0.9, "k"],
+      ];
+      agaclar.forEach(function (a, i) {
+        const g = el("g", { class: "agac", "data-x": a[0], "data-y": a[1] }, gAgac);
+        const k = a[2], x = a[0], y = a[1];
+        el("ellipse", { cx: x + 6, cy: y + 2, rx: 34 * k, ry: 7 * k, fill: R.murekkep, opacity: 0.15 }, g);
+        if (a[3] === "y") {
+          el("rect", { x: x - 5 * k, y: y - 36 * k, width: 10 * k, height: 38 * k, fill: R.govde }, g);
+          el("path", { d: leke(x, y - 68 * k, 46 * k, 42 * k, 300 + i, 10, 0.14), fill: R.yesil }, g);
+          el("path", { d: leke(x - 12 * k, y - 80 * k, 24 * k, 18 * k, 330 + i, 8, 0.2), fill: R.yesilAcik }, g);
+        } else {
+          el("rect", { x: x - 4 * k, y: y - 26 * k, width: 8 * k, height: 28 * k, fill: R.govde }, g);
+          el("path", { d: leke(x, y - 96 * k, 22 * k, 76 * k, 360 + i, 10, 0.1), fill: "#5e7f3b" }, g);
+          el("path", { d: leke(x - 6 * k, y - 118 * k, 9 * k, 34 * k, 390 + i, 8, 0.15), fill: "#7a9a4c" }, g);
+        }
+      });
+
+      /* --- keçi (yandan, sağa bakar; ayak ortası 0,0) --- */
+      const keci = el("g", { id: "keci" }, dunya);
+      const keciYon = el("g", { id: "keci-yon" }, keci);
+      const keciOlcek = el("g", { transform: "scale(0.82)" }, keciYon);
+      el("ellipse", { cx: 0, cy: 2, rx: 46, ry: 7, fill: R.murekkep, opacity: 0.18 }, keciOlcek);
+      const keciGovde = el("g", { id: "keci-govde" }, keciOlcek);
+      [-30, -17, 15, 28].forEach(function (x, i) {
+        el("rect", { class: "keci-bacak b" + (i % 2), x: x, y: -38, width: 7, height: 38, rx: 3, fill: "#3a302b", "data-px": x + 3.5 }, keciGovde);
+      });
+      el("path", { d: "M-44 -62Q-56 -70 -54 -80", fill: "none", stroke: "#5a4638", "stroke-width": 7, "stroke-linecap": "round" }, keciGovde);
+      el("path", { d: leke(0, -52, 46, 24, 61, 10, 0.08), fill: "#5a4638" }, keciGovde);
+      el("path", { d: leke(4, -42, 30, 11, 62, 8, 0.1), fill: "#8a6f5a" }, keciGovde);
+      const keciBas = el("g", { id: "keci-bas" }, keciGovde);
+      el("path", { d: "M34 -64L48 -78L54 -66L42 -54Z", fill: "#5a4638" }, keciBas);
+      el("path", { d: "M46 -86Q40 -104 28 -108", fill: "none", stroke: R.kagit, "stroke-width": 6, "stroke-linecap": "round" }, keciBas);
+      el("path", { d: "M52 -86Q50 -102 40 -110", fill: "none", stroke: R.kagit, "stroke-width": 6, "stroke-linecap": "round" }, keciBas);
+      el("ellipse", { cx: 52, cy: -76, rx: 16, ry: 12, fill: "#5a4638" }, keciBas);
+      el("ellipse", { cx: 65, cy: -71, rx: 9, ry: 7, fill: "#8a6f5a" }, keciBas);
+      el("ellipse", { cx: 41, cy: -80, rx: 9, ry: 4, fill: "#3a302b", transform: "rotate(-28 41 -80)" }, keciBas);
+      el("path", { d: "M60 -65L64 -52L68 -65Z", fill: R.kagit }, keciBas);
+      el("circle", { cx: 55, cy: -79, r: 2.6, fill: R.kagit }, keciBas);
+
+      /* --- dede (sola bakar; ayak ortası 0,0) --- */
+      const dede = el("g", { id: "dede", transform: "translate(1085 956)" }, dunya);
+      const dedeIc = el("g", { id: "dede-ic" }, dede);
+      el("ellipse", { cx: 2, cy: 3, rx: 50, ry: 9, fill: R.murekkep, opacity: 0.18 }, dedeIc);
+      el("path", { d: "M36 -78L42 0", stroke: R.govde, "stroke-width": 6, "stroke-linecap": "round" }, dedeIc);
+      el("rect", { x: -23, y: -72, width: 19, height: 72, rx: 6, fill: "#4a3b32" }, dedeIc);
+      el("rect", { x: 4, y: -72, width: 19, height: 72, rx: 6, fill: "#4a3b32" }, dedeIc);
+      el("ellipse", { cx: -19, cy: -2, rx: 17, ry: 7, fill: R.murekkep }, dedeIc);
+      el("ellipse", { cx: 8, cy: -2, rx: 17, ry: 7, fill: R.murekkep }, dedeIc);
+      el("rect", { x: 23, y: -138, width: 14, height: 64, rx: 7, fill: "#e9dcbc", transform: "rotate(-8 30 -136)" }, dedeIc);
+      el("path", { d: "M-35 -70L-29 -141Q0 -154 29 -141L35 -70Z", fill: R.krem }, dedeIc);
+      el("path", { d: "M-35 -72L-30 -139L-7 -145L-10 -72Z", fill: "#5e6b3a" }, dedeIc);
+      el("path", { d: "M35 -72L30 -139L7 -145L10 -72Z", fill: "#5e6b3a" }, dedeIc);
+      el("circle", { cx: 0, cy: -170, r: 25, fill: R.ten }, dedeIc);
+      el("path", { d: "M-25 -160Q-12 -150 0 -158Q-6 -166 -22 -166Z", fill: R.krem }, dedeIc);
+      el("circle", { cx: -11, cy: -173, r: 2.6, fill: R.murekkep }, dedeIc);
+      el("path", { d: "M-27 -178Q-24 -203 2 -201Q27 -199 27 -180Z", fill: "#6b5b4b" }, dedeIc);
+      el("ellipse", { cx: -27, cy: -179, rx: 14, ry: 5, fill: "#5a4b3d" }, dedeIc);
+      const dedeKol = el("g", { id: "dede-kol" }, dedeIc);
+      el("rect", { x: -30, y: -139, width: 14, height: 66, rx: 7, fill: R.krem }, dedeKol);
+      el("circle", { cx: -23, cy: -70, r: 8, fill: R.ten }, dedeKol);
+
+      /* --- Elif (sola bakar; ayak ortası 0,0) --- */
+      const elif = el("g", { id: "elif", transform: "translate(1200 958)" }, dunya);
+      const elifIc = el("g", { id: "elif-ic" }, elif);
+      el("ellipse", { cx: 2, cy: 3, rx: 42, ry: 8, fill: R.murekkep, opacity: 0.18 }, elifIc);
+      el("rect", { x: -19, y: -64, width: 16, height: 64, rx: 6, fill: "#3f5670" }, elifIc);
+      el("rect", { x: 3, y: -64, width: 16, height: 64, rx: 6, fill: "#3f5670" }, elifIc);
+      el("ellipse", { cx: -15, cy: -2, rx: 15, ry: 6.5, fill: R.krem }, elifIc);
+      el("ellipse", { cx: 7, cy: -2, rx: 15, ry: 6.5, fill: R.krem }, elifIc);
+      el("ellipse", { cx: 30, cy: -128, rx: 9, ry: 22, fill: "#3a2a2a", transform: "rotate(-18 30 -128)" }, elifIc);
+      el("path", { d: "M-27 -62L-23 -120Q0 -131 23 -120L27 -62Z", fill: "#3e7c7b" }, elifIc);
+      el("circle", { cx: 0, cy: -145, r: 22, fill: R.tenAcik }, elifIc);
+      el("path", { d: "M-22 -151Q-20 -171 2 -169Q25 -167 23 -139L15 -152Q0 -161 -22 -151Z", fill: "#3a2a2a" }, elifIc);
+      el("circle", { cx: -9, cy: -146, r: 2.4, fill: R.murekkep }, elifIc);
+      const elifKol = el("g", { id: "elif-kol" }, elifIc);
+      el("rect", { x: -23, y: -117, width: 13, height: 52, rx: 6.5, fill: "#33696a" }, elifKol);
+      el("rect", { x: -27, y: -70, width: 18, height: 30, rx: 4, fill: R.murekkep }, elifKol);
+      el("circle", { cx: -16.5, cy: -66, r: 7, fill: R.tenAcik }, elifKol);
+
+      /* --- çerçevenin altını tutan ön ağaçlar --- */
+      [[1330, 1088, 1.2, "y"], [70, 1090, 1.1, "k"]].forEach(function (a, i) {
+        const g = el("g", { class: "agac", "data-x": a[0], "data-y": a[1] }, dunya);
+        const k = a[2], x = a[0], y = a[1];
+        if (a[3] === "y") {
+          el("rect", { x: x - 6 * k, y: y - 36 * k, width: 12 * k, height: 38 * k, fill: R.govde }, g);
+          el("path", { d: leke(x, y - 68 * k, 48 * k, 42 * k, 420 + i, 10, 0.14), fill: R.yesil }, g);
+          el("path", { d: leke(x - 12 * k, y - 80 * k, 24 * k, 18 * k, 430 + i, 8, 0.2), fill: R.yesilAcik }, g);
+        } else {
+          el("rect", { x: x - 4 * k, y: y - 26 * k, width: 8 * k, height: 28 * k, fill: R.govde }, g);
+          el("path", { d: leke(x, y - 96 * k, 22 * k, 76 * k, 440 + i, 10, 0.1), fill: "#5e7f3b" }, g);
+        }
+      });
+
+      /* --- bulut gölgeleri (haritanın üstünde süzülür) --- */
+      const golge1 = el("path", { id: "golge1", d: leke(0, 0, 330, 150, 71, 11, 0.18), fill: R.murekkep, opacity: 0.07 }, dunya);
+      const golge2 = el("path", { id: "golge2", d: leke(0, 0, 240, 110, 72, 10, 0.2), fill: R.murekkep, opacity: 0.06 }, dunya);
+
+      /* --- alan etiketi --- */
+      const alanEtiket = el("g", { id: "alan-etiket", opacity: 0 }, dunya);
+      etiket(alanEtiket, 466, 488, 388, 124, 81);
+      yazi(alanEtiket, 660, 578, "1000 m²", 80, R.murekkep);
+
+      /* --- sağdaki kart: soru, sonra her denemenin çarpımı ve sayacı --- */
+      const kartDis = el("g", { transform: "rotate(-2 1490 455)" }, dunya);
+      const kart = el("g", { id: "kart", opacity: 0 }, kartDis);
+      etiket(kart, 1206, 306, 568, 300, 82);
+      yazi(kart, 1490, 520, "? m", 176, R.murekkep, { id: "kart-soru" });
+      [["31", "4 × 31 m"], ["32", "4 × 32 m"], ["316", "4 × 31,6 m"]].forEach(function (k) {
+        yazi(kart, 1490, 392, k[1], 58, "#5e5647", { id: "ust-" + k[0], "font-weight": 500, opacity: 0 });
+        yazi(kart, 1490, 536, "0 m", 112, R.murekkep, { id: "sayi-" + k[0], opacity: 0 });
+      });
+
+      const cit31 = citKur("31", 124, false);
+      const cit32 = citKur("32", 128, false);
+      const cit316 = citKur("316", 126.4, true);
+      [cit31, cit32, cit316].forEach(function (c) { c.guncelle(); });
+      /* çitler keçinin ve insanların altında kalsın */
+      [cit31.g, cit32.g, cit316.g].forEach(function (g) { dunya.insertBefore(g, gEv); });
+
+      /* --- 31: açıklık --- */
+      const acikX = SOL + (4 * KENAR - cit31.boy);            // telin bittiği yer (A'dan 2,49 m önce)
+      const acik = el("g", { id: "acik", opacity: 0 }, dunya);
+      el("path", { d: "M" + SOL + " " + ALT + "L" + acikX.toFixed(1) + " " + ALT, stroke: R.vurgu, "stroke-width": 7, "stroke-dasharray": "9 8" }, acik);
+      el("path", { d: "M" + (SOL + 3) + " " + (ALT + 16) + "V" + (ALT + 36) + "M" + (acikX - 3).toFixed(1) + " " + (ALT + 16) + "V" + (ALT + 36) + "M" + (SOL + 3) + " " + (ALT + 26) + "H" + (acikX - 3).toFixed(1), fill: "none", stroke: R.vurgu, "stroke-width": 5, "stroke-linecap": "round" }, acik);
+      const acikEtiket = el("g", { id: "acik-etiket", opacity: 0 }, dunya);
+      el("path", { d: "M" + ((SOL + acikX) / 2).toFixed(1) + " " + (ALT + 40) + "L384 980", stroke: R.vurgu, "stroke-width": 4, "stroke-linecap": "round" }, acikEtiket);
+      etiket(acikEtiket, 290, 978, 190, 76, 83);
+      yazi(acikEtiket, 385, 1034, "2,5 m", 50, R.vurguKoyu);
+
+      /* --- 32: artan çit --- */
+      const artanX = SOL - (cit32.boy - 4 * KENAR);           // A'dan 1,51 m taşar
+      const artan = el("g", { id: "artan", opacity: 0 }, dunya);
+      el("path", { d: "M" + SOL + " " + ALT + "L" + artanX.toFixed(1) + " " + ALT, stroke: R.vurgu, "stroke-width": 9, "stroke-linecap": "round" }, artan);
+      el("path", { d: "M" + (SOL - 2) + " " + (ALT + 22) + "V" + (ALT + 40) + "M" + (artanX + 2).toFixed(1) + " " + (ALT + 22) + "V" + (ALT + 40) + "M" + (SOL - 2) + " " + (ALT + 31) + "H" + (artanX + 2).toFixed(1), fill: "none", stroke: R.vurgu, "stroke-width": 5, "stroke-linecap": "round" }, artan);
+      const artanEtiket = el("g", { id: "artan-etiket", opacity: 0 }, dunya);
+      el("path", { d: "M" + ((SOL + artanX) / 2).toFixed(1) + " " + (ALT + 44) + "L330 980", stroke: R.vurgu, "stroke-width": 4, "stroke-linecap": "round" }, artanEtiket);
+      etiket(artanEtiket, 236, 978, 190, 76, 84);
+      yazi(artanEtiket, 331, 1034, "1,5 m", 50, R.vurguKoyu);
+
+      /* --- 31,6: büyüteç. İçeride köşe yandan görünür: 100 px = 9 cm --- */
+      const BX = 660, BY = 545, BR = 250;
+      const buyutec = el("g", { id: "buyutec", opacity: 0 }, dunya);
+      el("path", { d: "M" + SOL + " " + ALT + "L" + (BX - 236) + " " + (BY + 82) + "L" + (BX - 60) + " " + (BY + 243) + "Z", fill: R.murekkep, opacity: 0.16 }, buyutec);
+      el("circle", { cx: SOL, cy: ALT, r: 20, fill: "none", stroke: R.murekkep, "stroke-width": 5 }, buyutec);
+      el("path", { d: "M" + (BX + 180) + " " + (BY + 180) + "L" + (BX + 292) + " " + (BY + 292), stroke: R.murekkep, "stroke-width": 30, "stroke-linecap": "round" }, buyutec);
+      el("circle", { cx: BX, cy: BY, r: BR + 8, fill: R.murekkep }, buyutec);
+      const kirp = el("clipPath", { id: "mercek" }, buyutec);
+      el("circle", { cx: BX, cy: BY, r: BR }, kirp);
+      const mercek = el("g", { "clip-path": "url(#mercek)" }, buyutec);
+      const ic = el("g", { transform: "translate(" + (BX + 30) + " " + BY + ")" }, mercek);
+      el("rect", { x: -320, y: -300, width: 640, height: 600, fill: "#efe3c4" }, ic);
+      el("path", { d: kesik(dikdortgen(-320, 132, 640, 170), 91, 3), fill: R.yol }, ic);
+      el("path", { d: "M-320 150Q0 142 320 152", fill: "none", stroke: R.yolIz, "stroke-width": 5, "stroke-dasharray": "20 18", "stroke-linecap": "round" }, ic);
+      el("path", { d: kesik(dikdortgen(-205, -150, 111, 290), 92, 2), fill: "#8a5b34" }, ic);
+      el("path", { d: "M-178 -140V130M-132 -146V134", stroke: "#74492a", "stroke-width": 5, "stroke-linecap": "round", opacity: 0.7 }, ic);
+      el("path", { d: kesik(dikdortgen(-213, -168, 127, 26), 93, 2), fill: R.direkUst }, ic);
+      el("path", { d: "M6 -30H330", stroke: R.tel, "stroke-width": 13, "stroke-linecap": "round" }, ic);
+      el("path", { d: "M6 -33H330", stroke: "#b98a5c", "stroke-width": 3, "stroke-linecap": "round" }, ic);
+      const bag = el("path", { id: "bag-teli", d: "M6 -30Q-20 -52 -46 -30T-94 -30", fill: "none", stroke: R.tel, "stroke-width": 6, "stroke-linecap": "round", "stroke-dasharray": 130, "stroke-dashoffset": 130 }, ic);
+      const dokuzCm = el("g", { id: "dokuz-cm", opacity: 0 }, ic);
+      el("path", { d: "M-92 22V52M4 22V52M-92 37H4", fill: "none", stroke: R.vurgu, "stroke-width": 6, "stroke-linecap": "round" }, dokuzCm);
+      yazi(dokuzCm, 26, 58, "9 cm", 54, R.vurguKoyu, { "text-anchor": "start" });
+      /* karış: başparmak ucundan serçe parmak ucuna 222 px = 20 cm */
+      const karis = el("g", { id: "karis" }, ic);
+      el("path", { d: "M-155 -64H67M-155 -78V-50M67 -78V-50", fill: "none", stroke: R.murekkep, "stroke-width": 4, "stroke-linecap": "round", "stroke-dasharray": "2 10" }, karis);
+      el("path", { d: "M-82 -150L-146 -88", stroke: R.tenAcik, "stroke-width": 30, "stroke-linecap": "round" }, karis);
+      el("path", { d: "M-6 -150L58 -88", stroke: R.tenAcik, "stroke-width": 22, "stroke-linecap": "round" }, karis);
+      el("path", { d: "M-66 -150V-116M-44 -150V-108M-22 -150V-114", stroke: "#d49a72", "stroke-width": 21, "stroke-linecap": "round" }, karis);
+      el("path", { d: leke(-44, -168, 62, 40, 94, 10, 0.06), fill: R.tenAcik }, karis);
+      el("path", { d: kesik(dikdortgen(-84, -260, 80, 70), 95, 2), fill: "#3e7c7b" }, karis);
+
+      /* ============================================================
+         TELEFON
+         ============================================================ */
+      const telSvg = document.getElementById("tel-svg");
+      const tel = el("g", { transform: "rotate(-4 500 560)" }, telSvg);
+      const telGovde = el("g", { id: "tel-govde" }, tel);
+      el("rect", { x: 262, y: 114, width: 500, height: 900, rx: 66, fill: R.murekkep, opacity: 0.2 }, telGovde);
+      el("rect", { x: 250, y: 100, width: 500, height: 900, rx: 66, fill: R.murekkep }, telGovde);
+      el("rect", { x: 274, y: 148, width: 452, height: 806, rx: 40, fill: "#22303a" }, telGovde);
+      el("rect", { x: 296, y: 178, width: 408, height: 300, rx: 24, fill: "#16212a" }, telGovde);
+      el("rect", { x: 440, y: 118, width: 120, height: 14, rx: 7, fill: "#45404f" }, telGovde);
+      /* ifade satırı: √1000 */
+      const ifade = el("g", { id: "ifade" }, telGovde);
+      const ifKok = kok(ifade, 478, 300, 68, 166, "#9fb7b5", 7);
+      ifKok.setAttribute("id", "if-kok");
+      ifKok.setAttribute("opacity", 0);
+      ["1", "0", "0", "0"].forEach(function (c, i) {
+        yazi(ifade, 534 + i * 41, 300, c, 68, "#9fb7b5", { class: "if-rakam", "font-weight": 500, opacity: 0 });
+      });
+      /* tuşlar */
+      const tuslar = [["7", "8", "9", "√"], ["4", "5", "6", "×"], ["1", "2", "3", "−"], ["0", ",", "=", "+"]];
+      const tusEl = {};
+      tuslar.forEach(function (satir, r) {
+        satir.forEach(function (c, k) {
+          const cx = 344 + k * 104, cy = 566 + r * 100;
+          const g = el("g", { class: "tus", "data-cx": cx, "data-cy": cy }, telGovde);
+          el("circle", { cx, cy, r: 42, fill: c === "√" || c === "=" ? R.vurgu : "#34454f" }, g);
+          if (c === "√") kok(g, cx - 24, cy + 14, 34, 16, R.krem, 5);
+          else yazi(g, cx, cy + 15, c, 42, R.krem, { "font-weight": 500 });
+          tusEl[c] = g;
+        });
+      });
+      /* sonuç satırı: ilk rakamlar ekranda, gerisi telefondan taşar */
+      const RAKAMLAR = "31,62277660168379331998893";
+      const gRakam = el("g", { id: "rakamlar" }, tel);
+      let rx = 342;
+      const rakamEl = [];
+      RAKAMLAR.split("").forEach(function (c, i) {
+        const w = c === "," ? 30 : 54;
+        const disarda = rx >= 749;
+        const t = yazi(gRakam, rx + w / 2, 428, c, 92, disarda ? R.murekkep : R.krem, { class: "rakam", "font-weight": 500, opacity: 0, "data-layout-allow-overlap": "" });
+        rakamEl.push(t);
+        rx += w;
+      });
+      const ucNokta = yazi(gRakam, rx + 34, 428, "…", 92, R.murekkep, { id: "uc-nokta", "font-weight": 500, opacity: 0, "data-layout-allow-overlap": "" });
+
+      /* ============================================================
+         KAPANIŞ KARTI
+         ============================================================ */
+      const kapSvg = document.getElementById("kapanis-svg");
+      const kapKart = el("g", { id: "kap-kart" }, kapSvg);
+      el("path", { d: kesik(dikdortgen(150, 754, 1640, 300), 96, 3, 70), fill: R.murekkep, opacity: 0.2 }, kapKart);
+      el("path", { d: kesik(dikdortgen(140, 740, 1640, 300), 96, 3, 70), fill: R.kagit }, kapKart);
+      const formul = el("g", { id: "formul" }, el("g", { transform: "translate(-40 0)" }, kapSvg));
+      const fKok = kok(formul, 1080, 932, 104, 262, R.vurguKoyu, 10);
+      fKok.setAttribute("id", "f-kok");
+      fKok.setAttribute("stroke-dasharray", 520);
+      fKok.setAttribute("stroke-dashoffset", 520);
+      yazi(formul, 1136, 932, "1000", 104, R.vurguKoyu, { id: "f-bin", "text-anchor": "start", opacity: 0 });
+      const fYaklasik = el("path", { id: "f-yaklasik", d: "M1424 880Q1442 862 1460 880T1496 880M1424 908Q1442 890 1460 908T1496 908", fill: "none", stroke: R.vurguKoyu, "stroke-width": 9, "stroke-linecap": "round", "stroke-dasharray": 90, "stroke-dashoffset": 90 }, formul);
+      yazi(formul, 1530, 932, "31,6", 104, R.vurguKoyu, { id: "f-sonuc", "text-anchor": "start", opacity: 0 });
+
+      /* ============================================================
+         ZAMAN ÇİZELGESİ
+         ============================================================ */
+      const tl = gsap.timeline({ paused: true });
+      const goster = function (h, t, d) { return tl.fromTo(h, { opacity: 0 }, { opacity: 1, duration: d || 0.4, ease: "power1.out" }, t); };
+      const gizle = function (h, t, d) { return tl.to(h, { opacity: 0, duration: d || 0.35, ease: "power1.in" }, t); };
+      const firla = function (h, t, ox, oy, d) {
+        return tl.fromTo(h, { opacity: 0, scale: 0.55, svgOrigin: ox + " " + oy }, { opacity: 1, scale: 1, svgOrigin: ox + " " + oy, duration: d || 0.5, ease: "back.out(1.8)" }, t);
+      };
+      /* aynı hedefi sırayla süren tweenler: ilki başlangıcı kurar, sonrakiler devralır */
+      function zincir(hedef) {
+        let ilk = true;
+        return function (bas, son, t) {
+          tl.fromTo(hedef, bas, Object.assign({ immediateRender: ilk }, son), t);
+          ilk = false;
+        };
+      }
+
+      /* ---- kamera: viewBox ---- */
+      const kam = { x: 640, y: 440, w: 1280 };
+      function kamUygula() {
+        dunya.setAttribute("viewBox", kam.x.toFixed(2) + " " + kam.y.toFixed(2) + " " + kam.w.toFixed(2) + " " + (kam.w * 0.5625).toFixed(2));
+      }
+      const kamera = zincir(kam);
+      kamera({ x: 640, y: 440, w: 1280 }, { x: 606, y: 420, w: 1348, duration: T.l2, ease: "none", onUpdate: kamUygula }, 0);
+      kamera({ x: 606, y: 420, w: 1348 }, { x: 0, y: 0, w: 1920, duration: 2.6, ease: "power2.inOut", onUpdate: kamUygula }, T.l2);
+      kamera({ x: 0, y: 0, w: 1920 }, { x: -600, y: -260, w: 3200, duration: 3.6, ease: "power2.inOut", onUpdate: kamUygula }, T.l14 - 0.9);
+      kamUygula();
+
+      /* ---- ortam: ağaçlar, duman, bulut gölgeleri, nefes ---- */
+      document.querySelectorAll(".agac").forEach(function (a, i) {
+        const sure = 2.4 + (i % 4) * 0.35;
+        const o = a.getAttribute("data-x") + " " + a.getAttribute("data-y");
+        tl.fromTo(a, { rotation: -1.6, svgOrigin: o }, { rotation: 1.6, svgOrigin: o, duration: sure, ease: "sine.inOut", yoyo: true, repeat: Math.max(0, Math.floor(T.son / sure) - 1) }, 0);
+      });
+      document.querySelectorAll(".duman").forEach(function (d, i) {
+        const sure = 3.6;
+        tl.fromTo(d, { x: 0, y: 0, opacity: 0.6, scale: 0.5, svgOrigin: "1645 640" }, { x: 46 + i * 8, y: -150, opacity: 0, scale: 1.7, svgOrigin: "1645 640", duration: sure, ease: "sine.out", repeat: Math.max(0, Math.floor((T.son - i * 1.2) / sure) - 1) }, i * 1.2);
+      });
+      tl.fromTo(golge1, { x: -500, y: 420 }, { x: 2300, y: 620, duration: T.son, ease: "none" }, 0);
+      tl.fromTo(golge2, { x: 2500, y: 150 }, { x: 300, y: 330, duration: T.son, ease: "none" }, 0);
+      document.querySelectorAll(".bulut").forEach(function (b, i) {
+        tl.fromTo(b, { x: 0 }, { x: 160 + i * 50, duration: T.son, ease: "none" }, 0);
+      });
+      ["#dede-ic", "#elif-ic"].forEach(function (h, i) {
+        const sure = 1.9 + i * 0.3;
+        tl.fromTo(h, { scaleY: 1, svgOrigin: "0 0" }, { scaleY: 1.018, svgOrigin: "0 0", duration: sure, ease: "sine.inOut", yoyo: true, repeat: Math.max(0, Math.floor(T.son / sure) - 1) }, 0);
+      });
+
+      /* ---- 1 · Dede ve Elif ---- */
+      const dedeKolu = zincir("#dede-kol");
+      const OMUZ_D = "-23 -134";
+      dedeKolu({ rotation: 0, svgOrigin: OMUZ_D }, { rotation: 98, svgOrigin: OMUZ_D, duration: 0.7, ease: "back.out(1.4)" }, T.l1 + 0.7);
+      dedeKolu({ rotation: 98, svgOrigin: OMUZ_D }, { rotation: 0, svgOrigin: OMUZ_D, duration: 0.6, ease: "power2.inOut" }, T.l2 - 0.5);
+
+      /* ---- 2 · Kare tarla ---- */
+      tl.fromTo(tebesir, { strokeDashoffset: 2400 }, { strokeDashoffset: 0, duration: 1.5, ease: "power2.inOut" }, T.l2 + 1.5);
+      tl.fromTo(".dik-aci", { opacity: 0 }, { opacity: 1, duration: 0.25, stagger: 0.08, ease: "power1.out" }, T.l2 + 2.9);
+      tl.fromTo(".centik", { opacity: 0 }, { opacity: 1, duration: 0.2, stagger: 0.04, ease: "power1.out" }, T.l2 + 3.1);
+      firla(alanEtiket, T.l2 + 3.5, 660, 550);
+      /* soru */
+      tl.fromTo(".hayal", { opacity: 0 }, { opacity: 0.9, duration: 0.2, stagger: 0.02, ease: "power1.out" }, T.l3 + 0.1);
+      firla(kart, T.l3 + 0.5, 1490, 455, 0.55);
+      dedeKolu({ rotation: 0, svgOrigin: OMUZ_D }, { rotation: 104, svgOrigin: OMUZ_D, duration: 0.6, ease: "back.out(1.4)" }, T.l3 + 0.2);
+      dedeKolu({ rotation: 104, svgOrigin: OMUZ_D }, { rotation: 0, svgOrigin: OMUZ_D, duration: 0.6, ease: "power2.inOut" }, T.l3 + 2.6);
+
+      /* ---- 3 · Telefon ---- */
+      const OMUZ_E = "-16.5 -113";
+      const elifKolu = zincir("#elif-kol");
+      elifKolu({ rotation: 0, svgOrigin: OMUZ_E }, { rotation: 62, svgOrigin: OMUZ_E, duration: 0.6, ease: "back.out(1.5)" }, T.l4 - 0.4);
+      elifKolu({ rotation: 62, svgOrigin: OMUZ_E }, { rotation: 0, svgOrigin: OMUZ_E, duration: 0.6, ease: "power2.inOut" }, T.l7 - 0.6);
+      gizle(alanEtiket, T.l4 - 0.4);
+      gizle("#kart-soru", T.l4 - 0.4);
+      tl.fromTo("#tel-yikama", { opacity: 0 }, { opacity: 0.84, duration: 0.6, ease: "power1.out" }, T.l4 - 0.4);
+      tl.fromTo("#tel-govde", { y: 1100 }, { y: 0, duration: 0.8, ease: "power3.out" }, T.l4 - 0.3);
+      function bas(c, t) {
+        const g = tusEl[c], o = g.getAttribute("data-cx") + " " + g.getAttribute("data-cy");
+        tl.fromTo(g, { scale: 1, svgOrigin: o }, { scale: 0.82, svgOrigin: o, duration: 0.09, ease: "none", immediateRender: false }, t);
+        tl.fromTo(g, { scale: 0.82, svgOrigin: o }, { scale: 1, svgOrigin: o, duration: 0.28, ease: "back.out(3)", immediateRender: false }, t + 0.09);
+      }
+      const tusZaman = [T.l4 + 0.9, T.l4 + 1.4, T.l4 + 1.75, T.l4 + 2.05, T.l4 + 2.35];
+      bas("√", tusZaman[0]);
+      goster("#if-kok", tusZaman[0] + 0.05, 0.15);
+      document.querySelectorAll(".if-rakam").forEach(function (r, i) {
+        bas(i === 0 ? "1" : "0", tusZaman[i + 1]);
+        goster(r, tusZaman[i + 1] + 0.05, 0.12);
+      });
+      bas("=", T.l5 + 0.2);
+      rakamEl.forEach(function (r, i) {
+        tl.fromTo(r, { opacity: 0, y: 18 }, { opacity: i < 9 ? 1 : Math.max(0.5, 1 - (i - 9) * 0.028), y: 0, duration: 0.22, ease: "back.out(2)" }, T.l5 + 0.7 + i * 0.16);
+      });
+      goster(ucNokta, T.l5 + 0.7 + rakamEl.length * 0.16, 0.2);
+      tl.fromTo(ucNokta, { scale: 1, svgOrigin: (rx + 34) + " 410" }, { scale: 1.35, svgOrigin: (rx + 34) + " 410", duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, T.l6);
+      tl.to("#tel-govde", { y: 1100, duration: 0.6, ease: "power2.in" }, T.l7 - 0.7);
+      gizle("#rakamlar", T.l7 - 0.7, 0.4);
+      tl.to("#tel-yikama", { opacity: 0, duration: 0.5, ease: "power1.in" }, T.l7 - 0.6);
+      gizle("#tebesir-grup", T.l7 - 0.4, 0.4);
+      gizle("#hayal", T.l7 - 0.4, 0.4);
+
+      /* ---- çit çizimi ortak ---- */
+      function citCiz(c, ad, tUst, tCiz, sure) {
+        goster("#ust-" + ad, tUst, 0.3);
+        goster(c.g, tCiz - 0.25, 0.25);
+        goster("#sayi-" + ad, tCiz - 0.25, 0.25);
+        tl.fromTo(c.durum, { p: 0 }, { p: 1, duration: sure, ease: "power1.inOut", onUpdate: c.guncelle }, tCiz);
+        tl.fromTo("#sayi-" + ad, { scale: 0.86, svgOrigin: "1490 500" }, { scale: 1, svgOrigin: "1490 500", duration: sure, ease: "power1.inOut" }, tCiz);
+      }
+      function citKaldir(c, ad, t) {
+        gizle(c.g, t, 0.4);
+        gizle("#ust-" + ad, t, 0.3);
+        gizle("#sayi-" + ad, t, 0.3);
+      }
+
+      /* ---- keçi ---- */
+      const keciYol = zincir(keci);
+      const BACAK = "-38";
+      function yuru(t, sure) {
+        const n = Math.max(1, Math.round(sure / 0.24));
+        document.querySelectorAll(".keci-bacak").forEach(function (b, i) {
+          const o = b.getAttribute("data-px") + " " + BACAK, yon = i % 2 ? 1 : -1;
+          tl.fromTo(b, { rotation: -16 * yon, svgOrigin: o }, { rotation: 16 * yon, svgOrigin: o, duration: sure / n, ease: "sine.inOut", yoyo: true, repeat: n - 1, immediateRender: false }, t);
+          tl.to(b, { rotation: 0, svgOrigin: o, duration: 0.12 }, t + sure);
+        });
+        tl.fromTo("#keci-govde", { y: 0 }, { y: -3, duration: sure / (n * 2), ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1, immediateRender: false }, t);
+      }
+      function otla(t, kez) {
+        tl.fromTo("#keci-bas", { rotation: 0, svgOrigin: "38 -62" }, { rotation: 34, svgOrigin: "38 -62", duration: 0.3, ease: "sine.inOut", yoyo: true, repeat: kez * 2 - 1, immediateRender: false }, t);
+      }
+
+      /* ---- 4 · 31 desek ---- */
+      citCiz(cit31, "31", T.l7 + 0.1, T.l7 + 0.9, 3.0);
+      goster(acik, T.l8 + 0.1, 0.3);
+      firla(acikEtiket, T.l8 + 0.5, 385, 1016);
+      keciYol({ x: -200, y: 952 }, { x: 352, y: 952, duration: 3.0, ease: "none" }, T.l8 - 1.3);
+      yuru(T.l8 - 1.3, 3.0);
+      keciYol({ x: 352, y: 952 }, { x: 452, y: 792, duration: 1.3, ease: "power1.inOut" }, T.l8 + 1.9);
+      yuru(T.l8 + 1.9, 1.3);
+      otla(T.l8 + 3.4, 1);
+
+      /* ---- 5 · 32 desek ---- */
+      tl.set(keciYon, { scaleX: -1, svgOrigin: "0 0" }, T.l9 - 0.75);
+      keciYol({ x: 452, y: 792 }, { x: 372, y: 930, duration: 0.9, ease: "power1.in" }, T.l9 - 0.7);
+      keciYol({ x: 372, y: 930 }, { x: 150, y: 952, duration: 1.5, ease: "power1.out" }, T.l9 + 0.2);
+      yuru(T.l9 - 0.7, 2.4);
+      tl.set(keciYon, { scaleX: 1, svgOrigin: "0 0" }, T.l9 + 1.8);
+      citKaldir(cit31, "31", T.l9 - 0.6);
+      gizle(acik, T.l9 - 0.6, 0.3);
+      gizle(acikEtiket, T.l9 - 0.6, 0.3);
+      citCiz(cit32, "32", T.l9 + 0.1, T.l9 + 0.7, 2.9);
+      goster(artan, T.l10 + 0.1, 0.3);
+      firla(artanEtiket, T.l10 + 0.5, 331, 1016);
+      otla(T.l10 + 1.6, 1);
+
+      /* ---- 6 · 31,6 alalım ---- */
+      citKaldir(cit32, "32", T.l11 - 0.7);
+      gizle(artan, T.l11 - 0.7, 0.3);
+      gizle(artanEtiket, T.l11 - 0.7, 0.3);
+      citCiz(cit316, "316", T.l11 + 0.1, T.l11 + 0.8, 3.3);
+      tl.fromTo(buyutec, { opacity: 0, scale: 0.05, svgOrigin: SOL + " " + ALT }, { opacity: 1, scale: 1, svgOrigin: SOL + " " + ALT, duration: 0.7, ease: "back.out(1.3)" }, T.l12 - 0.1);
+      goster(dokuzCm, T.l12 + 0.7, 0.3);
+      tl.fromTo(karis, { y: -330 }, { y: 0, duration: 0.7, ease: "back.out(1.2)" }, T.l12 + 2.0);
+      keciYol({ x: 150, y: 952 }, { x: 292, y: 916, duration: 1.5, ease: "power1.inOut" }, T.l13 - 0.2);
+      yuru(T.l13 - 0.2, 1.5);
+      tl.fromTo(bag, { strokeDashoffset: 130 }, { strokeDashoffset: 0, duration: 0.8, ease: "power2.inOut" }, T.l13 + 1.5);
+      tl.fromTo("#keci-govde", { x: 0 }, { x: 9, duration: 0.16, ease: "power2.out", yoyo: true, repeat: 3, immediateRender: false }, T.l13 + 1.6);
+      tl.to(buyutec, { opacity: 0, scale: 0.05, svgOrigin: SOL + " " + ALT, duration: 0.45, ease: "power2.in" }, T.l14 - 1.4);
+      gizle(kart, T.l14 - 1.1, 0.4);
+
+      /* ---- 7 · Kapanış ---- */
+      tl.fromTo("#gunbatimi", { opacity: 0 }, { opacity: 0.36, duration: 3.6, ease: "sine.inOut" }, T.l14 - 0.9);
+      tl.fromTo("#gok", { fill: "#bcd6d2" }, { fill: "#f4c08e", duration: 3.6, ease: "sine.inOut" }, T.l14 - 0.9);
+      tl.fromTo(gunes, { y: 0 }, { y: 96, duration: 6, ease: "sine.out" }, T.l14 - 0.9);
+      tl.fromTo("#kapanis-ic", { y: 380 }, { y: 0, duration: 0.8, ease: "power3.out" }, T.l14);
+      tl.fromTo("#kapanis-yazi span", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.22, ease: "power2.out" }, T.l14 + 0.5);
+      tl.fromTo("#f-kok", { strokeDashoffset: 520 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, T.l14 + 1.7);
+      goster("#f-bin", T.l14 + 2.0, 0.35);
+      tl.fromTo(fYaklasik, { strokeDashoffset: 90 }, { strokeDashoffset: 0, duration: 0.5, ease: "power2.out" }, T.l14 + 2.5);
+      tl.fromTo("#f-sonuc", { opacity: 0, scale: 0.7, svgOrigin: "1636 896" }, { opacity: 1, scale: 1, svgOrigin: "1636 896", duration: 0.5, ease: "back.out(2)" }, T.l14 + 2.9);
+
+      window.__timelines["main"] = tl;
+      tl.seek(0);
+    </script>
+  </body>
+</html>
