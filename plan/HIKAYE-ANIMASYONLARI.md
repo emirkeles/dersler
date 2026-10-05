@@ -2,7 +2,17 @@
 
 Karar (5 Ekim 2026): Derslere, kritik bir bilgiyi hayatın içinden bir hikâyeyle anlatan kısa animasyonlar eklenecek. Etkileşim yok; izlenir. Görsel dil hikâyeye göre seçilen 2D çizim (pastel, guaj, suluboya gibi).
 
-Araç varsayımı: "hypergen" ile bu bilgisayarda kurulu **HyperFrames** eklentisini kastettiğinizi varsaydım. Başka bir araçsa bölüm 5 değişir, gerisi aynı kalır.
+Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
+
+## Durum (5 Ekim 2026)
+
+| Hikâye | Durum | Eksik |
+|---|---|---|
+| 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) | Son işleme, müzik, efekt, altyazı dosyası |
+| 3 · B7 Kombi 22 derecede | Seslendirildi ve işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) | Müzik, efekt, altyazı dosyası |
+| 2 C4 · 4 C5 · 5 B5 · 6 D5 · 7 A2 · 8 C3 | Başlanmadı | — |
+
+Hiçbir hikâye henüz derse bağlı değil: motorda video sahnesi türü ve ana sayfada "Hikâyeler" başlığı yok; A8 ve B7 derslerinin kendisi de yazılmadı.
 
 ## 1. Hangi konuya hikâye yazılır
 
@@ -112,7 +122,7 @@ Her hikâye altı adımdan geçer:
 
 ### Dosyalar
 
-`hikaye/<ders>-<ad>/` (HyperFrames projesi: senaryo, taslak, çizimler, kompozisyon) ve `hikaye/<ders>-<ad>.mp4` (derste kullanılan çıktı). Bir dakikalık 1080p video yaklaşık 8–15 MB; sekiz hikâye depoyu ~100 MB büyütür. Gerekirse videolar depo dışında tutulur.
+`hikaye/<ders>-<ad>/` (HyperFrames projesi: senaryo, taslak, çizimler, kompozisyon) ve `hikaye/<ders>-<ad>.mp4` (derste kullanılan çıktı). İlk iki video 28–36 MB çıktı (ilk tahmin 8–15 MB idi); sekiz hikâye depoyu ~250 MB büyütür. Gerekirse videolar depo dışında tutulur ya da daha düşük bit hızıyla işlenir.
 
 ## 6. Sıra ve bağımlılıklar
 
@@ -123,8 +133,8 @@ Her hikâye altı adımdan geçer:
 
 ## 7. Açık kararlar
 
-1. "Hypergen" = HyperFrames varsayımı doğru mu?
-2. Çizim kaynağı: A, B ya da C (önce iki karelik karşılaştırma öneriyorum).
-3. Hikâye listesi: sekiz hikâye ve "hikâyesi olmayan dersler" ayrımı uygun mu?
-4. Yerleşim: dersin son sahnesi (öneri) mi, dersler arasında ayrı bir sayfa mı?
-5. Pilotun sesi şimdi üretilsin mi?
+1. Hikâye listesi: sekiz hikâye ve "hikâyesi olmayan dersler" ayrımı uygun mu?
+2. Yerleşim: dersin son sahnesi (öneri) mi, dersler arasında ayrı bir sayfa mı?
+3. Müzik ve efekt: ilk iki hikâye yalnızca anlatımla işlendi; eklenecek mi?
+
+Kapananlar: araç HyperFrames; çizimler tamamı vektör (seçenek B; A8 guaj ve kâğıt dokusu, B7 kuru pastel süzgeci); pilotun sesi üretildi.

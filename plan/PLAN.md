@@ -17,7 +17,7 @@ Bölüm bölüm ilerlenir: bir bölümün mevcut dersleri düzenlenir, eksik der
 
 | Sıra | Bölüm | Düzenlenecek (mevcut içerik) | Eklenecek (yeni) |
 |---|---|---|---|
-| 1 | **A — Üslü ve köklü** | A1–A4: **tamamlandı** (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu) | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer — senaryolar onayda: `senaryolar/A5-A8-yeni-dersler.md` |
+| 1 | **A — Üslü ve köklü** | A1–A4: **bölündü, yayında** (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu). Yazı bütçesi henüz tutmuyor; ölçüm bölüm 6'da | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer — senaryolar onayda: `senaryolar/A5-A8-yeni-dersler.md` |
 | 2 | **B — Aralıklar ve kümeler** | B2–B5: Ders 02 dörde bölünür, yazısı kısalır | B1 Küme dili · B6 Fark ve tümleme · B7 Mutlak değerle aralık |
 | 3 | **C — Sayı kümeleri** | C1–C3: Ders 03 üçe bölünür; işlem özellikleri sahnesi D'ye devredilir | C4 Sıralama ve arada olma · C5 İspat mı, karşı örnek mi? |
 | 4 | **D — İşlem özellikleri ve cebir** | D2–D4: Ders 04 üçe bölünür; yutan eleman sahnesi eklenir | D1 Önerme dili · D5 Özdeşlikler · D6 Çarpanlara ayırma ve sıfır çarpım |
@@ -35,7 +35,7 @@ Mevcut dersleri düzenlerken her sahnede yapılacaklar: altyazı ≤ 12 kelime �
 
 ## 1. Format kararı: mikro ders
 
-Bir ders = **bir fikir, 4–6 dakika, 3–5 sahne, 2 soruluk çıkış bileti.** Bugünkü 13 sahnelik dersler bölünür; tema dört bölüm, 25 mikro ders olur (14'ü mevcut içerikten, 11'i yeni).
+Bir ders = **bir fikir, 4–6 dakika, 3–5 sahne, 2 soruluk çıkış bileti.** Bugünkü 13 sahnelik dersler bölünür; tema dört bölüm, 26 mikro ders olur (14'ü mevcut içerikten, 12'si yeni).
 
 Her mikro dersin iskeleti aynı kalır, öğrenci ritmi öğrenir:
 
@@ -87,7 +87,7 @@ Telefonda: tahta, altyazı ve soru artık tek ekranda; ama tahtadaki yazılar h�
 - Yoğun sahneler adım adım açılır: Ders 01 S6 merdiveninde yalnızca etkin satır parlak, kutular sırayla gelir; Ders 01 S9, Ders 03 S5, Ders 04 S12 ikiye bölünür.
 - Ders 03 S5 (işlem özellikleri) çıkarılır, D bölümüne bağlantı verilir.
 
-### Faz 2 — Eksik konular (11 yeni mikro ders + 1 sahne)
+### Faz 2 — Eksik konular (12 yeni mikro ders + 1 sahne)
 
 Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` altında kısa senaryo (bütçeye uygun), sonra ders dosyası.
 
@@ -112,7 +112,8 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 | A4 | Köklerle işlem | • 01 S10–13 | Çiftler dışarı; elma + armut | "Kök çarpmaya dağılır, toplamaya dağılmaz." |
 | A5 | **YENİ** Rasyonel üs ve n. kök | — | Yolu n eşit adıma böl, m adım yürü: 8^(2/3) | "Payda kökü, pay kuvveti söyler." |
 | A6 | **YENİ** Eşlenik | — | Alan modeli: (√3 − 1)(√3 + 1) = 3 − 1 | "Eşlenik, kökü yok eden ikizdir." |
-| A7 | **YENİ** Bilimsel gösterim ve yaklaşık değer | — | Atomdan galaksiye zoom kaydırıcısı; √2 metrelik çitin maliyeti | "Virgül kayar, üs sayar." |
+| A7 | **YENİ** Bilimsel gösterim | — | Rakamlar durur, virgül kayar; her kayışta 10'un üssündeki sayaç değişir | "Virgül kayar, üs sayar." |
+| A8 | **YENİ** Yaklaşık değer | — | Sayı doğrusunda sıkıştırma: 31² = 961, 32² = 1024; √1000 ≈ 31,6 | "Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz." |
 
 ### Bölüm B — Aralıklar ve kümeler (MAT.9.1.2) · hikâye: lunapark
 
@@ -147,7 +148,7 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 | D5 | **YENİ** Özdeşlikler | — | Kareyi dört parçaya böl (unutulan iki dikdörtgen: 2ab); köşeden kare kes, döndür: a² − b² | "(a + b)² dört parçadır, iki değil." |
 | D6 | **YENİ** Çarpanlara ayırma ve sıfır çarpım | — (+ 04 S12) | Dağılmayı geri sar; alanı 0 olan dikdörtgenin bir kenarı 0; 51 · 49 ve 99² | "Çarpım 0 ise çarpanlardan biri 0'dır." |
 
-Önerilen yapım sırası (Faz 2): B1 → B6 → B7 → A5 → A6 → A7 → C4 → C5 → D1 → D5 → D6. A6 (eşlenik), D5'teki iki kare farkını kullandığı için D5'te geri bağlantı verilir.
+Önerilen yapım sırası (Faz 2): B1 → B6 → B7 → A5 → A6 → A7 → A8 → C4 → C5 → D1 → D5 → D6. A6 (eşlenik), D5'teki iki kare farkını kullandığı için D5'te geri bağlantı verilir.
 
 ## 5. Ses (ElevenLabs)
 
@@ -161,5 +162,16 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
 ## 6. Açık konular
 
-1. ElevenLabs anahtarı ve ses kimliği bekleniyor.
-2. Windows dizüstünde (Chrome/Edge) bir tur gözle kontrol.
+1. **A5–A8 senaryoları onay bekliyor** (`senaryolar/A5-A8-yeni-dersler.md`). "Bilimsel gösterim ve yaklaşık değer" orada A7 ve A8 olarak ikiye bölündü; yukarıdaki tablo buna göre güncellendi.
+2. **A1–A4 yazı bütçesini aşıyor.** 5 Ekim 2026 ölçümü (`node araclar/olc.js <no>`, 1366×657); yerleşim temiz, bütçe değil:
+
+   | Ders | Altyazı > 12 kelime | Tahtada > 25 kelime | Üst üste yazı | Defter (kelime / kural) |
+   |---|---|---|---|---|
+   | A1 | 7 / 22 | 12 / 22 | 1 | 79 / 5 |
+   | A2 | 2 / 9 | 7 / 9 | 2 | 40 / 2 |
+   | A3 | 3 / 9 | 9 / 9 | 0 | 33 / 2 |
+   | A4 | 7 / 23 | 16 / 23 | 3 | 68 / 4 |
+
+   Karar gerekiyor: bir tur daha kısaltma mı, yoksa tahtadaki 25 kelime sınırının gevşetilmesi mi.
+3. Windows dizüstünde (Chrome/Edge) bir tur gözle kontrol; sürükle-bırak oyunlarının gerçek fareyle denenmesi.
+4. Hikâye videolarının derse bağlanması: motorda video sahnesi türü ve ana sayfada "Hikâyeler" başlığı henüz yok (`HIKAYE-ANIMASYONLARI.md`, bölüm 3).
