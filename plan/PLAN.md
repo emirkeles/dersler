@@ -17,7 +17,7 @@ Bölüm bölüm ilerlenir: bir bölümün mevcut dersleri düzenlenir, eksik der
 
 | Sıra | Bölüm | Düzenlenecek (mevcut içerik) | Eklenecek (yeni) |
 |---|---|---|---|
-| 1 | **A — Üslü ve köklü** | A1–A4: **bölündü, yayında** (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu). Yazı bütçesi henüz tutmuyor; ölçüm bölüm 6'da | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer — senaryolar onayda: `senaryolar/A5-A8-yeni-dersler.md` |
+| 1 | **A — Üslü ve köklü** | A1–A4: **bölündü, yayında** (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu). Yazı bütçesi henüz tutmuyor; ölçüm bölüm 6'da | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer: **yazıldı** (senaryolar 5 Ekim 2026'da onaylandı; ölçümde bütçe aşımı, taşma ve konsol hatası yok). İzlemeniz bekleniyor |
 | 2 | **B — Aralıklar ve kümeler** | B2–B5: Ders 02 dörde bölünür, yazısı kısalır | B1 Küme dili · B6 Fark ve tümleme · B7 Mutlak değerle aralık |
 | 3 | **C — Sayı kümeleri** | C1–C3: Ders 03 üçe bölünür; işlem özellikleri sahnesi D'ye devredilir | C4 Sıralama ve arada olma · C5 İspat mı, karşı örnek mi? |
 | 4 | **D — İşlem özellikleri ve cebir** | D2–D4: Ders 04 üçe bölünür; yutan eleman sahnesi eklenir | D1 Önerme dili · D5 Özdeşlikler · D6 Çarpanlara ayırma ve sıfır çarpım |
@@ -162,7 +162,7 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
 ## 6. Açık konular
 
-1. **A5–A8 senaryoları onay bekliyor** (`senaryolar/A5-A8-yeni-dersler.md`). "Bilimsel gösterim ve yaklaşık değer" orada A7 ve A8 olarak ikiye bölündü; yukarıdaki tablo buna göre güncellendi.
+1. **A5–A8 izlenecek.** Dersler yazıldı (`a5-…html` – `a8-…html`); dördüncü adım olan izleme ve düzeltme turu sizde. A8'in son sahnesi hikâye videosunun sesli taslağını oynatıyor.
 2. **A1–A4 yazı bütçesini aşıyor.** 5 Ekim 2026 ölçümü (`node araclar/olc.js <no>`, 1366×657); yerleşim temiz, bütçe değil:
 
    | Ders | Altyazı > 12 kelime | Tahtada > 25 kelime | Üst üste yazı | Defter (kelime / kural) |
@@ -174,4 +174,4 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
    Karar gerekiyor: bir tur daha kısaltma mı, yoksa tahtadaki 25 kelime sınırının gevşetilmesi mi.
 3. Windows dizüstünde (Chrome/Edge) bir tur gözle kontrol; sürükle-bırak oyunlarının gerçek fareyle denenmesi.
-4. Hikâye videolarının derse bağlanması: motorda video sahnesi türü ve ana sayfada "Hikâyeler" başlığı henüz yok (`HIKAYE-ANIMASYONLARI.md`, bölüm 3).
+4. Ana sayfada "Hikâyeler" başlığı henüz yok (`HIKAYE-ANIMASYONLARI.md`, bölüm 3). Motorun video sahnesi türü eklendi; A8 onu kullanıyor.

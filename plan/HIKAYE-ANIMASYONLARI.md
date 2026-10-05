@@ -8,11 +8,11 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 
 | Hikâye | Durum | Eksik |
 |---|---|---|
-| 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) | Son işleme, müzik, efekt, altyazı dosyası |
+| 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) ve A8 dersinin son sahnesine bağlandı | Son işleme, müzik, efekt, altyazı dosyası |
 | 3 · B7 Kombi 22 derecede | Seslendirildi ve işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) | Müzik, efekt, altyazı dosyası |
 | 2 C4 · 4 C5 · 5 B5 · 6 D5 · 7 A2 · 8 C3 | Başlanmadı | — |
 
-Hiçbir hikâye henüz derse bağlı değil: motorda video sahnesi türü ve ana sayfada "Hikâyeler" başlığı yok; A8 ve B7 derslerinin kendisi de yazılmadı.
+Motorda video sahnesi türü var (`ortak/API.md`). B7 hikâyesi dersini bekliyor (B7 henüz yazılmadı); ana sayfada "Hikâyeler" başlığı yok.
 
 ## 1. Hangi konuya hikâye yazılır
 
@@ -134,7 +134,6 @@ Her hikâye altı adımdan geçer:
 ## 7. Açık kararlar
 
 1. Hikâye listesi: sekiz hikâye ve "hikâyesi olmayan dersler" ayrımı uygun mu?
-2. Yerleşim: dersin son sahnesi (öneri) mi, dersler arasında ayrı bir sayfa mı?
-3. Müzik ve efekt: ilk iki hikâye yalnızca anlatımla işlendi; eklenecek mi?
+2. Müzik ve efekt: ilk iki hikâye yalnızca anlatımla işlendi; eklenecek mi?
 
-Kapananlar: araç HyperFrames; çizimler tamamı vektör (seçenek B; A8 guaj ve kâğıt dokusu, B7 kuru pastel süzgeci); pilotun sesi üretildi.
+Kapananlar: araç HyperFrames; çizimler tamamı vektör (seçenek B; A8 guaj ve kâğıt dokusu, B7 kuru pastel süzgeci); pilotun sesi üretildi; hikâye dersin son sahnesinde oynar (A8 senaryosuyla onaylandı).
