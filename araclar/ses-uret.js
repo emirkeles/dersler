@@ -100,7 +100,10 @@ async function seslendir(metin, onceki, sonraki) {
   }
 }
 
-(async () => {
+/* Hikâye seslendirmesi (hikaye-ses.js) aynı sesi ve çağrıyı kullanır. */
+module.exports = { KOK, VARSAYILAN, SES, MODEL, seslendir, anahtarVar: () => !!ANAHTAR };
+
+if (require.main === module) (async () => {
   if (bayrak('--sesler')) {
     if (!ANAHTAR) throw new Error('ELEVENLABS_API_KEY tanımlı değil.');
     const r = await fetch(`${API}/voices`, { headers: { 'xi-api-key': ANAHTAR } });
