@@ -1,0 +1,72 @@
+{
+ "10": {
+  "metin": "Bu kez bir buçuk metre çit artar. Boşa para.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "11": {
+  "metin": "Otuz bir virgül altı alalım: yüz yirmi altı virgül dört metre.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "12": {
+  "metin": "Eksik, yalnızca dokuz santim. Bir karış bile değil.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "13": {
+  "metin": "Otuz bir virgül altı tam değer değil; ama işi görüyor.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "14": {
+  "metin": "Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "01": {
+  "metin": "Elif'in dedesi tarlasını çitle çevirecek.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "02": {
+  "metin": "Tarla tam bir kare. Alanı bir dönüm; yani bin metrekare.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "03": {
+  "metin": "[curious] Dedesi sorar: Kaç metre çit alayım?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "04": {
+  "metin": "Elif önce bir kenarı bulmalı: karekök bin.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "05": {
+  "metin": "Telefona yazar. Otuz bir virgül altı, iki, iki, yedi… Rakamlar bitmiyor.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "06": {
+  "metin": "Kök tam çıkmadı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "07": {
+  "metin": "[curious] Otuz bir metre desek? Dört kenar, yüz yirmi dört metre eder.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "08": {
+  "metin": "Çit yetmez. İki buçuk metre açık kalır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "09": {
+  "metin": "[curious] Otuz iki desek? Yüz yirmi sekiz metre.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ }
+}

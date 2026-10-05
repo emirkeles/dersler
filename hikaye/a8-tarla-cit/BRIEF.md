@@ -7,7 +7,7 @@ destination: ders-ici-video
 aspect: 1920x1080
 language: tr
 audience: 9. sınıf öğrencileri
-length: 66s
+length: 70s
 narration: yes
 ---
 
@@ -26,12 +26,11 @@ Dersin senaryosu: `senaryolar/A5-A8-yeni-dersler.md` (A8, 4. sahne).
 - Çizim dili: resimli harita. Tarla üstten, insanlar, ev, ağaçlar ve keçi yandan; kâğıt kesme
   biçimler, guaj renkleri, kâğıt dokusu. Tamamı vektör (ölçüler kesin olsun diye).
 - Çit, sayaçla birlikte ölçekli çizilir: 600 px = 31,62 m.
-- Anlatıcı: Gamze Özdemir, `eleven_v4` (`araclar/ses-uret.js`). Senaryo onaylanmadan ses üretilmez.
-- Taslakta anlatım metni üstte altyazı olarak görünür (`#altyazilar`); ses eklenince kaldırılır.
+- Anlatıcı: Gamze Özdemir, `eleven_v4`. Klipler `node araclar/hikaye-ses.js a8-tarla-cit` ile üretilir (`assets/ses/`).
 
 ## Notes
 
 - Ekranda cümle yok; yalnızca ölçü etiketleri (sayı + birim) ve kapanış kartı.
 - Derste geçmeyen kavram, terim ya da formül hikâyeye girmez.
 - Fiyat (TL) söylenmez; çabuk eskir. "Boşa para" demek yeterli.
-- Süreler tahminidir; gerçek ses süresi gelince `index.html` içindeki `T` tablosu ona göre düzeltilir.
+- Zamanlama gerçek klip sürelerine göre kuruldu (`index.html` içindeki `T` tablosu ve `<audio>` öğeleri).

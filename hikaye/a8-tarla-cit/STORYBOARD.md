@@ -1,6 +1,6 @@
 ---
 format: 1920x1080
-duration: 66s
+duration: 70s
 message: "Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz."
 arc: Durum → Şaşırtan an → Demek ki
 audience: 9. sınıf öğrencileri

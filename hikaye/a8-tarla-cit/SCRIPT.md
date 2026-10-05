@@ -2,12 +2,12 @@
 
 **Ders:** A8 Yaklaşık değer (son sahne)
 **Fikir:** Karekök çoğu zaman tam çıkmaz; yaklaşık değerle iş görülür.
-**Durum:** Onay bekliyor. Onaydan önce ses üretilmez.
+**Durum:** Seslendirildi (5 Ekim 2026). Metin değişirse `node araclar/hikaye-ses.js a8-tarla-cit` yalnızca değişen satırı yeniden üretir.
 
 **Voice:** Gamze Özdemir (ElevenLabs, `eleven_v4`)
 **Voice direction:** Sakin, sıcak, hikâye anlatır gibi. Sayılar tane tane. Gülme ve ses efekti yok.
 
-111 kelime · 14 cümle · yaklaşık 66 saniye (süreler tahmini)
+111 kelime · 14 cümle · 69,6 saniye
 
 ---
 
@@ -15,19 +15,19 @@
 
 ## Line 1 — Dede ve Elif (Frame 1)
 
-**Time:** 0.5 – 3.5s
+**Time:** 0.6 – 3.7s
 
     Elif'in dedesi tarlasını çitle çevirecek.
 
 ## Line 2 — Kare tarla (Frame 2)
 
-**Time:** 4.0 – 8.6s
+**Time:** 4.3 – 9.2s
 
     Tarla tam bir kare. Alanı bir dönüm; yani bin metrekare.
 
 ## Line 3 — Soru (Frame 2)
 
-**Time:** 9.1 – 11.9s
+**Time:** 9.8 – 12.8s
 **Delivery:** [curious]
 
     Dedesi sorar: Kaç metre çit alayım?
@@ -36,46 +36,45 @@
 
 ## Line 4 — Kenar (Frame 3)
 
-**Time:** 12.6 – 15.8s
+**Time:** 13.5 – 17.0s
 
     Elif önce bir kenarı bulmalı: karekök bin.
 
 ## Line 5 — Bitmeyen rakamlar (Frame 3)
 
-**Time:** 16.2 – 22.0s
-**Delivery:** Rakamlar hızlanmadan, tek tek.
+**Time:** 17.5 – 24.7s
 
     Telefona yazar. Otuz bir virgül altı, iki, iki, yedi… Rakamlar bitmiyor.
 
 ## Line 6 — Tam çıkmadı (Frame 3)
 
-**Time:** 22.4 – 24.0s
+**Time:** 25.1 – 26.7s
 
     Kök tam çıkmadı.
 
 ## Line 7 — 31 denemesi (Frame 4)
 
-**Time:** 24.8 – 29.4s
+**Time:** 27.6 – 32.2s
 **Delivery:** [curious]
 
     Otuz bir metre desek? Dört kenar, yüz yirmi dört metre eder.
 
 ## Line 8 — Çit yetmez (Frame 4)
 
-**Time:** 29.9 – 33.5s
+**Time:** 32.8 – 35.9s
 
     Çit yetmez. İki buçuk metre açık kalır.
 
 ## Line 9 — 32 denemesi (Frame 5)
 
-**Time:** 34.6 – 38.0s
+**Time:** 37.4 – 40.5s
 **Delivery:** [curious]
 
     Otuz iki desek? Yüz yirmi sekiz metre.
 
 ## Line 10 — Çit artar (Frame 5)
 
-**Time:** 38.4 – 42.2s
+**Time:** 41.1 – 44.7s
 
     Bu kez bir buçuk metre çit artar. Boşa para.
 
@@ -83,26 +82,25 @@
 
 ## Line 11 — 31,6 (Frame 6)
 
-**Time:** 43.2 – 48.0s
+**Time:** 45.6 – 50.3s
 
     Otuz bir virgül altı alalım: yüz yirmi altı virgül dört metre.
 
 ## Line 12 — Dokuz santim (Frame 6)
 
-**Time:** 48.5 – 52.5s
+**Time:** 50.9 – 55.1s
 
     Eksik, yalnızca dokuz santim. Bir karış bile değil.
 
 ## Line 13 — Tam değil ama yeter (Frame 6)
 
-**Time:** 53.0 – 56.8s
+**Time:** 55.6 – 59.8s
 
     Otuz bir virgül altı tam değer değil; ama işi görüyor.
 
 ## Line 14 — Kapanış (Frame 7)
 
-**Time:** 58.2 – 61.8s
-**Delivery:** [excited] hafif; yavaşlayarak bitir.
+**Time:** 61.1 – 64.9s
 
     Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz.
 
