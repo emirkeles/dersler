@@ -154,10 +154,10 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 - **Sıra önemli:** önce metin kısaltılır, sonra seslendirilir. Klip, metnin özetiyle eşleşir; metin değişince klip boşa gider. Bu yüzden dört dersin bugünkü hâlini topluca seslendirmek israf olur.
 - **Bugünkü hacim:** dört derste yaklaşık 285 anlatım satırı, 29–30 bin karakter. Yazı diyetinden sonra bunun kabaca yarısı beklenir.
 - **Üretim sırası:** en sonda, tüm içerik bittikten sonra, bütün dersler tek seferde.
-- **Kurulum:** kökte `.env` dosyasına `ELEVENLABS_API_KEY` ve `ELEVENLABS_VOICE_ID`. Ses seçmek için `node araclar/ses-uret.js --sesler`. Seçilen ses Gamze Özdemir (ana dili Türkçe; yabancı ses Will "pay/payda"yı yanlış okudu), model `eleven_v4` (`.env`). Anahtar yalnızca seslendirme izinli olduğundan `--sesler` çalışmaz; adaylar `ses/ornekler/dinle.html` sayfasında.
+- **Kurulum:** kökte `.env` dosyasına yalnızca `ELEVENLABS_API_KEY`. Ses ve model `araclar/ses-uret.js` içinde kayıtlı. Seçilen ses Gamze Özdemir (ana dili Türkçe; yabancı ses Will "pay/payda"yı yanlış okudu), model `eleven_v4`. Anahtar yalnızca seslendirme izinli olduğundan `--sesler` çalışmaz; adaylar `ses/ornekler/dinle.html` sayfasında.
 - **Oyunculuk:** `eleven_v4` köşeli parantezli yönergeleri destekler. Derslerde yalnızca `[curious]` (soru) ve `[excited]` (sonuç) seyrek olarak, `speak:` metninde kullanılır; gülme ve ses efekti yok.
 - **Durum:** Deneme olarak Ders 01 sahne 1–5 seslendirildi (18 klip, 190 sn). Bu sahnelerin metni yeniden değişirse klipleri sonda yenilenir.
-- **Komutlar:** `node araclar/ses-uret.js 01 --liste` (ne kadar karakter), `node araclar/ses-uret.js 01 --sahne 1-5` (üret).
+- **Komutlar:** `node araclar/ses-uret.js a1 --liste` (ne kadar karakter), `node araclar/ses-uret.js a1` (üret).
 
 ## 6. Açık konular
 

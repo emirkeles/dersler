@@ -6,10 +6,10 @@
    node ses-uret.js a1 --sahne 1-3,6      Yalnızca bu sahneleri üret.
    node ses-uret.js --sesler              Hesaptaki sesleri listele (ses kimliği seçmek için).
 
-   Ortam değişkenleri (ya da kökte .env dosyası):
-     ELEVENLABS_API_KEY   zorunlu
-     ELEVENLABS_VOICE_ID  zorunlu (anlatıcı sesi)
-     ELEVENLABS_MODEL     isteğe bağlı, varsayılan eleven_multilingual_v2
+   Gizli olan tek şey API anahtarıdır; kökteki .env dosyasında (git dışında) durur:
+     ELEVENLABS_API_KEY=...
+   Anlatıcı sesi ve model projenin ayarıdır, aşağıda VARSAYILAN içinde durur. Deneme için
+   ELEVENLABS_VOICE_ID ve ELEVENLABS_MODEL ortam değişkenleriyle geçici olarak değiştirilebilir.
 
    Oyunculuk yönergeleri: eleven_v3 / eleven_v4 modellerinde seslendirme metnine ([curious], [excited] gibi)
    köşeli parantezli yönergeler yazılabilir; bunlar derste `speak:` metnine konur, altyazıda görünmez.
@@ -34,8 +34,14 @@ const deger = (ad) => { const i = args.indexOf(ad); return i >= 0 ? args[i + 1] 
   }
 })();
 const API = 'https://api.elevenlabs.io/v1';
-const ANAHTAR = process.env.ELEVENLABS_API_KEY, SES = process.env.ELEVENLABS_VOICE_ID;
-const MODEL = process.env.ELEVENLABS_MODEL || 'eleven_multilingual_v2';
+/* Derslerin anlatıcısı. Değiştirilirse tüm klipler bir sonraki çalıştırmada yeniden üretilir. */
+const VARSAYILAN = {
+  ses: 'Hvrobr8BhLPfiaSv2cHi', // Gamze Özdemir – Turkish Female Narrator
+  model: 'eleven_v4',          // oyunculuk yönergelerini ([curious] gibi) destekler
+};
+const ANAHTAR = process.env.ELEVENLABS_API_KEY;
+const SES = process.env.ELEVENLABS_VOICE_ID || VARSAYILAN.ses;
+const MODEL = process.env.ELEVENLABS_MODEL || VARSAYILAN.model;
 
 function sahneSecimi(metin) {
   if (!metin) return null;
@@ -111,7 +117,7 @@ async function seslendir(metin, onceki, sonraki) {
   // Her klibin hangi model ve sesle üretildiği kaydedilir; ikisinden biri değişince klip yeniden üretilir.
   const kunyeDosyasi = path.join(klasor, 'uretim.json');
   const kunye = fs.existsSync(kunyeDosyasi) ? JSON.parse(fs.readFileSync(kunyeDosyasi, 'utf8')) : {};
-  const var_ = (s) => fs.existsSync(path.join(klasor, s.key + '.mp3')) && !!kunye[s.key] && (!SES || (kunye[s.key].model === MODEL && kunye[s.key].ses === SES));
+  const var_ = (s) => fs.existsSync(path.join(klasor, s.key + '.mp3')) && !!kunye[s.key] && kunye[s.key].model === MODEL && kunye[s.key].ses === SES;
 
   // sahne başına döküm
   const sahneler = new Map();
@@ -127,7 +133,7 @@ async function seslendir(metin, onceki, sonraki) {
     return;
   }
   if (!hedef.length) { console.log(`\nÜretilecek klip yok. Kayıtlı klip: ${manifestYaz(id)}.`); return; }
-  if (!ANAHTAR || !SES) throw new Error('ELEVENLABS_API_KEY ve ELEVENLABS_VOICE_ID gerekli (ortam değişkeni ya da kökte .env).');
+  if (!ANAHTAR) throw new Error('ELEVENLABS_API_KEY gerekli (kökteki .env dosyasına yaz).');
 
   fs.mkdirSync(klasor, { recursive: true });
   console.log(`\n${hedef.length} klip üretiliyor (${hedefKr} karakter, model ${MODEL})…`);
