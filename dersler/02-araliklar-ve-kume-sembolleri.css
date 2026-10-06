@@ -1,0 +1,12 @@
+.stage svg text{font-variant-numeric:tabular-nums}
+.stage svg .drag{cursor:grab}
+.stage svg [tabindex]:focus-visible{outline:2px solid var(--c5);outline-offset:3px}
+.opt .m{white-space:nowrap}
+.panel .q .m{white-space:nowrap}
+.qviz{margin:2px 0 6px}
+@media (max-width:900px){
+  .top{flex-wrap:wrap;gap:8px}
+  .top .ttl{flex-basis:100%;order:3}
+  .tools{flex-wrap:wrap}
+  .stage{aspect-ratio:16/9}
+}

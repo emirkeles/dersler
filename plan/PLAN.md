@@ -10,6 +10,8 @@ Dayanak: `ANALIZ.md`. Hedef: lise öğrencisinin dizüstü bilgisayarda, sıkıl
 4. **Arayüz "yapay zekâ işi" görünmeyecek.** Degrade, parlama, titreşen düğme, emoji, etiket hapı yok; tahta dışında her şey düz ve sessiz.
 5. **Ses en sona.** Ses ve model beğenildi (Gamze Özdemir, `eleven_v4`). Önce tüm içerik işi biter, seslendirme en son tek seferde yapılır.
 6. **Hikâye animasyonları.** Kritik fikirleri hayattan bir hikâyeyle anlatan, etkileşimsiz, 2D çizim tarzında kısa videolar eklenecek. Ayrı plan: `HIKAYE-ANIMASYONLARI.md`.
+7. **A bölümü kapandı (5 Ekim 2026).** A5–A8 izlendi ve uygun bulundu. A1–A4 bugünkü hâliyle kalır; yazı bütçesi aşımı kabul edildi, yeni kısaltma turu yapılmaz. Bütçe B–D bölümlerinde yazılacak ve bölünecek dersler için bağlayıcıdır.
+8. **Müfredat bağlayıcıdır (6 Ekim 2026).** Programın istemediği konu derse girmez, istediği konu eksik kalmaz. Program metni `MUFREDAT.md` dosyasında; her bölümün senaryosu ve dersleri ona göre denetlenir. Bölüm B bu denetimden geçti (dosyanın sonundaki tablo).
 
 ## Çalışma sırası (güncel)
 
@@ -17,9 +19,9 @@ Bölüm bölüm ilerlenir: bir bölümün mevcut dersleri düzenlenir, eksik der
 
 | Sıra | Bölüm | Düzenlenecek (mevcut içerik) | Eklenecek (yeni) |
 |---|---|---|---|
-| 1 | **A — Üslü ve köklü** | A1–A4: **bölündü, yayında** (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu). Yazı bütçesi henüz tutmuyor; ölçüm bölüm 6'da | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer: **yazıldı** (senaryolar 5 Ekim 2026'da onaylandı; ölçümde bütçe aşımı, taşma ve konsol hatası yok). İzlemeniz bekleniyor |
-| 2 | **B — Aralıklar ve kümeler** | B2–B5: Ders 02 dörde bölünür, yazısı kısalır | B1 Küme dili · B6 Fark ve tümleme · B7 Mutlak değerle aralık |
-| 3 | **C — Sayı kümeleri** | C1–C3: Ders 03 üçe bölünür; işlem özellikleri sahnesi D'ye devredilir | C4 Sıralama ve arada olma · C5 İspat mı, karşı örnek mi? |
+| 1 | **A — Üslü ve köklü** · **kapandı** | A1–A4: bölündü, yayında (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu). Yazı bütçesini aşıyor; bu hâliyle kabul edildi (karar 7) | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer: yazıldı, izlendi, onaylandı |
+| 2 | **B — Aralıklar ve kümeler** · **yazıldı, izlemeniz bekleniyor** | B2–B5: Ders 02 dörde bölündü; altyazılar ve defter kısaldı, her derse 2 çıkış sorusu. Altyazı bütçesi tutuyor, tahtadaki 25 kelime sınırı eski sahnelerde yer yer aşılıyor (bölüm 6) | B1 Küme dili · B6 Fark ve tümleme · B7 Mutlak değerle aralık: yazıldı (senaryolar 5 Ekim 2026'da onaylandı: `senaryolar/B-araliklar-ve-kumeler.md`); ölçümde bütçe aşımı, taşma ve konsol hatası yok |
+| 3 | **C — Sayı kümeleri** · **senaryolar onaylandı** (`senaryolar/C-sayi-kumeleri.md`) | C1–C3: Ders 03 üçe bölünür; işlem özellikleri sahnesi D'ye devredilir | C4 Sıralama ve arada olma · C5 İspat mı, karşı örnek mi? |
 | 4 | **D — İşlem özellikleri ve cebir** | D2–D4: Ders 04 üçe bölünür; yutan eleman sahnesi eklenir | D1 Önerme dili · D5 Özdeşlikler · D6 Çarpanlara ayırma ve sıfır çarpım |
 | 5 | **Akılda kalıcılık** | Ders başı hatırlama sorusu, bölüm sonu tekrar, tema finali, kopya kâğıdı | — |
 | 6 | **Ses ve hikâyeler** | Tüm derslerin seslendirilmesi | Hikâye animasyonları (pilot A bölümünden sonra; ayrıntı `HIKAYE-ANIMASYONLARI.md`) |
@@ -119,13 +121,13 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
 | # | Ders | Kaynak | Ana görsel | Akılda kalıcı cümle |
 |---|---|---|---|---|
-| B1 | **YENİ** Küme dili | — | Çalma listesi: şarkı ∈ liste, s(A), alt liste, boş liste, tüm kütüphane | "Küme bir listedir; ya sayarsın ya kuralını söylersin." |
+| B1 | **YENİ** Küme dili | — | Sayı kümeleri: A = {1, 3, 5, 7, 9}, 3 ∈ A, s(A); liste ve ortak özellik (3'ün katları, çift tam sayılar); alt küme, ∅, E. Çalma listesi yalnızca açılış sorusu | "Küme bir listedir; ya sayarsın ya kuralını söylersin." |
 | B2 | Dolu nokta, boş nokta | • 02 S1–4 | Kapıdaki boy çubuğu | "Eşitlik varsa nokta dolu." |
 | B3 | Parantez dili ve sonsuz | • 02 S5–7 | Dört kapı | "Köşeli dahil, yuvarlak hariç; sonsuz hep yuvarlak." |
 | B4 | Dört dil, tek küme | • 02 S8 | Dörtlü çevirici | "Eşitsizlik, aralık, doğru, küme: aynı şey." |
-| B5 | Kesişim ve birleşim | • 02 S9–12 | Üst üste binen şeritler | "∩ ve, ∪ veya." |
-| B6 | **YENİ** Fark ve tümleme | — | "A'ya binen ama B'ye binemeyen"; tümleyende renk ve uç noktalar tersine döner | "Tümleyende dolu boşalır, boş dolar." |
-| B7 | **YENİ** Mutlak değerle aralık | — | Hedef ve tolerans: 22 °C ± 2 | "\|x − a\| < r: merkez a, yarıçap r." |
+| B5 | Kesişim ve birleşim | • 02 S9–11 + yeni açılış: listelenmiş sayı kümelerinde ∩ ve ∪ (S12 tamir atölyesi bölüm sonu tekrarına ayrıldı; iki ucu aynı aralıklar ve geçersiz yazımlar program dışı olduğu için çıkarıldı) | Üst üste binen şeritler | "∩ ve, ∪ veya." |
+| B6 | **YENİ** Fark ve tümleme | — | Önce listelenmiş sayı kümelerinde (E = {1, …, 8}); sonra "A'ya binen ama B'ye binemeyen"; tümleyende renk ve uç noktalar tersine döner | "Tümleyende dolu boşalır, boş dolar." |
+| B7 | **YENİ** Mutlak değerle aralık | — | Boy tahmini standı: tahmin 165, pay 3; şerit merkezden iki yana açılır. Kombi (22 °C ± 1) hikâye videosunda | "Mutlak değer, hedefe uzaklıktır." (deftere: \|x − a\| < r ⇔ a − r < x < a + r) |
 
 ### Bölüm C — Sayı kümeleri (MAT.9.1.3) · hikâye: matruşkalar
 
@@ -133,9 +135,9 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 |---|---|---|---|---|
 | C1 | Her kutu bir ihtiyaçtan doğdu | • 03 S1–4, S6 | Matruşka + kapalılık testi | "Yapılamayan işlem yeni kutu açar." |
 | C2 | Ondalık açılımın adresi | • 03 S7–8 | Kalan defteri | "Biten ya da devreden: rasyonel." |
-| C3 | Sayı doğrusundaki delik | • 03 S9–11 | Karenin köşegeni | "Ne biter ne devreder: irrasyonel." |
+| C3 | Sayı doğrusundaki delik | • 03 S9, S10, S11'in bir kısmı, S12 | Karenin köşegeni | "Ne biter ne devreder: irrasyonel." |
 | C4 | **YENİ** Sıralama ve arada olma | — | Sonsuz zoom: iki tam sayının arası boş, iki kesrin arası hep dolu | "Kesirlerde 'bir sonraki sayı' yoktur." |
-| C5 | **YENİ** İspat mı, karşı örnek mi? | — (+ 03 S12) | Mahkeme: örnek tanıktır, ispat kesin delil; iki rasyonelin ortalaması | "Bin örnek kanıtlamaz, tek karşı örnek çürütür." |
+| C5 | **YENİ** İspat mı, karşı örnek mi? | — (+ 03 S11'in karşı örnekleri) | Mahkeme: örnek tanıktır, ispat kesin delil; iki rasyonelin ortalaması | "Bin örnek kanıtlamaz, tek karşı örnek çürütür." |
 
 ### Bölüm D — İşlem özellikleri ve cebir (MAT.9.1.4) · hikâye: hesap makinesiz kasiyer
 
@@ -162,16 +164,16 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
 ## 6. Açık konular
 
-1. **A5–A8 izlenecek.** Dersler yazıldı (`a5-…html` – `a8-…html`); dördüncü adım olan izleme ve düzeltme turu sizde. A8'in son sahnesi hikâye videosunun sesli taslağını oynatıyor.
-2. **A1–A4 yazı bütçesini aşıyor.** 5 Ekim 2026 ölçümü (`node araclar/olc.js <no>`, 1366×657); yerleşim temiz, bütçe değil:
+0. **B1–B7 izlenecek.** Yedi ders yazıldı (`b1-…html` – `b7-…html`); izleme ve düzeltme turu sizde. B2, B3 ve B5'te tahtadaki 25 kelime sınırı altyazı anlarının 7–13'ünde aşılıyor (eski sahnelerin çizimi; ölçücü matematik simgelerini de kelime sayıyor). Sürükle-bırak ve dokunma etkileşimleri yalnızca otomatik oynatmayla sınandı.
+1. Windows dizüstünde (Chrome/Edge) bir tur gözle kontrol; sürükle-bırak oyunlarının gerçek fareyle denenmesi.
+2. Ana sayfada "Hikâyeler" başlığı henüz yok (`HIKAYE-ANIMASYONLARI.md`, bölüm 3). Motorun video sahnesi türü eklendi; A8 ve B7 onu kullanıyor.
+3. Eski Ders 02'nin tamir atölyesi sahnesi (`dersler/02-…js`, `SC[13]`) hiçbir derste oynamıyor; bölüm sonu tekrar oyunu (Faz 3) için bekliyor.
 
-   | Ders | Altyazı > 12 kelime | Tahtada > 25 kelime | Üst üste yazı | Defter (kelime / kural) |
-   |---|---|---|---|---|
-   | A1 | 7 / 22 | 12 / 22 | 1 | 79 / 5 |
-   | A2 | 2 / 9 | 7 / 9 | 2 | 40 / 2 |
-   | A3 | 3 / 9 | 9 / 9 | 0 | 33 / 2 |
-   | A4 | 7 / 23 | 16 / 23 | 3 | 68 / 4 |
+Kapananlar (5 Ekim 2026): A5–A8 izlendi ve onaylandı. A1–A4'ün bütçe aşımı kabul edildi; son ölçüm (`node araclar/olc.js <no>`, 1366×657) kayıt için:
 
-   Karar gerekiyor: bir tur daha kısaltma mı, yoksa tahtadaki 25 kelime sınırının gevşetilmesi mi.
-3. Windows dizüstünde (Chrome/Edge) bir tur gözle kontrol; sürükle-bırak oyunlarının gerçek fareyle denenmesi.
-4. Ana sayfada "Hikâyeler" başlığı henüz yok (`HIKAYE-ANIMASYONLARI.md`, bölüm 3). Motorun video sahnesi türü eklendi; A8 onu kullanıyor.
+| Ders | Altyazı > 12 kelime | Tahtada > 25 kelime | Üst üste yazı | Defter (kelime / kural) |
+|---|---|---|---|---|
+| A1 | 7 / 22 | 12 / 22 | 1 | 79 / 5 |
+| A2 | 2 / 9 | 7 / 9 | 2 | 40 / 2 |
+| A3 | 3 / 9 | 9 / 9 | 0 | 33 / 2 |
+| A4 | 7 / 23 | 16 / 23 | 3 | 68 / 4 |

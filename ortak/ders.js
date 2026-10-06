@@ -492,7 +492,7 @@
         card.appendChild(row);
         await c.wait(500);
       }
-      const ORDER = [['01-uslu-ve-koklu.html', 'Aralıklar ve Küme Sembolleri'], ['02-araliklar-ve-kume-sembolleri.html', 'Sayı Kümeleri'], ['03-sayi-kumeleri.html', 'İşlem Özellikleri'], ['04-islem-ozellikleri-cebirsel.html', null]];
+      const ORDER = [['01-uslu-ve-koklu.html', 'Aralıklar ve Küme Sembolleri'], ['02-araliklar-ve-kume-sembolleri.html', 'Sayı Kümeleri'], ['c1-her-kutu-bir-ihtiyac.html', 'İşlem Özellikleri'], ['04-islem-ozellikleri-cebirsel.html', null]];
       const file = decodeURIComponent(location.pathname.split('/').pop());
       const at = ORDER.findIndex((o) => o[0] === file);
       if (!cfg.nextLesson && at >= 0 && at < ORDER.length - 1) cfg.nextLesson = { href: ORDER[at + 1][0], label: 'Sonraki ders: ' + ORDER[at][1] + ' ›' };

@@ -3718,7 +3718,7 @@
         `<b>Sıkıştır:</b> 961 &lt; 1000 &lt; 1024, yani 31 &lt; ${rt(1000)} &lt; 32.`,
         '<b>≈ eşit demek değildir:</b> 31,6² = 998,56.',
       ],
-      next: { href: '02-araliklar-ve-kume-sembolleri.html', label: 'Sonraki bölüm: Aralıklar ›' },
+      next: { href: 'b1-kume-dili.html', label: 'Sonraki bölüm: Aralıklar ve kümeler ›' },
     },
   };
   const anahtar = window.DERS_PARCA || 'a1';

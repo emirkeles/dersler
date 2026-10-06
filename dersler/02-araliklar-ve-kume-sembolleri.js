@@ -590,7 +590,7 @@
       await fadeTo(c, bal, 400, 1, 0); bal.remove();
       await par(c, 'Tam <b>140,0 cm</b>: kapı açılıyor, <b class="good">geçer</b>.', { ms: 2400 }, () => go(140, 450));
       await par(c, '189,9 cm hâlâ geçer...', { ms: 1600, noWait: true }, () => go(189.9, 1900));
-      await par(c, 'Ama tam <b>190,0 cm</b> geçemez! İki uç bir değil: <b>140 girer, 190 girmez</b>.', { ms: 3600, speak: 'Ama tam yüz doksan santimetre geçemez! İki uç bir değil: yüz kırk girer, yüz doksan girmez.' }, () => go(190, 450));
+      await par(c, 'Ama tam <b>190,0 cm</b> geçemez: 140 girer, 190 girmez.', { ms: 3600, speak: 'Ama tam yüz doksan santimetre geçemez! İki uç bir değil: yüz kırk girer, yüz doksan girmez.' }, () => go(190, 450));
 
       /* 5) serbest keşif */
       interactive = true;
@@ -602,7 +602,7 @@
       c.on(track, 'pointerup', () => { dragging = false; });
       c.on(track, 'pointercancel', () => { dragging = false; });
       c.say('Şimdi sen dene: çocuğu sürükle ya da kaydırıcıyı kullan. Hangi boylar geçiyor?', { noWait: true });
-      c.note('<b>Kural:</b> Tabela bir <b>sayı kümesini</b> tarif eder: kim geçer, kim geçmez.', 'Kural', 'k1');
+      c.note('Tabela bir <b>sayı kümesini</b> tarif eder.', 'Kural', 'k1');
       await c.cont('Devam ›');
     },
   });
@@ -655,7 +655,7 @@
       place(120); setOp(kA.g, 0);
       const move = (to, ms) => { const from = v; return c.tween(ms, (e) => place(lerp(from, to, e))); };
 
-      await par(c, '"Boy 140 cm ve üzeri" demek, boy <b>140\'a eşit ya da daha büyük</b> demek.', { ms: 4200, speak: 'Boy yüz kırk santimetre ve üzeri demek, boy yüz kırka eşit ya da daha büyük demek.' }, async () => {
+      await par(c, '"140 cm ve üzeri": boy <b>140\'a eşit ya da büyük</b>.', { ms: 4200, speak: 'Boy yüz kırk santimetre ve üzeri demek, boy yüz kırka eşit ya da daha büyük demek.' }, async () => {
         await c.tween(700, (e) => uline.setAttribute('x2', rowA[3].x + rowA[3].w * e), ease.out);
       });
       /* dönüşüm animasyonu: cümle → x ≥ 140 */
@@ -676,7 +676,7 @@
       c.note('"…ve üzeri / en az" → <b>≥</b>', 'Dil çevirisi', 'k2a');
 
       /* sayı doğrusu + tahmin */
-      await par(c, 'Peki <b>x ≥ 140</b> koşulunu sağlayanlar sayı doğrusunda nerede toplanır? Önce tahmin et.', { ms: 3200, speak: 'Peki x büyük eşittir yüz kırk koşulunu sağlayanlar sayı doğrusunda nerede toplanır? Önce tahmin et.' }, async () => {
+      await par(c, '<b>x ≥ 140</b> olanlar sayı doğrusunda nerede? Önce tahmin et.', { ms: 3200, speak: 'Peki x büyük eşittir yüz kırk koşulunu sağlayanlar sayı doğrusunda nerede toplanır? Önce tahmin et.' }, async () => {
         await ax.draw(c, 900);
         await Promise.all([fadeTo(c, kA.g, 500), fadeTo(c, gG, 500)]);
       });
@@ -726,7 +726,7 @@
       await until(c, () => count >= 3, { solve: async () => { opts.querySelectorAll('button:not(:disabled)').forEach((b) => b.click()); await c.wait(1800); count = 3; } });
       await c.wait(1100);
       pn.remove();
-      c.note('<b>x ≥ 140</b>: 140 ve ondan büyük her sayı. Büyük sayılar sağda; çizgi sağa doğru uzar.', 'Kural', 'k2');
+      c.note('<b>x ≥ 140</b>: 140 ve sağındaki her sayı.', 'Kural', 'k2');
       await c.say('Kural bu: <b>"ve üzeri" ⇒ ≥</b>. Büyük sayılar sağda durur.', { ms: 2800, speak: 'Kural bu: ve üzeri demek büyük eşittir. Büyük sayılar sağda durur.' });
       await c.cont('Devam ›');
     },
@@ -766,7 +766,7 @@
         await fadeTo(c, rows[0].g, 700);
         await fadeTo(c, rows[1].g, 700);
       });
-      await c.say('İki tabela var. A: "<b>ve üzeri</b>". B: "<b>uzun</b>". Çocuk ikisinde de tam 140,0 cm.', { ms: 3600 });
+      await c.say('İki tabela: "<b>ve üzeri</b>" ile "<b>uzun</b>". Çocuk tam 140 cm.', { ms: 3600 });
 
       /* tahmin A */
       const qa = serial(c);
@@ -838,8 +838,8 @@
       await until(c, () => placed >= 2, { solve: async () => { if (!slotA.full) { slotA.full = true; tFull.locked = true; setOp(tFull.el, 0); finish(A, true); } if (!slotB.full) { slotB.full = true; tHol.locked = true; setOp(tHol.el, 0); finish(B, false); } await c.wait(500); } });
       await c.wait(900);
       pn.remove();
-      c.note('<b>●</b> dolu nokta: <b>≤ , ≥</b> · sayı DAHİL.<br><b>○</b> boş nokta: <b>< , ></b> · sayı HARİÇ.', 'Kural', 'k3');
-      await c.say('Dolu nokta: <b>bu sayı içeride</b>. Boş nokta: <b>buraya kadar gel, ama bu sayı dışarıda</b>.', { ms: 3600 });
+      c.note('● dolu: <b>≤ , ≥</b> (dahil) · ○ boş: <b>< , ></b> (hariç)', 'Kural', 'k3');
+      await c.say('Dolu nokta: <b>sayı içeride</b>. Boş nokta: <b>sayı dışarıda</b>.', { ms: 3600 });
       await c.cont('Devam ›');
     },
   });
@@ -858,7 +858,7 @@
       const ruleB = T(svg, 40, 100, 'x < 190', { a: 'start', s: 58, w: 800, f: COL.sky });
       setOp(ruleB, 0);
 
-      await par(c, 'Tabelada ikinci kural: <b>190 cm\'den kısa</b>. Yani <b>x < 190</b>. Burada 190 dahil değil.', { ms: 3800, speak: "Tabelada ikinci kural: yüz doksan santimetreden kısa. Yani x küçüktür yüz doksan. Burada yüz doksan dahil değil." }, async () => {
+      await par(c, 'İkinci kural: <b>190 cm\'den kısa</b>, yani <b>x < 190</b>.', { ms: 3800, speak: "Tabelada ikinci kural: yüz doksan santimetreden kısa. Yani x küçüktür yüz doksan. Burada yüz doksan dahil değil." }, async () => {
         await ax.draw(c, 700);
         await fadeTo(c, ruleB, 500);
         await rayB.grow(c, 1300);
@@ -916,7 +916,7 @@
         return t;
       };
 
-      await par(c, '190\'dan kısa olup girebilen <b>en uzun</b> çocuk kaç cm? 189 mu? Büyüteçle bakalım.', { ms: 3800, speak: "Yüz doksandan kısa olup girebilen en uzun çocuk kaç santimetre? Yüz seksen dokuz mu? Büyüteçle bakalım." }, async () => {
+      await par(c, '190\'dan kısa <b>en uzun</b> çocuk kaç cm? Büyüteçle bakalım.', { ms: 3800, speak: "Yüz doksandan kısa olup girebilen en uzun çocuk kaç santimetre? Yüz seksen dokuz mu? Büyüteçle bakalım." }, async () => {
         await Promise.all([fadeTo(c, gCone, 600), c.tween(800, (e) => { at(gLens, 0, 0); gLens.setAttribute('transform', `translate(${L.cx},${L.cy}) scale(${e}) translate(${-L.cx},${-L.cy})`); setOp(gLens, e); }, ease.back)]);
         await fadeTo(c, gList, 400);
         addRow('189 cm  ✓', COL.mint);
@@ -967,7 +967,7 @@
         }),
       });
       await q.idle();
-      c.note('Gerçek sayılarda <b>"bir sonraki sayı" yoktur</b>. Bu yüzden <b>x < 190</b> aralığının en büyük elemanı yoktur; 190 boş nokta ○ ile gösterilir.', 'Kural', 'k4a');
+      c.note('<b>x < 190</b>: en büyük eleman yok; 190 boş nokta.', 'Kural', 'k4a');
 
       /* ince eksen oyunu */
       [gCone, gLens, gList].forEach((e) => spawn(c, () => fadeTo(c, e, 500, 1, 0)));
@@ -1019,7 +1019,7 @@
       const rA = ivShape(svg, ax, IV(140, INF, true), AY - 70, COL.amber, { th: 7, r: 10, hidden: true });
       const rB = ivShape(svg, ax, IV(-INF, 190, false, false), AY - 36, COL.sky, { th: 7, r: 10, hidden: true });
       setOp(rayB.g, 0);
-      await par(c, 'İki kuralı <b>"ve"</b> ile birleştirelim: hem <b>x ≥ 140</b> hem <b>x < 190</b> olsun.', { ms: 4200, speak: 'İki kuralı ve ile birleştirelim: hem x büyük eşittir yüz kırk, hem x küçüktür yüz doksan olsun.' }, async () => {
+      await par(c, 'İki kuralı <b>"ve"</b> ile birleştirelim: <b>x ≥ 140</b> ve <b>x < 190</b>.', { ms: 4200, speak: 'İki kuralı ve ile birleştirelim: hem x büyük eşittir yüz kırk, hem x küçüktür yüz doksan olsun.' }, async () => {
         await Promise.all([...A, ...B, ve].map((t) => fadeTo(c, t, 600)));
         await rA.grow(c, 1000);
         await rB.grow(c, 1000);
@@ -1028,7 +1028,7 @@
       const beams = G(svg);
       [140, 190].forEach((v) => S('line', { x1: ax.X(v), x2: ax.X(v), y1: AY - 62, y2: AY - 12, stroke: COL.mint, 'stroke-width': 2.5, 'stroke-dasharray': '5 6' }, beams));
       setOp(beams, 0);
-      await par(c, 'Yalnızca <b>ikisinin ortak kısmı</b> kalır: sol uç dolu ●, sağ uç boş ○.', { ms: 3200, speak: 'Yalnızca ikisinin ortak kısmı kalır: sol uç dolu nokta, sağ uç boş nokta.' }, async () => {
+      await par(c, 'Yalnızca <b>ortak kısım</b> kalır: sol uç dolu, sağ uç boş.', { ms: 3200, speak: 'Yalnızca ikisinin ortak kısmı kalır: sol uç dolu nokta, sağ uç boş nokta.' }, async () => {
         await fadeTo(c, beams, 500);
         await result.grow(c, 1100);
         rA.fade(0.35); rB.fade(0.35);
@@ -1047,7 +1047,7 @@
           fin.forEach((t) => setOp(t, clamp(e * 1.6 - 0.5, 0, 1)));
         }, ease.inOut);
       });
-      c.note('<b>140 ≤ x < 190</b>: sol uç ● dahil, sağ uç ○ hariç.<br>Gerçek sayılarda "bir sonraki sayı" yoktur.', 'Kural', 'k4');
+      c.note('<b>140 ≤ x < 190</b>: sol uç ● dahil, sağ uç ○ hariç.', 'Kural', 'k4');
       await c.cont('Devam ›');
     },
   });
@@ -1077,7 +1077,7 @@
       [...capL, ...capR].forEach((t) => setOp(t, 0));
       const numX = (i) => rowN[i].x;
 
-      await par(c, 'Şimdi bu çizgiyi tek bir sembolle yazalım. Sol uç <b>140</b>, sağ uç <b>190</b>.', { ms: 3400, speak: 'Şimdi bu çizgiyi tek bir sembolle yazalım. Sol uç yüz kırk, sağ uç yüz doksan.' }, async () => {
+      await par(c, 'Bu çizgiyi tek sembolle yazalım: sol uç <b>140</b>, sağ uç <b>190</b>.', { ms: 3400, speak: 'Şimdi bu çizgiyi tek bir sembolle yazalım. Sol uç yüz kırk, sağ uç yüz doksan.' }, async () => {
         await ax.draw(c, 700);
         await band.grow(c, 1100);
       });
@@ -1106,16 +1106,16 @@
         await flyBracket(4, band.d2);
         await fadeTo(c, capR[0], 400); await fadeTo(c, capR[1], 400);
       });
-      c.note('<b>[ ]</b> köşeli: uç nokta DAHİL ● · <b>( )</b> yuvarlak: uç nokta HARİÇ ○.<br>Önce küçük sayı, sonra büyük sayı: <b>[a, b]</b> için <b>a < b</b>.', 'Kural', 'k5');
+      c.note('<b>[ ]</b> dahil ● · <b>( )</b> hariç ○ · örnek: <b>[140, 190)</b>', 'Kural', 'k5');
       await c.wait(700);
 
       /* 2. bölüm: aralığı sen kur */
       await fadeTo(c, g1, 600, 1, 0);
       g1.remove();
       const tasks = [
-        { given: '3 ≤ x < 7', a: 3, b: 7, init: [false, false], target: [true, false], mode: 'iv', say: 'Görev 1: kuralı sayı doğrusunda göster ve aralık olarak yaz.' },
-        { given: '2 < x ≤ 9', a: 2, b: 9, init: [false, false], target: [false, true], mode: 'iv', say: 'Görev 2: bu kural için uç noktaları ayarla.' },
-        { given: '(1, 6)', a: 1, b: 6, init: [true, true], target: [false, false], mode: 'ineq', say: 'Görev 3: tersini yap. Bu aralık için doğru noktaları ayarla.' },
+        { given: '3 ≤ x < 7', a: 3, b: 7, init: [false, false], target: [true, false], mode: 'iv', say: 'Kuralı sayı doğrusunda göster: noktalara dokun.' },
+        { given: '2 < x ≤ 9', a: 2, b: 9, init: [false, false], target: [false, true], mode: 'iv', say: 'Bu kural için uç noktaları ayarla.' },
+        { given: '(1, 6)', a: 1, b: 6, init: [true, true], target: [false, false], mode: 'ineq', say: 'Tersini yap: aralığa göre noktaları ayarla.' },
       ];
       for (let ti = 0; ti < tasks.length; ti++) {
         const t = tasks[ti];
@@ -1137,7 +1137,7 @@
         const tryK = kid(g); tryK.at(ax2.X(t.a), ay - 18, 70); setOp(tryK.g, 0);
         toggler(c, svg, d1, refresh, `${t.a} noktasını değiştir`); toggler(c, svg, d2, refresh, `${t.b} noktasını değiştir`);
         setOp(g, 0);
-        await par(c, t.say + ' Noktaya dokunarak <b>boş ↔ dolu</b> değiştir.', { ms: 3600, speak: t.say + ' Noktaya dokunarak boş ya da dolu yap.' }, () => fadeTo(c, g, 600));
+        await par(c, t.say, { ms: 3600 }, () => fadeTo(c, g, 600));
         const check = () => {
           if (solved) return;
           const okA = d1.filled === t.target[0], okB = d2.filled === t.target[1];
@@ -1288,7 +1288,7 @@
         for (const k of cards) { spawn(c, () => fadeTo(c, k.g, 500)); await c.wait(220); }
         await c.wait(400);
       });
-      await par(c, 'İkisi de dışarıdaysa <b>açık</b>, ikisi de içerideyse <b>kapalı</b>; biri içeride biri dışarıdaysa <b>yarı açık</b> aralık.', { ms: 5400 }, async () => {
+      await par(c, 'İki uç dışarıda: <b>açık</b>. İkisi içeride: <b>kapalı</b>. Biri içeride: <b>yarı açık</b>.', { ms: 5400 }, async () => {
         await c.wait(300);
       });
       await par(c, 'Lunaparkta dört tabelayı etiketlerle eşleştirelim: etiketi doğru tabelaya sürükle.', { ms: 3600 }, () => fadeTo(c, tray, 600));
@@ -1351,7 +1351,7 @@
       });
       await c.wait(1100);
       pn.remove();
-      c.note('<b>[a, b]</b> kapalı · <b>(a, b)</b> açık · <b>[a, b)</b> ve <b>(a, b]</b> yarı açık (yarı kapalı).<br>Her uç noktaya kendi başına bak: köşeli = dahil, yuvarlak = hariç.<br><span class="muted">Bazı kitaplarda açık uç ]a, b[ yazılır; biz yuvarlak parantez kullanıyoruz.</span>', 'Kural', 'k6');
+      c.note('<b>[a, b]</b> kapalı · <b>(a, b)</b> açık · <b>[a, b)</b>, <b>(a, b]</b> yarı açık', 'Kural', 'k6');
       await c.say('Adlar belli oldu. Şimdi hızlı bir kontrol sorusu.', { ms: 2400 });
       await c.choice({
         tag: 'Hızlı soru', q: '<span class="m">[−2, 3)</span> aralığında <b>−2</b> var mı, <b>3</b> var mı?',
@@ -1386,7 +1386,7 @@
       const kidAt = (x) => kA.at(x, AY - 8, 70);
       kidAt(ax.X(140));
 
-      await par(c, 'Bir de "boy <b>140 cm ve üzeri</b>" kuralına bakalım: üst sınır yok. Sağa doğru hep ilerleyebiliriz.', { ms: 4200 }, async () => {
+      await par(c, '"<b>140 cm ve üzeri</b>" kuralında üst sınır yok.', { ms: 4200 }, async () => {
         await ax.draw(c, 600);
         ray.show(); ray.hide();
         await ray.grow(c, 1400);
@@ -1406,7 +1406,7 @@
         await c.tween(ms / 2, (e) => { ax.ticks.forEach((t) => { t.lb.setAttribute('y', AY + 28 + 14 * e); setOp(t.lb, e); }); setOp(kA.g, e); }, ease.out);
       };
       const setCnt = (k) => { cnt1.textContent = num(2 * Math.pow(10, k + 2)); };
-      await par(c, 'Sonsuz simgesi <b>∞</b> bir sayı değil; "bitmeyen gidiş" demek. Koşucuyu salalım, ölçek her seferinde 10 kat büyüsün.', { ms: 6200, speak: 'Sonsuz simgesi bir sayı değil; bitmeyen gidiş demek. Koşucuyu salalım, ölçek her seferinde on kat büyüsün.' }, async () => {
+      await par(c, '<b>∞</b> bir sayı değil; "bitmeyen gidiş" demek.', { ms: 6200, speak: 'Sonsuz simgesi bir sayı değil; bitmeyen gidiş demek. Koşucuyu salalım, ölçek her seferinde on kat büyüsün.' }, async () => {
         await fadeTo(c, cnt, 500);
         for (let k = 0; k <= 4; k++) {
           K = k;
@@ -1475,7 +1475,7 @@
         }),
       });
       await q.idle();
-      c.note('<b>∞</b> ve <b>−∞</b> sayı değildir; uç olarak asla dahil edilemez. Yanlarında HER ZAMAN yuvarlak parantez: <b>[a, ∞)</b>, <b>(−∞, b]</b>.', 'Kural', 'k7');
+      c.note('∞ sayı değildir, hep yuvarlak: <b>[140, ∞)</b>', 'Kural', 'k7');
 
       /* 4) sola doğru: x < 190 */
       await Promise.all([fadeTo(c, ray.g, 500, 1, 0), fadeTo(c, noteTxt, 500, 1, 0), fadeTo(c, kA.g, 500, 1, 0), fadeTo(c, flagR, 500, 1, 0)]);
@@ -1487,7 +1487,7 @@
       const slotR = R(svg, 480, 100, 330, 76, { rx: 14, fill: 'rgba(255,255,255,.04)', stroke: COL.mute, 'stroke-width': 3, 'stroke-dasharray': '8 6' });
       const slotT = T(svg, 645, 148, 'buraya bırak', { s: 24, f: COL.mute, w: 600 });
       setOp(slotR, 0); setOp(slotT, 0);
-      await par(c, 'Şimdi sola doğru: <b>x < 190</b> kuralı. Boş nokta 190\'da, sol uçta <b>−∞</b> bayrağı.', { ms: 4200, speak: 'Şimdi sola doğru: x küçüktür yüz doksan kuralı. Boş nokta yüz doksanda, sol uçta eksi sonsuz bayrağı.' }, async () => {
+      await par(c, 'Şimdi sola doğru: <b>x < 190</b>. Sol uçta <b>−∞</b> bayrağı.', { ms: 4200, speak: 'Şimdi sola doğru: x küçüktür yüz doksan kuralı. Boş nokta yüz doksanda, sol uçta eksi sonsuz bayrağı.' }, async () => {
         await Promise.all([fadeTo(c, flagL, 500), fadeTo(c, ruleT, 500)]);
         await rayL.d2.pop(c, 300);
         rayL.line.setAttribute('x2', rayL.xb);
@@ -1532,7 +1532,7 @@
       const full = ivShape(svg, ax, IV(-INF, INF), AY, COL.mint, { th: 12, nodots: true, hidden: true });
       const R1 = T(svg, 500, 170, '(−∞, ∞) = ℝ', { s: 84, w: 800, f: COL.mint });
       setOp(R1, 0);
-      await par(c, 'Her iki yönde de sınır yoksa tüm sayı doğrusu: <b>(−∞, ∞) = ℝ</b>.', { ms: 3600, speak: 'Her iki yönde de sınır yoksa tüm sayı doğrusu: eksi sonsuzdan sonsuza, gerçek sayılar.' }, async () => {
+      await par(c, 'İki yönde de sınır yoksa: <b>(−∞, ∞) = ℝ</b>.', { ms: 3600, speak: 'Her iki yönde de sınır yoksa tüm sayı doğrusu: eksi sonsuzdan sonsuza, gerçek sayılar.' }, async () => {
         await Promise.all([fadeTo(c, flagR, 400), fadeTo(c, flagL, 100, 1, 1)]);
         await c.tween(1400, (e) => { full.line.setAttribute('x2', lerp(full.xa, full.xb, e)); full.line.setAttribute('x1', lerp(full.xb, full.xa, e) * 0 + full.xa); setOp(full.arrL, 1); setOp(full.arrR, e > 0.98 ? 1 : 0); }, ease.inOut);
         await fadeTo(c, R1, 600);
@@ -1540,235 +1540,217 @@
       const bal = balloon(svg, 500, 330, ['Gerçek hayatta boy negatif olamaz; ama kuralı', 'x < 190 diye yazınca solda sınır yok.'], { w: 680, s: 24 });
       setOp(bal, 0); await fadeTo(c, bal, 600);
       await c.wait(1500);
-      c.note('<b>(−∞, ∞) = ℝ</b>: tüm gerçek sayılar. Sol ya da sağ uç sonsuzsa orada HEP yuvarlak parantez.', 'Kural', 'k7b');
+      c.note('<b>(−∞, ∞) = ℝ</b>', 'Kural', 'k7b');
       await c.cont('Devam ›');
     },
   });
 
-  /* ------------------------------------------------------------------ 8. Dörtlü dönüşüm */
+  /* ------------------------------------------------------------------ 8–10. Dörtlü dönüşüm (B4: üç sahne aynı dört paneli kullanır) */
+  function dortlu(c) {
+    const svg = canvas(c);
+    const PW = 472, PH = 228;
+    const defsP = {
+      ineq: { x: 12, y: 8, name: 'Eşitsizlik', col: COL.amber },
+      iv: { x: 516, y: 8, name: 'Aralık', col: COL.sky },
+      line: { x: 12, y: 300, name: 'Doğru', col: COL.mint },
+      set: { x: 516, y: 300, name: 'Küme', col: COL.lilac },
+    };
+    const P = {};
+    Object.keys(defsP).forEach((k) => {
+      const d = defsP[k];
+      const g = G(svg);
+      const rect = R(g, d.x, d.y, PW, PH, { rx: 18, fill: 'url(#gCard)', stroke: d.col, 'stroke-opacity': 0.55, 'stroke-width': 2.5, filter: 'url(#shadow)' });
+      T(g, d.x + 20, d.y + 36, d.name, { a: 'start', s: 22, w: 700, f: d.col });
+      const body = G(g);
+      P[k] = { g, rect, body, d };
+      setOp(g, 0);
+    });
+    const Q = { svg, P, PW, st: null };
+    const clear = (g) => { while (g.firstChild) g.removeChild(g.firstChild); };
+    const cxP = (k) => P[k].d.x + PW / 2;
+    Q.clear = clear;
+    Q.flash = async (k, col) => {
+      const r = P[k].rect;
+      for (let i = 0; i < 3; i++) {
+        r.setAttribute('stroke', col || '#fff'); r.setAttribute('stroke-opacity', 1);
+        await c.wait(160);
+        r.setAttribute('stroke', P[k].d.col); r.setAttribute('stroke-opacity', 0.55);
+        await c.wait(160);
+      }
+    };
+    const dstr = (st) => (st.dom === 'R' ? 'ℝ' : 'ℤ');
+    const zRange = (iv) => [iv.la ? Math.ceil(iv.a) : Math.floor(iv.a) + 1, iv.lb ? Math.floor(iv.b) : Math.ceil(iv.b) - 1];
+
+    /* panel içerikleri */
+    const fill = {
+      ineq: (st) => { T(P.ineq.body, cxP('ineq'), P.ineq.d.y + 140, ineqStr(st.iv), { s: 54, w: 800 }); },
+      iv: (st) => {
+        const b = P.iv.body, y = P.iv.d.y;
+        if (st.dom === 'R') T(b, cxP('iv'), y + 140, 'x ∈ ' + ivStr(st.iv), { s: 50, w: 800 });
+        else {
+          T(b, cxP('iv'), y + 124, 'aralık değil', { s: 40, w: 800, f: COL.coral });
+          T(b, cxP('iv'), y + 168, 'aralık yalnızca ℝ için', { s: 22, f: COL.mute });
+        }
+      },
+      set: (st) => {
+        const b = P.set.body, y = P.set.d.y, cx = cxP('set');
+        const z = st.dom === 'Z' && isFinite(st.iv.a) && isFinite(st.iv.b);
+        T(b, cx, y + (z ? 116 : 140), `{x : ${ineqStr(st.iv)}, x ∈ ${dstr(st)}}`, { s: 30, w: 800 });
+        if (z) { const [lo, hi] = zRange(st.iv); T(b, cx, y + 168, `= {${lo}, ${lo + 1}, …, ${hi}}`, { s: 30, w: 800, f: COL.mint }); }
+      },
+    };
+    const zInfo = {};
+    fill.line = (st) => {
+      const b = P.line.body, pn = P.line.d;
+      const x0 = pn.x + 40, x1 = pn.x + PW - 40, y = pn.y + 150;
+      const ticks = [];
+      if (isFinite(st.iv.a)) ticks.push(st.iv.a);
+      if (isFinite(st.iv.b)) ticks.push(st.iv.b);
+      const ax = axis(b, { x0, x1, vmin: st.win[0], vmax: st.win[1], y, left: pn.x + 18, right: pn.x + PW - 18, major: ticks, minor: [], ls: 24 });
+      const sh = ivShape(b, ax, st.iv, y, COL.mint, { th: 10, r: 11 });
+      zInfo.sh = sh; zInfo.ax = ax; zInfo.dots = []; zInfo.ring = null;
+      if (isFinite(st.iv.a) && isFinite(st.iv.b)) {
+        const [lo, hi] = zRange(st.iv);
+        const zg = G(b);
+        for (let v = lo; v <= hi; v++) zInfo.dots.push(S('circle', { cx: ax.X(v), cy: y, r: 3, fill: COL.mint, opacity: 0 }, zg));
+        if (!st.iv.lb) zInfo.ring = S('circle', { cx: ax.X(st.iv.b), cy: y, r: 8, fill: COL.hole, stroke: COL.mute, 'stroke-width': 2.5, 'stroke-dasharray': '4 3', opacity: 0 }, zg);
+        zInfo.lab = T(b, pn.x + PW / 2, y - 46, 'yalnız tam sayılar', { s: 22, f: COL.mute, w: 600, op: 0 });
+      }
+      if (st.dom === 'Z') zInfo.apply(1);
+    };
+    zInfo.apply = (f) => {
+      if (!zInfo.sh) return;
+      setOp(zInfo.sh.line, 1 - f);
+      [zInfo.sh.d1, zInfo.sh.d2].forEach((d) => { if (d) setOp(d.g, 1 - f); });
+      const n = zInfo.dots.length;
+      zInfo.dots.forEach((d, i) => setOp(d, clamp(f * (n + 6) - i, 0, 1)));
+      if (zInfo.ring) setOp(zInfo.ring, clamp((f - 0.8) * 5, 0, 1));
+      if (zInfo.lab) setOp(zInfo.lab, clamp((f - 0.6) * 2.5, 0, 1));
+    };
+    Q.blank = (k) => {
+      clear(P[k].body);
+      const d = P[k].d;
+      T(P[k].body, d.x + PW / 2, d.y + 150, '?', { s: 96, w: 800, f: COL.axis2 });
+    };
+    Q.show = async (k, ms) => { clear(P[k].body); fill[k](Q.st); setOp(P[k].body, 0); await fadeTo(c, P[k].body, ms || 400); };
+    /* dört boş paneli getir, sonra verilenleri sırayla doldur */
+    Q.open = async (keys) => {
+      for (const k of ['line', 'ineq', 'iv', 'set']) { clear(P[k].body); spawn(c, () => fadeTo(c, P[k].g, 500)); await c.wait(200); }
+      for (const k of keys) { await Q.show(k, 450); await c.wait(200); }
+    };
+    Q.reset = () => Promise.all(['ineq', 'iv', 'line', 'set'].map((k) => fadeTo(c, P[k].body, 300, 1, 0)));
+    Q.toZ = async () => {
+      Q.st = { ...Q.st, dom: 'Z' };
+      await Promise.all([
+        c.tween(2000, (e) => zInfo.apply(e), ease.inOut),
+        (async () => { await c.wait(500); await Q.show('iv', 400); await Q.show('set', 500); })(),
+      ]);
+    };
+    Q.toR = async () => {
+      Q.st = { ...Q.st, dom: 'R' };
+      await Promise.all([
+        c.tween(1400, (e) => zInfo.apply(1 - e), ease.inOut),
+        (async () => { await Q.show('iv', 400); await Q.show('set', 500); })(),
+      ]);
+    };
+    return Q;
+  }
+
   SC.push({
-    title: 'Dörtlü dönüşüm',
-    goal: 'Aynı küme dört dille yazılır; küme gösteriminde x ∈ ℝ unutulmaz.',
+    title: 'Dört yazım',
+    goal: 'Aynı küme dört biçimde yazılır.',
     run: async (c) => {
-      const svg = canvas(c);
-      const PW = 472, PH = 228;
-      const defsP = {
-        ineq: { x: 12, y: 8, name: 'EŞİTSİZLİK', col: COL.amber },
-        iv: { x: 516, y: 8, name: 'ARALIK', col: COL.sky },
-        line: { x: 12, y: 300, name: 'SAYI DOĞRUSU', col: COL.mint },
-        set: { x: 516, y: 300, name: 'KÜME GÖSTERİMİ', col: COL.lilac },
-      };
-      const P = {};
-      Object.keys(defsP).forEach((k) => {
-        const d = defsP[k];
-        const g = G(svg);
-        const rect = R(g, d.x, d.y, PW, PH, { rx: 18, fill: 'url(#gCard)', stroke: d.col, 'stroke-opacity': 0.55, 'stroke-width': 2.5, filter: 'url(#shadow)' });
-        T(g, d.x + 20, d.y + 36, d.name, { a: 'start', s: 22, w: 800, f: d.col, st: 'letter-spacing:.08em' });
-        const body = G(g);
-        P[k] = { g, rect, body, d };
-        setOp(g, 0);
-      });
-      /* paneller arası oklar */
-      const arrows = G(svg);
-      T(arrows, 500, 133, '⇄', { s: 36, f: COL.mute });
-      T(arrows, 500, 425, '⇄', { s: 36, f: COL.mute });
-      T(arrows, 248, 278, '⇅', { s: 36, f: COL.mute });
-      T(arrows, 752, 278, '⇅', { s: 36, f: COL.mute });
-      setOp(arrows, 0);
+      const Q = dortlu(c);
+      Q.st = { iv: IV(140, 190, true, false), dom: 'R', win: [132, 198] };
+      await par(c, 'Aynı küme <b>dört biçimde</b> yazılır.', { ms: 4200 }, () => Q.open(['line', 'ineq', 'iv', 'set']));
+      await par(c, 'Küme yazımında x\'in nereden seçildiği de yazılır: <b>x ∈ ℝ</b>.', { ms: 4200, speak: 'Küme yazımında x in nereden seçildiği de yazılır: x, gerçek sayılar kümesinin elemanı.' }, () => Q.flash('set', COL.lilac));
+      c.note('<b>140 ≤ x < 190</b> = <b>[140, 190)</b> = <b>{x : 140 ≤ x < 190, x ∈ ℝ}</b>', 'Dört dil, tek küme', 'k8');
 
-      const clear = (g) => { while (g.firstChild) g.removeChild(g.firstChild); };
-      const cxP = (k) => P[k].d.x + PW / 2;
-      const flash = async (k, col) => {
-        const r = P[k].rect;
-        for (let i = 0; i < 3; i++) {
-          r.setAttribute('stroke', col || '#fff'); r.setAttribute('stroke-opacity', 1);
-          await c.wait(160);
-          r.setAttribute('stroke', P[k].d.col); r.setAttribute('stroke-opacity', 0.55);
-          await c.wait(160);
-        }
-      };
-      const dstr = (st) => (st.dom === 'R' ? 'ℝ' : 'ℤ');
-      const noun = (st) => (st.dom === 'R' ? 'gerçek' : 'tam');
-
-      /* panel içerikleri */
-      const fill = {
-        ineq: (st) => { T(P.ineq.body, cxP('ineq'), P.ineq.d.y + 140, ineqStr(st.iv), { s: 54, w: 800 }); },
-        iv: (st) => {
-          const b = P.iv.body, y = P.iv.d.y;
-          if (st.dom === 'R') {
-            T(b, cxP('iv'), y + 140, 'x ∈ ' + ivStr(st.iv), { s: 50, w: 800 });
-          } else {
-            T(b, cxP('iv'), y + 118, 'aralık değil', { s: 40, w: 800, f: COL.coral });
-            multi(b, cxP('iv'), y + 164, ['Aralık gösterimi gerçek sayılar içindir;', 'tam sayılarda noktalar tek tek sayılır.'], { s: 22, f: COL.mute, lh: 28 });
-          }
-        },
-        set: (st) => {
-          const b = P.set.body, y = P.set.d.y, cx = cxP('set');
-          const cond = ineqStr(st.iv);
-          T(b, cx, y + 100, `{x : ${cond}, x ∈ ${dstr(st)}}`, { s: 28, w: 800 });
-          if (st.dom === 'Z' && isFinite(st.iv.a) && isFinite(st.iv.b)) {
-            const lo = st.iv.la ? Math.ceil(st.iv.a) : Math.floor(st.iv.a) + 1, hi = st.iv.lb ? Math.floor(st.iv.b) : Math.ceil(st.iv.b) - 1;
-            T(b, cx, y + 148, `= {${lo}, ${lo + 1}, …, ${hi}}`, { s: 30, w: 800, f: COL.mint });
-          }
-          multi(b, cx, y + (st.dom === 'Z' ? 188 : 160), [`x'ler öyle ki ${cond},`, `x bir ${noun(st)} sayı.`], { s: 22, f: COL.mute, lh: 28 });
-        },
-      };
-      const zInfo = {};
-      fill.line = (st) => {
-        const b = P.line.body, pn = P.line.d;
-        const x0 = pn.x + 40, x1 = pn.x + PW - 40, y = pn.y + 150;
-        const ticks = [];
-        if (isFinite(st.iv.a)) ticks.push(st.iv.a);
-        if (isFinite(st.iv.b)) ticks.push(st.iv.b);
-        const ax = axis(b, { x0, x1, vmin: st.win[0], vmax: st.win[1], y, left: pn.x + 18, right: pn.x + PW - 18, major: ticks, minor: [], ls: 24 });
-        const sh = ivShape(b, ax, st.iv, y, COL.mint, { th: 10, r: 11 });
-        zInfo.sh = sh; zInfo.ax = ax; zInfo.dots = []; zInfo.ring = null;
-        if (isFinite(st.iv.a) && isFinite(st.iv.b)) {
-          const lo = st.iv.la ? Math.ceil(st.iv.a) : Math.floor(st.iv.a) + 1, hi = st.iv.lb ? Math.floor(st.iv.b) : Math.ceil(st.iv.b) - 1;
-          const zg = G(b);
-          for (let v = lo; v <= hi; v++) zInfo.dots.push(S('circle', { cx: ax.X(v), cy: y, r: 3, fill: COL.mint, opacity: 0 }, zg));
-          if (!st.iv.lb) zInfo.ring = S('circle', { cx: ax.X(st.iv.b), cy: y, r: 8, fill: COL.hole, stroke: COL.mute, 'stroke-width': 2.5, 'stroke-dasharray': '4 3', opacity: 0 }, zg);
-          zInfo.lab = T(b, pn.x + PW / 2, y - 46, 'yalnız tam sayılar', { s: 22, f: COL.mute, w: 600, op: 0 });
-        }
-        if (st.dom === 'Z') zInfo.apply(1);
-      };
-      zInfo.apply = (f) => {
-        if (!zInfo.sh) return;
-        setOp(zInfo.sh.line, 1 - f);
-        [zInfo.sh.d1, zInfo.sh.d2].forEach((d) => { if (d) setOp(d.g, 1 - f); });
-        const n = zInfo.dots.length;
-        zInfo.dots.forEach((d, i) => setOp(d, clamp(f * (n + 6) - i, 0, 1)));
-        if (zInfo.ring) setOp(zInfo.ring, clamp((f - 0.8) * 5, 0, 1));
-        if (zInfo.lab) setOp(zInfo.lab, clamp((f - 0.6) * 2.5, 0, 1));
-      };
-      const blank = (k) => {
-        clear(P[k].body);
-        const d = P[k].d;
-        T(P[k].body, d.x + PW / 2, d.y + 150, '?', { s: 96, w: 800, f: COL.axis2 });
-      };
-      const show = async (k, st, ms) => { clear(P[k].body); fill[k](st); setOp(P[k].body, 0); await fadeTo(c, P[k].body, ms || 400); };
-
-      /* 1) tanıtım: aynı küme dört dil */
-      let st = { iv: IV(140, 190, true, false), dom: 'R', win: [132, 198] };
-      await par(c, 'Aynı bilgiyi <b>dört şekilde</b> yazabiliriz: eşitsizlik, aralık, sayı doğrusu ve küme.', { ms: 4200 }, async () => {
-        for (const k of ['line', 'ineq', 'iv', 'set']) {
-          clear(P[k].body);
-          spawn(c, () => fadeTo(c, P[k].g, 500));
-          await c.wait(300);
-        }
-        await fadeTo(c, arrows, 400);
-        await show('line', st, 500); await c.wait(250);
-        await show('ineq', st, 500); await c.wait(250);
-        await show('iv', st, 500); await c.wait(250);
-        await show('set', st, 500);
-      });
-      await par(c, 'Küme gösteriminde x\'in nereden seçildiğini de yazarız. Bizde x bir <b>gerçek sayı</b>: <b>x ∈ ℝ</b>.', { ms: 4600, speak: 'Küme gösteriminde x in nereden seçildiğini de yazarız. Bizde x bir gerçek sayı: x, gerçek sayılar kümesinin elemanı.' }, async () => {
-        await flash('set', COL.lilac);
-      });
-
-      /* 2) ℝ ↔ ℤ anahtarı */
-      const toZ = async () => {
-        st = { ...st, dom: 'Z' };
-        await Promise.all([
-          c.tween(2000, (e) => zInfo.apply(e), ease.inOut),
-          (async () => { await c.wait(500); await show('iv', st, 400); await show('set', st, 500); })(),
-        ]);
-      };
-      const toR = async () => {
-        st = { ...st, dom: 'R' };
-        await Promise.all([
-          c.tween(1400, (e) => zInfo.apply(1 - e), ease.inOut),
-          (async () => { await show('iv', st, 400); await show('set', st, 500); })(),
-        ]);
-      };
-      await c.say('Peki x yalnız <b>tam sayı</b> olsaydı? Anahtarı çevir ve gör.', { ms: 3000, speak: 'Peki x yalnız tam sayı olsaydı? Anahtarı çevir ve gör.' });
-      await new Promise((res) => {
-        let mode = 'R', busy = false;
-        const fb = h('div');
-        const b = h('button', { class: 'opt', html: '<span class="m">x ∈ ℤ</span> yap  (yalnız tam sayılar)' });
-        const opts = h('div', { class: 'opts' }, b);
-        const pn = c.panel('Anahtar', h('p', { class: 'q', html: 'Düğmeye bas: <span class="m">x ∈ ℝ</span> ↔ <span class="m">x ∈ ℤ</span>' }), opts, fb);
-        b.addEventListener('click', () => {
-          if (busy) return;
-          busy = true; b.disabled = true;
-          spawn(c, async () => {
-            if (mode === 'R') {
-              await toZ(); mode = 'Z';
-              c.feedback(fb, 'info', 'Şerit <b>noktalara dağıldı</b>: 140, 141, …, 189. Artık 190\'dan kısa en uzun boy <b>189</b>. Aralık gösterimi çalışmıyor.');
-              b.innerHTML = '<span class="m">x ∈ ℝ</span>\'ye geri dön'; busy = false; b.disabled = false;
-            } else {
-              await toR(); mode = 'R';
-              c.feedback(fb, 'ok', 'Gerçek sayılarda şerit yeniden <b>kesintisiz</b>: aralarda sonsuz çok sayı var.');
-              pn.append(h('button', { class: 'btn pulse', style: { marginTop: '10px' }, onclick: () => { pn.remove(); res(); } }, 'Devam ›'));
-              busy = false;
-            }
-          });
-        });
-      });
-      c.note('Dört dil, tek anlam: <b>140 ≤ x < 190</b> ⇄ <b>x ∈ [140, 190)</b> ⇄ ●────○ ⇄ <b>{x : 140 ≤ x < 190, x ∈ ℝ}</b>.<br>Küme gösteriminde <b>x ∈ ℝ</b> yazılmazsa hangi sayılardan söz edildiği belirsiz kalır.', 'Kural', 'k8');
-
-      /* 3) üç mini görev */
-      const resetPanels = async (hold) => {
-        await Promise.all(['ineq', 'iv', 'line', 'set'].map((k) => fadeTo(c, P[k].body, 300, 1, 0)));
-      };
-      /* Görev 1: verilen sayı doğrusu */
-      await resetPanels();
-      st = { iv: IV(-3, 2, false, true), dom: 'R', win: [-5, 5] };
-      blank('ineq'); blank('iv'); blank('set');
-      await Promise.all([show('line', st, 500), ...['ineq', 'iv', 'set'].map((k) => fadeTo(c, P[k].body, 400))]);
-      await c.say('<b>Görev 1:</b> Sayı doğrusu verildi: −3 boş, 2 dolu. Eşitsizliği ve aralığı yaz.', { ms: 3600, speak: 'Görev bir: sayı doğrusu verildi: eksi üç boş, iki dolu. Eşitsizliği ve aralığı yaz.' });
+      await Q.reset();
+      Q.st = { iv: IV(-3, 2, false, true), dom: 'R', win: [-5, 5] };
+      Q.blank('ineq'); Q.blank('iv'); Q.blank('set');
+      await Promise.all([Q.show('line', 500), ...['ineq', 'iv', 'set'].map((k) => fadeTo(c, Q.P[k].body, 400))]);
+      await c.say('Doğru verildi: −3 boş, 2 dolu. Öteki üçünü tamamla.', { ms: 3400, speak: 'Sayı doğrusu verildi: eksi üç boş, iki dolu. Öteki üçünü tamamla.' });
       await c.choice({
-        tag: 'Görev 1 · eşitsizlik', q: 'Sayı doğrusuna bakarak <b>eşitsizliği</b> seç:',
+        tag: 'Eşitsizlik', q: 'Sayı doğrusuna bakarak <b>eşitsizliği</b> seç:',
         options: ['<span class="m">−3 < x ≤ 2</span>', '<span class="m">−3 ≤ x < 2</span>', '<span class="m">−3 < x < 2</span>', '<span class="m">2 < x ≤ −3</span>'], answer: 0,
-        right: 'Doğru: −3 boş → <b><</b>, 2 dolu → <b>≤</b>.',
-        hints: ['', '−3 boş nokta: kendisi içeride değil, o yüzden eşitlik yok (−3 < x). 2 ise dolu.', '2 dolu nokta: 2 içeride, o yüzden x ≤ 2 olmalı.', 'Küçük sayı solda, büyük sağda yazılır: önce −3, sonra 2.'],
-        onPick: (i, ok) => { if (!ok) spawn(c, () => flash('ineq', COL.coral)); },
+        right: '−3 boş: <b><</b>. 2 dolu: <b>≤</b>.',
+        hints: ['', '−3 boş nokta: eşitlik yok. 2 ise dolu.', '2 dolu nokta: x ≤ 2 olmalı.', 'Küçük sayı solda yazılır: önce −3, sonra 2.'],
+        onPick: (i, ok) => { if (!ok) spawn(c, () => Q.flash('ineq', COL.coral)); },
       });
-      await show('ineq', st, 400); spawn(c, () => flash('ineq'));
+      await Q.show('ineq', 400); spawn(c, () => Q.flash('ineq'));
       await c.choice({
-        tag: 'Görev 1 · aralık', q: 'Şimdi <b>aralık</b> gösterimini seç:',
+        tag: 'Aralık', q: 'Şimdi <b>aralığı</b> seç:',
         options: ['<span class="m">x ∈ (−3, 2]</span>', '<span class="m">x ∈ [−3, 2)</span>', '<span class="m">x ∈ (−3, 2)</span>', '<span class="m">x ∈ (2, −3]</span>'], answer: 0,
-        right: 'Doğru: −3 hariç → <b>(</b>, 2 dahil → <b>]</b>.',
-        hints: ['', 'Parantezler ters yerde: −3 boş (yuvarlak), 2 dolu (köşeli).', '2 dolu nokta: köşeli parantez ile bitmeli.', 'Önce küçük sayı yazılır: (−3, 2].'],
-        onPick: (i, ok) => { if (!ok) spawn(c, () => flash('iv', COL.coral)); },
+        right: '−3 hariç: <b>(</b>. 2 dahil: <b>]</b>.',
+        hints: ['', 'Parantezler ters yerde: −3 boş, 2 dolu.', '2 dolu nokta: köşeli parantezle bitmeli.', 'Önce küçük sayı yazılır: (−3, 2].'],
+        onPick: (i, ok) => { if (!ok) spawn(c, () => Q.flash('iv', COL.coral)); },
       });
-      await show('iv', st, 400);
-      await show('set', st, 500);
-      await c.say('Küme gösterimi otomatik tamamlandı: <b>{x : −3 < x ≤ 2, x ∈ ℝ}</b> ✓', { ms: 3000, speak: 'Küme gösterimi otomatik tamamlandı: x öyle ki eksi üç küçüktür x küçük eşittir iki, x bir gerçek sayı.' });
+      await Q.show('iv', 400);
+      await par(c, 'Küme yazımı da tamamlandı.', { ms: 2600 }, () => Q.show('set', 500));
+      await c.cont('Devam ›');
+    },
+  });
 
-      /* Görev 2: x ≥ −1 */
-      await resetPanels();
-      st = { iv: IV(-1, INF, true), dom: 'R', win: [-5, 5] };
-      blank('iv'); blank('line'); blank('set');
-      await Promise.all([show('ineq', st, 500), ...['iv', 'line', 'set'].map((k) => fadeTo(c, P[k].body, 400))]);
-      await c.say('<b>Görev 2:</b> Eşitsizlik verildi: <b>x ≥ −1</b>. Aralık gösterimini seç.', { ms: 3200, speak: 'Görev iki: eşitsizlik verildi: x büyük eşittir eksi bir. Aralık gösterimini seç.' });
+  SC.push({
+    title: 'ℝ mi, ℤ mi?',
+    goal: 'x ∈ ℤ yazılınca aralık noktalara dağılır.',
+    run: async (c) => {
+      const Q = dortlu(c);
+      Q.st = { iv: IV(140, 190, true, false), dom: 'R', win: [132, 198] };
+      await par(c, 'Bu kümede x bir <b>gerçek sayı</b>.', { ms: 3200 }, () => Q.open(['line', 'ineq', 'iv', 'set']));
       await c.choice({
-        tag: 'Görev 2 · aralık', q: '<span class="m">x ≥ −1</span> için aralık hangisi?',
-        options: ['<span class="m">[−1, ∞)</span>', '<span class="m">[−1, ∞]</span>', '<span class="m">(−∞, −1]</span>'], answer: 0,
-        right: 'Doğru: −1 dahil → köşeli, ∞ hariç → yuvarlak.',
-        hints: ['', '∞ bir sayı değil; yanında yuvarlak parantez olmalı: ∞).', 'Yön ters: ≥ büyük sayıları ister, büyükler sağdadır.'],
-        onPick: (i, ok) => { if (!ok) spawn(c, () => flash('iv', COL.coral)); },
+        tag: 'Tahmin et', q: '<span class="m">x ∈ ℝ</span> yerine <span class="m">x ∈ ℤ</span> yazarsak şerit ne olur?',
+        options: ['Aynı kalır', 'Noktalara dağılır', 'Tamamen silinir'], answer: 1,
+        right: 'Evet: yalnızca tam sayılar kalır.',
+        hints: ['140,5 gibi sayılar tam sayı değil; onlar çıkar.', '', '140, 141, 142… hâlâ kümede.'],
       });
-      await show('iv', st, 400);
-      await show('line', st, 500);
-      await show('set', st, 500);
-      await c.say('Sayı doğrusu ve küme de tamamlandı: <b>{x : x ≥ −1, x ∈ ℝ}</b>.', { ms: 2800, speak: 'Sayı doğrusu ve küme de tamamlandı: x öyle ki x büyük eşittir eksi bir, x bir gerçek sayı.' });
+      await par(c, 'Şerit <b>noktalara dağıldı</b>: 140, 141, …, 189.', { ms: 4200, speak: 'Şerit noktalara dağıldı: yüz kırk, yüz kırk bir ve böyle yüz seksen dokuza kadar.' }, () => Q.toZ());
+      await c.choice({
+        tag: 'Soru', q: '<b>ℤ</b>\'de 190\'dan kısa en uzun boy kaç cm?', options: ['189 cm', '189,9 cm', 'En uzun yok'], answer: 0,
+        right: 'Evet: <b>189</b>. Tam sayılarda bir sonraki sayı vardır.',
+        hints: ['', '189,9 tam sayı değil.', 'Tam sayılarda 189\'dan sonra 190 gelir; en uzun 189.'],
+      });
+      await c.say('Aralık yazımı yalnızca <b>gerçek sayılar</b> içindir.', { ms: 3200 });
+      c.note('<b>{x : 140 ≤ x < 190, x ∈ ℤ}</b> = {140, 141, …, 189}', 'ℝ mi, ℤ mi', 'k8z');
+      await par(c, 'Gerçek sayılarda şerit yeniden <b>kesintisiz</b>.', { ms: 3200 }, () => Q.toR());
+      await c.cont('Devam ›');
+    },
+  });
 
-      /* Görev 3: P4 verilen, P3'ü sen çiz */
-      await resetPanels();
-      st = { iv: IV(-INF, 4, false, false), dom: 'R', win: [0, 8] };
-      blank('ineq'); blank('iv'); clear(P.line.body);
-      await Promise.all([show('set', st, 500), fadeTo(c, P.ineq.body, 400), fadeTo(c, P.iv.body, 400)]);
-      await c.say('<b>Görev 3:</b> Küme verildi: <b>{x : x < 4, x ∈ ℝ}</b>. Sayı doğrusu panelini sen çiz: noktaya ve oka dokun.', { ms: 4600, speak: 'Görev üç: küme verildi: x küçüktür dört. Sayı doğrusu panelini sen çiz: noktaya ve oka dokun.' });
+  SC.push({
+    title: 'Sıra sende: eksik yazımı tamamla',
+    goal: 'Bir yazım verilince öteki üçünü kur.',
+    run: async (c) => {
+      const Q = dortlu(c);
+      const { P, PW, svg } = Q;
+      Q.st = { iv: IV(-1, INF, true), dom: 'R', win: [-5, 5] };
+      Q.blank('iv'); Q.blank('line'); Q.blank('set');
+      const acik = ['line', 'ineq', 'iv', 'set'].map((k) => fadeTo(c, P[k].g, 500));
+      await par(c, 'Eşitsizlik verildi: <b>x ≥ −1</b>. Aralığını seç.', { ms: 3200, speak: 'Eşitsizlik verildi: x büyük eşittir eksi bir. Aralığını seç.' }, async () => { await Promise.all(acik); await Q.show('ineq', 500); });
+      await c.choice({
+        tag: 'Aralık', q: '<span class="m">x ≥ −1</span> için aralık hangisi?',
+        options: ['<span class="m">[−1, ∞)</span>', '<span class="m">[−1, ∞]</span>', '<span class="m">(−∞, −1]</span>'], answer: 0,
+        right: '−1 dahil: köşeli. ∞ hep yuvarlak.',
+        hints: ['', '∞ bir sayı değil; yanında yuvarlak olmalı.', 'Yön ters: büyük sayılar sağdadır.'],
+        onPick: (i, ok) => { if (!ok) spawn(c, () => Q.flash('iv', COL.coral)); },
+      });
+      await Q.show('iv', 400);
+      await par(c, 'Sayı doğrusu ve küme de tamamlandı.', { ms: 2800 }, async () => { await Q.show('line', 500); await Q.show('set', 500); });
+
+      await Q.reset();
+      Q.st = { iv: IV(-INF, 4, false, false), dom: 'R', win: [0, 8] };
+      Q.blank('ineq'); Q.blank('iv'); Q.clear(P.line.body);
+      await Promise.all([Q.show('set', 500), fadeTo(c, P.ineq.body, 400), fadeTo(c, P.iv.body, 400)]);
+      await c.say('Küme verildi. Sayı doğrusunu sen kur: noktaya ve oka dokun.', { ms: 3800 });
       {
         const pn3 = P.line.d, b = P.line.body, y = pn3.y + 150;
-        clear(b);
         const ax3 = axis(b, { x0: pn3.x + 40, x1: pn3.x + PW - 40, vmin: 0, vmax: 8, y, left: pn3.x + 18, right: pn3.x + PW - 18, major: [0, 4, 8], minor: [], ls: 24 });
         let dir = 1;
         const rayG = G(b);
         const x4 = ax3.X(4);
         const drawRay = () => {
-          clear(rayG);
+          Q.clear(rayG);
           const xe = dir > 0 ? ax3.right - 22 : ax3.left + 22;
           S('line', { x1: x4, x2: xe, y1: y, y2: y, stroke: COL.mint, 'stroke-width': 10 }, rayG);
           S('polygon', { points: dir > 0 ? `${xe},${y - 14} ${xe + 22},${y} ${xe},${y + 14}` : `${xe},${y - 14} ${xe - 22},${y} ${xe},${y + 14}`, fill: COL.mint }, rayG);
@@ -1778,7 +1760,6 @@
         const d4 = dot(b, x4, y, COL.mint, true, { r: 12 });
         toggler(c, svg, d4, null, '4 noktasını değiştir');
         c.on(rayG, 'click', () => { if (!d4.locked) { dir = -dir; drawRay(); } });
-        T(b, pn3.x + PW - 18, pn3.y + 36, 'nokta ve ok: dokun', { a: 'end', s: 22, f: COL.mute, w: 600 });
         setOp(b, 0); await fadeTo(c, b, 400);
         let ok3 = false;
         const fb = h('div');
@@ -1786,38 +1767,69 @@
           const okDot = !d4.filled, okDir = dir < 0;
           if (okDot && okDir) {
             ok3 = true; d4.locked = true;
-            c.feedback(fb, 'ok', 'Doğru! 4 <b>hariç</b> (boş nokta), sol tarafa doğru ok: <b>(−∞, 4)</b>.');
+            c.feedback(fb, 'ok', '4 <b>hariç</b> (boş nokta), ok sola: <b>(−∞, 4)</b>.');
             return;
           }
           const m = [];
-          if (!okDot) m.push('Önce uç noktayı sor: <b>4 kendisi içeride mi?</b> x < 4 → 4 dışarıda → boş nokta ○.');
-          if (!okDir) m.push('<b>x < 4</b>: 4\'ten <b>küçük</b> sayılar → büyükler sağda, küçükler <b>solda</b>.');
+          if (!okDot) m.push('<b>x < 4</b>: 4 dışarıda, nokta boş olmalı.');
+          if (!okDir) m.push('4\'ten <b>küçük</b> sayılar solda.');
           c.feedback(fb, 'no', m.join('<br>'));
-          spawn(c, () => flash('line', COL.coral));
+          spawn(c, () => Q.flash('line', COL.coral));
         };
         const bc = h('button', { class: 'btn', onclick: check }, 'Kontrol et');
-        const pn = c.panel('Çiz', h('p', { class: 'q', html: '<b>x < 4</b> için sayı doğrusunu kur, sonra <b>Kontrol et</b>.' }), bc, fb);
+        const pn = c.panel('Sıra sende', h('p', { class: 'q', html: '<b>x < 4</b> için sayı doğrusunu kur, sonra <b>Kontrol et</b>.' }), bc, fb);
         await until(c, () => ok3, { solve: async () => { if (d4.filled) { d4.filled = false; await d4.flip(c, false, 250); } dir = -1; drawRay(); check(); await c.wait(400); } });
         await c.wait(800);
         pn.remove();
       }
-      await show('iv', st, 400);
-      await show('ineq', st, 500);
-      await c.say('Aralık <b>(−∞, 4)</b> ve eşitsizlik <b>x < 4</b> tamamlandı.', { ms: 2600, speak: 'Aralık eksi sonsuzdan dörde, dört dışarıda, ve eşitsizlik x küçüktür dört tamamlandı.' });
+      await par(c, 'Aralık <b>(−∞, 4)</b>, eşitsizlik <b>x < 4</b>.', { ms: 3000, speak: 'Aralık eksi sonsuzdan dörde, dört dışarıda; eşitsizlik x küçüktür dört.' }, async () => { await Q.show('iv', 400); await Q.show('ineq', 500); });
+      await c.say('Eşitsizlik, aralık, doğru, küme: <b>aynı şey</b>.', { ms: 3200 });
+      await c.cont('Devam ›');
+    },
+  });
 
-      /* 4) son: ℤ'de en uzun */
-      await resetPanels();
-      st = { iv: IV(140, 190, true, false), dom: 'R', win: [132, 198] };
-      await Promise.all(['line', 'ineq', 'iv', 'set'].map((k) => show(k, st, 400)));
-      await c.say('Anahtarı bir kez daha çevirelim: x şimdi <b>tam sayı</b>.', { ms: 2600 });
-      await toZ();
+  /* ------------------------------------------------------------------ B5 açılışı: kesişim ve birleşim, listelenmiş sayı kümelerinde */
+  SC.push({
+    title: 'Önce sayarak: ortak olanlar, hepsi',
+    goal: 'Kesişim ve birleşimi listelenmiş iki sayı kümesinde gör.',
+    run: async (c) => {
+      const svg = canvas(c);
+      const A = [1, 2, 3, 4], B = [3, 4, 5, 6];
+      const ortak = A.filter((v) => B.includes(v));
+      const hepsi = [...new Set([...A, ...B])].sort((a, b) => a - b);
+      const X = (v) => 225 + (v - 1) * 110;
+      const row = (set, y, col, name) => {
+        const g = G(svg);
+        T(g, 110, y + 12, name + ' =', { s: 36, w: 800, f: col });
+        const chips = {};
+        set.forEach((v) => {
+          chips[v] = S('circle', { cx: X(v), cy: y, r: 32, fill: COL.hole, stroke: col, 'stroke-width': 4 }, g);
+          T(g, X(v), y + 11, String(v), { s: 32, w: 800 });
+        });
+        setOp(g, 0);
+        return { g, chips };
+      };
+      const rA = row(A, 120, COL.amber, 'A'), rB = row(B, 230, COL.sky, 'B');
+      const setStr = (xs) => '{' + xs.join(', ') + '}';
+      const tI = T(svg, 500, 380, 'A ∩ B = ' + setStr(ortak), { s: 46, w: 800, f: COL.mint, op: 0 });
+      const tU = T(svg, 500, 470, 'A ∪ B = ' + setStr(hepsi), { s: 46, w: 800, f: COL.lilac, op: 0 });
+      const paint = (vals, col) => c.tween(500, (e) => vals.forEach((v) => [rA, rB].forEach((r) => { if (r.chips[v]) r.chips[v].setAttribute('fill', mix(COL.hole, col, e * 0.55)); })));
+
+      await par(c, 'İki sayı kümesi: <b>A</b> ve <b>B</b>.', { ms: 3200 }, async () => { await fadeTo(c, rA.g, 500); await fadeTo(c, rB.g, 500); });
       await c.choice({
-        tag: 'Son soru', q: '<b>ℤ</b>\'de 190\'dan kısa en uzun çocuk kaç cm?', options: ['189 cm', '189,9 cm', 'En uzun yok'], answer: 0,
-        right: 'Evet: <b>189</b>. Tam sayılarda bir sonraki sayı var, o yüzden. Gerçek sayılarda (ℝ) ise yoktu.',
-        hints: ['', '189,9 tam sayı değil; ℤ\'de yalnız 189, 190 gibi sayılar var.', 'Tam sayılarda "bir sonraki sayı" vardır: 189\'dan sonra 190 gelir. Burada 189 en uzun.'],
+        tag: 'Tahmin et', q: '<b>Hem</b> A’da <b>hem</b> B’de olan sayılar hangileri?', options: ['1 ve 2', '3 ve 4', '5 ve 6'], answer: 1,
+        right: 'Evet: 3 ve 4 iki kümede de var.',
+        hints: ['1 ve 2 yalnızca A’da.', '', '5 ve 6 yalnızca B’de.'],
       });
-      await toR();
-      await c.say('Dört dil, tek anlam. Gerçek sayılarda aralık <b>kesintisizdir</b>; tam sayılarda noktalar tek tek sayılır.', { ms: 3600 });
+      await par(c, 'İkisinde de olanlar: <b>kesişim</b>, A ∩ B.', { ms: 4200, speak: 'İkisinde de olanlar kesişimdir: A kesişim B.' }, async () => { await paint(ortak, COL.mint); await fadeTo(c, tI, 500); });
+      await c.choice({
+        tag: 'Soru', q: '<b>En az birinde</b> olan kaç sayı var?', options: ['4', '6', '8'], answer: 1,
+        right: 'Evet: 1, 2, 3, 4, 5, 6.',
+        hints: ['Yalnızca A’yı saydın; B’dekiler de var.', '', '3 ve 4 iki kümede de var; bir kez sayılır.'],
+      });
+      await par(c, 'En az birinde olanlar: <b>birleşim</b>, A ∪ B.', { ms: 4200, speak: 'En az birinde olanlar birleşimdir: A birleşim B.' }, async () => { await paint(hepsi.filter((v) => !ortak.includes(v)), COL.lilac); await fadeTo(c, tU, 500); });
+      c.note(`<b>${setStr(A)} ∩ ${setStr(B)} = ${setStr(ortak)}</b>`, 'Kesişim', 'k9s');
+      await c.say('Şimdi aynı işlemler <b>aralıklarda</b>.', { ms: 3000 });
       await c.cont('Devam ›');
     },
   });
@@ -1915,7 +1927,7 @@
         setOp(mk.g, 1); prep(175);
         await walk(175);
       });
-      await par(c, 'İkisinden de geçenlerin kümesine <b>kesişim</b> deriz ve <b>∩</b> ile yazarız. ∩ sembolü zaten bir kapı kemerine benziyor.', { ms: 5600, speak: 'İkisinden de geçenlerin kümesine kesişim deriz ve kesişim sembolüyle yazarız. Bu sembol zaten bir kapı kemerine benziyor.' }, async () => {
+      await par(c, 'İkisinden de geçenler: <b>kesişim</b>, <b>∩</b> ile yazılır.', { ms: 5600, speak: 'İkisinden de geçenlerin kümesine kesişim deriz ve kesişim sembolüyle yazarız. Bu sembol zaten bir kapı kemerine benziyor.' }, async () => {
         await row.drawSym(c, 1100);
         row.symGlow(1);
       });
@@ -1942,7 +1954,7 @@
         });
         await fadeTo(c, ring, 300, 1, 0);
       }
-      c.note('<b>A ∩ B</b>: hem A\'da hem B\'de olanlar ("ve"). Sayı doğrusunda üst üste binen kısım.<br>Uç kuralı: sonucu sınırlayan aralıklardan <b>biri bile</b> o ucu dışarıda bırakıyorsa boş nokta.', 'Kural', 'k9');
+      c.note('<b>A ∩ B</b>: hem A\'da hem B\'de olanlar ("ve").', 'Kural', 'k9');
 
       /* etkileşim 1: dört özel değer */
       setOp(ana, 0); setOp(eq, 0); setOp(mk.g, 1);
@@ -2029,7 +2041,12 @@
       S('line', { x1: ax3.X(4), x2: ax3.X(6), y1: 318, y2: 318, stroke: COL.mint, 'stroke-width': 15 }, g3);
       const e4 = dot(g3, ax3.X(4), 318, COL.mint, true, { r: 13 }), e6 = dot(g3, ax3.X(6), 318, COL.mint, false, { r: 13 });
       const live = T(g3, 500, 440, '', { s: 42, w: 800, f: COL.mint });
-      const refresh = () => { live.textContent = `${ivStr(A3)} ∩ ${ivStr(B3)} = ${ivStr(IV(4, 6, e4.filled, e6.filled))}`; };
+      const liveIneq = T(g3, 500, 494, '', { s: 32, w: 700 });   // aynı sonucun eşitsizlik yazımı
+      const refresh = () => {
+        const r = IV(4, 6, e4.filled, e6.filled);
+        live.textContent = `${ivStr(A3)} ∩ ${ivStr(B3)} = ${ivStr(r)}`;
+        liveIneq.textContent = ineqStr(r);
+      };
       refresh();
       toggler(c, svg, e4, refresh, '4 noktasını değiştir'); toggler(c, svg, e6, refresh, '6 noktasını değiştir');
       setOp(g3, 0);
@@ -2110,7 +2127,7 @@
       const eq = T(svg, 500, 524, '', { s: 34, w: 800, f: COL.lilac });
       setOp(eq, 0);
 
-      await par(c, 'Lunaparkta iki ayrı oyuncak var. <b>Mini Tren</b>: boyu 100 ile 130 cm arasındaki çocuklara; 100 ve 130 dahil.', { ms: 5000, speak: 'Lunaparkta iki ayrı oyuncak var. Mini Tren: boyu yüz ile yüz otuz santimetre arasındaki çocuklara; yüz ve yüz otuz dahil.' }, async () => {
+      await par(c, '<b>Mini Tren</b>: boyu 100 ile 130 cm arasındakilere; uçlar dahil.', { ms: 5000, speak: 'Lunaparkta iki ayrı oyuncak var. Mini Tren: boyu yüz ile yüz otuz santimetre arasındaki çocuklara; yüz ve yüz otuz dahil.' }, async () => {
         await Promise.all([fadeTo(c, up, 700), fadeTo(c, ax.g, 600)]);
         drawBands([{ iv: M, y: 262, col: COL.orange, name: 'M', hidden: true }, { iv: Rr, y: 300, col: COL.sky, name: 'R', hidden: true }]);
         row.g1.light(COL.orange);
@@ -2122,7 +2139,7 @@
         await shapes[1].grow(c, 1200);
         row.g2.off();
       });
-      await par(c, 'Bir çocuk bu iki oyuncaktan <b>en az birine</b> binebiliyorsa "veya" mantığı çalışır. Buna <b>birleşim</b> deriz: <b>∪</b>. ∪ sembolü kollarıyla her şeyi toplayan bir bardağa benziyor.', { ms: 7600, speak: 'Bir çocuk bu iki oyuncaktan en az birine binebiliyorsa veya mantığı çalışır. Buna birleşim deriz. Birleşim sembolü, kollarıyla her şeyi toplayan bir bardağa benziyor.' }, async () => {
+      await par(c, 'En az birine binebilenler: <b>birleşim</b>, <b>∪</b> ile yazılır.', { ms: 7600, speak: 'Bir çocuk bu iki oyuncaktan en az birine binebiliyorsa veya mantığı çalışır. Buna birleşim deriz. Birleşim sembolü, kollarıyla her şeyi toplayan bir bardağa benziyor.' }, async () => {
         await row.drawSym(c, 1100); row.symGlow(0.6);
       });
       await par(c, 'Sayı doğrusunda iki şeridi <b>toplarız</b>: ana doğruya lila çizgi olarak yansır.', { ms: 3600 }, async () => {
@@ -2138,7 +2155,7 @@
         setKid(135); lamps(135);
         await Promise.all([fadeTo(c, gapG, 500), fadeTo(c, eq, 600)]);
       });
-      c.note('<b>A ∪ B</b>: A\'da <b>veya</b> B\'de (en az birinde) olanlar. Sayı doğrusunda iki şeridin toplamı. Kesişim = ortak kısım ("ve"), birleşim = toplam ("veya").', 'Kural', 'k10a');
+      c.note('<b>A ∪ B</b>: en az birinde olanlar ("veya").', 'Kural', 'k10a');
 
       /* etkileşim 1: 135 cm */
       const q = serial(c);
@@ -2176,7 +2193,7 @@
       const txtFor = () => (segs.length === 1 ? '140 ikinci aralıkta var: parçalar kaynaştı.' : '140 hiçbirinde yok: lila çizgide delik kaldı.');
       note140.textContent = txtFor();
       await Promise.all([fadeTo(c, bandsG, 500), fadeTo(c, unG, 500), fadeTo(c, eq, 500), fadeTo(c, note140, 500)]);
-      await c.say('Şimdi iki aralık birbirine <b>değiyor</b>: <b>[100, 140)</b> ve <b>[140, 190)</b>. 140 ikinci aralıkta var; parçalar tek aralıkta kaynaşır: <b>[100, 190)</b>.', { ms: 6200, speak: 'Şimdi iki aralık birbirine değiyor. Yüz kırk ikinci aralıkta var; parçalar tek aralıkta kaynaşır: yüz ile yüz doksan arası, yüz doksan dışarıda.' });
+      await c.say('Aralıklar <b>değiyor</b>: 140 ikincisinde var, parçalar kaynaşır: <b>[100, 190)</b>.', { ms: 6200, speak: 'Şimdi iki aralık birbirine değiyor. Yüz kırk ikinci aralıkta var; parçalar tek aralıkta kaynaşır: yüz ile yüz doksan arası, yüz doksan dışarıda.' });
       let seenF = true, seenE = false;
       const upd = async () => {
         B1 = IV(140, 190, dB.filled, false);
@@ -2188,7 +2205,7 @@
         eq.style.fill = COL.lilac;
       };
       toggler(c, svg, dB, () => { q.run(upd); }, '140 noktasını değiştir');
-      await c.say('Şimdi B şeridinin sol ucundaki <b>140</b> noktasına dokun: dolu ↔ boş. Birleşim nasıl değişiyor?', { ms: 3800, speak: 'Şimdi B şeridinin sol ucundaki yüz kırk noktasına dokun: dolu ya da boş. Birleşim nasıl değişiyor?' });
+      await c.say('B şeridinin sol ucundaki <b>140</b>\'a dokun. Birleşim nasıl değişiyor?', { ms: 3800, speak: 'Şimdi B şeridinin sol ucundaki yüz kırk noktasına dokun: dolu ya da boş. Birleşim nasıl değişiyor?' });
       await until(c, () => seenE && seenF && dB.filled === false || (seenE && seenF), { solve: async () => { dB.filled = false; dB.set(false); await upd(); dB.filled = true; dB.set(true); await upd(); } });
       await q.idle();
       await c.choice({
@@ -2196,7 +2213,7 @@
         right: 'Doğru: A\'da 140 boş. Yalnız B\'de 140 dolu iken birleşimde olur; boşsa iki kapıda da dışarıda kalır.',
         hints: ['', 'Tersi: B\'de 140 boşsa A\'da da yok, yani hiçbirinde yok.', 'A\'da 140 boş nokta. Her iki durumda olmaz.', 'B\'de 140 dolu olunca biner.'],
       });
-      c.note('Ayrık parçalar tek aralık gibi yazılamaz; ortak uçta <b>biri bile dolu</b> ise parçalar kaynaşır: <b>[100, 140) ∪ [140, 190) = [100, 190)</b>, ama <b>[100, 140) ∪ (140, 190)</b> aralıksız değildir.', 'Kural', 'k10');
+      c.note('<b>[100, 140) ∪ [140, 190) = [100, 190)</b>: ortak uç doluysa kaynaşır.', 'Kural', 'k10');
 
       /* "veya" tek seçenek mi? */
       await Promise.all([fadeTo(c, bandsG, 400, 1, 0), fadeTo(c, unG, 400, 1, 0), fadeTo(c, beam140, 400, 1, 0), fadeTo(c, eq, 300, 1, 0), fadeTo(c, note140, 300, 1, 0)]);
@@ -2226,7 +2243,7 @@
 
   /* ------------------------------------------------------------------ 11. Tuzaklar */
   SC.push({
-    title: 'Tuzaklar: boş küme ve tek nokta',
+    title: 'Boş küme ve tek nokta',
     goal: '∅ ile {5} farklıdır; aralıkta önce küçük, sonra büyük sayı yazılır.',
     run: async (c) => {
       const svg = canvas(c);
@@ -2254,12 +2271,12 @@
       const eqA = T(gA, 500, 215, '5 < x < 2', { s: 60, w: 800, f: COL.text });
       setOp(gA, 0); setOp(topT, 0); setOp(eqA, 0);
       const mkA = marker(gA, axA, 392 - 14); setOp(mkA.g, 0);
-      await par(c, 'Bazen hiçbir çocuk iki kuralı birden sağlayamaz. Boy <b>5\'ten büyük</b> ve aynı zamanda <b>2\'den küçük</b> olsun: <b>5 < x < 2</b>.', { ms: 6200, speak: 'Bazen hiçbir çocuk iki kuralı birden sağlayamaz. Boy beşten büyük ve aynı zamanda ikiden küçük olsun: beş küçüktür x küçüktür iki.' }, async () => {
+      await par(c, '<b>5\'ten büyük</b> ve <b>2\'den küçük</b> bir sayı: <b>5 < x < 2</b>.', { ms: 6200, speak: 'Bazen hiçbir çocuk iki kuralı birden sağlayamaz. Boy beşten büyük ve aynı zamanda ikiden küçük olsun: beş küçüktür x küçüktür iki.' }, async () => {
         await Promise.all([fadeTo(c, gA, 500), fadeTo(c, topT, 600), fadeTo(c, eqA, 600)]);
         rMint.hide(); rAmb.hide();
         await Promise.all([rMint.grow(c, 1300), rAmb.grow(c, 1300)]);
       });
-      await c.say('İki çizgi birbirine doğru gelmiyor, <b>uzaklaşıyor</b>: hiçbir yerde üst üste binmiyorlar. Bir sayı arayalım.', { ms: 4400 });
+      await c.say('İki çizgi <b>uzaklaşıyor</b>; hiçbir yerde üst üste binmiyor.', { ms: 4400 });
       const attempts = [
         { v: 6, a: true, b: false }, { v: 1, a: false, b: true }, { v: 3.5, a: false, b: false },
       ];
@@ -2272,7 +2289,7 @@
           { t: `5'ten büyük ${at_.a ? '✓' : '✗'}`, f: at_.a ? COL.mint : COL.coral },
           { t: `2'den küçük ${at_.b ? '✓' : '✗'}`, f: at_.b ? COL.mint : COL.coral },
         ]);
-        await c.say(`<b>${num(at_.v)}</b> olsa: ${at_.a ? '5\'ten büyük' : '5\'ten büyük değil'}, ${at_.b ? '2\'den küçük' : '2\'den küçük değil'}. İkisi birden değil.`, { ms: 2600 });
+        await c.say(`<b>${num(at_.v)}</b>: ${at_.a ? '5\'ten büyük' : '5\'ten büyük değil'}, ${at_.b ? '2\'den küçük' : '2\'den küçük değil'}.`, { ms: 2600 });
       }
       stRow.remove(); setOp(mkA.g, 0);
       const emp = G(gA);
@@ -2280,8 +2297,8 @@
       T(emp, 500, 232, '=', { s: 60, w: 700, f: COL.mute });
       const eB = T(emp, 640, 258, '{ }', { s: 90, w: 800, f: COL.coral });
       setOp(emp, 0);
-      await par(c, 'Böyle bir sayı yok. Çözüm kümesi <b>boş</b>: <b>∅</b> ya da <b>{ }</b>. Boş küme <b>{0}</b> değildir; içinde 0 bile yok.', { ms: 5600, speak: 'Böyle bir sayı yok. Çözüm kümesi boştur. Boş küme, içinde sıfır olan küme değildir; içinde hiçbir şey yok.' }, () => fadeTo(c, emp, 700));
-      c.note('Hiç elemanı olmayan küme: <b>boş küme ∅ = { }</b>. <b>5 < x < 2</b> çözümsüzdür. Boş küme <b>{0}</b> değildir.', 'Kural', 'k11a');
+      await par(c, 'Böyle bir sayı yok: <b>∅</b>. Boş küme <b>{0}</b> değildir.', { ms: 5600, speak: 'Böyle bir sayı yok. Çözüm kümesi boştur. Boş küme, içinde sıfır olan küme değildir; içinde hiçbir şey yok.' }, () => fadeTo(c, emp, 700));
+      c.note('Elemanı olmayan küme: <b>∅</b>. <b>{0}</b> boş küme değildir.', 'Kural', 'k11a');
       await c.wait(900);
 
       /* ---------- Bölüm B: dokunan aralıklar ---------- */
@@ -2330,7 +2347,7 @@
       };
       const showLamp = (r) => Promise.all([fadeTo(c, r.lampC, 300), fadeTo(c, r.lampT, 300), fadeTo(c, r.rk.g, 300)]);
 
-      await par(c, 'Bir de <b>dokunan aralıklar</b> var. Hepsinde uç nokta 5: sol aralık 5\'te bitiyor, sağ aralık 5\'te başlıyor.', { ms: 5000 }, () => showCase(rows[0], false));
+      await par(c, '<b>Dokunan aralıklar</b>: biri 5\'te bitiyor, öteki 5\'te başlıyor.', { ms: 5000 }, () => showCase(rows[0], false));
       const q = serial(c);
       await c.choice({
         tag: 'Tahmin et', q: '<span class="m">[2, 5) ∩ [5, 9]</span> sonucu ne?', options: ['<span class="m">{5}</span>', '<span class="m">∅</span>', '<span class="m">[2, 9]</span>'], answer: 1,
@@ -2349,7 +2366,7 @@
         hints: ['5 iki aralıkta da dolu nokta: ortak bir eleman var.', '', 'İki aralık yalnız bir noktada değiyor; ortak kısım sonsuz değil, tek nokta.'],
       });
       await fadeTo(c, rows[1].rt, 500); await showLamp(rows[1]);
-      await par(c, 'Üçüncü durumda iki uç da boş: <b>(2, 5) ∩ (5, 9) = ∅</b>.', { ms: 3200, speak: 'Üçüncü durumda iki uç da boş: iki ile beş arası, kesişim, beş ile dokuz arası, eşittir boş küme.' }, async () => { await showCase(rows[2], true); await showLamp(rows[2]); });
+      await par(c, 'Üçüncüde iki uç da boş: <b>(2, 5) ∩ (5, 9) = ∅</b>.', { ms: 3200, speak: 'Üçüncü durumda iki uç da boş: iki ile beş arası, kesişim, beş ile dokuz arası, eşittir boş küme.' }, async () => { await showCase(rows[2], true); await showLamp(rows[2]); });
       function ring5(r) {
         const rg = G(r.g);
         S('circle', { cx: X10(5), cy: r.oy + 70, r: 24, fill: 'none', stroke: COL.coral, 'stroke-width': 3.5 }, rg);
@@ -2357,7 +2374,7 @@
         return rg;
       }
       /* imleç: tam 5 cm */
-      await c.say('Şimdi çocuğu <b>tam 5 cm</b>\'ye getir: kapı lambası yalnız bir durumda yeşil yanar.', { ms: 3800 });
+      await c.say('Çocuğu <b>tam 5</b>\'e getir: lamba yalnız bir durumda yanar.', { ms: 3800 });
       await fadeTo(c, cur, 400);
       setCur(4);
       let at5 = false;
@@ -2366,75 +2383,9 @@
       await c.wait(1500);
       await c.cont('Devam ›');
       sl.remove();
-      c.note('<b>[2,5] ∩ [5,9] = {5}</b> (tek nokta) · <b>[2,5) ∩ [5,9] = ∅</b> · <b>(2,5) ∩ (5,9) = ∅</b>. Tek nokta ile boş küme farklıdır.', 'Kural', 'k11b');
+      c.note('<b>[2, 5] ∩ [5, 9] = {5}</b> · <b>[2, 5) ∩ [5, 9] = ∅</b>', 'Kural', 'k11b');
 
-      /* ---------- Bölüm C: geçersiz yazımlar ---------- */
-      await fadeTo(c, gB, 500, 1, 0); gB.remove();
-      const gC = G(svg);
-      const bad = [
-        { t: '[5, 2]', why: 'önce küçük, sonra büyük' },
-        { t: '(7, 3)', why: 'a < b olmalı' },
-        { t: '5 < x < 2', why: 'sağlayan sayı yok' },
-      ];
-      const items = bad.map((b, i) => {
-        const g = G(gC);
-        const x = 180 + i * 320;
-        R(g, x - 140, 120, 280, 190, { rx: 20, fill: 'url(#gCard)', stroke: '#33417a', 'stroke-width': 2.5, filter: 'url(#shadow)' });
-        T(g, x, 220, b.t, { s: 54, w: 800 });
-        const xs = S('path', { d: `M${x - 70} 170 L${x + 70} 250 M${x + 70} 170 L${x - 70} 250`, stroke: COL.coral, 'stroke-width': 9, 'stroke-linecap': 'round', fill: 'none' }, g);
-        const len = 170;
-        xs.setAttribute('stroke-dasharray', '170 170'); xs.setAttribute('stroke-dashoffset', 170);
-        const wt = T(g, x, 290, b.why, { s: 24, w: 700, f: COL.coral });
-        setOp(wt, 0); setOp(g, 0);
-        return { g, xs, wt };
-      });
-      T(gC, 500, 70, 'Aralık gibi görünen ama olmayan yazımlar', { s: 32, w: 800, f: COL.mute });
-      const ruleC = T(gC, 500, 400, 'Önce küçük sayı, sonra büyük sayı:  a < b', { s: 40, w: 800, f: COL.mint });
-      setOp(ruleC, 0);
-      await par(c, 'Bir de <b>geçersiz yazımlar</b> var: aralık gibi görünürler ama değildirler.', { ms: 3600 }, async () => {
-        for (const it of items) {
-          await fadeTo(c, it.g, 450);
-          await c.tween(500, (e) => it.xs.setAttribute('stroke-dashoffset', 170 * (1 - e)), ease.out);
-          await fadeTo(c, it.wt, 300);
-        }
-        await fadeTo(c, ruleC, 500);
-      });
-      await c.choice({
-        tag: 'Hata ayıkla', q: '"<span class="m">(7, 3)</span>" yazan öğrenci neyi yanlış yaptı?', options: ['Parantez türünü yanlış seçti', 'Küçük sayıyı sağa yazdı', '∞ koymayı unuttu'], answer: 1,
-        right: 'Doğru: 7 > 3 olduğu hâlde 7 solda. Aralıkta önce <b>küçük</b>, sonra <b>büyük</b> sayı yazılır.',
-        hints: ['Parantez türü ayrı bir konu; asıl hata sıralamada. Hangi sayı solda, hangisi sağda?', '', 'Burada ∞ yok; iki sayı da sınırlı. Sorun sıralamada.'],
-      });
-      c.note('Aralık yazarken <b>a < b</b>: önce küçük sayı, sonra büyük sayı. <b>[5, 2]</b> ve <b>(7, 3)</b> geçersizdir.', 'Kural', 'k11c');
-
-      /* ---------- Bölüm D: tek nokta aralığı ---------- */
-      await fadeTo(c, gC, 500, 1, 0); gC.remove();
-      const gD = G(svg);
-      const cardsD = [
-        { t: '[3, 3]', res: '= {3}', filled: true, col: COL.mint },
-        { t: '(3, 3)', res: '= ∅', filled: false, col: COL.coral },
-        { t: '[3, 3)', res: '= ∅', filled: false, col: COL.coral },
-      ].map((d, i) => {
-        const g = G(gD);
-        const x = 180 + i * 320;
-        R(g, x - 145, 100, 290, 340, { rx: 20, fill: 'url(#gCard)', stroke: '#33417a', 'stroke-width': 2.5, filter: 'url(#shadow)' });
-        T(g, x, 190, d.t, { s: 54, w: 800 });
-        const ax = axis(g, { x0: x - 100, x1: x + 100, vmin: 2, vmax: 4, y: 300, left: x - 120, right: x + 120, major: [3], minor: [], ls: 24 });
-        if (d.filled) { const dd = dot(g, ax.X(3), 300, COL.mint, true, { r: 14 }); dd.sc = 0; dd.place(); d.dd = dd; }
-        else { d.dd = null; d.ring = S('circle', { cx: ax.X(3), cy: 300, r: 14, fill: 'none', stroke: COL.mute, 'stroke-width': 3, 'stroke-dasharray': '5 5' }, g); setOp(d.ring, 0); }
-        d.rt = T(g, x, 408, d.res, { s: 50, w: 800, f: d.col }); setOp(d.rt, 0);
-        setOp(g, 0); d.g = g;
-        return d;
-      });
-      await par(c, 'Son tuzak: iki ucu aynı sayı olan aralıklar. <b>[3, 3] = {3}</b>: tek nokta. Ama <b>(3, 3)</b> ve <b>[3, 3)</b> boş küme.', { ms: 7000, speak: 'Son tuzak: iki ucu aynı sayı olan aralıklar. Köşeli üç virgül üç köşeli, tek nokta olan küme üç. Ama yuvarlak üç virgül üç ve köşeli üç virgül üç yuvarlak, boş küme.' }, async () => {
-        for (const d of cardsD) {
-          await fadeTo(c, d.g, 500);
-          if (d.dd) await d.dd.pop(c, 400); else await fadeTo(c, d.ring, 400);
-          await fadeTo(c, d.rt, 500);
-          await c.wait(500);
-        }
-      });
-      c.note('<b>[a, a] = {a}</b> (tek nokta) · <b>(a, a) = [a, a) = ∅</b>. Boş küme hiç eleman içermez.', 'Kural', 'k11d');
-      await c.cont('Devam ›');
+      await c.say('Tek parantez farkı: biri <b>{5}</b>, öteki <b>∅</b>.', { ms: 3400 });
     },
   });
 
@@ -2572,65 +2523,164 @@
   });
 
   /* ================================================================== SINAV, ÖZET, BAŞLAT */
-  const shuffleQ = (q, order) => ({
-    q: q.q, scene: q.scene,
-    options: order.map((i) => q.options[i]),
-    why: order.map((i) => q.why[i]),
-    answer: order.indexOf(q.answer),
-  });
   const M_ = (x) => `<span class="m">${x}</span>`;
-  const quizRaw = [
-    {
-      q: `${M_('{x : 3 < x ≤ 7, x ∈ ℝ}')} kümesi aşağıdakilerden hangisine eşittir?` + miniSvg({ min: 0, max: 10, ticks: [0, 3, 7, 10], items: [{ iv: IV(3, 7, false, true), color: COL.mint }] }),
-      options: [M_('(3, 7)'), M_('[3, 7]'), M_('(3, 7]'), M_('[3, 7)'), M_('(7, 3]')], answer: 2, scene: 4,
-      why: ['7\'yi hariç saymışsın: ≤ işareti dahil demektir.', '3\'ü dahil saymışsın: 3 < x yazıyor, 3 hariç.', '3 hariç (yuvarlak), 7 dahil (köşeli).', 'Parantez türleri ters yerde.', 'Küçük sayı sağa yazılmış: önce küçük, sonra büyük sayı yazılır.'],
+  /* Bölüm B kısa derslere ayrılır. Sayfa, hangi parçayı oynatacağını window.DERS_PARCA ile söyler.
+     B2–B5 bu dosyadaki sahnelerden kurulur. Yeni dersler (B1, B6, B7) kendi dosyalarında durur ve
+     window.DERS_EK[anahtar] = (K) => ({ title, hook, scenes, quiz, summary, next }) ile kaydolur;
+     K, bu dosyanın çizim araçlarıdır (aşağıdaki KIT). Eski sahne 12 (tamir atölyesi, SC[14]) bölüm sonu tekrarı için duruyor. */
+  const KIT = {
+    D, S, h, ease, lerp, clamp, Cancelled, COL, NB, MINUS, num, mix, INF, IV, has, isEmpty, inter, ivStr, ineqStr,
+    T, multi, R, setOp, G, at, defs, stars, canvas, dot, kid, gate, axis, AX100, AX10, ivShape, balloon, chip, board,
+    spawn, serial, until, slide, svgPt, toggler, dnd, layoutRow, miniSvg, par, fadeTo, tryIt, flagAt, gatesRow, marker, M_,
+  };
+  const PARCALAR = {
+    b2: {
+      title: 'Dolu nokta, boş nokta',
+      hook: 'Hız treninin kapısında <b>140 cm ve üzeri</b> yazıyor. Boyu tam 140 cm olan biner mi?',
+      scenes: SC.slice(0, 4),
+      quiz: [
+        {
+          q: `${M_('x > 3')} sayı doğrusunda nasıl görünür?`,
+          options: ['3’te dolu nokta, sağa doğru şerit', '3’te boş nokta, sağa doğru şerit', '3’te boş nokta, sola doğru şerit', '3’te dolu nokta, sola doğru şerit'], answer: 1,
+          why: [
+            'Dolu nokta 3’ü de alır; oysa işaret &gt;, eşitlik yok.',
+            'Eşitlik yok: 3 hariç, nokta boş. Büyük sayılar sağda.',
+            'Yön ters: 3’ten büyük sayılar sağdadır.',
+            'Hem nokta hem yön ters.'],
+          scene: 2,
+        },
+        {
+          q: '5’ten küçük en büyük gerçek sayı hangisidir?',
+          options: ['4', '4,9', 'Böyle bir sayı yoktur.', '4,99'], answer: 2,
+          why: [
+            'Tam sayılarda öyle. Gerçek sayılarda 4,5 de 5’ten küçük.',
+            '4,95 ondan büyük ve hâlâ 5’ten küçük.',
+            'Hangisini söylesen, 5 ile arasında bir sayı daha var.',
+            '4,995 ondan büyük ve hâlâ 5’ten küçük.'],
+          scene: 3,
+        },
+      ],
+      summary: [
+        '<b>Eşitlik varsa nokta dolu.</b> ≥ ve ≤ dolu, &gt; ve &lt; boş nokta.',
+        `<b>Büyükler sağda:</b> ${M_('x ≥ 140')} şeridi 140’tan sağa uzanır.`,
+        '<b>En uzun yok:</b> 190’dan kısa boyların en büyüğü yoktur; 190’a boş nokta konur.',
+      ],
+      next: { href: 'b3-parantez-dili.html', label: 'Sonraki: Parantez dili ›' },
     },
-    {
-      q: `${M_('x ≥ −2')} koşulunu sağlayan gerçek sayıların aralığı hangisidir?` + miniSvg({ min: -5, max: 5, ticks: [-4, -2, 0, 4], items: [{ iv: IV(-2, INF, true), color: COL.mint }] }),
-      options: [M_('[−2, ∞]'), M_('(−2, ∞)'), M_('[−2, ∞)'), M_('(−∞, −2]'), M_('(−∞, −2)')], answer: 2, scene: 6,
-      why: ['∞ için köşeli parantez kullanılmaz: ∞ bir sayı değildir.', '≥ olduğu için −2 dahil; köşeli olmalı.', '−2 dahil, ∞ hariç.', 'Yön ters okunmuş: büyük sayılar sağdadır.', 'Hem yön ters hem uç nokta hariç yazılmış.'],
+    b3: {
+      title: 'Parantez dili ve sonsuz',
+      hook: `${M_('140 ≤ x < 190')} kuralını her seferinde çizmek zorunda mıyız? İki sayı ve iki parantez yeter mi?`,
+      scenes: SC.slice(4, 7),
+      quiz: [
+        {
+          q: `${M_('−2 ≤ x < 4')} hangi aralıktır?`,
+          options: [M_('(−2, 4)'), M_('[−2, 4)'), M_('(−2, 4]'), M_('[−2, 4]')], answer: 1,
+          why: [
+            '−2 dahil (≤); solda köşeli olmalı.',
+            '−2 dahil: köşeli. 4 hariç: yuvarlak.',
+            'Parantezler ters yerde.',
+            '4 hariç (&lt;); sağda yuvarlak olmalı.'],
+          scene: 0,
+        },
+        {
+          q: `${M_('x ≥ 7')} hangi aralıktır?`,
+          options: [M_('[7, ∞]'), M_('(7, ∞)'), M_('(−∞, 7]'), M_('[7, ∞)')], answer: 3,
+          why: [
+            '∞ bir sayı değil; yanında köşeli olmaz.',
+            '7 dahil (≥); köşeli olmalı.',
+            'Yön ters: 7’den büyükler sağda.',
+            '7 dahil: köşeli. ∞ hep yuvarlak.'],
+          scene: 2,
+        },
+      ],
+      summary: [
+        '<b>Köşeli dahil, yuvarlak hariç; sonsuz hep yuvarlak.</b>',
+        `<b>Dört tür:</b> ${M_('[a, b]')} · ${M_('(a, b)')} · ${M_('[a, b)')} · ${M_('(a, b]')}`,
+        `<b>Ucu olmayan:</b> ${M_('x ≥ 140')} → ${M_('[140, ∞)')}`,
+      ],
+      next: { href: 'b4-dort-dil-tek-kume.html', label: 'Sonraki: Dört dil, tek küme ›' },
     },
-    {
-      q: `${M_('[1, 5) ∩ (3, 8]')} işleminin sonucu nedir?` + miniSvg({ min: 0, max: 10, ticks: [0, 1, 3, 5, 8, 10], items: [{ iv: IV(1, 5, true, false), color: COL.amber, dy: 30 }, { iv: IV(3, 8, false, true), color: COL.sky, dy: 8 }], h: 126 }),
-      options: [M_('[1, 8]'), M_('(3, 5)'), M_('[3, 5]'), M_('(3, 5]'), M_('∅')], answer: 1, scene: 8,
-      why: ['Bu [1,5) ∪ (3,8] birleşimidir; soru kesişimi soruyor.', '3, ikinci aralıkta boş (hariç); 5, ilk aralıkta boş (hariç).', 'Uçları dolu alma: 3 ∉ (3,8] ve 5 ∉ [1,5).', '5 ilk aralıkta yok; kesişimde de dışarıda.', 'Ortak bölge var (örneğin 4); boş küme değil.'],
+    b4: {
+      title: 'Dört dil, tek küme',
+      hook: `${M_('x ∈ ℝ')} yerine ${M_('x ∈ ℤ')} yazarsak ${M_('140 ≤ x < 190')} aynı küme mi kalır?`,
+      scenes: SC.slice(7, 10),
+      quiz: [
+        {
+          q: `${M_('{x : 1 < x ≤ 3, x ∈ ℝ}')} hangi aralıktır?`,
+          options: [M_('[1, 3)'), M_('(1, 3)'), M_('(1, 3]'), M_('[1, 3]')], answer: 2,
+          why: [
+            'Parantezler ters yerde.',
+            '3 dahil (≤); sağda köşeli olmalı.',
+            '1 hariç: yuvarlak. 3 dahil: köşeli.',
+            '1 hariç (&lt;); solda yuvarlak olmalı.'],
+          scene: 0,
+        },
+        {
+          q: `${M_('{x : 1 < x ≤ 3, x ∈ ℤ}')} hangi kümedir?`,
+          options: [M_('{1, 2, 3}'), M_('{2, 3}'), M_('(1, 3]'), M_('{2}')], answer: 1,
+          why: [
+            '1 hariç: 1 &lt; x yazıyor.',
+            '1’den büyük, 3’ü geçmeyen tam sayılar: 2 ve 3.',
+            'Aralık gerçek sayılar içindir; burada yalnızca tam sayılar var.',
+            '3 dahil: x ≤ 3 yazıyor.'],
+          scene: 1,
+        },
+      ],
+      summary: [
+        '<b>Eşitsizlik, aralık, doğru, küme: aynı şey.</b>',
+        `${M_('140 ≤ x < 190')} = ${M_('[140, 190)')} = ${M_('{x : 140 ≤ x < 190, x ∈ ℝ}')}`,
+        `<b>ℝ mi, ℤ mi:</b> ${M_('x ∈ ℤ')} yazınca şerit noktalara dağılır.`,
+      ],
+      next: { href: 'b5-kesisim-ve-birlesim.html', label: 'Sonraki: Kesişim ve birleşim ›' },
     },
-    {
-      q: `${M_('(−∞, 2) ∪ [2, 7]')} işleminin sonucu nedir?` + miniSvg({ min: -3, max: 9, ticks: [-2, 2, 7], items: [{ iv: IV(-INF, 2, false, false), color: COL.amber, dy: 30 }, { iv: IV(2, 7, true, true), color: COL.sky, dy: 8 }], h: 126 }),
-      options: [M_('(−∞, 7]'), M_('(−∞, 2) ∪ (2, 7]'), M_('(−∞, 7)'), M_('[2, 7]'), M_('∅')], answer: 0, scene: 9,
-      why: ['2, ikinci aralıkta dolu; aralıklar kaynaşır. Sol uç −∞ (yuvarlak), sağ uç 7 dolu.', '2 sayısı ikinci aralıkta vardır; unutulmuş.', '7 ikinci aralıkta dahil; hariç sanılmış.', 'Yalnız ikinci aralık alınmış; birleşimde ikisi de gerekir.', 'Bu (−∞,2) ∩ [2,7] kesişiminin sonucudur: ∪ ile ∩ karıştırılmış.'],
+    b5: {
+      title: 'Kesişim ve birleşim',
+      hook: 'İki oyuncağın boy kuralı farklı. <b>İkisine de</b> binebilenler kimler?',
+      scenes: SC.slice(10, 14),
+      quiz: [
+        {
+          q: `${M_('[2, 6] ∩ [4, 9]')} işleminin sonucu nedir?`,
+          options: [M_('[2, 9]'), M_('[4, 6]'), M_('(4, 6)'), M_('∅')], answer: 1,
+          why: [
+            'Bu birleşim (∪). Kesişim yalnızca ortak parçadır.',
+            'İki aralıkta da olanlar: 4’ten 6’ya, uçlar dahil.',
+            '4 ve 6 iki aralıkta da var; uçlar dolu.',
+            'Ortak sayılar var: örneğin 5.'],
+          scene: 1,
+        },
+        {
+          q: `${M_('[1, 4) ∪ [4, 7]')} işleminin sonucu nedir?`,
+          options: [M_('[1, 4) ∪ (4, 7]'), M_('∅'), M_('[1, 7]'), M_('{4}')], answer: 2,
+          why: [
+            '4, ikinci aralıkta var; birleşimde de var.',
+            'Bu kesişimin sonucu. Birleşim iki aralığı toplar.',
+            '4 ikinci aralıkta dolu: iki parça kaynaşır.',
+            'Birleşim en az birinde olan bütün sayılardır.'],
+          scene: 2,
+        },
+      ],
+      summary: [
+        '<b>∩ ve, ∪ veya.</b>',
+        '<b>Kesişim:</b> iki aralıkta da olanlar. Uç nokta ikisinde de varsa dahil.',
+        `<b>Tek parantez farkı:</b> ${M_('[2, 5) ∩ [5, 9] = ∅')} ama ${M_('[2, 5] ∩ [5, 9] = {5}')}`,
+      ],
+      next: { href: 'b6-fark-ve-tumleme.html', label: 'Sonraki: Fark ve tümleme ›' },
     },
-    {
-      q: `${M_('[3, 7) ∩ [7, 10]')} işleminin sonucu nedir?` + miniSvg({ min: 0, max: 12, ticks: [3, 7, 10], items: [{ iv: IV(3, 7, true, false), color: COL.amber, dy: 30 }, { iv: IV(7, 10, true, true), color: COL.sky, dy: 8 }], h: 126 }),
-      options: [M_('{7}'), M_('∅'), M_('[3, 10]'), M_('[3, 7]'), M_('[7, 10]')], answer: 1, scene: 10,
-      why: ['7, ikinci aralıkta var ama ilkinde yok.', '[3, 7) kümesinde 7 yoktur; ortak eleman yok.', 'Bu birleşimdir (∪).', 'Birinci aralığı kapalı sanma: 7 orada hariç.', 'Yalnız ikinci aralık alınmış; kesişim iki aralığın ortağıdır.'],
-    },
-  ];
-  const perms = [[2, 0, 4, 1, 3], [1, 4, 2, 0, 3], [3, 1, 0, 4, 2], [4, 2, 1, 3, 0], [0, 3, 1, 2, 4]];
-  const quiz = quizRaw.map((q, i) => shuffleQ(q, perms[i]));
-
+  };
+  const anahtar = window.DERS_PARCA || 'b2';
+  const ek = (window.DERS_EK || {})[anahtar];
+  const parca = PARCALAR[anahtar] || ek(KIT);
   D.start({
-    id: 'sayilar-02', kicker: '9. Sınıf · Sayılar', title: 'Gerçek Sayı Aralıkları ve Küme Sembolleri',
-    accent: '#ffc857', back: 'index.html',
-    intro: {
-      title: 'Lunapark kapısında sayı doğrusu',
-      hook: 'Hız treninin kapısında görevli boy kontrolü yapıyor: <b>140 cm ve üzeri</b> girer, <b>190 cm\'den kısa</b> girer. Bu kuralı bir sayı doğrusuna, bir sembole ve bir kümeye çevireceğiz.',
-      button: 'Derse başla ›',
-    },
-    goals: [
-      'Eşitsizliği sayı doğrusunda dolu/boş noktalarla göster ve tersini yap.',
-      'Aralığı <span class="m">(a,b)</span>, <span class="m">[a,b]</span>, <span class="m">[a,b)</span>, <span class="m">(a,b]</span> türlerine ayır; uç noktanın dahil olup olmadığını gerekçelendir.',
-      'Tek yönlü aralıkları yaz; ∞\'un yanında neden hep yuvarlak parantez olduğunu açıkla.',
-      'Aynı kümeyi dört dille yaz: eşitsizlik ⇄ aralık ⇄ sayı doğrusu ⇄ küme gösterimi.',
-      'İki aralığın kesişimini (∩) ve birleşimini (∪) bul; uç noktaların durumunu doğru belirle.',
-      'Boş küme ∅ ile tek elemanlı küme <span class="m">{5}</span> sonuçlarını ayırt et.',
-    ],
-    scenes: SC,
-    quiz,
-    summary: [
-      '<b>Uç nokta dahil mi?</b> Dahilse dolu nokta ● ve köşeli parantez <span class="m">[ ]</span>; değilse boş nokta ○ ve yuvarlak parantez <span class="m">( )</span>. ∞ asla dahil edilemez; yanında hep yuvarlak parantez.',
-      '<b>Aynı küme, dört dil:</b> <span class="m">140 ≤ x < 190</span> ⇄ <span class="m">x ∈ [140, 190)</span> ⇄ sayı doğrusu ●────○ ⇄ <span class="m">{x : 140 ≤ x < 190, x ∈ ℝ}</span>.',
-      '<b>∩ "ve", ∪ "veya":</b> Kesişim iki kapıdan da geçenler (ortak kısım), birleşim en az birinden geçenler (toplam kısım). Sonuç bir aralık, iki parça, tek nokta <span class="m">{5}</span> ya da boş küme ∅ olabilir.',
-    ],
+    id: 'sayilar-' + anahtar,
+    kicker: 'Bölüm B · Aralıklar ve kümeler',
+    title: parca.title,
+    accent: '#ffc857',
+    back: 'index.html',
+    intro: { title: parca.title, hook: parca.hook, button: 'Derse başla ›' },
+    scenes: parca.scenes,
+    quiz: parca.quiz,
+    quizTitle: 'Çıkış soruları',
+    summary: parca.summary,
+    nextLesson: parca.next,
   });
 })();

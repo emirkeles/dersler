@@ -34,6 +34,8 @@ Quiz ve Özet sahneleri otomatik eklenir. İlerleme `localStorage`'a yazılır.
 
 Kısa dersler: bir bölümün sahneleri tek JS dosyasında durur, her kısa dersin kendi HTML sayfası vardır. Sayfa `<script>window.DERS_PARCA = 'a1';</script>` ile hangi parçayı istediğini söyler; JS dosyası sondaki `PARCALAR` tablosundan o parçanın sahnelerini, 2 çıkış sorusunu (`quizTitle: 'Çıkış soruları'`) ve özetini seçer (örnek: `dersler/01-uslu-ve-koklu.js`, sayfalar `a1-…html` – `a4-…html`). Ders kimliği `sayilar-a1` biçimindedir; araçlar `node olc.js a1` diye çağrılır.
 
+Bölümün çizim araçlarını kullanan yeni bir kısa ders kendi dosyasında da durabilir (örnek: `dersler/b1-kume-dili.js`). Dosya `window.DERS_EK.b1 = (K) => ({ title, hook, scenes, quiz, summary, next })` ile kaydolur; `K`, bölüm dosyasının sonundaki `KIT` nesnesidir. Sayfa bu dosyayı bölüm dosyasından **önce** yükler.
+
 ## Sahne bağlamı `c` (run içinde `await` ile sırala)
 Zaman: `await c.wait(ms)` · `await c.tween(ms, (e,t)=>{…}, ease?)` (e = easing uygulanmış 0→1; `Ders.ease.{linear,in,out,inOut,back,bounce,elastic}`) · `Ders.lerp(a,b,t)`, `Ders.clamp`.
 **Tüm zamanlamalar duraklat/hız/sahne değiştirme ile uyumludur; `setTimeout`/`setInterval`/CSS animasyonu/`requestAnimationFrame` ile kendi zamanlayıcını KURMA — her zaman `c.wait`/`c.tween` kullan.** Sahne değişince run otomatik iptal edilir (Cancelled istisnası; yakalama).
@@ -59,6 +61,6 @@ Renk rolleri: `--c1` mavi, `--c2` turuncu, `--c3` yeşil, `--c4` mor, `--c5` sar
 Yazı bütçesi (ayrıntı `plan/PLAN.md`): altyazı ≤ 12 kelime, tahtada aynı anda ≤ ~25 kelime, punto ≥ 12 px.
 
 ## Araçlar (`araclar/`, yalnızca geliştirme)
-İlk kullanımda `cd araclar && npm install`. Chrome gerekir (`CHROME_PATH` ile yol verilebilir).
+İlk kullanımda `cd araclar && npm install`. Chrome gerekir (`CHROME_PATH` ile yol verilebilir; HyperFrames'in indirdiği `~/.cache/hyperframes/chrome/…/chrome-headless-shell` de olur).
 - `node olc.js 01 [--boyut 1366x657] [--goruntu klasör]` — dersi baştan sona oynatır (etkileşimleri otomatik geçer); sayfa kayması, taşan/üst üste yazı, punto, yazı bütçesi ve konsol hatalarını raporlar; istenirse her altyazıda ekran görüntüsü alır. Yeni ya da değişen her dersten sonra çalıştır ve görüntülere bak.
 - `node ses-uret.js 01 --liste` — seslendirilecek satırları ve karakter sayısını gösterir. `node ses-uret.js 01 [--sahne 1-3]` ElevenLabs ile eksik klipleri üretir. API anahtarı kökteki `.env` dosyasında (`ELEVENLABS_API_KEY`); anlatıcı sesi ve model betiğin başındaki `VARSAYILAN` içinde. Klipler `ses/<ders-id>/`, dizin `ses/<ders-id>.js`. Metni değişen altyazının klibi yeniden üretilir; önce metni kesinleştir, sonra seslendir.

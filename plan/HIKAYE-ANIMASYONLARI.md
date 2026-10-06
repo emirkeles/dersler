@@ -9,10 +9,10 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 | Hikâye | Durum | Eksik |
 |---|---|---|
 | 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) ve A8 dersinin son sahnesine bağlandı | Son işleme, müzik, efekt, altyazı dosyası |
-| 3 · B7 Kombi 22 derecede | Seslendirildi ve işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) | Müzik, efekt, altyazı dosyası |
+| 3 · B7 Kombi 22 derecede | Seslendirildi, işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) ve B7 dersinin son sahnesine bağlandı | Müzik, efekt, altyazı dosyası |
 | 2 C4 · 4 C5 · 5 B5 · 6 D5 · 7 A2 · 8 C3 | Başlanmadı | — |
 
-Motorda video sahnesi türü var (`ortak/API.md`). B7 hikâyesi dersini bekliyor (B7 henüz yazılmadı); ana sayfada "Hikâyeler" başlığı yok.
+Motorda video sahnesi türü var (`ortak/API.md`). Ana sayfada "Hikâyeler" başlığı yok. C3 ve C4 hikâyelerinin kapanış kartında dersin akılda kalıcı cümlesi yazar; C5'te tek istisna olarak siyah kuğu cümlesi kalır (`senaryolar/C-sayi-kumeleri.md`).
 
 ## 1. Hangi konuya hikâye yazılır
 
@@ -60,13 +60,13 @@ Sıralama ölçütü: (1) program o fikir için gerçek yaşam bağlamını aç�
 | Sıra | Ders | Fikir | Hayatta nerede | Hikâye | Kapanış cümlesi |
 |---|---|---|---|---|---|
 | 1 | A8 Yaklaşık değer | Karekök çoğu zaman tam çıkmaz; yaklaşık değerle iş görülür | Alanı bilinen kare arsanın kenarı, çit ve fayans hesabı | Bir dönümlük (1000 m²) kare tarla çitle çevrilecek. Kenar √1000: tam çıkmaz, 31,6 metre alınır; 4 kenar 126,5 metre çit. Yuvarlamanın faturaya etkisi. | "Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz." |
-| 2 | C4 Sıralama ve arada olma | İki ondalık sayının arasına hep bir yenisi sığar | 100 metre finali ve fotofiniş | İki koşucu 9,58'de geliyor gibi görünür. Kamera saniyenin binde birine iner: 9,581 ve 9,584. Yetmezse on binde bire. | "İki sayının arasında hep bir sayı daha vardır." |
+| 2 | C4 Sıralama ve arada olma | İki ondalık sayının arasına hep bir yenisi sığar | 100 metre finali ve fotofiniş | İki koşucu 9,58'de geliyor gibi görünür. Kamera saniyenin binde birine iner: 9,581 ve 9,584. Yetmezse on binde bire. | "Kesirlerde 'bir sonraki sayı' yoktur." |
 | 3 | B7 Mutlak değerle aralık | \|x − a\| < r: hedefe uzaklık payın içinde | Kombi ve klima termostatı | Kombi 22 dereceye ayarlı; 1 derecelik payın dışına çıkınca çalışır. 21,4 de 22,8 de "tamam"; 20,9 değil. Önemli olan 22'ye uzaklık. | "Mutlak değer, hedefe uzaklıktır." |
 | 4 | C5 İspat mı, karşı örnek mi? | Bin örnek kanıtlamaz, tek karşı örnek çürütür | "Her zaman", "hiçbir zaman" diye başlayan iddialar | Avrupa'da yüzyıllarca "bütün kuğular beyazdır" denir; 1697'de Avustralya'da siyah kuğu görülür. Bugüne bağlanır: "bu uygulama hiç çökmez", "ben hiç geç kalmam". | "Bin beyaz kuğu kanıtlamaz, tek siyah kuğu çürütür." |
 | 5 | B5 Kesişim ve birleşim | "Ve" iki koşulu birden sağlayanları bırakır | Alışveriş uygulamasındaki filtreler | Spor ayakkabı arayan öğrenci: fiyat 1000–2000 TL **ve** numara 40–42. Her filtrede liste daralır; kalan ürünler iki aralığın kesişimi. | "Ve dediğinde liste daralır, veya dediğinde genişler." |
 | 6 | D5 Özdeşlikler | (a + b)² = a² + 2ab + b²: kenar büyüyünce alan beklenenden fazla büyür | Tepsi, pizza, ekran, halı boyu seçerken | Börekçide 40'lık kare tepsi mi, 20'lik iki tepsi mi? 40'lık tepsi 1600 cm², iki küçük 800 cm²: aynı böreğe dört küçük tepsi gerekir. | "Kenar iki katına çıkınca alan dört katına çıkar." |
 | 7 | A2 Geri sar: negatif üs | Her adımda yarıya inen şey küçülür ama eksiye düşmez | Kafeinin vücutta yarılanması (yaklaşık 5 saat) | Akşam 5'te içilen kahve: 10'da yarısı, gece 3'te çeyreği hâlâ kanda. Sınav gecesi neden uyuyamadığını anlayan öğrenci. | "Eksi üs negatif yapmaz; böler, böler, bitirmez." |
-| 8 | C3 Sayı doğrusundaki delik | √2 gerçek bir uzunluktur ama hiçbir kesre eşit değildir | A4 kâğıdı ve fotokopideki %141 / %71 | A4'ü ikiye katlayınca aynı biçimde A5 çıkar. Bu ancak uzun kenar kısa kenarın √2 katıysa olur. Fotokopi makinesindeki %141 de odur. | "√2 her gün elinde: A4 kâğıdının kenarında." |
+| 8 | C3 Sayı doğrusundaki delik | √2 gerçek bir uzunluktur ama hiçbir kesre eşit değildir | A4 kâğıdı ve fotokopideki %141 / %71 | A4'ü ikiye katlayınca aynı biçimde A5 çıkar. Bu ancak uzun kenar kısa kenarın √2 katıysa olur. Fotokopi makinesindeki %141 de odur. | "Ne biter ne devreder: irrasyonel." |
 
 Müfredat dayanağı:
 
