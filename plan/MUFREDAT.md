@@ -64,3 +64,7 @@ Farklı disiplinlerde geçen temsillerin bilimsel gösterimle ifade edilmesine y
 | Aralıkların sayı doğrusunda gösterimi (ön bilgi) | B2, B3 | Tekrar niteliğinde; yeni kavram getirmiyor |
 
 Çıkarılanlar: iki ucu aynı aralıklar ([3, 3] = {3}, (3, 3) = ∅) ve "geçersiz yazımlar" ([5, 2], (7, 3)) parçaları B5'ten çıkarıldı; programda yok.
+
+## Bölüm D'nin denetimi (6 Ekim 2026)
+
+Senaryo düzeyinde yapıldı; tablo `senaryolar/D-islem-ozellikleri-ve-cebir.md` dosyasının sonunda. Dersler yazıldıkça sahne numaraları oradan güncellenir. Çıkarılan: bölmede değişme ve birleşme, a ÷ (b + c) iddiası (program özellikleri toplama, çıkarma ve çarpma için sayıyor).

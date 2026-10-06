@@ -34,7 +34,7 @@ Quiz ve Özet sahneleri otomatik eklenir. İlerleme `localStorage`'a yazılır.
 
 Kısa dersler: bir bölümün sahneleri tek JS dosyasında durur, her kısa dersin kendi HTML sayfası vardır. Sayfa `<script>window.DERS_PARCA = 'a1';</script>` ile hangi parçayı istediğini söyler; JS dosyası sondaki `PARCALAR` tablosundan o parçanın sahnelerini, 2 çıkış sorusunu (`quizTitle: 'Çıkış soruları'`) ve özetini seçer (örnek: `dersler/01-uslu-ve-koklu.js`, sayfalar `a1-…html` – `a4-…html`). Ders kimliği `sayilar-a1` biçimindedir; araçlar `node olc.js a1` diye çağrılır.
 
-Bölümün çizim araçlarını kullanan yeni bir kısa ders kendi dosyasında da durabilir (örnek: `dersler/b1-kume-dili.js`). Dosya `window.DERS_EK.b1 = (K) => ({ title, hook, scenes, quiz, summary, next })` ile kaydolur; `K`, bölüm dosyasının sonundaki `KIT` nesnesidir. Sayfa bu dosyayı bölüm dosyasından **önce** yükler.
+Bölümün çizim araçlarını kullanan yeni bir kısa ders kendi dosyasında da durabilir (örnek: `dersler/b1-kume-dili.js`; Bölüm D'de `dersler/d1-onerme.js`, araçlar `dersler/04-islem-ozellikleri-cebirsel.js` içinde). Dosya `window.DERS_EK.b1 = (K) => ({ title, hook, scenes, quiz, summary, next })` ile kaydolur; `K`, bölüm dosyasının sonundaki `KIT` nesnesidir. Sayfa bu dosyayı bölüm dosyasından **önce** yükler.
 
 ## Sahne bağlamı `c` (run içinde `await` ile sırala)
 Zaman: `await c.wait(ms)` · `await c.tween(ms, (e,t)=>{…}, ease?)` (e = easing uygulanmış 0→1; `Ders.ease.{linear,in,out,inOut,back,bounce,elastic}`) · `Ders.lerp(a,b,t)`, `Ders.clamp`.

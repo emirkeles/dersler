@@ -1,2 +1,2 @@
 /* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
-Ders.ses['sayilar-04'] = { base: 'ses/sayilar-04/', clips: {} };
+Ders.ses['sayilar-d7'] = { base: 'ses/sayilar-d7/', clips: {} };

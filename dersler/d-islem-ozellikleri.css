@@ -1,0 +1,27 @@
+/* Bölüm D derslerine özel stil */
+/* terim renk rolleri: a = amber, b = camgöbeği, c = mercan, d = mor */
+.ca{color:#FFB547;font-weight:700}.cb{color:#3CC8E8;font-weight:700}.cc{color:#FF7A8A;font-weight:700}.cd{color:#A78BFA;font-weight:700}
+.ok{color:#5FD38D;font-weight:700}.no{color:#FF5D5D;font-weight:700}
+.ctlgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2px 24px}
+.ctl label b{font-size:1.15rem}
+.ctl output{min-width:4ch}
+.chk{display:inline-flex;align-items:center;gap:8px;color:var(--muted);font-size:.92rem;margin-top:6px;cursor:pointer;user-select:none}
+.chk input{width:18px;height:18px;accent-color:#3CC8E8}
+.seg{display:inline-flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.seg button{background:var(--surface2);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem;color:var(--muted)}
+.seg button.on{background:#3CC8E8;color:#06101f;border-color:#3CC8E8;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cardopt{display:flex;flex-direction:column;gap:6px;text-align:left;background:var(--surface2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:1.02rem;line-height:1.35;transition:.15s}
+.cardopt:hover:not(:disabled){border-color:#3CC8E8}
+.cardopt .rz{font-size:.8rem;color:var(--muted)}
+.cardopt.right{background:color-mix(in srgb,var(--good) 24%,var(--surface2));border-color:var(--good)}
+.cardopt.wrong{background:color-mix(in srgb,var(--bad) 22%,var(--surface2));border-color:var(--bad);opacity:.85}
+.numin{width:90px;background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--text);font:inherit;font-size:1.05rem}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.btn.sm{padding:7px 14px;font-size:.92rem}
+/* dar ekran: 16:9 sahne küçülüp okunmaz olmasın; yatay kaydırılabilir */
+@media (max-width:900px){
+  .stage:has(>svg.canvas){aspect-ratio:auto;max-height:none;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch}
+  .stage:has(>svg.canvas)>svg.canvas{width:640px;max-width:none;height:360px}
+  .cards{grid-template-columns:1fr}
+}

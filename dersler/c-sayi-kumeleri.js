@@ -1976,7 +1976,7 @@
         '“Her” iddiasını çürütmek için tek karşı örnek yeter: √2 · √2 = 2.',
         `Kanıtlamak için ispat gerekir: a &lt; b rasyonelse a &lt; ${F('a + b', 2)} &lt; b.`,
       ],
-      next: { href: '04-islem-ozellikleri-cebirsel.html', label: 'Sonraki bölüm: İşlem özellikleri ›' },
+      next: { href: 'd1-onerme.html', label: 'Sonraki bölüm: Önerme ›' },
     },
   };
 

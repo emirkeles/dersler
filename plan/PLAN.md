@@ -12,6 +12,7 @@ Dayanak: `ANALIZ.md`. Hedef: lise öğrencisinin dizüstü bilgisayarda, sıkıl
 6. **Hikâye animasyonları.** Kritik fikirleri hayattan bir hikâyeyle anlatan, etkileşimsiz, 2D çizim tarzında kısa videolar eklenecek. Ayrı plan: `HIKAYE-ANIMASYONLARI.md`.
 7. **A bölümü kapandı (5 Ekim 2026).** A5–A8 izlendi ve uygun bulundu. A1–A4 bugünkü hâliyle kalır; yazı bütçesi aşımı kabul edildi, yeni kısaltma turu yapılmaz. Bütçe B–D bölümlerinde yazılacak ve bölünecek dersler için bağlayıcıdır.
 8. **Müfredat bağlayıcıdır (6 Ekim 2026).** Programın istemediği konu derse girmez, istediği konu eksik kalmaz. Program metni `MUFREDAT.md` dosyasında; her bölümün senaryosu ve dersleri ona göre denetlenir. Bölüm B bu denetimden geçti (dosyanın sonundaki tablo).
+9. **Bölüm D sekiz ders (6 Ekim 2026).** Önerme dili üç derse bölündü; bölme, değişme ve birleşme sahnelerinden çıkarıldı (program yalnızca toplama, çıkarma ve çarpmayı sayıyor). Ayrıntı ve öteki kararlar: `senaryolar/D-islem-ozellikleri-ve-cebir.md`.
 
 ## Çalışma sırası (güncel)
 
@@ -22,7 +23,7 @@ Bölüm bölüm ilerlenir: bir bölümün mevcut dersleri düzenlenir, eksik der
 | 1 | **A — Üslü ve köklü** · **kapandı** | A1–A4: bölündü, yayında (Ders 01 dörde bölündü, altyazı ve defter kısaldı, her derse 2 çıkış sorusu). Yazı bütçesini aşıyor; bu hâliyle kabul edildi (karar 7) | A5 Rasyonel üs ve n. kök · A6 Eşlenik · A7 Bilimsel gösterim · A8 Yaklaşık değer: yazıldı, izlendi, onaylandı |
 | 2 | **B — Aralıklar ve kümeler** · **yazıldı, izlemeniz bekleniyor** | B2–B5: Ders 02 dörde bölündü; altyazılar ve defter kısaldı, her derse 2 çıkış sorusu. Altyazı bütçesi tutuyor, tahtadaki 25 kelime sınırı eski sahnelerde yer yer aşılıyor (bölüm 6) | B1 Küme dili · B6 Fark ve tümleme · B7 Mutlak değerle aralık: yazıldı (senaryolar 5 Ekim 2026'da onaylandı: `senaryolar/B-araliklar-ve-kumeler.md`); ölçümde bütçe aşımı, taşma ve konsol hatası yok |
 | 3 | **C — Sayı kümeleri** · **senaryolar onaylandı** (`senaryolar/C-sayi-kumeleri.md`) | C1–C3: Ders 03 üçe bölünür; işlem özellikleri sahnesi D'ye devredilir | C4 Sıralama ve arada olma · C5 İspat mı, karşı örnek mi? |
-| 4 | **D — İşlem özellikleri ve cebir** | D2–D4: Ders 04 üçe bölünür; yutan eleman sahnesi eklenir | D1 Önerme dili · D5 Özdeşlikler · D6 Çarpanlara ayırma ve sıfır çarpım |
+| 4 | **D — İşlem özellikleri ve cebir** · **yazıldı, izlemeniz bekleniyor** (`senaryolar/D-islem-ozellikleri-ve-cebir.md`) | D4–D6: Ders 04 üçe bölündü; altyazılar kısaldı, kaydırıcılı keşif bölümleri ve bölme çıktı; yutan eleman ve "hangi kutuda var" sahneleri eklendi | D1 Önerme · D2 Ve, veya, ya da · D3 İse, ancak ve ancak · D7 Özdeşlikler · D8 Çarpanlara ayırma ve sıfır çarpım: yazıldı; ölçümde bütçe aşımı (altyazı), taşma ve konsol hatası yok |
 | 5 | **Akılda kalıcılık** | Ders başı hatırlama sorusu, bölüm sonu tekrar, tema finali, kopya kâğıdı | — |
 | 6 | **Ses ve hikâyeler** | Tüm derslerin seslendirilmesi | Hikâye animasyonları (pilot A bölümünden sonra; ayrıntı `HIKAYE-ANIMASYONLARI.md`) |
 
@@ -37,7 +38,7 @@ Mevcut dersleri düzenlerken her sahnede yapılacaklar: altyazı ≤ 12 kelime �
 
 ## 1. Format kararı: mikro ders
 
-Bir ders = **bir fikir, 4–6 dakika, 3–5 sahne, 2 soruluk çıkış bileti.** Bugünkü 13 sahnelik dersler bölünür; tema dört bölüm, 26 mikro ders olur (14'ü mevcut içerikten, 12'si yeni).
+Bir ders = **bir fikir, 4–6 dakika, 3–5 sahne, 2 soruluk çıkış bileti.** Bugünkü 13 sahnelik dersler bölünür; tema dört bölüm, 28 mikro ders olur (14'ü mevcut içerikten, 14'ü yeni).
 
 Her mikro dersin iskeleti aynı kalır, öğrenci ritmi öğrenir:
 
@@ -89,7 +90,7 @@ Telefonda: tahta, altyazı ve soru artık tek ekranda; ama tahtadaki yazılar h�
 - Yoğun sahneler adım adım açılır: Ders 01 S6 merdiveninde yalnızca etkin satır parlak, kutular sırayla gelir; Ders 01 S9, Ders 03 S5, Ders 04 S12 ikiye bölünür.
 - Ders 03 S5 (işlem özellikleri) çıkarılır, D bölümüne bağlantı verilir.
 
-### Faz 2 — Eksik konular (12 yeni mikro ders + 1 sahne)
+### Faz 2 — Eksik konular (14 yeni mikro ders + 2 sahne)
 
 Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` altında kısa senaryo (bütçeye uygun), sonra ders dosyası.
 
@@ -143,14 +144,16 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
 | # | Ders | Kaynak | Ana görsel | Akılda kalıcı cümle |
 |---|---|---|---|---|
-| D1 | **YENİ** Önerme dili | — | İddia kartları: "her" tek istisnayla düşer, "bazı" tek örnekle kalkar; ∀ ∃ ∧ ∨ ⇒ ⇔ | "'Her' için hepsi, 'bazı' için biri yeter." |
-| D2 | Değişme ve birleşme | • 04 S1, S3–6 | Yer değiştiren bloklar, kayan parantez | "Toplama ve çarpmada var; çıkarma ve bölmede yok." |
-| D3 | Dağılma | • 04 S2, S7–9 | Alan modeli: 7 × (100 − 2) | "Dışarıdaki, içerideki herkesle çarpılır." |
-| D4 | Etkisiz, ters, yutan + hile ustası | • 04 S10–11 + **YENİ sahne: yutan eleman** | Geri alma düğmesi | "0 toplamada etkisiz, çarpmada yutan." |
-| D5 | **YENİ** Özdeşlikler | — | Kareyi dört parçaya böl (unutulan iki dikdörtgen: 2ab); köşeden kare kes, döndür: a² − b² | "(a + b)² dört parçadır, iki değil." |
-| D6 | **YENİ** Çarpanlara ayırma ve sıfır çarpım | — (+ 04 S12) | Dağılmayı geri sar; alanı 0 olan dikdörtgenin bir kenarı 0; 51 · 49 ve 99² | "Çarpım 0 ise çarpanlardan biri 0'dır." |
+| D1 | **YENİ** Önerme: doğru ya da yanlış | — | İddia kartları, D / Y damgası; değil, ∀, ∃ | "'Her' için hepsi, 'bazı' için biri yeter." |
+| D2 | **YENİ** Ve, veya, ya da | — | 1–12 sayıları, iki çerçeve (çiftler, 3'ün katları); ∧ ∨ ⊻ | "Ve ikisini ister, veya en az birini, ya da yalnızca birini." |
+| D3 | **YENİ** İse, ancak ve ancak | — | Sayı doğrusunda iç içe iki şerit; tek başlı ve çift başlı ok | "İse tek yön, ancak ve ancak çift yön." |
+| D4 | Değişme ve birleşme | • 04 S3–6 (bölme yarıları çıkar) | Yer değiştiren bloklar, kayan parantez | "Toplama ve çarpmada var, çıkarmada yok." |
+| D5 | Dağılma | • 04 S1, S2, S7, S8, S11 | Alan modeli: 7 × (100 − 2) | "Dışarıdaki, içerideki herkesle çarpılır." |
+| D6 | Birim, ters, yutan | • 04 S10 + **YENİ sahneler: yutan eleman, hangi kutuda var** | Geri alma düğmesi | "0 toplamada etkisiz, çarpmada yutan." |
+| D7 | **YENİ** Özdeşlikler | — (+ 04 S9, S12'nin düzeneği) | Kareyi dört parçaya böl (unutulan iki dikdörtgen: 2ab); köşeden kare kes, döndür: a² − b² | "(a + b)² dört parçadır, iki değil." |
+| D8 | **YENİ** Çarpanlara ayırma ve sıfır çarpım | — | Dağılmayı geri sar; alanı 0 olan dikdörtgenin bir kenarı 0; 51 · 49 ve 99² | "Çarpım 0 ise çarpanlardan en az biri 0'dır." |
 
-Önerilen yapım sırası (Faz 2): B1 → B6 → B7 → A5 → A6 → A7 → A8 → C4 → C5 → D1 → D5 → D6. A6 (eşlenik), D5'teki iki kare farkını kullandığı için D5'te geri bağlantı verilir.
+Önerilen yapım sırası (Faz 2): B1 → B6 → B7 → A5 → A6 → A7 → A8 → C4 → C5 → D1 → D2 → D3 → D7 → D8. A6 (eşlenik), D7'deki iki kare farkını kullandığı için D7'de geri bağlantı verilir.
 
 ## 5. Ses (ElevenLabs)
 
@@ -164,6 +167,7 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 
 ## 6. Açık konular
 
+0. **D1–D8 izlenecek.** Sekiz ders yazıldı (`d1-…html` – `d8-…html`). Altyazıların tamamı 12 kelimenin altında; tahtadaki 25 kelime sınırı altyazı anlarının yaklaşık yarısında aşılıyor (ifade panelleri; ölçücü matematik simgelerini de kelime sayıyor). D5'in ilk sahnesinde açılış animasyonu sırasında etiketler kısa süre üst üste biniyor. Kaydırıcılar ve seçimler yalnızca otomatik oynatmayla sınandı. D7'nin hikâye videosu (tepsi) yok. Eski `04-…html` sayfası kaldırıldı.
 0. **B1–B7 izlenecek.** Yedi ders yazıldı (`b1-…html` – `b7-…html`); izleme ve düzeltme turu sizde. B2, B3 ve B5'te tahtadaki 25 kelime sınırı altyazı anlarının 7–13'ünde aşılıyor (eski sahnelerin çizimi; ölçücü matematik simgelerini de kelime sayıyor). Sürükle-bırak ve dokunma etkileşimleri yalnızca otomatik oynatmayla sınandı.
 1. Windows dizüstünde (Chrome/Edge) bir tur gözle kontrol; sürükle-bırak oyunlarının gerçek fareyle denenmesi.
 2. Ana sayfada "Hikâyeler" başlığı henüz yok (`HIKAYE-ANIMASYONLARI.md`, bölüm 3). Motorun video sahnesi türü eklendi; A8 ve B7 onu kullanıyor.

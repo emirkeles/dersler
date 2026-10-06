@@ -10,7 +10,7 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 |---|---|---|
 | 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) ve A8 dersinin son sahnesine bağlandı | Son işleme, müzik, efekt, altyazı dosyası |
 | 3 · B7 Kombi 22 derecede | Seslendirildi, işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) ve B7 dersinin son sahnesine bağlandı | Müzik, efekt, altyazı dosyası |
-| 2 C4 · 4 C5 · 5 B5 · 6 D5 · 7 A2 · 8 C3 | Başlanmadı | — |
+| 2 C4 · 4 C5 · 5 B5 · 6 D7 · 7 A2 · 8 C3 | Başlanmadı | — |
 
 Motorda video sahnesi türü var (`ortak/API.md`). Ana sayfada "Hikâyeler" başlığı yok. C3 ve C4 hikâyelerinin kapanış kartında dersin akılda kalıcı cümlesi yazar; C5'te tek istisna olarak siyah kuğu cümlesi kalır (`senaryolar/C-sayi-kumeleri.md`).
 
@@ -64,7 +64,7 @@ Sıralama ölçütü: (1) program o fikir için gerçek yaşam bağlamını aç�
 | 3 | B7 Mutlak değerle aralık | \|x − a\| < r: hedefe uzaklık payın içinde | Kombi ve klima termostatı | Kombi 22 dereceye ayarlı; 1 derecelik payın dışına çıkınca çalışır. 21,4 de 22,8 de "tamam"; 20,9 değil. Önemli olan 22'ye uzaklık. | "Mutlak değer, hedefe uzaklıktır." |
 | 4 | C5 İspat mı, karşı örnek mi? | Bin örnek kanıtlamaz, tek karşı örnek çürütür | "Her zaman", "hiçbir zaman" diye başlayan iddialar | Avrupa'da yüzyıllarca "bütün kuğular beyazdır" denir; 1697'de Avustralya'da siyah kuğu görülür. Bugüne bağlanır: "bu uygulama hiç çökmez", "ben hiç geç kalmam". | "Bin beyaz kuğu kanıtlamaz, tek siyah kuğu çürütür." |
 | 5 | B5 Kesişim ve birleşim | "Ve" iki koşulu birden sağlayanları bırakır | Alışveriş uygulamasındaki filtreler | Spor ayakkabı arayan öğrenci: fiyat 1000–2000 TL **ve** numara 40–42. Her filtrede liste daralır; kalan ürünler iki aralığın kesişimi. | "Ve dediğinde liste daralır, veya dediğinde genişler." |
-| 6 | D5 Özdeşlikler | (a + b)² = a² + 2ab + b²: kenar büyüyünce alan beklenenden fazla büyür | Tepsi, pizza, ekran, halı boyu seçerken | Börekçide 40'lık kare tepsi mi, 20'lik iki tepsi mi? 40'lık tepsi 1600 cm², iki küçük 800 cm²: aynı böreğe dört küçük tepsi gerekir. | "Kenar iki katına çıkınca alan dört katına çıkar." |
+| 6 | D7 Özdeşlikler | (a + b)² = a² + 2ab + b²: kenar büyüyünce alan beklenenden fazla büyür | Tepsi, pizza, ekran, halı boyu seçerken | Börekçide 40'lık kare tepsi mi, 20'lik iki tepsi mi? 40'lık tepsi 1600 cm², iki küçük 800 cm²: aynı böreğe dört küçük tepsi gerekir. | "(a + b)² dört parçadır, iki değil." (dersin cümlesi; "kenar iki katına çıkınca alan dört katına çıkar" anlatımda geçer) |
 | 7 | A2 Geri sar: negatif üs | Her adımda yarıya inen şey küçülür ama eksiye düşmez | Kafeinin vücutta yarılanması (yaklaşık 5 saat) | Akşam 5'te içilen kahve: 10'da yarısı, gece 3'te çeyreği hâlâ kanda. Sınav gecesi neden uyuyamadığını anlayan öğrenci. | "Eksi üs negatif yapmaz; böler, böler, bitirmez." |
 | 8 | C3 Sayı doğrusundaki delik | √2 gerçek bir uzunluktur ama hiçbir kesre eşit değildir | A4 kâğıdı ve fotokopideki %141 / %71 | A4'ü ikiye katlayınca aynı biçimde A5 çıkar. Bu ancak uzun kenar kısa kenarın √2 katıysa olur. Fotokopi makinesindeki %141 de odur. | "Ne biter ne devreder: irrasyonel." |
 
@@ -91,11 +91,11 @@ Doğruluk notları: kafeinin yarılanma süresi kişiye göre 3–7 saat arasın
 
 | Dersler | Neden yok |
 |---|---|
-| A1 Üs bir sayaçtır · B2–B4 Aralıklar · D2–D4 İşlem özellikleri | Dersin kendisi zaten hayattan bir durumla kurulu (video paylaşımı, lunapark boy sınırı, kasiyerin zihinden hesabı). İkinci bir hikâye tekrar olur. |
+| A1 Üs bir sayaçtır · B2–B4 Aralıklar · D4–D6 İşlem özellikleri | Dersin kendisi zaten hayattan bir durumla kurulu (video paylaşımı, lunapark boy sınırı, kasiyerin zihinden hesabı). İkinci bir hikâye tekrar olur. |
 | A3 Kök = yarım üs · A4 Köklerle işlem | Köklerin hayattaki yeri 1 numaralı hikâyede (tarla ve çit) veriliyor; toplama tuzağı derste "kestirme yol" ile zaten somut. |
-| A5 Rasyonel üs · A6 Eşlenik · D6 Çarpanlara ayırma | İşlem tekniği. Öğrencinin gündelik hayatında doğrudan karşılığı yok; hikâye zorlama olur. |
+| A5 Rasyonel üs · A6 Eşlenik · D8 Çarpanlara ayırma | İşlem tekniği. Öğrencinin gündelik hayatında doğrudan karşılığı yok; hikâye zorlama olur. |
 | B1 Küme dili · B6 Fark ve tümleme · C1 Her kutu bir ihtiyaçtan doğdu · C2 Ondalık açılım | Konu kendiliğinden anlaşılır ve dersteki örnekler (çalma listesi, borç, paylaşma) yeterince somut. |
-| D1 Önerme dili | Sınırda. "Kimlik **ve** giriş belgesi" ile "kimlik **veya** pasaport" farkı gerçek bir durum; ama 5 numaralı hikâye (alışveriş filtresi) aynı fikri taşıyor. Ders yazılırken yeniden bakılır. |
+| D1–D3 Önerme dili | "Ve / veya" farkını 5 numaralı hikâye (alışveriş filtresi) zaten taşıyor (6 Ekim 2026 kararı). |
 
 ## 5. Üretim hattı (HyperFrames)
 
