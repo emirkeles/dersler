@@ -2,7 +2,7 @@
 
 **Ders:** 3. tema Akışkanlar · A1 Basınç neye bağlı? (son sahne)
 **Sıra:** fizik listesinde 7 numara, kademe I (`../../HIKAYE-ANIMASYONLARI.md`)
-**Durum (7 Ekim 2026):** plan; senaryo ve resimli taslak onay bekliyor. Çizim, ses ve kompozisyon başlamadı.
+**Durum (7 Ekim 2026):** sekiz kare çizildi, hareketlendirildi ve seslendirildi (`fizik/akiskanlar/hikaye/a1-canta-askisi/`; 14 klip, film 72,5 sn). Okunan metin projenin `SCRIPT.md` dosyasındadır ve aşağıdaki bölüm 3 taslağından farklıdır (seslendirmeden önce yeniden yazıldı). Çizim dili ve "beşte bir" kararı onay bekliyor. Uygulamada plandan ayrılan yerler projenin `STORYBOARD.md` dosyasının başında: 3. kare evde geçer, 4. kare iki parçadır.
 
 Ölçütler, biçim ve üretim hattı: `../../../matematik/sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1, 2 ve 5. Örnek proje: `matematik/sayilar/hikaye/b7-kombi-22/` (`BRIEF.md`, `SCRIPT.md`, `STORYBOARD.md`). Aynı biçimdeki öteki fizik planı: `../../kuvvet-ve-hareket/hikaye/E3-iki-kamera-arasi.md`.
 
@@ -199,7 +199,7 @@ Kural adları `hyperframes-animation/rules-index.md` içindendir; `STORYBOARD.md
 
 1. `npm run check` (lint, çalışma zamanı, yerleşim, hareket, karşıtlık): temiz.
 2. `npx hyperframes snapshot --at 5,10,15,19,23.5,45,51,63`: sekiz karenin `poster` anı gözle denetlenir; 45. saniyede ip 60 px, askı 300 px, karo başına 10 ve 2 ok ölçülür.
-3. `npm run render`, sonra kapak (`renders/kapak.jpg`) ve altyazı dosyası.
+3. `npm run render` (CRF 23, çıktı `renders/a1-canta-askisi.mp4`; varsayılan CRF 16 aynı filmi 198 MB yapıyor, CRF 23 ile 48,3 MB), sonra kapak (`renders/kapak.jpg`) ve altyazı dosyası.
 4. Derse bağlandıktan sonra `node araclar/olc.js akiskanlar/a1` ve `node araclar/denetle.js fizik/akiskanlar`.
 
 ## 7. Üretim adımları

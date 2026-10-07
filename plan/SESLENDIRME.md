@@ -109,6 +109,7 @@ Karakter sayıları 7 Ekim 2026 dökümünden; metin denetiminde rakamlar kelime
 | Matematik | Geometrik Şekiller | A–C | 9 | 118 | 5.853 | bekliyor |
 | Matematik | Nicelikler ve Değişimler | A–C | 32 | 526 | 23.998 | bekliyor; okunan metinde rakam ve simge var |
 | Fizik | Fizik Bilimi ve Kariyer Keşfi | A–D | 6 | 93 | 4.787 | üretildi (93 klip, 6,1 dk, 2,8 MB); pilot atlandı, kullanıcı henüz dinlemedi; yönerge yok |
+| Fizik | Akışkanlar | hikâye A1 | — | 14 | 767 | üretildi (14 klip, 58,9 sn; `fizik/akiskanlar/hikaye/a1-canta-askisi/assets/ses/`); üç yönerge; kullanıcı henüz dinlemedi |
 
 Yazılmamış temalar işleme alındıkça bu tabloya eklenir.
 

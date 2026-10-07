@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx --yes hyperframes@0.8.112 preview",
     "check": "npx --yes hyperframes@0.8.112 check",
-    "render": "npx --yes hyperframes@0.8.112 render",
+    "render": "npx --yes hyperframes@0.8.112 render --crf 23 -o renders/a1-canta-askisi.mp4",
     "publish": "npx --yes hyperframes@0.8.112 publish"
   }
 }

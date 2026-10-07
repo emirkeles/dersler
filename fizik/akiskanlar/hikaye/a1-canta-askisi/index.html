@@ -1,10 +1,33 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Çantanın askısı</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js" integrity="sha384-sG0Hv1tP1lZCk9KQmrIbY/XNwi+OY84GQqhMscbnsoBFqAz8KNCil1kvfL3Hbbk2" crossorigin="anonymous"></script>
     <style>
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin-ext.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+          U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      :root {
+        /* frame.md: krem kâğıt, mürekkep, tek vurgu (iz kırmızısı) */
+        --kagit: #f4ecd9;
+        --murekkep: #2b2733;
+        --iz: #d7372f;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -12,42 +35,925 @@
       }
       html,
       body {
-        margin: 0;
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: #0a0a0a;
+        background: #f4ecd9;
       }
       #root {
+        position: relative;
         width: 100%;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+        overflow: hidden;
+        background: var(--kagit);
+        font-family: "Plex Sans", sans-serif;
+        color: var(--murekkep);
       }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
+      .katman {
+        position: absolute;
+        inset: 0;
+      }
+      svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #suzgec {
+        position: absolute;
+        width: 0;
+        height: 0;
+      }
+      /* mürekkep: bütün resim hafifçe titrer (çizgi elle çekilmiş gibi). Süzgeç ekrana sabittir. */
+      #sahne {
+        z-index: 1;
+        filter: url(#murekkep);
+      }
+      /* günün saati: sabah, akşam, sabah */
+      #isik {
+        z-index: 2;
+        background: radial-gradient(ellipse 70% 90% at 12% 38%, rgba(255, 220, 130, 0.2), rgba(255, 220, 130, 0) 62%);
+        mix-blend-mode: multiply;
+        pointer-events: none;
+      }
+      #isik-aksam {
+        z-index: 3;
+        background: radial-gradient(ellipse 90% 110% at 22% 45%, rgba(255, 150, 80, 0.5), rgba(110, 90, 160, 0.55) 78%);
+        mix-blend-mode: multiply;
+        opacity: 0;
+        pointer-events: none;
+      }
+      .clip {
+        position: absolute;
+        inset: 0;
+      }
+      #defter {
+        z-index: 4;
+      }
+      #kapanis {
+        z-index: 5;
+      }
+      .titrek {
+        filter: url(#murekkep);
+      }
+      #kapanis-yazi {
+        position: absolute;
+        left: 150px;
+        top: 806px;
+        width: 1140px;
+        font-size: 62px;
+        line-height: 82px;
         font-weight: 600;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.01em;
+        color: var(--murekkep);
+      }
+      #kapanis-yazi span {
+        display: block;
+        white-space: nowrap;
+      }
+      svg text {
+        font-family: "Plex Sans", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      /* kâğıt dişi: her şeyin üstünde */
+      #doku {
+        z-index: 9;
+        mix-blend-mode: multiply;
+        opacity: 0.8;
+        pointer-events: none;
       }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div data-hf-id="hf-e4mq" id="root" data-composition-id="main" data-start="0" data-duration="72.5" data-width="1920" data-height="1080">
+      <svg data-hf-id="hf-nzxm" id="suzgec" aria-hidden="true">
+        <!-- suluboya: titrek kenar, içte bulutlanma, kenarda pigment birikmesi, kâğıt dişi -->
+        <filter data-hf-id="hf-vcy1" id="suluboya" x="-12%" y="-12%" width="124%" height="124%" color-interpolation-filters="sRGB">
+          <feturbulence data-hf-id="hf-npyt" type="fractalNoise" baseFrequency="0.013" numOctaves="3" seed="3" result="dalga" />
+          <fedisplacementmap data-hf-id="hf-aw2n" in="SourceGraphic" in2="dalga" scale="34" xChannelSelector="R" yChannelSelector="G" result="g" />
+          <feturbulence data-hf-id="hf-96ju" type="fractalNoise" baseFrequency="0.005 0.008" numOctaves="4" seed="21" result="bulut" />
+          <fecolormatrix data-hf-id="hf-ftvl" in="bulut" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.5 0 0 0 0.02" result="bulutA" />
+          <fecomposite data-hf-id="hf-mspn" in="g" in2="bulutA" operator="in" result="govde" />
+          <femorphology data-hf-id="hf-u6js" in="g" operator="erode" radius="5" result="ic" />
+          <fegaussianblur data-hf-id="hf-7pap" in="ic" stdDeviation="3.5" result="icY" />
+          <fecomposite data-hf-id="hf-1aus" in="g" in2="icY" operator="out" result="kenar" />
+          <fecomponenttransfer data-hf-id="hf-p3ub" in="kenar" result="kenarZ">
+            <fefunca data-hf-id="hf-e9ja" type="linear" slope="0.6" />
+          </fecomponenttransfer>
+          <femerge data-hf-id="hf-flic" result="hepsi">
+            <femergenode data-hf-id="hf-sqgo" in="govde" />
+            <femergenode data-hf-id="hf-7sls" in="kenarZ" />
+          </femerge>
+          <feturbulence data-hf-id="hf-uc14" type="fractalNoise" baseFrequency="0.62 0.7" numOctaves="2" seed="5" result="tane" />
+          <fecolormatrix data-hf-id="hf-6n9p" in="tane" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.1 0.42" result="taneA" />
+          <fecomposite data-hf-id="hf-6x2m" in="hepsi" in2="taneA" operator="in" />
+        </filter>
+        <filter data-hf-id="hf-7u8h" id="suluboya-ince" x="-20%" y="-20%" width="140%" height="140%" color-interpolation-filters="sRGB">
+          <feturbulence data-hf-id="hf-wn22" type="fractalNoise" baseFrequency="0.02" numOctaves="3" seed="6" result="dalga" />
+          <fedisplacementmap data-hf-id="hf-5q6i" in="SourceGraphic" in2="dalga" scale="13" xChannelSelector="R" yChannelSelector="G" result="g" />
+          <feturbulence data-hf-id="hf-2m61" type="fractalNoise" baseFrequency="0.009 0.013" numOctaves="3" seed="27" result="bulut" />
+          <fecolormatrix data-hf-id="hf-ibgl" in="bulut" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1.4 0 0 0 0.1" result="bulutA" />
+          <fecomposite data-hf-id="hf-mucb" in="g" in2="bulutA" operator="in" result="govde" />
+          <femorphology data-hf-id="hf-ko38" in="g" operator="erode" radius="2.5" result="ic" />
+          <fegaussianblur data-hf-id="hf-mrb3" in="ic" stdDeviation="2" result="icY" />
+          <fecomposite data-hf-id="hf-40gc" in="g" in2="icY" operator="out" result="kenar" />
+          <fecomponenttransfer data-hf-id="hf-y1hv" in="kenar" result="kenarZ">
+            <fefunca data-hf-id="hf-hnm2" type="linear" slope="0.6" />
+          </fecomponenttransfer>
+          <femerge data-hf-id="hf-s95o" result="hepsi">
+            <femergenode data-hf-id="hf-6tao" in="govde" />
+            <femergenode data-hf-id="hf-tppk" in="kenarZ" />
+          </femerge>
+          <feturbulence data-hf-id="hf-hysg" type="fractalNoise" baseFrequency="0.62 0.7" numOctaves="2" seed="5" result="tane" />
+          <fecolormatrix data-hf-id="hf-l20x" in="tane" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1.1 0.42" result="taneA" />
+          <fecomposite data-hf-id="hf-3a42" in="hepsi" in2="taneA" operator="in" />
+        </filter>
+        <filter data-hf-id="hf-ant5" id="murekkep" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+          <feturbulence data-hf-id="hf-qowo" type="fractalNoise" baseFrequency="0.021" numOctaves="2" seed="8" result="el" />
+          <fedisplacementmap data-hf-id="hf-b9ue" in="SourceGraphic" in2="el" scale="7" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter data-hf-id="hf-lm2v" id="dis" x="0" y="0" width="100%" height="100%" filterUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+          <feturbulence data-hf-id="hf-d6ft" type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="13" result="ince" />
+          <feturbulence data-hf-id="hf-cu6e" type="fractalNoise" baseFrequency="0.004 0.006" numOctaves="3" seed="2" result="kaba" />
+          <fecomposite data-hf-id="hf-2zt4" in="ince" in2="kaba" operator="arithmetic" k1="0" k2="0.7" k3="0.5" k4="0" result="k" />
+          <fecolormatrix data-hf-id="hf-mqxv" in="k" type="matrix" values="0.3 0 0 0 0.78  0.3 0 0 0 0.77  0.3 0 0 0 0.74  0 0 0 0 1" />
+        </filter>
+      </svg>
+
+      <!-- Dünya: yan yana üç duraklı tek sokak (ev, okul yolu, vitrin). Klip değil; kamera viewBox ile gezer. -->
+      <div data-hf-id="hf-gppi" id="sahne" class="katman" data-layout-allow-overflow="">
+        <svg data-hf-id="hf-xsgj" id="dunya" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice" data-layout-allow-overflow="" />
+      </div>
+      <div data-hf-id="hf-y3y2" id="isik" class="katman" data-layout-allow-occlusion=""></div>
+      <div data-hf-id="hf-6s08" id="isik-aksam" class="katman" data-layout-allow-occlusion=""></div>
+
+      <!-- Kareli defter sayfası: soru, omuz kesiti, poşet. Boya ve çizgi titrek, rakamlar süzgeçsiz. -->
+      <section data-hf-id="hf-1p61" id="defter" class="clip" data-start="23.06" data-duration="36.37" data-track-index="1">
+        <div data-hf-id="hf-tq7p" id="defter-ic" class="katman">
+          <div data-hf-id="hf-o1d8" class="katman" data-layout-allow-occlusion=""><svg data-hf-id="hf-ozv0" id="defter-zemin" viewBox="0 0 1920 1080" /></div>
+          <div data-hf-id="hf-ubgv" class="katman titrek"><svg data-hf-id="hf-lepk" id="defter-boya" viewBox="0 0 1920 1080" /></div>
+          <div data-hf-id="hf-xa00" class="katman"><svg data-hf-id="hf-ks2q" id="defter-yazi" viewBox="0 0 1920 1080" /></div>
+        </div>
+      </section>
+
+      <section data-hf-id="hf-16jd" id="kapanis" class="clip" data-start="63.25" data-duration="9.25" data-track-index="2">
+        <div data-hf-id="hf-6afs" id="kapanis-ic" class="katman">
+          <div data-hf-id="hf-9q6h" class="katman titrek" data-layout-allow-occlusion=""><svg data-hf-id="hf-jl7w" id="kapanis-svg" viewBox="0 0 1920 1080" /></div>
+          <p data-hf-id="hf-cagv" id="kapanis-yazi">
+            <span data-hf-id="hf-2nid">Aynı kuvvet,</span><span data-hf-id="hf-rgkh">küçük yüzeyde daha çok bastırır.</span>
+          </p>
+        </div>
+      </section>
+      <div data-hf-id="hf-bogk" id="doku" class="katman" data-layout-ignore="">
+        <svg data-hf-id="hf-kchy" viewBox="0 0 1920 1080" preserveAspectRatio="none"><rect data-hf-id="hf-53so" width="1920" height="1080" filter="url(#dis)" /></svg>
+      </div>
+
+      <!-- Anlatım: Gamze Özdemir, eleven_v4. Klipler araclar/hikaye-ses.js ile üretilir; başlangıçlar T tablosuyla aynı. -->
+      <audio id="ses-01" src="assets/ses/01.mp3" data-start="0.6" data-duration="3.6" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-02" src="assets/ses/02.mp3" data-start="4.75" data-duration="3.36" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-03" src="assets/ses/03.mp3" data-start="8.66" data-duration="3.84" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-04" src="assets/ses/04.mp3" data-start="13.1" data-duration="3.36" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-05" src="assets/ses/05.mp3" data-start="17.21" data-duration="5.84" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-06" src="assets/ses/06.mp3" data-start="23.66" data-duration="3.36" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-07" src="assets/ses/07.mp3" data-start="27.77" data-duration="3.76" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-08" src="assets/ses/08.mp3" data-start="32.13" data-duration="3.28" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-09" src="assets/ses/09.mp3" data-start="36.01" data-duration="5.12" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-10" src="assets/ses/10.mp3" data-start="41.73" data-duration="5.68" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-11" src="assets/ses/11.mp3" data-start="48.01" data-duration="4.48" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-12" src="assets/ses/12.mp3" data-start="53.24" data-duration="5.04" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-13" src="assets/ses/13.mp3" data-start="59.03" data-duration="3.92" data-track-index="3" data-volume="3.5"></audio>
+      <audio id="ses-14" src="assets/ses/14.mp3" data-start="63.65" data-duration="4.32" data-track-index="3" data-volume="3.5"></audio>
     </div>
+
     <script>
+      /* ============================================================
+         Çantanın askısı  ·  A1 Basınç neye bağlı?
+         Tek dünya, tek zaman çizelgesi. Her şey zamanın saf fonksiyonu.
+         ============================================================ */
+      const NS = "http://www.w3.org/2000/svg";
+      const R = {
+        kagit: "#f4ecd9", murekkep: "#2b2733", iz: "#d7372f",
+        duvar: "#efd59a", ahsap: "#c98f58", ahsapKoyu: "#a9713f", zemin: "#d6a468",
+        gok: "#9cc8e3", gunes: "#f6d36b", su: "#6fb1dc", cati: "#cf9468", agac: "#84b07a", agacKoyu: "#5f9463",
+        demir: "#8b9bb0", perde: "#d9e4ee", beyaz: "#fbf6ea",
+        sirt: "#2a8f95", sirtKoyu: "#1f7078", torba: "#35508f", torbaKoyu: "#27407a",
+        kazak: "#e2ad3b", pantolon: "#4c5a78", ten: "#e9b996", sac: "#3a2d2a",
+        kitap: ["#4a78c2", "#a9bf4e", "#8e68b0", "#e58a3a", "#3f7d5a"],
+        saksi: "#c58a5e", mantar: "#d8b98a", hali: "#a9c4dc", dolap: "#c7a273",
+      };
+
+      /* Anlatım satırlarının başlangıçları (sn), gerçek klip sürelerine göre. Klipler yeniden üretilirse
+         burası ve <audio> öğelerinin data-start değerleri birlikte düzeltilir. Cümle içi eşlemeler
+         (ör. l9 + 2.5 = "Bütün kuvvet o dar şeride biner") kliplerdeki sessizliklerden ölçüldü. */
+      const T = {
+        l1: 0.6, l2: 4.75, l3: 8.66, l4: 13.1, l5: 17.21, l6: 23.66, l7: 27.77,
+        l8: 32.13, l9: 36.01, l10: 41.73, l11: 48.01, l12: 53.24, l13: 59.03, l14: 63.65, son: 72.5,
+      };
+
+      /* ---------- çizim yardımcıları ---------- */
+      function el(tag, attrs, parent) {
+        const e = document.createElementNS(NS, tag);
+        for (const k in attrs) e.setAttribute(k, attrs[k]);
+        if (parent) parent.appendChild(e);
+        return e;
+      }
+      const f = (n) => (+n).toFixed(1);
+      const dik = (x, y, w, h) => `M${f(x)} ${f(y)}H${f(x + w)}V${f(y + h)}H${f(x)}Z`;
+      const cokgen = (P) => "M" + P.map((p) => f(p[0]) + " " + f(p[1])).join("L") + "Z";
+      const elips = (cx, cy, rx, ry) => `M${f(cx - rx)} ${f(cy)}A${f(rx)} ${f(ry)} 0 1 0 ${f(cx + rx)} ${f(cy)}A${f(rx)} ${f(ry)} 0 1 0 ${f(cx - rx)} ${f(cy)}Z`;
+      /* kapsül: kol, bacak, askı gibi iki ucu yuvarlak parça */
+      function kapsul(x1, y1, x2, y2, r) {
+        const u = Math.hypot(x2 - x1, y2 - y1) || 1, nx = (-(y2 - y1) / u) * r, ny = ((x2 - x1) / u) * r;
+        return `M${f(x1 + nx)} ${f(y1 + ny)}L${f(x2 + nx)} ${f(y2 + ny)}A${f(r)} ${f(r)} 0 0 1 ${f(x2 - nx)} ${f(y2 - ny)}L${f(x1 - nx)} ${f(y1 - ny)}A${f(r)} ${f(r)} 0 0 1 ${f(x1 + nx)} ${f(y1 + ny)}Z`;
+      }
+      /* boya lekesi: çizgiden birkaç piksel kaymış, süzgeçli */
+      function boya(g, d, renk, opak, dx, dy, dar) {
+        return el("path", { d, fill: renk, opacity: opak == null ? 0.86 : opak, filter: dar ? "url(#suluboya-ince)" : "url(#suluboya)", transform: `translate(${dx == null ? 5 : dx} ${dy == null ? 4 : dy})` }, g);
+      }
+      function hat(g, d, kalin, ek) {
+        return el("path", Object.assign({ d, fill: "none", stroke: R.murekkep, "stroke-width": kalin || 3.5, "stroke-linecap": "round", "stroke-linejoin": "round" }, ek || {}), g);
+      }
+      /* nesne: kâğıt örtü (arkadaki çizgiyi kapatır) + boya + kontur */
+      function nesne(g, d, renk, o) {
+        o = o || {};
+        el("path", { d, fill: R.kagit }, g);
+        if (renk) boya(g, d, renk, o.opak, o.dx, o.dy, o.dar);
+        return hat(g, d, o.kalin);
+      }
+      /* uzuv: kalın çizgiyle çizilen bükülebilir parça (kol, askı); eklem yerinde iç çizgi kalmaz */
+      function uzuv(g, d, w, renk) {
+        hat(g, d, w + 7);
+        hat(g, d, w, { stroke: R.kagit });
+        const s = el("g", { opacity: 0.86, filter: "url(#suluboya-ince)", transform: "translate(2 2)" }, g);
+        const b = hat(s, d, w - 1, { stroke: renk }).getBBox();
+        el("rect", { x: b.x - w, y: b.y - w, width: b.width + 2 * w, height: b.height + 2 * w, fill: "none" }, s);
+        return s;
+      }
+      const ince = { "stroke-opacity": 0.72 };
+
+      /* d'si sonradan verilen nesne (biçimi zamanla değişenler için) */
+      function canli(g, renk, o) {
+        o = o || {};
+        const a = el("path", { d: "M0 0", fill: R.kagit }, g);
+        const b = renk ? boya(g, "M0 0", renk, o.opak, o.dx, o.dy, o.dar) : null;
+        const c = hat(g, "M0 0", o.kalin);
+        return function (d) {
+          a.setAttribute("d", d);
+          if (b) b.setAttribute("d", d);
+          c.setAttribute("d", d);
+        };
+      }
+      function yazi(parent, x, y, metin, boyut, ek) {
+        const t = el("text", Object.assign({ x, y, "font-size": boyut, fill: R.murekkep, "text-anchor": "middle", "font-weight": 600 }, ek || {}), parent);
+        t.textContent = metin;
+        return t;
+      }
+      /* ince ip: mürekkep kenarlı, kâğıt renginde */
+      function ip(g, d, w) {
+        const a = hat(g, d, w || 9), b = hat(g, d, (w || 9) - 4, { stroke: R.kagit });
+        return function (yeni) {
+          a.setAttribute("d", yeni);
+          b.setAttribute("d", yeni);
+        };
+      }
+
+      /* ---------- iki çanta (her yerde aynı çizim) ---------- */
+      /* ipli torba: alt orta (0,0). İç kısım `arka`ya, gövde ve ipler `on`a çizilir; araya kitap girebilir. */
+      function torbaCiz(arka, on, renk, koyu) {
+        nesne(arka, elips(0, -252, 53, 15), koyu, { dx: 1, dy: 2, kalin: 3, dar: 1 });
+        nesne(on, "M-94 0Q-118 -100 -80 -198Q-70 -236 -52 -252Q0 -228 52 -252Q70 -236 80 -198Q116 -100 92 0Z", renk);
+        hat(on, "M-74 -196Q-52 -180 -42 -224M74 -196Q52 -180 42 -224M-22 -206Q-12 -150 -26 -80M28 -204Q20 -140 36 -60", 2.2, ince);
+        ip(on, "M-50 -248C-146 -228 -150 -52 -90 -6");
+        ip(on, "M50 -248C150 -228 152 -52 88 -6");
+      }
+      /* sırt çantası, asılı: tutamağın tepesi (0,0). Geniş askılar iki yandan sarkar. */
+      function sirtCiz(g, renk, koyu) {
+        ["M-68 56C-142 80 -160 220 -140 378", "M68 56C142 80 160 220 140 378"].forEach((d) => {
+          uzuv(g, d, 44, koyu);
+          hat(g, d, 2, { "stroke-dasharray": "9 9", "stroke-opacity": 0.7 });
+        });
+        hat(g, "M-22 42Q0 -14 22 42", 6);
+        nesne(g, "M-74 40Q0 18 74 40Q102 52 103 92L107 272Q107 302 76 304L-76 304Q-107 302 -107 272L-103 92Q-102 52 -74 40Z", renk);
+        nesne(g, "M-74 196Q0 178 74 196L78 270Q76 284 62 284L-62 284Q-76 284 -78 270Z", koyu, { dx: 3, dy: 3 });
+        hat(g, "M-84 102Q0 76 84 102M-18 232H18", 2.4, ince);
+      }
+      /* sırt çantası, masada: alt orta (0,0). Ağzı açık; askılar yanlara yatmış. */
+      function sirtMasaCiz(arka, on, renk, koyu) {
+        ["M-96 -214C-156 -196 -154 -60 -130 -6", "M96 -214C156 -196 154 -60 130 -6"].forEach((d) => {
+          uzuv(arka, d, 42, koyu);
+          hat(arka, d, 2, { "stroke-dasharray": "9 9", "stroke-opacity": 0.7 });
+        });
+        nesne(arka, elips(0, -244, 78, 17), koyu, { dx: 1, dy: 2, kalin: 3, dar: 1 });
+        nesne(on, "M-100 0L-104 -200Q-104 -236 -78 -246Q0 -218 78 -246Q104 -236 104 -200L100 0Z", renk);
+        nesne(on, "M-70 -22L-74 -112Q0 -130 74 -112L70 -22Z", koyu, { dx: 3, dy: 3 });
+        hat(on, "M-18 -76H18", 2.4, ince);
+      }
+      const KITAP_W = [198, 180, 190, 172, 186];
+      function kitapCiz(g, i) {
+        const w = KITAP_W[i], h = 36;
+        nesne(g, dik(-w / 2, -h / 2, w, h), R.kitap[i], { dx: 2, dy: 2, dar: 1 });
+        el("path", { d: dik(w / 2 - 15, -h / 2 + 5, 11, h - 10), fill: R.beyaz }, g);
+        hat(g, `M${w / 2 - 16} ${-h / 2 + 4}V${h / 2 - 4}M${-w / 2 + 20} ${-h / 2 + 4}V${h / 2 - 4}`, 2, ince);
+      }
+
+      /* ---------- Elif, arkadan: ayaklarının ortası (0,0) ---------- */
+      const OMUZ_Y = -554.5;
+      function omuzD(sol, sag) {
+        return `M-64 -290L-84 -520Q-86 -548 -70 -552L-66 -553L-56 ${f(OMUZ_Y + sol)}L-46 -558L-16 -566L16 -566L46 -558L56 ${f(OMUZ_Y + sag)}L66 -553L70 -552Q86 -548 84 -520L64 -290Q0 -278 -64 -290Z`;
+      }
+      function arkadan(parent, x, y, o) {
+        const konum = el("g", { transform: `translate(${x} ${y})` }, parent), g = el("g", {}, konum), F = { konum, g };
+        F.bacak = [-1, 1].map((k) => {
+          const b = el("g", {}, g);
+          nesne(b, kapsul(28 * k, -300, 28 * k, -44, 24), R.pantolon, { dx: 2, dy: 2, dar: 1 });
+          nesne(b, elips(28 * k, -20, 28, 19), R.beyaz, { opak: 0.9, dx: 1, dy: 1, dar: 1 });
+          return b;
+        });
+        const ust = el("g", {}, g);
+        F.ust = ust;
+        F.omuz = canli(ust, o.atlet ? R.ten : R.kazak);
+        F.omuz(omuzD(0, 0));
+        if (o.atlet) {
+          nesne(ust, "M-64 -290L-81 -498Q-40 -468 -34 -520L-31 -561L-18 -564Q0 -500 18 -564L31 -561L34 -520Q40 -468 81 -498L64 -290Q0 -278 -64 -290Z", R.perde, { opak: 0.9, dx: 2, dy: 2 });
+          F.iz = [-1, 1].map((k) => {
+            boya(ust, elips(54 * k, -528, 17, 28), R.iz, 0.34, 0, 0, 1).setAttribute("class", "iz-leke");
+            return hat(ust, `M${57 * k} -552Q${57 * k} -530 ${50 * k} -504`, 4.5, { stroke: R.iz, pathLength: 100, "stroke-dasharray": 100, "stroke-dashoffset": 100 });
+          });
+        } else hat(ust, "M-60 -312Q0 -300 60 -312", 2.2, ince);
+        const kolRenk = o.atlet ? R.ten : R.kazak;
+        uzuv(ust, "M-84 -528Q-100 -430 -96 -330", 36, kolRenk);
+        nesne(ust, elips(-97, -310, 17, 18), R.ten, { dx: 1, dy: 1, kalin: 3, dar: 1 });
+        F.sagKol = el("g", {}, ust);
+        if (o.uzanan) {
+          uzuv(F.sagKol, "M84 -528Q128 -556 150 -618", 36, kolRenk);
+          nesne(F.sagKol, elips(154, -634, 17, 18), R.ten, { dx: 1, dy: 1, kalin: 3, dar: 1 });
+        } else {
+          uzuv(F.sagKol, "M84 -528Q100 -430 96 -330", 36, kolRenk);
+          nesne(F.sagKol, elips(97, -310, 17, 18), R.ten, { dx: 1, dy: 1, kalin: 3, dar: 1 });
+        }
+        nesne(ust, dik(-14, -592, 28, 32), R.ten, { dx: 1, dy: 1, dar: 1 });
+        nesne(ust, elips(-50, -630, 9, 12), R.ten, { dx: 1, dy: 1, kalin: 2.6, dar: 1 });
+        nesne(ust, elips(50, -630, 9, 12), R.ten, { dx: 1, dy: 1, kalin: 2.6, dar: 1 });
+        nesne(ust, elips(0, -634, 50, 53), R.sac, { opak: 0.92, dx: 2, dy: 2, dar: 1 });
+        nesne(ust, "M-17 -652Q-32 -592 -7 -546Q0 -536 7 -546Q32 -592 17 -652Z", R.sac, { opak: 0.92, dx: 1, dy: 1, dar: 1 });
+        hat(ust, "M-15 -650Q0 -640 15 -650", 4);
+        if (o.cantali) {
+          /* ipli torba: ip omzun tepesinden geçer, omuz çöktükçe ucu da iner */
+          F.torba = el("g", {}, ust);
+          nesne(F.torba, "M-70 -300Q-84 -380 -62 -470Q-56 -500 -44 -512L44 -512Q56 -500 62 -470Q84 -380 70 -300Z", R.torba);
+          hat(F.torba, "M-52 -468Q-36 -456 -28 -494M52 -468Q36 -456 28 -494M-14 -480Q-6 -420 -18 -350M20 -478Q14 -410 26 -340", 2.2, ince);
+          ip(F.torba, "M-68 -306Q-90 -350 -80 -428", 8);
+          ip(F.torba, "M68 -306Q90 -350 80 -428", 8);
+          const ipSol = ip(F.torba, "M0 0", 8), ipSag = ip(F.torba, "M0 0", 8);
+          F.ipUygula = function (d) {
+            ipSol(`M-40 -508L-56 ${f(OMUZ_Y - 3 + d)}`);
+            ipSag(`M40 -508L56 ${f(OMUZ_Y - 3 + d)}`);
+            F.omuz(omuzD(d, d));
+          };
+          F.ipUygula(0);
+          /* sırt çantası: askı omzun üstünde geniş ve düz durur */
+          F.sirt = el("g", {}, ust);
+          [-1, 1].forEach((k) => nesne(F.sirt, cokgen([[34 * k, -526], [38 * k, -566], [78 * k, -556], [76 * k, -516]]), R.sirtKoyu, { dx: 2, dy: 2, dar: 1 }));
+          [-1, 1].forEach((k) => hat(F.sirt, `M${56 * k} -560V-522`, 2, { "stroke-dasharray": "7 7", "stroke-opacity": 0.7 }));
+          hat(F.sirt, "M-18 -538Q0 -566 18 -538", 6);
+          nesne(F.sirt, "M-78 -310L-82 -500Q-80 -536 -50 -540L50 -540Q80 -536 82 -500L78 -310Q76 -292 56 -290L-56 -290Q-76 -292 -78 -310Z", R.sirt);
+          nesne(F.sirt, "M-54 -316L-57 -392Q0 -406 57 -392L54 -316Z", R.sirtKoyu, { dx: 3, dy: 3 });
+          hat(F.sirt, "M-66 -476Q0 -494 66 -476M-14 -356H14", 2.4, ince);
+        }
+        return F;
+      }
+
+      /* ============================================================
+         1. durak: ev (x 0–1920)
+         ============================================================ */
+      const dunya = document.getElementById("dunya");
+      const ev = el("g", { id: "ev" }, dunya);
+      const YER = 800, MASA = 600;
+
+      /* duvar ve zemin: örtüsüz büyük lekeler */
+      boya(ev, dik(24, 24, 80, 776) + dik(24, 24, 1872, 112) + dik(566, 24, 1330, 776), R.duvar, 0.62, 0, 0);
+      boya(ev, dik(24, YER, 1872, 256), R.zemin, 0.7, 0, 0);
+      boya(ev, cokgen([[150, YER + 4], [556, YER + 4], [860, 1052], [360, 1052]]), R.gunes, 0.78, 0, 0);
+      [860, 925, 992].forEach((y, i) => hat(ev, `M${40 + i * 30} ${y}H${1880 - i * 44}`, 2, { "stroke-opacity": 0.3 }));
+      [[420, 800, 860], [1010, 860, 925], [700, 925, 992], [1420, 800, 860], [1290, 925, 992]].forEach((b) => hat(ev, `M${b[0]} ${b[1]}V${b[2]}`, 2, { "stroke-opacity": 0.3 }));
+      hat(ev, `M30 ${YER}H96M572 ${YER}H1890`);
+      hat(ev, `M572 772H1890`, 2.2, ince);
+
+      /* balkon: kapı açıklığından görünür */
+      const balkon = el("g", { id: "balkon" }, ev);
+      boya(balkon, dik(104, 136, 456, 470), R.gok, 0.8, 0, 0);
+      boya(balkon, elips(196, 224, 40, 40), R.gunes, 0.95, 0, 0);
+      boya(balkon, cokgen([[104, 540], [160, 486], [226, 540], [226, 610], [104, 610]]), R.cati, 0.7, 2, 2);
+      boya(balkon, cokgen([[226, 562], [300, 506], [380, 562], [380, 610], [226, 610]]), R.cati, 0.55, 2, 2);
+      hat(balkon, "M104 540L160 486L226 540M226 562L300 506L380 562M250 610V586H276V610", 2.2, ince);
+      boya(balkon, elips(486, 520, 78, 96), R.agac, 0.8, 0, 0);
+      boya(balkon, elips(452, 560, 44, 52), R.agacKoyu, 0.6, 0, 0);
+      hat(balkon, "M486 610V560M486 580L462 556", 2.2, ince);
+      boya(balkon, dik(104, 600, 456, 180), R.agac, 0.42, 0, 0);
+      boya(balkon, dik(104, 778, 456, 22), R.demir, 0.6, 0, 0);
+      hat(balkon, "M104 228Q330 268 560 246", 2.6);
+
+      /* ıslak sırt çantası ipte asılı (ertesi sabah kurumuş, masada) */
+      const asili = el("g", { id: "asili-sirt" }, balkon);
+      sirtCiz(el("g", { transform: "translate(330 250)" }, asili), R.sirt, R.sirtKoyu);
+      nesne(asili, dik(301, 240, 12, 30), R.ahsap, { dx: 1, dy: 1, kalin: 2.4, dar: 1 });
+      nesne(asili, dik(347, 243, 12, 30), R.ahsap, { dx: 1, dy: 1, kalin: 2.4, dar: 1 });
+      const damlaD = (r) => `M0 ${-r * 2.1}Q${r * 1.3} ${-r * 0.3} ${r} ${r * 0.2}A${r} ${r} 0 1 1 ${-r} ${r * 0.2}Q${-r * 1.3} ${-r * 0.3} 0 ${-r * 2.1}Z`;
+      const damlalar = [[300, 8, 0], [356, 7, 0.37], [322, 8, 0.71], [382, 6, 0.18]].map((p) => {
+        const g = el("g", {}, asili);
+        el("path", { d: damlaD(p[1]), fill: R.su, opacity: 0.9 }, g);
+        hat(g, damlaD(p[1]), 2);
+        return { g, x: p[0], faz: p[2] };
+      });
+      boya(asili, elips(336, 786, 84, 8), R.su, 0.85, 0, 0);
+
+      /* korkuluk: çantanın önünden geçer */
+      for (let x = 128; x < 560; x += 48) hat(balkon, `M${x} 648V776`, 3);
+      hat(balkon, "M104 640H560M104 652H560M104 776H560", 3.5);
+
+      /* kapı: kasa, içeri açılmış kanat, perde */
+      hat(ev, "M104 800V136H560V800", 3.5);
+      hat(ev, "M90 800V122H574V800", 3.5);
+      nesne(ev, cokgen([[574, 122], [668, 160], [668, 842], [574, 800]]), R.beyaz, { opak: 0.9, dx: 2, dy: 2 });
+      const camD = cokgen([[590, 176], [652, 200], [652, 470], [590, 458]]) + cokgen([[590, 494], [652, 506], [652, 792], [590, 760]]);
+      boya(ev, camD, R.gok, 0.55, 0, 0);
+      hat(ev, camD, 2.4, ince);
+      hat(ev, "M600 478L612 480", 5);
+      hat(ev, "M56 104H700", 4);
+      const perde = el("g", { id: "perde" }, ev);
+      nesne(perde, "M58 104H150Q166 300 140 470Q124 620 152 786Q132 800 116 786Q104 800 88 786Q76 800 60 786Q44 600 62 430Q78 270 58 104Z", R.perde, { opak: 0.85, dx: 3, dy: 2 });
+      hat(perde, "M92 112Q108 300 90 470Q76 640 92 782M124 112Q140 320 118 500Q108 650 122 782", 2, ince);
+
+      /* saksı */
+      const bitki = el("g", { id: "bitki" }, ev);
+      const yapraklar = [[748, 722, 706, 560, 28], [748, 722, 800, 540, 30], [748, 722, 742, 500, 32], [748, 722, 672, 640, 24], [748, 722, 836, 632, 24]].map((y) => {
+        const g = el("g", {}, bitki);
+        const mx = (y[0] + y[2]) / 2, my = (y[1] + y[3]) / 2, u = Math.hypot(y[2] - y[0], y[3] - y[1]), nx = (-(y[3] - y[1]) / u) * y[4], ny = ((y[2] - y[0]) / u) * y[4];
+        nesne(g, `M${y[0]} ${y[1]}Q${f(mx + nx)} ${f(my + ny)} ${y[2]} ${y[3]}Q${f(mx - nx)} ${f(my - ny)} ${y[0]} ${y[1]}Z`, R.agac, { dx: 3, dy: 2, kalin: 3 });
+        hat(g, `M${y[0]} ${y[1]}L${f(mx + (y[2] - mx) * 0.6)} ${f(my + (y[3] - my) * 0.6)}`, 2, ince);
+        return g;
+      });
+      nesne(bitki, cokgen([[694, 716], [802, 716], [786, 800], [710, 800]]), R.saksi);
+      hat(bitki, "M690 716H806", 5);
+
+      /* duvar: pano, saat, çerçeve */
+      nesne(ev, dik(820, 132, 250, 176), R.mantar, { dx: 3, dy: 3 });
+      [[844, 154, 70, 60, 0], [938, 164, 84, 50, 2], [852, 234, 96, 52, 4], [970, 232, 76, 54, 3]].forEach((n) => {
+        nesne(ev, dik(n[0], n[1], n[2], n[3]), R.kitap[n[4]], { opak: 0.7, dx: 2, dy: 2, kalin: 2.4, dar: 1 });
+        hat(ev, `M${n[0] + n[2] / 2} ${n[1] + 6}v0.1`, 7);
+      });
+      nesne(ev, elips(1256, 262, 64, 64), R.beyaz, { opak: 0.9, dx: 2, dy: 2 });
+      hat(ev, "M1256 262L1232 296M1256 262V304", 4);
+      [0, 90, 180, 270].forEach((a) => {
+        const c = Math.cos((a * Math.PI) / 180), s = Math.sin((a * Math.PI) / 180);
+        hat(ev, `M${f(1256 + c * 50)} ${f(262 + s * 50)}L${f(1256 + c * 58)} ${f(262 + s * 58)}`, 2.4);
+      });
+      nesne(ev, dik(1412, 168, 170, 124), R.gok, { opak: 0.6, dx: 2, dy: 2 });
+      boya(ev, cokgen([[1424, 280], [1470, 218], [1502, 252], [1532, 206], [1570, 280]]), R.agacKoyu, 0.7, 0, 0);
+      hat(ev, "M1424 280L1470 218L1502 252L1532 206L1570 280", 2.2, ince);
+
+      /* sağ kenar: dolap */
+      nesne(ev, dik(1770, 150, 126, 668), R.dolap, { opak: 0.75, dx: 3, dy: 3 });
+      hat(ev, "M1790 180H1876V786H1790ZM1808 470v40", 2.6, ince);
+
+      /* halı */
+      boya(ev, elips(1250, 1002, 470, 50), R.hali, 0.72, 0, 0);
+      hat(ev, elips(1250, 1002, 470, 50), 2.2, ince);
+      hat(ev, elips(1250, 1002, 430, 38), 1.8, { "stroke-opacity": 0.45, "stroke-dasharray": "14 12" });
+
+      /* masa */
+      const masa = el("g", { id: "masa" }, ev);
+      nesne(masa, dik(906, 660, 28, 334), R.ahsapKoyu, { dx: 2, dy: 2, dar: 1 });
+      nesne(masa, dik(1466, 660, 28, 334), R.ahsapKoyu, { dx: 2, dy: 2, dar: 1 });
+      nesne(masa, dik(896, MASA + 22, 608, 44), R.ahsapKoyu, { dx: 3, dy: 3, dar: 1 });
+      nesne(masa, dik(872, MASA, 656, 24), R.ahsap, { dx: 2, dy: 2, dar: 1 });
+      hat(masa, "M1180 644H1220", 4);
+
+      /* masadaki iki çanta ve beş kitap. Sıra: çantaların içi, kitaplar, çantaların önü (kitap içine girer). */
+      const TORBA_X = 1042, SIRT_X = 1352;
+      const torbaKonum = el("g", { transform: `translate(${TORBA_X} ${MASA})` }, ev), torbaG = el("g", { id: "torba" }, torbaKonum);
+      const sirtMasa = el("g", { id: "masa-sirt", transform: `translate(${SIRT_X} ${MASA})` }, ev);
+      const torbaArka = el("g", {}, torbaG), sirtArka = el("g", {}, sirtMasa);
+      const kitaplar = el("g", { id: "kitaplar" }, ev);
+      const kitapG = [0, 1, 2, 3, 4].map((i) => {
+        const dis = el("g", {}, kitaplar), ic = el("g", {}, dis);
+        kitapCiz(ic, i);
+        return { dis, ic };
+      });
+      /* yeniden sıralama: önler kitapların üstünde kalsın diye ayrı gruplarda, aynı konumda */
+      const torbaOnKonum = el("g", { transform: `translate(${TORBA_X} ${MASA})` }, ev), torbaOn = el("g", {}, torbaOnKonum);
+      const sirtOnKonum = el("g", { transform: `translate(${SIRT_X} ${MASA})` }, ev), sirtOn = el("g", {}, sirtOnKonum);
+      torbaCiz(torbaArka, torbaOn, R.torba, R.torbaKoyu);
+      sirtMasaCiz(sirtArka, sirtOn, R.sirt, R.sirtKoyu);
+      const masaSirt = [sirtMasa, sirtOnKonum];
+      /* yığındaki yerler (alttan üste) */
+      const YIGIN = [0, 6, -6, 4, -2].map((dx, i) => ({ x: SIRT_X + dx, y: MASA - 18 - 37 * i }));
+
+      /* Elif, yandan: yüz ayrıntısı yok; masaya dönük */
+      const elif = el("g", { id: "elif" }, ev);
+      nesne(elif, kapsul(1662, 700, 1672, 952, 25), R.pantolon, { dx: 2, dy: 2, dar: 1 });
+      nesne(elif, "M1640 962Q1672 950 1700 964Q1708 990 1694 996L1626 996Q1618 978 1640 962Z", R.beyaz, { opak: 0.9, dx: 1, dy: 1, dar: 1 });
+      nesne(elif, kapsul(1622, 700, 1612, 952, 25), R.pantolon, { dx: 2, dy: 2, dar: 1 });
+      nesne(elif, "M1576 964Q1610 950 1640 964Q1648 990 1634 998L1562 998Q1554 980 1576 964Z", R.beyaz, { opak: 0.9, dx: 1, dy: 1, dar: 1 });
+      nesne(elif, dik(1631, 420, 28, 34), R.ten, { dx: 1, dy: 1, dar: 1 });
+      nesne(elif, "M1584 474Q1592 446 1640 444Q1694 446 1704 478L1712 700Q1650 716 1590 700Z", R.kazak);
+      hat(elif, "M1594 676Q1650 690 1708 676", 2.2, ince);
+      const elifKol = el("g", {}, elif);
+      uzuv(elifKol, "M1640 496Q1560 560 1548 548L1474 452", 42, R.kazak);
+      nesne(elifKol, elips(1460, 434, 19, 19), R.ten, { dx: 1, dy: 1, kalin: 3, dar: 1 });
+      nesne(elif, elips(1640, 380, 50, 52), R.ten, { dx: 2, dy: 2, dar: 1 });
+      nesne(elif, "M1694 344Q1760 356 1752 438Q1742 474 1722 456Q1736 408 1690 394Z", R.sac, { opak: 0.92, dx: 2, dy: 2 });
+      nesne(elif, "M1592 372Q1588 320 1642 316Q1702 318 1702 384Q1700 424 1682 438Q1674 402 1674 372Q1640 368 1608 348Q1598 358 1592 372Z", R.sac, { opak: 0.92, dx: 2, dy: 2 });
+
+      /* Elif, akşam: arkadan, omuzları açık (iz burada görünür) */
+      const AKSAM_X = 1660, AKSAM_Y = 1000;
+      const aksam = arkadan(ev, AKSAM_X, AKSAM_Y, { atlet: 1 });
+
+      /* ============================================================
+         2. durak: okul yolu (x 1920–3840)
+         ============================================================ */
+      const yol = el("g", { id: "yol" }, dunya);
+      boya(yol, dik(1964, 40, 1836, 540), R.gok, 0.75, 0, 0);
+      boya(yol, elips(2140, 170, 46, 46), R.gunes, 0.95, 0, 0);
+      [[2500, 190], [3380, 130]].forEach((b) => {
+        const d = `M${b[0]} ${b[1]}q30 -44 74 -12q44 -34 76 12q44 2 30 38h-196q-22 -34 16 -38z`;
+        nesne(yol, d, R.beyaz, { opak: 0.8, dx: 2, dy: 2, kalin: 2.6 });
+      });
+      boya(yol, dik(1964, 560, 1836, 500), R.agac, 0.5, 0, 0);
+      /* okul: yolun ucunda */
+      nesne(yol, dik(2910, 446, 250, 122), R.duvar, { opak: 0.85, dx: 2, dy: 2 });
+      nesne(yol, dik(2892, 426, 286, 22), R.cati, { dx: 2, dy: 2, dar: 1 });
+      nesne(yol, dik(3018, 508, 34, 60), R.ahsap, { dx: 1, dy: 1, dar: 1, kalin: 2.6 });
+      [2930, 2972, 3070, 3112].forEach((x) => nesne(yol, dik(x, 470, 26, 28), R.gok, { opak: 0.7, dx: 1, dy: 1, dar: 1, kalin: 2.2 }));
+      hat(yol, "M3035 426V378", 3);
+      /* evler */
+      nesne(yol, dik(2010, 372, 300, 270), R.duvar, { opak: 0.85, dx: 3, dy: 3 });
+      nesne(yol, cokgen([[1984, 378], [2160, 262], [2336, 378]]), R.cati, { dx: 3, dy: 3 });
+      nesne(yol, dik(2130, 522, 62, 120), R.ahsap, { dx: 2, dy: 2, dar: 1 });
+      [2046, 2232].forEach((x) => nesne(yol, dik(x, 432, 60, 62), R.gok, { opak: 0.7, dx: 2, dy: 2, dar: 1, kalin: 2.6 }));
+      nesne(yol, dik(2420, 444, 220, 160), R.perde, { opak: 0.85, dx: 3, dy: 3 });
+      nesne(yol, cokgen([[2400, 448], [2530, 368], [2660, 448]]), "#9a8fb0", { dx: 3, dy: 3 });
+      nesne(yol, dik(2500, 492, 54, 54), R.gok, { opak: 0.7, dx: 2, dy: 2, dar: 1, kalin: 2.6 });
+      /* ağaçlar ve çit */
+      [[3300, 400, 110, 130, 650], [3560, 350, 140, 160, 700], [3740, 440, 86, 104, 720]].forEach((a) => {
+        hat(yol, `M${a[0]} ${a[1] + a[3] - 20}V${a[4]}M${a[0]} ${a[1] + a[3] + 30}L${a[0] - 26} ${a[1] + a[3] - 8}`, 4);
+        nesne(yol, elips(a[0], a[1], a[2], a[3]), R.agac, { opak: 0.85, dx: 4, dy: 3 });
+        boya(yol, elips(a[0] - a[2] * 0.3, a[1] + a[3] * 0.3, a[2] * 0.5, a[3] * 0.45), R.agacKoyu, 0.55, 0, 0);
+      });
+      for (let i = 0; i < 9; i++) hat(yol, `M${3170 + i * 78} ${f(640 + i * 21)}v${f(64 + i * 4)}`, 3);
+      hat(yol, "M3170 660L3794 828M3170 688L3794 862", 3);
+      /* kaldırım */
+      const YOL_P = [[2420, 1056], [3340, 1056], [3086, 566], [2954, 566]];
+      nesne(yol, cokgen(YOL_P), "#d2c4b0", { opak: 0.85, dx: 3, dy: 3 });
+      [0.1, 0.24, 0.44, 0.7].forEach((k) => hat(yol, `M${f(2954 + (2420 - 2954) * k)} ${f(566 + 490 * k)}H${f(3086 + (3340 - 3086) * k)}`, 2, { "stroke-opacity": 0.4 }));
+      const YURU_X = 2760, YURU_Y = 986;
+      const yuruyen = arkadan(yol, YURU_X, YURU_Y, { cantali: 1 });
+
+      /* ============================================================
+         3. durak: çanta mağazasının vitrini (x 3840–5760)
+         ============================================================ */
+      const vitrin = el("g", { id: "vitrin" }, dunya);
+      boya(vitrin, dik(3884, 60, 1832, 806), "#bcd0c4", 0.72, 0, 0);
+      boya(vitrin, dik(3884, 866, 1832, 190), "#d2c4b0", 0.8, 0, 0);
+      hat(vitrin, "M3890 866H5710", 3.5);
+      hat(vitrin, "M3890 900H5710", 2, { "stroke-opacity": 0.4 });
+      /* cam, raf, askıdaki çantalar */
+      nesne(vitrin, dik(4060, 300, 1300, 522), R.gok, { opak: 0.4, dx: 0, dy: 0 });
+      hat(vitrin, dik(4040, 280, 1340, 562), 3.5);
+      hat(vitrin, "M4100 352H5320", 4);
+      hat(vitrin, "M4080 712H5340", 3);
+      const ASKI_X = 4750;
+      [[4230, "t", "#8e68b0", "#765296"], [4480, "s", "#e0b040", "#bd8f28"], [ASKI_X, "s", R.sirt, R.sirtKoyu], [5010, "t", "#e58a3a", "#c46f24"], [5220, "s", "#3f7d5a", "#2f6347"]].forEach((c) => {
+        if (c[1] === "t") {
+          hat(vitrin, `M${c[0]} 352V380`, 3);
+          const g = el("g", { transform: `translate(${c[0]} 560) scale(0.72)` }, vitrin);
+          torbaCiz(g, g, c[2], c[3]);
+        } else sirtCiz(el("g", { transform: `translate(${c[0]} 352) scale(0.78)` }, vitrin), c[2], c[3]);
+      });
+      [[4150, 0], [4560, 3], [5080, 2]].forEach((k) => nesne(vitrin, dik(k[0], 732, 150, 80), R.kitap[k[1]], { opak: 0.6, dx: 2, dy: 2 }));
+      /* tente */
+      for (let i = 0; i < 10; i++) {
+        const u0 = 4046 + i * 132.8, a0 = 3990 + i * 144;
+        nesne(vitrin, `M${f(u0)} 152H${f(u0 + 132.8)}L${f(a0 + 144)} 262Q${f(a0 + 72)} 296 ${f(a0)} 262Z`, i % 2 ? R.beyaz : R.gunes, { opak: 0.9, dx: 2, dy: 2, kalin: 3 });
+      }
+      /* kapı ve tabela */
+      nesne(vitrin, dik(5450, 330, 200, 536), R.ahsap, { dx: 3, dy: 3 });
+      nesne(vitrin, dik(5476, 360, 148, 230), R.gok, { opak: 0.5, dx: 1, dy: 1 });
+      hat(vitrin, "M5470 620v60", 6);
+      nesne(vitrin, dik(5464, 150, 170, 112), R.mantar, { dx: 2, dy: 2 });
+      hat(vitrin, "M5512 190h74l8 54h-90zM5530 190q19 -30 38 0", 3);
+      const VIT_X = 4548, VIT_Y = 1012;
+      const bakan = arkadan(vitrin, VIT_X, VIT_Y, { uzanan: 1 });
+
+      /* ============================================================
+         Kareli defter sayfası: soru, omuz kesiti, poşet (ekran koordinatı)
+         ============================================================ */
+      const CM = 60, IP = 1 * CM, ASKI = 5 * CM, OK = 10;
+      const dZemin = document.getElementById("defter-zemin"), dBoya = document.getElementById("defter-boya"), dYazi = document.getElementById("defter-yazi");
+      el("rect", { width: 1920, height: 1080, fill: "#fbf6ea" }, dZemin);
+      let kareler = "";
+      for (let x = CM; x < 1920; x += CM) kareler += `M${x} 0V1080`;
+      for (let y = CM; y < 1080; y += CM) kareler += `M0 ${y}H1920`;
+      el("path", { d: kareler, stroke: "#7da7c9", "stroke-width": 2, "stroke-opacity": 0.42, fill: "none" }, dZemin);
+      for (let y = 90; y < 1080; y += 120) el("circle", { cx: 30, cy: y, r: 13, fill: R.kagit, stroke: R.murekkep, "stroke-width": 2.4, "stroke-opacity": 0.6 }, dZemin);
+
+      /* iki çanta (başlık) ve altlarında aynı beş kitap */
+      const SOL = 480, SAG = 1380;
+      const ikonSol = el("g", {}, dBoya), ikonSag = el("g", {}, dBoya), ikonSolIc = el("g", {}, ikonSol), ikonSagIc = el("g", {}, ikonSag);
+      (function () {
+        const a = el("g", { transform: "scale(0.8)" }, ikonSolIc);
+        torbaCiz(a, a, R.torba, R.torbaKoyu);
+        sirtCiz(el("g", { transform: "translate(0 -262) scale(0.8)" }, ikonSagIc), R.sirt, R.sirtKoyu);
+      })();
+      const yiginSol = el("g", {}, dBoya), yiginSag = el("g", {}, dBoya);
+      [yiginSol, yiginSag].forEach((g) => {
+        const ic = el("g", { transform: "scale(1.3)" }, g);
+        [0, 1, 2, 3, 4].forEach((i) => kitapCiz(el("g", { transform: `translate(${[0, 6, -6, 4, -2][i]} ${-18 - 37 * i})` }, ic), i));
+      });
+      const soru = yazi(dYazi, 960, 500, "?", 300, { "font-weight": 700 });
+
+      /* omuz kesiti: aynı ölçekte iki omuz. 60 px = 1 cm; konumlar sayıdan hesaplanır. */
+      const KY = 610, SERIT_H = 30, OK_BOY = 118, HAVADA = 96;
+      function kesitKur(cx, gen, renk, koyu, derin) {
+        const K = { cx, gen, derin, g: el("g", {}, dBoya), y: el("g", {}, dYazi), s: { sik: 0, in: 0, d: 0 } };
+        K.omuz = canli(K.g, R.ten, { dx: 3, dy: 3 });
+        K.karo = [];
+        K.karoG = el("g", {}, K.g);
+        K.karoIc = el("g", {}, K.karoG);
+        for (let i = 0; i < gen / CM; i++) K.karo.push(el("rect", { x: cx - gen / 2 + i * CM, y: KY, width: CM, height: CM, fill: R.iz, "fill-opacity": 0, stroke: R.murekkep, "stroke-width": 2.2, "stroke-opacity": 0.75 }, K.karoIc));
+        K.seritG = el("g", {}, K.g);
+        K.serit = el("g", {}, K.seritG);
+        nesne(K.serit, `M${cx - gen / 2 + 8} ${KY - SERIT_H}H${cx + gen / 2 - 8}Q${cx + gen / 2} ${KY - SERIT_H} ${cx + gen / 2} ${KY - SERIT_H + 8}V${KY - 8}Q${cx + gen / 2} ${KY} ${cx + gen / 2 - 8} ${KY}H${cx - gen / 2 + 8}Q${cx - gen / 2} ${KY} ${cx - gen / 2} ${KY - 8}V${KY - SERIT_H + 8}Q${cx - gen / 2} ${KY - SERIT_H} ${cx - gen / 2 + 8} ${KY - SERIT_H}Z`, renk, { dx: 1, dy: 1, dar: 1 });
+        if (gen > CM) hat(K.serit, `M${cx - gen / 2 + 14} ${KY - SERIT_H / 2}H${cx + gen / 2 - 14}`, 2, { "stroke-dasharray": "9 9", "stroke-opacity": 0.7, stroke: koyu });
+        else hat(K.serit, `M${cx - 14} ${KY - 8}l12 -14M${cx - 2} ${KY - 8}l12 -14`, 2, ince);
+        /* on özdeş ok: aynı boy, aynı kalınlık */
+        K.ok = [];
+        K.okG = el("g", {}, K.y);
+        for (let i = 0; i < OK; i++) K.ok.push(el("path", { d: `M0 ${-OK_BOY}V-3M-5 -12L0 -1L5 -12`, fill: "none", stroke: R.murekkep, "stroke-width": 3, "stroke-linecap": "round", "stroke-linejoin": "round" }, K.okG));
+        /* ölçü: ayraç ve etiket */
+        K.olcu = el("g", {}, K.y);
+        el("path", { d: `M${cx - gen / 2} 868H${cx + gen / 2}M${cx - gen / 2} 854V882M${cx + gen / 2} 854V882`, stroke: R.murekkep, "stroke-width": 3.5, "stroke-linecap": "round", fill: "none" }, K.olcu);
+        yazi(K.olcu, cx, 944, (gen / CM + " cm").replace(".", ","), 54);
+        return K;
+      }
+      function kesitUygula(K) {
+        const s = K.s, d = K.derin * s.d, yari = K.gen / 2, P = [];
+        for (let x = -340; x <= 340; x += 10) {
+          const a = Math.abs(x), k = a <= yari ? 1 : a >= yari + 28 ? 0 : 0.5 + 0.5 * Math.cos(((a - yari) / 28) * Math.PI);
+          P.push([K.cx + x, KY + 44 * (x / 340) * (x / 340) + d * k]);
+        }
+        K.omuz("M" + P.map((p) => f(p[0]) + " " + f(p[1])).join("L") + `L${K.cx + 340} ${KY + 150}Q${K.cx + 340} ${KY + 200} ${K.cx + 290} ${KY + 200}H${K.cx - 290}Q${K.cx - 340} ${KY + 200} ${K.cx - 340} ${KY + 150}Z`);
+        K.seritG.setAttribute("transform", `translate(0 ${f(d)})`);
+        K.karoG.setAttribute("transform", `translate(0 ${f(d)})`);
+        const adim = 30 + (K.gen / OK - 30) * s.sik, ucY = KY - SERIT_H - HAVADA * (1 - s.in) + d;
+        K.ok.forEach((o, i) => o.setAttribute("transform", `translate(${f(K.cx + (i - (OK - 1) / 2) * adim)} ${f(ucY)})`));
+        K.karo.forEach((r) => r.setAttribute("fill-opacity", f2((0.85 * OK / K.karo.length / OK) * s.d)));
+      }
+      const f2 = (n) => (+n).toFixed(3);
+      const kSol = kesitKur(SOL, IP, R.beyaz, R.murekkep, 44), kSag = kesitKur(SAG, ASKI, R.sirt, R.sirtKoyu, 9);
+      kesitUygula(kSol);
+      kesitUygula(kSag);
+
+      /* poşet: ince sap parmaklarda */
+      const posetKonum = el("g", { transform: "translate(-330 -66) scale(1.2)" }, dBoya), poset = el("g", {}, posetKonum), posetIz = el("g", {}, poset);
+      (function () {
+        nesne(poset, dik(1590, 266, 250, 118), R.kazak, { dx: 3, dy: 3 });
+        nesne(poset, kapsul(1500, 262, 1452, 196, 18), R.ten, { dx: 1, dy: 1, dar: 1 });
+        nesne(poset, "M1440 250H1600V400H1440Q1420 400 1420 380V270Q1420 250 1440 250Z", R.ten, { dx: 2, dy: 2 });
+        /* torbadan taşanlar, sonra torba */
+        nesne(poset, kapsul(1300, 560, 1246, 452, 17), "#d9a05b", { dx: 1, dy: 1, dar: 1 });
+        nesne(poset, dik(1372, 474, 28, 70), R.agacKoyu, { dx: 1, dy: 1, dar: 1 });
+        nesne(poset, "M1198 524Q1330 500 1462 524Q1502 640 1484 800Q1472 862 1330 868Q1188 862 1176 800Q1158 640 1198 524Z", R.perde, { opak: 0.9 });
+        boya(poset, elips(1262, 724, 48, 48), R.kitap[3], 0.4, 0, 0);
+        boya(poset, dik(1340, 640, 94, 116), R.kitap[0], 0.4, 0, 0);
+        hat(poset, "M1210 600Q1330 580 1450 600", 2, ince);
+        /* sap: parmakların üstünden geçer, iki ucu torbaya iner */
+        ip(poset, "M1330 404L1226 528", 10);
+        ip(poset, "M1330 404L1434 528", 10);
+        [268, 306, 344, 382].forEach((y, i) => nesne(poset, kapsul(1432, y, [1262, 1240, 1250, 1282][i], y, 17), R.ten, { dx: 1, dy: 1, dar: 1, kalin: 3 }));
+        ip(poset, "M1330 246V404", 10);
+      })();
+      poset.appendChild(posetIz); /* izler elin ve sapın üstünde kalsın */
+      const posetCizgi = [];
+      [268, 306, 344, 382].forEach((y) => {
+        boya(posetIz, elips(1330, y, 24, 13), R.iz, 0.3, 0, 0, 1);
+        [1316, 1344].forEach((x) => posetCizgi.push(hat(posetIz, `M${x} ${y - 13}V${y + 13}`, 5, { stroke: R.iz, pathLength: 100, "stroke-dasharray": 100, "stroke-dashoffset": 100 })));
+      });
+
+      /* kapanış kartı */
+      const kSvg = document.getElementById("kapanis-svg");
+      nesne(kSvg, "M104 772H1326Q1340 772 1340 786V994Q1340 1008 1326 1008H104Q90 1008 90 994V786Q90 772 104 772Z", R.gunes, { opak: 0.4, dx: 4, dy: 4 });
+
+      /* ============================================================
+         ZAMAN ÇİZELGESİ
+         ============================================================ */
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+      const goster = function (h, t, d) { return tl.fromTo(h, { opacity: 0 }, { opacity: 1, duration: d || 0.4, ease: "power1.out" }, t); };
+      const gizle = function (h, t, d) { return tl.to(h, { opacity: 0, duration: d || 0.35, ease: "power1.in" }, t); };
+      const firla = function (h, t, ox, oy, d) {
+        return tl.fromTo(h, { opacity: 0, scale: 0.5, svgOrigin: ox + " " + oy }, { opacity: 1, scale: 1, svgOrigin: ox + " " + oy, duration: d || 0.5, ease: "back.out(1.8)" }, t);
+      };
+      const nabiz = function (h, t, ox, oy, kez, buyuk) {
+        return tl.fromTo(h, { scale: 1, svgOrigin: ox + " " + oy }, { scale: buyuk || 1.3, svgOrigin: ox + " " + oy, duration: 0.28, ease: "sine.inOut", yoyo: true, repeat: kez * 2 - 1, immediateRender: false }, t);
+      };
+      const dongu = function (toplam, sure) { return Math.max(0, Math.floor(toplam / sure) - 1); };
+      /* aynı hedefi sırayla süren tweenler: ilki başlangıcı kurar, sonrakiler devralır */
+      function zincir(hedef) {
+        let ilk = true;
+        return function (bas, son, t) {
+          tl.fromTo(hedef, bas, Object.assign({ immediateRender: ilk }, son), t);
+          ilk = false;
+        };
+      }
+      /* durak ya da figür: görünmediği sürece hiç çizilmez (süzgeçler de çalışmaz) */
+      function pencere(h, araliklar) {
+        tl.set(h, { autoAlpha: araliklar[0][0] <= 0 ? 1 : 0 }, 0);
+        araliklar.forEach((a) => {
+          if (a[0] > 0) tl.set(h, { autoAlpha: 1 }, a[0]);
+          if (a[1] < T.son) tl.set(h, { autoAlpha: 0 }, a[1]);
+        });
+      }
+
+      /* ---- karelerin sınırları ---- */
+      const K2 = T.l3 - 0.7, K3 = T.l4 - 0.7, K4 = T.l5 - 0.7, K4B = T.l5 + 2.3, K5 = T.l6 - 0.5, K6 = T.l7 - 0.6, K7 = T.l12 - 0.6, K8 = T.l13 - 0.6;
+
+      /* ---- kamera: viewBox ---- */
+      const kam = { x: 0, y: 0, w: 1920 };
+      function kamUygula() {
+        dunya.setAttribute("viewBox", kam.x.toFixed(2) + " " + kam.y.toFixed(2) + " " + kam.w.toFixed(2) + " " + (kam.w * 0.5625).toFixed(2));
+      }
+      const kamera = zincir(kam);
+      const kamGit = function (a, b, t, sure, ease) { kamera(a, Object.assign({ duration: sure, ease, onUpdate: kamUygula }, b), t); };
+      const plan = (cx, cy, w) => ({ x: cx - w / 2, y: cy - w * 0.28125, w });
+      const GENIS = { x: 0, y: 0, w: 1920 }, YAKIN = { x: 130, y: 60, w: 1700 };
+      const YOL_GENIS = plan(2860, 540, 1680), YOL_ORTA = plan(2850, 560, 1500), SIRT_PLAN = plan(YURU_X, YURU_Y - 520, 640);
+      const OMUZ_PLAN = plan(AKSAM_X, AKSAM_Y - 548, 520), MASA_PLAN = plan(1350, 470, 1040);
+      const YOL_YAKIN = plan(YURU_X, YURU_Y - 470, 900), YOL_YAKIN2 = plan(YURU_X, YURU_Y - 490, 800);
+      const VITRIN = { x: 3840, y: 0, w: 1920 }, ASKI_PLAN = plan(4790, 500, 1200);
+      kamGit(GENIS, YAKIN, 0, K2, "none");
+      kamGit(YAKIN, YOL_GENIS, K2, 1.2, "power2.inOut");
+      kamGit(YOL_GENIS, YOL_ORTA, K2 + 1.2, 1.0, "none");
+      kamGit(YOL_ORTA, SIRT_PLAN, T.l3 + 1.5, 1.1, "power2.inOut");
+      kamGit(SIRT_PLAN, OMUZ_PLAN, K3, 1.3, "power2.inOut");
+      kamGit(OMUZ_PLAN, MASA_PLAN, K4, 1.1, "power2.inOut");
+      kamGit(MASA_PLAN, YOL_YAKIN, K4B, 1.1, "power2.inOut");
+      kamGit(YOL_YAKIN, YOL_YAKIN2, K4B + 1.1, K5 + 0.8 - (K4B + 1.1), "none");
+      kamGit(VITRIN, VITRIN, K8 - 0.2, 0.1, "none");
+      kamGit(VITRIN, ASKI_PLAN, T.l13 + 0.5, 3.6, "power1.inOut");
+      kamUygula();
+
+      /* ---- hangi durak ne zaman çizilir ---- */
+      pencere(ev, [[0, K2 + 1.3], [K3, K4B + 1.2]]);
+      pencere(yol, [[K2, K3 + 1.4], [K4B, K5 + 0.9]]);
+      pencere(vitrin, [[K8 - 0.3, T.son]]);
+      pencere("#sahne", [[0, K5 + 0.9], [K8 - 0.3, T.son]]);
+      pencere(elif, [[0, K2 + 1.3], [K4 + 0.35, K4B + 1.2]]);
+      pencere(aksam.konum, [[K3, K4 + 0.35]]);
+      pencere(asili, [[0, K3 + 0.6]]);
+      masaSirt.forEach((g) => pencere(g, [[K4 - 0.1, T.son]]));
+      tl.fromTo(masaSirt, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out", immediateRender: false }, K4 - 0.1);
+      tl.to(aksam.konum, { opacity: 0, duration: 0.3, ease: "power1.in" }, K4 + 0.05);
+      tl.fromTo(elif, { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power1.out", immediateRender: false }, K4 + 0.35);
+      pencere(yuruyen.torba, [[0, K3 + 1.4]]);
+      pencere(yuruyen.sirt, [[K3 + 1.4, T.son]]);
+
+      /* ---- ışık: sabah, akşam, sabah ---- */
+      tl.fromTo("#isik-aksam", { opacity: 0 }, { opacity: 1, duration: 1.3, ease: "sine.inOut" }, K3);
+      tl.to("#isik-aksam", { opacity: 0, duration: 1.0, ease: "sine.inOut" }, K4 - 0.1);
+
+      /* ---- ortam: damlalar, perde, yapraklar ---- */
+      const saat = { t: 0 };
+      function damlaUygula() {
+        damlalar.forEach((d) => {
+          const k = (saat.t * 0.55 + d.faz) % 1;
+          d.g.setAttribute("transform", `translate(${d.x} ${f(590 + 190 * k * k)})`);
+          d.g.setAttribute("opacity", f2(k < 0.08 ? k / 0.08 : k > 0.85 ? (1 - k) / 0.15 : 1));
+        });
+      }
+      tl.fromTo(saat, { t: 0 }, { t: K3 + 0.6, duration: K3 + 0.6, ease: "none", onUpdate: damlaUygula }, 0);
+      damlaUygula();
+      tl.fromTo(perde, { skewX: 0, svgOrigin: "104 104" }, { skewX: 1.6, svgOrigin: "104 104", duration: 1.9, ease: "sine.inOut", yoyo: true, repeat: dongu(K4B + 1.2, 1.9) }, 0);
+      yapraklar.forEach((y, i) => tl.fromTo(y, { rotation: -1.2, svgOrigin: "748 722" }, { rotation: 1.4, svgOrigin: "748 722", duration: 2.1 + i * 0.23, ease: "sine.inOut", yoyo: true, repeat: dongu(K4B + 1.2, 2.1 + i * 0.23) }, 0));
+
+      /* ---- 1 · Sabah: beş kitap tek tek torbaya girer ---- */
+      const AGIZ = { x: TORBA_X, y: MASA - 252 - 110 }, ICERDE = { x: TORBA_X, y: MASA - 132 };
+      const SIRT_AGIZ = { x: SIRT_X, y: MASA - 246 - 110 }, SIRT_ICI = { x: SIRT_X, y: MASA - 122 };
+      const kitapYol = kitapG.map((k) => zincir(k.dis)), kitapDon = kitapG.map((k) => zincir(k.ic));
+      const O = "0 0";
+      const kolu = zincir(elifKol), OMUZ = "1640 496";
+      kolu({ rotation: 0, svgOrigin: OMUZ }, { rotation: 0, svgOrigin: OMUZ, duration: 0.01 }, 0);
+      const torbaZipla = function (t) { tl.fromTo([torbaG, torbaOn], { scaleY: 1, scaleX: 1, svgOrigin: O }, { scaleY: 0.95, scaleX: 1.04, svgOrigin: O, duration: 0.11, ease: "sine.inOut", yoyo: true, repeat: 1, immediateRender: false }, t); };
+      [4, 3, 2, 1, 0].forEach((i, k) => {
+        const t = T.l2 - 0.35 + k * 0.6, y = YIGIN[i], git = kitapYol[i], don = kitapDon[i];
+        git({ x: y.x, y: y.y }, { x: y.x - 70, y: y.y - 70, duration: 0.22, ease: "power2.out" }, t);
+        git({ x: y.x - 70, y: y.y - 70 }, { x: AGIZ.x, y: AGIZ.y, duration: 0.3, ease: "power1.inOut" }, t + 0.22);
+        git({ x: AGIZ.x, y: AGIZ.y }, { x: ICERDE.x, y: ICERDE.y, duration: 0.2, ease: "power2.in" }, t + 0.52);
+        don({ rotation: 0, svgOrigin: O }, { rotation: -90, svgOrigin: O, duration: 0.5, ease: "power1.inOut" }, t);
+        torbaZipla(t + 0.7);
+        kolu({ rotation: 0, svgOrigin: OMUZ }, { rotation: -9, svgOrigin: OMUZ, duration: 0.22, ease: "power2.out" }, t);
+        kolu({ rotation: -9, svgOrigin: OMUZ }, { rotation: 0, svgOrigin: OMUZ, duration: 0.3, ease: "sine.inOut" }, t + 0.24);
+      });
+
+      /* ---- 2 · Yol: ipler yürüdükçe omza gömülür ---- */
+      function yuru(F, t, sure) {
+        const n = Math.max(1, Math.round(sure / 0.3));
+        tl.fromTo(F.g, { y: 0 }, { y: -7, duration: sure / (n * 2), ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1, immediateRender: false }, t);
+        F.bacak.forEach((b, i) => {
+          const o = (i ? 28 : -28) + " -300";
+          tl.fromTo(b, { scaleY: i ? 1 : 0.93, svgOrigin: o }, { scaleY: i ? 0.93 : 1, svgOrigin: o, duration: sure / n, ease: "sine.inOut", yoyo: true, repeat: n - 1, immediateRender: false }, t);
+        });
+        tl.fromTo(F.ust, { rotation: -1.1, svgOrigin: "0 -300" }, { rotation: 1.1, svgOrigin: "0 -300", duration: sure / n, ease: "sine.inOut", yoyo: true, repeat: n - 1, immediateRender: false }, t);
+      }
+      yuru(yuruyen, K2, K3 + 0.6 - K2);
+      const baski = { d: 0 }, baskiGit = zincir(baski);
+      const baskiUygula = function () { yuruyen.ipUygula(baski.d); };
+      baskiGit({ d: 0 }, { d: 12, duration: 1.9, ease: "power1.inOut", onUpdate: baskiUygula }, T.l3 + 1.3);
+      baskiGit({ d: 12 }, { d: 0, duration: 0.05, ease: "none", onUpdate: baskiUygula }, K3 + 1.5);
+      /* omuzlar ipten kurtulmaya çalışır */
+      tl.fromTo(yuruyen.sagKol, { rotation: 0, svgOrigin: "84 -528" }, { rotation: -7, svgOrigin: "84 -528", duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, T.l3 + 2.2);
+
+      /* ---- 3 · Akşam: omuzlarda iki kırmızı çizgi ---- */
+      tl.fromTo(aksam.ust.querySelectorAll(".iz-leke"), { opacity: 0 }, { opacity: 0.34, duration: 0.8, ease: "power1.out" }, T.l4 + 1.2);
+      aksam.iz.forEach((c, i) => {
+        tl.fromTo(c, { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.7, ease: "power2.inOut" }, T.l4 + 1.5 + i * 0.35);
+        /* çizilmeden önce yuvarlak uç nokta gibi görünmesin */
+        tl.fromTo(c, { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, T.l4 + 1.5 + i * 0.35);
+      });
+      tl.fromTo(aksam.ust, { scaleY: 1, svgOrigin: "0 -290" }, { scaleY: 1.012, svgOrigin: "0 -290", duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, K3 + 1.3);
+
+      /* ---- 4 · Ertesi gün: aynı kitaplar torbadan çıkar, sırt çantasına girer ---- */
+      [0, 1, 2, 3, 4].forEach((i, k) => {
+        const t = K4 + 0.9 + k * 0.3, git = kitapYol[i];
+        git({ x: ICERDE.x, y: ICERDE.y }, { x: AGIZ.x, y: AGIZ.y, duration: 0.2, ease: "power2.out" }, t);
+        git({ x: AGIZ.x, y: AGIZ.y }, { x: SIRT_AGIZ.x, y: SIRT_AGIZ.y - 40, duration: 0.32, ease: "power1.inOut" }, t + 0.2);
+        git({ x: SIRT_AGIZ.x, y: SIRT_AGIZ.y - 40 }, { x: SIRT_ICI.x, y: SIRT_ICI.y, duration: 0.2, ease: "power2.in" }, t + 0.52);
+        tl.fromTo(sirtOn, { scaleY: 1, scaleX: 1, svgOrigin: O }, { scaleY: 0.96, scaleX: 1.03, svgOrigin: O, duration: 0.1, ease: "sine.inOut", yoyo: true, repeat: 1, immediateRender: false }, t + 0.7);
+        kolu({ rotation: 0, svgOrigin: OMUZ }, { rotation: -9, svgOrigin: OMUZ, duration: 0.14, ease: "power2.out" }, t);
+        kolu({ rotation: -9, svgOrigin: OMUZ }, { rotation: 0, svgOrigin: OMUZ, duration: 0.14, ease: "sine.inOut" }, t + 0.15);
+      });
+      yuru(yuruyen, K4B, K5 + 0.9 - K4B);
+
+      /* ---- 5 · Soru: kitaplar aynı, peki ne değişti? ---- */
+      tl.fromTo("#defter-ic", { y: 1090 }, { y: 0, duration: 0.8, ease: "power3.out" }, K5);
+      const ikonS = zincir(ikonSol), ikonG = zincir(ikonSag), ikonOlcek = zincir([ikonSolIc, ikonSagIc]);
+      ikonS({ x: 560, y: 540 }, { x: 560, y: 540, duration: 0.01 }, 0);
+      ikonG({ x: 1360, y: 540 }, { x: 1360, y: 540, duration: 0.01 }, 0);
+      ikonOlcek({ scale: 1.35, svgOrigin: O }, { scale: 1.35, svgOrigin: O, duration: 0.01 }, 0);
+      const yigS = zincir(yiginSol), yigG = zincir(yiginSag);
+      yigS({ x: 560, y: 900, opacity: 1 }, { x: 960, y: 900, opacity: 1, duration: 0.9, ease: "power2.inOut" }, T.l6 + 0.1);
+      yigG({ x: 1360, y: 900, opacity: 1 }, { x: 960, y: 900, opacity: 1, duration: 0.9, ease: "power2.inOut" }, T.l6 + 0.1);
+      firla(soru, T.l6 + 1.9, 960, 400, 0.5);
+
+      /* ---- 6 · Omuz kesiti ---- */
+      gizle(soru, K6, 0.3);
+      yigS({ x: 960, y: 900, opacity: 1 }, { x: 960, y: 900, opacity: 0, duration: 0.35, ease: "power1.in" }, K6);
+      yigG({ x: 960, y: 900, opacity: 1 }, { x: 960, y: 900, opacity: 0, duration: 0.35, ease: "power1.in" }, K6);
+      ikonS({ x: 560, y: 540 }, { x: SOL, y: 340, duration: 0.8, ease: "power2.inOut" }, K6 + 0.1);
+      ikonG({ x: 1360, y: 540 }, { x: SAG, y: 340, duration: 0.8, ease: "power2.inOut" }, K6 + 0.1);
+      ikonOlcek({ scale: 1.35, svgOrigin: O }, { scale: 0.66, svgOrigin: O, duration: 0.8, ease: "power2.inOut" }, K6 + 0.1);
+      [kSol, kSag].forEach((K, i) => {
+        tl.fromTo(K.g, { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out" }, K6 + 0.5 + i * 0.15);
+        /* "omuzlarına binen kuvvet de aynı": iki yanda aynı on ok */
+        tl.fromTo(K.ok, { opacity: 0 }, { opacity: 1, duration: 0.25, stagger: 0.04, ease: "power1.out" }, T.l7 + 1.5 + i * 0.4);
+        tl.set(K.olcu, { opacity: 0 }, 0);
+      });
+      nabiz(kSol.okG, T.l7 + 2.9, SOL, KY - 200, 1, 1.07);
+      nabiz(kSag.okG, T.l7 + 2.9, SAG, KY - 200, 1, 1.07);
+      /* "Değişen, kuvvetin etki ettiği yüzey." */
+      nabiz(kSol.serit, T.l8 + 1.45, SOL, KY - 15, 2, 1.35);
+      nabiz(kSag.serit, T.l8 + 1.45, SAG, KY - 15, 2, 1.12);
+      /* ip: bir santimetre; bütün kuvvet o dar şeride biner */
+      goster(kSol.olcu, T.l9 + 0.3, 0.3);
+      const solGit = zincir(kSol.s), sagGit = zincir(kSag.s), solUy = () => kesitUygula(kSol), sagUy = () => kesitUygula(kSag);
+      solGit({ sik: 0, in: 0, d: 0 }, { sik: 1, in: 0, d: 0, duration: 0.9, ease: "power2.inOut", onUpdate: solUy }, T.l9 + 2.5);
+      solGit({ sik: 1, in: 0, d: 0 }, { sik: 1, in: 1, d: 0, duration: 0.3, ease: "power2.in", onUpdate: solUy }, T.l9 + 3.45);
+      solGit({ sik: 1, in: 1, d: 0 }, { sik: 1, in: 1, d: 1, duration: 0.6, ease: "power2.out", onUpdate: solUy }, T.l9 + 3.75);
+      /* askı: beş santimetre; aynı kuvvet beş kat geniş yüzeye yayılır */
+      goster(kSag.olcu, T.l10 + 0.3, 0.3);
+      sagGit({ sik: 0, in: 0, d: 0 }, { sik: 1, in: 0, d: 0, duration: 0.5, ease: "power2.inOut", onUpdate: sagUy }, T.l10 + 1.85);
+      sagGit({ sik: 1, in: 0, d: 0 }, { sik: 1, in: 1, d: 0, duration: 0.3, ease: "power2.in", onUpdate: sagUy }, T.l10 + 2.4);
+      sagGit({ sik: 1, in: 1, d: 0 }, { sik: 1, in: 1, d: 1, duration: 0.6, ease: "power2.out", onUpdate: sagUy }, T.l10 + 2.7);
+      /* "Yüzey küçüldükçe basınç büyür; ip bu yüzden keser." */
+      nabiz(kSol.karoIc, T.l11 + 0.9, SOL, KY + 30, 2, 1.25);
+      nabiz(kSol.karoIc, T.l11 + 2.9, SOL, KY + 30, 2, 1.25);
+
+      /* ---- 7 · Poşet ---- */
+      gizle([kSag.g, kSag.y, ikonSag], K7, 0.4);
+      gizle(ikonSol, K7, 0.4);
+      tl.fromTo([kSol.g, kSol.y], { x: 0, y: 0, scale: 1, svgOrigin: SOL + " 700" }, { x: -30, y: 0, scale: 0.9, svgOrigin: SOL + " 700", duration: 0.7, ease: "power2.inOut", immediateRender: false }, K7 + 0.1);
+      tl.set([poset, posetIz], { opacity: 0 }, 0);
+      tl.to(kSol.olcu, { opacity: 0, duration: 0.3 }, K7);
+      tl.fromTo(poset, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, ease: "power2.out", immediateRender: false }, K7 + 0.4);
+      tl.fromTo(poset, { rotation: -1.2, svgOrigin: "1330 246" }, { rotation: 1.2, svgOrigin: "1330 246", duration: 1.1, ease: "sine.inOut", yoyo: true, repeat: 3, immediateRender: false }, K7 + 1.0);
+      tl.to(posetIz, { opacity: 1, duration: 0.5, ease: "power1.out" }, T.l12 + 2.9);
+      tl.fromTo(posetCizgi, { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: 0.35, stagger: 0.06, ease: "power2.out" }, T.l12 + 3.0);
+
+      /* ---- 8 · Kapanış: Elif artık askıya bakıyor ---- */
+      tl.to("#defter-ic", { y: 1090, duration: 0.8, ease: "power2.in" }, K8);
+      tl.fromTo(bakan.sagKol, { rotation: 38, svgOrigin: "84 -528" }, { rotation: 0, svgOrigin: "84 -528", duration: 0.8, ease: "back.out(1.4)" }, T.l13 + 1.0);
+      tl.fromTo(bakan.ust, { rotation: 0, svgOrigin: "0 -300" }, { rotation: 1.5, svgOrigin: "0 -300", duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: dongu(T.son - K8 - 1, 1.4), immediateRender: false }, K8 + 0.8);
+      tl.fromTo("#kapanis-ic", { y: 340 }, { y: 0, duration: 0.8, ease: "power3.out" }, T.l14 - 0.3);
+      tl.fromTo("#kapanis-yazi span", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, stagger: 1.8, ease: "power2.out" }, T.l14 + 0.1);
+
       window.__timelines["main"] = tl;
       tl.seek(0);
     </script>

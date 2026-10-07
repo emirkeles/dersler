@@ -48,14 +48,20 @@ Plan: `akiskanlar/hikaye/A1-cantanin-askisi.md`
 - [x] Ders kitabı s. 131–142 metni ve s. 133 görüntüsü (iki çanta kitabın kendi açılış görseli)
 - [x] Plan: senaryo taslağı (14 satır, 100 kelime), resimli taslak (8 kare), sayılar, üretim adımları
 - [x] HyperFrames yapısı: dosyalar, katmanlar ve izler, tahminî `T` tablosu, karelerin hareket kuralları, doğrulama
-- [ ] Kullanıcı onayı: senaryo (Elif; 1 cm ve 5 cm; poşet ve vitrin satırları)
+- [x] Senaryo: kullanıcı seslendirmeyi istedi (7 Ekim 2026); metin `SCRIPT.md`
 - [ ] Karar: "beşte bir" sesle söylenmeyecek mi, yoksa hikâye A2'ye mi taşınacak
 - [ ] Kullanıcı onayı: çizim dili (mürekkep ve suluboya), 2 ve 6. kareler üzerinden
-- [ ] Proje iskeleti (`fizik/akiskanlar/hikaye/a1-canta-askisi/`, `npx hyperframes init`)
-- [ ] Çizimler
-- [ ] Ses (ücretli; kullanıcı ister; yaklaşık 700 karakter)
-- [ ] Kompozisyon; `T` tablosunu gerçek klip sürelerine çek
-- [ ] `npm run check`, kare görüntüleri, işleme, kapak, altyazı
+- [x] Proje iskeleti (`fizik/akiskanlar/hikaye/a1-canta-askisi/`): `hyperframes init` 0.8.112, `BRIEF.md`, `frame.md`, `STORYBOARD.md`, yazı tipleri
+- [x] 1. kare çizildi, hareketsiz (`snapshots/kare-1-sabah.png`); lint temiz
+- [x] Sekiz karenin çizimi ve hareketi (ses yok; zamanlama tahminî `T` tablosuna göre); `check` geçti, dört uyarı
+- [ ] Kullanıcı izler: Studio ön izlemesi ya da sessiz taslak işleme; çizim dili (suluboya) buna göre kesinleşir
+- [ ] `check` uyarıları: `damlaUygula` için DOM ölçümü uyarısı (yanlış alarm gibi; nedeni bulunmadı), dosya boyu ve iç içe klip uyarıları (B7 ile aynı yapı)
+- [x] Ses: 14 klip, 767 karakter, 58,9 sn (`eleven_v4`, Gamze Özdemir); üç yönerge. Senaryo seslendirmeden önce yeniden yazıldı (`SCRIPT.md`)
+- [x] `T` tablosu ve `<audio>` satırları gerçek klip sürelerine çekildi; film 72,5 sn; cümle içi eşlemeler sessizlikten ölçüldü
+- [ ] Kullanıcı dinler: yazıya dökümde beş satır metinden farklı çıktı (4, 5, 7, 9, 12); küçük modelin hatası olabilir, kulakla doğrulanmadı
+- [x] İşleme: `renders/a1-canta-askisi.mp4`, CRF 23 (kullanıcı kararı, 7 Ekim 2026), 48,3 MB, 72,5 sn, hızlı başlatma var; işleme 2,5 dk. Ayar `package.json` içindeki `render` komutunda
+- [ ] `renders/` altındaki iki taslak (180 ve 198 MB) depoya girmemeli; silinsin mi?
+- [ ] Kapak görseli, altyazı dosyası
 - [ ] Derse bağlama (tema işlenince)
 
 ## Temalar

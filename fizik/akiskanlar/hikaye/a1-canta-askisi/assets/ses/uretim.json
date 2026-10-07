@@ -1,0 +1,72 @@
+{
+ "10": {
+  "metin": "Askı beş santimetre. Aynı kuvvet, beş kat geniş bir yüzeye yayılır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "11": {
+  "metin": "Yüzey küçüldükçe basınç büyür; ip bu yüzden keser.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "12": {
+  "metin": "Dolu bir market poşetinin ince sapı da parmaklarını aynı sebepten keser.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "13": {
+  "metin": "Elif artık çanta seçerken önce askısına bakıyor.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "14": {
+  "metin": "Aynı kuvvet, [short pause] küçük yüzeyde daha çok bastırır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "01": {
+  "metin": "Elif'in sırt çantası dün yıkandı; hâlâ ıslak.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "02": {
+  "metin": "O da kitaplarını ipli spor torbasına doldurur.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "03": {
+  "metin": "Daha yolun yarısında ipler omuzlarını kesmeye başlar.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "04": {
+  "metin": "Akşam omuzlarında iki kırmızı iz kalmıştır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "05": {
+  "metin": "Ertesi gün aynı kitapları sırt çantasına koyar. Bu kez omuzları hiç acımaz.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "06": {
+  "metin": "[curious] Kitaplar hafiflemedi. Peki ne değişti?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "07": {
+  "metin": "[thoughtful] Yük aynı; omuzlarına binen kuvvet de aynı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "08": {
+  "metin": "Değişen tek şey, o kuvvetin bastığı yüzey.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "09": {
+  "metin": "İp bir santimetre genişliğinde. Bütün kuvvet o dar şeride biner.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ }
+}
