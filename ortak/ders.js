@@ -136,7 +136,7 @@
     root.innerHTML = '';
     root.append(
       h('header', { class: 'top' },
-        h('a', { class: 'back', href: cfg.back || 'index.html', title: 'Üniteye dön' }, '‹ ' + cfg.title),
+        h('a', { class: 'back', href: cfg.back || 'index.html', title: 'Temaya dön' }, '‹ ' + cfg.title),
         (el.head = h('div', { class: 'scenehead' })),
         (el.tools = h('div', { class: 'tools' }))),
       (el.prog = h('nav', { class: 'prog', 'aria-label': 'Sahneler' })),
@@ -494,7 +494,7 @@
         await c.wait(500);
       }
       if (cfg.nextLesson) card.appendChild(h('a', { class: 'btn', style: { textDecoration: 'none' }, href: cfg.nextLesson.href }, cfg.nextLesson.label || 'Sonraki ders ›'));
-      card.appendChild(h('a', { class: 'btn ghost', style: { textDecoration: 'none', alignSelf: 'flex-start' }, href: cfg.back || 'index.html' }, 'Üniteye dön'));
+      card.appendChild(h('a', { class: 'btn ghost', style: { textDecoration: 'none', alignSelf: 'flex-start' }, href: cfg.back || 'index.html' }, 'Temaya dön'));
     }
 
     const api = { id: cfg.id, go, state, scenes };

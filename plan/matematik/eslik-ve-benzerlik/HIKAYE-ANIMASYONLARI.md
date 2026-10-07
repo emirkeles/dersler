@@ -1,14 +1,14 @@
-# Plan — Hikâye animasyonları · 4. ünite: Eşlik ve Benzerlik
+# Plan — Hikâye animasyonları · 4. tema: Eşlik ve Benzerlik
 
 Ölçütler (üç koşul, ek kurallar), biçim, derse yerleşim ve üretim hattı: `../sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–3 ve 5. Burada yinelenmedi.
 
-**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Ünite henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
+**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Tema henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
 
 18 dersin 3'ünde hikâye var; kalanlarında yok. Dönüşümler (kilim motifleri) ve benzerlik (gölge, maket) dersleri zaten hayattan kurulu; hikâyeler soyut kalan üç yere yazıldı: tek üçgen, Tales ve Pisagor'un sonuçları.
 
 ## 1. Hikâyesi olan dersler (müfredattaki önem sırasıyla)
 
-Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek yaşam bağlamını açıkça istiyor mu, (2) fikir çıktının kendi içeriği mi, (3) programdaki değer, okuryazarlık ve disiplinler arası bağlarla ilişkili mi.
+Sıralama ölçütü 1. temadakiyle aynı: (1) program o fikir için gerçek yaşam bağlamını açıkça istiyor mu, (2) fikir çıktının kendi içeriği mi, (3) programdaki değer, okuryazarlık ve disiplinler arası bağlarla ilişkili mi.
 
 | Sıra | Ders | Fikir | Hayatta nerede | Hikâye | Kapanış cümlesi |
 |---|---|---|---|---|---|
@@ -45,7 +45,7 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 - Dayanak tam olarak D2'nin teoremidir: eşit aralıklı paraleller dik bir kesende eşit parçalar ayırır; çapraz yatan şeritte de parçalar aynı oranda, yani yine eşit olur.
 - **Köşe.** 3² + 4² = 9 + 16 = 25 = 5². Ölçülen uzunluk 5 m'den büyükse karesi 25'ten büyüktür (geniş açı), küçükse küçüktür (dar açı). 3-4-5 yöntemi inşaatta köşeyi dik almak için yaygın olarak kullanılır (doğrulandı: yapı işleri kaynakları). Voleybol sahası 18 m × 9 m'dir; 3 ve 4 metrelik işaretler kenarlara sığar. Ölçümler **kurgudur**.
 - Program cümlesi tek yönlüdür ("geniş açılı bir üçgende … büyüktür"); hikâye ters yönü kullanır (kare büyükse açı geniştir). Üç durum birbirini dışladığı için ters yön de doğrudur ve D5'in tek fikri böyle yazılmıştır. **D5 senaryosuna not:** ders iki yönü de açıkça söylemeli.
-- İlk taslaktaki usta sahnesi (60-80-100; 103 ve 97 cm) sayı yükü ve ortam tekrarı nedeniyle değişti; 97 hesabı atıldı. 3-4-5, 3. ünitedeki patika hikâyesinin (30-40-50) üçgeniyle aynıdır; istenirse gönderme yapılır.
+- İlk taslaktaki usta sahnesi (60-80-100; 103 ve 97 cm) sayı yükü ve ortam tekrarı nedeniyle değişti; 97 hesabı atıldı. 3-4-5, 3. temadaki patika hikâyesinin (30-40-50) üçgeniyle aynıdır; istenirse gönderme yapılır.
 
 ## 5. Hikâyesi olmayan dersler ve nedeni
 
@@ -71,7 +71,7 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 
 ## 7. Hakem incelemesi (7 Ekim 2026)
 
-Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünitenin en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
+Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. temanın en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
 
 | Hikâye | Müfredat | Katkı | Toplam | Karar |
 |---|---|---|---|---|
@@ -85,8 +85,8 @@ Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünit
 | D2: şerit beş aralığa değil yirmi aralığa yatırılıyor, her dördüncü çizgi işaretleniyor | 8 mm satır aralığında beş aralık 4 cm eder; 17 cm'lik şerit çok yatık durur, kesişimler belirsizleşir. |
 | B1: hikâyenin sonu vinç kafesinde aynı üçgenin ötelenip döndürülmesine bağlandı; kapanış dersin kendi cümlesi oldu | Eski hâli dersin ön bilgi yarısını taşıyor ve dersin cümlesiyle bitemiyordu ("tek fikir, tek cümle" kuralı). Hakemin iki koşulundan `PLAN.md`'ye dokunmayan seçildi. |
 | B1: "dört kenar sayısız dörtgen kurar" cümlesi ve kitaplık sahnesi çıktı | Derste yok; süre. |
-| D5: usta ve fayans yerine okul bahçesinde saha çizimi; 60-80-100 yerine 3-4-5 m; 97 hesabı atıldı | Karşılaşma en zayıf koşuldu; sekiz sayı ses için ağırdı; ünitenin üç hikâyesi de çıta, şerit, usta ortamındaydı. |
+| D5: usta ve fayans yerine okul bahçesinde saha çizimi; 60-80-100 yerine 3-4-5 m; 97 hesabı atıldı | Karşılaşma en zayıf koşuldu; sekiz sayı ses için ağırdı; temanın üç hikâyesi de çıta, şerit, usta ortamındaydı. |
 
-Bütçe daralırsa bu ünitede ilk vazgeçilecek D5'tir (listenin tamamında birinci sırada); ardından B1.
+Bütçe daralırsa bu temada ilk vazgeçilecek D5'tir (listenin tamamında birinci sırada); ardından B1.
 
 Hakemin doğru bulduğu eleme: "Ay'ı tırnağınla kapat" dördüncü hikâye olarak önerilmedi (`KURALLAR.md`'deki "merak türü yan konu" sınırında). Güneş ile Ay'ın çap ve uzaklık oranlarının yaklaşık 400 olduğu doğrulandı.

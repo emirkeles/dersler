@@ -24,10 +24,10 @@ const CHROME = process.env.CHROME_PATH || [
 ].find((p) => fs.existsSync(p)) || hyperframesChrome();
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-/* "a1" → matematik/sayilar/a1-*.html. Ünite klasörleri <ders>/<ünite>/ biçimindedir; aynı kod birden çok
-   ünitede varsa "sayilar/a1" ya da "matematik/sayilar/a1" diye yazılır. */
+/* "a1" → matematik/sayilar/a1-*.html. Tema klasörleri <ders>/<tema>/ biçimindedir; aynı kod birden çok
+   temada varsa "sayilar/a1" ya da "matematik/sayilar/a1" diye yazılır. */
 const DISARIDA = new Set(['araclar', 'ortak', 'plan', 'node_modules']);
-function uniteKlasorleri() {
+function temaKlasorleri() {
   const alt = (d) => fs.readdirSync(d, { withFileTypes: true }).filter((x) => x.isDirectory() && !x.name.startsWith('.')).map((x) => x.name);
   return alt(KOK).filter((d) => !DISARIDA.has(d)).flatMap((d) => alt(path.join(KOK, d)).map((u) => path.join(KOK, d, u)));
 }
@@ -35,11 +35,11 @@ function dersDosyasi(no) {
   const parca = String(no).toLowerCase().split('/');
   const kod = parca.pop();
   const on = /^\d+$/.test(kod) ? kod.padStart(2, '0') : kod;
-  const bulunan = uniteKlasorleri()
+  const bulunan = temaKlasorleri()
     .filter((k) => !parca.length || path.relative(KOK, k).split(path.sep).join('/').endsWith(parca.join('/')))
     .flatMap((k) => fs.readdirSync(k).filter((x) => x.startsWith(on + '-') && x.endsWith('.html')).map((x) => path.join(k, x)));
   if (!bulunan.length) throw new Error('Ders bulunamadı: ' + no);
-  if (bulunan.length > 1) throw new Error('Birden çok ders bulundu (' + bulunan.map((f) => path.relative(KOK, f)).join(', ') + '). Üniteyi de yaz: sayilar/' + kod);
+  if (bulunan.length > 1) throw new Error('Birden çok ders bulundu (' + bulunan.map((f) => path.relative(KOK, f)).join(', ') + '). Temayı de yaz: sayilar/' + kod);
   return bulunan[0];
 }
 
@@ -76,4 +76,4 @@ async function sahneyiOynat(page, i, { hiz = 3, sureSiniri = 80000, herAdim } = 
   return false;
 }
 
-module.exports = { KOK, CHROME, sleep, uniteKlasorleri, dersDosyasi, dersiAc, sahneyiOynat };
+module.exports = { KOK, CHROME, sleep, temaKlasorleri, dersDosyasi, dersiAc, sahneyiOynat };

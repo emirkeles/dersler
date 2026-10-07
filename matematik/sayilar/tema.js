@@ -1,5 +1,5 @@
-/* Sayılar ünitesinin kısa dersleri. Biçim ve kurallar: ortak/katalog.js başındaki açıklama. */
-KATALOG.unite('matematik', 'sayilar', {
+/* Sayılar temasının kısa dersleri. Biçim ve kurallar: ortak/katalog.js başındaki açıklama. */
+KATALOG.tema('matematik', 'sayilar', {
   tanitim: 'Kuralı ezberleme, nereden geldiğini gör. Her kısa ders bir soruyla başlar; önce sen tahmin edersin, sonra tahtada birlikte bakarız.',
   konular: [
     { harf: 'A', ad: 'Üslü ve köklü gösterimler', renk: '#f5b04c', dersler: [

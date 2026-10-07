@@ -15,7 +15,7 @@ Dayanak: `MUFREDAT.md` (MEB sayfasından 7 Ekim 2026'da alındı). Biçim ve kur
 | MAT.9.6.1 | f, g | E · Sonuç çıkarma | E1–E4 |
 | MAT.9.6.2 | a, b, c | F · Başkalarının sonuçlarını değerlendirme | F1–F4 |
 
-Kıyas: 1. ünite 38 ders saati için 28 kısa ders; bu ünite 34 ders saati için 24.
+Kıyas: 1. tema 38 ders saati için 28 kısa ders; bu tema 34 ders saati için 24.
 
 ## 2. Konular
 
@@ -409,7 +409,7 @@ Programda olmayan ya da derse girmeyecek olanlar. Kullanıcı isterse eklenir.
 - Güven aralığı, hipotez testi, anlamlılık, hata payı, örneklem büyüklüğü hesabı.
 - Seçim yanlılığı, cevapsızlık yanlılığı gibi yanlılık türlerinin adları.
 - Grafik yanıltma teknikleri (kesik eksen, ölçek oyunları): program "hatalı/yanlı" der, ancak bunları saymaz.
-- Olasılık (bu temanın değil, "Veriden Olasılığa" ünitesinin konusu).
+- Olasılık (bu temanın değil, "Veriden Olasılığa" temasının konusu).
 - Belirli bir istatistik yazılımının (Excel, GeoGebra, R, vb.) menülerini öğretmek: program yazılımın adını vermez.
 
 ## 6. Açık sorular
@@ -418,9 +418,9 @@ Programda olmayan ya da derse girmeyecek olanlar. Kullanıcı isterse eklenir.
 2. **Çeyrekler nasıl bulunacak?** Program alt çeyrek ve üst çeyreğin hesap yöntemini vermiyor. C2 ve C3'te veri sayıları yöntemden bağımsız aynı sonucu verecek seçilsin mi, yoksa çeyrekler yazılımdan mı okunsun? Öneri: ikincisi.
 3. **Histogram nasıl çizilecek?** Program yazılım kullanılmasını söylüyor, sınıf aralığından söz etmiyor. C1'de histogram hazır gelir ve okunur, sınıf aralığı sorusuna girilmez. Uygun mu?
 4. **Yanlılık ne kadar geniş?** Program "yanlılık" der ama tanımlamaz. F3'ü örneklemin evreni temsil etmemesi ve rastgele seçilmemesiyle sınırladım. Soru yönlendirme, gönüllü cevap gibi örnekler de eklensin mi? (Programda yok.)
-5. **B5 yeterince dolu mu?** Program "analize hazır hâle getirme"yi (ç) tek cümleyle söyler ve içeriğini saymaz. B5'i ince tuttum; istenirse B4'le birleştirilip ünite 23 derse iner.
+5. **B5 yeterince dolu mu?** Program "analize hazır hâle getirme"yi (ç) tek cümleyle söyler ve içeriğini saymaz. B5'i ince tuttum; istenirse B4'le birleştirilip tema 23 derse iner.
 6. **D3 ile D4 ayrı kalsın mı?** D3 aracı seçmeyi (d), D4 seçilen araçla analizi (e) anlatır. Fark ince; birleştirilirse "tek fikir" kuralı zorlanır, bu yüzden ayırdım.
 7. **"(*)" işareti.** Zenginleştirme bölümündeki iki paragrafın başında sayfada "(*)" var, açıklaması yok. Derslere zaten girmediği için etkisi yok; yine de MEB'in kastını bilen varsa söylesin.
-8. **Tema finali.** Program tüm süreci kapsayan bir performans görevi "verilebilir" der. Bu, ders değil değerlendirme etkinliğidir; ünite sonunda tüm süreci uygulayan bir bitirme etkinliği (ders sayısına dahil olmayan) isteniyor mu? `sayilar/PLAN.md` yol haritasındaki "tema finali" ile birlikte karar verilebilir.
-9. **Ortak bağlam.** Açılış soruları tek bir bağlam kullanmıyor (uyku, boy, sıcaklık, kronometre, otobüs...). Ünite boyunca tek bir araştırma sorusu (örneğin "öğrenciler yeterince uyuyor mu?") işlenirse süreç bütün görünür; program buna izin veriyor ama istemiyor. Hangisi tercih edilir?
-10. **Ders sayısı.** 34 ders saatine karşılık 24 kısa ders çıktı (1. ünitede 38 saate 28). Fazla ya da eksik görünüyorsa B ve E konularındaki incelikler (B5, D3-D4, E2-E3) ilk bakılacak yerlerdir.
+8. **Tema finali.** Program tüm süreci kapsayan bir performans görevi "verilebilir" der. Bu, ders değil değerlendirme etkinliğidir; tema sonunda tüm süreci uygulayan bir bitirme etkinliği (ders sayısına dahil olmayan) isteniyor mu? `sayilar/PLAN.md` yol haritasındaki "tema finali" ile birlikte karar verilebilir.
+9. **Ortak bağlam.** Açılış soruları tek bir bağlam kullanmıyor (uyku, boy, sıcaklık, kronometre, otobüs...). Tema boyunca tek bir araştırma sorusu (örneğin "öğrenciler yeterince uyuyor mu?") işlenirse süreç bütün görünür; program buna izin veriyor ama istemiyor. Hangisi tercih edilir?
+10. **Ders sayısı.** 34 ders saatine karşılık 24 kısa ders çıktı (1. temada 38 saate 28). Fazla ya da eksik görünüyorsa B ve E konularındaki incelikler (B5, D3-D4, E2-E3) ilk bakılacak yerlerdir.

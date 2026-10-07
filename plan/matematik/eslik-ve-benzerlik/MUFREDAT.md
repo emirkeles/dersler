@@ -1,6 +1,6 @@
 # Müfredat — 9. Sınıf Matematik · 4. Tema: Eşlik Ve Benzerlik
 
-Kaynak: MEB Türkiye Yüzyılı Maarif Modeli, <https://tymm.meb.gov.tr/matematik-dersi/unite/83> (sayfadaki güncelleme tarihi 06.08.2026; 7 Ekim 2026'da alındı). Aşağıdaki metin sayfadan olduğu gibi alınmıştır; dersler buna göre denetlenir: programda olmayan konu derse girmez, programın istediği konu eksik kalmaz. Sayfa başlığı "4. Tema: Eşlik Ve Benzerlik" biçimindedir; bu projede ünite adı "Eşlik ve Benzerlik" yazılır (`plan/matematik/UNITELER.md`).
+Kaynak: MEB Türkiye Yüzyılı Maarif Modeli, <https://tymm.meb.gov.tr/matematik-dersi/unite/83> (sayfadaki güncelleme tarihi 06.08.2026; 7 Ekim 2026'da alındı). Aşağıdaki metin sayfadan olduğu gibi alınmıştır; dersler buna göre denetlenir: programda olmayan konu derse girmez, programın istediği konu eksik kalmaz. Sayfa başlığı "4. Tema: Eşlik Ve Benzerlik" biçimindedir; bu projede tema adı "Eşlik ve Benzerlik" yazılır (`plan/matematik/TEMALAR.md`).
 
 Bu temada öğrencilerin geometrik dönüşümlere (yansıma, öteleme, dönme), üçgende eşlik ve benzerliğe ilişkin çıkarımlar yapabilmeleri; Tales, Öklid ve Pisagor teoremlerini ispatlayarak bu teoremlerle üçgende eşlik ve benzerliğin kullanılmasını gerektiren problemleri çözebilmeleri amaçlanmaktadır.
 

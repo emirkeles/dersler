@@ -16,7 +16,7 @@ Sayfadaki sıra ve ad: **5. Tema: Algoritma ve Bilişim.** Ders saati: **30.** D
 | MAT.9.5.2 Algoritmik yapılar içerisindeki mantık bağlaçlarını ve niceleyicileri çözümleyebilme (a, b) | F · Algoritmalarda mantık bağlaçları ve niceleyiciler | F1–F3 |
 | MAT.9.5.3 Mantık bağlaçları ve niceleyicilerin... deneyimi farklı matematiksel görev ve problemlere yansıtabilme (a, b, c) | G · Matematikte yansıtma: ispat ve sembolik dil | G1–G3 |
 
-Toplam: 7 konu, 31 kısa ders. Kıyas: 1. ünite 38 ders saati için 28 kısa ders (saat başına 0,74); burada 30 saat için 31 (1,03). Fark içerikten geliyor: program yalnızca sayı ve arama alanında altı görev ve iki problem, ayrıca şifreleme, çizge ve strateji için ayrı ayrı "yer verilir" diyor. Bu sayı kesin değil; birleştirilebilecek yerler "Açık sorular"da.
+Toplam: 7 konu, 31 kısa ders. Kıyas: 1. tema 38 ders saati için 28 kısa ders (saat başına 0,74); burada 30 saat için 31 (1,03). Fark içerikten geliyor: program yalnızca sayı ve arama alanında altı görev ve iki problem, ayrıca şifreleme, çizge ve strateji için ayrı ayrı "yer verilir" diyor. Bu sayı kesin değil; birleştirilebilecek yerler "Açık sorular"da.
 
 ## 2. Konular
 
@@ -330,7 +330,7 @@ Bu konudaki doğal sayı bilgileri (asal çarpan, bölme, ortak bölen) ön bilg
 
 ### Konu F · Algoritmalarda mantık bağlaçları ve niceleyiciler
 
-Mantık bağlaçlarının ve niceleyicilerin anlamları temel kabuldür ("mantık bağlaçları ile niceleyicileri bildiği") ve 1. ünitede MAT.9.1.4 kapsamında işlenir (Sayılar, D1–D3). Bu konuda anlamlar yeniden anlatılmaz; yalnızca tek cümlelik hatırlatma yapılır, işlenen konu bunların algoritmadaki işlevidir. Program bu çıktıda bağlaç olarak yalnızca ve, veya, ya da, ise'yi sayar (ancak ve ancak yok).
+Mantık bağlaçlarının ve niceleyicilerin anlamları temel kabuldür ("mantık bağlaçları ile niceleyicileri bildiği") ve 1. temada MAT.9.1.4 kapsamında işlenir (Sayılar, D1–D3). Bu konuda anlamlar yeniden anlatılmaz; yalnızca tek cümlelik hatırlatma yapılır, işlenen konu bunların algoritmadaki işlevidir. Program bu çıktıda bağlaç olarak yalnızca ve, veya, ya da, ise'yi sayar (ancak ve ancak yok).
 
 #### F1 · Karar adımı: ise, ve, veya, ya da
 - **Tek fikir:** Algoritmada bir adımın yapılıp yapılmayacağına karar veren koşul, bağlaçlarla kurulan bir önermedir.
@@ -376,7 +376,7 @@ Mantık bağlaçlarının ve niceleyicilerin anlamları temel kabuldür ("mantı
   - Programın sorduğu iki soru tartışılır: kullanım alanları nelerdir, algoritmalarda ne tür işlevleri vardır.
   - Sonuç: bağlaçlar ve niceleyiciler algoritmaların temel ögelerindendir.
 - **Program dayanağı:** MAT.9.5.3 a) "Karşılaştığı algoritmalardaki mantık bağlaçları ve niceleyicilerin kullanımını gözden geçirir." · "İncelenen algoritmalardan hangilerinde mantık bağlaçları ve niceleyicilere ihtiyaç duyulduğu ve bunların nasıl kullanıldığı gözden geçirilir." İçerik çerçevesi: "Mantık bağlaçları ve niceleyiciler, algoritmaların temel ögelerindendir."
-- **Açılış sorusu:** Bu ünitede yazdığın hangi algoritmada "her" ya da "ise" olmadan yolu bulamazdın?
+- **Açılış sorusu:** Bu temada yazdığın hangi algoritmada "her" ya da "ise" olmadan yolu bulamazdın?
 - **Akılda kalıcı cümle:** "Algoritmanın karar noktalarında bağlaç ya da niceleyici vardır."
 
 #### G2 · Her tek sayının karesi de tektir
@@ -461,7 +461,7 @@ Tabloda yeri olmayan kısa ders yoktur: A1–A6, B1–B7, C1–C3, D1–D3, E1�
 
 ## 5. Bilerek alınmayanlar
 
-**Ön bilgi sayılanlar (temel kabuller; ayrı ders yapılmadı, gerektiğinde tek cümlelik hatırlatma):** tek, çift ve ardışık tam sayılar; bir doğal sayının asal olup olmadığını ve asal çarpanlarını belirleme (B2'de yalnızca algoritmik yazım yeni); çarpan ve kat; basamak değerlerine göre çözümleme (B5 ve C2'de kullanılır); bölünen, bölen, bölüm, kalan; ortak bölen ve ortak kat; mantık bağlaçları ve niceleyiciler (anlamları 1. ünitede; F ve G'de yalnızca algoritmadaki ve ispattaki rolü); doğrusal fonksiyonlar; aritmetik ve cebirsel işlemli bir problemin aşamalarını doğal dil, akış şeması ya da sözde kodla ifade etme (A2–A4 buna yaslanır).
+**Ön bilgi sayılanlar (temel kabuller; ayrı ders yapılmadı, gerektiğinde tek cümlelik hatırlatma):** tek, çift ve ardışık tam sayılar; bir doğal sayının asal olup olmadığını ve asal çarpanlarını belirleme (B2'de yalnızca algoritmik yazım yeni); çarpan ve kat; basamak değerlerine göre çözümleme (B5 ve C2'de kullanılır); bölünen, bölen, bölüm, kalan; ortak bölen ve ortak kat; mantık bağlaçları ve niceleyiciler (anlamları 1. temada; F ve G'de yalnızca algoritmadaki ve ispattaki rolü); doğrusal fonksiyonlar; aritmetik ve cebirsel işlemli bir problemin aşamalarını doğal dil, akış şeması ya da sözde kodla ifade etme (A2–A4 buna yaslanır).
 
 **Zenginleştirme (zorunlu değil, derslere girmedi):**
 - En büyük ortak bölen için algoritma ve Öklid algoritması; öz yinelemeli (rekürsif) algoritmalar.
@@ -491,9 +491,9 @@ Tabloda yeri olmayan kısa ders yoktur: A1–A6, B1–B7, C1–C3, D1–D3, E1�
 
 ## 6. Açık sorular
 
-1. **Ders sayısı (31) ve birleştirme.** Saat başına oran 1. üniteden yüksek. İstenirse şu çiftler tek derse indirilebilir, ama her birinde iki ayrı problem tek derse sıkışır: B2 + B3 (asal çarpan, aralarında asal), B6 + B7 (iki arama problemi), A3 + A4 (cebirsel ve sözel dönüşüm), E5 + E6 (strateji karşılaştırma ve çıkarım). Hepsi birleşirse 27 olur. Hangisini istersiniz?
+1. **Ders sayısı (31) ve birleştirme.** Saat başına oran 1. temadan yüksek. İstenirse şu çiftler tek derse indirilebilir, ama her birinde iki ayrı problem tek derse sıkışır: B2 + B3 (asal çarpan, aralarında asal), B6 + B7 (iki arama problemi), A3 + A4 (cebirsel ve sözel dönüşüm), E5 + E6 (strateji karşılaştırma ve çıkarım). Hepsi birleşirse 27 olur. Hangisini istersiniz?
 2. **MAT.9.5.1'in beş konuya bölünmesi** kuralın istisnasıdır (bölüm 2). A–D'yi tek "algoritma temelli problemler" konusunda toplayıp E'yi ayrı bırakmak (toplam 4 konu) da mümkün; ders sayısı değişmez, yalnızca konu başlıkları değişir.
-3. **1. ünite ile örtüşme.** Önerme, niceleyici ve bağlaçlar 1. ünitede (MAT.9.1.4, D1–D3, "ancak ve ancak" dahil) işleniyor; bu programın temel kabulü de bunları "bildiği" sayıyor. F1–F3 ve G anlamları yeniden öğretmiyor, yalnızca algoritmadaki ve ispattaki rolünü işliyor. Ayrıca G2'nin cebirsel ispatı 1. ünitedeki C5 ("İspat mı, karşı örnek mi?") ve D7–D8 ile komşu; G2'nin açılışında C5'e geri bağlantı verilsin mi?
+3. **1. tema ile örtüşme.** Önerme, niceleyici ve bağlaçlar 1. temada (MAT.9.1.4, D1–D3, "ancak ve ancak" dahil) işleniyor; bu programın temel kabulü de bunları "bildiği" sayıyor. F1–F3 ve G anlamları yeniden öğretmiyor, yalnızca algoritmadaki ve ispattaki rolünü işliyor. Ayrıca G2'nin cebirsel ispatı 1. temadaki C5 ("İspat mı, karşı örnek mi?") ve D7–D8 ile komşu; G2'nin açılışında C5'e geri bağlantı verilsin mi?
 4. **Temel kabul ile A2–A4 sınırı.** Program, "aritmetik ve cebirsel işlemler içeren bir problem durumunun aşamalarını algoritmik olarak ifade edebildiği"ni ön bilgi sayıyor; MAT.9.5.1 c) ise aynı dönüştürmeyi çıktı olarak istiyor. A2–A4 bu yüzden kısmen tekrar niteliğinde; yeni olan problem türleri (doğrusal fonksiyonun sıfırı, vücut kitle indeksi) ve temsil seçimi. Bu sınır ders yazılırken netleşmeli.
 5. **"Bölme algoritması" iki anlama gelebilir:** bölünen = bölen · bölüm + kalan eşitliği ya da uzun bölme işlemi. B1 birinci anlamı (ve ön değerlendirmedeki "bölme algoritması"nı) esas aldı.
 6. **"Bilinen bölünebilme kuralları" hangileri?** Program saymıyor. B5 öğrencinin bildiği kurallardan (örneğin 2, 3, 5, 9, 10) birkaçını almayı öneriyor; hangileri sizin kararınız.
@@ -504,4 +504,4 @@ Tabloda yeri olmayan kısa ders yoktur: A1–A6, B1–B7, C1–C3, D1–D3, E1�
 11. **Tokalaşma sayısı (E1).** Program, toplam sayıyı bulmak için algoritma istiyor; genel formül (n kişi için) ve çizgede kenar ile köşe sayısı ilişkisi zenginleştirme (çizge kuramı genellemeleri). E1 belirli kişi sayılarında algoritmayı uyguluyor; E6'daki "çıkarım" örüntü sezgisinde kalacak, genel formülü ders olarak vermeyecek. Genel formül istenir mi?
 12. **Programda olmayan ama örnek için gerekli olanlar.** Vücut kitle indeksinin formülü (A4), tek sayının cebirsel gösterimi (G2) ve harf-sayı eşleştirmesi (C1) program metninde yok; örnek problemlerin kendisi bunları gerektiriyor. Yalnızca bu örneklerde, tek satırla verilir.
 13. **Ders içeriği olmayan etkinlikler.** Araştırma ödevleri, performans görevi, çalışma kâğıdı ve köprü kurma tartışmaları (bölüm 5) sitede ayrı bir bölüm olarak istenir mi, yoksa öğretmene bırakılır mı?
-14. **Kayıt.** `plan/matematik/UNITELER.md` bu ünitenin ders saatini "ünite dosyasında" diye bırakıyor; sayfadaki değer 30 ve sıra 5 (UNITELER.md ile uyumlu). O dosyaya dokunulmadı.
+14. **Kayıt.** `plan/matematik/TEMALAR.md` bu temanın ders saatini "tema dosyasında" diye bırakıyor; sayfadaki değer 30 ve sıra 5 (TEMALAR.md ile uyumlu). O dosyaya dokunulmadı.

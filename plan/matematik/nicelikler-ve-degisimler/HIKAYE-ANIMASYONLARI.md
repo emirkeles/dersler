@@ -1,14 +1,14 @@
-# Plan — Hikâye animasyonları · 2. ünite: Nicelikler ve Değişimler
+# Plan — Hikâye animasyonları · 2. tema: Nicelikler ve Değişimler
 
 Ölçütler (üç koşul, ek kurallar), biçim, derse yerleşim ve üretim hattı: `../sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–3 ve 5. Burada yinelenmedi.
 
-**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Ünite henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
+**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Tema henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
 
-32 dersin 3'ünde hikâye var; kalanlarında yok. Sayı düşük, çünkü program bu ünitede gerçek yaşam bağlamını derslerin kendisine koyuyor (taksi, ücret tarifesi, buz, arz-talep); derslerin çoğu zaten hayattan bir örnekle açılıyor ya da kuruluyor.
+32 dersin 3'ünde hikâye var; kalanlarında yok. Sayı düşük, çünkü program bu temada gerçek yaşam bağlamını derslerin kendisine koyuyor (taksi, ücret tarifesi, buz, arz-talep); derslerin çoğu zaten hayattan bir örnekle açılıyor ya da kuruluyor.
 
 ## 1. Hikâyesi olan dersler (müfredattaki önem sırasıyla)
 
-Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek yaşam bağlamını açıkça istiyor mu, (2) fikir çıktının kendi içeriği mi, (3) programdaki değer ve okuryazarlıklarla bağlı mı.
+Sıralama ölçütü 1. temadakiyle aynı: (1) program o fikir için gerçek yaşam bağlamını açıkça istiyor mu, (2) fikir çıktının kendi içeriği mi, (3) programdaki değer ve okuryazarlıklarla bağlı mı.
 
 | Sıra | Ders | Fikir | Hayatta nerede | Hikâye | Kapanış cümlesi |
 |---|---|---|---|---|---|
@@ -32,7 +32,7 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 |---|---|---|---|
 | 1 | Büyüme eğrileri ve her tür tahmin (nüfus, satış, su seviyesi) tam bu hatayla sınanır. | Boyunun ölçülmesi ve "bu gidişle…" tahmini her evde yapılır. | **Sınırda.** Dersin açılışı (çekilen göl, 100 gün sonrası) aynı fikri hayattan bir durumla soruyor; ama göl öğrencinin hayatından değil ve saçma sonuca sayıyla varmıyor. "Sınır" fikri sayı görmeden soyut kalır. |
 | 2 | Şarj, tasarım gereği aşamalıdır: pil dolana yakın akım düşürülür; kural gerçekten aralığa göre değişir (son bölüm yaklaşık olarak doğrusal; bölüm 4). | Her gün, kendi telefonunda. | **Sınırda.** Ders programın buz deneyiyle kurulu. A6–A10 ve C1–C4 "ders hayattan bir örnekle kurulu" gerekçesiyle hikâyesiz bırakıldı; fark şu: onların örnekleri (otopark, kargo, taksi) öğrencinin kendi hayatından, buz ise bir laboratuvar grafiği. Öğrencinin parçalı kuralla kendi hayatında karşılaştığı yer şarj ekranı. |
-| 3 | **Sınırda.** Haritada işaretli bir noktaya uzaklık işaretsiz bir sayıdır; nokta geçilince yeniden büyür. Mutlak değeri gerektiren uygulama değil, öğrencinin kafasındaki 4 − 0,5t hesabıdır; uygulama uzaklığı doğrudan ölçer. | Otobüs, servis, metro; durağı kaçırmak dahil. | **Sınırda.** Çekirdek fikir (mutlak değer = uzaklık) 1. ünitenin kombi hikâyesinde ve B1 ile B3'ün açılışlarında var. Yeni olan zamanla değişim ve grafiğin sıfırda **kırılması**; hikâye bunu öne çıkarır. |
+| 3 | **Sınırda.** Haritada işaretli bir noktaya uzaklık işaretsiz bir sayıdır; nokta geçilince yeniden büyür. Mutlak değeri gerektiren uygulama değil, öğrencinin kafasındaki 4 − 0,5t hesabıdır; uygulama uzaklığı doğrudan ölçer. | Otobüs, servis, metro; durağı kaçırmak dahil. | **Sınırda.** Çekirdek fikir (mutlak değer = uzaklık) 1. temanın kombi hikâyesinde ve B1 ile B3'ün açılışlarında var. Yeni olan zamanla değişim ve grafiğin sıfırda **kırılması**; hikâye bunu öne çıkarır. |
 
 ## 4. Doğruluk notları
 
@@ -53,12 +53,12 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 | A1 Değişen iki nicelik · A8 Sabit fonksiyon · A11 ax + b'nin işareti · C2 f(x) = 0, f(x) < 0 ve f(x) > 0 | Konu kendiliğinden anlaşılır ve açılış örnekleri (termometre, sabit ücretli abonelik, eksiye düşen hesap, boşalan tank) yeterince somut. |
 | A2 Girdi ve çıktı kümeleri · A3 Sıfır ve işaret: f(x) = x · A4 Artanlık ve uç değerler: f(x) = x · A5 Bire birlik: f(x) = x | Referans fonksiyonun özelliklerini adlandıran dersler. Açılışlar (otomat tuşları, termometre, asansör, okul numarası) fikri taşıyor; hikâye aynı örneği tekrar eder. |
 | A6 Doğruyu kaydırmak · A7 Eğimi belirleyen a · A9 Katsayılardan grafiği okumak · A10 Katsayı ve artanlık-azalanlık | Dersin kendisi ücret tarifesiyle kurulu (otopark, hız, kargo, taksi; taksi programın kendi örneği). İkinci bir hikâye tekrar olur. |
-| A12 Artanlığın ispatı · A13 Bire birliğin ispatı · A14 Grafik mi, cebir mi? | İspat ve doğrulama tekniği. "Örnek yetmez, ispat gerekir" fikrini 1. ünitenin siyah kuğu hikâyesi taşıyor. |
-| A15 Bir aralıkta en büyük ve en küçük değer | Uç noktanın dahil olup olmaması 1. ünitede (B2, lunapark boy sınırı) hayattan kurulu; burada yeni olan yalnızca fonksiyona uygulanışı. |
-| B1 \|x\| ile f(x) = x · B2 \|x\|'in parçalı gösterimi · B3 ±\|x\|'in nitel özellikleri | Mutlak değerin uzaklık anlamı ön bilgi; 1. ünitede kombi hikâyesi var. Açılışlar (evin doğusu ve batısı, borç, eve en yakın yer) yeterli. |
+| A12 Artanlığın ispatı · A13 Bire birliğin ispatı · A14 Grafik mi, cebir mi? | İspat ve doğrulama tekniği. "Örnek yetmez, ispat gerekir" fikrini 1. temanın siyah kuğu hikâyesi taşıyor. |
+| A15 Bir aralıkta en büyük ve en küçük değer | Uç noktanın dahil olup olmaması 1. temada (B2, lunapark boy sınırı) hayattan kurulu; burada yeni olan yalnızca fonksiyona uygulanışı. |
+| B1 \|x\| ile f(x) = x · B2 \|x\|'in parçalı gösterimi · B3 ±\|x\|'in nitel özellikleri | Mutlak değerin uzaklık anlamı ön bilgi; 1. temada kombi hikâyesi var. Açılışlar (evin doğusu ve batısı, borç, eve en yakın yer) yeterli. |
 | B5 c ile yukarı aşağı · B6 Mutlak değerli fonksiyonun parçalı gösterimi | V biçimli grafiği ve iki parçayı 3 numaralı hikâye (durağı kaçırmak) taşıyor; c ile taşıma işlem tekniği. |
 | C1 Problemi fonksiyona çevirmek · C3 f(x) = g(x): iki doğrunun kesişimi · C4 f(x) ≤ g(x) ve f(x) ≥ g(x) | Dersler programın istediği gibi gerçek yaşam problemiyle kurulu (kargo tarifesi, arz-talep; arz-talep programın kendi örneği). Bkz. bölüm 6, ilk aday. |
-| C5 \|f(x)\| = k · C6 \|f(x)\| < k ve \|f(x)\| > k | Fikir 1. ünitenin kombi hikâyesinde (\|x − 22\| < 1); dersler de dolum makinesi ve ilaç dolabı payıyla kurulu. |
+| C5 \|f(x)\| = k · C6 \|f(x)\| < k ve \|f(x)\| > k | Fikir 1. temanın kombi hikâyesinde (\|x − 22\| < 1); dersler de dolum makinesi ve ilaç dolabı payıyla kurulu. |
 | C7 \|f(x)\| = g(x) · C8 \|f(x)\| ≤ g(x) ve \|f(x)\| ≥ g(x) | İşlem tekniği. Öğrencinin gündelik hayatında doğrudan karşılığı yok; hikâye zorlama olur. |
 | C9 Çözümü başka yoldan sınamak | Çalışma alışkanlığı; kendiliğinden anlaşılır. |
 
@@ -70,11 +70,11 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 | "Bu kullanıcı adı alınmış." İki kişi aynı kullanıcı adını alamaz, aynı görünen adı alabilir. | A5 | Koşul 3. Dersin açılışı (okul numarası) aynı fikir; konu kendiliğinden anlaşılır. |
 | Elektrik faturasında kademeli tarife (A16 için başka nesne). | A16 | Koşul 2 zayıf (faturayı öğrenci okumuyor); kademe sınırı ve fiyatlar sık değişiyor, güncel değer doğrulanmadı. Kural tam olarak parçalı doğrusal olduğu için yedek adaydı; hakem şarj hikâyesini "yaklaşık olarak" sözü koşuluyla kabul etti, yedeğe gerek kalmadı. |
 | Akort uygulaması: hedef 440 Hz, sapma \|f − 440\|. | B4, B5 | Koşul 1. Uygulama işaretli sapmayı (pes ya da tiz) gösterir, mutlak değeri değil; matematik giydirilmiş olurdu. |
-| Dolum makinesi payı: 500 g ± 10 g. | C5, C6 | 1. ünitenin kombi hikâyesinin tekrarı. |
+| Dolum makinesi payı: 500 g ± 10 g. | C5, C6 | 1. temanın kombi hikâyesinin tekrarı. |
 
 ## 7. Hakem incelemesi (7 Ekim 2026)
 
-Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünitenin en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
+Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. temanın en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
 
 | Hikâye | Müfredat | Katkı | Toplam | Karar |
 |---|---|---|---|---|
@@ -84,11 +84,11 @@ Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünit
 
 | Değişiklik | Gerekçe |
 |---|---|
-| Sıra değişti: C10 birinci, A16 ikinci | Hakem puanı; C10 ünitenin (ve bütün listenin) en yüksek puanlı hikâyesi. |
+| Sıra değişti: C10 birinci, A16 ikinci | Hakem puanı; C10 temanın (ve bütün listenin) en yüksek puanlı hikâyesi. |
 | A16: anlatıma "yaklaşık olarak" girdi | Gerçek şarj eğrisinin son bölümü doğru parçası değil; söylenmezse hikâye parçalı doğruyu yanlış örnekle öğretir. |
 | A16: vurgu "60. dakikada dolar tahmini tutmadı"dan "üç aralık, üç kural"a kaydı | Eski şaşırtan an C10 ile aynı kalıptaydı (doğrusal tahmin aralık dışında tutmuyor). |
 | A16: süreler 25, 55 ve 95 dakika oldu (hızlar 2, 1, yarım puan) | "Dakikada 5/3 puan" sesle söylenmiyordu; sayılar zaten kurguydu. |
 | B4: hesap uygulamaya değil öğrenciye verildi; sahne yol tarifi değil, işaretli durak | "Uygulama işareti atıp uzaklığı gösteriyor" doğru bir mekanizma değildi. |
 | A16, C10 ve B4'te sınırda kalan koşullar açık yazıldı; A16'nın A6–A10 ve C1–C4'ten farkı belirtildi | "Ders hayattan kurulu" gerekçesi başka dersleri elerken A16'yı elemiyordu. |
 
-Bütçe daralırsa bu ünitede ilk vazgeçilecek B4'tür (listenin tamamında ikinci sırada).
+Bütçe daralırsa bu temada ilk vazgeçilecek B4'tür (listenin tamamında ikinci sırada).
