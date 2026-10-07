@@ -1,6 +1,6 @@
 # Ortak kurallar
 
-Bütün dersler ve üniteler için bağlayıcıdır. Sayılar ünitesi yazılırken alınan kararlardan derlendi (`matematik/sayilar/PLAN.md`); bir üniteye özgü kararlar o ünitenin `PLAN.md` dosyasında durur.
+Bütün dersler ve üniteler için bağlayıcıdır. Sayılar ünitesi yazılırken alınan kararlardan derlendi (`plan/matematik/sayilar/PLAN.md`); bir üniteye özgü kararlar o ünitenin `PLAN.md` dosyasında durur.
 
 ## 1. Kime, nerede
 

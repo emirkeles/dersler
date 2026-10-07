@@ -80,9 +80,9 @@ https://hyperframes.heygen.com/llms.txt
 - `meta.json` — project metadata (id, name)
 - `transcript.json` — whisper word-level transcript (if generated)
 
-## Linting — ALWAYS RUN AFTER CHANGES
+## Linting
 
-After creating or editing any `.html` composition, **always** run the full check before considering the task complete:
+After creating or editing any `.html` composition, run the full check before considering the task complete:
 
 ```bash
 npm run check
