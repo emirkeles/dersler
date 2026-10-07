@@ -1,4 +1,4 @@
-/* Ana sayfa ve ünite sayfaları. ders.css'ten sonra yüklenir: renkler, yazı tipi ve odak çizgisi oradan gelir.
+/* Ana sayfa ve tema sayfaları. ders.css'ten sonra yüklenir: renkler, yazı tipi ve odak çizgisi oradan gelir.
    Sınıf adları ders.css'tekilerle çakışmamalı (.intro, .act, .note, .card, .next orada motorun parçalarıdır).
    Fikir aynı: tahta sayfadaki tek renkli yüzeydir (kaldığın dersin açılış sorusu); listeler düz ve sessizdir.
    Sarı yalnızca "şimdi bunu aç" demektir: Devam et düğmesi ve yarıda kalan ders. */
@@ -78,7 +78,7 @@ html:has(body.site){height:auto;overflow:visible}
 .soon ol{flex:1 1 420px;padding:0;list-style-position:inside;columns:2 220px;column-gap:28px}
 .soon li::marker{color:var(--dim)}
 
-/* ünite sayfası: başlık + ilerleme */
+/* tema sayfası: başlık + ilerleme */
 .unit-top{display:flex;flex-wrap:wrap;align-items:flex-end;gap:28px 56px}
 .unit-intro{flex:1 1 460px;min-width:0}
 .unit-top .where{font-size:.95rem;color:var(--muted)}

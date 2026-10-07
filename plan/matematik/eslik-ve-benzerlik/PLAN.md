@@ -1,6 +1,6 @@
 # Plan — 9. Sınıf · 4. Tema: Eşlik ve Benzerlik
 
-Dayanak: `MUFREDAT.md` (MEB sayfası, 7 Ekim 2026'da alındı). Biçim ve kurallar: `plan/matematik/UNITELER.md` ve `plan/matematik/sayilar/PLAN.md` (kısa ders = tek fikir, 3–5 sahne, 4–6 dakika, sonunda 2 çıkış sorusu). Bu dosya yalnızca konuları ve kısa dersleri belirler; sahne sahne senaryo, ekran metni ve kod onaydan sonra yazılır.
+Dayanak: `MUFREDAT.md` (MEB sayfası, 7 Ekim 2026'da alındı). Biçim ve kurallar: `plan/matematik/TEMALAR.md` ve `plan/matematik/sayilar/PLAN.md` (kısa ders = tek fikir, 3–5 sahne, 4–6 dakika, sonunda 2 çıkış sorusu). Bu dosya yalnızca konuları ve kısa dersleri belirler; sahne sahne senaryo, ekran metni ve kod onaydan sonra yazılır.
 
 Kısaltmalar: "çerçeve" = programın içerik çerçevesi cümleleri; "uygulama" = MAT.9.4.x öğrenme-öğretme uygulamaları; "4.1.a" gibi kodlar süreç bileşenleridir.
 
@@ -16,7 +16,7 @@ Ders saati: 36 (sayfada "Ders Saati 36"). Program saati çıktılara ayırmıyor
 | D · Tales, Öklid ve Pisagor teoremleri | MAT.9.4.4 Tales, Öklid ve Pisagor teoremlerini ispatlayabilme | Tales, Öklid ve Pisagor Teoremleri | D1–D5 (5) |
 | E · Eşlik ve benzerlik problemleri | MAT.9.4.5 Eşlik ve benzerlikle ilgili çıkarım ve teoremleri içeren problemleri çözebilme | Eşlik ve Benzerlik Problemleri | E1–E3 (3) |
 
-Toplam 5 konu, 18 kısa ders. Kıyas: 1. ünite 38 saat için 28 kısa ders. Burada sayı düşük çünkü ünitenin büyük kısmı az sayıda teoremin ispatı ve problem çözme sürecidir; dönüşümlerin görüntü özellikleri ile eşlik koşulları ön bilgi sayılıyor (temel kabuller). Dersler arasında zincir vardır: A → B1 (dönüşümle eş üçgen) → B2–B4 (benzerlik koşulları) → C (benzer üçgen çizme) → D (teoremler, hep benzer üçgenle) → E.
+Toplam 5 konu, 18 kısa ders. Kıyas: 1. tema 38 saat için 28 kısa ders. Burada sayı düşük çünkü temanın büyük kısmı az sayıda teoremin ispatı ve problem çözme sürecidir; dönüşümlerin görüntü özellikleri ile eşlik koşulları ön bilgi sayılıyor (temel kabuller). Dersler arasında zincir vardır: A → B1 (dönüşümle eş üçgen) → B2–B4 (benzerlik koşulları) → C (benzer üçgen çizme) → D (teoremler, hep benzer üçgenle) → E.
 
 Programın sınırları: programda "…değinilmez", "…girilmez" ya da "…ile sınırlı" biçiminde açık bir yasak cümlesi yoktur (sayfa baştan sona tarandı). Sınırlar programın kendi ifadelerindedir ve ilgili kısa dersin "Program dayanağı" alanında "Sınır" olarak alıntılanmıştır: dönüşümler yalnızca yansıma, öteleme ve dönme; öteleme ve dönmenin yansımalarla ilişkisi paralel ve kesişen iki doğruya göre; "tüm kenar uzunlukları belli olan" üçgen; Tales için "en az üç" paralel doğru; Öklid için "dik kenar bağıntıları"; dar ve geniş açılı üçgen sonuçları için "yorumlamaları". Programın sınırlarının dışında kalan geleneksel başlıklar bölüm 5'te sayılmıştır.
 
@@ -381,4 +381,4 @@ Programda olmayan, bu konularda geleneksel olarak anlatılan başlıklar (kullan
 7. **Farklı ispatlar (4.4.a).** Çıktı "farklı ispatları kullanır" diyor; uygulama metni tek yöntemi (benzer üçgen) anlatıyor, görsel ve farklı ispatlar zenginleştirmede. Dersler tek yöntemle kalıyor. Yeterli mi?
 8. **E dersleri.** Çıktı bir süreç; örnek problemler ve gerçek yaşam bağlamları (gölge, nehir genişliği, çatı) programda yazılı değil, benim önerim. Üç ders yeterli mi, örnek problemler onay aşamasında mı seçilsin?
 9. **Motif ve süsleme.** Program bunu sınıfta yapılacak bir performans görevi olarak anlatıyor. A1 ve A2'de açılış ve tek sahne olarak yer aldı; ayrı bir "A5 · Dönüşümlerle motif" dersi istenir mi?
-10. **Ders sayısı.** 36 saat için 18 kısa ders. Program saati çıktılara bölmediği için dağılım yazılmadı. `UNITELER.md` tablosundaki "ünite dosyasında" yazan saat hücresi 36 olarak güncellenebilir (bu işte başka dosyaya dokunulmadı).
+10. **Ders sayısı.** 36 saat için 18 kısa ders. Program saati çıktılara bölmediği için dağılım yazılmadı. `TEMALAR.md` tablosundaki "tema dosyasında" yazan saat hücresi 36 olarak güncellenebilir (bu işte başka dosyaya dokunulmadı).

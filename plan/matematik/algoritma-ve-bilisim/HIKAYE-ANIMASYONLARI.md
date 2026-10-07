@@ -1,14 +1,14 @@
-# Plan — Hikâye animasyonları · 5. ünite: Algoritma ve Bilişim
+# Plan — Hikâye animasyonları · 5. tema: Algoritma ve Bilişim
 
 Ölçütler (üç koşul, ek kurallar), biçim, derse yerleşim ve üretim hattı: `../sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–3 ve 5. Burada yinelenmedi.
 
-**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Ünite henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
+**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Tema henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
 
-31 dersin 3'ünde hikâye var; kalanlarında yok. Program bu ünitede örnek problemleri tek tek sayıyor (nöbet, tokalaşma, çöp arabası, vücut kitle indeksi, sayı tutma oyunu) ve dersler bunlarla kurulu; hikâyeler, öğrencinin her gün kullandığı ama içini görmediği üç yere yazıldı.
+31 dersin 3'ünde hikâye var; kalanlarında yok. Program bu temada örnek problemleri tek tek sayıyor (nöbet, tokalaşma, çöp arabası, vücut kitle indeksi, sayı tutma oyunu) ve dersler bunlarla kurulu; hikâyeler, öğrencinin her gün kullandığı ama içini görmediği üç yere yazıldı.
 
 ## 1. Hikâyesi olan dersler (müfredattaki önem sırasıyla)
 
-Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek yaşam bağlamını açıkça istiyor mu, (2) fikir çıktının kendi içeriği mi, (3) programdaki değer ve okuryazarlıklarla bağlı mı.
+Sıralama ölçütü 1. temadakiyle aynı: (1) program o fikir için gerçek yaşam bağlamını açıkça istiyor mu, (2) fikir çıktının kendi içeriği mi, (3) programdaki değer ve okuryazarlıklarla bağlı mı.
 
 | Sıra | Ders | Fikir | Hayatta nerede | Hikâye | Kapanış cümlesi |
 |---|---|---|---|---|---|
@@ -61,14 +61,14 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 | C1 Şifreleme ve çözme · C2 Sayıyı ikili sisteme çevir | C1 mesajlaşma uygulamasıyla açılıyor ve kendiliğinden anlaşılır. İkili sistemin hayattaki yeri 1 numaralı hikâyede (karekod) veriliyor. |
 | D2 Çizge başka sorularda da işe yarar · D3 Çizgeyi algoritmanın diliyle oku · E3 Çöp arabası: çizgeyi tasarla | Dersler zaten hayattan kurulu (sosyal ağ, yol ağı, navigasyon; çöp arabası programın kendi örneği). Çizgenin ne olduğunu 2 numaralı hikâye taşıyor. |
 | E2 Şifre hangi kuralla yazıldı? · E4 Çözümü kontrol et · E5 Aynı problem, iki strateji · E6 Çıkarım yap, değerlendir | Problem çözme sürecinin adımları; çalışma alışkanlığı. Hayatta ayrı bir karşılaşma anı yok. |
-| F1 Karar adımı: ise, ve, veya, ya da · F3 Çizge ve şifreleme problemlerinde bağlaç ve niceleyici | Bağlaçların anlamı ön bilgi; "ve / veya" farkını 1. ünitenin alışveriş filtresi hikâyesi taşıyor. Niceleyicinin algoritmadaki işlevini 3 numaralı hikâye (parola ekranı) gösteriyor. |
-| G1 Algoritmalara geri bak · G2 Her tek sayının karesi de tektir · G3 Üç dil, tek önerme | Yansıtma ve ispat. "Denemek kanıtlamaz" fikri 1. ünitenin siyah kuğu hikâyesinde. |
+| F1 Karar adımı: ise, ve, veya, ya da · F3 Çizge ve şifreleme problemlerinde bağlaç ve niceleyici | Bağlaçların anlamı ön bilgi; "ve / veya" farkını 1. temanın alışveriş filtresi hikâyesi taşıyor. Niceleyicinin algoritmadaki işlevini 3 numaralı hikâye (parola ekranı) gösteriyor. |
+| G1 Algoritmalara geri bak · G2 Her tek sayının karesi de tektir · G3 Üç dil, tek önerme | Yansıtma ve ispat. "Denemek kanıtlamaz" fikri 1. temanın siyah kuğu hikâyesinde. |
 
 ## 6. Değerlendirip elediğim adaylar
 
 | Aday | Ders | Neden elendi |
 |---|---|---|
-| "Geçersiz numara." Formda T.C. kimlik numarasının bir hanesi yanlış yazılınca çıkan uyarı: bilgisayar kaydı taramaz, üç adım işletir (ilk on haneyi topla, toplamın son basamağına bak, on birinci haneyle karşılaştır). | A1 | **Hakem çıkardı (koşul 3).** A1 ünitenin en kolay dersi; aynı ölçütle A2, A5 ve A6 hikâyesiz. Ayrıca derste olmayan özel bir kuralı (denetim hanesi) öğretiyor, on bir haneli sayı ses için ağır ve örnek numara gerçek bir kişiye ait olabilir. Kural doğrulandı (on birinci hane, ilk on hanenin toplamının son basamağıdır). Yeniden kullanılacaksa yeri A5'tir (üç adım verilir, ne işe yaradığı sorulur); o zaman yeniden puanlanır ve denetimden geçmenin numaranın gerçek olduğunu göstermediği, yalnızca yazım hatasını elediği söylenir. |
+| "Geçersiz numara." Formda T.C. kimlik numarasının bir hanesi yanlış yazılınca çıkan uyarı: bilgisayar kaydı taramaz, üç adım işletir (ilk on haneyi topla, toplamın son basamağına bak, on birinci haneyle karşılaştır). | A1 | **Hakem çıkardı (koşul 3).** A1 temanın en kolay dersi; aynı ölçütle A2, A5 ve A6 hikâyesiz. Ayrıca derste olmayan özel bir kuralı (denetim hanesi) öğretiyor, on bir haneli sayı ses için ağır ve örnek numara gerçek bir kişiye ait olabilir. Kural doğrulandı (on birinci hane, ilk on hanenin toplamının son basamağıdır). Yeniden kullanılacaksa yeri A5'tir (üç adım verilir, ne işe yaradığı sorulur); o zaman yeniden puanlanır ve denetimden geçmenin numaranın gerçek olduğunu göstermediği, yalnızca yazım hatasını elediği söylenir. |
 | "Doğum günün seneye hangi güne denk gelir?" 365 = 52 · 7 + 1; kalan 1 olduğu için her tarih bir sonraki yıl bir gün kayar. | B1 | Koşul 3. Gerçek ve şaşırtıcı; ama B1 zaten öğrencinin kendi hayatından bir durumla (nöbet listesi) kurulu, fikir aynı. **Sınırda aday.** |
 | "Yirmi soruda bir milyon." Her soru seçenekleri yarıya indirirse 20 soru 2²⁰ = 1 048 576 seçeneği ayırır. | B7 | Koşul 3. Ders oyunun kendisiyle kurulu. Ayrıca `PLAN.md` en az soru sayısının genellenmesini ders dışı bırakıyor. |
 | "Renk ayarı neden 255'te bitiyor?" Sekiz basamağın hepsi 1 olunca 255 eder. | C2 | Aynı konuda ikinci hikâye olurdu; karekod daha yaygın. Renk seçiciyi her öğrenci kullanmıyor (koşul 2 daha zayıf). Hakem C3 yerine C2'yi yeğlerse yedek adaydır; kapanış cümlesine ("İkiye böl, kalanları ters sırayla yaz") tam oturur: 255'i ikiye böle böle sekiz kez 1 kalır. |
@@ -76,7 +76,7 @@ Sıralama ölçütü 1. ünitedekiyle aynı: (1) program o fikir için gerçek y
 
 ## 7. Hakem incelemesi (7 Ekim 2026)
 
-Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünitenin en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
+Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. temanın en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
 
 | Hikâye | Müfredat | Katkı | Toplam | Karar |
 |---|---|---|---|---|
@@ -87,7 +87,7 @@ Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünit
 
 | Değişiklik | Gerekçe |
 |---|---|
-| A1 "Geçersiz numara" çıktı; bölüm 6'ya taşındı | Üçüncü koşuldan kaldı: A1 ünitenin en kolay dersi; derste olmayan bir kural öğretiyordu. |
+| A1 "Geçersiz numara" çıktı; bölüm 6'ya taşındı | Üçüncü koşuldan kaldı: A1 temanın en kolay dersi; derste olmayan bir kural öğretiyordu. |
 | F2 "Parola ekranı" eklendi | Elenme gerekçesi (A1 ile aynı tür nesne) A1 çıkınca düştü. Program MAT.9.5.2'de niceleyicileri "gerçek yaşam durumlarında" açıkça istiyor ve bu çıktının hiç hikâyesi yoktu. |
 | C3: "öbür kareler" yerine "geri kalan karelerin çoğu"; "özünde" eklendi; "sekizer sekizer" yerine "öbek öbek" | 441 karenin 208'i veri taşır; maske yüzünden kareler doğrudan harfi vermez; sekizli gruplama derste yok. |
 | C3: kod menü adresi değil, panodaki kısa düz yazı | 21 × 21 kod en çok 17 karakter alır; menü adresi sığmaz. |

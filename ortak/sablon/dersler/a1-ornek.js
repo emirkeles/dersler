@@ -1,7 +1,7 @@
 /* A1 — İki sayının ortası (ŞABLON)
    Bir kısa dersin iskeletini ve motorun en sık kullanılan çağrılarını gösterir:
    kanca → tahmin et → gör → adlandır → dene → çıkış soruları (plan/KURALLAR.md).
-   Kopyalayınca içeriği tamamen değiştir; `id` alanı '<ünite>-<kod>' olmalı. Motorun tamamı: ortak/API.md. */
+   Kopyalayınca içeriği tamamen değiştir; `id` alanı '<tema>-<kod>' olmalı. Motorun tamamı: ortak/API.md. */
 (() => {
   'use strict';
   const { RENK, yazi, nokta, belir, sayiDogrusu } = window.KIT;

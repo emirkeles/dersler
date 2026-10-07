@@ -12,7 +12,7 @@ Tema 18 ders saati. Program iki öğrenme çıktısı verir; MAT.9.7.2'yi üç k
 | MAT.9.7.2 (a, b): tüm olası durumlar, matematiksel ilişkiler | B · Teorik olasılık | B1–B7 |
 | MAT.9.7.2 (c): deneysel ile teorik arasındaki ilişki | C · Deneysel ile teorik olasılık | C1–C3 |
 
-Program ders saatini yalnızca temaya veriyor (18), konulara paylaştırmıyor. Kıyas: 1. ünitede 38 saat için 28 kısa ders (saat başına 0,74), burada 18 saat için 16 (saat başına 0,89). Oran yüksek; A6 ve C3 en zayıf halkalar (bölüm 6, soru 2).
+Program ders saatini yalnızca temaya veriyor (18), konulara paylaştırmıyor. Kıyas: 1. temada 38 saat için 28 kısa ders (saat başına 0,74), burada 18 saat için 16 (saat başına 0,89). Oran yüksek; A6 ve C3 en zayıf halkalar (bölüm 6, soru 2).
 
 ## 2. Konular
 
@@ -309,7 +309,7 @@ Kullanıcı isterse eklenir.
 ## 6. Açık sorular
 
 1. **Konu ayrımı.** MAT.9.7.2'yi B ve C diye ikiye ayırdım (bölüm 2). Tek konu isterseniz C, B'nin sonuna B8–B10 olarak eklenir; ders sayısı değişmez.
-2. **A6 ve C3 gerçekten ayrı ders mi?** A6, büyük sayılar yasası ile yargıyı taşıyor ama A4–A5'in sonucuyla örtüşüyor; A5'e birleştirilebilir. C3 yalnızca programın "açık uçlu sorular verilir" cümlesine dayanıyor, yeni kavram getirmiyor; derslerin açılış sorularına dağıtılabilir. İkisi çıkarsa 14 ders kalır (saat başına 0,78, 1. üniteye yakın). Önerim: A6'yı tut, C3'ü sorarak karar ver.
+2. **A6 ve C3 gerçekten ayrı ders mi?** A6, büyük sayılar yasası ile yargıyı taşıyor ama A4–A5'in sonucuyla örtüşüyor; A5'e birleştirilebilir. C3 yalnızca programın "açık uçlu sorular verilir" cümlesine dayanıyor, yeni kavram getirmiyor; derslerin açılış sorularına dağıtılabilir. İkisi çıkarsa 14 ders kalır (saat başına 0,78, 1. temaya yakın). Önerim: A6'yı tut, C3'ü sorarak karar ver.
 3. **İki çarklı örnek.** Program "6 eş parçaya bölünmüş ve 1’den 6’ya kadar numaralandırılmış iki çark çevrildiğinde gelen sayıların çift veya asal sayı olması" diyor; olayın iki çarkta nasıl tanımlandığı (her iki sayı mı, toplam mı, herhangi biri mi) belli değil. B5–B7'de örneği tek çarka indirdim; iki çarklı biçim istenirse tanım karar verilmeli.
 4. **Kindi.** Program yalnızca "bahsedilir" diyor, içeriğini vermiyor. Yanlış bilgi yazmamak için B3'te hangi cümlelerin kullanılacağı kaynaktan doğrulanmalı; önerim tek kısa kart.
 5. **Simülasyon sahneleri.** A4, A5 ve C2 sınıfın birleştirdiği 25–200 tekrarı ve 500–1500 simülasyonu gerektiriyor. Sitede bunun nasıl çalışacağı (öğrenci kendi tekrarlarını ekranda yapar, geri kalanı bilgisayar tamamlar) senaryoda netleşmeli; motorda şu an böyle bir sahne türü olup olmadığına bakılmadı.
