@@ -38,6 +38,57 @@
   }
   const ac = (c, d, konu) => par(belir(c, [d.bag, d.g], 400), konu ? belir(c, d.konu, 400) : null);
 
+  /* ---- tel sesi ----
+     Çekilen telin sesi tarayıcıda üretilir (Karplus–Strong); ses dosyası yok. Örnek bir kez hesaplanır:
+     y çalınacak dalga, zarf onun 20 ms'lik adımlarla ses yüksekliği (0–1). Teldeki salınımın genliği aynı
+     zarftan okunur; böylece tel durulurken ses de söner. */
+  const NOTA = 196, ORNEK_HZ = 44100;   // sol teli
+  let ornek = null, sesCtx = null, sesTampon = null;
+  function telOrnegi() {
+    if (ornek) return ornek;
+    const n = ORNEK_HZ * 3, N = Math.round(ORNEK_HZ / NOTA), y = new Float32Array(n);
+    let tohum = 12345, onceki = 0;
+    const rastgele = () => { tohum = (tohum * 1664525 + 1013904223) >>> 0; return tohum / 2147483648 - 1; };
+    for (let i = 0; i < N; i++) { onceki = 0.5 * (rastgele() + onceki); y[i] = onceki; }   // telin çekildiği an
+    for (let i = N; i < n; i++) y[i] = 0.996 * 0.5 * (y[i - N] + y[i - N + 1]);            // tel boyunca gidip gelen dalga
+    let tepe = 0; for (let i = 0; i < n; i++) tepe = Math.max(tepe, Math.abs(y[i]));
+    const bit = ORNEK_HZ * 0.08;
+    for (let i = 0; i < n; i++) y[i] = (y[i] / tepe) * 0.9 * Math.min(1, (n - i) / bit);
+    const P = ORNEK_HZ / 50, z = [];
+    for (let i = 0; i + P <= n; i += P) { let t = 0; for (let k = i; k < i + P; k++) t += y[k] * y[k]; z.push(Math.sqrt(t / P)); }
+    const z0 = Math.max(...z);
+    ornek = { y, zarf: z.map((v) => v / z0) };
+    return ornek;
+  }
+  /* ms anındaki genlik (0–1); görünür kalsın diye biraz yumuşatılır. */
+  const genlik = (ms) => { const z = telOrnegi().zarf; return Math.pow(z[Math.min(z.length - 1, Math.floor(ms / 20))], 0.6); };
+  /* Teli çalar. `tut` her karede çağrılır: ses yalnızca animasyon ilerlerken duyulur, ders duraklatılınca ya da
+     sahne değişince kendiliğinden söner. "Ses kapalı" iken hiç çalmaz. `gerginlik(n)` sesi n yarım ses inceltir. */
+  function cal(c, siddet = 0.7) {
+    const bos = { tut() {}, gerginlik() {}, bitir() {} };
+    const AC = window.AudioContext || window.webkitAudioContext;
+    if (!c.state.voice || !AC) return bos;
+    try {
+      if (!sesCtx) { sesCtx = new AC(); sesTampon = sesCtx.createBuffer(1, telOrnegi().y.length, ORNEK_HZ); sesTampon.getChannelData(0).set(telOrnegi().y); }
+      if (sesCtx.state === 'suspended') sesCtx.resume().catch(() => {});
+      const kaynak = sesCtx.createBufferSource(), kazanc = sesCtx.createGain(), g = kazanc.gain;
+      kaynak.buffer = sesTampon; g.value = 0;
+      kaynak.connect(kazanc); kazanc.connect(sesCtx.destination); kaynak.start();
+      return {
+        tut() {
+          const t = sesCtx.currentTime, v = c.state.voice ? siddet : 0;
+          g.cancelScheduledValues(t); g.setValueAtTime(v, t); g.setValueAtTime(v, t + 0.1); g.linearRampToValueAtTime(0, t + 0.2);
+        },
+        gerginlik(n) { kaynak.playbackRate.setTargetAtTime(Math.pow(2, n / 12), sesCtx.currentTime, 0.03); },
+        bitir() {
+          const t = sesCtx.currentTime;
+          g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(0, t + 0.08);
+          kaynak.stop(t + 0.1);
+        },
+      };
+    } catch (e) { return bos; }
+  }
+
   /* ---- 1. Tel titrer ---- */
   async function telTitrer(c) {
     const svg = c.svg(1000, 562);
@@ -50,7 +101,15 @@
       for (let i = 0; i <= 40; i++) { const t = i / 40; d += (i ? 'L' : 'M') + (X0 + (X1 - X0) * t) + ' ' + (Y + a * Math.sin(Math.PI * t)); }
       tel.setAttribute('d', d);
     };
-    const titret = (ms) => c.tween(ms, (_, t) => ciz(34 * (1 - 0.7 * t) * Math.cos(t * ms * 0.03)), ease.linear);
+    /* Tel bir noktasından çekilir (üçgen), bırakılınca titrer. */
+    const cek = (a) => tel.setAttribute('d', `M${X0} ${Y} L${X0 + (X1 - X0) * 0.3} ${Y + a} L${X1} ${Y}`);
+    /* Çek, bırak: ses bırakma anında başlar; salınımın genliği sesin zarfını izler. kare(t, ses) her karede ek iş yapar. */
+    const titret = async (ms, kare) => {
+      await c.tween(260, (e) => cek(34 * e), ease.out);
+      const ses = cal(c);
+      await c.tween(ms, (_, t) => { ses.tut(); if (kare) kare(t, ses); ciz(34 * genlik(t * ms) * Math.cos(t * ms * (kare ? 0.03 + 0.03 * t : 0.03))); }, ease.linear).finally(() => ses.bitir());
+      ciz(0);
+    };
     ciz(0);
     await titret(2400);
     await c.say('Gitar teli titrer ve ses verir.');
@@ -58,11 +117,10 @@
     daire(c, vida, X1 + 36, Y, 14, { fill: RENK.ince });
     const kol = cizgi(c, vida, X1 + 36, Y, X1 + 36, Y - 24, RENK.cizgi, 5);
     gizle(vida); await belir(c, vida, 250);
-    await c.tween(1800, (_, t) => {
+    await titret(2000, (t, ses) => {   // vida döner, tel gerilir: ses incelir, tel daha sık titrer
       kol.setAttribute('transform', `rotate(${t * 270} ${X1 + 36} ${Y})`);
-      ciz((30 - 16 * t) * Math.cos(t * 1800 * (0.03 + 0.03 * t)));
-    }, ease.linear);
-    ciz(0);
+      ses.gerginlik(2 * t);
+    });
     await c.say('Akort vidası teli gerer; tel gerildikçe ses değişir.');
     await c.say('Bu olaya iki <b>disiplin</b>, yani iki bilgi alanı bakar: müzik ve fizik.');
     await c.choice({
@@ -72,8 +130,7 @@
       right: 'Evet. Müzik sesi adlandırır, fizik nasıl oluştuğunu açıklar.',
     });
     const h = harita(c, svg);
-    titret(1800).then(() => ciz(0), () => {});
-    await ac(c, h.muzik, true);
+    await par(titret(1800), ac(c, h.muzik, true));
     await c.say('Müzik, telin sesini fiziğin <b>dalgalar</b> konusuyla açıklar.');
     await c.say('Fiziğin buna benzer başka bağları da var.');
   }

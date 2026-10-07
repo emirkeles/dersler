@@ -22,7 +22,7 @@ Ortak dil (bütün temada): temada formül ve kaydırıcı yok. "Dene" adımı k
 
 | Sahne | Ne olur | Anlatılacak |
 |---|---|---|
-| 1. Tel titrer | İki ucu sabit bir tel titrer; akort vidası teli gerer, ses değişir. "Disiplin" sözü tanıtılır: bu olaya müzik ve fizik bakar. Tahmin (açılış sorusu): yalnızca müzik, yalnızca fizik, ikisi birlikte. Sonra haritanın ilk bağı kurulur: Müzik ile Fizik arasında "dalgalar" (s. 17). | 1, 2 |
+| 1. Tel titrer | İki ucu sabit bir tel çekilip bırakılır, titrer ve sesi duyulur (ses tarayıcıda üretilir; tel durulurken söner). Akort vidası teli gerer, ses incelir. "Disiplin" sözü tanıtılır: bu olaya müzik ve fizik bakar. Tahmin (açılış sorusu): yalnızca müzik, yalnızca fizik, ikisi birlikte. Sonra haritanın ilk bağı kurulur: Müzik ile Fizik arasında "dalgalar" (s. 17). | 1, 2 |
 | 2. Kart kimin? | Dört bilgi kartı sırayla gelir (teleskop ve yörünge, mikroskop ve ışık, sürat grafiği, atom ve moleküller). Öğrenci her kartın disiplinini seçer; kart haritadaki yerine uçar ve yalnızca disiplin adı kalır. | 2, 3 |
 | 3. Bağ nerede? | Beş bağın üstüne fizik konuları yazılır: dalgalar, ışık, hareket, hareket ve enerji. Matematik bağı öteki dördünden ayrı renkte çizilir. Soru: matematik bağı ötekilerden nasıl farklı? (Fizik matematikten yararlanır; s. 17, 19.) | 3 |
 | 4. Fiziğin tanımı | Bağlardaki konular ortada toplanır. Soru: bu bağların ortak yanı ne? Sonra tanım üç parçada açılır: evreni · kuvvet, madde, enerji, uzay ve zaman ilişkileriyle · inceler (s. 19). Kural deftere düşer. | 4, 5 |
