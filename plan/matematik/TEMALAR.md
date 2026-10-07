@@ -18,7 +18,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
 | 1 | Sayılar | `sayilar` | <https://tymm.meb.gov.tr/matematik-dersi/unite/21> | 38 | 4 | 28 | yazıldı, yayında |
-| 2 | Nicelikler ve Değişimler | `nicelikler-ve-degisimler` | <https://tymm.meb.gov.tr/matematik-dersi/unite/23> | 38 | 3 | 32 | plan taslağı; işleme alınmayı bekliyor |
+| 2 | Nicelikler ve Değişimler | `nicelikler-ve-degisimler` | <https://tymm.meb.gov.tr/matematik-dersi/unite/23> | 38 | 3 | 32 | yazıldı (7 Ekim 2026); yayında değil |
 | 3 | Geometrik Şekiller | `geometrik-sekiller` | <https://tymm.meb.gov.tr/matematik-dersi/unite/25> | 12 | 3 | 10 | plan taslağı; işleme alınmayı bekliyor |
 | 4 | Eşlik ve Benzerlik | `eslik-ve-benzerlik` | <https://tymm.meb.gov.tr/matematik-dersi/unite/83> | 36 | 5 | 18 | plan taslağı; işleme alınmayı bekliyor |
 | 5 | Algoritma ve Bilişim | `algoritma-ve-bilisim` | <https://tymm.meb.gov.tr/matematik-dersi/unite/24> | 30 | 7 | 31 | plan taslağı; işleme alınmayı bekliyor |
@@ -26,7 +26,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 | 7 | Veriden Olasılığa | `veriden-olasiliga` | <https://tymm.meb.gov.tr/matematik-dersi/unite/97> | 18 | 3 | 16 | plan taslağı; işleme alınmayı bekliyor |
 | | **Toplam** | | | **206** | **31** | **159** | |
 
-2–7. temaların planları taslaktır; konu ve kısa ders sayıları işleme alınırken değişebilir. Her `PLAN.md` dosyasının 6. bölümündeki açık sorular, tema işleme alınınca `../ISLEME.md` içindeki kurallarla kapatılır ve kararlar aynı dosyaya yazılır.
+3–7. temaların planları taslaktır; konu ve kısa ders sayıları işleme alınırken değişebilir. Her `PLAN.md` dosyasının 6. bölümündeki açık sorular, tema işleme alınınca `../ISLEME.md` içindeki kurallarla kapatılır ve kararlar aynı dosyaya yazılır.
 
 ## Her temanın dosyaları
 
