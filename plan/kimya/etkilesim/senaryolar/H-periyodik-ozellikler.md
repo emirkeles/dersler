@@ -36,8 +36,10 @@ Dayanak: MUFREDAT.md, PLAN.md ve KURALLAR.md 3.1–3.2; 7 Ekim 2026. Her soru a�
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Li/Na/K en büyük? Doğru K; çeldiriciler Li ve Na. Gerekçe: Enerji seviyesi ve kaynak yarıçapı artar.
-2. F⁻/Na⁺/Mg²⁺ en küçük? Doğru Mg²⁺; çeldiriciler F⁻ ve Na⁺. Gerekçe: Eş dizilimde daha büyük çekirdek yükü daha güçlü çeker.
+1. Li, Na ve K arasında yarıçapı en büyük? **Doğru:** K. **Çeldiriciler:** Li; Na. **Gerekçe:** Li’nin enerji seviyesi ve yarıçapı daha azdır. K bir alt periyottadır; yarıçapı daha büyüktür. K: 227 pm; grupta enerji seviyesi artar.
+
+2. 10 elektronlu F⁻, Na⁺, Mg²⁺ arasında en küçük? **Doğru:** Mg²⁺. **Çeldiriciler:** F⁻; Na⁺. **Gerekçe:** F⁻ en az protonla daha zayıf çeker. Mg²⁺ daha fazla protonla daha güçlü çeker. Aynı dizilimde 12 proton daha güçlü çeker; 65 pm.
+
 
 ## H2 · İyonlaşma enerjisi
 
@@ -74,8 +76,10 @@ Dayanak: MUFREDAT.md, PLAN.md ve KURALLAR.md 3.1–3.2; 7 Ekim 2026. Her soru a�
 
 **Çıkış soruları ve çeldiricileri**
 
-1. İE₁ hangi koşulda tanımlanır? Doğru gaz nötr atomdan ilk elektron; çeldiriciler sıvıdan proton ve iyondan nötron çıkarma.
-2. P–S çentiğine katkı? Doğru P yarı dolu 3p³ kararlılığı; çeldiriciler iyonlaşmanın enerji istememesi ve aynı dizilim. Gerekçe: S.82 kararlı dizilimin elektron koparmayı zorlaştırdığını verir.
+1. İE₁ hangi olayı tanımlar? **Doğru:** Gaz hâlindeki nötr atomdan ilk elektronun kopması. **Çeldiriciler:** Sıvı atomdan protonun çıkarılması.; İyondan nötronun çıkarılması. **Gerekçe:** Gaz hâlindeki nötr atomdan ilk elektronu koparmanın enerjisidir. İyonlaşma enerjisi proton çıkarma için tanımlanmaz. İlk iyonlaşma nötr atomdaki elektronla ilgilidir.
+
+2. P–S enerji çentiğine hangi dizilim katkıda bulunur? **Doğru:** P’nin yarı dolu 3p³ kararlılığı. **Çeldiriciler:** İyonlaşmanın enerji istememesi.; P ve S’nin aynı elektron dizilimi. **Gerekçe:** Yarı dolu alt düzey kararlılığı P’den elektron koparmayı zorlaştırır. İyonlaşma enerji gerektirir. P 3p³, S 3p⁴ ile sonlanır.
+
 
 ## H3 · Ardışık enerjiler ve valans
 
@@ -109,8 +113,10 @@ Dayanak: MUFREDAT.md, PLAN.md ve KURALLAR.md 3.1–3.2; 7 Ekim 2026. Her soru a�
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Mg İE₂→İE₃ büyük sıçrama: valans sayısı? Doğru 2; çeldiriciler 1 ve 3. Gerekçe: Sıçramadan önce iki elektron uzaklaştırılır.
-2. Na İE₁→İE₂, Al İE₃→İE₄ büyük sıçramaları: valans sayıları? Doğru Na1/Al3; çeldiriciler Na2/Al3 ve Na1/Al4. Gerekçe: Sıçramadan önceki iyonlaşmalar valans elektronlarını uzaklaştırır.
+1. Mg’de büyük sıçrama İE₂→İE₃ ise valans sayısı? **Doğru:** 2. **Çeldiriciler:** 1; 3. **Gerekçe:** Sıçramadan önce iki elektron koparılmıştır. İlk iki elektron valans elektronlarıdır; üçüncü için enerji sıçrar. Üç, sıçramadan sonraki iyonlaşma basamağıdır.
+
+2. Büyük sıçrama Na’da İE₁→İE₂, Al’de İE₃→İE₄: valans sayıları? **Doğru:** Na: 1 · Al: 3. **Çeldiriciler:** Na: 2 · Al: 3; Na: 1 · Al: 4. **Gerekçe:** Sıçramadan önce Na’dan bir, Al’den üç valans elektronu kopar. Na’nın ikinci elektronunda büyük sıçrama vardır; valans sayısı bir olur. Al’nin dördüncü iyonlaşması valans sonrasıdır; valans sayısı üç olur.
+
 
 ## H4 · Elektronegatiflik
 
@@ -145,7 +151,8 @@ Dayanak: MUFREDAT.md, PLAN.md ve KURALLAR.md 3.1–3.2; 7 Ekim 2026. Her soru a�
 
 **Çıkış soruları ve çeldiricileri**
 
-1. He çizgisi? Doğru tabloda değer verilmemiş; çeldiriciler değeri 0 ve iyonlaşma enerjisi 0.
-2. F/Cl/Na en yüksek? Doğru F4,00; çeldiriciler Cl3,16 ve Na0,93. Gerekçe: Kaynakta F değeri en büyüktür.
+1. He için Pauling tablosundaki “—” nasıl okunur? **Doğru:** Tabloda değer verilmemiş. **Çeldiriciler:** Sayısal değeri 0.; İyonlaşma enerjisi 0. **Gerekçe:** Çizgi sayısal sıfır değildir; kaynakta değer verilmemiştir. Çizgi sıfır sayı anlamına gelmez. Tablo elektronegatifliği gösterir; iyonlaşma enerjisiyle karıştırma.
+
+2. F, Cl ve Na arasında elektronegatiflik en yüksek? **Doğru:** F: 4,00. **Çeldiriciler:** Cl: 3,16; Na: 0,93. **Gerekçe:** Kaynakta F’nin 4,00 değeri bu üçlüde en büyüktür. Cl’nin değeri F’den küçüktür. Na’nın değeri hem F’den hem Cl’den küçüktür.
 
 **Kapsam karşılaştırması:** H1'de beş, H2'de beş, H3'te üç, H4'te dört içerik sahnesi vardır. H3'ün eski çentik anlatımı H2.3–4'e taşındı; içerik çıkarılmadı. Her sahne ilgili plan maddesi ve KİM.9.1.8 uygulamasına dayanır; zenginleştirme, ürün hazırlama veya gerçek deney yönergesi eklenmedi.

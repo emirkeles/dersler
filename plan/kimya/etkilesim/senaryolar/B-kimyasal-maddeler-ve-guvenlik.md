@@ -32,8 +32,9 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Çamaşır suyu ve tuz ruhu için risk nedir? Doğru: Klor gazı oluşması. Çeldiriciler: Her koşulda etkisiz kalması; Yalnız su oluşması. Gerekçe: S. 39 klor riskini verir; diğerleri veriyle uyuşmaz.
-2. Problemi doğru özetleyen? Doğru: Madde, hatalı kullanım ve sonucu ilişkilendir.. Çeldiriciler: Yalnız marka adını söyle.; Daha çok ürün kullan.. Gerekçe: Marka neden zinciri kurmaz; daha çok ürün çözüm değildir.
+1. Çamaşır suyu ve tuz ruhunun karşılaşmasında hangi risk vardır? **Doğru:** Klor gazı oluşması. **Çeldiriciler:** Her koşulda etkisiz kalması; Yalnız su oluşması. **Gerekçe:** Kitabın örnek olayı klor gazı riskini gösterir. Maddeler etkileşebilir; etkisiz oldukları söylenemez. Kitap yalnız su oluştuğunu belirtmez.
+
+2. Problemi doğru özetlemek için hangisi gerekir? **Doğru:** Madde, hatalı kullanım ve sonucu ilişkilendirmek. **Çeldiriciler:** Yalnız marka adını söylemek; Daha çok ürün önermek. **Gerekçe:** Marka adı, problemin nedenini açıklamaz. Bu zincir iki olayı karşılaştırıp özetlemeyi sağlar. Daha çok ürün kullanmak neden zinciri kurmaz.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
 
@@ -69,7 +70,8 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Kimyasal atık nereye? Doğru: Uygun atık kabına. Çeldiriciler: Doğrudan lavaboya; Yemek kabına. Gerekçe: S. 36 atık kabını ister.
-2. Laboratuvarda doğru davranış? Doğru: Etiketi oku, sorumlunun yönergesini izle.. Çeldiriciler: Maddeyi koklayarak tanı.; Sıvıyı ağızla pipete çek.. Gerekçe: S. 36–37 koklama yasağı ve puar kullanımını verir.
+1. Kullanılmış kimyasal atık nereye yönlendirilir? **Doğru:** Uygun atık kabına. **Çeldiriciler:** Doğrudan lavaboya; Yemek kabına. **Gerekçe:** Kitap, doğrudan lavaboya dökmeyi yasaklar. Atık yönetiminde uygun atık kabı kullanılır. Yemek kabı, kimyasal atık kabı değildir.
+
+2. Laboratuvarda doğru davranış hangisidir? **Doğru:** Etiketi okumak ve sorumlunun yönergesini izlemek. **Çeldiriciler:** Maddeyi koklayarak tanımak; Sıvıyı ağızla pipete çekmek. **Gerekçe:** Kimyasal maddeler koklanmaz. Sıvı aktarımında puar kullanılır; ağızla çekilmez. Etiket ve yönerge, güvenli davranışın dayanağıdır.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.

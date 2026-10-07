@@ -1,58 +1,60 @@
 # Durum — Etkileşim
-Tarih: 7 Ekim 2026. Yalnızca kimya/etkilesim/ ve plan/kimya/etkilesim/ yazılacak.
-Kitap: MEB bağlantısından indirildi; /private/tmp/etkilesim-kimya-9.pdf (287 sayfa). PDF sayfası ile basılı sayfa numarası aynı.
+
+7 Ekim 2026 · İşleme tamamlandı. 8 konu, 18 kısa ders, 80 içerik sahnesi, 36 çıkış sorusu.
+
 | Adım | Durum |
 |---|---|
-| 1 Müfredat | bitti |
-| 2 Plan | bitti (taslak) |
-| 2b Ders kitabı | bitti; kaynaklar PLAN.md bölüm 8 |
-| 3 Kararlar | bitti; 15 soru kapandı |
-| 4 Senaryolar | bitti; 8 konu dosyası |
-| 5 İskelet | bitti |
-| 6 Dersler | A–G yazıldı; H sürüyor. E ortak çizim taşıması sonrası tekrar ölçülüyor |
-| 7 Denetim | bekliyor |
+| 1 Müfredat | bitti; mevcut MEB metni korundu |
+| 2 Plan | bitti; taslak kararlarla kesinleşti |
+| 2b Ders kitabı | bitti; sayfa kaynakları PLAN.md 3/8 |
+| 3 Kararlar | bitti; 15 soru kapandı, denetim türleri ve kaynak/görsel işaretleri eklendi |
+| 4 Senaryolar | bitti; 8 konu dosyası, her sorunun bilgi öncülü ve açılış biçimi |
+| 5 İskelet | bitti; tema sayfası, tema.js, KIT ve tema.css |
+| 6 Dersler | bitti; 18 doğrudan Ders.start tanımı |
+| 7 Denetim | bitti; olc/denetle/ek durumlar/görsel inceleme temiz |
+| 8 Rapor | hazır; kullanıcıya teslim |
 
 | Kısa ders | Senaryo | Ders | olc | Not |
 |---|---|---|---|---|
-| A1 | bitti | bitti | temiz | 5 son sahne görüntüsü incelendi; tüm bütçeler 0 |
-| A2 | bitti | bitti | temiz | 5 son sahne görüntüsü incelendi; tüm bütçeler 0 |
-| B1 | bitti | bitti | temiz | Son PNGler incelendi; tüm kart denetimi sürüyor |
-| B2 | bitti | bitti | temiz | Son PNGler incelendi; tüm kart denetimi sürüyor |
-| C1 | bitti | bitti | temiz | Son PNGler incelendi; tüm kart denetimi sürüyor |
-| C2 | bitti | bitti | temiz | Son PNGler incelendi; tüm kart denetimi sürüyor |
-| D1 | bitti | bitti | temiz | Son PNGler incelendi; tüm kart denetimi sürüyor |
-| E1 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| E2 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| E3 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| F1 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| F2 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| F3 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| G1 | bitti | bitti | temiz | Son PNGler ve tüm seçici durumları temiz |
-| H1 | bitti | bitti | temiz | Son PNGler incelendi; H son kontrolü bekliyor |
-| H2 | bitti | bitti | temiz | Son PNGler incelendi; H son kontrolü bekliyor |
-| H3 | bitti | bitti | temiz | Son PNGler incelendi; H son kontrolü bekliyor |
-| H4 | bitti | bekliyor | bekliyor | |
+| A1 | bitti | bitti | temiz | 5 sahne; 15 ek durum ziyareti; son PNGler incelendi |
+| A2 | bitti | bitti | temiz | 5 sahne; 15 ek durum ziyareti; son PNGler incelendi |
+| B1 | bitti | bitti | temiz | 4 sahne; 8 ek durum ziyareti; son PNGler incelendi |
+| B2 | bitti | bitti | temiz | 5 sahne; 18 ek durum ziyareti; son PNGler incelendi |
+| C1 | bitti | bitti | temiz | 5 sahne; 16 ek durum ziyareti; son PNGler incelendi |
+| C2 | bitti | bitti | temiz | 5 sahne; 10 ek durum ziyareti; son PNGler incelendi |
+| D1 | bitti | bitti | temiz | 5 sahne; 17 ek durum ziyareti; son PNGler incelendi |
+| E1 | bitti | bitti | temiz | 4 sahne; 8 ek durum ziyareti; son PNGler incelendi |
+| E2 | bitti | bitti | temiz | 4 sahne; 7 ek durum ziyareti; son PNGler incelendi |
+| E3 | bitti | bitti | temiz | 4 sahne; 13 ek durum ziyareti; son PNGler incelendi |
+| F1 | bitti | bitti | temiz | 4 sahne; 11 ek durum ziyareti; son PNGler incelendi |
+| F2 | bitti | bitti | temiz | 4 sahne; 9 ek durum ziyareti; son PNGler incelendi |
+| F3 | bitti | bitti | temiz | 4 sahne; 21 ek durum ziyareti; son PNGler incelendi |
+| G1 | bitti | bitti | temiz | 5 sahne; 16 ek durum ziyareti; son PNGler incelendi |
+| H1 | bitti | bitti | temiz | 5 sahne; 19 ek durum ziyareti; son PNGler incelendi |
+| H2 | bitti | bitti | temiz | 5 sahne; 33 ek durum ziyareti; son PNGler incelendi |
+| H3 | bitti | bitti | temiz | 3 sahne; 9 ek durum ziyareti; son PNGler incelendi |
+| H4 | bitti | bitti | temiz | 4 sahne; 53 ek durum ziyareti; son PNGler incelendi |
 
-## Kararlar ve sınırlar
-- Kullanıcının ara onay/soru istememesi önceliklidir; taslak sorular ISLEME.md ile kapatılır.
-- ISLEME.md 7.4'teki plan/kimya/TEMALAR.md güncellemesi kullanıcı tarafından izin verilen klasörlerin dışında; uygulanmayacak, raporlanacak.
-- Başlangıçta ses örneklerinde ve plan/SESLENDIRME.md'de mevcut kullanıcı değişiklikleri vardı; bunlara dokunulmayacak.
-- Yayın, seslendirme, görsel üretimi, commit ve push yok.
+## Son kanıtlar
 
-- Ek denetim: A1 ve A2 toplam 30 sahne/seçici durumunda sıfır sorun. Kanıt /private/tmp/etkilesim-etkilesim-denetimi/.
+- Ayrıntılı tablo ve dosya yolları: `DENETIM.md`.
+- Tema denetimi: 18 kısa ders, yayında değil, sorun yok.
+- Ek denetim: 298 durum ziyareti; tüm yazı/yerleşim/konsol göstergeleri sıfır. En küçük masaüstü punto 22.9 px.
+- Tema masaüstü ve telefon görünümü: bütün konular/dersler listede, yatay taşma sıfır.
+- Bağımsız son inceleme: açık Critical/Important/Minor bulgu yok. E2/H3 ipucu, yanlış şık, doğru şık, animasyonda geçiş ve yeniden açma testi temiz.
 
-## Ek inceleme
-- B1/B2/C1/C2 ilk tüm-durum denetimi: 50 durum, sıfır yazı/yerleşim/konsol sorunu.
-- Ana oturum 11 piktogramı gözle inceledi; yolların çerçeveyi kesmesi olc ölçümüne girmediği için iç semboller küçültüldü. B2 tekrar ölçülüyor.
-- C1 nötron verisi-model çiziminde kronoloji yanlış anlaşılmasını önlemek için modern model yerine nötronlu çekirdek şeması kondu; tekrar ölçülüyor.
-- B1 karşılaştırmasına s.40 fabrika ve laboratuvar olayları eklendi; dört olay seçeneği, tekrar ölçülüyor.
+## Kaynak ve kararlar
 
-- B1/B2/C1/D1 son tüm-durum denetimi: 59 durum, sıfır sorun. E1–E3 tekrar eden kutu/ok çizimleri ana oturumca KIT içine taşındı.
+- Kitap MEB bağlantısından 7 Ekim 2026’da alındı: `/private/tmp/etkilesim-kimya-9.pdf`, 287 sayfa; PDF ve basılı numara aynı. Projeye konmadı. Kitap sayfaları, sayısal veri/listeler/formüller PLAN.md’de kayıtlı.
+- Gerçek gözlem ve veri toplama site dışı; A1 kaynaklı hazır kayıtlarla yorum benzetimi. Boş pH deney sonuçları doldurulmadı, hastalık nedenselliği eklenmedi.
+- Çalışma sırasında başka oturum ortak kuralların 3.1’ini değiştirdi. Son sürüme uyum sağlandı: ad/tanım/veri isteyen her sorudan önce gereken bilgi; senaryolarda açılış ve her soru öncülü.
+- Tek fikir: H2 çentik/küresel simetri açıklamasını taşır (5 sahne); H3 yalnız ardışık enerji/valans/kararlı iyon (3 sahne). E2 Pauli/Hund geçerli yerleşimin tamamlayıcı koşulları. 18 ders ve 80 sahne korunur.
+- Resim bekleyen sahne yok; SVG şemaları yeterli. GORSELLER.md bu kararı belgeler.
 
-- E1–E3 KIT taşıması sonrası tekrar olc temiz. G1 proton/çekirdek rengi C ile eşlendi; G konu rengi ayrı korundu. H1–H3 yazıldı; H4 sürüyor.
+## Yazma ve yayın sınırı
 
-- E1–G1 ek denetim: 89 durum, sıfır sorun; G1 son renkli ölçüm temiz.
-- Bağımsız A–G inceleme: Critical/Important yok. D1 senaryo çeldirici uyumsuzluğu düzeltildi. H için inceleme tamamlanınca tekrar istenecek.
+Bu oturum yalnız `kimya/etkilesim/` ve `plan/kimya/etkilesim/` altında çalıştı. Aynı çalışma alanında diğer oturumların ortak kural, biyoloji, fizik ve ses örneği değişikliklerine müdahale edilmedi.
 
-- Tema denetimi ilk tam geçiş: `node araclar/denetle.js kimya/etkilesim` → 18 kısa ders, yayında değil, sorun yok.
-- Aynı çalışma alanında başka oturumların biyoloji içeriği ile plan/KURALLAR.md, plan/ISLEME.md ve fizik durum kaydı değişiklikleri belirdi. Bu oturum bu dosyalara yazmadı; kapsam dışı değişiklikler korunuyor. Ortak kural değişiklikleri okunup Etkileşim'e etkisi denetleniyor.
+`plan/kimya/TEMALAR.md` güncellemesi kullanıcı tarafından izin verilen iki klasörün dışındadır; yapılmadı. Son sayılar ve durum burada kayıtlıdır.
+
+Tema yayında değil. Seslendirme, görsel üretimi, commit/push bu oturumda çalıştırılmadı. Kullanıcı girdisi bekleyen veya açık kalan iş yok.

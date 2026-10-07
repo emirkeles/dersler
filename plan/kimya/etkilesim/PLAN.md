@@ -47,7 +47,7 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
 
 ### Konu A · Günlük hayatta kimya
 
-#### A1 · Evdeki ürünlerin farkı kimyasaldır
+#### A1 · Ürünün işi ve kullanım koşulu
 
 - **Tek fikir:** Evdeki ürünlerin nitelikleri birbirinden farklıdır; bu farklar gözlenip veri olarak kaydedilince kimya bilimiyle ve kullanım biçimiyle ilişkilendirilir.
 - **Anlatılacaklar:**
@@ -57,12 +57,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Ürünlerin kimya bilimiyle ilişkisine ve insan sağlığına etkisine dair veri toplanır ve kaydedilir.
   5. Toplanan veri sağlık ve ekoloji açısından yorumlanır; kimya biliminin günlük hayata katkısı değerlendirilir. Güvenilir bilgi ile güvenilmez bilgi ayırt edilir.
 - **Program dayanağı:** KİM.9.1.1 a) "Evde kullanılan kimyasal ürünlerin niteliklerini gözlemleyebileceği ortamlar oluşturarak kimyasal ürünlerin niteliklerindenki farklılıkları ortaya çıkarır." b) "…topladığı veri ya da verileri kaydeder." c) "Topladığı veri ya da verileri yorumlayarak kimya biliminin günlük hayata katkısına ilişkin değerlendirme yapar." Uygulamalar: "…öğrencilere çeşitli ürünler (temizlik malzemeleri, mutfak gereç ve malzemeleri, öz bakım ürünleri, hazır gıdalar vb.) örnek olarak verilir. Öğrencilerden bu ürünlerin niteliklerini gözlemlemeleri istenir. Öğrencilerin bu ürünlerin özelliklerini, ürünlerin yapıldığı materyallerin kimyasal özellikleri ile kullanım biçimleri arasındaki ilişkiyi incelemeleri sağlanır." "Öğrencilerden ürünlerin kimya bilimi ile ilişkisini ve insan sağlığına etkisini belirlemek üzere veri toplamaları istenir." "Öğrencilerin doğru ve güvenilir bilgiyi ayırt etmeleri, güvenilir bilgiye ulaşma yollarını bilmeleri sağlanır." "…toplanan verilerin sağlık ve ekoloji açısından yorumlanması ve değerlendirilmesi…"
-- **Açılış sorusu:** Aynı alüminyum folyo, her yiyecekte aynı sonucu verir mi?
+- **Açılış sorusu:** Aynı alüminyum folyo her yiyecekte aynı sonucu verir mi?
 - **Akılda kalıcı cümle:** Ürünün işini, içindeki maddenin özelliği belirler.
 - **Ders kitabı:** s. 20–24: ürün örnekleri ve alüminyum veri tabloları; s. 33: güvenilir kaynakla araştırma. Hazır veriler s. 24'ten; pH deneyinde s. 21'in boş sonuçları üretilmez. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### A2 · Kimya bilimi: tanımı, dalları, meslekleri
+#### A2 · Bir bilim, farklı sorular
 
 - **Tek fikir:** Kimya bilimi alt disiplinlere ayrılır; her biri günlük hayattaki bir ürün ya da teknolojiyle ve bir kariyer yoluyla bağlıdır.
 - **Anlatılacaklar:**
@@ -72,14 +72,14 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Kariyer örneği olarak Aziz Sancar ve Oktay Sinanoğlu'nun çalışmaları (bölüm 6, soru 3).
   5. Kimya biliminin günlük hayata ve Türkiye ekonomisine katkısına örnek: İstanbul Kimya Teknoloji Merkezi (KTM); programda yazdığı kadarıyla anılır.
 - **Program dayanağı:** İçerik çerçevesi: "…Kimyanın Alt Disiplinleri, Kimya Alanında Kariyer Olanakları". Uygulamalar: "Kimya biliminin tanımı yapılır. Kimya biliminin alt disiplinleri, ele alınan örneklerle ilişkilendirilerek kısaca tanıtılır." "Kimya biliminin gelişen teknolojilerle bağlantısı kurularak öğrencilerde kariyer bilinci oluşturulur. Kariyer bilinci oluşturulmasında Aziz Sancar ve Oktay Sinanoğlu'nun çalışmaları örnek verilir." "Kimya alanında önemli projelerden biri olan İstanbul Kimya Teknoloji Merkezi (KTM) ve bunun gibi çalışmalar örnek verilerek kimya biliminin günlük hayata ve Türkiye ekonomisine katkısı… vurgulanabilir."
-- **Açılış sorusu:** Bir ilacı tasarlayan, bir suyu analiz eden ve bir plastiği üreten kişi aynı işi mi yapıyor?
+- **Açılış sorusu:** Bir ilacı tasarlayan ve sudaki maddeyi ölçen aynı işi mi yapar?
 - **Akılda kalıcı cümle:** Kimya tek bilim, çok daldır; her dal bir işe açılır.
 - **Ders kitabı:** s. 25–26: analitik, biyokimya, organik, anorganik, fizikokimya, polimer kimyası; s. 26–27: tanım ve kariyer; s. 28: Sancar DNA onarımı, Sinanoğlu Atom ve Moleküllerde Çoklu Elektron Kuramı. KTM program kadarıyla anılır. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
 ### Konu B · Kimyasal maddeler ve güvenlik
 
-#### B1 · Kaza bir problemdir: önce doğru kur
+#### B1 · Kazayı neden zinciriyle tanımla
 
 - **Tek fikir:** Kimyasal maddenin hatalı kullanımından doğan bir kaza, nedeni ve neden olan maddesiyle tanımlanınca çözülebilir bir probleme dönüşür.
 - **Anlatılacaklar:**
@@ -88,12 +88,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   3. Problemlerin oluşma nedenleri; probleme neden olan kimyasal maddeler ve problemlere neden olabilecek tepkimeleri (bölüm 6, soru 5).
   4. Problemler karşılaştırılır ve genellenerek özetlenir.
 - **Program dayanağı:** KİM.9.1.2 a) "…kimyasal maddelerin kullanımından kaynaklanan problemleri yapılandırır." b) "…yapılandırdığı problemleri özetler." Uygulamalar: "Günlük hayatta kimyasal maddelerin hatalı kullanımı sonucu oluşan, farklı ortamlardaki kazalara ilişkin gerçek ya da kurgu örnek olaylar verilebilir. Öğrencilerden kimyasal maddelerin hatalı kullanımıyla ilgili olası problemleri belirlemeleri istenir." "Belirledikleri problemlerin oluşma nedenleri tartışmaya açılır, öğrencilerden bu problemleri karşılaştırmaları ve genelleyerek özetlemeleri istenir." "Öğrencilerden probleme neden olan kimyasal maddeleri ve bu kimyasal maddelerin problemlere neden olabilecek tepkimelerini belirlemeleri istenebilir."
-- **Açılış sorusu:** Banyoyu daha iyi temizlemek için iki temizlik ürününü karıştırmak iyi bir fikir mi?
+- **Açılış sorusu:** İki temizleyici daha güçlü temizlik anlamına mı gelir?
 - **Akılda kalıcı cümle:** Kazayı anlamak için sor: hangi madde, hangi hata?
 - **Ders kitabı:** s. 39–40: çamaşır suyu/tuz ruhu → klor gazı, asidik temizleyici/derz, cıva ve su/sodyum örnek olayları. Denklem veya miktarlı karışım tarifi eklenmez. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### B2 · Etiketi oku, kuralı uygula, çözümü sına
+#### B2 · Önlem kanıtla seçilir
 
 - **Tek fikir:** Problemin çözümü önce tahmin edilir, sonra piktogramlar ve laboratuvar çalışma kurallarıyla gerekçelendirilir ve değerlendirilir.
 - **Anlatılacaklar:**
@@ -103,14 +103,14 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Çözüm, piktogramlar ve çalışma kuralları temelinde değerlendirilir.
   5. Kimyasal maddelerin zararlı etkilerine (sağlık, çevre) karşı önlem; Çevre, Şehircilik ve İklim Değişikliği Bakanlığının düzenlemeleri ile KBRN Tespit ve Teşhis Sistemi Projesi programda yazdığı kadarıyla anılır.
 - **Program dayanağı:** KİM.9.1.2 c) "…problemlerin çözümünü gözleme/mevcut bilgiye/veriye dayalı tahmin eder." ç) "…kimyasal maddelerin kullanımı ve güvenlik konusu temelinde akıl yürütür." d) "…problemlerin çözümüne ilişkin değerlendirmede bulunur." Uygulamalar: "Bu veriler temelinde söz konusu problemlerin veya kazaların önlenebilmesi için ne yapılması gerektiğine ilişkin öğrencilerden öneride bulunmaları beklenir." "Öğrencilerden laboratuvarda çalışma kuralları ve piktogramlar temelinde kimyasal maddelerin doğru şekilde kulla nılmamasından kaynaklanan problemlerin çözümüne ilişkin değerlendirmede bulunmaları istenir." "Boşluk doldurma soruları ile öğrencilerden sunulan piktogramların adlarını yazma ları istenebilir… karikatürlerde ortaya konan durumların hangilerinde laboratuvar güvenlik kurallarına uyulmadığını belirlemeleri istenebilir." "…Türkiye Cumhuriyeti Çevre, Şehircilik ve İklim Değişikliği Bakanlığının kimyasal maddelerin yönetimi ve güvenliği konusunda yaptığı düzenlemelere dikkat çekilerek…" "…Kimyasal, Biyolojik, Radyoaktif ve Nükleer (KBRN) Tespit ve Teşhis Sistemi Projesi ve bunun gibi çalışmalar örnek verilerek kimyasal maddelerin kullanımının önemine dikkat çekilebilir."
-- **Açılış sorusu:** Şişenin üstündeki küçük kırmızı çerçeveli işaret sana ne yapmanı söylüyor?
+- **Açılış sorusu:** Şişedeki uyarı işareti hangi davranışını değiştirir?
 - **Akılda kalıcı cümle:** Önce etiket, sonra kapak.
 - **Ders kitabı:** s. 36–38: laboratuvar kuralları, risk piktogramları ve atık önlemi. Kurumlar program kadarıyla anılır. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
 ### Konu C · Atom teorileri
 
-#### C1 · Atom bilgisi veriyle değişti
+#### C1 · Yeni veri modeli değiştirir
 
 - **Tek fikir:** Her yeni parçacığın keşfi atom teorisini değiştirdi; bilimsel bilgi yeni veriyle değişebilir.
 - **Anlatılacaklar:**
@@ -120,12 +120,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Parçacıkların keşfi teorilerle ilişkilendirilir: hangi keşif hangi teoriyi yetersiz bıraktı.
   5. Atomun en küçük tanecikleri hakkındaki görüşlerin değişmesi, bilginin değişebilirliği olarak değerlendirilir; yeni bir modelin gerekliliği (C2'ye geçiş).
 - **Program dayanağı:** KİM.9.1.3 a) "Atom teorilerinin gelişim sürecinde atomun yapısına ilişkin niteliklerin farkını ortaya koyar." b) "Elektron, proton ve nötronun yükü, kütlesi ve keşif tarihlerine ilişkin hazır veri seti kullanır." c) "…bilimsel bilginin değişebilirliliğini değerlendirir." Uygulamalar: "Öğrendikleri atom teorilerini kronolojik sıraya dikkat ederek sıralamaları ve atom teorilerinin varsayımlarını soru cevap tekniğiyle listelemeleri öğrencilerden istenir." "Proton, nötron ve elektronun keşif tarihi, yükü, kütlesi hazır veri seti olarak verilerek atom altı parçacıkların keşfi ile atom teorilerinin ilişkilendirilmesi sağlanır. Tarihsel süreçte atomun yapısındaki en küçük tanecikler hakkında ortaya konan görüşler, bilginin değişebilirliği ile ilişkilendirilerek değerlendirilir." "Dalton, Thomson ve Rutherford atom modellerini içeren elektronik içerik sunulur. Atomun temel tanecikleri açıklanır." "Öğrencilerden farklı atom teorilerini bir zaman şeridi üzerinde göstermeleri ve atom altı parçacıkların keşfine ilişkin değişen bilgileri listelemeleri istenebilir."
-- **Açılış sorusu:** Atom modelleri değişti; atom mu değişti, bildiklerimiz mi?
+- **Açılış sorusu:** Atom mu değişti, atom hakkında bildiklerimiz mi?
 - **Akılda kalıcı cümle:** Atom aynı kaldı; yeni veri gelince model değişti.
 - **Ders kitabı:** s. 46, 48–50, 52: model sırası, keşif basamakları, yük ve kütle tablosu. Keşif basamağı tarihleri s. 48'in veri seti olarak etiketlenir. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### C2 · Yörüngeden orbitale: modern atom teorisi
+#### C2 · Yörüngeden orbitale
 
 - **Tek fikir:** Bohr atom teorisinin eksiklikleri yeni bir model gerektirdi; modern atom teorisinde elektronun yeri kesin bir yörünge değil, bulunma olasılığının yüksek olduğu bölgedir: orbital.
 - **Anlatılacaklar:**
@@ -141,7 +141,7 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
 
 ### Konu D · Orbitallerin enerjisi
 
-#### D1 · Hangi orbital daha düşük enerjili?
+#### D1 · Enerji sırasını veriden kur
 
 - **Tek fikir:** Orbitallerin enerji sırası tahminle değil veriyle kurulur; bağıl enerji diyagramı, yanlış önermeyi ayıklar.
 - **Anlatılacaklar:**
@@ -151,14 +151,14 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Orbital türlerini ve bağıl enerji düzeylerini gösteren diyagramla geçersiz çıkarımların ayıklanması.
   5. Yargı: orbital türlerinin bağıl enerjilerine göre sıralanması.
 - **Program dayanağı:** KİM.9.1.4 a) "Verilere dayalı olarak atom orbitallerinin bağıl enerjilerine ilişkin önermeler oluşturur." b) "…veriye dayalı olan ve olmayan önermeleri karşılaştırır." c) "Orbitallere ait bağıl enerji diyagramlarından elde ettiği verileri inceleyerek geçersiz çıkarımları ayıklar." ç) "…geçerli tahminleri temelinde yargıya varır." Uygulamalar: "Öğrencilere orbital türleri bilgisi verilir. Öğrenciler, etkinlik kâğıdında karışık olarak verilen atom orbitallerinin bağıl enerjileriyle ilgili önermeler oluşturmaları için yönlendirilir." "Öğrencilerin orbital türleri ve bağıl enerji düzeylerini gösteren diyagramı kullanarak geçersiz çıkarımları ayıklamaları…" "Öğrencilerden çalışma yaprağında karmaşık bir liste hâlinde verilen orbital türlerini bağıl enerjilerine göre sıralamaları istenebilir."
-- **Açılış sorusu:** 4s mi, 3d mi önce dolar?
+- **Açılış sorusu:** 4s mi, 3d mi daha düşük enerjili?
 - **Akılda kalıcı cümle:** Sırayı numara değil, enerji belirler.
 - **Ders kitabı:** s. 54, 56–58: s/p/d/f türleri, 1/3/5/7 orbital; enerji diyagramı. İlk 36 element için gereken 1s–4p kesiti; enerji aralıkları ölçüm değildir. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
 ### Konu E · Elektron dizilimi
 
-#### E1 · Elektron en düşük enerjili boş yere girer: Aufbau ilkesi
+#### E1 · Önce düşük enerji
 
 - **Tek fikir:** Farklı atomların dizilimleri yan yana konunca bir örüntü görünür: elektronlar orbitallere düşük enerjiliden başlayarak yerleşir.
 - **Anlatılacaklar:**
@@ -167,12 +167,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   3. Örüntüden genelleme: Aufbau ilkesi.
   4. Verilen bir atomun elektron diziliminin yazılması.
 - **Program dayanağı:** KİM.9.1.5 a) "Elektronların atom orbitallerine yerleşimine ilişkin örüntü bulur." b) "Bilimsel ilkelere ulaşmak için örüntülerden genellemeler yapar." Uygulamalar: "…farklı atomlara ait elektron dizilimleri, orbital şemalarıyla birlikte örnek olarak verilir. Elektron dizilim ilkelerine ilişkin sorular sorularak elementlerin elektron dizilimlerindeki örüntüyü öğrencilerin belirlemeleri sağlanır. Örüntülerden genellemeler yaptırılarak Aufbau ilkesi, Pauli dışlama ilkesi ve Hund kuralına ulaşılması sağlanır."
-- **Açılış sorusu:** Bir telefon ekranındaki renkleri, atomdaki elektronların yerleşimi nasıl belirler?
+- **Açılış sorusu:** Atomdaki elektronlar boş yerleri hangi sırayla doldurur?
 - **Akılda kalıcı cümle:** Elektron önce en düşük enerjili boş orbitali doldurur.
 - **Ders kitabı:** s. 58–62, 68: enerji sırası, Aufbau ve örnek elektron dizilimleri (Li hazır verisi s. 68); s. 65 günlük teknoloji bağlantısı. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### E2 · Bir orbitale iki elektron, eş enerjililere önce birer birer: Pauli ve Hund
+#### E2 · Eş enerjiye önce tek tek
 
 - **Tek fikir:** Orbital şemalarındaki oklar iki örüntü daha gösterir: bir orbitalde en çok iki elektron zıt yönlü durur (Pauli); eş enerjili orbitallere elektronlar önce birer birer girer (Hund).
 - **Anlatılacaklar:**
@@ -180,12 +180,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   2. Eş enerjili orbitallerin dolma biçimi: örüntü ve genelleme, Hund kuralı.
   3. Üç ilkeye göre dizilim ve orbital şeması yazma; kurala uymayan şemayı bulma.
 - **Program dayanağı:** KİM.9.1.5 a), b). Uygulamalar: "Örüntülerden genellemeler yaptırılarak Aufbau ilkesi, Pauli dışlama ilkesi ve Hund kuralına ulaşılması sağlanır." "Öğrencilerden çalışma yaprağında verilen farklı atomların elektron dizilimlerini Aufbau ilkesi, Pauli dışlama ilkesi ve Hund kuralına göre yazmaları istenebilir."
-- **Açılış sorusu:** Boş bir otobüste yolcular önce boş çiftli koltuklara mı oturur, yoksa birinin yanına mı?
+- **Açılış sorusu:** Eş enerjili üç boş orbital nasıl dolar?
 - **Akılda kalıcı cümle:** Önce herkese bir koltuk, sonra yanına ikinci.
 - **Ders kitabı:** s. 60–63: Pauli, Hund, kutu-ok şemaları. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### E3 · Valans elektronlar ve küresel simetri
+#### E3 · Dengeli doluluk ve valans
 
 - **Tek fikir:** Atomun davranışını değerlik (valans) elektronları belirler; dizilimi küresel simetri gösteren atomlar daha kararlıdır.
 - **Anlatılacaklar:**
@@ -193,14 +193,14 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   2. Küresel simetri özelliği gösteren atomların elektron dizilimi (bölüm 6, soru 8).
   3. Küresel simetri ile atomun kararlılığı arasındaki ilişki; elektronların orbitallere yerleşimi ile kararlılık.
 - **Program dayanağı:** Uygulamalar: "Elektronların atom orbitallerine yerleşimi ile atomun kararlılığı arasındaki ilişkiye dair tartışma ortamı oluşturulur." "Valans elektron kavramı açıklanır. Küresel simetri özelliği gösteren atomların elektron dizilimi ile atomların kararlılığı arasında ilişki kurulur." Anahtar kavramlar: "küresel simetri… valans elektron".
-- **Açılış sorusu:** Yarısına kadar eşit doldurulmuş bir raf mı daha dengeli durur, bir ucu fazla dolu olan mı?
+- **Açılış sorusu:** N ile O dış orbitallerinde nasıl ayrılır?
 - **Akılda kalıcı cümle:** Yarı dolu ya da tam dolu: dengeli dizilim, kararlı atom.
 - **Ders kitabı:** s. 62–64, 70: C/N/O/Ne ve P/Cl/Ar örnekleri, yarı/tam doluluk; A grubunda dış katman, B grubunda ns+(n−1)d valans elektronları. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
 ### Konu F · Periyodik tabloda yer bulma
 
-#### F1 · Dizilim adresi söyler: periyot ve grup
+#### F1 · Dizilim adres verir
 
 - **Tek fikir:** Bir atomun elektron dizilimi, periyodik tablodaki periyodunu ve grubunu verir.
 - **Anlatılacaklar:**
@@ -209,12 +209,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   3. Dizilimi ve yeri verilen örnekler incelenir; dizilim ile yer arasındaki ilişki açıklanır, örüntü bulunur.
   4. Örüntü, A grubu elementlerinden yeni örnekler üzerinde denenir.
 - **Program dayanağı:** KİM.9.1.6 a) "Atomların elektron dizilimiyle periyodik tablodaki yeri arasında bulduğu örüntüyü yeni örnekler üzerinde dener." Uygulamalar: "Periyodik tablodaki grupların harf ve sayı (1A, 2B gibi) kullanılarak ya da IUPAC sistemine göre numaralar (1. grup, 18. grup gibi) verilerek adlandırılabileceği bilgisi verilir. Katman elektron dağılımının ilk 36 element için uygulanabilirliğine dair sorular sorulabilir." "Elementlerin elektron dizilimi ve periyodik tablodaki yer bilgisi örneklerde verilir. Öğrencilerden örnekleri inceleyerek atomların elektron dizilimi ile periyodik tablodaki yerleri arasındaki ilişkiyi açıklamaları istenir. …öğrencilerin periyodik tabloda yer bulma kurallarına ilişkin örüntü bulmaları sağlanır."
-- **Açılış sorusu:** Bir elementin yalnızca elektron dizilimini biliyorsan, tabloda hangi kutuda oturduğunu bulabilir misin?
+- **Açılış sorusu:** Yalnız dizilimden periyot ve grubu bulabilir misin?
 - **Akılda kalıcı cümle:** Dizilimin sonu, tablodaki adrestir.
 - **Ders kitabı:** s. 67–70: iki grup adlandırması, en yüksek n, A grubu; ilk 36 elemente uzanan Se örneği; He istisnası s. 70. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### F2 · Kuralı B grubunda sına
+#### F2 · Yeni örnek kuralı sınar
 
 - **Tek fikir:** Bulunan örüntü B grubu elementlerinde denenir, genellenir ve bilimsel kurallarla karşılaştırılır.
 - **Anlatılacaklar:**
@@ -223,12 +223,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   3. Bilimsel kuralların verilmesi ve yapılan genellemenin bu kurallarla karşılaştırılması (bölüm 6, soru 9).
   4. Verilen atomların periyodik tablo bilgilerinin (periyot, grup) belirlenmesi.
 - **Program dayanağı:** KİM.9.1.6 a), b) "Atomların periyodik tablodaki yerini belirlemede kullanılan kurallara ilişkin genelleme yapar." Uygulamalar: "Öğrencilerden buldukları örüntüyü A ve B grubu elementlerini içeren yeni örnekler üzerinde denemeleri istenir. Öğrenciler, elementlerin periyodik tablodaki yerlerini belirleyen kurallara ilişkin genelleme yapmaları için yönlendirilir. Elementlerin periyodik tablodaki yerlerini belirleyen bilimsel kurallar verilir. Öğrencilerden yaptıkları genellemeleri bilimsel kurallar ile karşılaştırmaları istenir." "Yapılandırılmış grid aracılığı ile öğrencilerden atomların periyodik tablo bilgilerini belirlemeleri istenebilir."
-- **Açılış sorusu:** A grubunda işleyen kural, tablonun ortasındaki demir için de işler mi?
+- **Açılış sorusu:** Demire A grubu kuralını uygularsan ne olur?
 - **Akılda kalıcı cümle:** Kural, yeni örnekte de tutuyorsa kuraldır.
 - **Ders kitabı:** s. 68–70: Sc/Fe/Co/Ni/Cu/Zn hazır dizilimleri; B toplamı 8–10→8B, 11→1B, 12→2B. Cu gözlenen dizilimi verilir, istisna türetimi anlatılmaz. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### F3 · Bloklar ve özel adlı gruplar
+#### F3 · Bloğu yerleşim türü söyler
 
 - **Tek fikir:** Dizilimin bittiği orbital türü elementin bloğunu verir; bazı grupların özel adı ve ortak özellikleri vardır.
 - **Anlatılacaklar:**
@@ -237,14 +237,14 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   3. 1A, 2A, 3A, 7A ve 8A gruplarının özel adları.
   4. Bu grupların genel özellikleri (bölüm 6, soru 10).
 - **Program dayanağı:** Uygulamalar: "Elementlerin elektron dizilimleri, periyodik tabloda yer aldığı blok ile ilişkilendirilir. Periyodik tablo üzerinde d ve f blokları (lantanit ve aktinit) ile 1A, 2A, 3A, 7A ve 8A gruplarının özel adları ve bu grupların genel özellikleri verilir."
-- **Açılış sorusu:** Periyodik tablo neden düz bir dikdörtgen değil de girintili çıkıntılı, altında iki ayrı satırla çizilir?
+- **Açılış sorusu:** Tablonun altında iki satır neden var?
 - **Akılda kalıcı cümle:** Son elektron hangi orbitaldeyse element o bloktadır.
 - **Ders kitabı:** s. 70–72: s/p/d/f blokları, lantanit/aktinit, 1A/2A/3A/7A/8A adları ve seçilen genel özellikler. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
 ### Konu G · İyon oluşumu
 
-#### G1 · İyonun dizilimi neye benzer?
+#### G1 · Elektron değişir, proton kalır
 
 - **Tek fikir:** Atom, valans elektronlarını vererek ya da alarak iyon olur; atom ve iyon dizilimleri karşılaştırılınca oluşan iyon öngörülür. Elektron sayısı ve dizilimi aynı olan tanecikler izoelektroniktir.
 - **Anlatılacaklar:**
@@ -254,14 +254,14 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. İyon oluşurken elektronun hangi orbitalden verildiği ya da hangi orbitale alındığı.
   5. İzoelektronik tanecikler: örnekler ve tanım.
 - **Program dayanağı:** KİM.9.1.7 a) "Atomların elektron dizilimiyle iyonların elektron dizilimi arasında örüntü bulur." b) "İyon oluşumuna ilişkin genelleme yapar." Uygulamalar: "Öğrencilere katyon ve anyon oluşumunda son katmandaki elektronların etkililiği ile ilgili sorular sorulabilir. Elementlere (ilk 20 element) ait atomların elektron dizilimi kullanılarak valans elektronlarına göre oluşturulan katyon ve anyonların elektron dizilimleri hazır veri seti ile sunulur." "İzoelektronik taneciklere ilişkin örnekler verilerek öğrencilerin izoelektronik kavramını tanımlamaları sağlanır." "…iyon oluşum sürecinde elektronların hangi orbitallerden verileceği veya hangi orbitallere alınacağını belirlemeleri istenebilir."
-- **Açılış sorusu:** Na ile Na⁺ aynı elektron dizilimine mi sahiptir?
+- **Açılış sorusu:** Na ile Na⁺ aynı dizilime mi sahip?
 - **Akılda kalıcı cümle:** Atom, elektron verip alarak kararlı dizilime ulaşır.
 - **Ders kitabı:** s. 73–76: ilk 20 içinden F/N/S/Na/Al/Ca atom–iyon veri seti, K ve Cl örnekleri, izoelektronik tanecikler. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
 ### Konu H · Periyodik özellikler
 
-#### H1 · Atom yarıçapı: grupta büyür, periyotta küçülür
+#### H1 · Atom yarıçapı
 
 - **Tek fikir:** Atom yarıçapı grupta enerji seviyesi arttığı için büyür, periyotta proton sayısı arttığı için küçülür; izoelektronik taneciklerde farkı çekirdek yükü belirler.
 - **Anlatılacaklar:**
@@ -271,12 +271,12 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Atom numarası verilen atomların yarıçaplarını tablodaki konumlarıyla ilişkilendirerek sıralama.
   5. İzoelektronik taneciklerin atom ya da iyon yarıçaplarındaki fark: çekirdek yükü ve elektron–elektron itme etkileşimleri.
 - **Program dayanağı:** KİM.9.1.8 a), b). Uygulamalar: "Atom yarıçapı kavramı tanımlanır. Öğrencilerden A grubu elementlerinin atom yarıçaplarına ilişkin verileri kullanarak periyodik tablonun aynı periyot veya grubunda atom yarıçapındaki (2 veya 3. periyot) değişim eğilimini ve bu eğilime neden olan etmenleri belirlemeleri istenir. Atom yarıçaplarının aynı gruptaki değişiminin enerji seviyeleri ile, aynı periyottaki atom yarıçaplarının değişiminin ise protonelektron sayısındaki değişim ile ilişkilendirilmesi sağlanır." "Geometrik cisimlerdeki yarıçap sabit bir uzaklık olarak düşünülürken atom yarıçapının çeşitli faktörlere bağlı olarak değişkenlik gösterdiği ve net bir ölçümünün yapılamadığı düşüncesi oluşturulur. Öğrencilerin izoelektronik taneciklerin atom veya iyon yarıçaplarındaki farklılıkların çekirdek yükü ve elektronelektron itme etkileşimlerinden kaynaklandığını fark etmeleri sağlanır."
-- **Açılış sorusu:** Bir periyotta sağa gittikçe atoma hem proton hem elektron eklenir; atom büyür mü, küçülür mü?
+- **Açılış sorusu:** Sağa gittikçe proton ve elektron artar; atom büyür mü?
 - **Akılda kalıcı cümle:** Katman eklenince atom büyür, çekirdek güçlenince küçülür.
 - **Ders kitabı:** s. 78–80: atom yarıçapı tanımı, üçüncü periyot ve Li/Na/K verisi; s. 79: F⁻/Na⁺/Mg²⁺ yarıçapları. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
 
-#### H2 · İyonlaşma enerjisi: elektronu koparmanın bedeli
+#### H2 · İyonlaşma enerjisi
 
 - **Tek fikir:** 1. iyonlaşma enerjisi ile yarıçap arasında genel bir ters eğilim vardır; elektron dizilimi nedeniyle istisnalar görülür.
 - **Anlatılacaklar:**
@@ -286,7 +286,7 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Çentikler: Mg/Al ve P/S dizilimlerinin enerji ve küresel simetriyle ilişkilendirilmesi.
   5. Atom numarası verilen atomların iyonlaşma enerjilerini konumlarıyla ilişkilendirerek sıralama.
 - **Program dayanağı:** Uygulamalar: "İyonlaşma enerjisi kavramı tanımlanır. Öğrencilerden A grubu elementlerinin 1. iyonlaşma enerjisi, atom numarası ve atom yarıçapına ilişkin verileri kullanarak periyodik tablonun aynı periyot (2 veya 3. periyot) veya grubunda 1. iyonlaşma enerjilerinin değişimini ve bu değişime neden olan etmenleri belirlemeleri istenir. Öğrenciler, bir periyot veya grup boyunca atom yarıçapı ve iyonlaşma enerjisi arasındaki ilişkinin geçerliliğini sorgulamak üzere yönlendirilir." "…farklı atomların iyonlaşma enerjilerini periyodik tablodaki konumu ile ilişkilendirerek sıralamaları istenebilir."
-- **Açılış sorusu:** Bir atomdan elektron koparmak enerji ister; hangi atomda daha kolaydır: büyükte mi, küçükte mi?
+- **Açılış sorusu:** Büyük atomdan elektron koparmak daha mı kolay?
 - **Akılda kalıcı cümle:** Yakın elektron zor kopar; dizilimi de kontrol et.
 - **Ders kitabı:** s. 80–82: gaz hâlinde iyonlaşma enerjisi, kJ/mol; üçüncü periyot ve Li/Na/K verileri. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
@@ -304,7 +304,7 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
 - **Ders kitabı:** s. 83: İE₂/İE₃ tanımları ve Na/Mg/Al hazır tablosu; s. 74–75 dış elektron sonrası kararlı dizilim ve daha zor koparma. Alınma: 7 Ekim 2026.
 - **Görsel:** Kaynaklı tanecik–elektron şeması ve sabit ölçekli ardışık enerji grafikleri; resim gerekmiyor.
 
-#### H4 · Elektronegatiflik: bağ elektronunu kim daha çok çeker?
+#### H4 · Elektronegatiflik
 
 - **Tek fikir:** Elektronegatiflik göreceli bir ölçüdür; küçük atomlarda büyüktür, periyotta ve grupta atom yarıçapıyla ters yönde değişir.
 - **Anlatılacaklar:**
@@ -314,7 +314,7 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
   4. Atom numarası verilen atomların elektronegatiflik değerlerini konumlarıyla ilişkilendirerek sıralama.
   5. Elektronegatifliğin moleküllerin bazı özelliklerinin (polarlık, apolarlık) anlaşılmasında önemli olduğu; yalnızca vurgu olarak.
 - **Program dayanağı:** Uygulamalar: "Elektronegatiflik tanımı verilerek bu tanımın göreceli bir kavram olduğu belirtilir. Elektro negatifliğin moleküllerin bazı özelliklerinin (polarlık, apolarlık) anlaşılmasında önemli bir kavram olduğu vurgulanır. Periyodik tabloda elementlerin (ilk 20 element) Pauling ölçeğinde elektronegatiflik değerleri verilir. Öğrenciler, verilen elektronegatiflik değerleri üzerinden periyodik tabloda periyot ve gruplardaki değişim eğilimini, bu eğilime neden olan etmenleri belirlemeleri için yönlendirilir. Bu öğretim sürecinde öğrencilerin periyodik tabloda gözlenen elektronegatiflik değişimlerini atom yarıçapı ile ilişkilendirmeleri sağlanır."
-- **Açılış sorusu:** İki atom bir elektron çiftini paylaşıyorsa, çift tam ortada mı durur?
+- **Açılış sorusu:** Ortak elektron çiftini iki atom eşit mi çeker?
 - **Akılda kalıcı cümle:** Küçük atom, ortak elektronu kendine daha çok çeker.
 - **Ders kitabı:** s. 84–85: ilk 20 elementin Pauling değerleri, görecelilik ve yarıçap ilişkisi; polarlık/apolarlık yalnızca program vurgusu. Alınma: 7 Ekim 2026.
 - **Görsel:** Etiketli SVG şema/tablo; resim gerekmiyor.
@@ -500,7 +500,7 @@ Aşağıdakiler taslak kaydıdır; hiçbir soru açık değildir. Geçerli uygul
 - **A1, s. 24:** marinasyon A/B/C: pH 6,12/5,23/6,07; alüminyum 0,047/0,125/0,058 mgAl/100 g numune. Sıcaklık 150/200/250 °C: A 0,051/0,055/0,062; B 0,128/0,130/0,134; C 0,061/0,063/0,066 mgAl/100 g. Bunlar hazır veri; hastalık nedenselliği ya da tüketim önerisi türetilmez.
 - **C1, s. 48, 50:** elektron yük −1,6022×10⁻¹⁹ C, kütle 9,1096×10⁻²⁸ g; proton +1,6022×10⁻¹⁹ C, 1,6726×10⁻²⁴ g; nötron 0 C, 1,6749×10⁻²⁴ g. S. 48'in başlığı tek keşif tarihi değil “ilgili keşiflerin yılı”: elektron 1832 katot ışınları ve 1891 atomda eksi yük; proton 1886 pozitif ışınlar ve 1906 atomda pozitif yük; nötron 1913 yüksüz tanecikler ve 1932 nötron. Tek kanonik keşif tarihi diye sunulmaz. Model şeridi s. 46, 48: 1803/1897/1911/1913/1926. Varsayımlar modellerin şematik karşılaştırmasıdır; keşif deneyi ayrıntısı eklenmez.
 - **H1, s. 78:** 3. periyot Na/Mg/Al/Si/P/S/Cl/Ar yarıçapları 186/160/143/118/110/103/99/98 pm. Li/Na/K: 152/186/227 pm. **S. 79:** F⁻ 136, Na⁺ 95, Mg²⁺ 65 pm; ortak elektron sayısı 10, çekirdek yükleri 9/11/12. Elektron itmesi vardır; bu örnekte aynı elektron diziliminde proton sayısı arttıkça çekim artar.
-- **H2–H3, s. 81:** 3. periyot 1. iyonlaşma enerjileri Na/Mg/Al/Si/P/S/Cl/Ar: 496/738/577/786/1012/1000/1255/1520 kJ/mol. Li/Na/K 520/496/419 kJ/mol. Aynı tablonun yarıçapları H1 ile aynı.
+- **H2, s. 81:** 3. periyot 1. iyonlaşma enerjileri Na/Mg/Al/Si/P/S/Cl/Ar: 496/738/577/786/1012/1000/1255/1520 kJ/mol. Li/Na/K 520/496/419 kJ/mol. Aynı tablonun yarıçapları H1 ile aynı.
 - **H3, s. 83:** Na İE₁–İE₄ 496/4562/6912/9544; Mg 738/1451/7733/10540; Al 577/1817/2745/11578 kJ/mol. Büyük sıçrama valans sonrası; Na⁺/Mg²⁺/Al³⁺ örnekleri.
 - **H4, s. 84:** H 2,20; He —; Li 0,98; Be 1,57; B 2,04; C 2,55; N 3,04; O 3,44; F 4,00; Ne —; Na 0,93; Mg 1,31; Al 1,61; Si 1,90; P 2,19; S 2,58; Cl 3,16; Ar —; K 0,82; Ca 1,00. Pauling değerleri birimsiz; çizgi “tabloda verilmemiş” demektir, sıfır değildir.
 
@@ -518,7 +518,7 @@ Aşağıdakiler taslak kaydıdır; hiçbir soru açık değildir. Geçerli uygul
 
 ## 10. Sahne denetiminin kullanımı
 
-Tablodaki `A1.3` A1'in üçüncü içerik sahnesidir; otomatik çıkış soruları ve özet sahneleri bu sayıya girmez. Aralıklar yalnız ilgili dersin içerik sahnelerini kapsar. Her sahnenin ters dayanağı konu senaryosunun “Sahneler” bölümünde PLAN.md anlatılacak madde numarasıyla yazılıdır. Gerçek etkinlikler site dışı; hazır kayıtlar kaynaklı benzetimdir. Tablo senaryo eşlemesini içerir; gerçekleşen sahneler son tema denetiminde karşılaştırılır.
+Tablodaki `A1.3` A1'in üçüncü içerik sahnesidir; otomatik çıkış soruları ve özet sahneleri bu sayıya girmez. Aralıklar yalnız ilgili dersin içerik sahnelerini kapsar. Her sahnenin ters dayanağı konu senaryosunun “Sahneler” bölümünde PLAN.md anlatılacak madde numarasıyla yazılıdır. Gerçek etkinlikler site dışı; hazır kayıtlar kaynaklı benzetimdir. Tablo gerçekleşen sahnelerle karşılaştırıldı; 80 sahnenin dayanakları sekiz senaryo dosyasında izlenir.
 
 ## 11. Güncel öğretim kurallarına uyarlama — 7 Ekim 2026
 

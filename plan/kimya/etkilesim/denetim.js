@@ -1,16 +1,18 @@
 #!/usr/bin/env node
 /* Ölçücüye ek kontrol: biten sahnelerdeki tüm seçici durumları.
    node plan/kimya/etkilesim/denetim.js [a1 a2 …]
+   node plan/kimya/etkilesim/denetim.js --tema   Tema ve telefon görünümü
    Ekranlar ve rapor proje dışında /private/tmp/etkilesim-etkilesim-denetimi/ altında. */
 'use strict';
 const fs = require('fs'), path = require('path');
-const { dersiAc, sleep, KOK } = require('../../../araclar/tarayici');
+const { dersiAc, sleep, KOK, CHROME, sahneyiOynat } = require('../../../araclar/tarayici');
 const kok = path.join(KOK, 'kimya/etkilesim');
 const windowKatalog = {};
 new Function('window', fs.readFileSync(path.join(KOK, 'ortak/katalog.js'), 'utf8'))(windowKatalog);
 new Function('KATALOG', fs.readFileSync(path.join(kok, 'tema.js'), 'utf8'))(windowKatalog.KATALOG);
 const tema = windowKatalog.KATALOG.dersler.find((d) => d.id === 'kimya').temalar.find((t) => t.id === 'etkilesim');
-const kodlar = process.argv.slice(2);
+const sadeceTema = process.argv.includes('--tema');
+const kodlar = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 const dersler = tema.konular.flatMap((k) => k.dersler).filter((d) => !kodlar.length || kodlar.includes(d[0].split('-')[0]));
 if (!dersler.length) throw new Error('Denetlenecek ders bulunamadı.');
 const cikti = '/private/tmp/etkilesim-etkilesim-denetimi';
@@ -45,6 +47,43 @@ function durum() {
 }
 
 (async () => {
+  if (sadeceTema) {
+    const puppeteer = require('../../../araclar/node_modules/puppeteer-core');
+    const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox'] });
+    const page = await browser.newPage(), hatalar = [];
+    page.on('pageerror', (e) => hatalar.push(e.message));
+    page.on('console', (m) => { if (m.type() === 'error') hatalar.push(m.text()); });
+    try {
+      const kayit = [];
+      for (const [width, height] of [[1366, 657], [390, 844]]) {
+        await page.setViewport({ width, height });
+        await page.goto('file://' + path.join(kok, 'index.html'));
+        await page.evaluate(() => document.querySelectorAll('details').forEach((d) => { d.open = true; }));
+        await sleep(300);
+        const r = await page.evaluate(() => ({ konular: document.querySelectorAll('.topic-block').length,
+          dersler: document.querySelectorAll('.lesson').length, yanaTasma: document.documentElement.scrollWidth > innerWidth + 2 }));
+        if (r.konular !== 8 || r.dersler !== 18 || r.yanaTasma) throw new Error('Tema görünümü: ' + JSON.stringify(r));
+        kayit.push({ width, height, ...r });
+        await page.screenshot({ path: path.join(cikti, 'tema-' + width + '-tam.png'), fullPage: true });
+        for (const harf of ['a', 'c', 'e', 'g']) {
+          await page.evaluate((harf) => document.querySelector('#konu-' + harf).scrollIntoView(), harf);
+          await page.screenshot({ path: path.join(cikti, 'tema-' + width + '-' + harf + '.png') });
+        }
+      }
+      if (hatalar.length) throw new Error(hatalar.join('\n'));
+      fs.writeFileSync(path.join(cikti, 'tema.json'), JSON.stringify(kayit, null, 2));
+      console.log('Tema: 8 konu, 18 ders; masaüstü ve telefon görünümünde yatay taşma 0, konsol temiz.');
+    } finally { await browser.close(); }
+    const mobile = await dersiAc(path.join(kok, 'e2-pauli-ve-hund.html'), { width: 390, height: 844 });
+    try {
+      if (!(await sahneyiOynat(mobile.page, 0))) throw new Error('Telefon E2 sahnesi tamamlanmadı.');
+      if (await mobile.page.evaluate(() => document.documentElement.scrollWidth > innerWidth + 2)) throw new Error('Telefon dersinde yatay taşma.');
+      if (mobile.hatalar.length) throw new Error(mobile.hatalar.join('\n'));
+      await mobile.page.screenshot({ path: path.join(cikti, 'ders-e2-telefon.png'), fullPage: true });
+      console.log('Telefon E2: ilk sahne tamam, yatay taşma 0, konsol temiz.');
+    } finally { await mobile.browser.close(); }
+    return;
+  }
   let toplam = 0, hata = 0;
   for (const d of dersler) {
     const kod = d[0].split('-')[0];

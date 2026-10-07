@@ -23,8 +23,9 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Yeni veri neyi değiştirebilir? Doğru: Atomun açıklama modelini. Çeldiriciler: Tüm atomları başka maddeye dönüştürür; Bilimsel araştırmayı gereksiz kılar. Gerekçe: Yeni veri açıklamayı geliştirir; diğerleri sonuç değildir.
-2. Kütle karşılaştırması? Doğru: Nötron > proton > elektron. Çeldiriciler: Elektron > proton > nötron; Üçü eşittir. Gerekçe: S. 50 sayıları sıralamayı gösterir.
+1. Yeni veri neyi değiştirebilir? **Doğru:** Atomun açıklama modelini. **Çeldiriciler:** Bütün atomları başka maddeye dönüştürür.; Bilimsel araştırmayı gereksiz kılar. **Gerekçe:** Yeni veri, açıklamayı geliştirebilir. Modelin değişmesi atomların değişmesi değildir. Yeni veri araştırmayı sürdürmemizi sağlar.
+
+2. Kitaptaki kütlelerin büyükten küçüğe doğru sırası? **Doğru:** Nötron > proton > elektron. **Çeldiriciler:** Elektron > proton > nötron; Üçü eşittir. **Gerekçe:** Elektronun kütlesi çok daha küçüktür. Proton ve nötron yakın kütlelidir; tam eşit değildir. S. 50 sayıları bu sıralamayı gösterir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
 
@@ -49,7 +50,36 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Orbital nedir? Doğru: Bulunma olasılığının yüksek olduğu bölge. Çeldiriciler: Kesin dairesel yol; Elektronun kendisi. Gerekçe: Orbital yol ya da parçacık değildir.
-2. Üst düzeye enerji alarak geçiş? Doğru: Soğurma (absorbsiyon). Çeldiriciler: Yayma (emisyon); İyonun proton kazanması. Gerekçe: Yayma enerji çıkışıdır; proton kazanımı bu geçiş değildir.
+1. Orbital nedir? **Doğru:** Bulunma olasılığının yüksek olduğu bölge. **Çeldiriciler:** Kesin dairesel yol; Elektronun kendisi. **Gerekçe:** Yörünge, Bohr modelinin varsayımıdır. Modern modelde orbital olasılık bölgesidir. Orbital bir parçacık değildir.
+
+2. Enerji alarak üst düzeye geçişe ne denir? **Doğru:** Soğurma (absorbsiyon). **Çeldiriciler:** Yayma (emisyon); İyonun proton kazanması. **Gerekçe:** Yayma, enerji çıkışıyla alt düzeye geçiştir. Bu geçişte proton kazanılmaz. Enerji alınır; üst enerji düzeyine geçilir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
+
+## Güncel öğretim sırası — KURALLAR 3.1
+
+### C1 · Açılış biçimi: kanca
+
+Dalton/Thomson/Rutherford sıralaması ve temel tanecikler müfredatın ön bilgisidir.
+
+| Soru | Sorudan önce verilen bilgi |
+|---|---|
+| S1 Q1 | Ön bilgi olan model sırası; yalnız bilinen ilk üç model seçilir. Kaynak zaman şeridi seçimden sonra açılır. |
+| S2 Q1 | Ön bilgi atom modellerinin çekirdek varsayımları; sonra beş şema karşılaştırılır. |
+| S3 Q1 | Üç parçacığın keşif/yük/kütle kartı soru öncesi zorunlu okunur; sayısal bilgiler kaynaklıdır. |
+| S4 Q1 | Elektron kartı ve önceki bölünmez model şeması; verinin varsayımı sınaması. |
+| S5 Q1 | S1–4 yeni veri–model karşılaştırması; modelin atomun kendisi olmadığı ayrımı. |
+| Çıkış 1/2 | S5 modelin gelişmesi; S3’te zorunlu gösterilen üç kütle kaydı. |
+
+### C2 · Açılış biçimi: kanca
+
+Bohr enerji düzeyleri ön bilgidir; daha uzak düzeyin enerjisi doğrudan hatırlatılır.
+
+| Soru | Sorudan önce verilen bilgi |
+|---|---|
+| S1 Q1 | Bohr üç enerji düzeyi çizimi ve müfredat ön bilgisi. |
+| S2 Q1 | Soğurma=enerji alma, yayma=verme; üst düzey daha yüksek enerji bilgisi önce verilir. |
+| S3 Q1 | Tek elektronlu başarı ve çok elektronlu etkileşimlerde sınırlılık önceden açıklanır. |
+| S4 Q1 | Heisenberg konum/hız ilkesi üç açıklamayla öğretilir; sonra “daha iyi cihaz” iddiası değerlendirilir. |
+| S5 Q1 | Orbital olasılık bölgesi olarak tanımlanır, modern çizim görünür; noktaları yola dönüştürme iddiası sınanır. |
+| Çıkış 1/2 | S5 orbital tanımı; S2 soğurma/yayma ve enerji geçişi. |

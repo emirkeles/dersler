@@ -23,7 +23,24 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Genel diyagramda daha düşük enerjili? Doğru: 4s. Çeldiriciler: 3d; İkisi eşit. Gerekçe: S. 58 genel sırası 4s<3d'dir.
-2. Aynı 2p alt düzeyindeki orbitaller? Doğru: Eş enerjili. Çeldiriciler: Biri daima iki kat enerjili; Orbital sayısı kadar artar. Gerekçe: S. 54 ve 58 eş enerji bilgisini verir.
+1. Genel bağıl enerji diyagramında hangisi daha düşük enerjilidir? **Doğru:** 4s. **Çeldiriciler:** 3d; 4s ve 3d eşittir. **Gerekçe:** 3d çizgisi 4s çizgisinin üstündedir. 4s çizgisi 3d çizgisinin altında yer alır. Bu iki çizgi farklı yüksekliktedir.
+
+2. Aynı 2p alt düzeyindeki üç orbitalin enerjileri nasıldır? **Doğru:** Birbirine eşittir. **Çeldiriciler:** Biri daima iki kat büyüktür.; Orbital sayısı kadar artar. **Gerekçe:** Üç 2p çizgisi aynı yüksekliktedir. Diyagramda katlı enerji değeri verilmez. Orbital sayısı enerji değeri değildir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
+
+## Güncel öğretim sırası — KURALLAR 3.1
+
+### D1 · Açılış biçimi: kanca
+
+Etiketli kutu satırlarında orbital sayma görsel karşılaştırmadır.
+
+| Soru | Sorudan önce verilen bilgi |
+|---|---|
+| S1 Q1 | s/p/d/f satırları ve her kutunun bir orbital olduğu lejant görünür; p kutuları sayılır. |
+| S2 Q1 | 4s/3d etiketleri: bilgi kaynağı seçimi önceki bilimsel veri yaklaşımıyla yapılır. |
+| S2 Q2 | Kaynak enerji diyagramı ve yukarı doğru enerji artışı önce gösterilir. |
+| S3 Q1/Q2 | Aynı kaynak diyagramı, sayıya dayalı iddia ve diyagrama dayalı gerekçe karşılaştırması. |
+| S4 Q1 | 2p eş yüksekliğinin ve 2s düşük çizgisinin görünür verisi. |
+| S5 Q1/Q2/Q3 | Karışık etiketlere karşı kaynak merdiveni hep görünür; kalan en düşük seçilir. |
+| Çıkış 1/2 | S2–4 4s/3d sırası ve aynı alt düzey eş enerji. |

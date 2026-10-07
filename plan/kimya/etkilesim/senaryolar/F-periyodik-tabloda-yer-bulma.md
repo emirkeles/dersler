@@ -36,8 +36,9 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Cl 3s²3p⁵ dış kısmı? Doğru: 3. periyot 7A. Çeldiriciler: 2. periyot 7A; 3. periyot 5A. Gerekçe: n=3 ve 2+5=7.
-2. He 1s² nerede? Doğru: 1. periyot 8A. Çeldiriciler: 1. periyot 2A; 2. periyot 8A. Gerekçe: He soy gaz istisnasıdır.
+1. Cl: 1s² 2s² 2p⁶ 3s² 3p⁵. Adresi nedir? **Doğru:** 3. periyot · 7A. **Çeldiriciler:** 2. periyot · 7A; 3. periyot · 5A. **Gerekçe:** Dizilimde en yüksek n=3’tür. En yüksek n=3; dış s+p toplamı 2+5=7. Yalnız p elektronlarını saydın; dış s elektronları da eklenir.
+
+2. He 1s² için doğru adres hangisidir? **Doğru:** 1. periyot · 8A. **Çeldiriciler:** 1. periyot · 2A; 2. periyot · 8A. **Gerekçe:** He, A grubu toplam kuralının istisnasıdır. Dizilimde en yüksek n=1’dir. He, birinci periyotta 8A grubunda yer alır.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
 
@@ -74,8 +75,9 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. 4s²3d⁷ ile biten Co? Doğru: 4. periyot 8B. Çeldiriciler: 3. periyot 9B; 4. periyot 7A. Gerekçe: n en çok4; toplam9 özel olarak8B.
-2. 4s²3d¹⁰ Zn? Doğru: 2B. Çeldiriciler: 12B; 2A. Gerekçe: Toplam12,2B eşlemesidir.
+1. Co: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d⁷. Adresi? **Doğru:** 4. periyot · 8B. **Çeldiriciler:** 3. periyot · 9B; 4. periyot · 7A. **Gerekçe:** En yüksek n=4; toplam 9 için grup 8B’dir. Dizilim d ile biter; B grubudur. En yüksek n=4; s+d=9, özel eşleme 8B.
+
+2. Zn: 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰. Harfli grup? **Doğru:** 2B. **Çeldiriciler:** 12B; 2A. **Gerekçe:** Toplam 12, harfli sistemde 2B’ye karşılık gelir. s+d=12; 2B’dir. IUPAC sisteminde 12. gruptur. Yalnız 4s elektronlarını saymak yeterli değildir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
 
@@ -110,7 +112,8 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. 1A adı için istisna? Doğru: H alkali metal değildir.. Çeldiriciler: Na alkali metal değildir.; Li soy gazdır.. Gerekçe: S.71 hidrojen istisnasını belirtir.
-2. Lantanit ve aktinit? Doğru: f blok. Çeldiriciler: s blok; p blok. Gerekçe: S.70 f blok konumunu verir.
+1. 1A için “alkali metaller” adında hangi istisna vardır? **Doğru:** H alkali metal değildir. **Çeldiriciler:** Na alkali metal değildir.; Li soy gazdır. **Gerekçe:** H, 1A’da bulunduğu hâlde ametaldir. Na, 1A alkali metalidir. Li, 1A alkali metalidir; soy gaz değildir.
+
+2. Lantanitler ve aktinitler hangi bloktadır? **Doğru:** f blok. **Çeldiriciler:** s blok; p blok. **Gerekçe:** s blok soldaki bölgeyi ve He’yi kapsar. p blok sağdaki bölgedir; He s blok istisnasıdır. Lantanit ve aktinit konumları f blokta gösterilir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.

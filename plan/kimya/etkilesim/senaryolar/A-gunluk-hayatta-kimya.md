@@ -23,8 +23,9 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. En çok Al hangi marinasyonda? Doğru: B (0,125). Çeldiriciler: A (0,047); C (0,058). Gerekçe: A ve C değerleri daha küçüktür.
-2. Güvenilir çıkarım hangisi? Doğru: Bu tabloda sıcaklık arttıkça birikim artmış.. Çeldiriciler: Her durumda aynı miktar birikir.; Tek ürün bütün kullanım alanlarına uygundur.. Gerekçe: İki çeldirici verinin kapsamını aşar.
+1. Kitabın A/B/C marinasyon verisinde en yüksek Al miktarı hangisinde? **Doğru:** B: 0,125. **Çeldiriciler:** A: 0,047; C: 0,058. **Gerekçe:** A değeri daha küçük. 0,125 mgAl/100 g en büyük değerdir. C değeri B’den küçüktür.
+
+2. Hangisi verilen tablonun desteklediği çıkarımdır? **Doğru:** Verilen sıcaklıklarda birikim artmış. **Çeldiriciler:** Her koşul aynı miktarı verir.; Bütün ürünler aynı işe uygundur. **Gerekçe:** Koşulların değişimi sonuçla ilişkili. Ürünlerin kullanım amacı farklıdır. Sonuç bu veri ve koşullar için geçerlidir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
 
@@ -49,7 +50,36 @@ Dayanak: MUFREDAT.md ve PLAN.md (7 Ekim 2026 kararları). Sahne maddeleri PLAN.m
 
 **Çıkış soruları ve çeldiricileri**
 
-1. Suda madde miktarını hangi dal inceler? Doğru: Analitik kimya. Çeldiriciler: Polimer kimyası; Biyokimya. Gerekçe: Miktar tayini analitiktir; diğerleri farklı çalışma sorularıdır.
-2. Sancar örneğinde hangi çalışma var? Doğru: DNA onarımı. Çeldiriciler: Plastik üretimi; Çoklu elektron kuramı. Gerekçe: Kuram Sinanoğlu örneğidir; plastik bu çalışma değildir.
+1. Sudaki bileşen miktarını belirlemek hangi dala örnek? **Doğru:** Analitik kimya. **Çeldiriciler:** Polimer kimyası; Biyokimya. **Gerekçe:** Polimer kimyası büyük moleküllere odaklanır. Burada canlıdaki süreç değil, miktar tayini soruluyor. Bileşen türü ve miktarı analitik kimyanın konusudur.
+
+2. Kitabın Aziz Sancar örneği hangi çalışmayla ilişkilidir? **Doğru:** DNA onarımı. **Çeldiriciler:** Plastik üretimi; Atom ve Moleküllerde Çoklu Elektron Kuramı. **Gerekçe:** Burada bu çalışma verilmedi. DNA onarımı, s. 28’deki çalışma örneğidir. Bu çalışma Sinanoğlu örneğidir.
 
 **Kapsam karşılaştırması:** Her sahne belirtilen plan maddelerine ve ilgili çıktı uygulamasına dayanır; zenginleştirme, ürün hazırlama ve gerçek deney yönergeleri ders değildir.
+
+## Güncel öğretim sırası — KURALLAR 3.1
+
+### A1 · Açılış biçimi: kanca
+
+Ürünlerin gündelik kullanımını ayırma sezgiyle yapılır; deney sonucu sorulmaz.
+
+| Soru | Sorudan önce verilen bilgi |
+|---|---|
+| S1 Q1 | Diş macunu/öz bakım gündelik kullanım ön bilgisi; dört ürün türü kartlarda erişilir. |
+| S2 Q1 | Ölçüm kaydı A pH/Al satırı ve “hazır ölçüm” kaynağı önce görünür; yorum/kayıt ayrılır. |
+| S3 Q1 | A/B/C değerleri aynı birimle soru öncesi görünür; sayıları karşılaştırma ön bilgidir. |
+| S4 Q1 | 150/200/250 °C için kaynak grafiği önceden görünür; artış grafikten okunur. |
+| S5 Q1 | Kaynak/koşul/ölçüm şeması ve önceki hazır tabloyla sınırlı çıkarım bilgisi. |
+| Çıkış 1/2 | S3 miktar karşılaştırması ve S4–5 koşullu yorum. |
+
+### A2 · Açılış biçimi: kanca
+
+A1’de öğrenilen ürün özelliği–kullanım ilişkisi kimyanın çalışma sorusuna bağlanır.
+
+| Soru | Sorudan önce verilen bilgi |
+|---|---|
+| S1 Q1 | Kimya tanımı tahtada ve altyazıda verilir; ürün özelliği A1 ön bilgisidir. |
+| S2 Q1 | Analitik kartı: bileşen türü ve miktarı. Suda bileşen sorusu bu bilgiye uygulanır. |
+| S3 Q1 | Polimer: büyük molekül yapısı/özelliği; kitapta plastik örneği zorunlu açıklanır. Seçici ziyareti varsayılmaz. |
+| S4 Q1 | Sancar–DNA onarımı kaynak kartı önceden gösterilir; kişi biyografisi eklenmez. |
+| S5 Q1 | S3’te zorunlu öğrenilen polimer alanı yeni ürün sorusuna taşınır. |
+| Çıkış 1/2 | S2 analitik tanımı ve S4 Sancar çalışma kartı. |
