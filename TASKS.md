@@ -68,6 +68,7 @@ Ayrıntılı ilerleme: `plan/fizik/fizik-bilimi-ve-kariyer-kesfi/DURUM.md`. Doğ
 - [x] Seslendirme: 6 ders, 93 klip (`plan/SESLENDIRME.md` adım 1, 2, 4, 5, 6); ayrıntı `DURUM.md` "Seslendirme"
 - [ ] Seslendirme adım 3 ve 6.4: kullanıcı A1'i ve her konudan bir dersi sesli izler (pilot atlanmıştı)
 - [ ] Dinlemeden sonra: yönerge (`[curious]`, `[excited]`) ve okunuş düzeltmeleri, ilgili klipleri yeniden üret
+- [x] Yayına al: `ortak/katalog.js` içinde `yayinda: true`; ana sayfa görüntüsüne bakıldı
 
 ## Seslendirme: Sayılar A konusu ve ortak plan (7 Ekim 2026)
 

@@ -32,7 +32,7 @@ window.KATALOG = {
       { id: 'veriden-olasiliga', ad: 'Veriden Olasılığa' },
     ] },
     { id: 'fizik', ad: 'Fizik', simge: 'Δv', temalar: [
-      { id: 'fizik-bilimi-ve-kariyer-kesfi', ad: 'Fizik Bilimi ve Kariyer Keşfi' },
+      { id: 'fizik-bilimi-ve-kariyer-kesfi', ad: 'Fizik Bilimi ve Kariyer Keşfi', yayinda: true },
       { id: 'kuvvet-ve-hareket', ad: 'Kuvvet ve Hareket' },
       { id: 'akiskanlar', ad: 'Akışkanlar' },
       { id: 'enerji', ad: 'Enerji' },

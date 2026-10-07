@@ -32,7 +32,8 @@ Başlangıç ve bitiş: 7 Ekim 2026. Çalışma klasörü paylaşıldığı içi
 - Senaryodan sapmalar (senaryo dosyaları derse göre düzeltildi): A1 S3'te matematik bağı ters ok yerine ayrı renkle gösterilir. B1 S1'de görseller 4×4 yerine 8×2 dizilir. D1 S2'de eşleşen cümle etiketin altında kalmaz; etiketin çerçevesi yeşile döner (kelime bütçesi). D2 S3'te uyuşan cümle deftere eklenmez; çerçevesi renk değiştirir.
 - Motorda eksik görülenler (düzeltilmedi, `ortak/` altında): `c.choice` her doğru cevaptan sonra "Devam" ister, art arda sınıflandırma için hızlı bir biçimi yok; sınıflandırma, eşleştirme ve sıralama için hazır araç yok. Bu temanın `kit.js` dosyasındaki `sec`, `sirayla`, `kart`, `etiket`, `sar` tarih, coğrafya ve edebiyat temalarına da gerekecek; `ortak/` altına taşınması düşünülebilir.
 - Kullanıcı geri bildirimi (7 Ekim 2026): dersler doğrudan soruyla başlıyordu. Altı dersin ilk sahnesine ilk sorudan önce 2–3 altyazılık bilgilendirme eklendi (`PLAN.md` karar 17); altısı yeniden ölçüldü, temiz. `KURALLAR.md` 3 hâlâ "kanca ≤ 15 sn" diyor; kural dosyası değiştirilmedi.
-- Yapılmayanlar: yayın, görsel üretimi, hikâye videosu.
+- Yayın: 7 Ekim 2026'da kullanıcı istedi; `ortak/katalog.js` içinde `yayinda: true`. Ana sayfa Fizik altında temayı ve altı dersi gösteriyor, konsol temiz. Yayına alındığında klipler henüz dinlenmemişti, iki resim üretilmemişti.
+- Yapılmayanlar: görsel üretimi, hikâye videosu.
 
 ## Seslendirme
 

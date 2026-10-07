@@ -10,7 +10,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
-| 1 | Fizik Bilimi ve Kariyer Keşfi | `fizik-bilimi-ve-kariyer-kesfi` | <https://tymm.meb.gov.tr/fizik-dersi/unite/43> | 8 | 4 | 6 | yazıldı ve seslendirildi (7 Ekim 2026; 26 sahne, 93 klip); yayında değil, iki resim bekliyor |
+| 1 | Fizik Bilimi ve Kariyer Keşfi | `fizik-bilimi-ve-kariyer-kesfi` | <https://tymm.meb.gov.tr/fizik-dersi/unite/43> | 8 | 4 | 6 | yayında (7 Ekim 2026; 26 sahne, 93 klip); iki resim bekliyor, klipler dinlenmedi |
 | 2 | Kuvvet ve Hareket | `kuvvet-ve-hareket` | <https://tymm.meb.gov.tr/fizik-dersi/unite/57> | 24 | 6 | 20 | plan taslağı; işleme alınmayı bekliyor |
 | 3 | Akışkanlar | `akiskanlar` | <https://tymm.meb.gov.tr/fizik-dersi/unite/65> | 18 | 5 | 15 | plan taslağı; işleme alınmayı bekliyor |
 | 4 | Enerji | `enerji` | <https://tymm.meb.gov.tr/fizik-dersi/unite/82> | 18 | 6 | 15 | plan taslağı; işleme alınmayı bekliyor |
@@ -20,7 +20,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 
 Ders kitabı (içerik için ikinci dayanak, `../KURALLAR.md` 2.1): <https://tymm.meb.gov.tr/kitap/38/fizik-dersi-9sinif-ders-kitabi>. Kitap proje klasörüne konmaz; tema işleme alınırken alınır (`../ISLEME.md` 2b).
 
-Ders ve temaları `ortak/katalog.js` içindedir; hiçbiri yayında değildir.
+Ders ve temaları `ortak/katalog.js` içindedir; yalnızca 1. tema yayındadır.
 
 Bu planlar 7 Ekim 2026'da, ortak kurallar genişletilmeden önce yazıldı: denetim tablolarında `ders / benzetim / site dışı` sütunu ve "Ders kitabı:", "Görsel:" işaretleri yoktur. Tema işleme alınırken 3. adımda eklenir (1. temada eklendi).
 
