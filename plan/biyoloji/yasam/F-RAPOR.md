@@ -48,8 +48,8 @@ F1–F11 b) organik yapı/çeşit/işlev bilgiye ulaşma; F12 S1 a) araç belirl
 | F8 | temiz | `/tmp/yasam-olc/f8/olcum.json`; tüm yerleşim/bütçe 0; konsol temiz; en küçük 22.1px, tahta en çok 11, altyazı en çok 9 kelime | S1–S5 son PNG görüntüleri incelendi; okunaklı, taşma ve çakışma yok |
 | F9 | temiz | `/tmp/yasam-olc/f9/olcum.json`; tüm yerleşim/bütçe 0; konsol temiz; en küçük 20.5px, tahta en çok 10, altyazı en çok 9 kelime | S1–S5 son PNG görüntüleri incelendi; okunaklı, taşma ve çakışma yok |
 | F10 | temiz | `/tmp/yasam-olc/f10/olcum.json`; tüm yerleşim/bütçe 0; konsol temiz; en küçük 22.1px, tahta en çok 13, altyazı en çok 10 kelime | S1–S6 son PNG görüntüleri incelendi; okunaklı, taşma ve çakışma yok |
-| F11 | bekliyor | — | — |
-| F12 | bekliyor | — | — |
+| F11 | temiz | `/tmp/yasam-olc/f11/olcum.json`; tüm yerleşim/bütçe 0; konsol temiz; en küçük 22.1px, tahta en çok 13, altyazı en çok 11 kelime | S1–S6 son PNG görüntüleri incelendi; okunaklı, taşma ve çakışma yok |
+| F12 | temiz | `/tmp/yasam-olc/f12/olcum.json`; tüm yerleşim/bütçe 0; konsol temiz; en küçük 22.1px, tahta en çok 18, altyazı en çok 9 kelime | S1–S5 son PNG görüntüleri incelendi; okunaklı, taşma ve çakışma yok |
 
 ## Doğrulanamayanlar
 Gerçek serbest kaynak taraması, grup tartışması ve bilgi görseli üretimi site dışıdır. SVG modeller yapı ve süreçleri nitel gösterir; gerçek enerji ölçümü veya moleküler açık formül iddiası taşımaz.
@@ -57,7 +57,7 @@ Gerçek serbest kaynak taraması, grup tartışması ve bilgi görseli üretimi 
 ## İçerik denetimi
 Her anlatım, yukarıdaki sayfalardan alınır. F11 beslenme ilişkisi s.55 ve A vitamini eksikliği s.71; vitaminlerin yalnız çeşit/işlev sınırı korunur. F10 üç nükleotit parçası s.68, şekerler s.69, baz/iplik/görev/eşleşme s.70. F9 yardımcı bileşen ayrımı s.65; kofaktör/koenzim adlarına ve alt türlerine yeni liste açılmaz.
 
-Quiz geri bildirimleri 24 sorunun bütün şıkları için özgül gerekçelerle yeniden yazıldı. İlk F1–F8 temiz ölçümlerinden sonra bu son hâl sırayla yeniden ölçülüyor. F7 merkez etiketi, çizgi uçları ve çizim sırası düzeltildi. F6 hormon başlığı yerine Düzenleme kullanıldı. Kullanılmayan yerel çizim helperları her dosyadan çıkarıldı.
+Quiz geri bildirimleri 24 sorunun bütün şıkları için özgül gerekçelerle yeniden yazıldı. İlk F1–F8 temiz ölçümlerinden sonra bütün son hâller sırayla yeniden ölçüldü; F9–F12 de tamamlandı. F7 merkez etiketi, çizgi uçları ve çizim sırası düzeltildi. F6 hormon başlığı yerine Düzenleme kullanıldı. Kullanılmayan yerel çizim helperları her dosyadan çıkarıldı.
 ## Müfredatın sahne numarasıyla ayrıntılı eşlemesi
 
 | Ders | Sahne → istek | İçerik kaynağı |
@@ -77,3 +77,9 @@ Quiz geri bildirimleri 24 sorunun bütün şıkları için özgül gerekçelerle
 
 Son görüntü satırları içerik sahnelerine ek olarak otomatik çıkış soruları ve özeti de kapsar. Quizde otomatik araç ilk şıkları seçtiğinden 0/2 veya 1/2 sonuç öğrenme başarısı ölçümü değildir; etkileşim yolu ve yerleşim kontrolüdür. Tüm sahneler tamamlanmalıdır.
 F1/F2 önbilgi düzeltmeleri: F1 S1 ilk soru bilinmeyen “polimer” adını istemez; birimleri birleştirince modelin değişimini yorumlatır. Adlandırma yanıttan sonra yapılır. F1 S4 lipitlerin polimer olmadığı önce açıkça öğretilir; öğrenci bunu tekrarlı zincir/lipit modeli karşılaştırmasına uygular. F1 hidroliz öncesi/sonrası on sembolik birim korunur. F2 S2 RNA–riboz ve DNA–deoksiriboz eşleşmeleri soru öncesi ders içinde açıklanır; sonra DNA modeline doğru şeker yerleştirilir. F2 “Program…” cümlesi bağımsız ders anlatımına çevrildi. Bu yerel düzeltmelerde yalnız F1/F2 yeniden ölçüldü.
+
+## Son durum
+
+F1–F12 tamamlandı. 40 içerik sahnesi, 12 otomatik quiz ve 12 özet; 64 son sahne PNG görüntüsü incelendi. Her dersin son JS değişikliğinden sonra alınan ölçüm kaydı doğrulandı. Bütün yerleşim/bütçe sayaçları sıfır, konsol temiz, otomatik tamamlanamayan sahne uyarısı yok. Son toplam: en küçük gerçek punto 19.7px; tahtada en çok 18, altyazıda en çok 11 kelime. 12 JS dosyası sözdizimi kontrolünden geçti; 24 çıkış sorusu ve 72 şık için özgül geri bildirim var. Her ilk sorudan önce tam üç bağlam altyazısı doğrulandı. Defter kuralları 12 kelime sınırının altında.
+
+F12 → `g1-ayrac-ve-renk.html` bağlantısı son ölçümde yer alır. Yayın, seslendirme, commit veya ortak dosya değişikliği yapılmadı. Yeni motor/araç gereksinimi yok. Serbest araştırma, gerçek grup paylaşımı ve bilgi görseli üretimi site dışında kalır.

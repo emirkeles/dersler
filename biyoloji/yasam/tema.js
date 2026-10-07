@@ -23,7 +23,20 @@ KATALOG.tema('biyoloji','yasam',{
 ['e4-mineral-gorevleri.html','Mineraller ne iş görür?','Minerallerin görevlerini ve besin kaynaklarını nasıl eşleştirirsin?',4],
 ['e5-dengeli-beslenme.html','Yeterli ve dengeli beslenme','Hep aynı besinlerden oluşan bir tabak neden sorgulanır?',4]
 ]},
- {harf:'F',ad:'Organik moleküller',renk:'#ff8a5b',dersler:[]},
+ {harf:'F',ad:'Organik moleküller',renk:'#ff8a5b',dersler:[
+["f1-kur-ve-sok.html", "Büyük molekülü kur, sök", "Büyük bir molekül küçük birimlerine nasıl ayrılır?", 4],
+["f2-bes-seker.html", "Monosakkaritler: beş şeker", "Şekerler yalnız enerji sağlamak için mi kullanılır?", 3],
+["f3-iki-seker.html", "Disakkaritler: iki şeker", "Sütteki şeker hangi iki birimden oluşur?", 3],
+["f4-depo-ve-yapi.html", "Polisakkaritler: depo ve yapı", "Bir şeker zinciri neden depo ya da destek olabilir?", 3],
+["f5-depo-yagi.html", "Yağ asitleri ve trigliseritler", "Depo yağı hangi parçalardan kurulur?", 3],
+["f6-zar-ve-halka.html", "Fosfolipitler ve steroitler", "Her lipit enerji deposu mudur?", 3],
+["f7-bicim-ve-islev.html", "Proteinler: biçim ve işlev", "Bir proteinin biçimi değişince işlevi nasıl etkilenir?", 4],
+["f8-enerji-esigi.html", "Enzimler: enerji eşiği", "Enzim bir tepkimenin enerji engelini nasıl değiştirir?", 3],
+["f9-enzim-ve-substrat.html", "Enzim ve substrat", "Enzim kendi substratıyla nasıl etkileşir?", 3],
+["f10-dna-ve-rna.html", "Nükleik asitler: DNA ve RNA", "DNA ile RNA yapıca nasıl ayırt edilir?", 4],
+["f11-vitamin-cesitleri.html", "Vitamin çeşitleri ve işlevleri", "Vitaminler hangi iki gruba ayrılır?", 4],
+["f12-bilgiyi-dogrula.html", "Bilgiyi karşılaştır, düzelt, kaydet", "Lipitlerle ilgili çelişen bilgileri nasıl sınarsın?", 3]
+]},
  {harf:'G',ad:'Besinlerde organik molekül arama',renk:'#c7ce73',dersler:[
 ['g1-ayrac-ve-renk.html', 'Ayraç: görünmeyeni renkle gösterir', 'Bir renk değişimi, besinin içeriği hakkında ne söyler?', 4],
 ['g2-deneyi-tasarla.html', 'Deneyi tasarla: hangi besin, hangi ayraç', 'Bir besinde nişasta ararken deneyi nasıl planlarsın?', 4],

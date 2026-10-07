@@ -144,10 +144,10 @@ Kaynak: MEB Biyoloji 9 (7 Ekim 2026), s.55–72. BİY.9.1.6 ve içerik çerçeve
 - Ana görsel ve anlatım seçimi: Üç parçalı nükleotit modeli, iki iplik/tek iplik ve karşılıklı baz yerleşimi karşılaştırılır; açık formül ve bağ adı kullanılmaz.
 - Kaynak: s. 68–70.
 - Sahne akışı:
-  1. Nükleotitin üç parçası. Model etkileşimi: Nükleotiti araştırırken hangi bilgiyi birlikte aramalısın? Bağlam: DNA ve RNA, hücrenin bilgi taşıyan molekülleridir. Bu nükleik asitler nükleotit denilen birimlerden kurulur. Bir nükleotitin parçaları, iki molekülü karşılaştırmamıza yardım eder.
+  1. Nükleotitin üç parçası. Model etkileşimi: Nükleotit modelini hangi biçimde inceleyebilirsin? Bağlam: DNA ve RNA, hücrenin bilgi taşıyan molekülleridir. Bu nükleik asitler nükleotit denilen birimlerden kurulur. Bir nükleotitin parçaları, iki molekülü karşılaştırmamıza yardım eder.
   2. Şeker ve baz karşılaştırması. Model etkileşimi: RNA’da timin yerine hangi baz bulunur? Bağlam: 
-  3. İplik ve görev. Model etkileşimi: Genetik bilginin uzun süreli depolanması hangi molekülün görevidir? Bağlam: DNA genellikle çift iplikli sarmal bir yapıdır. RNA tek ipliklidir; modelde sarmal ayrıntısı sadeleştirilmiştir. DNA genetik bilginin depolanması ve aktarılmasında görevlidir.
-  4. Karşılıklı bazlar. Model etkileşimi: Adeninin karşısında hangi baz bulunur?; Guaninin karşısına hangi baz yerleşir? Bağlam: DNA’nın iki ipliğinde bazlar belirli biçimde eşleşir. DNA’da adenin timinle, guanin sitozinle eşleşir. Şeker, baz ve iplik yapısı birlikte karşılaştırılmalıdır.
+  3. İplik ve görev. Model etkileşimi: Genetik bilgiyi depolayan çift iplikli model hangisidir? Bağlam: DNA genellikle çift iplikli sarmal bir yapıdır. RNA tek iplikli bir yapıdadır. DNA genetik bilginin depolanması ve aktarılmasında görevlidir.
+  4. Karşılıklı bazlar. Model etkileşimi: A’nın karşısındaki boşluğa hangi harfi yerleştirirsin?; Guaninin karşısına hangi baz yerleşir? Bağlam: DNA’nın iki ipliğinde bazlar belirli biçimde eşleşir. DNA’da adenin timinle, guanin sitozinle eşleşir. DNA’da adenin timinle, guanin sitozinle eşleşir.
 - Hedeflenen yanılgı: DNA ve RNA yalnız adlarıyla farklıdır; eşleşmeler rastgeledir.
 - Çıkış 1: DNA’nın şekeri ve ayırt edici bazı hangileridir? Doğru: Deoksiriboz ve timin. Çeldiriciler: Riboz ve urasil, Glikoz ve guanin.
 - Çıkış 2: DNA’da guanin hangi bazla eşleşir? Doğru: Sitozin. Çeldiriciler: Adenin, Urasil.
@@ -160,7 +160,7 @@ Kaynak: MEB Biyoloji 9 (7 Ekim 2026), s.55–72. BİY.9.1.6 ve içerik çerçeve
 - Ana görsel ve anlatım seçimi: İki ortam kutusunda vitamin sınıflandırması; göz/koruyucu çevre/kemik/pıhtı ve ağ modelleri çeşitleri işlevle eşleştirir. Yapı ve B alt türleri yok.
 - Kaynak: s. 55,71–72.
 - Sahne akışı:
-  1. İki ortamda gruplandır. Model etkileşimi: C vitaminini hangi ortamdaki gruba yerleştirirsin? Bağlam: Vitaminlerin çeşitlerini ve işlevlerini birlikte inceleyeceğiz. Vitaminler çözündükleri ortama göre iki gruba ayrılır. Her çeşidi kendi grubuna yerleştireceğiz.
+  1. İki ortamda gruplandır. Model etkileşimi: Yağ ve su kutularına yerleştirmek için hangi bilgiyi ararsın? Bağlam: Vitaminlerin çeşitlerini ve işlevlerini birlikte inceleyeceğiz. A, D, E, K, B ve C adları vitamin çeşitlerini belirtir. İki ortam kutusunun hangi özelliği ayırdığını araştıracağız.
   2. A, D, E, K: farklı görevler. Model etkileşimi: Kanın pıhtılaşmasıyla ilişkili vitamin hangisidir? Bağlam: 
   3. B ve C: farklı görevler. Model etkileşimi: B ve C vitaminlerinin ortak sınıfı hangisidir? Bağlam: Aynı grupta olmak, bütün işlevlerin aynı olması anlamına gelmez.
   4. Dengeli beslenme bağlantısı. Model etkileşimi: Beslenmede farklı işlevleri dikkate alan yaklaşım hangisidir? Bağlam: Organik maddelerin yetersiz veya dengesiz alınması sağlığı olumsuz etkileyebilir. Yetersiz beslenme gelişim geriliği ve enerji yetersizliğine yol açabilir. Aşırı beslenme yağ depolanmasına ve obeziteye yol açabilir.

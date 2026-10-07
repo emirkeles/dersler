@@ -9,6 +9,24 @@ async function sahne(code,index){
 }
 (async()=>{
  let failures=0;
+ if(process.argv.includes('--tema')){
+  const path=require('node:path');
+  const t=await dersiAc(dersDosyasi('biyoloji/yasam/a1'));
+  try{
+   await t.page.goto('file://'+path.join(process.cwd(),'biyoloji/yasam/index.html'));
+   await t.page.waitForSelector('.topic-block');await t.page.evaluate(()=>document.fonts.ready);
+   const counts=await t.page.evaluate(()=>({konu:document.querySelectorAll('.topic-block').length,ders:document.querySelectorAll('.lesson').length}));
+   assert.equal(counts.konu,8);assert.equal(counts.ders,37);
+   await t.page.screenshot({path:'/tmp/yasam-olc/tema.png'});
+   for(const letter of 'abcdefgh'){
+    const block=await t.page.$('#konu-'+letter);await block.evaluate(e=>e.open=true);
+    await block.screenshot({path:'/tmp/yasam-olc/tema-'+letter+'.png'});
+   }
+   await t.page.screenshot({path:'/tmp/yasam-olc/tema-tum.png',fullPage:true});
+   assert.equal(t.hatalar.length,0);console.log('Tema sayfası: 8 konu, 37 ders; konsol temiz.');
+  }finally{await t.browser.close();}
+  return;
+ }
  for(const code of ['h2','h3']){
   const t=await sahne(code,code==='h2'?2:1);
   try{
@@ -37,12 +55,21 @@ async function sahne(code,index){
    const t=await dersiAc(path.join(process.cwd(),'biyoloji/yasam',file));
    try{
     await t.page.evaluate(()=>{window.__baslangic=[];window.__dersSay=x=>window.__baslangic.push(x);Ders.current.state.speed=8;Ders.current.state.voice=false;Ders.current.go(0,true);});
-    await t.page.waitForSelector('.act .panel .q',{timeout:15000});
+    await t.page.waitForSelector('.act .panel .q, .act > button.btn',{timeout:15000});
+    // Bazı deney sahneleri ilk sorudan önce öğrencinin uygulama düğmesini bekler.
+    while(!await t.page.$('.act .panel .q')){
+      await t.page.click('.act > button.btn');
+      await t.page.waitForSelector('.act .panel .q, .act > button.btn',{timeout:15000});
+    }
     const r=await t.page.evaluate(()=>({id:Ders.current.id,captions:window.__baslangic.filter(x=>!x.noWait).map(x=>x.text),scenes:Ders.current.scenes.filter(s=>!s.internal).length,notebook:[...document.querySelectorAll('.notes .note')].map(x=>x.textContent)}));
     assert.ok(r.captions.length>=2&&r.captions.length<=3,file+': ilk soru öncesi '+r.captions.length+' altyazı');
     assert.ok(r.scenes>=3&&r.scenes<=5,file+': sahne sayısı '+r.scenes);
+    await t.page.evaluate(i=>{Ders.current.go(i,true);},r.scenes);
+    await t.page.waitForSelector('.stage .card .meta',{timeout:3000});
+    const quizLabel=await t.page.$eval('.stage .card .meta',e=>e.textContent.trim());
+    assert.equal(quizLabel,'Soru 1 / 2',file+': iki çıkış sorusu');
     assert.equal(t.hatalar.length,0,file+': konsol');
-    console.log(r.id+': '+r.captions.length+' bağlam altyazısı, '+r.scenes+' sahne');
+    console.log(r.id+': '+r.captions.length+' bağlam altyazısı, '+r.scenes+' sahne, 2 çıkış sorusu');
    }catch(e){failures++;console.error(e.message);}finally{await t.browser.close();}
   }
  }
