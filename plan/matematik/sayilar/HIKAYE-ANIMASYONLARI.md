@@ -12,7 +12,7 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 | 3 · B7 Kombi 22 derecede | Seslendirildi, işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) ve B7 dersinin son sahnesine bağlandı | Müzik, efekt, altyazı dosyası |
 | 2 C4 · 4 C5 · 5 A7 · 6 D3 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
 
-Motorda video sahnesi türü var (`ortak/API.md`). Ünite sayfasında "Hikâyeler" başlığı var (7 Ekim 2026; liste `ortak/katalog.js` içinde). Kapanış kartında her zaman dersin akılda kalıcı cümlesi yazar; tek istisna C5'teki siyah kuğu cümlesidir (`senaryolar/C-sayi-kumeleri.md`).
+Motorda video sahnesi türü var (`ortak/API.md`). Tema sayfasında "Hikâyeler" başlığı var (7 Ekim 2026; liste `ortak/katalog.js` içinde). Kapanış kartında her zaman dersin akılda kalıcı cümlesi yazar; tek istisna C5'teki siyah kuğu cümlesidir (`senaryolar/C-sayi-kumeleri.md`).
 
 Liste 6 Ekim 2026'da gözden geçirildi (bölüm 4'ün sonundaki "Gözden geçirme" başlığı): A2 kafein hikâyesi çıktı, yerine A7 geldi; D3'e hikâye eklendi; B5 ve D7 hikâyeleri değişti; C3 hikâyesi kapanış cümlesine göre yeniden kuruldu.
 

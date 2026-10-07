@@ -13,7 +13,7 @@ Dayanak: `MUFREDAT.md` (MEB sayfasından 7 Ekim 2026'da alındı). Biçim ve kur
 | C | MAT.9.2.3 | Doğrusal Fonksiyonlarla İfade Edilebilen Denklem ve Eşitsizlikler İçeren Problemler | C1–C10 (10) |
 | | | Toplam | 32 |
 
-Karşılaştırma: 1. ünite 38 ders saati için 28 kısa dersti. Bu ünitede 32 çıktı: MAT.9.2.1'in on bir süreç bileşeni (a–ı) ve MAT.9.2.3'ün on beşe yakın denklem/eşitsizlik biçimi var. Sığmayan fikir tek derse sıkıştırılmadı; birleştirilebilecek çiftler bölüm 6'da.
+Karşılaştırma: 1. tema 38 ders saati için 28 kısa dersti. Bu temada 32 çıktı: MAT.9.2.1'in on bir süreç bileşeni (a–ı) ve MAT.9.2.3'ün on beşe yakın denklem/eşitsizlik biçimi var. Sığmayan fikir tek derse sıkıştırılmadı; birleştirilebilecek çiftler bölüm 6'da.
 
 ## 2. Konular
 
@@ -253,9 +253,9 @@ Her maddenin sonundaki parantez, dayandığı çıktı ve süreç bileşenidir (
 - **Anlatılacaklar:**
   1. n(x) = −|x| ve |x| ile ilişkisi (9.2.2 a; "±").
   2. Nitel özelliklerin belirlenmesi: tanım ve görüntü kümesi, sıfır, işaret, artan ve azalan aralıklar, maksimum-minimum (9.2.2 b).
-  3. f(x) = x ile karşılaştırma: hangi nitel özellik aynı, hangisi değişti (9.2.2 a, b).
+  3. f(x) = x ile karşılaştırma: hangi nitel özellik aynı, hangisi değişti; |x| bire bir değildir (9.2.2 a, b).
   4. Belirlenen özelliklerin sözel önerme olarak ifadesi (9.2.2 uygulama).
-- **Program dayanağı:** MAT.9.2.2 a, b. "Yapılan inceleme ve gözlemler sonucu fonksiyona ait nitel özellikler belirlenir. Belirlenen nitel özelliklere ilişkin önermeler, sözel olarak ifade edilir." Özelliklerin hangileri olduğunu program mutlak değer için saymıyor; bölüm 6, madde 3.
+- **Program dayanağı:** MAT.9.2.2 a, b. "Yapılan inceleme ve gözlemler sonucu fonksiyona ait nitel özellikler belirlenir. Belirlenen nitel özelliklere ilişkin önermeler, sözel olarak ifade edilir." Özelliklerin hangileri olduğunu program mutlak değer için saymıyor; MAT.9.2.1 a'daki liste kullanılır (bölüm 7, karar 3).
 - **Açılış sorusu:** Ev ile okul arasındaki yolda eve uzaklığın en az olduğu yer neresidir?
 - **Akılda kalıcı cümle:** "|x|'in en küçük değeri 0, −|x|'in en büyük değeri 0'dır."
 
@@ -363,9 +363,9 @@ Her maddenin sonundaki parantez, dayandığı çıktı ve süreç bileşenidir (
   1. |f(x)| < k ve |f(x)| > k eşitsizlikleri, f doğrusal (9.2.3 uygulama).
   2. Çözümün grafikten (y = k doğrusu ve mutlak değerli grafik) ve cebirden okunması (9.2.3 uygulama).
   3. k = 0 özel hâlleri: |f(x)| < 0 ve |f(x)| > 0 (9.2.3 uygulama).
-  4. Çözüm kümesinin aralık gösterimiyle yazılması (aralık gösterimi 1. üniteden bilinir).
+  4. Çözüm kümesinin aralık gösterimiyle yazılması (aralık gösterimi 1. temadan bilinir).
 - **Program dayanağı:** MAT.9.2.3 b. "…|f(x)| < 0, |f(x)| > 0, |f(x)| = 0, |f(x)| < k, |f(x)| > k, |f(x)| = k (k∈ℝ) gibi denklem ve eşitsizlikler…"
-- **Açılış sorusu:** Bir ilaç dolabı 4 °C'den en fazla 2 derece sapabiliyorsa hangi sıcaklıklar uygundur?
+- **Açılış sorusu:** Bir ilaç dolabının sıcaklığı 4 °C'den 2 dereceden az sapmalıysa hangi sıcaklıklar uygundur?
 - **Akılda kalıcı cümle:** "Küçüktür tek aralık, büyüktür iki ayrı aralık verir."
 
 ### C7 · |f(x)| = g(x)
@@ -419,80 +419,82 @@ Her maddenin sonundaki parantez, dayandığı çıktı ve süreç bileşenidir (
 
 ## 4. Müfredat denetimi
 
+Sahne numaraları dersler yazıldıktan sonra işlendi (7 Ekim 2026). S1, dersin ilk sahnesidir; çıkış soruları ve özet sayılmaz.
+
 ### MAT.9.2.1
 
-| Programın istediği | Hangi kısa ders |
+| Programın istediği | Hangi kısa ders, hangi sahne |
 |---|---|
-| Doğrusal referans fonksiyon f(x) = x; fonksiyona soyut kümelerle değil, 8. sınıf grafikleri ve gerçek yaşam durumlarıyla girilir | A1 |
-| Bağımlı-bağımsız değişken; doğrusal ilişki; doğrusal değişimin doğrusal fonksiyonla temsili | A1 |
-| Nitel özellik: tanım kümesi, görüntü kümesi | A2 |
-| Nitel özellik: sıfır ve işaret (tanımlı olduğu aralıklara bağlı) | A3 |
-| Nitel özellik: artanlık-azalanlık | A4 (artanlık), A10 (azalanlık) |
-| Nitel özellik: maksimum-minimum noktaları | A4 |
-| Nitel özellik: bire birlik | A5 |
-| 9.2.1 a, b: özellikler matematiksel temsillerle belirlenir, aralarındaki ilişki | A1–A5 |
-| 9.2.1 c: grafik ve cebirsel temsil üzerinde işlemlerle g(x) = a ∙ f(x ± r) ± k | A6, A7, A9 |
-| Dönüşümlerde k ve r'nin her ikisinin ya da birinin 0 olduğu durumlar aşamalı | A6 (k, r, ikisi), A7 (k = r = 0) |
-| 9.2.1 ç: grafik ve cebirsel temsiller arasındaki ilişki; katsayıların yorumu | A6, A7, A8, A9 |
+| Doğrusal referans fonksiyon f(x) = x; fonksiyona soyut kümelerle değil, 8. sınıf grafikleri ve gerçek yaşam durumlarıyla girilir | A1 S1–S3 |
+| Bağımlı-bağımsız değişken; doğrusal ilişki; doğrusal değişimin doğrusal fonksiyonla temsili | A1 S1 (değişkenler), S2 (doğrusal değişim), S3 |
+| Nitel özellik: tanım kümesi, görüntü kümesi | A2 S1 (tanım), S2 (görüntü), S3–S4 (aralıkta) |
+| Nitel özellik: sıfır ve işaret (tanımlı olduğu aralıklara bağlı) | A3 S1 (sıfır), S2 (işaret), S3–S4 (aralık) |
+| Nitel özellik: artanlık-azalanlık | A4 S1 (artanlık), A10 S2 (azalanlık) |
+| Nitel özellik: maksimum-minimum noktaları | A4 S2 (ℝ’de yok), S3–S4 (kapalı aralık) |
+| Nitel özellik: bire birlik | A5 S1–S4 |
+| 9.2.1 a, b: özellikler matematiksel temsillerle belirlenir, aralarındaki ilişki | A1 S3–S4, A2 S2–S4, A3 S1–S2, A4 S1, A5 S2–S3 |
+| 9.2.1 c: grafik ve cebirsel temsil üzerinde işlemlerle g(x) = a ∙ f(x ± r) ± k | A6 S1–S3, A7 S1–S3, A9 S1 |
+| Dönüşümlerde k ve r'nin her ikisinin ya da birinin 0 olduğu durumlar aşamalı | A6 S1 (yalnız k), S2 (yalnız r), S3 (ikisi); A7 S1 (k = r = 0) |
+| 9.2.1 ç: grafik ve cebirsel temsiller arasındaki ilişki; katsayıların yorumu | A6 S1–S3, A7 S2, A8 S2–S3, A9 S1–S2 |
 | Doğrusal fonksiyonlar doğrusal referans fonksiyondan türetilebilir (içerik çerçevesi) | A6–A9 |
-| Eğimi tahmin etme | A7, A9 |
-| Eksenleri kestiği noktaları tahmin etme | A9 |
-| İki doğrusal fonksiyonun kesişim noktasını tahmin etme | A9 |
-| a = 0: sabit fonksiyon; sabit terimle ilişkisi | A8 |
-| 9.2.1 d: varsayımda bulunma | A7, A9, A10 |
-| 9.2.1 e: örüntüleri (cebirsel, sayısal, grafiksel) genelleme | A10 |
-| 9.2.1 f: genellemeyi kontrol etme | A9, A10, A14 |
-| 9.2.1 g: önermeyi sözel veya sembolik dille sunma; niceleyici | A10, A12 |
-| 9.2.1 ğ: önermenin gerçek yaşamdaki kullanışlılığı (taksi ücreti) | A10 |
-| a > 0 veya a < 0 ile artanlık-azalanlık ilişkisinin tablo ve grafikle doğrulanması | A10 |
-| h(x) = ax + b'nin işareti: grafik ve x = −b/a'ya göre işaret tablosu | A11 |
-| Artanlık teoremi ve ∀x₁, x₂ için x₁ < x₂ iken h(x₁) < h(x₂); cebirsel ispat | A12 |
-| Azalanlığın ispatı | A12 |
-| Bire birliğin ispatı | A13 |
-| 9.2.1 h: grafiksel doğrulama, cebirsel ispat | A10, A12, A13, A14 |
-| 9.2.1 ı: doğrulama ve ispat yöntemlerinin kullanışlılığı | A14 |
-| Bir alt aralıkta maksimum-minimum değer; açık aralık durumunun yorumu | A15 |
-| Parçalı gösterimli fonksiyon; ısıtılan buz örneği | A16 |
-| Sınırlama: örtenlik ve teklik-çiftlik nitel özelliklerine değinilmez | A2, A5, A13'te alıntı; hiçbir derse girmez |
+| Eğimi tahmin etme | A7 S3–S4, A9 S4 |
+| Eksenleri kestiği noktaları tahmin etme | A9 S2, S4 |
+| İki doğrusal fonksiyonun kesişim noktasını tahmin etme | A9 S3 |
+| a = 0: sabit fonksiyon; sabit terimle ilişkisi | A8 S1–S4 |
+| 9.2.1 d: varsayımda bulunma | A7 S4, A9 S2–S4, A10 S2 |
+| 9.2.1 e: örüntüleri (cebirsel, sayısal, grafiksel) genelleme | A10 S2–S4 |
+| 9.2.1 f: genellemeyi kontrol etme | A9 S3–S4, A10 S3, A14 S2 |
+| 9.2.1 g: önermeyi sözel veya sembolik dille sunma; niceleyici | A10 S4, A12 S1 |
+| 9.2.1 ğ: önermenin gerçek yaşamdaki kullanışlılığı (taksi ücreti) | A10 S1, S4 |
+| a > 0 veya a < 0 ile artanlık-azalanlık ilişkisinin tablo ve grafikle doğrulanması | A10 S1–S3 |
+| h(x) = ax + b'nin işareti: grafik ve x = −b/a'ya göre işaret tablosu | A11 S1–S4 |
+| Artanlık teoremi ve ∀x₁, x₂ için x₁ < x₂ iken h(x₁) < h(x₂); cebirsel ispat | A12 S1–S2 |
+| Azalanlığın ispatı | A12 S3 |
+| Bire birliğin ispatı | A13 S1–S2 |
+| 9.2.1 h: grafiksel doğrulama, cebirsel ispat | A10 S3, A12 S2–S3, A13 S2–S3, A14 S1–S3 |
+| 9.2.1 ı: doğrulama ve ispat yöntemlerinin kullanışlılığı | A14 S4 |
+| Bir alt aralıkta maksimum-minimum değer; açık aralık durumunun yorumu | A15 S1–S2, S3 (açık uç), S4 |
+| Parçalı gösterimli fonksiyon; ısıtılan buz örneği | A16 S1–S4 |
+| Sınırlama: örtenlik ve teklik-çiftlik nitel özelliklerine değinilmez | A2, A5, A13’te alıntı; hiçbir derse girmez |
 
 ### MAT.9.2.2
 
-| Programın istediği | Hangi kısa ders |
+| Programın istediği | Hangi kısa ders, hangi sahne |
 |---|---|
-| n(x) = ± \|x\| grafiği; f(x) = x ile benzerlik ve farklılıklar | B1, B3 |
-| n(x)'in cebirsel temsili olarak parçalı gösterim | B2 |
-| Mutlak değer fonksiyonunun nitel özellikleri; sözel önermeler | B3, B4, B5 |
-| m(x) = ± \|h(x)\| ± c ile h arasındaki cebirsel ve grafiksel ilişki | B4, B5 |
-| t(x) = ± \|ax + b\|'nin sıfırı ile grafik temsili arasındaki ilişki | B4 |
-| Nitel özellikler arasındaki farklılıklara odaklanma | B4, B5 |
-| m(x) = ± \|ax ± b\| ± c'nin nitel özelliklerinin tespiti | B5, B6 |
-| Parçalı gösterime çıkarımlar; iki doğrusal fonksiyonun tek temsille ifadesi | B6 |
+| n(x) = ± \|x\| grafiği; f(x) = x ile benzerlik ve farklılıklar | B1 S2–S4, B3 S2–S3 |
+| n(x)'in cebirsel temsili olarak parçalı gösterim | B2 S1–S4, B3 S3 (−\|x\|) |
+| Mutlak değer fonksiyonunun nitel özellikleri; sözel önermeler | B3 S1, S3–S4; B4 S3–S4; B5 S2–S4 |
+| m(x) = ± \|h(x)\| ± c ile h arasındaki cebirsel ve grafiksel ilişki | B4 S1–S3, B5 S1–S3 |
+| t(x) = ± \|ax + b\|'nin sıfırı ile grafik temsili arasındaki ilişki | B4 S1–S2, S4 |
+| Nitel özellikler arasındaki farklılıklara odaklanma | B3 S2, B4 S3, B5 S2–S3 |
+| m(x) = ± \|ax ± b\| ± c'nin nitel özelliklerinin tespiti | B5 S2–S4, B6 S4 |
+| Parçalı gösterime çıkarımlar; iki doğrusal fonksiyonun tek temsille ifadesi | B6 S1–S3 |
 
 ### MAT.9.2.3
 
-| Programın istediği | Hangi kısa ders |
+| Programın istediği | Hangi kısa ders, hangi sahne |
 |---|---|
-| Gerçek yaşam problemlerinin cebirsel veya grafik temsili; temsiller arası geçiş | C1 |
-| Temsillerin problem bağlamındaki anlamı; sözel temsilin matematiksele dönüştürülmesi | C1 |
-| Denklem ve eşitsizliğin bileşenleri ve aralarındaki ilişkiler (9.2.3 a, b) | C1–C8 |
-| f(x) = 0, f(x) < 0, f(x) > 0 | C2 |
-| x = −b/a kök değerine göre işaret tablosu | C2 (A11'e dayanır) |
-| Çözüm kümesinin fonksiyonun sıfırı ile ilişkilendirilmesi | C2, C5 |
-| f(x) = g(x) | C3 |
-| Grafiklerin kesişim noktaları ile denklemin çözüm kümesi | C3 |
-| Arz-talep doğruları, piyasa denge fiyatı | C3 |
-| f(x) ≤ g(x), f(x) ≥ g(x) | C4 |
-| f(x) < 0'ın f(x) < g(x)'in özel hâli (g(x) = 0), g'nin grafiği x ekseni | C4 |
-| \|f(x)\| = k (k ∈ ℝ) ve \|f(x)\| = 0 | C5 |
-| \|f(x)\| < k, \|f(x)\| > k, \|f(x)\| < 0, \|f(x)\| > 0 | C6 |
-| \|f(x)\| = g(x) | C7 |
-| \|f(x)\| ≥ g(x), \|f(x)\| ≤ g(x) | C8 |
-| Grafiksel ve cebirsel çözüm stratejileri (9.2.3 d, e) | C3, C5–C8 |
-| Çözümü yerine koyma, grafik ve farklı stratejiyle doğrulama; hataları düzeltme (9.2.3 f) | C7, C8, C9 |
-| Olası çözüm stratejilerini gözden geçirme ve tartışma (9.2.3 g, ğ) | C9 |
-| Çıkarımların sözel, cebirsel, grafiksel argümanlarla değerlendirilmesi (9.2.3 h) | C9 |
-| Çıkarımların matematiksel modele dönüştürülmesi; modelin sınırlılıkları, güçlü ve zayıf yönleri | C10 |
-| Toplumsal fayda bağlamları (ekoloji, sağlıklı yaşam) | C10 |
+| Gerçek yaşam problemlerinin cebirsel veya grafik temsili; temsiller arası geçiş | C1 S1–S2 |
+| Temsillerin problem bağlamındaki anlamı; sözel temsilin matematiksele dönüştürülmesi | C1 S3–S4 |
+| Denklem ve eşitsizliğin bileşenleri ve aralarındaki ilişkiler (9.2.3 a, b) | C1 S3, C2 S1–S2, C3 S1–S2, C4 S1, C5 S2, C6 S1–S2, C7 S1, C8 S1–S2 |
+| f(x) = 0, f(x) < 0, f(x) > 0 | C2 S1–S4 |
+| x = −b/a kök değerine göre işaret tablosu | C2 S2–S3 (A11’e dayanır) |
+| Çözüm kümesinin fonksiyonun sıfırı ile ilişkilendirilmesi | C2 S1, C3 S3, C5 S2–S3 |
+| f(x) = g(x) | C3 S1–S2 |
+| Grafiklerin kesişim noktaları ile denklemin çözüm kümesi | C3 S2, S4 |
+| Arz-talep doğruları, piyasa denge fiyatı | C3 S1–S2, S4 |
+| f(x) ≤ g(x), f(x) ≥ g(x) | C4 S1–S2, S4 |
+| f(x) < 0'ın f(x) < g(x)'in özel hâli (g(x) = 0), g'nin grafiği x ekseni | C4 S3 |
+| \|f(x)\| = k (k ∈ ℝ) ve \|f(x)\| = 0 | C5 S1–S4 |
+| \|f(x)\| < k, \|f(x)\| > k, \|f(x)\| < 0, \|f(x)\| > 0 | C6 S1–S3, S4 (k = 0) |
+| \|f(x)\| = g(x) | C7 S1–S4 |
+| \|f(x)\| ≥ g(x), \|f(x)\| ≤ g(x) | C8 S1–S4 |
+| Grafiksel ve cebirsel çözüm stratejileri (9.2.3 d, e) | C3 S3, C5 S3, C6 S3, C7 S2, C8 S3 |
+| Çözümü yerine koyma, grafik ve farklı stratejiyle doğrulama; hataları düzeltme (9.2.3 f) | C7 S2–S3, C8 S3, C9 S1–S3 |
+| Olası çözüm stratejilerini gözden geçirme ve tartışma (9.2.3 g, ğ) | C9 S4 |
+| Çıkarımların sözel, cebirsel, grafiksel argümanlarla değerlendirilmesi (9.2.3 h) | C9 S2–S4 |
+| Çıkarımların matematiksel modele dönüştürülmesi; modelin sınırlılıkları, güçlü ve zayıf yönleri | C10 S1–S3 |
+| Toplumsal fayda bağlamları (ekoloji, sağlıklı yaşam) | C10 S1–S4 |
 
 ### Tema düzeyi
 
@@ -519,7 +521,7 @@ Programda olmayan ya da program tarafından dışarıda bırakılan başlıklar 
 - Doğrusal fonksiyon grafiklerinin birbirine göre konumlarını eğimlere göre yorumlama (A7'de eğim kavramı tek cümleyle hatırlatılır).
 - Mutlak değeri sayı doğrusunda orijine uzaklık olarak ifade etme (B1'de tek cümle).
 - Doğrusal ilişkili iki niceliğin birinin değeri verilince öbürünü hesaplama.
-- Aralık gösterimi ve eşitsizlik yazımı (1. üniteden; C6'da yalnızca kullanılır).
+- Aralık gösterimi ve eşitsizlik yazımı (1. temadan; C6'da yalnızca kullanılır).
 
 **Zenginleştirme (derslere girmez):**
 
@@ -553,7 +555,7 @@ Programda olmayan ya da program tarafından dışarıda bırakılan başlıklar 
 
 ## 6. Açık sorular
 
-1. **Ders sayısı 32 (1. ünitede 28).** Kota doldurmak için ders eklenmedi; yine de sıkıştırmaya en elverişli çiftler: A2 ile A3 (ikisi de f(x) = x'in kısa özellikleri), A12 ile A13 (iki ispat), C5 ile C6 (|f(x)| ile k), C7 ile C8. Hangilerinin birleşmesini istersiniz? Önerim hiçbirini birleştirmemek; A2 en ince derstir, istenirse A3'e katılır.
+1. **Ders sayısı 32 (1. temada 28).** Kota doldurmak için ders eklenmedi; yine de sıkıştırmaya en elverişli çiftler: A2 ile A3 (ikisi de f(x) = x'in kısa özellikleri), A12 ile A13 (iki ispat), C5 ile C6 (|f(x)| ile k), C7 ile C8. Hangilerinin birleşmesini istersiniz? Önerim hiçbirini birleştirmemek; A2 en ince derstir, istenirse A3'e katılır.
 2. **A konusu 16 ders.** Programın sırasına uyarak ikiye bölünebilir: A (dönüşümler: A1–A9) ve B (önermeler, doğrulama ve ispat: A10–A16); mutlak değer ve problemler C ve D olur. Kural gereği çıktı başına tek konu bıraktım.
 3. **Mutlak değer fonksiyonunun hangi nitel özellikleri?** Program MAT.9.2.2'de nitel özellikleri saymıyor, yalnızca "nitel özellikler belirlenir" diyor. B3'te doğrusal fonksiyonlardaki listeyi (tanım ve görüntü kümesi, sıfır, işaret, artan ve azalan aralık, maksimum-minimum) kullandım; bire birliği |x| için eklemedim. Eklensin mi?
 4. **Azalanlık ve bire birliğin tanımı.** Program yalnızca artanlığın yazımını verir (∀x₁, x₂ için x₁ < x₂ iken h(x₁) < h(x₂)). Azalanlık için h(x₁) > h(x₂), bire birlik için "h(x₁) = h(x₂) ise x₁ = x₂" (ya da "x₁ ≠ x₂ ise h(x₁) ≠ h(x₂)") yazımını kullanmayı öneriyorum; ders kitabınızdaki yazım farklıysa o seçilir.
@@ -562,4 +564,34 @@ Programda olmayan ya da program tarafından dışarıda bırakılan başlıklar 
 7. **|f(x)| < 0, |f(x)| > 0, |f(x)| = 0.** Program bunları ayrı saymış; C5 ve C6'da k = 0 özel hâli olarak topladım (C5: k = 0 ve k < 0, C6: k = 0). Ayrı bir kısa ders ister misiniz?
 8. **C2 ile A11 örtüşmesi.** A11 işaret tablosunu fonksiyon özelliği olarak, C2 aynı tabloyu denklem ve eşitsizlik çözmek için kullanıyor. Program ikisini de ayrı ayrı istiyor; C2'de A11 yalnızca hatırlatılır.
 9. **Kaynak metindeki bozukluklar.** Sayfada ∀x₁, x₂ ve x₁ < x₂ ile h(x₁) < h(x₂) ifadeleri görsel olarak verilmiş (görseller okundu); "sağlıklı aşam" yazım hatası ve açılışı olmayan bir tırnak olduğu gibi bırakıldı.
-10. **`UNITELER.md`.** 2. ünitenin ders saati sütunu hâlâ "ünite dosyasında"; sayfada 38 yazıyor. Bu dosyaya dokunmadım.
+10. **`TEMALAR.md`.** 2. temanın ders saati sütunu hâlâ "tema dosyasında"; sayfada 38 yazıyor. Bu dosyaya dokunmadım.
+
+## 7. Kararlar
+
+7 Ekim 2026'da, tema işleme alınırken `plan/ISLEME.md` bölüm 3'teki kurallarla verildi. Bölüm 6'daki her sorunun kararı aynı numarayla aşağıdadır. Kısa ders listesi değişmedi: 3 konu, 32 kısa ders.
+
+| # | Soru | Karar | Kural |
+|---|---|---|---|
+| 1 | 32 kısa ders çok mu, hangi çiftler birleşsin? | Birleştirme yok. 38 ders saati × 0,85 = 32,3; 32 kısa ders sınırı geçmiyor. A2'nin dört "anlatılacak" maddesi var, 3 sahneyi dolduruyor; ayrı ders kalır. | 5, 6 |
+| 2 | A konusu 16 ders; ikiye bölünsün mü? | Bölünmez. Program içerik çerçevesinde üç başlık veriyor; konu öğrenme çıktısıyla bire bir kalır. | 7 (en az yeni yapı) |
+| 3 | Mutlak değer fonksiyonunun hangi nitel özellikleri? | MAT.9.2.1 a'da adıyla sayılan liste kullanılır: tanım ve görüntü kümesi, işaret, artanlık-azalanlık, maksimum-minimum, sıfır, bire birlik. Bire birlik B3'te tek gözlem olarak yer alır: \|−3\| = \|3\| olduğu için \|x\| bire bir değildir. 9.2.2 a "nitel özellikler arasındaki farklılıklara" odaklanmayı istiyor; f(x) = x ile en açık fark budur. Örtenlik ve teklik-çiftlik yine yok. | 1 |
+| 4 | Azalanlık ve bire birliğin sembolik yazımı | Azalan: x₁ < x₂ iken h(x₁) > h(x₂). Bire bir: A5'te "x₁ ≠ x₂ ise f(x₁) ≠ f(x₂)" (sözel tanımın doğrudan yazımı); A13'te ispat "h(x₁) = h(x₂) ise x₁ = x₂" yazımıyla yapılır, çünkü ispat üç adımda biter. İki yazımın aynı şeyi söylediği A13'ün ilk sahnesinde barkod örneğiyle gösterilir; "karşıt ters" terimi kullanılmaz. | 7 |
+| 5 | a ≠ 0 ile a = 0 | A8'de sabit fonksiyon a = 0 özel hâli olarak anlatılır. Sabit fonksiyonun bire bir olmadığı programda geçmediği için hiçbir derse girmez; A13'te a ≠ 0 koşulu yalnızca "a'ya bölme" adımının gerekçesi olarak gösterilir. | 1, 2 |
+| 6 | Terimler | "Kaydırma", "dikleşme", "katlama" yalnızca anlatım sözüdür. Öteleme, yansıma, simetri terimleri hiçbir derste kullanılmaz. | 2 |
+| 7 | \|f(x)\| < 0, \|f(x)\| > 0, \|f(x)\| = 0 ayrı ders olsun mu? | Olmaz. İçerik 3 sahneyi doldurmuyor; C5'te (k = 0 ve k < 0) ve C6'da (k = 0) birer sahnedir. | 6 |
+| 8 | C2 ile A11 örtüşmesi | İkisi de kalır; program işaret tablosunu hem MAT.9.2.1 hem MAT.9.2.3 uygulamalarında adıyla istiyor. C2'de tablo yeniden kurulmaz, kullanılır. | 1 |
+| 9 | Kaynak metindeki bozukluklar | Karar gerektirmiyor; `MUFREDAT.md` notlarında duruyor. | — |
+| 10 | `TEMALAR.md` ders saati | Dosyada 38 yazıyor; kapandı. | — |
+
+Senaryolar yazılırken verilen ek kararlar:
+
+| Konu | Karar | Kural |
+|---|---|---|
+| Eşitsizlik biçimleri | Program \|f(x)\| ile k arasında yalnızca < ve > yazıyor; C6 bu ikisiyle sınırlıdır (açılış sorusu "2 dereceden az" olarak düzeltildi). f ile g ve \|f\| ile g arasında ≤ ve ≥ yazıyor; C4 ve C8 bunları kullanır. | 1 |
+| Isıtılan buz (A16) | Program deneyi adıyla anıyor, veri vermiyor. Derste yuvarlak sayılı örnek veriler kullanılır ve "örnek veri" diye sunulur; erimenin fiziği anlatılmaz, yalnızca grafiğin üç parçası okunur. | 4 |
+| Arz-talep (C3) | Program metnindeki kadar: miktar bağımsız, fiyat bağımlı değişken; iki doğrunun kesişimi denge fiyatı. Başka iktisat kavramı yok. | 4 |
+| Yatay çizgi (A5, B3) | Bire birlik grafikte "aynı yükseklikte kaç nokta var" diye denetlenir (9.2.1 a, b: temsillerle belirleme). "Yatay doğru testi" adı verilmez; dikey doğru testi yoktur. | 1, 2 |
+| A9'daki (r, k) noktası | g(x) = a ∙ f(x − r) + k grafiğinin (r, k) noktasından geçtiği, katsayı–grafik ilişkisinin yorumu olarak gösterilir; ayrı bir formül ya da ad verilmez. | 1 |
+| A14'ün önermesi | "a > 0 ise ax + b'nin sıfırı negatiftir" varsayımı üç örnekte tutar, dördüncüde düşer; "a > 0 ve b > 0 ise" diye düzeltilip −b/a ile ispatlanır. Programın f ve ı bileşenleri (genellemeyi kontrol, yöntemlerin kullanışlılığı) bu tek örnek üzerinde işlenir. | 7 |
+| Kısa derslerin yazımı | A konusu 16 ders olduğu için işi yürüten oturum A1–A5'i yazdı (kit ve üslup); A6–A16, B ve C alt ajanlara verildi. `ISLEME.md` "ilk konuyu kendin yaz" diyor; A tek başına 12 ders eşiğini aştığı için bölündü. | — |
+

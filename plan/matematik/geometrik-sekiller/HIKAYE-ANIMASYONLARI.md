@@ -1,10 +1,10 @@
-# Plan — Hikâye animasyonları · 3. ünite: Geometrik Şekiller
+# Plan — Hikâye animasyonları · 3. tema: Geometrik Şekiller
 
 Ölçütler (üç koşul, ek kurallar), biçim, derse yerleşim ve üretim hattı: `../sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–3 ve 5. Burada yinelenmedi.
 
-**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Ünite henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
+**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Tema henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
 
-10 dersin 1'inde hikâye var; kalanlarında yok. Ünitenin ağırlığı ispattadır ("bir şeyin neden her zaman doğru olduğunu göstermek"); ispat adımlarının gündelik hayatta karşılığı olmadığı için zorlama hikâye yazılmadı.
+10 dersin 1'inde hikâye var; kalanlarında yok. Temanın ağırlığı ispattadır ("bir şeyin neden her zaman doğru olduğunu göstermek"); ispat adımlarının gündelik hayatta karşılığı olmadığı için zorlama hikâye yazılmadı.
 
 ## 1. Hikâyesi olan dersler
 
@@ -35,7 +35,7 @@
 
 | Dersler | Neden yok |
 |---|---|
-| A1 Ölçmek ispat değildir · C1 Bu ispat her üçgende çalışır mı? | "Birkaç örnek kanıtlamaz" fikrini 1. ünitenin siyah kuğu hikâyesi taşıyor; ikinci bir hikâye tekrar olur. |
+| A1 Ölçmek ispat değildir · C1 Bu ispat her üçgende çalışır mı? | "Birkaç örnek kanıtlamaz" fikrini 1. temanın siyah kuğu hikâyesi taşıyor; ikinci bir hikâye tekrar olur. |
 | A2 İspat doğru bilgilerin üstüne kurulur · C3 Geometrinin tarihinde bu topraklardan da isimler var | Dersin kendisi zaten bir anlatı (geometrinin tarihi, bilim insanları, *Geometri* kitabı); hikâye dersi tekrar eder. C3 için bkz. bölüm 6, ilk aday. |
 | A3 İç açıların toplamı 180°dir · A5 Dış açı, uzaktaki iki iç açının toplamıdır | İspat adımları. Öğrencinin gündelik hayatında bu önermelerin kullanıldığı bir an yok; hikâye zorlama olur. |
 | A4 Dış açıların toplamı 360°dir | Dersin kendisi zaten hayattan bir durumla kurulu (üçgen parkın çevresini dolaşıp başladığın yöne dönmek). |
@@ -47,14 +47,14 @@
 | Aday | Ders | Neden elendi |
 |---|---|---|
 | Atatürk'ün *Geometri* kitabı: bugün kullandığımız "üçgen, açı, kenar" sözcüklerinin 1936–1937'de eski terimlerin yerine önerilmesi. | C3 | Koşul 3 ve "yeni bilgi öğretmez". Gerçek, program açıkça istiyor ve sözcükler öğrencinin her gün ağzında; ama C3'ün içeriği zaten bu anlatı, hikâye dersi tekrar ederdi. Eski terimler derste geçmiyorsa hikâyede yeni bilgi olur. **Öneri (hakem kararı):** C3 etkileşimi az, anlatı ağırlıklı bir ders; ayrı hikâye yerine dersin kendisi video sahnesi olarak üretilebilir. Eski terimlerin listesi kaynaktan doğrulanmadı. |
-| "Üçgen neden sağlam?" Vinç kolu, çelik kafes, kitaplığın çapraz çıtası. | C2 | "Yeni bilgi öğretmez". Sağlamlığın nedeni, üç kenar uzunluğunun tek bir üçgen belirlemesidir; bu, bu ünitenin önermelerinden biri değil. Hikâye **4. üniteye, B1 dersine taşındı** (`../eslik-ve-benzerlik/HIKAYE-ANIMASYONLARI.md`). Bu ünitede A5 ve C2'nin açılışları çelik kafesi anıyor ama nedenini söylemiyor. |
+| "Üçgen neden sağlam?" Vinç kolu, çelik kafes, kitaplığın çapraz çıtası. | C2 | "Yeni bilgi öğretmez". Sağlamlığın nedeni, üç kenar uzunluğunun tek bir üçgen belirlemesidir; bu, bu temanın önermelerinden biri değil. Hikâye **4. temaya, B1 dersine taşındı** (`../eslik-ve-benzerlik/HIKAYE-ANIMASYONLARI.md`). Bu temada A5 ve C2'nin açılışları çelik kafesi anıyor ama nedenini söylemiyor. |
 | Robot süpürge ya da bisikletle üçgen bir adanın çevresinde tam tur. | A4 | Koşul 3. Dersin açılışı (parkın çevresini dolaşmak) aynı örnek. |
-| "Duvara dayalı merdiven hem yükseklikten hem yerdeki uzaklıktan uzundur" (dik açının karşısı en uzun kenar). | B1 | Koşul 1. Fikir bu durumda kullanılmıyor, yalnızca görülüyor; merdiven 4. ünitede D4'ün açılışı. |
+| "Duvara dayalı merdiven hem yükseklikten hem yerdeki uzaklıktan uzundur" (dik açının karşısı en uzun kenar). | B1 | Koşul 1. Fikir bu durumda kullanılmıyor, yalnızca görülüyor; merdiven 4. temada D4'ün açılışı. |
 | Aynı üçgeni iletkiyle ölçen üç kişinin 179°, 180° ve 181° bulması. | A1 | Koşul 2. Sınıf içi bir durum, hayattan değil; fikir siyah kuğu hikâyesinde. |
 
 ## 7. Hakem incelemesi (7 Ekim 2026)
 
-Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünitenin en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
+Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. temanın en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
 
 | Hikâye | Müfredat | Katkı | Toplam | Karar |
 |---|---|---|---|---|
@@ -64,5 +64,5 @@ Düzeltme istenmedi. Hakem notları:
 
 - Şaşırtan an zayıf (tanıma var, şaşırma az); hikâyeyi taşıyan, öğrencinin o patikada sahiden yürümesi.
 - Eşitlik durumu ("köşe patikanın üstüne gelirse düz çizgi") derste işlenmeyecekse o cümle senaryodan çıkar (bölüm 4'teki notla aynı).
-- 30-40-50 üçgeni 4. ünitenin D5 hikâyesindeki 3-4-5 ile aynıdır; sorun sayılmadı.
+- 30-40-50 üçgeni 4. temanın D5 hikâyesindeki 3-4-5 ile aynıdır; sorun sayılmadı.
 - C3 için öneriye katıldı: *Geometri* kitabı ayrı hikâye değil, dersin kendisi anlatı sahnesi olsun; eski terimler (müselles, zaviye, dılı) ders senaryosuna girerse yeni bilgi sorunu kalmaz (terimler ve 1936–1937 tarihi doğrulandı).

@@ -1,10 +1,10 @@
-/* Ana sayfa ve ünite sayfaları. Dersler ve ünite sırası ortak/katalog.js içinde, her ünitenin kısa dersleri
-   kendi unite.js dosyasındadır; ilerleme dersin tarayıcıya yazdığı 'ders:<kimlik>' kayıtlarından okunur
+/* Ana sayfa ve tema sayfaları. Dersler ve tema sırası ortak/katalog.js içinde, her temanın kısa dersleri
+   kendi tema.js dosyasındadır; ilerleme dersin tarayıcıya yazdığı 'ders:<kimlik>' kayıtlarından okunur
    (ortak/ders.js). Bağımlılık yok.
 
-   Ana sayfa:     <script>Site.anasayfa()</script>            (yayındaki ünitelerin unite.js dosyasını kendi yükler)
-   Ünite sayfası: katalog.js ve kendi unite.js dosyasından sonra
-                  <script>Site.unite('matematik', 'sayilar', { kok: '../../' })</script>   (kok: site köküne göreli yol) */
+   Ana sayfa:     <script>Site.anasayfa()</script>            (yayındaki temaların tema.js dosyasını kendi yükler)
+   Tema sayfası: katalog.js ve kendi tema.js dosyasından sonra
+                  <script>Site.tema('matematik', 'sayilar', { kok: '../../' })</script>   (kok: site köküne göreli yol) */
 (function (global) {
   'use strict';
   const K = global.KATALOG;
@@ -13,22 +13,22 @@
   const TIK = '<svg class="tick" width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 5"/></svg>';
   const OYNAT = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>';
 
-  /* Bir ünitenin kısa dersleri, öğrencinin ilerlemesiyle birlikte. */
-  function uniteDurumu(ders, unite, no, kok) {
+  /* Bir temanın kısa dersleri, öğrencinin ilerlemesiyle birlikte. */
+  function temaDurumu(ders, tema, no, kok) {
     const kisa = [];
-    (unite.konular || []).forEach((konu) => konu.dersler.forEach(([dosya, baslik, kanca, sahne]) => {
+    (tema.konular || []).forEach((konu) => konu.dersler.forEach(([dosya, baslik, kanca, sahne]) => {
       const kod = dosya.split('-')[0];
-      const id = unite.id + '-' + kod;
+      const id = tema.id + '-' + kod;
       const p = oku('ders:' + id) || {};
       const yapilan = (p.done || []).length;
       const toplam = Number(p.sahne) || sahne + 2;   // + çıkış soruları ve özet
       kisa.push({
-        id, kod: kod.toUpperCase(), konu, baslik, kanca, yapilan, toplam, href: kok + unite.yol + dosya,
+        id, kod: kod.toUpperCase(), konu, baslik, kanca, yapilan, toplam, href: kok + tema.yol + dosya,
         bitti: yapilan >= toplam, suren: yapilan > 0 && yapilan < toplam,
         soru: Number(p.total) ? (Number(p.score) || 0) + '/' + Number(p.total) : '',
       });
     }));
-    return { ders, unite, no, kisa, href: kok + unite.yol + 'index.html', biten: kisa.filter((d) => d.bitti).length };
+    return { ders, tema, no, kisa, href: kok + tema.yol + 'index.html', biten: kisa.filter((d) => d.bitti).length };
   }
 
   /* Öğrencinin şimdi açması gereken kısa ders: en son açtığı (bitmediyse), yoksa sırada bitmemiş ilk ders. */
@@ -67,11 +67,11 @@
     </div></header>`;
   }
 
-  /* Yayındaki ünitelerin unite.js dosyalarını yükler. Yüklenemeyen ünite hazırlanıyor sayılır. */
-  function uniteleriYukle(kok) {
-    return Promise.all(K.dersler.flatMap((ders) => ders.uniteler.filter((u) => u.yayinda && !u.yol).map((u) => new Promise((bitti) => {
+  /* Yayındaki temaların tema.js dosyalarını yükler. Yüklenemeyen tema hazırlanıyor sayılır. */
+  function temalariYukle(kok) {
+    return Promise.all(K.dersler.flatMap((ders) => ders.temalar.filter((u) => u.yayinda && !u.yol).map((u) => new Promise((bitti) => {
       const s = document.createElement('script');
-      s.src = kok + ders.id + '/' + u.id + '/unite.js';
+      s.src = kok + ders.id + '/' + u.id + '/tema.js';
       s.onload = s.onerror = bitti;
       document.head.appendChild(s);
     }))));
@@ -80,11 +80,11 @@
   /* ---------- Ana sayfa ---------- */
   function anasayfa(secenek) {
     const kok = (secenek && secenek.kok) || '';
-    return uniteleriYukle(kok).then(() => anasayfayiCiz(kok));
+    return temalariYukle(kok).then(() => anasayfayiCiz(kok));
   }
   function anasayfayiCiz(kok) {
-    const dersler = K.dersler.map((ders) => ({ ders, uniteler: ders.uniteler.map((u, i) => (u.yol ? uniteDurumu(ders, u, i + 1, kok) : { ders, unite: u, no: i + 1 })) }));
-    const yayinda = dersler.flatMap((x) => x.uniteler.filter((u) => u.kisa));
+    const dersler = K.dersler.map((ders) => ({ ders, temalar: ders.temalar.map((u, i) => (u.yol ? temaDurumu(ders, u, i + 1, kok) : { ders, tema: u, no: i + 1 })) }));
+    const yayinda = dersler.flatMap((x) => x.temalar.filter((u) => u.kisa));
     const s = siradaki(yayinda);
 
     let kahraman;
@@ -95,37 +95,37 @@
         <div class="resume-text">
           <p class="state">${s.etiket}</p>
           <h1>${esc(d.baslik)}</h1>
-          <p class="where">${esc(d.u.ders.ad)}, ${esc(d.u.unite.ad)}${d.suren ? ` <span class="count">${d.yapilan} / ${d.toplam} sahne</span>` : ''}</p>
-          <p class="actions"><a class="go" href="${d.href}">${eylem(d)}</a><a class="more" href="${d.u.href}">Üniteyi aç</a></p>
+          <p class="where">${esc(d.u.ders.ad)}, ${esc(d.u.tema.ad)}${d.suren ? ` <span class="count">${d.yapilan} / ${d.toplam} sahne</span>` : ''}</p>
+          <p class="actions"><a class="go" href="${d.href}">${eylem(d)}</a><a class="more" href="${d.u.href}">Temayı aç</a></p>
         </div>
       </section>`;
     } else {
       kahraman = `<section class="resume done"><div class="resume-text">
         <p class="state">Hepsi tamam</p>
         <h1>Yayındaki kısa derslerin hepsini bitirdin.</h1>
-        <p class="where">İstediğin dersi yeniden izleyebilirsin; yeni üniteler eklendikçe burada görünür.</p>
+        <p class="where">İstediğin dersi yeniden izleyebilirsin; yeni temalar eklendikçe burada görünür.</p>
       </div></section>`;
     }
 
-    const bloklar = dersler.map(({ ders, uniteler }) => {
-      const acik = uniteler.filter((u) => u.kisa), bekleyen = uniteler.filter((u) => !u.kisa);
+    const bloklar = dersler.map(({ ders, temalar }) => {
+      const acik = temalar.filter((u) => u.kisa), bekleyen = temalar.filter((u) => !u.kisa);
       const toplam = acik.reduce((n, u) => n + u.kisa.length, 0), biten = acik.reduce((n, u) => n + u.biten, 0);
-      const uniteHtml = acik.map((u) => `<div class="unit">
-          <a class="unit-head" href="${u.href}"><span class="no">${u.no}. ünite</span><span class="name">${esc(u.unite.ad)}</span><span class="open">Üniteyi aç ›</span></a>
-          ${u.unite.konular.map((k) => {
+      const temaHtml = acik.map((u) => `<div class="unit">
+          <a class="unit-head" href="${u.href}"><span class="no">${u.no}. tema</span><span class="name">${esc(u.tema.ad)}</span><span class="open">Temayı aç ›</span></a>
+          ${u.tema.konular.map((k) => {
             const liste = u.kisa.filter((d) => d.konu === k);
             return `<a class="topic" href="${u.href}#konu-${k.harf.toLowerCase()}" style="--k:${k.renk}">
               <span class="letter">${k.harf}</span><span class="name">${esc(k.ad)}</span>${dersCizgileri(liste)}<span class="count">${liste.filter((d) => d.bitti).length} / ${liste.length}</span></a>`;
           }).join('')}
         </div>`).join('');
-      const bekleyenHtml = bekleyen.length ? `<div class="soon"><p>Hazırlanan üniteler</p><ol>${bekleyen.map((u) => `<li value="${u.no}">${esc(u.unite.ad)}</li>`).join('')}</ol></div>` : '';
+      const bekleyenHtml = bekleyen.length ? `<div class="soon"><p>Hazırlanan temalar</p><ol>${bekleyen.map((u) => `<li value="${u.no}">${esc(u.tema.ad)}</li>`).join('')}</ol></div>` : '';
       return `<section class="subject">
         <div class="subject-head">
           <span class="glyph" aria-hidden="true">${esc(ders.simge)}</span>
-          <div class="title"><h2>${esc(ders.ad)}</h2><p>${acik.length} ünite yayında, ${toplam} kısa ders</p></div>
+          <div class="title"><h2>${esc(ders.ad)}</h2><p>${acik.length} tema yayında, ${toplam} kısa ders</p></div>
           <p class="count"><b>${biten}</b> / ${toplam} kısa ders tamamlandı</p>
         </div>
-        ${uniteHtml}${bekleyenHtml}
+        ${temaHtml}${bekleyenHtml}
       </section>`;
     }).join('');
 
@@ -133,12 +133,12 @@
     document.body.innerHTML = ust(kok) + `<main class="wrap page">${kahraman}${bloklar}</main>`;
   }
 
-  /* ---------- Ünite sayfası ---------- */
-  function unite(dersId, uniteId, secenek) {
+  /* ---------- Tema sayfası ---------- */
+  function tema(dersId, temaId, secenek) {
     const kok = (secenek && secenek.kok) || '';
     const ders = K.dersler.find((d) => d.id === dersId);
-    if (!ders.uniteler.find((x) => x.id === uniteId).yol) throw new Error('Ünitenin unite.js dosyası yüklenmemiş: ' + dersId + '/' + uniteId);
-    const u = uniteDurumu(ders, ders.uniteler.find((x) => x.id === uniteId), ders.uniteler.findIndex((x) => x.id === uniteId) + 1, kok);
+    if (!ders.temalar.find((x) => x.id === temaId).yol) throw new Error('Temanın tema.js dosyası yüklenmemiş: ' + dersId + '/' + temaId);
+    const u = temaDurumu(ders, ders.temalar.find((x) => x.id === temaId), ders.temalar.findIndex((x) => x.id === temaId) + 1, kok);
     const s = siradaki([u]);
     const acikHarf = (location.hash.match(/^#konu-([a-z])$/) || [])[1] || (s ? s.d.konu.harf.toLowerCase() : '');
 
@@ -151,7 +151,7 @@
         </span>
       </a>`;
 
-    const konular = u.unite.konular.map((k) => {
+    const konular = u.tema.konular.map((k) => {
       const liste = u.kisa.filter((d) => d.konu === k), harf = k.harf.toLowerCase();
       return `<details class="topic-block" id="konu-${harf}" style="--k:${k.renk}"${harf === acikHarf ? ' open' : ''}>
         <summary><span class="letter">${k.harf}</span><span class="name">${esc(k.ad)}</span>${dersCizgileri(liste)}<span class="count">${liste.filter((d) => d.bitti).length} / ${liste.length} kısa ders</span></summary>
@@ -159,10 +159,10 @@
       </details>`;
     }).join('');
 
-    const hikayeler = (u.unite.hikayeler || []).length ? `<section class="stories">
+    const hikayeler = (u.tema.hikayeler || []).length ? `<section class="stories">
         <h2>Hikâyeler</h2>
         <p class="sub">Derslerin sonundaki kısa videolar. Sınavdan önce hızlı tekrar için.</p>
-        <div class="story-list">${u.unite.hikayeler.map((h) => `<a class="story" href="${kok + u.unite.yol + h.video}">
+        <div class="story-list">${u.tema.hikayeler.map((h) => `<a class="story" href="${kok + u.tema.yol + h.video}">
           <span class="thumb">${OYNAT}</span>
           <span class="body"><span class="name">${esc(h.ad)}</span><span class="from">${h.kod} ${esc(h.ders)}</span></span></a>`).join('')}</div>
       </section>` : '';
@@ -171,13 +171,13 @@
       ? `<p class="count"><b>${u.biten}</b> / ${u.kisa.length} kısa ders tamamlandı</p>
          <p class="next"><span>${s.etiket}</span><b style="color:${s.d.konu.renk}">${s.d.kod}</b> ${esc(s.d.baslik)}</p>
          <a class="go" href="${s.d.href}">${eylem(s.d)}</a>`
-      : `<p class="count"><b>${u.biten}</b> / ${u.kisa.length} kısa ders tamamlandı</p><p class="next">Ünitenin hepsini bitirdin. İstediğin dersi yeniden izleyebilirsin.</p>`;
+      : `<p class="count"><b>${u.biten}</b> / ${u.kisa.length} kısa ders tamamlandı</p><p class="next">Temanın hepsini bitirdin. İstediğin dersi yeniden izleyebilirsin.</p>`;
 
-    document.title = u.unite.ad + ' — ' + K.sinif + ' ' + ders.ad;
+    document.title = u.tema.ad + ' — ' + K.sinif + ' ' + ders.ad;
     document.body.classList.add('site');
-    document.body.innerHTML = ust(kok, `<a href="${kok}index.html">${esc(ders.ad)}</a><span aria-hidden="true">›</span><span>${esc(u.unite.ad)}</span>`) + `<main class="wrap page">
+    document.body.innerHTML = ust(kok, `<a href="${kok}index.html">${esc(ders.ad)}</a><span aria-hidden="true">›</span><span>${esc(u.tema.ad)}</span>`) + `<main class="wrap page">
       <section class="unit-top">
-        <div class="unit-intro"><p class="where">${esc(ders.ad)}, ${u.no}. ünite</p><h1>${esc(u.unite.ad)}</h1><p class="lead">${esc(u.unite.tanitim || '')}</p></div>
+        <div class="unit-intro"><p class="where">${esc(ders.ad)}, ${u.no}. tema</p><h1>${esc(u.tema.ad)}</h1><p class="lead">${esc(u.tema.tanitim || '')}</p></div>
         <div class="progress">${yan}</div>
       </section>
       <section class="topics">${konular}</section>
@@ -186,5 +186,5 @@
     </main>`;
   }
 
-  global.Site = { anasayfa, unite };
+  global.Site = { anasayfa, tema };
 })(window);

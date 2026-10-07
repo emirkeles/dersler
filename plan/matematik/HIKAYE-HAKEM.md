@@ -1,23 +1,23 @@
-# Hakem raporu — Hikâye animasyonları, 2–7. üniteler
+# Hakem raporu — Hikâye animasyonları, 2–7. temalar
 
-Tarih: 7 Ekim 2026. İncelenen: altı ünitenin `HIKAYE-ANIMASYONLARI.md` taslağı (15 hikâye). Ölçüt: `sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–4 ve `plan/KURALLAR.md`. Her alıntı ilgili `MUFREDAT.md` dosyasında, her "derste geçiyor / geçmiyor" iddiası `PLAN.md` dosyasında arandı; her sayı yeniden hesaplandı; gerçek dünya olguları web'de arandı (bölüm 3). Bu rapor yalnızca saptar; taslaklara dokunulmadı.
+Tarih: 7 Ekim 2026. İncelenen: altı temanın `HIKAYE-ANIMASYONLARI.md` taslağı (15 hikâye). Ölçüt: `sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–4 ve `plan/KURALLAR.md`. Her alıntı ilgili `MUFREDAT.md` dosyasında, her "derste geçiyor / geçmiyor" iddiası `PLAN.md` dosyasında arandı; her sayı yeniden hesaplandı; gerçek dünya olguları web'de arandı (bölüm 3). Bu rapor yalnızca saptar; taslaklara dokunulmadı.
 
 **Sonrası (7 Ekim 2026):** rapordaki düzeltmeler altı dosyaya işlendi; her dosyanın 7. bölümü neyin neden değiştiğini yazar. Bu rapor düzeltmeden önceki taslakları anlatır. Rapordan ayrılan noktalar:
 
-- 5. ünitede A1 "Geçersiz numara" çıktı, yerine F2 "Parola ekranı" yazıldı (dağılım 3, 1, 3, 3, 2, 3; toplam 15).
+- 5. temada A1 "Geçersiz numara" çıktı, yerine F2 "Parola ekranı" yazıldı (dağılım 3, 1, 3, 3, 2, 3; toplam 15).
 - İki hikâyenin adı değişti: 4-D5 "Ustanın metresi" → "Sahanın köşesi"; 7-B7 "Yüzde yüz otuz" → "39 kişi nereden çıktı?".
 - 4-B1'de koşulun ikinci yolu seçildi (hikâyenin sonu vinç kafesine bağlandı, `PLAN.md` değişmedi); "yansıtma" yerine yarım tur dönme kullanıldı, çünkü kafeste yan yana iki üçgen her zaman dönmeyle, yalnızca özel üçgenlerde yansımayla üst üste gelir.
 - İsteğe bağlı öneriler (2-C10'da "180'i kaç yaşında geçerim?", 7-A6'da penaltı sahnesi) uygulanmadı; ilgili dosyalarda not olarak duruyor.
 
 Puan çapası: 9–10 onaylı listenin en güçlüleri (tarla-çit, fotofiniş, kombi); 7–8 küçük düzeltmeyle üretilir; 5–6 ciddi zaaf; 0–4 zorlama ya da müfredat dışı.
 
-Genel hüküm: taslaklar seçici ve dürüst (zayıf koşulları kendileri işaretlemiş). Müfredat alıntılarının **tamamı** kaynakta var ve doğru aktarılmış; hesap hatası **yok**. Bulunan kusurlar: bir hikâye üçüncü koşuldan kalıyor (5. ünite A1), bir hikâyenin kapanış cümlesi dersin cümlesi değil (4. ünite B1), bir hikâyenin sahnesi anlattığı grafikle çelişiyor (6. ünite C1, gün batımı), iki hikâyede gerçek dünya mekanizması olduğundan kesin anlatılmış (2. ünite B4, 5. ünite C3).
+Genel hüküm: taslaklar seçici ve dürüst (zayıf koşulları kendileri işaretlemiş). Müfredat alıntılarının **tamamı** kaynakta var ve doğru aktarılmış; hesap hatası **yok**. Bulunan kusurlar: bir hikâye üçüncü koşuldan kalıyor (5. tema A1), bir hikâyenin kapanış cümlesi dersin cümlesi değil (4. tema B1), bir hikâyenin sahnesi anlattığı grafikle çelişiyor (6. tema C1, gün batımı), iki hikâyede gerçek dünya mekanizması olduğundan kesin anlatılmış (2. tema B4, 5. tema C3).
 
 ## 1. Özet tablo (toplam puana göre)
 
 Üç koşul sütunu sırasıyla: 1 gerçekten hayatta var · 2 öğrenci karşılaşacak · 3 konu soyut kalıyor. G = geçer, S = sınırda, K = kalır.
 
-| # | Ünite | Ders | Hikâye | Müfredat | Katkı | Toplam | Üç koşul | Karar |
+| # | Tema | Ders | Hikâye | Müfredat | Katkı | Toplam | Üç koşul | Karar |
 |---|---|---|---|---|---|---|---|---|
 | 1 | 2 | C10 Modelin sınırı | Kapı pervazındaki çizgiler | 9 | 9 | 18 | G · G · S | Kalsın |
 | 2 | 4 | D2 Tales: üç paralel doğru | Çizgili defterle eşit bölmek | 8 | 9 | 17 | G · G · G | Kalsın (üretim notuyla) |
@@ -35,11 +35,11 @@ Genel hüküm: taslaklar seçici ve dürüst (zayıf koşulları kendileri işar
 | 14 | 4 | D5 Pisagor'un sonuçları | Ustanın metresi | 7 | 6 | 13 | G · S · G | Düzeltilerek kalsın |
 | 15 | 5 | A1 Algoritma bir tariftir | Geçersiz numara | 6 | 6 | 12 | G · G · K | Çıksın |
 
-Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. üniteye üçüncü hikâye istenirse aday F2 "parola ekranı"dır (bölüm 4).
+Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. temaya üçüncü hikâye istenirse aday F2 "parola ekranı"dır (bölüm 4).
 
-## 2. Ünite ünite ayrıntı
+## 2. Tema tema ayrıntı
 
-### 2. ünite · Nicelikler ve Değişimler
+### 2. tema · Nicelikler ve Değişimler
 
 **C10 · Kapı pervazındaki çizgiler — 9 / 9**
 
@@ -54,7 +54,7 @@ Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. üniteye üçüncü hikâye ist
 - Müfredat: program parçalı gösterim için "gerçek yaşam durumları incelenir" diyor (çoğul); alıntı doğru. Fikir çıktının içeriği; yeni terim yok.
 - Katkı: listedeki en güçlü kanca ("son yüzde yirmi bitmiyor"); nesne her gün elinde. Kapanış uyuyor.
 - Zaaf 1 (yanıltıcı sadeleştirme, taslak kendisi de yazmış): gerçek şarj eğrisinin son bölümü doğru parçası değil, yatıklaşan eğridir (sabit akım, sonra sabit gerilim). "Üç doğru parçası" bir yaklaşımdır; anlatımda "yaklaşık" denmezse hikâye, dersinin tam tersini (her parça doğrusaldır) yanlış bir örnekle öğretir. Programın buz örneği bu açıdan daha dürüsttür.
-- Zaaf 2: şaşırtan an ("60. dakikada dolar" tahmininin tutmaması) C10 hikâyesinin kalıbıyla aynı: doğrusal tahmin aralık dışında tutmuyor. Aynı ünitede iki hikâye aynı dramı oynuyor.
+- Zaaf 2: şaşırtan an ("60. dakikada dolar" tahmininin tutmaması) C10 hikâyesinin kalıbıyla aynı: doğrusal tahmin aralık dışında tutmuyor. Aynı temada iki hikâye aynı dramı oynuyor.
 - Zaaf 3: "dakikada 5/3 puan" sesle söylenmez.
 - İstenen düzeltme: (a) "yaklaşık olarak" sözü senaryoda zorunlu; (b) vurgu "tahmin tutmadı"dan "üç aralık, üç kural: hangi dakikada hangi kural" cümlesine kaydırılsın; (c) hızlar yuvarlak seçilsin, örneğin 0–25 dk %50 (dakikada 2 puan), 25–55 dk %80 (1 puan), 55–95 dk %100 (yarım puan); sayılar zaten kurgu.
 - Üçüncü koşul sınırda (ders programın buz deneyiyle kurulu). Aynı gerekçeyle A6–A10 ve C1–C4 hikâyesiz bırakılmış; tutarlılık için gerekçe "buz laboratuvar örneği, öğrencinin hayatı değil" diye açık yazılmalı.
@@ -64,19 +64,19 @@ Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. üniteye üçüncü hikâye ist
 - Müfredat: t(x) = ±\|ax + b\|'nin sıfırı ile grafiği çıktının içeriği; \|4 − 0,5t\| programın kalıbına uyuyor. Gerçek yaşam yalnızca "araştırma ödevi verilebilir" düzeyinde.
 - Katkı: sıfırın "tam durakta olduğun an" olması ve V biçimi iyi oturuyor; durağı kaçırmak tanıdık.
 - Zaaf: "Uygulama işareti atıp uzaklığı gösteriyor" bir mekanizma iddiası ve doğru değil: uygulama 4 − 0,5t hesaplayıp işaret atmaz, uzaklığı doğrudan ölçer; yol tarifi açıkken durak geçilince çoğu uygulama yeni rota çizer (doğrulanamadı, bölüm 3). −2'yi bulan uygulama değil, öğrencinin kafasındaki doğrusal hesaptır.
-- Tekrar: çekirdek fikir (mutlak değer = uzaklık) 1. ünitenin kombi hikâyesinde; B1 ve B3'ün açılışları da uzaklık. Yeni olan yalnızca zamanla değişim ve kırılma.
-- İstenen düzeltme: "hesabın −2 diyor; uzaklık eksi olmaz, ekranda 2 yazıyor" biçiminde yazılsın, uygulamaya hesap atfedilmesin; ekranda yol tarifi değil, haritada işaretli durağa uzaklık gösterilsin. Bütçe daralırsa bu ünitede ilk vazgeçilecek (taslakla aynı görüş).
+- Tekrar: çekirdek fikir (mutlak değer = uzaklık) 1. temanın kombi hikâyesinde; B1 ve B3'ün açılışları da uzaklık. Yeni olan yalnızca zamanla değişim ve kırılma.
+- İstenen düzeltme: "hesabın −2 diyor; uzaklık eksi olmaz, ekranda 2 yazıyor" biçiminde yazılsın, uygulamaya hesap atfedilmesin; ekranda yol tarifi değil, haritada işaretli durağa uzaklık gösterilsin. Bütçe daralırsa bu temada ilk vazgeçilecek (taslakla aynı görüş).
 
-### 3. ünite · Geometrik Şekiller
+### 3. tema · Geometrik Şekiller
 
 **B2 · Çimdeki patika — 8 / 8**
 
-- Müfredat: üçgen eşitsizliği anahtar kavram ve çıktının içeriği; alıntılar doğru. Program gerçek yaşamı sanat, mimari, mühendislik "gibi" diye istiyor; patika bunların içinde değil ama yasak da değil. Pisagor'a girilmemiş (bu ünitede yok), doğru karar.
+- Müfredat: üçgen eşitsizliği anahtar kavram ve çıktının içeriği; alıntılar doğru. Program gerçek yaşamı sanat, mimari, mühendislik "gibi" diye istiyor; patika bunların içinde değil ama yasak da değil. Pisagor'a girilmemiş (bu temada yok), doğru karar.
 - Katkı: kestirme, üçgen eşitsizliğinin kendisi; öğrenci o patikada yürüyor. Şaşırtan an zayıf (tanıma var, şaşırma az). Sondaki 3-4-8 çubukları dersin açılışına bağlıyor; ikinci bir fikir değil, aynı eşitsizliğin öbür yüzü.
 - Doğruluk: 30 + 40 = 70 > 50; 30² + 40² = 50²; 3 + 4 < 8. "Eşitlenirse düz çizgi" matematikçe doğru. Kestirme patikalar gerçek ve yaygın (doğrulandı).
 - İstenen: yok. Eşitlik durumu derste işlenmeyecekse o cümle çıkar (taslak aynı notu düşmüş).
 
-### 4. ünite · Eşlik ve Benzerlik
+### 4. tema · Eşlik ve Benzerlik
 
 **D2 · Çizgili defterle eşit bölmek — 8 / 9**
 
@@ -96,9 +96,9 @@ Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. üniteye üçüncü hikâye ist
 - Müfredat: alıntı doğru; program yalnızca "yorumlamaları" bekliyor ve cümlesi tek yönlü (geniş açı ise kare büyük). Hikâye ters yönü kullanıyor (kare büyükse açı geniş). D5'in tek fikri de böyle yazılmış, yani hikâye dersle uyumlu; ama ders iki yönü de açıkça söylemeli (üç durum birbirini dışladığı için ters yön de doğrudur).
 - Katkı: yöntem inşaatta gerçekten kullanılıyor (doğrulandı), fikir orada sahiden işliyor. Zaaflar: öğrencinin karşılaşması üç koşul içinde en zayıfı (taslak da söylüyor); sayı yükü ağır (60, 80, 100, 103, 10 609, 10 000, 97, 9409), ekranda yazı olmadan sesle taşınmaz.
 - Doğruluk: 60² + 80² = 100²; 103² = 10 609; 97² = 9409 doğru.
-- İstenen düzeltme: (a) 97 hesabı atılsın, "kısa çıksaydı dar olurdu" yeter; (b) sahne öğrenciye yaklaştırılsın: okul bahçesinde voleybol sahası köşesi çizmek ya da kitaplık kurarken köşeyi denetlemek; (c) ortam tekrarı giderilsin: bu ünitenin üç hikâyesi de çıta, şerit, usta dünyasında geçiyor. Bu ünitede bütçe daralırsa ilk vazgeçilecek (taslakla aynı görüş).
+- İstenen düzeltme: (a) 97 hesabı atılsın, "kısa çıksaydı dar olurdu" yeter; (b) sahne öğrenciye yaklaştırılsın: okul bahçesinde voleybol sahası köşesi çizmek ya da kitaplık kurarken köşeyi denetlemek; (c) ortam tekrarı giderilsin: bu temanın üç hikâyesi de çıta, şerit, usta dünyasında geçiyor. Bu temada bütçe daralırsa ilk vazgeçilecek (taslakla aynı görüş).
 
-### 5. ünite · Algoritma ve Bilişim
+### 5. tema · Algoritma ve Bilişim
 
 **C3 · Karekodun içinde ne yazıyor? — 8 / 9**
 
@@ -120,20 +120,20 @@ Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. üniteye üçüncü hikâye ist
 
 **A1 · Geçersiz numara — 6 / 6 — Çıksın**
 
-- Üçüncü koşuldan kalıyor: A1 ünitenin en kolay dersi; taslak da "en zayıf koşul bu" diyor. Aynı ölçütle 1. ünitede B1, C1, C2 ve bu ünitede A2, A5, A6 "kendiliğinden anlaşılır" diye hikâyesiz bırakıldı; A1'e hikâye tutarsız.
+- Üçüncü koşuldan kalıyor: A1 temanın en kolay dersi; taslak da "en zayıf koşul bu" diyor. Aynı ölçütle 1. temada B1, C1, C2 ve bu temada A2, A5, A6 "kendiliğinden anlaşılır" diye hikâyesiz bırakıldı; A1'e hikâye tutarsız.
 - Müfredat: program "kodların tümü algoritmadır" için "basit örnekler" istiyor; bilinen uygulamaların algoritmaları ise yalnızca araştırma ödevi. Hikâye derste olmayan özel bir kuralı (denetim hanesi) öğretiyor.
 - Katkı: "bilgisayar bilmiyor, hesaplıyor" güzel ve gerçek; ama dersin tek fikrine herhangi bir algoritma kadar bağlı. On bir haneli sayı ve dört ara toplam ses için ağır.
 - Doğruluk: kural doğrulandı; 12345678950 iki kuralı da sağlıyor; üçüncü hane 8 olunca toplam 55. Nüfus 86 092 168 doğrulandı. Eksik uyarı: denetimden geçmek numaranın gerçek olduğunu göstermez, yalnızca yazım hatasını eler; hikâye bunu söylemiyor. 12345678950 gerçek bir kişiye ait olabilir (taslak da yazmış); kalacaksa örnek numara değişmeli.
 - Yeniden kullanılacaksa yeri A1 değil A5'tir ("Adımları izle, ne yaptığını söyle": üç adım veriliyor, ne işe yaradığı soruluyor); o zaman yeniden puanlanır.
 
-### 6. ünite · İstatistiksel Araştırma Süreci
+### 6. tema · İstatistiksel Araştırma Süreci
 
 **D3 · Sınıfın ortalama takipçisi — 7 / 9**
 
 - Müfredat: "özetleme araçlarından uygun olanı seçer" ve "araştırma sorularına yeniden dönülür" alıntıları doğru; fikir çıktının içeriği. Kesinti: hikâyeyi çalıştıran mekanizma (tek çok büyük değerin ortalamayı çekmesi) ortaokul bilgisi ve `PLAN.md` "aykırı değer"i ders dışı sayıyor. Hikâye terimi kullanmıyor ama olguyu anlatıyor; D3 senaryosu bu olguya değinmiyorsa hikâye derste olmayan bir şey gösterir.
 - Katkı: en tanıdık bağlam; "3290'a yaklaşan tek kişi yok" gerçek bir şaşırma; kapanış uyuyor. Ortalamaya da meşru bir iş verilmesi iyi.
 - Doğruluk: 8700, 98 700, 3290, ortanca 300 doğru.
-- İstenen düzeltme: (a) ikinci soru zorlama: toplamı bulmak için ortalamaya gerek yok (zaten toplamdan çıktı). Ortalamayı gerçekten gerektiren bir soru yazılsın, örneğin "takipçiler sınıfa eşit paylaştırılsa kişi başına kaç düşer?"; (b) 29 kişi tam 300 olmasın (taslağın kendi notu: 150–450 arası, toplam ve ortanca korunarak); (c) 7. ünitenin B7 hikâyesiyle sahne aynı (30 kişilik sınıf, pano ya da gazete, uygulama); birinin sahnesi değişsin.
+- İstenen düzeltme: (a) ikinci soru zorlama: toplamı bulmak için ortalamaya gerek yok (zaten toplamdan çıktı). Ortalamayı gerçekten gerektiren bir soru yazılsın, örneğin "takipçiler sınıfa eşit paylaştırılsa kişi başına kaç düşer?"; (b) 29 kişi tam 300 olmasın (taslağın kendi notu: 150–450 arası, toplam ve ortanca korunarak); (c) 7. temanın B7 hikâyesiyle sahne aynı (30 kişilik sınıf, pano ya da gazete, uygulama); birinin sahnesi değişsin.
 
 **C1 · Fotoğrafın altındaki dağ — 8 / 7**
 
@@ -144,7 +144,7 @@ Sonuç: 14 hikâye kalır (3, 1, 3, 2, 2, 3). 5. üniteye üçüncü hikâye ist
 - 4000 × 3000 = 12 milyon doğru; eksen anlamları doğrulandı.
 - İstenen düzeltme: sahne değişsin; "bazı düzenleme uygulamalarında ve fotoğraf makinelerinde" densin. Yedek nesne: deneme sınavı sonuç karnesindeki puan dağılımı grafiği (her öğrenci görüyor, dersin "5000 öğrenci" açılışıyla aynı ölçek); kavram eşlemesi daha yavan ama karşılaşma kesin.
 
-### 7. ünite · Veriden Olasılığa
+### 7. tema · Veriden Olasılığa
 
 **A6 · Son atışı kim kullansın? — 8 / 8**
 
@@ -206,41 +206,41 @@ Hikâyesiz bırakılan 116 ders tek tek gözden geçirildi. Üç koşulu **açı
 
 | Aday | Ders | Müfredat | Katkı | Toplam | Hüküm |
 |---|---|---|---|---|---|
-| Parola ekranı: "en az bir rakam" için biri yeter, "boşluk içermesin" için hepsine bakılır | 5. ünite F2 | 8 | 7 | 15 | **A1 yerine düşünülmeli.** Elenme gerekçesi (A1 ile aynı tür nesne) A1 çıkınca düşüyor. Program MAT.9.5.2'de bağlaç ve niceleyicilerin "gerçek yaşam durumlarında" anlamını açıkça istiyor; bu çıktının hiç hikâyesi yok. "Fikir siyah kuğuda" gerekçesi tam tutmuyor: F2'nin fikri algoritmanın ne zaman durduğu. Koşul 3 sınırda (açılış yoklama programı). Kapanış: "Her: hepsine bak. Bazı: biri yeter." |
-| Ürün ve uygulama puanları: kimler puan verir? | 6. ünite F3 | 7 | 7 | 14 | Haksız elenmedi (F3 anketle kurulu; gönüllü cevap `PLAN.md` soru 4'te açık). Ama MAT.9.6.2'nin hiç hikâyesi yok; 6. üniteye üçüncü hikâye istenirse aday budur. |
-| "4 oyla 5,0 mı, 3000 oyla 4,7 mi?" | 7. ünite A6 | 6 | 8 | 14 | Doğru elendi (yinelenen aynı deney değil). Yedek. |
-| "Renk ayarı neden 255'te bitiyor?" | 5. ünite C2 | 8 | 6 | 14 | Doğru elendi; karekod daha yaygın. Yedek. |
-| "Abonman mı, tek biniş mi?" | 2. ünite C3–C4 | 8 | 6 | 14 | Doğru elendi (600 ÷ 15 = 40 doğru). Taslağın önerisi yerinde: hikâye değil, C4'te kargo yerine dersin kendi örneği. |
-| Atatürk'ün *Geometri* kitabı | 3. ünite C3 | 8 | 5 | 13 | Doğru elendi: bir matematik fikrini oturtmuyor. Taslağın önerisine katılıyorum: ayrı hikâye değil, C3'ün kendisi anlatı sahnesi olsun; eski terimler (müselles, zaviye, dılı) ders senaryosuna girerse yeni bilgi sorunu da kalmaz. |
-| "Ay'ı tırnağınla kapat" | 4. ünite B2–B3 | 6 | 6 | 12 | Doğru elendi; KURALLAR'daki "merak türü yan konu" sınırında. Dördüncü hikâye olarak önermiyorum. |
-| Çorba kaşığı (örneklem) | 6. ünite B1–B2 | 5 | 6 | 11 | Doğru elendi: benzetme, gerçek kullanım değil. |
-| Doğum günü bir gün kayar | 5. ünite B1 | 7 | 6 | 13 | Doğru elendi. Ek kusur: artık yıllarda iki gün kayar; "her tarih bir gün kayar" yanlış olurdu. |
+| Parola ekranı: "en az bir rakam" için biri yeter, "boşluk içermesin" için hepsine bakılır | 5. tema F2 | 8 | 7 | 15 | **A1 yerine düşünülmeli.** Elenme gerekçesi (A1 ile aynı tür nesne) A1 çıkınca düşüyor. Program MAT.9.5.2'de bağlaç ve niceleyicilerin "gerçek yaşam durumlarında" anlamını açıkça istiyor; bu çıktının hiç hikâyesi yok. "Fikir siyah kuğuda" gerekçesi tam tutmuyor: F2'nin fikri algoritmanın ne zaman durduğu. Koşul 3 sınırda (açılış yoklama programı). Kapanış: "Her: hepsine bak. Bazı: biri yeter." |
+| Ürün ve uygulama puanları: kimler puan verir? | 6. tema F3 | 7 | 7 | 14 | Haksız elenmedi (F3 anketle kurulu; gönüllü cevap `PLAN.md` soru 4'te açık). Ama MAT.9.6.2'nin hiç hikâyesi yok; 6. temaya üçüncü hikâye istenirse aday budur. |
+| "4 oyla 5,0 mı, 3000 oyla 4,7 mi?" | 7. tema A6 | 6 | 8 | 14 | Doğru elendi (yinelenen aynı deney değil). Yedek. |
+| "Renk ayarı neden 255'te bitiyor?" | 5. tema C2 | 8 | 6 | 14 | Doğru elendi; karekod daha yaygın. Yedek. |
+| "Abonman mı, tek biniş mi?" | 2. tema C3–C4 | 8 | 6 | 14 | Doğru elendi (600 ÷ 15 = 40 doğru). Taslağın önerisi yerinde: hikâye değil, C4'te kargo yerine dersin kendi örneği. |
+| Atatürk'ün *Geometri* kitabı | 3. tema C3 | 8 | 5 | 13 | Doğru elendi: bir matematik fikrini oturtmuyor. Taslağın önerisine katılıyorum: ayrı hikâye değil, C3'ün kendisi anlatı sahnesi olsun; eski terimler (müselles, zaviye, dılı) ders senaryosuna girerse yeni bilgi sorunu da kalmaz. |
+| "Ay'ı tırnağınla kapat" | 4. tema B2–B3 | 6 | 6 | 12 | Doğru elendi; KURALLAR'daki "merak türü yan konu" sınırında. Dördüncü hikâye olarak önermiyorum. |
+| Çorba kaşığı (örneklem) | 6. tema B1–B2 | 5 | 6 | 11 | Doğru elendi: benzetme, gerçek kullanım değil. |
+| Doğum günü bir gün kayar | 5. tema B1 | 7 | 6 | 13 | Doğru elendi. Ek kusur: artık yıllarda iki gün kayar; "her tarih bir gün kayar" yanlış olurdu. |
 
 "Hikâyesi olmayan dersler" tabloları:
 
-- Sayım: her ünitede `PLAN.md`'deki her kısa ders tam bir kez geçiyor (32, 10, 18, 31, 24, 16; toplam 131 ders, 15 hikâyeli, 116 hikâyesiz). Eksik ya da çift geçen ders yok.
-- Tutarsızlık 1: "ders programın gerçek yaşam örneğiyle kurulu" gerekçesi 2. ünitede A6–A10 ve C1–C4'ü eliyor ama A16'yı (buz) elemiyor. Taslak bunu "sınırda" diye işaretlemiş; ayrım açık yazılmalı.
-- Tutarsızlık 2: "kendiliğinden anlaşılır" gerekçesi 5. ünitede A2, A5, A6'yı eliyor ama A1'i elemiyor (karar: A1 çıksın).
-- Tutarsızlık 3: 7. ünitede B4 kabul edilmiş, oysa ders aynı deneyle kurulu; hikâyeyi kurtaran şey yanılgının kendisi, bu gerekçe taslakta yazılmalı.
-- Küçük yanlış: 7. ünite tablosu B5 için "kapanış cümlesi de aynı" diyor; 1. ünitedeki B5 hikâyesinin kapanışı "∩ ve, ∪ veya"dır, aynı olan fikir.
+- Sayım: her temada `PLAN.md`'deki her kısa ders tam bir kez geçiyor (32, 10, 18, 31, 24, 16; toplam 131 ders, 15 hikâyeli, 116 hikâyesiz). Eksik ya da çift geçen ders yok.
+- Tutarsızlık 1: "ders programın gerçek yaşam örneğiyle kurulu" gerekçesi 2. temada A6–A10 ve C1–C4'ü eliyor ama A16'yı (buz) elemiyor. Taslak bunu "sınırda" diye işaretlemiş; ayrım açık yazılmalı.
+- Tutarsızlık 2: "kendiliğinden anlaşılır" gerekçesi 5. temada A2, A5, A6'yı eliyor ama A1'i elemiyor (karar: A1 çıksın).
+- Tutarsızlık 3: 7. temada B4 kabul edilmiş, oysa ders aynı deneyle kurulu; hikâyeyi kurtaran şey yanılgının kendisi, bu gerekçe taslakta yazılmalı.
+- Küçük yanlış: 7. tema tablosu B5 için "kapanış cümlesi de aynı" diyor; 1. temadaki B5 hikâyesinin kapanışı "∩ ve, ∪ veya"dır, aynı olan fikir.
 - Hikâyesiz kalan öğrenme çıktıları: MAT.9.4.1 (dönüşümler), 9.4.3, 9.4.5, 9.5.2, 9.5.3, 9.6.2. Dördü ön bilgi ya da süreç ağırlıklı, yerinde; 9.5.2 ve 9.6.2 için yukarıdaki iki aday var.
 
 Fazla ve tekrar:
 
 | Tekrar | Hikâyeler | Öneri |
 |---|---|---|
-| Aynı kalıp: "doğrusal tahmin tutmuyor" | 2. ünite A16 ile C10 | A16'nın vurgusu "hangi aralıkta hangi kural"a kaysın |
-| Aynı sahne: 30 kişilik sınıf, pano, uygulama | 6. ünite D3 ile 7. ünite B7 | B7 iki okul kulübüne taşınsın |
-| Aynı ortam: çıta, şerit, usta | 4. ünitenin üç hikâyesi | D5 okul bahçesine taşınsın |
-| Aynı çekirdek: mutlak değer = uzaklık | 2. ünite B4 ile 1. ünite kombi | Kabul edilebilir; B4 kırılmayı öne çıkarsın |
-| Aynı üçgen: 3-4-5 | 3. ünite patika (30-40-50) ile 4. ünite D5 (60-80-100) | Sorun değil; D5'te patikaya gönderme yapılabilir |
-| Nesne yoğunluğu: telefon ekranı | Şarj, harita, karekod, form, fotoğraf, takipçi (15'in 6'sı; 1. ünitede 2 tane daha) | A1 çıkınca ve C1 yedeğe geçerse 4'e iner; görsel dilde çeşitlilik gözetilsin |
+| Aynı kalıp: "doğrusal tahmin tutmuyor" | 2. tema A16 ile C10 | A16'nın vurgusu "hangi aralıkta hangi kural"a kaysın |
+| Aynı sahne: 30 kişilik sınıf, pano, uygulama | 6. tema D3 ile 7. tema B7 | B7 iki okul kulübüne taşınsın |
+| Aynı ortam: çıta, şerit, usta | 4. temanın üç hikâyesi | D5 okul bahçesine taşınsın |
+| Aynı çekirdek: mutlak değer = uzaklık | 2. tema B4 ile 1. tema kombi | Kabul edilebilir; B4 kırılmayı öne çıkarsın |
+| Aynı üçgen: 3-4-5 | 3. tema patika (30-40-50) ile 4. tema D5 (60-80-100) | Sorun değil; D5'te patikaya gönderme yapılabilir |
+| Nesne yoğunluğu: telefon ekranı | Şarj, harita, karekod, form, fotoğraf, takipçi (15'in 6'sı; 1. temada 2 tane daha) | A1 çıkınca ve C1 yedeğe geçerse 4'e iner; görsel dilde çeşitlilik gözetilsin |
 
-Dağılım (3, 1, 3, 3, 2, 3): makul. Ders başına oran 1. ünitenin üçte biri (15/131'e karşı 9/28); bu, 2–7. ünitelerde programın gerçek yaşamı derslerin içine koymasıyla tutarlı. Ders saatine göre en yoğun ünite 7. (18 saate 3 hikâye), en seyrek 2. ve 6. (38 saate 3, 34 saate 2). Önerilen dağılım 3, 1, 3, 2, 2, 3 (toplam 14); F2 eklenirse 15.
+Dağılım (3, 1, 3, 3, 2, 3): makul. Ders başına oran 1. temanın üçte biri (15/131'e karşı 9/28); bu, 2–7. temalarda programın gerçek yaşamı derslerin içine koymasıyla tutarlı. Ders saatine göre en yoğun tema 7. (18 saate 3 hikâye), en seyrek 2. ve 6. (38 saate 3, 34 saate 2). Önerilen dağılım 3, 1, 3, 2, 2, 3 (toplam 14); F2 eklenirse 15.
 
 ## 5. Üretim sırası ve bütçe
 
-Hikâyeler ilgili ünitenin dersleri yazıldıktan sonra üretilir; aşağıdaki sıra üniteler arası önceliktir.
+Hikâyeler ilgili temanın dersleri yazıldıktan sonra üretilir; aşağıdaki sıra temalar arası önceliktir.
 
 | Öncelik | Hikâyeler | Not |
 |---|---|---|
@@ -250,7 +250,7 @@ Hikâyeler ilgili ünitenin dersleri yazıldıktan sonra üretilir; aşağıdaki
 | 4 · Koşullu | 4-B1 yamulmayan · 2-B4 durak · 4-D5 usta | B1 kapanış cümlesi kararına bağlı |
 | Çıkan | 5-A1 geçersiz numara | Yerine F2 parola ekranı değerlendirilebilir |
 
-Ünite içi sıra (taslaktan farkı): 2. ünite C10, A16, B4 (taslakta A16 önce) · 4. ünite D2, B1, D5 (taslakta B1 önce) · 5. ünite C3, D1 · 6. ünite D3, C1 (taslakta C1 önce) · 7. ünite A6, B4, B7 (aynı).
+Tema içi sıra (taslaktan farkı): 2. tema C10, A16, B4 (taslakta A16 önce) · 4. tema D2, B1, D5 (taslakta B1 önce) · 5. tema C3, D1 · 6. tema D3, C1 (taslakta C1 önce) · 7. tema A6, B4, B7 (aynı).
 
 Bütçe daralırsa ilk vazgeçilecekler, sırayla:
 
@@ -258,6 +258,6 @@ Bütçe daralırsa ilk vazgeçilecekler, sırayla:
 2. 2-B4 Durağı kaçırdın (program yalnızca araştırma ödevi diyor; çekirdek fikir kombi hikâyesinde).
 3. 4-B1 Yamulmayan şekil (kapanış cümlesi çözülmezse zaten çıkar).
 4. 6-C1 Fotoğrafın altındaki dağ (öğrencilerin çoğu o grafiği görmüyor).
-5. 7-B7 Yüzde yüz otuz (7. ünite ders saatine göre en yoğun ünite).
+5. 7-B7 Yüzde yüz otuz (7. tema ders saatine göre en yoğun tema).
 
-Bu beşi çıkarsa 9 hikâye kalır (2, 1, 1, 2, 1, 2); her ünitede en az bir hikâye durur.
+Bu beşi çıkarsa 9 hikâye kalır (2, 1, 1, 2, 1, 2); her temada en az bir hikâye durur.

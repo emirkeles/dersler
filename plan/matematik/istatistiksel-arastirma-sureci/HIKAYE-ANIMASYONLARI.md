@@ -1,10 +1,10 @@
-# Plan — Hikâye animasyonları · 6. ünite: İstatistiksel Araştırma Süreci
+# Plan — Hikâye animasyonları · 6. tema: İstatistiksel Araştırma Süreci
 
 Ölçütler (üç koşul, ek kurallar), biçim, derse yerleşim ve üretim hattı: `../sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1–3 ve 5. Burada yinelenmedi.
 
-**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Ünite henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
+**Durum (7 Ekim 2026): hakem incelemesinden geçti; düzeltmeler işlendi (bölüm 7; rapor: `../HIKAYE-HAKEM.md`).** Tema henüz işleme alınmadı; ders kodları ve adları `PLAN.md` taslağındaki hâlleridir.
 
-24 dersin 2'sinde hikâye var; kalanlarında yok. Bu ünite baştan sona gerçek yaşam durumu üzerine kurulu: program bağlamın "gerçek yaşam durumlarına uygun olarak" seçilmesini istiyor ve derslerin açılışları zaten öğrencinin kendi soruları (uyku, ekran süresi, otobüs, kantin anketi). Üçüncü koşulu geçen ders az.
+24 dersin 2'sinde hikâye var; kalanlarında yok. Bu tema baştan sona gerçek yaşam durumu üzerine kurulu: program bağlamın "gerçek yaşam durumlarına uygun olarak" seçilmesini istiyor ve derslerin açılışları zaten öğrencinin kendi soruları (uyku, ekran süresi, otobüs, kantin anketi). Üçüncü koşulu geçen ders az.
 
 ## 1. Hikâyesi olan dersler (müfredattaki önem sırasıyla)
 
@@ -27,7 +27,7 @@
 | Sıra | Koşul 1 · Gerçekten hayatta var | Koşul 2 · Öğrenci karşılaşacak | Koşul 3 · Konu soyut kalıyor |
 |---|---|---|---|
 | 1 | Takipçi, gelir, izlenme gibi sayılarda birkaç çok büyük değer ortalamayı çeker; "ortalama" ile "sıradan" ayrışır. | Her gün: kendi hesabı, sınıf arkadaşları, "ortalama şu kadar" diyen haberler. | D3 bir karar dersi (hangi araç); açılışı bir soru. Aracı neden sorunun seçtiği, aynı veride iki özet yan yana görülmeden soyut kalır. |
-| 2 | Fotoğraf histogramı gerçek bir histogramdır: tek nicel değişken (parlaklık), milyonlarca veri, gruplar ve sütunlar. Fotoğrafçılar pozlamayı ona bakarak ayarlar. | **Sınırda.** Fotoğraf düzenleyenler için evet; ama iPhone'un Fotoğraflar uygulamasında histogram yok, öğrencilerin çoğu bu grafiği görmedi (bölüm 4). Yedek nesne: bölüm 6, son satır. | Histogram bu ünitede yeni bir araç; dersin açılışı varsayımsal (5000 öğrencinin boyu). Öğrenci gerçek bir histogramı hiç elinde tutmuyor. |
+| 2 | Fotoğraf histogramı gerçek bir histogramdır: tek nicel değişken (parlaklık), milyonlarca veri, gruplar ve sütunlar. Fotoğrafçılar pozlamayı ona bakarak ayarlar. | **Sınırda.** Fotoğraf düzenleyenler için evet; ama iPhone'un Fotoğraflar uygulamasında histogram yok, öğrencilerin çoğu bu grafiği görmedi (bölüm 4). Yedek nesne: bölüm 6, son satır. | Histogram bu temada yeni bir araç; dersin açılışı varsayımsal (5000 öğrencinin boyu). Öğrenci gerçek bir histogramı hiç elinde tutmuyor. |
 
 ## 4. Doğruluk notları
 
@@ -67,7 +67,7 @@
 
 ## 7. Hakem incelemesi (7 Ekim 2026)
 
-Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünitenin en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
+Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. temanın en güçlü hikâyeleri düzeyi; 7–8: küçük düzeltmeyle üretilir; 5–6: ciddi zaaf). Hakemin istediği düzeltmeler bu dosyaya işlendi; puanlar düzeltmeden önceki taslağa aittir.
 
 | Hikâye | Müfredat | Katkı | Toplam | Karar |
 |---|---|---|---|---|
@@ -83,4 +83,4 @@ Bağımsız hakem raporu: `../HIKAYE-HAKEM.md`. Puanlar 0–10 (9–10: 1. ünit
 | C1: sahne gün batımı yerine akşam, loş oda | Işığa karşı çekimde histogram iki tepelidir; "bütün yığın solda" o sahneye uymuyordu (doğruluk hatası). |
 | C1: "düzenleme ekranında" yerine "bazı düzenleme uygulamalarında ve fotoğraf makinelerinde"; yedek nesne eklendi | iPhone'un Fotoğraflar uygulamasında histogram yok. |
 
-Sahne tekrarı: bu ünitenin D3 hikâyesi ile 7. ünitenin B7 hikâyesi aynı sahnedeydi (30 kişilik sınıf, pano, uygulama); B7'nin sahnesi değişti, D3 yerinde kaldı.
+Sahne tekrarı: bu temanın D3 hikâyesi ile 7. temanın B7 hikâyesi aynı sahnedeydi (30 kişilik sınıf, pano, uygulama); B7'nin sahnesi değişti, D3 yerinde kaldı.
