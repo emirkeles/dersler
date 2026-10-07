@@ -45,8 +45,25 @@ Matematikte yapılanın aynısı: her tema için `MUFREDAT.md` (MEB sayfasından
 - [x] Ana sayfa görüntüsüne bak (yedi ders)
 - [x] Rapor
 
+## Seslendirme: Sayılar A konusu ve ortak plan (7 Ekim 2026)
+
+Kararlar: Gamze Özdemir, `eleven_v4`, 64 kbps; yönergeler seyrek (`[curious]`, `[excited]`).
+
+- [x] Yapıyı incele, 69 dersin kuru dökümünü al
+- [x] Bit hızı örnekleri (`matematik/sayilar/ses/ornekler/dinle.html`)
+- [x] A2–A8 `speak:` metinlerine yönerge (10 adet); A1 klipleri bozulmadı
+- [x] `araclar/ses-uret.js`: 64 kbps, biçimi `uretim.json` içine yaz
+- [x] A2–A8 kliplerini üret
+- [x] A1'i 64 kbps ile yeniden üret
+- [x] Doğrula: eksik klip yok, süre aykırısı yok, `olc.js` ve `denetle.js` temiz
+- [x] `plan/matematik/sayilar/PLAN.md` bölüm 5 durumunu güncelle
+- [x] Ortak plan: `plan/SESLENDIRME.md`
+- [x] Rapor
+
 ## İşleme almanın dışında kalanlar (kullanıcı isteyince)
 
+- [ ] Sayılar A derslerini sesli izle; A1 sahne 3 "Genel kural" klibini dinle (öbürlerinden yavaş)
+- [ ] Sayılar B, C, D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`)
 - [ ] Tema sayfasından dersleri izle; `DURUM.md` “Kalanlar” bölümündeki sahnelere elle bak
 - [ ] Yerel araçları `dersler/kit.js` içine topla (ayrı temizlik işi)
 - [ ] Yayına al (`ortak/katalog.js`), seslendirme, hikâye videoları

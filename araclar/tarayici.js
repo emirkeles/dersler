@@ -59,7 +59,8 @@ async function dersiAc(dosya, viewport = { width: 1366, height: 657 }) {
 
 /* Bir sahneyi oynatır; "Devam", ilk şık vb. otomatik tıklanır. herAdim her yoklamada çağrılır. */
 async function sahneyiOynat(page, i, { hiz = 3, sureSiniri = 80000, herAdim } = {}) {
-  await page.evaluate((i, hiz) => { window.scrollTo(0, 0); Ders.current.state.speed = hiz; Ders.current.go(i, true); }, i, hiz);
+  // Ses kapatılır: klibi olan derste altyazı klibin bitmesini bekler, araç gerçek süre kadar oyalanır.
+  await page.evaluate((i, hiz) => { window.scrollTo(0, 0); Ders.current.state.speed = hiz; Ders.current.state.voice = false; Ders.current.go(i, true); }, i, hiz);
   const t0 = Date.now();
   while (Date.now() - t0 < sureSiniri) {
     await sleep(150);

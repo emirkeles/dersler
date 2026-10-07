@@ -13,7 +13,7 @@
 
    Oyunculuk yönergeleri: eleven_v3 / eleven_v4 modellerinde seslendirme metnine ([curious], [excited] gibi)
    köşeli parantezli yönergeler yazılabilir; bunlar derste `speak:` metnine konur, altyazıda görünmez.
-   Model ya da ses değişirse eski klipler geçersiz sayılır ve yeniden üretilir (<tema>/ses/<ders-id>/uretim.json).
+   Model, ses ya da ses biçimi değişirse eski klipler geçersiz sayılır ve yeniden üretilir (<tema>/ses/<ders-id>/uretim.json).
 
    Neyin seslendirildiği: sahnede beklenerek okunan açıklama altyazıları (c.say). Etkileşim yönergeleri
    (noWait ile gösterilenler), soru panelleri, geri bildirimler ve sınav seslendirilmez; öğrenci onları kendi hızında okur.
@@ -38,10 +38,12 @@ const API = 'https://api.elevenlabs.io/v1';
 const VARSAYILAN = {
   ses: 'Hvrobr8BhLPfiaSv2cHi', // Gamze Özdemir – Turkish Female Narrator
   model: 'eleven_v4',          // oyunculuk yönergelerini ([curious] gibi) destekler
+  bicim: 'mp3_44100_64',       // ders klipleri; konuşma için yeterli, 128 kbps'in yarı boyutu
 };
 const ANAHTAR = process.env.ELEVENLABS_API_KEY;
 const SES = process.env.ELEVENLABS_VOICE_ID || VARSAYILAN.ses;
 const MODEL = process.env.ELEVENLABS_MODEL || VARSAYILAN.model;
+const BICIM = VARSAYILAN.bicim;
 
 function sahneSecimi(metin) {
   if (!metin) return null;
@@ -84,14 +86,15 @@ function manifestYaz(id, tema) {
   return dosyalar.length;
 }
 
-async function seslendir(metin, onceki, sonraki) {
+/* bicim verilmezse 128 kbps üretir (hikâye anlatımı videoya işlendiği için öyle kalır). */
+async function seslendir(metin, onceki, sonraki, bicim = 'mp3_44100_128') {
   const govde = { text: metin, model_id: MODEL };
   if (MODEL === 'eleven_multilingual_v2') {
     govde.voice_settings = { stability: 0.5, similarity_boost: 0.75, style: 0, use_speaker_boost: true };
     if (onceki) govde.previous_text = onceki; if (sonraki) govde.next_text = sonraki; // cümleler arası tonlama sürekliliği
   } else govde.language_code = 'tr'; // v3/v4: dil açıkça verilir, ses ayarları modelin varsayılanında kalır
   for (let deneme = 1; ; deneme++) {
-    const r = await fetch(`${API}/text-to-speech/${SES}?output_format=mp3_44100_128`, {
+    const r = await fetch(`${API}/text-to-speech/${SES}?output_format=${bicim}`, {
       method: 'POST', headers: { 'xi-api-key': ANAHTAR, 'Content-Type': 'application/json' }, body: JSON.stringify(govde),
     });
     if (r.ok) return Buffer.from(await r.arrayBuffer());
@@ -121,7 +124,7 @@ if (require.main === module) (async () => {
   // Her klibin hangi model ve sesle üretildiği kaydedilir; ikisinden biri değişince klip yeniden üretilir.
   const kunyeDosyasi = path.join(klasor, 'uretim.json');
   const kunye = fs.existsSync(kunyeDosyasi) ? JSON.parse(fs.readFileSync(kunyeDosyasi, 'utf8')) : {};
-  const var_ = (s) => fs.existsSync(path.join(klasor, s.key + '.mp3')) && !!kunye[s.key] && kunye[s.key].model === MODEL && kunye[s.key].ses === SES;
+  const var_ = (s) => fs.existsSync(path.join(klasor, s.key + '.mp3')) && !!kunye[s.key] && kunye[s.key].model === MODEL && kunye[s.key].ses === SES && kunye[s.key].bicim === BICIM;
 
   // sahne başına döküm
   const sahneler = new Map();
@@ -140,14 +143,14 @@ if (require.main === module) (async () => {
   if (!ANAHTAR) throw new Error('ELEVENLABS_API_KEY gerekli (kökteki .env dosyasına yaz).');
 
   fs.mkdirSync(klasor, { recursive: true });
-  console.log(`\n${hedef.length} klip üretiliyor (${hedefKr} karakter, model ${MODEL})…`);
+  console.log(`\n${hedef.length} klip üretiliyor (${hedefKr} karakter, model ${MODEL}, ${BICIM})…`);
   let yapilan = 0;
   for (const s of hedef) {
     const sira = satirlar.indexOf(s);
     const komsu = (d) => { const x = satirlar[sira + d]; return x && x.scene === s.scene ? x.text : undefined; };
     try {
-      fs.writeFileSync(path.join(klasor, s.key + '.mp3'), await seslendir(s.text, komsu(-1), komsu(1)));
-      kunye[s.key] = { model: MODEL, ses: SES };
+      fs.writeFileSync(path.join(klasor, s.key + '.mp3'), await seslendir(s.text, komsu(-1), komsu(1), BICIM));
+      kunye[s.key] = { model: MODEL, ses: SES, bicim: BICIM };
       fs.writeFileSync(kunyeDosyasi, JSON.stringify(kunye, null, 1));
       yapilan++;
       process.stdout.write(`\r  ${yapilan}/${hedef.length}`);

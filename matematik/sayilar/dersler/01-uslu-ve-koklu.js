@@ -1121,7 +1121,7 @@
     await p1;
 
     /* tahmin 1: 2^0 */
-    const p2 = nf(c.say('2³ = 8, 2² = 4, 2¹ = 2… Sıradaki <b>2⁰</b> kaç?', { ms: 6000, speak: 'Sarmaya devam edelim: iki üzeri üç sekiz, iki üzeri iki dört, iki üzeri bir iki. Sıradaki iki üzeri sıfır kaç olmalı? Örüntü der ki ikiyi ikiye böl.' }));
+    const p2 = nf(c.say('2³ = 8, 2² = 4, 2¹ = 2… Sıradaki <b>2⁰</b> kaç?', { ms: 6000, speak: 'Sarmaya devam edelim: iki üzeri üç sekiz, iki üzeri iki dört, iki üzeri bir iki. [curious] Sıradaki iki üzeri sıfır kaç olmalı? Örüntü der ki ikiyi ikiye böl.' }));
     let r0 = Promise.resolve();
     K.set(rows[10].g, { o: 1 });
     rows[10].lab.setAttribute('opacity', 0.9); rows[10].val.textContent = '?'; rows[10].val.setAttribute('opacity', 1); rows[10].val.style.fill = C.soft;
@@ -1417,7 +1417,7 @@
     const l2 = K.t(calc, 850, 372, '', { size: 50, fill: C.text, w: 800 });
     const l3 = K.t(calc, 850, 438, '', { size: 32, fill: C.soft, w: 700 });
 
-    const p1 = nf(c.say('10 tur = 5 tur + 5 tur. Tam ortada, 5. turda kaç kişi vardı?', { ms: 7000, speak: 'Video on turda bin yirmi dört kişiye ulaştı. Bu yolculuğu eşit iki yarıya böl: beş tur artı beş tur. Tam ortada, beşinci turda kaç kişi vardı?' }));
+    const p1 = nf(c.say('10 tur = 5 tur + 5 tur. Tam ortada, 5. turda kaç kişi vardı?', { ms: 7000, speak: 'Video on turda bin yirmi dört kişiye ulaştı. Bu yolculuğu eşit iki yarıya böl: beş tur artı beş tur. [curious] Tam ortada, beşinci turda kaç kişi vardı?' }));
     await K.stagger(tl.ticks, 70, (t) => K.fade(t, 1, 300));
     nf(c.tween(900, (t) => tl.fill.setAttribute('width', t * (X(10) - X(0) + 28)), ease.inOut));
     await K.fade([handle, pill], 1, 500);
@@ -1746,7 +1746,7 @@
 
     /* geri bağlama */
     await par(K.fade(exG, 0, 500), K.fade(der, 0, 500));
-    const p4 = nf(c.say(`<b>${RT(P(2, 10))} = (${P(2, 10)})<sup>1/2</sup> = 2<sup>10·1/2</sup> = ${P(2, 5)}</b> = 32: üsler çarpılır.`, { ms: 7600, speak: 'Dersin başındaki örneğe dönelim: karekök iki üzeri on, parantez iki üzeri on, üzeri yarım, eşittir iki üzeri on çarpı yarım, yani iki üzeri beş, otuz iki. İşte üsler çarpılır kuralı!' }));
+    const p4 = nf(c.say(`<b>${RT(P(2, 10))} = (${P(2, 10)})<sup>1/2</sup> = 2<sup>10·1/2</sup> = ${P(2, 5)}</b> = 32: üsler çarpılır.`, { ms: 7600, speak: 'Dersin başındaki örneğe dönelim: karekök iki üzeri on, parantez iki üzeri on, üzeri yarım, eşittir iki üzeri on çarpı yarım, yani iki üzeri beş, otuz iki. [excited] İşte üsler çarpılır kuralı!' }));
     const back = mixLine(K, svg, 660, 110, 54, [{ r: '{b 2}{e^ 10}' }, '{t  = (}{b 2}{e^ 10}{t )}{k^ 1/2}{t  = }{b 2}{e^ 10·1/2}{t  = }{b 2}{e^ 5}{t  = }{g 32}'], { o: 0 });
     await K.fade(back, 1, 700);
     const arr = K.g(svg, 0, 0, { o: 0 });
@@ -1842,7 +1842,7 @@
     K.t(bigG, 880 + 120, 96 + 120, '36', { size: 64, fill: C.root, w: 800 });
     K.rich(bigG, 1000, 96 + 240 + 34, 36, '{k 6}{k^ 2}{t  = }{k 36}{t  = 4 · 9}');
 
-    const pA = nf(c.say('<b>√4 · √9</b> = 4^(1/2)·9^(1/2) = (4·9)^(1/2) = <b>√36 = 6</b>. Gerçekten 2·3 = 6.', { ms: 10000, speak: 'Kökün üs olduğunu biliyoruz. O hâlde karekök dört çarpı karekök dokuz, dört üzeri yarım çarpı dokuz üzeri yarım. Çarpımın üssü kuralı: bunu dört çarpı dokuz, üzeri yarım yapabiliriz, yani karekök otuz altı, altı. Gerçekten de iki çarpı üç altı!' }));
+    const pA = nf(c.say('<b>√4 · √9</b> = 4^(1/2)·9^(1/2) = (4·9)^(1/2) = <b>√36 = 6</b>. Gerçekten 2·3 = 6.', { ms: 10000, speak: 'Kökün üs olduğunu biliyoruz. O hâlde karekök dört çarpı karekök dokuz, dört üzeri yarım çarpı dokuz üzeri yarım. Çarpımın üssü kuralı: bunu dört çarpı dokuz, üzeri yarım yapabiliriz, yani karekök otuz altı, altı. [excited] Gerçekten de iki çarpı üç altı!' }));
     await K.fade(A, 1, 700);
     await c.wait(1200);
     await K.fade(rectG, 1, 800);
@@ -2273,7 +2273,7 @@
     const L = mixLine(K, svg, 330, 230, 66, [{ r: '{t 9+16}' }], { o: 0 });
     const Rr = mixLine(K, svg, 950, 230, 66, [{ r: '{t 9}' }, '{t  + }', { r: '{t 16}' }], { o: 0 });
     const qm = K.g(svg, 640, 230, { o: 0 }); K.t(qm, 0, 0, '?', { size: 90, fill: C.base, w: 800 });
-    const p1 = nf(c.say('<b>√(9+16)</b> ile <b>√9 + √16</b> aynı mı?', { ms: 5000, speak: 'Şimdi en klasik tuzak. Soru: karekök dokuz artı on altı ile karekök dokuz artı karekök on altı aynı mı? Tahmin et.' }));
+    const p1 = nf(c.say('<b>√(9+16)</b> ile <b>√9 + √16</b> aynı mı?', { ms: 5000, speak: 'Şimdi en klasik tuzak. [curious] Soru: karekök dokuz artı on altı ile karekök dokuz artı karekök on altı aynı mı? Tahmin et.' }));
     await par(K.fade(L, 1, 700), K.fade(Rr, 1, 700), K.fade(qm, 1, 700));
     await p1;
     let tries = 0;
@@ -2708,7 +2708,7 @@
     const e4 = K.rich(svg, 640, 472, 44, '{e x+x+x = 1}', { o: 0 });
     await K.fade(e4, 1, 400);
     await p5;
-    const p6 = nf(c.say('Her biri 1/3. Küpkök, <b>üs 1/3</b> demek.', { speak: 'Demek ki her biri üçte bir. Küpkök almak, üssü üçte bir yapmaktır.' }));
+    const p6 = nf(c.say('Her biri 1/3. Küpkök, <b>üs 1/3</b> demek.', { speak: '[excited] Demek ki her biri üçte bir. Küpkök almak, üssü üçte bir yapmaktır.' }));
     await K.fade([e2, e3, e4], 0, 400); e2.remove(); e3.remove(); e4.remove();
     const e5 = mixLine(K, svg, 640, 480, 68, [{ r: '{t 512}', n: 3 }, '{t  = }{b 512}{e^ 1}{t^ /}{k^ 3}{t  = }{g 8}'], { o: 0 });
     await K.fade(e5, 1, 600);
@@ -2905,7 +2905,7 @@
     await p1;
     await K.fade(g1, 0, 400); g1.remove();
     const hedef = fracMix(K, svg, 640, 170, 76, ['{t 1}'], [{ r: '{t 3}' }, '{t  − 1}'], { o: 0 });
-    const p2 = nf(c.say('Peki payda <b>√3 − 1</b> olursa? Aynısını deneyelim.', { speak: 'Peki payda karekök üç eksi bir olursa? Aynı yöntemi deneyelim.' }));
+    const p2 = nf(c.say('Peki payda <b>√3 − 1</b> olursa? Aynısını deneyelim.', { speak: '[curious] Peki payda karekök üç eksi bir olursa? Aynı yöntemi deneyelim.' }));
     await K.fade(hedef, 1, 500);
     await p2;
     await c.choice({
@@ -2969,7 +2969,7 @@
       K.fade([cB, cC], 0.3, 900));
     nf(K.ring(X0 + WA, Y0 + HA, C.root, 90, 700));
     await p3;
-    const p4 = nf(c.say('Geriye <b>3 − 1 = 2</b> kaldı. Kök yok.', { speak: 'Geriye üç eksi bir kaldı, yani iki. Kök yok.' }));
+    const p4 = nf(c.say('Geriye <b>3 − 1 = 2</b> kaldı. Kök yok.', { speak: '[excited] Geriye üç eksi bir kaldı, yani iki. Kök yok.' }));
     const son = K.rich(svg, 970, 280, 76, '{g 3}{t  − }{r 1}{t  = }{g 2}', { o: 0 });
     await K.fade(son, 1, 500);
     await p4;
@@ -3167,7 +3167,7 @@
     const a1 = K.rich(g1, 400, 150, 68, '{t 15 × }{b 10}{e^ 7}');
     const a2 = K.rich(g1, 880, 150, 68, '{t 1,5 × }{b 10}{e^ 8}');
     K.t(g1, 640, 250, 'ikisi de 150 000 000', { size: 32, fill: C.soft });
-    const p1 = nf(c.say('İkisi de 150 000 000 eder. Hangisi bilimsel gösterim?', { speak: 'İkisi de yüz elli milyon eder. Sence hangisi bilimsel gösterim?' }));
+    const p1 = nf(c.say('İkisi de 150 000 000 eder. Hangisi bilimsel gösterim?', { speak: 'İkisi de yüz elli milyon eder. [curious] Sence hangisi bilimsel gösterim?' }));
     await K.fade(g1, 1, 500);
     await p1;
     await c.choice({
@@ -3238,7 +3238,7 @@
     S('rect', { x: T.x, y: T.y, width: T.s, height: T.s, rx: 6, fill: 'rgba(107,227,160,.14)', stroke: C.ok, 'stroke-width': 3 }, tarla);
     K.t(tarla, T.x + T.s / 2, T.y + T.s / 2, '1000 m²', { size: 52, fill: C.ok, w: 800 });
     let kenar = K.t(tarla, T.x + T.s / 2, T.y + T.s + 46, '? m', { size: 44, fill: C.root, w: 800 });
-    const p1 = nf(c.say('Alanı 1000 m² olan kare tarlanın kenarı kaç metre?', { speak: 'Alanı bin metrekare olan kare bir tarlanın kenarı kaç metredir?' }));
+    const p1 = nf(c.say('Alanı 1000 m² olan kare tarlanın kenarı kaç metre?', { speak: '[curious] Alanı bin metrekare olan kare bir tarlanın kenarı kaç metredir?' }));
     await K.fade(tarla, 1, 500);
     await p1;
     await c.choice({

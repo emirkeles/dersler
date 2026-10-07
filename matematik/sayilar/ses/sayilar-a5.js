@@ -1,2 +1,2 @@
 /* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
-Ders.ses['sayilar-a5'] = { base: 'ses/sayilar-a5/', clips: {} };
+Ders.ses['sayilar-a5'] = { base: 'ses/sayilar-a5/', clips: { '1ca29f81': '1ca29f81.mp3', '48c187ce': '48c187ce.mp3', '534a710d': '534a710d.mp3', '53c2a027': '53c2a027.mp3', '5c8945dc': '5c8945dc.mp3', '6c74e1b3': '6c74e1b3.mp3', '771c2b73': '771c2b73.mp3', '805c7e82': '805c7e82.mp3', '9b746dc7': '9b746dc7.mp3', 'a0606df9': 'a0606df9.mp3', 'a11e0e77': 'a11e0e77.mp3', 'a49175fc': 'a49175fc.mp3', 'b2df57fa': 'b2df57fa.mp3', 'd71e6c17': 'd71e6c17.mp3', 'd9bba4d9': 'd9bba4d9.mp3', 'dcdd559f': 'dcdd559f.mp3', 'f7223be8': 'f7223be8.mp3' } };

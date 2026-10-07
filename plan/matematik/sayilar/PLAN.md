@@ -162,7 +162,7 @@ Aşağıdaki tabloda **YENİ** işaretliler. Her biri için önce `senaryolar/` 
 - **Üretim sırası:** en sonda, tüm içerik bittikten sonra, bütün dersler tek seferde.
 - **Kurulum:** kökte `.env` dosyasına yalnızca `ELEVENLABS_API_KEY`. Ses ve model `araclar/ses-uret.js` içinde kayıtlı. Seçilen ses Gamze Özdemir (ana dili Türkçe; yabancı ses Will "pay/payda"yı yanlış okudu), model `eleven_v4`. Anahtar yalnızca seslendirme izinli olduğundan `--sesler` çalışmaz; adaylar `ses/ornekler/dinle.html` sayfasında.
 - **Oyunculuk:** `eleven_v4` köşeli parantezli yönergeleri destekler. Derslerde yalnızca `[curious]` (soru) ve `[excited]` (sonuç) seyrek olarak, `speak:` metninde kullanılır; gülme ve ses efekti yok.
-- **Durum:** Deneme olarak Ders 01 sahne 1–5 seslendirildi (18 klip, 190 sn). Bu sahnelerin metni yeniden değişirse klipleri sonda yenilenir.
+- **Durum (7 Ekim 2026):** A konusu seslendirildi: A1–A8, 109 klip, 15,8 dakika, 7,7 MB, 64 kbps. A2–A8 metinlerine 10 yönerge eklendi. B, C, D bekliyor; okunan metinlerinde rakam var, önce kelimeye çevrilecek. Adımlar ve tema tablosu: `plan/SESLENDIRME.md`.
 - **Komutlar:** `node araclar/ses-uret.js a1 --liste` (ne kadar karakter), `node araclar/ses-uret.js a1` (üret).
 
 ## 6. Açık konular
