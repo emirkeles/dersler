@@ -202,7 +202,7 @@
         await Promise.all([fadeTo(c, h1, 400), fadeTo(c, h2, 400)]);
         await fadeTo(c, rule2, 500);
       });
-      await c.say('<b>Mutlak değer, hedefe uzaklıktır.</b>', { speak: 'Mutlak değer, hedefe uzaklıktır.' });
+      await c.say('<b>Mutlak değer, hedefe uzaklıktır.</b>', { speak: '[excited] Mutlak değer, hedefe uzaklıktır.' });
       await c.cont('Devam ›');
     },
   });

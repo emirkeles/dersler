@@ -88,7 +88,9 @@ Kararlar: Gamze Özdemir, `eleven_v4`, 64 kbps; yönergeler seyrek (`[curious]`,
 ## İşleme almanın dışında kalanlar (kullanıcı isteyince)
 
 - [ ] Sayılar A derslerini sesli izle; A1 sahne 3 "Genel kural" klibini dinle (öbürlerinden yavaş)
-- [ ] Sayılar B, C, D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`)
+- [x] Sayılar B seslendirildi (151 klip, 12,5 dk)
+- [ ] Sayılar B derslerini sesli izle; B1 "Üç, A’nın elemanıdır" ve B6 sahne 1 klipleri hızlı okunuyor
+- [ ] Sayılar C, D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`)
 - [ ] Tema sayfasından dersleri izle; `DURUM.md` “Kalanlar” bölümündeki sahnelere elle bak
 - [ ] Yerel araçları `dersler/kit.js` içine topla (ayrı temizlik işi)
 - [ ] Yayına al (`ortak/katalog.js`), seslendirme, hikâye videoları

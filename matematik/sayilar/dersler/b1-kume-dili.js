@@ -128,7 +128,7 @@
       await par(c, 'Bir kümeyi <b>kuralıyla</b> yazabiliriz.', { speak: 'Bir kümeyi kuralıyla yazabiliriz.' }, async () => {
         await fadeTo(c, kural, 500); await fadeTo(c, e1, 300);
       });
-      await par(c, 'Bu kural hangi sayıları seçer?', { speak: 'Bu kural hangi sayıları seçer?' }, async () => {
+      await par(c, 'Bu kural hangi sayıları seçer?', { speak: '[curious] Bu kural hangi sayıları seçer?' }, async () => {
         for (const t of toplar) { await fadeTo(c, t.g, 120); }
       });
       await c.choice({

@@ -581,14 +581,14 @@
 
       /* 4) gösterim: bilinçli değerler */
       const go = (to, ms) => { const from = v; return c.tween(ms, (e) => setBoy(lerp(from, to, e)), ease.inOut); };
-      await par(c, '120 cm: kapı kırmızı. Bu boy <b class="bad">geçemez</b>.', { ms: 2200 });
+      await par(c, '120 cm: kapı kırmızı. Bu boy <b class="bad">geçemez</b>.', { ms: 2200, speak: 'Yüz yirmi santimetre: kapı kırmızı. Bu boy geçemez.' });
       await par(c, '140\'a yaklaşalım...', { ms: 1500, noWait: true }, () => go(139.9, 1500));
       await par(c, '<b>139,9 cm</b>: çok yakın ama yine geçemez. Boylar ondalıklı da olabilir!', { ms: 3200, speak: 'Yüz otuz dokuz virgül dokuz santimetre: çok yakın ama yine geçemez. Boylar ondalıklı da olabilir!' }, async () => {
         bal = balloon(svg, ax.X(139.9), 335, ['Boy 139,9 da olabilir.', 'Aralarda sonsuz çok sayı var!'], { w: 340, s: 22 });
         setOp(bal, 0); await fadeTo(c, bal, 400);
       });
       await fadeTo(c, bal, 400, 1, 0); bal.remove();
-      await par(c, 'Tam <b>140,0 cm</b>: kapı açılıyor, <b class="good">geçer</b>.', { ms: 2400 }, () => go(140, 450));
+      await par(c, 'Tam <b>140,0 cm</b>: kapı açılıyor, <b class="good">geçer</b>.', { ms: 2400, speak: 'Tam yüz kırk virgül sıfır santimetre: kapı açılıyor, geçer.' }, () => go(140, 450));
       await par(c, '189,9 cm hâlâ geçer...', { ms: 1600, noWait: true }, () => go(189.9, 1900));
       await par(c, 'Ama tam <b>190,0 cm</b> geçemez: 140 girer, 190 girmez.', { ms: 3600, speak: 'Ama tam yüz doksan santimetre geçemez! İki uç bir değil: yüz kırk girer, yüz doksan girmez.' }, () => go(190, 450));
 
@@ -676,7 +676,7 @@
       c.note('"…ve üzeri / en az" → <b>≥</b>', 'Dil çevirisi', 'k2a');
 
       /* sayı doğrusu + tahmin */
-      await par(c, '<b>x ≥ 140</b> olanlar sayı doğrusunda nerede? Önce tahmin et.', { ms: 3200, speak: 'Peki x büyük eşittir yüz kırk koşulunu sağlayanlar sayı doğrusunda nerede toplanır? Önce tahmin et.' }, async () => {
+      await par(c, '<b>x ≥ 140</b> olanlar sayı doğrusunda nerede? Önce tahmin et.', { ms: 3200, speak: '[curious] Peki x büyük eşittir yüz kırk koşulunu sağlayanlar sayı doğrusunda nerede toplanır? Önce tahmin et.' }, async () => {
         await ax.draw(c, 900);
         await Promise.all([fadeTo(c, kA.g, 500), fadeTo(c, gG, 500)]);
       });
@@ -762,11 +762,11 @@
       });
       const verdict = (r, ok) => { r.ver.textContent = ok ? '✓ GEÇER' : '✗ GEÇEMEZ'; r.ver.style.fill = ok ? COL.mint : COL.coral; r.k.mood(ok ? 'ok' : 'no'); };
 
-      await par(c, 'Kapıdaki görevlinin önünde <b>tam 140 cm</b> boyunda bir çocuk var. Girebilir mi?', { ms: 3600, speak: 'Kapıdaki görevlinin önünde tam yüz kırk santimetre boyunda bir çocuk var. Girebilir mi?' }, async () => {
+      await par(c, 'Kapıdaki görevlinin önünde <b>tam 140 cm</b> boyunda bir çocuk var. Girebilir mi?', { ms: 3600, speak: '[curious] Kapıdaki görevlinin önünde tam yüz kırk santimetre boyunda bir çocuk var. Girebilir mi?' }, async () => {
         await fadeTo(c, rows[0].g, 700);
         await fadeTo(c, rows[1].g, 700);
       });
-      await c.say('İki tabela: "<b>ve üzeri</b>" ile "<b>uzun</b>". Çocuk tam 140 cm.', { ms: 3600 });
+      await c.say('İki tabela: "<b>ve üzeri</b>" ile "<b>uzun</b>". Çocuk tam 140 cm.', { ms: 3600, speak: 'İki tabela: ve üzeri ile uzun. Çocuk tam yüz kırk santimetre.' });
 
       /* tahmin A */
       const qa = serial(c);
@@ -916,7 +916,7 @@
         return t;
       };
 
-      await par(c, '190\'dan kısa <b>en uzun</b> çocuk kaç cm? Büyüteçle bakalım.', { ms: 3800, speak: "Yüz doksandan kısa olup girebilen en uzun çocuk kaç santimetre? Yüz seksen dokuz mu? Büyüteçle bakalım." }, async () => {
+      await par(c, '190\'dan kısa <b>en uzun</b> çocuk kaç cm? Büyüteçle bakalım.', { ms: 3800, speak: "[curious] Yüz doksandan kısa olup girebilen en uzun çocuk kaç santimetre? Yüz seksen dokuz mu? Büyüteçle bakalım." }, async () => {
         await Promise.all([fadeTo(c, gCone, 600), c.tween(800, (e) => { at(gLens, 0, 0); gLens.setAttribute('transform', `translate(${L.cx},${L.cy}) scale(${e}) translate(${-L.cx},${-L.cy})`); setOp(gLens, e); }, ease.back)]);
         await fadeTo(c, gList, 400);
         addRow('189 cm  ✓', COL.mint);
@@ -994,12 +994,12 @@
       };
       let seenHigh = false, seen190 = false;
       setF(189.5);
-      await par(c, 'Şimdi sen dene: çocuğu <b>190\'a</b> getirmeye çalış. Nereye kadar yeşil kalıyor?', { ms: 3200 }, () => fadeTo(c, gF, 600));
+      await par(c, 'Şimdi sen dene: çocuğu <b>190\'a</b> getirmeye çalış. Nereye kadar yeşil kalıyor?', { ms: 3200, speak: 'Şimdi sen dene: çocuğu yüz doksana getirmeye çalış. Nereye kadar yeşil kalıyor?' }, () => fadeTo(c, gF, 600));
       const sl = c.slider({ label: 'Boy (cm)', min: 189, max: 190, step: 0.001, value: 189.5, fmt: (x) => num(x, 3), onInput: (x) => setF(x) });
       await until(c, () => seenHigh && seen190, { solve: async () => { const f0 = fv; await c.tween(1200, (e) => sl.set(lerp(f0, 189.999, e))); await c.wait(500); sl.set(190); await c.wait(500); } });
       await c.wait(900);
       sl.remove();
-      await c.say('189,999 bile girer; <b>190,0 girmez</b>. Aradaki boşluğu hiçbir "son sayı" doldurmuyor.', { ms: 3400 });
+      await c.say('189,999 bile girer; <b>190,0 girmez</b>. Aradaki boşluğu hiçbir "son sayı" doldurmuyor.', { ms: 3400, speak: 'Yüz seksen dokuz virgül dokuz dokuz dokuz bile girer; yüz doksan virgül sıfır girmez. Aradaki boşluğu hiçbir son sayı doldurmuyor.' });
 
       /* iki kuralı "ve" ile birleştir */
       await fadeTo(c, gF, 500, 1, 0);
@@ -1081,7 +1081,7 @@
         await ax.draw(c, 700);
         await band.grow(c, 1100);
       });
-      await par(c, 'Önce sayılar: <b>140</b> ve <b>190</b>.', { ms: 2200 }, async () => {
+      await par(c, 'Önce sayılar: <b>140</b> ve <b>190</b>.', { ms: 2200, speak: 'Önce sayılar: yüz kırk ve yüz doksan.' }, async () => {
         await Promise.all([fadeTo(c, tk[1], 600), fadeTo(c, tk[3], 600), fadeTo(c, tk[2], 600)]);
       });
       /* sol parantez: dolu noktadan doğar */
@@ -1386,7 +1386,7 @@
       const kidAt = (x) => kA.at(x, AY - 8, 70);
       kidAt(ax.X(140));
 
-      await par(c, '"<b>140 cm ve üzeri</b>" kuralında üst sınır yok.', { ms: 4200 }, async () => {
+      await par(c, '"<b>140 cm ve üzeri</b>" kuralında üst sınır yok.', { ms: 4200, speak: 'Yüz kırk santimetre ve üzeri kuralında üst sınır yok.' }, async () => {
         await ax.draw(c, 600);
         ray.show(); ray.hide();
         await ray.grow(c, 1400);
@@ -1783,7 +1783,7 @@
         pn.remove();
       }
       await par(c, 'Aralık <b>(−∞, 4)</b>, eşitsizlik <b>x < 4</b>.', { ms: 3000, speak: 'Aralık eksi sonsuzdan dörde, dört dışarıda; eşitsizlik x küçüktür dört.' }, async () => { await Q.show('iv', 400); await Q.show('ineq', 500); });
-      await c.say('Eşitsizlik, aralık, doğru, küme: <b>aynı şey</b>.', { ms: 3200 });
+      await c.say('Eşitsizlik, aralık, doğru, küme: <b>aynı şey</b>.', { ms: 3200, speak: '[excited] Eşitsizlik, aralık, doğru, küme: aynı şey.' });
       await c.cont('Devam ›');
     },
   });
@@ -1923,7 +1923,7 @@
         await sB.grow(c, 1200);
         row.g2.off();
       });
-      await par(c, 'Deneyelim: <b>175 cm</b>\'lik çocuk iki kapıdan da geçiyor mu?', { ms: 3200 }, async () => {
+      await par(c, 'Deneyelim: <b>175 cm</b>\'lik çocuk iki kapıdan da geçiyor mu?', { ms: 3200, speak: '[curious] Deneyelim: yüz yetmiş beş santimetrelik çocuk iki kapıdan da geçiyor mu?' }, async () => {
         setOp(mk.g, 1); prep(175);
         await walk(175);
       });
@@ -1935,7 +1935,7 @@
         await fadeTo(c, beams, 500);
         await res.grow(c, 1300);
       });
-      await par(c, 'Sonuç: <b>A ∩ B = (160, 190)</b>. Uçlar neden boş nokta?', { ms: 3200, speak: 'Sonuç: A kesişim B eşittir, yüz altmış ile yüz doksan arası, uçlar dışarıda. Uçlar neden boş nokta?' }, async () => { await fadeTo(c, mk.g, 300, 1, 0); await fadeTo(c, eq, 600); });
+      await par(c, 'Sonuç: <b>A ∩ B = (160, 190)</b>. Uçlar neden boş nokta?', { ms: 3200, speak: 'Sonuç: A kesişim B eşittir, yüz altmış ile yüz doksan arası, uçlar dışarıda. [curious] Uçlar neden boş nokta?' }, async () => { await fadeTo(c, mk.g, 300, 1, 0); await fadeTo(c, eq, 600); });
       /* uç nokta analizi */
       const rows = [
         { v: 160, txt: '160:  A\'da var ✓, B\'de yok ✗  →  birlikte yok  →  boş ○' },
@@ -1949,7 +1949,7 @@
       for (let i = 0; i < 2; i++) {
         const r = rows[i];
         ring.setAttribute('cx', ax.X(r.v)); ring.setAttribute('cy', AY);
-        await par(c, i === 0 ? '<b>160</b>: A\'da var, B\'de yok. Biri bile dışarıda bırakıyorsa <b>boş nokta</b>.' : '<b>190</b>: A\'da yok, B\'de var. Yine birlikte yok: <b>boş nokta</b>.', { ms: 3600 }, async () => {
+        await par(c, i === 0 ? '<b>160</b>: A\'da var, B\'de yok. Biri bile dışarıda bırakıyorsa <b>boş nokta</b>.' : '<b>190</b>: A\'da yok, B\'de var. Yine birlikte yok: <b>boş nokta</b>.', { ms: 3600, speak: i === 0 ? 'Yüz altmış: A da var, B de yok. Biri bile dışarıda bırakıyorsa boş nokta.' : 'Yüz doksan: A da yok, B de var. Yine birlikte yok: boş nokta.' }, async () => {
           await Promise.all([fadeTo(c, ring, 400), fadeTo(c, i === 0 ? a1 : a2, 500)]);
         });
         await fadeTo(c, ring, 300, 1, 0);
@@ -2022,7 +2022,7 @@
         await s2A.grow(c, 900);
         await s2B.grow(c, 900);
       });
-      await par(c, 'Ortak kısım <b>(3, 5)</b>: 3 ikinci aralıkta yok, 5 birinci aralıkta yok.', { ms: 3800 }, async () => {
+      await par(c, 'Ortak kısım <b>(3, 5)</b>: 3 ikinci aralıkta yok, 5 birinci aralıkta yok.', { ms: 3800, speak: 'Ortak kısım: üç ile beş arası, uçlar dışarıda. Üç ikinci aralıkta yok, beş birinci aralıkta yok.' }, async () => {
         await fadeTo(c, bm2, 400);
         await s2R.grow(c, 1100);
         await fadeTo(c, eq2, 500);
@@ -2151,7 +2151,7 @@
       T(gapG, ax.X(135), AY + 82, '135 cm: hiçbirine giremez', { s: 24, w: 800, f: COL.coral });
       setOp(gapG, 0);
       eq.textContent = 'M ∪ R = [100, 130] ∪ [140, 190)';
-      await par(c, 'Aradaki <b>boşluğa</b> bak: 135 cm\'lik çocuk hiçbirine giremez. Birleşim <b>iki parça</b>.', { ms: 4200 }, async () => {
+      await par(c, 'Aradaki <b>boşluğa</b> bak: 135 cm\'lik çocuk hiçbirine giremez. Birleşim <b>iki parça</b>.', { ms: 4200, speak: 'Aradaki boşluğa bak: yüz otuz beş santimetrelik çocuk hiçbirine giremez. Birleşim iki parça.' }, async () => {
         setKid(135); lamps(135);
         await Promise.all([fadeTo(c, gapG, 500), fadeTo(c, eq, 600)]);
       });
@@ -2289,7 +2289,7 @@
           { t: `5'ten büyük ${at_.a ? '✓' : '✗'}`, f: at_.a ? COL.mint : COL.coral },
           { t: `2'den küçük ${at_.b ? '✓' : '✗'}`, f: at_.b ? COL.mint : COL.coral },
         ]);
-        await c.say(`<b>${num(at_.v)}</b>: ${at_.a ? '5\'ten büyük' : '5\'ten büyük değil'}, ${at_.b ? '2\'den küçük' : '2\'den küçük değil'}.`, { ms: 2600 });
+        await c.say(`<b>${num(at_.v)}</b>: ${at_.a ? '5\'ten büyük' : '5\'ten büyük değil'}, ${at_.b ? '2\'den küçük' : '2\'den küçük değil'}.`, { ms: 2600, speak: `${({ 6: 'Altı', 1: 'Bir', 3.5: 'Üç virgül beş' })[at_.v]}: ${at_.a ? 'beşten büyük' : 'beşten büyük değil'}, ${at_.b ? 'ikiden küçük' : 'ikiden küçük değil'}.` });
       }
       stRow.remove(); setOp(mkA.g, 0);
       const emp = G(gA);
@@ -2347,7 +2347,7 @@
       };
       const showLamp = (r) => Promise.all([fadeTo(c, r.lampC, 300), fadeTo(c, r.lampT, 300), fadeTo(c, r.rk.g, 300)]);
 
-      await par(c, '<b>Dokunan aralıklar</b>: biri 5\'te bitiyor, öteki 5\'te başlıyor.', { ms: 5000 }, () => showCase(rows[0], false));
+      await par(c, '<b>Dokunan aralıklar</b>: biri 5\'te bitiyor, öteki 5\'te başlıyor.', { ms: 5000, speak: 'Dokunan aralıklar: biri beşte bitiyor, öteki beşte başlıyor.' }, () => showCase(rows[0], false));
       const q = serial(c);
       await c.choice({
         tag: 'Tahmin et', q: '<span class="m">[2, 5) ∩ [5, 9]</span> sonucu ne?', options: ['<span class="m">{5}</span>', '<span class="m">∅</span>', '<span class="m">[2, 9]</span>'], answer: 1,
@@ -2374,7 +2374,7 @@
         return rg;
       }
       /* imleç: tam 5 cm */
-      await c.say('Çocuğu <b>tam 5</b>\'e getir: lamba yalnız bir durumda yanar.', { ms: 3800 });
+      await c.say('Çocuğu <b>tam 5</b>\'e getir: lamba yalnız bir durumda yanar.', { ms: 3800, speak: 'Çocuğu tam beşe getir: lamba yalnız bir durumda yanar.' });
       await fadeTo(c, cur, 400);
       setCur(4);
       let at5 = false;
@@ -2385,7 +2385,7 @@
       sl.remove();
       c.note('<b>[2, 5] ∩ [5, 9] = {5}</b> · <b>[2, 5) ∩ [5, 9] = ∅</b>', 'Kural', 'k11b');
 
-      await c.say('Tek parantez farkı: biri <b>{5}</b>, öteki <b>∅</b>.', { ms: 3400 });
+      await c.say('Tek parantez farkı: biri <b>{5}</b>, öteki <b>∅</b>.', { ms: 3400, speak: 'Tek parantez farkı: biri beş kümesi, öteki boş küme.' });
     },
   });
 

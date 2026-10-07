@@ -103,7 +103,7 @@ Karakter sayıları 7 Ekim 2026 dökümünden; metin denetiminde rakamlar kelime
 | Ders | Tema | Konu | Kısa ders | Satır | Karakter | Durum |
 |---|---|---|---|---|---|---|
 | Matematik | Sayılar | A | 8 | 109 | 11.531 | seslendirildi (109 klip, 15,8 dk, 7,7 MB) |
-| Matematik | Sayılar | B | 7 | 151 | 8.797 | bekliyor; okunan metinde rakam var |
+| Matematik | Sayılar | B | 7 | 151 | 9.109 | seslendirildi (151 klip, 12,5 dk, 6,1 MB); 18 rakamlı satır kelimeye çevrildi, 9 yönerge; kullanıcı henüz dinlemedi |
 | Matematik | Sayılar | C | 5 | 80 | 3.436 | bekliyor; okunan metinde rakam var |
 | Matematik | Sayılar | D | 8 | 122 | 5.623 | bekliyor; okunan metinde rakam var |
 | Matematik | Geometrik Şekiller | A–C | 9 | 118 | 5.853 | bekliyor |

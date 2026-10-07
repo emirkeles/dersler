@@ -1,2 +1,2 @@
 /* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
-Ders.ses['sayilar-b4'] = { base: 'ses/sayilar-b4/', clips: {} };
+Ders.ses['sayilar-b4'] = { base: 'ses/sayilar-b4/', clips: { '02b3b02f': '02b3b02f.mp3', '3f597dc6': '3f597dc6.mp3', '4cd33575': '4cd33575.mp3', '517ef12e': '517ef12e.mp3', '5928aab3': '5928aab3.mp3', '5b482304': '5b482304.mp3', '93e693c9': '93e693c9.mp3', 'b9426603': 'b9426603.mp3', 'dc38d930': 'dc38d930.mp3', 'dec39dd2': 'dec39dd2.mp3', 'e5a8860d': 'e5a8860d.mp3', 'e7bc5456': 'e7bc5456.mp3', 'fadce071': 'fadce071.mp3' } };

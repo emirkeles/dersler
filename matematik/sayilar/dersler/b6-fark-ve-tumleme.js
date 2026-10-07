@@ -233,7 +233,7 @@
       const al = T(svg, 500, 524, cebir(Ac), { s: 32, w: 700, op: 0 });
       setOp(ax.g, 0);
 
-      await par(c, 'Hız treni <b>A</b>. Binemeyenler kimler?', { speak: 'Hız treni A. Binemeyenler kimler?' }, async () => {
+      await par(c, 'Hız treni <b>A</b>. Binemeyenler kimler?', { speak: 'Hız treni A. [curious] Binemeyenler kimler?' }, async () => {
         await fadeTo(c, ax.g, 500);
         setOp(tA, 1);
         await sA.grow(c, 900);
