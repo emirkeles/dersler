@@ -831,19 +831,19 @@
     await par(mat.tweenTo(GLC, 1100), c.tween(1100, (e) => ['R', 'Q', 'Z'].forEach((k) => mat.dim(k, 0.1 + 0.9 * e))));
     const gate = Gate(c, root, mat, { key: 'N', bare: true, ...GATE_C }); op(gate.g, 0);
     await fade(c, gate.g, 1, 500);
-    await c.say('Kapalılık testi: işlemin sonucu kutuda kalıyor mu?');
+    await c.say('Kapalılık testi: işlemin sonucu kutuda kalıyor mu?', { speak: '[curious] Kapalılık testi: işlemin sonucu kutuda kalıyor mu?' });
     await gate.load(q(2), '+', q(7));
     await c.cont('Test et ›');
     await gate.run(calc(q(2), '+', q(7)));
-    await c.say('9 kutuda kaldı: yeşil.');
+    await c.say('9 kutuda kaldı: yeşil.', { speak: 'Dokuz kutuda kaldı: yeşil.' });
     await gate.load(q(4), '×', q(6));
     await c.cont('Test et ›');
     await gate.run(calc(q(4), '×', q(6)));
     await gate.load(q(3), MINUS, q(5));
     await yn(c, `<b>3 ${MINUS} 5 = ${MINUS}2</b>. Bu sonuç N’nin içinde mi?`, false, 'N’de sıfırın solu yok: 0, 1, 2, 3, …', 'Hayır. Bakalım jeton ne yapacak.');
     await gate.run(calc(q(3), MINUS, q(5)));
-    await c.say('−2 kutunun dışına düştü: kırmızı.');
-    await c.say('Tek kırmızı yeter: N çıkarmada kapalı değil.');
+    await c.say('−2 kutunun dışına düştü: kırmızı.', { speak: 'Eksi iki kutunun dışına düştü: kırmızı.' });
+    await c.say('Tek kırmızı yeter: N çıkarmada kapalı değil.', { speak: 'Tek kırmızı yeter: doğal sayılar çıkarmada kapalı değil.' });
     c.note(`<b>N = {0, 1, 2, 3, …}</b><br>3 ${MINUS} 5 = ${MINUS}2 ∉ N: çıkarmada kapalı değil.`, 'Doğal sayılar', 'c1-2');
   }
 
@@ -855,14 +855,14 @@
     const coins = [0, 1, 2].map((i) => coin(st, 270 + i * 30, 350, 24, '1'));
     T(st, 300, 500, 'cüzdan: 3 lira', 28, 'var(--n)', { bold: 600 });
     await fade(c, st, 1, 500);
-    await c.say('Cüzdanda 3 lira var; fiş 5 lira.');
+    await c.say('Cüzdanda 3 lira var; fiş 5 lira.', { speak: 'Cüzdanda üç lira var; fiş beş lira.' });
     for (let i = 0; i < 3; i++) await mv(c, coins[i], 748 + i * 52, 268, 550, ease.inOut);
     const need = T(st, 800, 440, '2 lira eksik', 34, 'var(--err)', { bold: 700 }); op(need, 0);
     await fade(c, need, 1, 400);
     const dbt = pill(st, q(-2), { x: 1050, y: 440, size: 34 }); put(dbt, { s: 0.001 });
     const ar = arrow(st, 952, 440, 1008, 440, 'z', 4); op(ar, 0);
     await par(fade(c, ar, 1, 300), pop(c, dbt, 1, 450));
-    await c.say('2 lira eksik: borcun −2.');
+    await c.say('2 lira eksik: borcun −2.', { speak: 'İki lira eksik: borcun eksi iki.' });
     await fade(c, st, 0, 450); st.remove();
     /* sayı doğrusu sola uzar */
     const nlG = E('g', {}, root); op(nlG, 0);
@@ -883,7 +883,7 @@
     }
     hopC.setAttribute('fill', 'var(--z)');
     tag(nlG, nl.X(-2), 262, `3 ${MINUS} 5 = ${MINUS}2`, 28, 'var(--z)');
-    await c.say('3’ten 5 adım geri: −2. Yeni kutu: tam sayılar.');
+    await c.say('3’ten 5 adım geri: −2. Yeni kutu: tam sayılar.', { speak: 'Üçten beş adım geri: eksi iki. Yeni kutu: tam sayılar.' });
     await fade(c, nlG, 0, 450); nlG.remove();
     /* aynı test Z'de */
     const mat = Mat(c, svg, root, { ...GLC, names: false }); op(mat.root, 0); mat.lit('N'); mat.lit('Z');
@@ -892,11 +892,11 @@
     await gate.load(q(3), MINUS, q(5));
     await c.cont('Test et ›');
     await gate.run(calc(q(3), MINUS, q(5)));
-    await c.say('Aynı işlem Z’de yeşil.');
+    await c.say('Aynı işlem Z’de yeşil.', { speak: 'Aynı işlem tam sayılarda yeşil.' });
     await gate.load(q(3), '÷', q(4));
     await yn(c, '<b>3 ÷ 4</b> işleminin sonucu Z’nin içinde mi?', false, '3 ÷ 4 = 0,75: 0 ile 1 arasında, tam sayı değil.', 'Hayır: 3/4 bir tam sayı değil.');
     await gate.run(calc(q(3), '÷', q(4)));
-    await c.say('3 ÷ 4 tam sayı değil: Z bölmede kapalı değil.');
+    await c.say('3 ÷ 4 tam sayı değil: Z bölmede kapalı değil.', { speak: 'Üç bölü dört tam sayı değil: tam sayılar bölmede kapalı değil.' });
     c.note(`<b>Z = {…, ${MINUS}1, 0, 1, …}</b><br>3 ÷ 4 ∉ Z: bölmede kapalı değil.`, 'Tam sayılar', 'c1-3');
   }
 
@@ -924,7 +924,7 @@
     }
     const ex = rich(root, 330, 430, 64, [{ t: '3 ÷ 4  =  ' }, { frac: ['3', '4'], col: 'var(--q)' }]); op(ex, 0);
     await fade(c, ex, 1, 450);
-    await c.say('3 çikolata, 4 kişi: herkese 3/4 düşer.');
+    await c.say('3 çikolata, 4 kişi: herkese 3/4 düşer.', { speak: 'Üç çikolata, dört kişi: herkese üç bölü dört düşer.' });
     await par(fade(c, st, 0, 450), fade(c, ex, 0, 450)); st.remove(); ex.remove();
     /* tanım */
     const defn = rich(root, 640, 330, 56, [{ t: 'Q = { ', col: 'var(--q)' }, { frac: ['a', 'b'], col: 'var(--ink)' }, { t: '  :  a, b ∈ Z ,   ' }, { t: 'b ≠ 0', col: 'var(--warn)', hl: 'var(--warn)' }, { t: ' }' }]);
@@ -972,7 +972,7 @@
     const r = await withSkip(c, donep);
     if (r === 'skip') for (const it of sorter.items) if (!it.placed) { it.placed = true; const pos = await place(it); await mv(c, it.g, pos.x, pos.y, 300, ease.inOut, { s: pos.s }); }
     pn.remove();
-    await c.say('Her tam sayı rasyoneldir: 5 = 5/1.');
+    await c.say('Her tam sayı rasyoneldir: 5 = 5/1.', { speak: 'Her tam sayı rasyoneldir: beş eşittir beş bölü bir.' });
     c.note(`<b>Q = { ${F('a', 'b')} : b ≠ 0 }</b><br>5 = ${F(5, 1)}: her tam sayı rasyoneldir.`, 'Rasyonel sayılar', 'c1-4');
   }
 
@@ -1048,8 +1048,8 @@
       const k = r + '|' + OPS[j];
       if (tbl.cells[k].state !== final[r][j]) await tbl.set(r, OPS[j], final[r][j], true, ornek[k]);
     }
-    await c.say('Üç kırmızı: N’de çıkarma ve bölme, Z’de bölme.');
-    await c.say('Yapılamayan işlem yeni kutu açar.');
+    await c.say('Üç kırmızı: N’de çıkarma ve bölme, Z’de bölme.', { speak: 'Üç kırmızı: doğal sayılarda çıkarma ve bölme, tam sayılarda bölme.' });
+    await c.say('Yapılamayan işlem yeni kutu açar.', { speak: '[excited] Yapılamayan işlem yeni kutu açar.' });
     c.note('Kapalı: sonuç hep kutuda kalır.<br><b>Yapılamayan işlem yeni kutu açar.</b>', 'Kapalılık', 'c1-5');
   }
 
@@ -1067,12 +1067,12 @@
     const ld = LongDiv(c, root, { x: 170, y: 220, a: 1, b: 4, K: 6, ledger, fs: 38, dx: 44, rh: 50 });
     await par(ld.start(), fade(c, ledger.g, 1, 500));
     await ld.step();
-    await c.say('10 ÷ 4 = 2, kalan 2.');
+    await c.say('10 ÷ 4 = 2, kalan 2.', { speak: 'On bölü dört eşittir iki, kalan iki.' });
     await ld.step();
-    await c.say('20 ÷ 4 = 5, kalan 0.');
+    await c.say('20 ÷ 4 = 5, kalan 0.', { speak: 'Yirmi bölü dört eşittir beş, kalan sıfır.' });
     const res = rich(root, 640, 600, 60, [{ frac: ['1', '4'], col: 'var(--q)' }, { t: '  =  0,25', col: 'var(--ok)' }]); op(res, 0);
     await fade(c, res, 1, 500);
-    await c.say('Kalan 0 olunca bölme biter.');
+    await c.say('Kalan 0 olunca bölme biter.', { speak: 'Kalan sıfır olunca bölme biter.' });
     c.note(`Kalan 0 → ondalık <b>biter</b>.<br>${F(1, 4)} = 0,25`, 'Biten ondalık', 'c2-1');
   }
 
@@ -1082,8 +1082,8 @@
     const ld = LongDiv(c, root, { x: 150, y: 150, a: 1, b: 3, K: 3, stop: false, ledger, fs: 36, dx: 42, rh: 46 });
     await par(ld.start(), fade(c, ledger.g, 1, 500));
     await ld.step();
-    await c.say('10 ÷ 3 = 3, kalan 1.');
-    await c.say('Kalan yine 1: aynı adım geri gelir.');
+    await c.say('10 ÷ 3 = 3, kalan 1.', { speak: 'On bölü üç eşittir üç, kalan bir.' });
+    await c.say('Kalan yine 1: aynı adım geri gelir.', { speak: 'Kalan yine bir: aynı adım geri gelir.' });
     await ld.step(); await c.wait(300); await ld.step();
     await ld.over(0, 2, 'var(--q)');
     const r13 = rich(root, 150, 600, 56, [{ frac: ['1', '3'], col: 'var(--q)' }, { t: '  =  0,333…  =  ' }], { anchor: 'start' });
@@ -1128,12 +1128,12 @@
     const ld = LongDiv(c, root, { x: 110, y: 110, a: 1, b: 7, K: 8, fs: 30, dx: 34, rh: 38, fast: true });
     await par(ld.start(), fade(c, BX, 1, 500));
     await fillBox(1);
-    await c.say('Bölen 7: kalan yalnızca 1, 2, 3, 4, 5, 6 olabilir.');
+    await c.say('Bölen 7: kalan yalnızca 1, 2, 3, 4, 5, 6 olabilir.', { speak: 'Bölen yedi: kalan yalnızca bir, iki, üç, dört, beş, altı olabilir.' });
     for (let i = 0; i < ld.K; i++) { const s2 = await ld.step(); await fillBox(s2.rem); await c.wait(200); }
-    await c.say('Altı kutu doldu; kalan 1 geri geldi.');
+    await c.say('Altı kutu doldu; kalan 1 geri geldi.', { speak: 'Altı kutu doldu; kalan bir geri geldi.' });
     await ld.ring(0, 5, 'var(--q)');
-    await c.say('Aynı kalan aynı rakamları getirir: 142857 tekrar eder.');
-    await c.say('Kalan ya 0 olur ya tekrar eder: üçüncü yol yok.');
+    await c.say('Aynı kalan aynı rakamları getirir: 142857 tekrar eder.', { speak: 'Aynı kalan aynı rakamları getirir: bir, dört, iki, sekiz, beş, yedi tekrar eder.' });
+    await c.say('Kalan ya 0 olur ya tekrar eder: üçüncü yol yok.', { speak: 'Kalan ya sıfır olur ya tekrar eder: üçüncü yol yok.' });
     c.note(`<b>Biten ya da devreden: rasyonel.</b><br>${F(1, 7)} = 0,${ov('142857')}`, 'Üçüncü yol yok', 'c2-3');
   }
 
@@ -1194,7 +1194,7 @@
     if (chain) chain.remove();
     if (r === 'skip') for (const it of sorter.items) if (!it.placed) { it.placed = true; const pos = place(it); await mv(c, it.g, pos.x, pos.y, 300, ease.inOut, { s: pos.s }); }
     pn.remove();
-    await c.say('Dördü de rasyonel: ya bitiyor ya devrediyor.');
+    await c.say('Dördü de rasyonel: ya bitiyor ya devrediyor.', { speak: '[excited] Dördü de rasyonel: ya bitiyor ya devrediyor.' });
     c.note(`${F(1, 8)} = 0,125 biter · ${F(5, 6)} = 0,8${ov('3')} devreder<br>İkisi de rasyonel.`, 'Biter mi, devreder mi?', 'c2-4');
   }
 
@@ -1211,7 +1211,7 @@
     await fade(c, V, 1, 500);
     await drawIn(c, dgl, 700);
     T(V, 150, 280, 'd', 40, 'var(--irr)', { bold: 800 });
-    await c.say('Kenarı 1 olan karenin köşegenine d diyelim.');
+    await c.say('Kenarı 1 olan karenin köşegenine d diyelim.', { speak: 'Kenarı bir olan karenin köşegenine d diyelim.' });
     /* alan yöntemi */
     const BIG = E('g', {}, root);
     const cells = [[400, 140], [560, 140], [400, 300], [560, 300]].map(([x, y]) => { const r = E('rect', { x, y, width: 160, height: 160, fill: 'rgba(108,140,240,.12)', stroke: 'var(--q)', 'stroke-width': 3 }, BIG); op(r, 0); return r; });
@@ -1223,12 +1223,12 @@
     await par(...halves.map((t) => fade(c, t, 1, 400)));
     const e1 = T(root, 780, 220, '4 − 4·½ = 2', 44, 'var(--ink)', { anchor: 'start', bold: 700 }); op(e1, 0);
     await fade(c, e1, 1, 450);
-    await c.say('Eğik karenin alanı 2, kenarı d.');
+    await c.say('Eğik karenin alanı 2, kenarı d.', { speak: 'Eğik karenin alanı iki, kenarı d.' });
     const e2 = T(root, 780, 310, 'd · d = 2', 48, 'var(--irr)', { anchor: 'start', bold: 800 }); op(e2, 0);
     await fade(c, e2, 1, 450);
     const e3 = T(root, 780, 400, 'd = √2', 56, 'var(--irr)', { anchor: 'start', bold: 800 }); op(e3, 0);
     await fade(c, e3, 1, 450);
-    await c.say('Kendisiyle çarpılınca 2 veren sayı: √2.');
+    await c.say('Kendisiyle çarpılınca 2 veren sayı: √2.', { speak: 'Kendisiyle çarpılınca iki veren sayı: karekök iki.' });
     await c.choice({
       q: 'd uzunluğu bir <b>kesir</b> olarak yazılabilir mi?', options: ['Evet, uygun bir kesir bulunur', 'Hayır, hiçbir kesir olmaz'], answer: 1,
       hints: ['Çok yakın kesirler var; ama hiçbiri tam oturmuyor. Sayı doğrusunda bakalım.', ''],
@@ -1265,7 +1265,7 @@
       fracG(NLg, lx, 656, String(a), String(b), 28, 'var(--q)');
       await c.wait(450);
     }
-    await c.say('7/5 ve 3/2 yakın; ama üstüne oturmuyor.');
+    await c.say('7/5 ve 3/2 yakın; ama üstüne oturmuyor.', { speak: 'Yedi bölü beş ve üç bölü iki yakın; ama üstüne oturmuyor.' });
     c.note('d · d = 2 → <b>d = √2</b><br>Sayı doğrusunda var, kesir değil.', 'Köşegen', 'c3-1');
   }
 
@@ -1323,12 +1323,12 @@
     await fade(c, AG, 1, 500);
     bandRange = [1.4, 1.5]; render(); await fade(c, band, 1, 400);
     sqCards(0);
-    await c.say('A8’deki gibi sıkıştır: √2, 1,4 ile 1,5 arasında.');
+    await c.say('A8’deki gibi sıkıştır: √2, 1,4 ile 1,5 arasında.', { speak: 'A sekiz dersindeki gibi sıkıştır: karekök iki, bir virgül dört ile bir virgül beş arasında.' });
     cardsG.innerHTML = '';
     await zoom(0, 1300);
     bandRange = [1.41, 1.42]; render();
     sqCards(1);
-    await c.say('Yakınlaş: şimdi 1,41 ile 1,42 arasında.');
+    await c.say('Yakınlaş: şimdi 1,41 ile 1,42 arasında.', { speak: 'Yakınlaş: şimdi bir virgül kırk bir ile bir virgül kırk iki arasında.' });
     await c.say('Her yakınlaşmada yeni bir rakam çıkar.');
     await par(fade(c, AG, 0, 450), fade(c, cardsG, 0, 450)); AG.remove(); cardsG.remove();
     /* rakam şeritleri: her şerit tek yazı öğesi */
@@ -1337,7 +1337,7 @@
     T(DG, 250, 170, '√2 =', FSZ, 'var(--irr)', { anchor: 'end', bold: 800 });
     const d2 = T(DG, 270, 170, '', FSZ, 'var(--ink)', { anchor: 'start', mono: true, bold: 700 });
     for (let i = 1; i <= dig.length; i++) { d2.textContent = dig.slice(0, i) + (i === dig.length ? '…' : ''); await c.wait(90); }
-    await c.say('√2’nin rakamlarında tekrar eden blok yok.');
+    await c.say('√2’nin rakamlarında tekrar eden blok yok.', { speak: 'Karekök ikinin rakamlarında tekrar eden blok yok.' });
     T(DG, 250, 330, '1/7 =', FSZ, 'var(--q)', { anchor: 'end', bold: 800 });
     const s7 = '0,' + '142857'.repeat(4);
     const d7 = T(DG, 270, 330, '', FSZ, 'var(--ink)', { anchor: 'start', mono: true, bold: 700 });
@@ -1347,7 +1347,7 @@
       const rr = E('rect', { x: x1 - 3, y: 330 - 32, width: x2 - x1 + 6, height: 64, rx: 18, fill: 'none', stroke: 'var(--q)', 'stroke-width': 3.5 }, DG);
       await drawIn(c, rr, 350);
     }
-    await c.say('1/7’de 142857 bloğu dönüp duruyor.');
+    await c.say('1/7’de 142857 bloğu dönüp duruyor.', { speak: 'Bir bölü yedide bir, dört, iki, sekiz, beş, yedi bloğu dönüp duruyor.' });
     const l1 = T(DG, 640, 500, 'devreder → rasyonel', 40, 'var(--q)', { bold: 800 });
     const l2 = T(DG, 640, 580, 'ne biter ne devreder → irrasyonel', 40, 'var(--irr)', { bold: 800 }); op(l1, 0); op(l2, 0);
     await fade(c, l1, 1, 450); await fade(c, l2, 1, 450);
@@ -1397,8 +1397,8 @@
       right: 'Evet: √4 = 2.',
     });
     sq.forEach((g, i) => { g._side.textContent = 'kenar ' + sideTxt[i + 1]; g._side.style.fill = i === 0 || i === 3 ? 'var(--ok)' : 'var(--irr)'; });
-    await c.say('Kök içi tam kareyse sonuç rasyonel: √4 = 2.');
-    await c.say('Tam kare değilse kenar irrasyonel: √2, √3.');
+    await c.say('Kök içi tam kareyse sonuç rasyonel: √4 = 2.', { speak: 'Kök içi tam kareyse sonuç rasyonel: karekök dört eşittir iki.' });
+    await c.say('Tam kare değilse kenar irrasyonel: √2, √3.', { speak: 'Tam kare değilse kenar irrasyonel: karekök iki, karekök üç.' });
     await fade(c, SQ, 0, 450); SQ.remove();
     /* kapalılık tablosuna R satırı */
     const KT = E('g', {}, root); op(KT, 0);
@@ -1458,8 +1458,8 @@
     if (r === 'skip') for (const it of sorter.items) if (!it.placed) { it.placed = true; const pos = land(it); nf(mv(c, it.g, pos.x, pos.y, 500, ease.inOut, { s: pos.s })); }
     pn.remove(); c.clearSay();
     await c.wait(600);
-    await c.say('Kılık değiştirenlere dikkat: 12/4 = 3, √9 = 3.');
-    await c.say('Ne biter ne devreder: irrasyonel.');
+    await c.say('Kılık değiştirenlere dikkat: 12/4 = 3, √9 = 3.', { speak: 'Kılık değiştirenlere dikkat: on iki bölü dört eşittir üç, karekök dokuz eşittir üç.' });
+    await c.say('Ne biter ne devreder: irrasyonel.', { speak: '[excited] Ne biter ne devreder: irrasyonel.' });
     c.note('Önce sadeleştir: 12/4 = 3, √9 = 3.<br>Sonra en küçük kutu.', 'Hangi kutu?', 'c3-4');
   }
 
@@ -1473,7 +1473,7 @@
     await fade(c, root, 1, 500);
     const arc = E('path', { d: `M${z.X(3)},350 Q${(z.X(3) + z.X(4)) / 2},250 ${z.X(4)},350`, fill: 'none', stroke: 'var(--n)', 'stroke-width': 5, 'stroke-linecap': 'round', 'marker-end': 'url(#ar-n)' }, root);
     await drawIn(c, arc, 600);
-    await c.say('3’ten sonraki tam sayı 4.');
+    await c.say('3’ten sonraki tam sayı 4.', { speak: 'Üçten sonraki tam sayı dört.' });
     await fade(c, arc, 0, 300); arc.remove();
     const half = z.add(0.5, '0,5', 'var(--q)', { up: true }); await pop(c, half, 1, 400);
     await z.zoom(0.38, 0.72);
@@ -1534,7 +1534,7 @@
     pn.remove();
     await c.say('Her sayı sıraya girer: buna sıralı olma denir.');
     await z.zoom(0.24, 0.4, 1400);
-    await c.say('0,3 ile 1/3 çok yakın; ama 0,3 solda.');
+    await c.say('0,3 ile 1/3 çok yakın; ama 0,3 solda.', { speak: 'Sıfır virgül üç ile bir bölü üç çok yakın; ama sıfır virgül üç solda.' });
     c.note(`Soldaki küçüktür.<br>${MINUS}${F(1, 2)} &lt; ${MINUS}${F(1, 3)} &lt; 0,3 &lt; ${F(1, 3)}`, 'Sıralama', 'c4-2');
   }
 
@@ -1548,7 +1548,7 @@
     await z0.zoom(2.75, 4.25, 1200);
     const gap = T(g0, 640, 300, 'arası boş', 34, MUTED, { bold: 700 }); op(gap, 0);
     await fade(c, gap, 1, 400);
-    await c.say('3 ile 4 arasında başka tam sayı yok.');
+    await c.say('3 ile 4 arasında başka tam sayı yok.', { speak: 'Üç ile dört arasında başka tam sayı yok.' });
     await fade(c, g0, 0, 450); g0.remove();
     /* kesirlerde arası dolu: orta noktalar */
     const third = q(1, 3); const ms = [q(1, 2)];
@@ -1564,10 +1564,10 @@
     z.set(...view(1));
     await fade(c, g1, 1, 500);
     ensure(1); await pop(c, z.marks[z.marks.length - 1], 1, 450);
-    await c.say('1/3 ile 1/2’nin tam ortası: 5/12.');
+    await c.say('1/3 ile 1/2’nin tam ortası: 5/12.', { speak: 'Bir bölü üç ile bir bölü ikinin tam ortası: beş bölü on iki.' });
     await z.zoom(...view(2), 1300);
     ensure(2); await pop(c, z.marks[z.marks.length - 1], 1, 450);
-    await c.say('Yakınlaş: 1/3 ile 5/12’nin ortası 3/8.');
+    await c.say('Yakınlaş: 1/3 ile 5/12’nin ortası 3/8.', { speak: 'Yakınlaş: bir bölü üç ile beş bölü on ikinin ortası üç bölü sekiz.' });
     c.say('Kaydırıcıyı çek: araya hep yeni bir kesir girer.', { noWait: true });
     c.slider({ label: 'Yakınlaş', min: 2, max: 6, step: 1, value: 2, fmt: (v) => v + '. adım', onInput: (n) => { ensure(n); z.set(...view(n)); } });
     await c.cont('Devam ›');
@@ -1606,8 +1606,8 @@
     for (const r of ['N', 'Z', 'Q', 'R']) await tbl.set(r, 'sıralı', 'v');
     await c.say('Dört kümenin dördü de sıralıdır.');
     for (const r of ['N', 'Z', 'Q', 'R']) await tbl.set(r, 'arada', r === 'N' || r === 'Z' ? 'x' : 'v', true, r === 'N' || r === 'Z' ? '3 ile 4' : undefined);
-    await c.say('Arada olma yalnızca Q ve R’de var.');
-    await c.say('Kesirlerde “bir sonraki sayı” yoktur.');
+    await c.say('Arada olma yalnızca Q ve R’de var.', { speak: 'Arada olma yalnızca rasyonel ve gerçek sayılarda var.' });
+    await c.say('Kesirlerde “bir sonraki sayı” yoktur.', { speak: '[excited] Kesirlerde “bir sonraki sayı” yoktur.' });
     c.note('Sıralı olma: N, Z, Q, R<br>Arada olma: yalnızca Q ve R', 'Sıralı olma, arada olma', 'c4-4');
   }
 
@@ -1655,7 +1655,7 @@
       right: 'Hayır. Üçüncü tanığı dinleyelim.', next: 'Tanığı çağır ›',
     });
     await ct.witness('√2·√2 = 2', false);
-    await c.say('√2 · √2 = 2: sonuç rasyonel.');
+    await c.say('√2 · √2 = 2: sonuç rasyonel.', { speak: 'Karekök iki çarpı karekök iki eşittir iki: sonuç rasyonel.' });
     await ct.stamp('ÇÜRÜTÜLDÜ', 'var(--err)');
     await c.say('Tek karşı örnek iddiayı çürüttü.');
     c.note('<b>Tek karşı örnek çürütür.</b><br>√2 · √2 = 2', 'Karşı örnek', 'c5-1');
@@ -1704,7 +1704,7 @@
     if (r === 'skip') for (const it of sorter.items) if (!it.placed && it.d.claim >= 0) { it.placed = true; const pos = land(it); await mv(c, it.g, pos.x, pos.y, 300, ease.inOut, { s: pos.s }); }
     pn.remove();
     await c.say('Üç iddia da tek örnekle çürüdü.');
-    await c.say('5 − 3 = 2 ise yalnızca bir tanık.');
+    await c.say('5 − 3 = 2 ise yalnızca bir tanık.', { speak: 'Beş eksi üç eşittir iki ise yalnızca bir tanık.' });
     c.note(`“Her” iddiasını tek örnek bozar.<br>√9 = 3: her karekök irrasyonel değil.`, 'Karşı örnek avı', 'c5-2');
   }
 
@@ -1712,7 +1712,7 @@
     const svg = newSvg(c); const root = E('g', {}, svg);
     const ct = Court(c, root, 'İki rasyonelin arasında hep bir rasyonel vardır.', 34); op(ct.g, 0);
     await fade(c, ct.g, 1, 500);
-    await c.say('C4’ün iddiası: iki rasyonelin arasında hep bir rasyonel vardır.');
+    await c.say('C4’ün iddiası: iki rasyonelin arasında hep bir rasyonel vardır.', { speak: 'C dört dersinin iddiası: iki rasyonelin arasında hep bir rasyonel vardır.' });
     await ct.witness('1/3 < 5/12 < 1/2', true);
     await ct.witness('1/4 < 3/8 < 1/2', true);
     await c.say('Karşı örnek aradık, bulamadık; bu da kanıt değil.');
@@ -1739,10 +1739,10 @@
     const s1 = row(290, 'Rasyonel mi?', [{ t: 'Q toplamada ve bölmede kapalı' }]);
     icon(s1, 'ok', 1180, 290, 0.9);
     await fade(c, s1, 1, 450);
-    await c.say('Rasyonel mi? Evet: Q toplamada ve bölmede kapalı.');
+    await c.say('Rasyonel mi? Evet: Q toplamada ve bölmede kapalı.', { speak: 'Rasyonel mi? Evet: rasyonel sayılar toplamada ve bölmede kapalı.' });
     const s2 = row(410, 'Arada mı?', [{ t: '2a < a+b < 2b' }]);
     await fade(c, s2, 1, 450);
-    await c.say('a < b olduğundan a + b, 2a ile 2b arasında.');
+    await c.say('a < b olduğundan a + b, 2a ile 2b arasında.', { speak: 'a küçüktür b olduğundan a artı b, iki a ile iki b arasında.' });
     const s3 = row(550, 'İkiye böl', [{ t: 'a <  ' }, { frac: ['a+b', '2'], col: 'var(--ok)' }, { t: '  < b' }]);
     icon(s3, 'ok', 1180, 550, 0.9);
     await fade(c, s3, 1, 450);
@@ -1769,7 +1769,7 @@
     E('rect', { x: -200, y: -42, width: 400, height: 84, rx: 12, fill: 'rgba(15,20,32,.9)', stroke: 'var(--ok)', 'stroke-width': 6 }, stamp);
     T(stamp, 0, 2, 'İSPATLANDI', 44, 'var(--ok)', { bold: 800 });
     await pop(c, stamp, 1, 450);
-    await c.say('Harfler bütün örnekleri birden kapsar: iddia kanıtlandı.');
+    await c.say('Harfler bütün örnekleri birden kapsar: iddia kanıtlandı.', { speak: '[excited] Harfler bütün örnekleri birden kapsar: iddia kanıtlandı.' });
     await c.say('Bin örnek kanıtlamaz, tek karşı örnek çürütür.');
     c.note(`a &lt; ${F('a + b', 2)} &lt; b<br><b>Bin örnek kanıtlamaz, tek karşı örnek çürütür.</b>`, 'İspat', 'c5-3');
   }

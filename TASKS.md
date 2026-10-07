@@ -85,12 +85,38 @@ Kararlar: Gamze Özdemir, `eleven_v4`, 64 kbps; yönergeler seyrek (`[curious]`,
 - [x] Ortak plan: `plan/SESLENDIRME.md`
 - [x] Rapor
 
+## Seslendirme: Sayılar C konusu (7 Ekim 2026)
+
+Gamze Özdemir, `eleven_v4`, 64 kbps. Yalnızca C metinleri ve ses dosyaları; main üzerinde, commit/push yok.
+
+- [x] `plan/SESLENDIRME.md` ve B örneğini oku; C1–C5 kuru dökümünü al (80 satır, 3.436 karakter; eksik sahne uyarısı yok)
+- [x] Rakamları, simgeleri ve harf eklerini `speak:` ile aç; altyazıları koru (48 satır, 6 yönerge)
+- [x] Son metin dökümünü denetle (80 satır, 3.913 karakter; rakam/simge yok)
+- [x] C1–C5 kliplerini üret (80 klip, 330,4 sn / 5,5 dk, 2.688.449 bayt / 2,69 MB, 3.913 karakter)
+- [x] Her derste `--liste`: “Üretilecek: 0 klip”; 80 klibin dosya/dizin/üretim künyesi eşleşiyor; ffprobe ile bütün süreler ölçüldü
+- [x] Son `olc.js` ve `denetle.js` sonuçlarını kaydet (aşağıdaki bulgular; tema denetimi temiz)
+- [ ] Kullanıcı C konusundan en az bir dersi sesli izler; pilot/dinleme onayı henüz yok (B yöntemindeki gibi üretimden sonra)
+
+| Ders | İlk satır / karakter | Son karakter | Yönerge | Klip | Süre | Durum |
+|---|---|---|---|---|---|---|
+| C1 | 20 / 800 | 906 | 2 | 20 | 76,16 sn | üretildi; dinleme ve yerleşim bulgusu var |
+| C2 | 12 / 468 | 555 | 1 | 12 | 50,40 sn | üretildi; otomatik kontroller temiz |
+| C3 | 20 / 968 | 1.112 | 1 | 20 | 90,80 sn | üretildi; otomatik kontroller temiz |
+| C4 | 12 / 489 | 577 | 1 | 12 | 46,32 sn | üretildi; otomatik kontroller temiz |
+| C5 | 16 / 711 | 763 | 1 | 16 | 66,72 sn | üretildi; otomatik kontroller temiz |
+
+C süre kontrolü: yönergeler karakter sayısından çıkarılarak saniye/karakter oranı dersin ortancasıyla karşılaştırıldı. Kullanıcının %40 eşiğini aşan klip yok. Planın %30 eşiğinde yalnızca C1 sahne 2, `405322c8.mp3` (“İlk kutu saymak için: sıfır, bir, iki, üç…”), 5,28 sn, +%38,8: henüz dinlenmedi, dinleme kontrolü bekliyor.
+
+C ölçüm sonuçları (1366×657): C2–C5 temiz; tüm derslerde konsol ve yazı bütçesi temiz. C1 sahne 2’de bir tahta taşması ön ölçümde de vardı; son ölçümde sahne 3’te bir yazı örtüşmesi de görüldü. Yalnızca `speak:` değiştirildiği kaynak karşılaştırmasıyla doğrulandı; yerleşim bu seslendirme işinde değiştirilmedi. `denetle.js matematik/sayilar`: 28 kısa ders, sorun yok. Pilot/kullanıcı dinlemesi B örneğindeki gibi üretim sonrasına kaldı.
+
 ## İşleme almanın dışında kalanlar (kullanıcı isteyince)
 
 - [ ] Sayılar A derslerini sesli izle; A1 sahne 3 "Genel kural" klibini dinle (öbürlerinden yavaş)
 - [x] Sayılar B seslendirildi (151 klip, 12,5 dk)
 - [ ] Sayılar B derslerini sesli izle; B1 "Üç, A’nın elemanıdır" ve B6 sahne 1 klipleri hızlı okunuyor
-- [ ] Sayılar C, D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`)
+- [x] Sayılar C seslendirildi (80 klip, 5,5 dk, 2,69 MB, 6 yönerge)
+- [ ] Sayılar C derslerini sesli izle; C1 sahne 2 `405322c8.mp3` klibi %38,8 yavaş; C1 yerleşim bulgularına bak
+- [ ] Sayılar D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`)
 - [ ] Tema sayfasından dersleri izle; `DURUM.md` “Kalanlar” bölümündeki sahnelere elle bak
 - [ ] Yerel araçları `dersler/kit.js` içine topla (ayrı temizlik işi)
 - [ ] Yayına al (`ortak/katalog.js`), seslendirme, hikâye videoları
