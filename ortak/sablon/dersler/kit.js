@@ -1,6 +1,6 @@
-/* Ünitenin ortak çizim araçları. Birden çok kısa derste tekrar eden çizim buraya taşınır; tek derste
+/* Temanın ortak çizim araçları. Birden çok kısa derste tekrar eden çizim buraya taşınır; tek derste
    kullanılan çizim o dersin dosyasında kalır. Başta küçük tut, ihtiyaç çıktıkça büyüt.
-   Renkler: bir kavrama bir renk ver, ünite boyunca aynı kalsın. Tahta 1000×562 birimdir.
+   Renkler: bir kavrama bir renk ver, tema boyunca aynı kalsın. Tahta 1000×562 birimdir.
    Not: tahtadaki <text> öğelerinin rengi CSS ile verilir; `fill` özniteliği işlemez, `style` kullan. */
 window.KIT = (() => {
   'use strict';

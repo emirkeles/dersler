@@ -13,11 +13,11 @@
 
    Oyunculuk yönergeleri: eleven_v3 / eleven_v4 modellerinde seslendirme metnine ([curious], [excited] gibi)
    köşeli parantezli yönergeler yazılabilir; bunlar derste `speak:` metnine konur, altyazıda görünmez.
-   Model ya da ses değişirse eski klipler geçersiz sayılır ve yeniden üretilir (<ünite>/ses/<ders-id>/uretim.json).
+   Model ya da ses değişirse eski klipler geçersiz sayılır ve yeniden üretilir (<tema>/ses/<ders-id>/uretim.json).
 
    Neyin seslendirildiği: sahnede beklenerek okunan açıklama altyazıları (c.say). Etkileşim yönergeleri
    (noWait ile gösterilenler), soru panelleri, geri bildirimler ve sınav seslendirilmez; öğrenci onları kendi hızında okur.
-   Klipler dersin ünite klasöründe ses/<ders-id>/<anahtar>.mp3 olarak yazılır; anahtar metnin özetidir, metin değişirse klip yeniden üretilir. */
+   Klipler dersin tema klasöründe ses/<ders-id>/<anahtar>.mp3 olarak yazılır; anahtar metnin özetidir, metin değişirse klip yeniden üretilir. */
 const fs = require('fs'), path = require('path');
 const { KOK, dersDosyasi, dersiAc, sahneyiOynat } = require('./tarayici');
 
@@ -72,14 +72,14 @@ async function satirlariTopla(no) {
     gorulen.add(x.key);
     satirlar.push({ scene: x.scene + 1, title: basliklar[x.scene], key: x.key, text: x.text });
   }
-  return { id, satirlar, unite: path.dirname(dosya) };
+  return { id, satirlar, tema: path.dirname(dosya) };
 }
 
-function manifestYaz(id, unite) {
-  const klasor = path.join(unite, 'ses', id);
+function manifestYaz(id, tema) {
+  const klasor = path.join(tema, 'ses', id);
   const dosyalar = fs.existsSync(klasor) ? fs.readdirSync(klasor).filter((f) => /^[0-9a-f]{8}\.mp3$/.test(f)).sort() : [];
   const klipler = dosyalar.map((f) => `'${f.slice(0, 8)}': '${f}'`).join(', ');
-  fs.writeFileSync(path.join(unite, 'ses', id + '.js'),
+  fs.writeFileSync(path.join(tema, 'ses', id + '.js'),
     `/* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */\nDers.ses['${id}'] = { base: 'ses/${id}/', clips: { ${klipler} } };\n`);
   return dosyalar.length;
 }
@@ -115,9 +115,9 @@ if (require.main === module) (async () => {
   const no = args.find((a) => /^([\w-]+\/)*[a-z]?\d+$/i.test(a));
   if (!no) { console.log(fs.readFileSync(__filename, 'utf8').split('*/')[0].replace('#!/usr/bin/env node\n/* ', '')); return; }
 
-  const { id, satirlar, unite } = await satirlariTopla(no);
+  const { id, satirlar, tema } = await satirlariTopla(no);
   const secim = sahneSecimi(deger('--sahne'));
-  const klasor = path.join(unite, 'ses', id);
+  const klasor = path.join(tema, 'ses', id);
   // Her klibin hangi model ve sesle üretildiği kaydedilir; ikisinden biri değişince klip yeniden üretilir.
   const kunyeDosyasi = path.join(klasor, 'uretim.json');
   const kunye = fs.existsSync(kunyeDosyasi) ? JSON.parse(fs.readFileSync(kunyeDosyasi, 'utf8')) : {};
@@ -136,7 +136,7 @@ if (require.main === module) (async () => {
     console.log(`\nÜretilecek: ${hedef.length} klip, ${hedefKr} karakter${secim ? ' (seçili sahneler)' : ''}.`);
     return;
   }
-  if (!hedef.length) { console.log(`\nÜretilecek klip yok. Kayıtlı klip: ${manifestYaz(id, unite)}.`); return; }
+  if (!hedef.length) { console.log(`\nÜretilecek klip yok. Kayıtlı klip: ${manifestYaz(id, tema)}.`); return; }
   if (!ANAHTAR) throw new Error('ELEVENLABS_API_KEY gerekli (kökteki .env dosyasına yaz).');
 
   fs.mkdirSync(klasor, { recursive: true });
@@ -157,5 +157,5 @@ if (require.main === module) (async () => {
   const gecerli = new Set(satirlar.map((s) => s.key));
   for (const f of fs.readdirSync(klasor)) if (/^[0-9a-f]{8}\.mp3$/.test(f) && !gecerli.has(f.slice(0, 8))) { fs.unlinkSync(path.join(klasor, f)); delete kunye[f.slice(0, 8)]; }
   fs.writeFileSync(kunyeDosyasi, JSON.stringify(kunye, null, 1));
-  console.log(`\nBitti: ${yapilan} yeni klip. Derste kayıtlı klip: ${manifestYaz(id, unite)}.`);
+  console.log(`\nBitti: ${yapilan} yeni klip. Derste kayıtlı klip: ${manifestYaz(id, tema)}.`);
 })().catch((e) => { console.error(e.message); process.exit(1); });

@@ -1,7 +1,7 @@
 {
   "name": "matematik-sayilar-araclar",
   "private": true,
-  "description": "Ders ölçüm, ünite denetim ve ses üretim araçları (yalnızca geliştirme sırasında kullanılır; dersler bağımlılıksız çalışır).",
+  "description": "Ders ölçüm, tema denetim ve ses üretim araçları (yalnızca geliştirme sırasında kullanılır; dersler bağımlılıksız çalışır).",
   "scripts": {
     "olc": "node olc.js",
     "ses": "node ses-uret.js",
