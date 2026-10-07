@@ -1,20 +1,21 @@
 ---
 format: 1920x1080
-duration: 62s
+duration: 71s
 message: "Gösterge anı söyler, ortalama bütün yolu."
 arc: Kanca → İddia → Kanıt → Sağlama → Kapanış
 audience: 9. sınıf öğrencileri
 mode: collaborative
 ---
 
-Sürüm: v1 (7 Ekim 2026). Plan aşaması; bütün kareler `outline`. Çizim, ses ve kompozisyon başlamadı.
+Sürüm: v2 (7 Ekim 2026). On iki kare kurulu (`animated`) ve seslendirildi; film 71 saniye. Kare süreleri ve işaret anları
+kliplerin gerçek sürelerinden ve cümle içi duraklamalarından ölçüldü (`assets/ses-esit/olcum.json`).
 
 ## Kararlar
 
 - **Mesaj:** Göstergede okunan sürat yalnızca bir anındır; bütün yolun süratini yol ve süre birlikte söyler.
 - **Kitle ve yay:** 9. sınıf öğrencisi, E3 dersini yeni bitirmiş. Çelişki (iki kez 85, yine ceza) → neden (kameralar
   saate bakar) → yolculuk → hesap → iki sayının adı.
-- **Biçim:** 1920×1080, yaklaşık 62 saniye, anlatım var, müzik ve efekt yok. Altyazı videoya gömülmez; alt bant
+- **Biçim:** 1920×1080, 71 saniye, anlatım var, müzik ve efekt yok. Altyazı videoya gömülmez; alt bant
   boş bırakılmaz.
 - **Omurga:** iki kamera direği arasındaki yol şeridi. İlk kareden son kareye ekrandadır; sol direk başlangıç,
   sağ direk bitiştir. Kesme yok; kamera aynı resimde yaklaşır ve uzaklaşır.
@@ -33,8 +34,8 @@ dakikadan hesaplanır: gerçek araba 6. dakikada 1680'de; sınıra uyan araba sa
 
 ## Ekrandaki sözcükler
 
-Yalnızca ölçü etiketleri: "90", "85", "130", "14.00", "14.06", "14.08", "12 km", "6 dk", "8 dk", "2 dk",
-"12 km ÷ 6 dk", "120 km/h", "90 km/h". Kapanış kartı: "Gösterge anı söyler, ortalama bütün yolu." ve
+Yalnızca ölçü etiketleri: "90", "85", "130", "14.00", "14.06", "12 km", "6 dk", "8 dk",
+"12 km ÷ 6 dk", "120 km/h"; 9. karede yeşil arabanın tavanında "90"; 5–6. karelerde kilometre sayacı ("0 km" … "12 km") ve büyük göstergedeki anlık okuma. Kapanış kartı: "Gösterge anı söyler, ortalama bütün yolu." ve
 "ortalama sürat = alınan toplam yol ÷ hareket süresi". Başka sözcük yok.
 
 ## Yasaklar
@@ -46,6 +47,19 @@ Yalnızca ölçü etiketleri: "90", "85", "130", "14.00", "14.06", "14.08", "12 
 - Slayt gösterisi yok: her kare yeni bir kart açmaz, aynı şeridin üstünde bir şey değişir.
 - Ekran koruyucu yok: hiçbir hareket sayı ya da konum taşımadan süs olarak dönmez.
 
+## Yapımda plandan ayrılanlar
+
+- 7. kare: "6 dk" iki damgayı üstten birleştiren bir ayracın ortasında durur; "12 km" etiketi şerit metrenin ortasına kayar.
+  Üstte süre, altta yol.
+- 8. kare: işlem ("12 km ÷ 6 dk") ve sonucu ("120 km/h") üst ortada, aynı yerde yer değiştirir.
+- 9. kare: sınıra uyan araba soluk değil, yeşil ve tavanında "90" yazıyor; aynı şeritte gerçek arabanın arkasında kalır.
+  Gerçek araba 6. dakikada direğe varınca sayaç yarım saniye durur ve kamera çakar; o anda yeşil araba 9. kilometrededir.
+  Yeşil araba 8. dakikada varınca direğin altında yeşil "8 dk" etiketi açılır. "14.08" ve "2 dk" etiketleri yazılmadı.
+- 10. kare: göstergeler noktaya inmez; 1. karedeki yerlerine ve boylarına geri gelir, noktalı bağlarla kameralara bağlanır,
+  bağın şeride değdiği nokta bir kez parlar. Damgalar ve süre ayracı çekilir.
+- 11. kare: şerit metre kalınlaşarak bütün şeridi saran ayraç olur; "120 km/h" üstten inip ayracın ortasına oturur.
+- 12. kare: şerit küçülmez; göstergeler ve tabela çekilir, dünyanın üstüne lacivert bir perde iner, kart ortaya gelir.
+
 ## Hâlâ açık
 
 - Sıra: bu sürüm cezayı başa aldı (kanca). İlk taslaktaki "durum → şaşırtan an → demek ki" sırası istenirse
@@ -55,14 +69,14 @@ Yalnızca ölçü etiketleri: "90", "85", "130", "14.00", "14.06", "14.08", "12 
   cümle yok" kuralı); yalnızca sesle söyleniyor.
 - Müzik ve efekt: yok. Kamera çakması için tek bir efekt istenir mi?
 
-## Frame 1 — iki-gosterge (0,0–5,5 sn, ~5,5 sn)
+## Frame 1 — iki-gosterge (0–6,4 sn, ~6,4 sn)
 
 - scene: Yol şeridi kuş bakışı, iki ucunda kamera direği. Her direğin üstünde bir gösterge: ikisi de 85. Ortada tabela: 90
-- duration: 5.5s
-- poster: 4.5s
+- duration: 6.4s
+- poster: 5.8s
 - transition_in: cut
-- status: outline
-- voiceover: "İki kamera. Gösterge ikisinde de seksen beş. Sınır doksan."
+- status: animated
+- voiceover: "Deniz'in dayısı iki kameranın önünden de seksen beşle geçti. Sınır doksandı."
 - src: index.html
 - rules: spring-pop-entrance, svg-icon-enrichment
 - hero: gösterge (ilk görünüş)
@@ -73,48 +87,49 @@ Yalnızca ölçü etiketleri: "90", "85", "130", "14.00", "14.06", "14.08", "12 
 Kanca. Direkler sırayla çakar (sol, sonra sağ); her çakmada üstündeki gösterge belirir ve ibresi 85'e oturur.
 "Sınır doksan" denirken tabela belirir. İlk hareket 0,2 saniye içinde.
 
-## Frame 2 — ceza (5,5–9,0 sn, ~3,5 sn)
+## Frame 2 — ceza (6,4–9,6 sn, ~3,2 sn)
 
 - scene: İki göstergenin ortasına yazısız bir zarf düşer; üstünde küçük kamera simgesi
-- duration: 3.5s
-- poster: 8s
+- duration: 3.2s
+- poster: 9.2s
 - transition_in: none
-- status: outline
+- status: animated
 - voiceover: "Yine de ceza geldi. Neden?"
 - src: index.html
 - rules: spring-pop-entrance
 - hero: zarf
-- seam_out: zarf küçülüp sol direğe gider; göstergeler soluklaşır
+- seam_out: zarf küçülüp silinir; göstergeler soluklaşır
 - constraint: zarfta yazı ve tutar yok; "Neden?" sırasında hiçbir şey hareket etmez
 - why: Soruyu sorar. Durağan kare: soru boşlukta kalır.
 
 Zarf "ceza" sözcüğünde iner ve oturur; sonra kare donar.
 
-## Frame 3 — saat (9,0–13,0 sn, ~4 sn)
+## Frame 3 — saat (9,6–16,1 sn, ~6,5 sn)
 
 - scene: Göstergeler soluk. Her direğin üstünde bir saat damgası: 14.00 ve 14.06
-- duration: 4s
-- poster: 12s
+- duration: 6.5s
+- poster: 15.6s
 - transition_in: none
-- status: outline
-- voiceover: "Çünkü kameralar göstergeye bakmaz; saate bakar."
+- status: animated
+- voiceover: "Çünkü o kameralar arabanın göstergesini görmez. Yalnızca geçtiği saati kaydeder."
 - src: index.html
-- rules: scale-swap-transition, spring-pop-entrance
+- rules: spring-pop-entrance
 - hero: saat damgası
 - seam_out: kamera sol direğe yaklaşır
 - constraint: göstergeler silinmez, soluklaşır; 10. karede geri gelecekler
 - why: İddia. Filmin geri kalanı bunun kanıtıdır.
 
-"Göstergeye bakmaz"da göstergeler küçülüp soluklaşır, "saate bakar"da yerlerine damgalar gelir.
+"Göstergeye bakmaz"da göstergeler küçülüp soluklaşır ve kameralarla bağları kopar; "saate bakar"da damgalar
+direklerin tepesinden bayrak gibi açılır (çıkış noktası direk).
 
-## Frame 4 — ilk-kamera (13,0–19,0 sn, ~6 sn)
+## Frame 4 — ilk-kamera (16,1–21,7 sn, ~5,6 sn)
 
 - scene: Kamera şeridin sol ucuna iner. Araba kuş bakışı, içinde iki figür. Köşede büyük gösterge: ibre 130'dan 85'e iner. Direk çakar
-- duration: 6s
-- poster: 18s
+- duration: 5.6s
+- poster: 21.2s
 - transition_in: none
-- status: outline
-- voiceover: "Deniz dayısının arabasında. İlk kamerada dayısı frene basar: seksen beş."
+- status: animated
+- voiceover: "İlk kameraya yaklaşırken dayısı frene bastı, gösterge seksen beşe indi."
 - src: index.html
 - rules: viewport-change, control-target-sync, svg-icon-enrichment
 - hero: gösterge (büyük)
@@ -124,14 +139,14 @@ Zarf "ceza" sözcüğünde iner ve oturur; sonra kare donar.
 
 İbrenin inişi ile arabanın şeritteki yavaşlaması aynı tween'i paylaşır. Çakma anında 14.00 damgası direğe iğnelenir.
 
-## Frame 5 — gaz (19,0–22,5 sn, ~3,5 sn)
+## Frame 5 — gaz (21,7–26,3 sn, ~4,6 sn)
 
 - scene: Araba şeridin ortasında; ibre 130'da. Kilometre taşları hızla geçer
-- duration: 3.5s
-- poster: 21.5s
+- duration: 4.6s
+- poster: 25.6s
 - transition_in: none
-- status: outline
-- voiceover: "Kamerayı geçince yeniden gaza: yüz otuz."
+- status: animated
+- voiceover: "Kamerayı geçer geçmez yine gaza bastı, yüz otuza çıktı."
 - src: index.html
 - rules: viewport-change, control-target-sync, motion-blur-streak
 - hero: gösterge (büyük)
@@ -139,14 +154,14 @@ Zarf "ceza" sözcüğünde iner ve oturur; sonra kare donar.
 - constraint: başka araç yok; sollama, yarış duygusu yok
 - why: Gösterge ile bütün yol arasındaki farkın kaynağı: arada 130.
 
-## Frame 6 — ikinci-kamera (22,5–29,5 sn, ~7 sn)
+## Frame 6 — ikinci-kamera (26,3–32,6 sn, ~6,3 sn)
 
 - scene: Şeridin sağ ucu. İbre yine 85'e iner, direk çakar. Şeridin altında "12 km" ayracı çizilir
-- duration: 7s
-- poster: 28.5s
+- duration: 6.3s
+- poster: 32.2s
 - transition_in: none
-- status: outline
-- voiceover: "On iki kilometre sonra ikinci kamera. Yine fren, yine seksen beş."
+- status: animated
+- voiceover: "On iki kilometre sonra ikinci kamera göründü. Yine fren, yine seksen beş."
 - src: index.html
 - rules: viewport-change, control-target-sync, svg-path-draw
 - hero: gösterge (büyük)
@@ -154,16 +169,18 @@ Zarf "ceza" sözcüğünde iner ve oturur; sonra kare donar.
 - constraint: 4. karenin birebir yansıması; yeni bir şey eklenmez
 - why: Kanıtın ikinci yarısı; 1. karedeki iki 85 buradan geliyor.
 
-"On iki kilometre"de ayraç soldan sağa çizilir. Çakma anında 14.06 damgası direğe iğnelenir.
+Ayraç tek seferde çizilmez: ilk kameradan başlayan bir şerit metre arabayla birlikte uzar, ucundaki etiket kilometreyi
+sayar ("0 km" … "12 km"). Çakma anında 14.06 damgası direğe dikilir. Tabela yakın planda büyük göstergenin arkasında
+kalmasın diye 4. karenin başında yatar, araba yaklaşınca göstergenin solunda yeniden kalkar.
 
-## Frame 7 — damgalar (29,5–35,0 sn, ~5,5 sn)
+## Frame 7 — damgalar (32,6–39,4 sn, ~6,8 sn)
 
 - scene: Bütün şerit. Uçlarda 14.00 ve 14.06, altta "12 km", damgaların arasında "6 dk"
-- duration: 5.5s
-- poster: 34s
+- duration: 6.8s
+- poster: 38.8s
 - transition_in: none
-- status: outline
-- voiceover: "Kameralar yalnızca saati yazdı: on iki kilometre, altı dakika."
+- status: animated
+- voiceover: "İki kameranın kaydettiği saatlere bakılırsa araba on iki kilometreyi altı dakikada geçmişti."
 - src: index.html
 - rules: viewport-change, counting-dynamic-scale, svg-path-draw
 - hero: saat damgası (3. kareye cevap)
@@ -173,14 +190,14 @@ Zarf "ceza" sözcüğünde iner ve oturur; sonra kare donar.
 
 Damgalar arasındaki sayaç 0'dan 6'ya sayar ve "6 dk" olarak oturur.
 
-## Frame 8 — bolme (35,0–39,0 sn, ~4 sn)
+## Frame 8 — bolme (39,4–44,9 sn, ~5,5 sn)
 
 - scene: Şeridin üstünde "12 km ÷ 6 dk"; "120 km/h"e döner
-- duration: 4s
-- poster: 38.5s
+- duration: 5.5s
+- poster: 44.3s
 - transition_in: none
-- status: outline
-- voiceover: "Dakikada iki kilometre: saatte yüz yirmi."
+- status: animated
+- voiceover: "Bu da dakikada iki kilometre, yani saatte yüz yirmi eder."
 - src: index.html
 - rules: scale-swap-transition, counting-dynamic-scale
 - hero: 120 km/h etiketi
@@ -188,14 +205,14 @@ Damgalar arasındaki sayaç 0'dan 6'ya sayar ve "6 dk" olarak oturur.
 - constraint: işlem tek satır; ara adım yazılmaz, sesle söylenir
 - why: Hesap. Cezanın sayısı ortaya çıkar.
 
-## Frame 9 — sinira-uyan (39,0–45,0 sn, ~6 sn)
+## Frame 9 — sinira-uyan (44,9–50,3 sn, ~5,4 sn)
 
 - scene: Şeritte iki araba ve bir sayaç. Gerçek araba 14.06'da sağ direkte; soluk araba o anda 9. kilometrede, 14.08'de varır. Aradaki "2 dk" işaretlenir
-- duration: 6s
-- poster: 44s
+- duration: 5.4s
+- poster: 49.5s
 - transition_in: none
-- status: outline
-- voiceover: "Sınıra uyan araba aynı yolu en az sekiz dakikada geçerdi."
+- status: animated
+- voiceover: "Sınıra uyan bir araba aynı yolu en az sekiz dakikada geçerdi."
 - src: index.html
 - rules: control-target-sync, counting-dynamic-scale, spring-pop-entrance
 - hero: soluk araba
@@ -205,14 +222,14 @@ Damgalar arasındaki sayaç 0'dan 6'ya sayar ve "6 dk" olarak oturur.
 
 Sayaç ile iki arabanın konumu tek değerden sürülür. Soluk arabanın üstünde "90 km/h", vardığında "8 dk".
 
-## Frame 10 — anlik (45,0–50,0 sn, ~5 sn)
+## Frame 10 — anlik (50,3–57,6 sn, ~7,3 sn)
 
 - scene: 1. karedeki iki gösterge geri gelir, şeridin iki ucunda birer noktaya iner; ikisi de 85
-- duration: 5s
-- poster: 49s
+- duration: 7.3s
+- poster: 56.5s
 - transition_in: none
-- status: outline
-- voiceover: "Seksen beş, yalnızca o anın süratiydi: anlık sürat."
+- status: animated
+- voiceover: "Göstergedeki seksen beş, arabanın yalnızca o andaki süratiydi; yani anlık sürati."
 - src: index.html
 - rules: scale-swap-transition, coordinate-target-zoom
 - hero: gösterge (geri dönüş; 1. kareye cevap)
@@ -220,14 +237,14 @@ Sayaç ile iki arabanın konumu tek değerden sürülür. Soluk arabanın üstü
 - constraint: göstergenin şeritte kapladığı yer bir nokta kadardır; çizgi ya da bölge değildir
 - why: 1. karedeki sayıya adını verir.
 
-## Frame 11 — ortalama (50,0–55,0 sn, ~5 sn)
+## Frame 11 — ortalama (57,6–62,3 sn, ~4,7 sn)
 
 - scene: Bütün şeridi saran bir ayraç; üstünde 120 km/h. Uçlardaki iki nokta yerinde
-- duration: 5s
-- poster: 54s
+- duration: 4.7s
+- poster: 61.5s
 - transition_in: none
-- status: outline
-- voiceover: "Yüz yirmi ise bütün yolun sürati: ortalama sürat."
+- status: animated
+- voiceover: "Yüz yirmi ise bütün yoldaki ortalama sürati."
 - src: index.html
 - rules: svg-path-draw, spring-pop-entrance
 - hero: 120 km/h etiketi (8. kareye cevap)
@@ -235,13 +252,13 @@ Sayaç ile iki arabanın konumu tek değerden sürülür. Soluk arabanın üstü
 - constraint: ayraç şeridin tamamını kapsar; nokta ile ayraç aynı karede kalır, karşıtlık bozulmaz
 - why: Öbür sayıya adını verir; mesajın görüntüsü budur: iki nokta ve bir ayraç.
 
-## Frame 12 — kapanis (55,0–62,0 sn, ~7 sn)
+## Frame 12 — kapanis (62,3–71 sn, ~8,7 sn)
 
 - scene: Şerit küçülüp arkada kalır. Kart: kapanış cümlesi ve model
-- duration: 7s
-- poster: 60s
+- duration: 8.7s
+- poster: 69s
 - transition_in: none
-- status: outline
+- status: animated
 - voiceover: "Gösterge anı söyler, ortalama bütün yolu."
 - src: index.html
 - rules: viewport-change, waterfall-entry

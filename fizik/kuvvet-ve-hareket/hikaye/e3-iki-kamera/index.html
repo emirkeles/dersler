@@ -1,10 +1,40 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>İki kamera arası</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin-ext.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+          U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      :root {
+        --bugday: #e3b85a;
+        --hardal: #c99532;
+        --zeytin: #8a9450;
+        --zeytin-koyu: #5f6b3a;
+        --asfalt: #2e3340;
+        --asfalt-acik: #454b5c;
+        --lacivert: #1b2845;
+        --kagit: #f4ead5;
+        --serit: #f1c84b;
+        --kiremit: #c5492f;
+        --golge: #2a2010;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -16,40 +46,870 @@
         width: 1920px;
         height: 1080px;
         overflow: hidden;
-        background: #0a0a0a;
+        background: #e3b85a;
       }
       #root {
+        position: relative;
         width: 100%;
         height: 100%;
+        overflow: hidden;
+        font-family: "Plex Sans", sans-serif;
+      }
+      #sahne {
+        position: absolute;
+        inset: 0;
+      }
+      #dunya,
+      #ust,
+      #dis-kat {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #sahne {
+        z-index: 1;
+      }
+      #dis-kat {
+        z-index: 3;
+        pointer-events: none;
+      }
+      #kapanis {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: Inter, ui-sans-serif, system-ui, sans-serif;
       }
-      #title {
-        color: #f4f4f5;
-        font-size: 72px;
+      #perde {
+        position: absolute;
+        inset: 0;
+        background: rgba(27, 40, 69, 0.55);
+      }
+      #kart {
+        position: relative;
+        width: 1380px;
+        padding: 96px 110px 88px;
+        border-radius: 30px;
+        background: #1b2845;
+        box-shadow: 0 34px 70px rgba(42, 32, 16, 0.5);
+        color: #f4ead5;
+      }
+      #cumle {
+        font-size: 80px;
         font-weight: 600;
-        letter-spacing: -0.03em;
+        line-height: 1.16;
+        letter-spacing: -0.01em;
+      }
+      .satir {
+        display: block;
+        width: 100%;
+      }
+      #cizgi {
+        width: 100%;
+        height: 4px;
+        margin: 54px 0 40px;
+        border-radius: 2px;
+        background: #f4ead5;
+        opacity: 0.4;
+        transform-origin: 0 50%;
+      }
+      #model {
+        font-size: 40px;
+        font-weight: 500;
+        color: #e9dcc0;
+      }
+      #sahne text {
+        font-family: "Plex Sans", sans-serif;
+        font-variant-numeric: tabular-nums;
       }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div data-hf-id="hf-uwzq" id="root" data-composition-id="main" data-start="0" data-duration="71" data-width="1920" data-height="1080">
+      <!-- Tek dünya: iki kamera direği arasındaki yol şeridi. 120 px = 1 km; sol direk x=240, sağ direk x=1680. -->
+      <!-- Dünya zamanlı bir klip değildir; baştan sona durur, kamera ve içindekiler zaman çizelgesiyle hareket eder. -->
+      <section data-hf-id="hf-sgag" id="sahne">
+        <svg data-hf-id="hf-5c9c" id="dunya" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" data-layout-allow-overflow="">
+          <defs data-hf-id="hf-mh0t">
+            <filter data-hf-id="hf-ysil" id="golge" x="-10%" y="-10%" width="120%" height="130%">
+              <fedropshadow data-hf-id="hf-dpah" dx="0" dy="7" stdDeviation="6" flood-color="#2a2010" flood-opacity="0.3" />
+            </filter>
+            <filter data-hf-id="hf-4dis" id="golge-yuksek" x="-30%" y="-30%" width="160%" height="170%">
+              <fedropshadow data-hf-id="hf-whej" dx="10" dy="18" stdDeviation="10" flood-color="#2a2010" flood-opacity="0.34" />
+            </filter>
+            <filter data-hf-id="hf-olq8" id="dis" x="0" y="0" width="100%" height="100%">
+              <feturbulence data-hf-id="hf-x2si" type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="11" result="g" />
+              <fecolormatrix data-hf-id="hf-iffb" in="g" type="matrix" values="0 0 0 0 0.16  0 0 0 0 0.12  0 0 0 0 0.06  0 0 0 0.55 -0.12" />
+            </filter>
+          </defs>
+
+          <!-- Tarlalar -->
+          <rect data-hf-id="hf-3rmx" x="-960" width="3840" height="1080" fill="#e3b85a" />
+          <g data-hf-id="hf-jcxe" id="evlekler" stroke="#c99532" stroke-width="4" stroke-linecap="round" opacity="0.55">
+            <path data-hf-id="hf-6my3" d="M-960 277 L2880 217" />
+            <path data-hf-id="hf-u898" d="M-960 317 L2880 257" />
+            <path data-hf-id="hf-405o" d="M-960 357 L2880 297" />
+            <path data-hf-id="hf-bfxf" d="M-960 397 L2880 337" />
+            <path data-hf-id="hf-tfhe" d="M-960 437 L2880 377" />
+            <path data-hf-id="hf-vkcf" d="M-960 477 L2880 417" />
+            <path data-hf-id="hf-rrhs" d="M-960 517 L2880 457" />
+            <path data-hf-id="hf-1khc" d="M-960 557 L2880 497" />
+            <path data-hf-id="hf-njwv" d="M-960 597 L2880 537" />
+            <path data-hf-id="hf-e5ne" d="M-960 637 L2880 577" />
+            <path data-hf-id="hf-tgdn" d="M-960 677 L2880 617" />
+            <path data-hf-id="hf-o410" d="M-960 907 L2880 887" />
+            <path data-hf-id="hf-vjkn" d="M-960 947 L2880 927" />
+            <path data-hf-id="hf-oqjj" d="M-960 987 L2880 967" />
+            <path data-hf-id="hf-b7en" d="M-960 1027 L2880 1007" />
+            <path data-hf-id="hf-xkk7" d="M-960 1067 L2880 1047" />
+          </g>
+          <g data-hf-id="hf-e2gn" filter="url(#golge)">
+            <path data-hf-id="hf-mwtc" d="M0 0 H640 L575 118 L310 176 L0 152 Z" fill="#8a9450" />
+            <path data-hf-id="hf-kndr" d="M1170 0 H1920 V214 L1505 252 L1236 150 Z" fill="#c99532" />
+            <path data-hf-id="hf-kxor" d="M0 908 L500 884 L690 1080 H0 Z" fill="#8a9450" />
+            <path data-hf-id="hf-afjc" d="M1090 1080 L1226 902 L1920 876 V1080 Z" fill="#c99532" />
+            <path data-hf-id="hf-0zur" d="M-960 936 L0 908 V1080 H-960 Z" fill="#8a9450" />
+            <path data-hf-id="hf-qlo3" d="M1920 876 L2880 848 V1080 H1920 Z" fill="#c99532" />
+            <path data-hf-id="hf-pjyc" d="M-960 470 L-560 452 L-470 610 L-960 640 Z" fill="#c99532" />
+            <path data-hf-id="hf-n4pv" d="M2330 430 L2880 410 V640 L2400 620 Z" fill="#8a9450" />
+          </g>
+          <g data-hf-id="hf-mq1c" stroke="#5f6b3a" stroke-width="4" stroke-linecap="round" opacity="0.4">
+            <path data-hf-id="hf-suxx" d="M20 40 L590 22" />
+            <path data-hf-id="hf-m066" d="M20 84 L560 66" />
+            <path data-hf-id="hf-gwdq" d="M20 128 L420 114" />
+            <path data-hf-id="hf-kc72" d="M30 960 L560 936" />
+            <path data-hf-id="hf-yya8" d="M30 1004 L600 980" />
+            <path data-hf-id="hf-am8m" d="M30 1048 L640 1024" />
+          </g>
+
+          <!-- Ağaç kümeleri -->
+          <g data-hf-id="hf-cxmq" id="agaclar" filter="url(#golge)">
+            <circle data-hf-id="hf-k2ow" cx="1722" cy="84" r="40" fill="#5f6b3a" /><circle data-hf-id="hf-7haa" cx="1714" cy="75" r="27" fill="#8a9450" />
+            <circle data-hf-id="hf-3asl" cx="1790" cy="124" r="34" fill="#5f6b3a" /><circle data-hf-id="hf-lc8q" cx="1783" cy="116" r="23" fill="#8a9450" />
+            <circle data-hf-id="hf-cv1u" cx="1856" cy="70" r="30" fill="#5f6b3a" /><circle data-hf-id="hf-x8av" cx="1850" cy="63" r="20" fill="#8a9450" />
+            <circle data-hf-id="hf-fiy0" cx="186" cy="990" r="38" fill="#5f6b3a" /><circle data-hf-id="hf-pd2y" cx="178" cy="981" r="26" fill="#a4ad63" />
+            <circle data-hf-id="hf-z8ls" cx="262" cy="1022" r="30" fill="#5f6b3a" /><circle data-hf-id="hf-dyi8" cx="256" cy="1015" r="20" fill="#a4ad63" />
+            <circle data-hf-id="hf-x5ca" cx="880" cy="962" r="34" fill="#5f6b3a" /><circle data-hf-id="hf-9nq3" cx="873" cy="954" r="23" fill="#8a9450" />
+            <circle data-hf-id="hf-us24" cx="948" cy="1000" r="28" fill="#5f6b3a" /><circle data-hf-id="hf-gdew" cx="942" cy="993" r="19" fill="#8a9450" />
+            <circle data-hf-id="hf-wpnx" cx="1618" cy="990" r="36" fill="#5f6b3a" /><circle data-hf-id="hf-x36n" cx="1610" cy="981" r="25" fill="#8a9450" />
+            <circle data-hf-id="hf-qlc4" cx="1700" cy="1024" r="30" fill="#5f6b3a" /><circle data-hf-id="hf-b51b" cx="1694" cy="1017" r="20" fill="#8a9450" />
+            <circle data-hf-id="hf-s27h" cx="1772" cy="976" r="26" fill="#5f6b3a" /><circle data-hf-id="hf-7wjl" cx="1767" cy="970" r="17" fill="#8a9450" />
+            <circle data-hf-id="hf-wi13" cx="-150" cy="566" r="32" fill="#5f6b3a" /><circle data-hf-id="hf-u9fa" cx="-157" cy="558" r="22" fill="#8a9450" />
+            <circle data-hf-id="hf-lzrs" cx="-92" cy="606" r="24" fill="#5f6b3a" /><circle data-hf-id="hf-7f8e" cx="-97" cy="600" r="16" fill="#8a9450" />
+            <circle data-hf-id="hf-ovvc" cx="-190" cy="930" r="30" fill="#5f6b3a" /><circle data-hf-id="hf-5ekd" cx="-196" cy="923" r="20" fill="#a4ad63" />
+            <circle data-hf-id="hf-q318" cx="722" cy="612" r="26" fill="#5f6b3a" /><circle data-hf-id="hf-ika0" cx="716" cy="606" r="17" fill="#8a9450" />
+            <circle data-hf-id="hf-o1h3" cx="1206" cy="604" r="28" fill="#5f6b3a" /><circle data-hf-id="hf-hn1u" cx="1200" cy="597" r="19" fill="#8a9450" />
+            <circle data-hf-id="hf-kn4a" cx="1264" cy="634" r="20" fill="#5f6b3a" /><circle data-hf-id="hf-8k6e" cx="1260" cy="629" r="13" fill="#8a9450" />
+            <circle data-hf-id="hf-xnje" cx="1180" cy="930" r="28" fill="#5f6b3a" /><circle data-hf-id="hf-a81t" cx="1174" cy="923" r="19" fill="#8a9450" />
+            <circle data-hf-id="hf-a03a" cx="1424" cy="944" r="24" fill="#5f6b3a" /><circle data-hf-id="hf-q094" cx="1419" cy="938" r="16" fill="#8a9450" />
+            <circle data-hf-id="hf-yyqn" cx="2044" cy="600" r="30" fill="#5f6b3a" /><circle data-hf-id="hf-20m0" cx="2037" cy="592" r="20" fill="#8a9450" />
+            <circle data-hf-id="hf-saev" cx="2106" cy="640" r="22" fill="#5f6b3a" /><circle data-hf-id="hf-41f9" cx="2101" cy="634" r="15" fill="#8a9450" />
+            <circle data-hf-id="hf-aeas" cx="2190" cy="934" r="28" fill="#5f6b3a" /><circle data-hf-id="hf-7hy1" cx="2184" cy="927" r="19" fill="#8a9450" />
+          </g>
+
+          <!-- Yol şeridi -->
+          <g data-hf-id="hf-7m33" id="yol" filter="url(#golge)">
+            <rect data-hf-id="hf-c3jy" x="-960" y="688" width="3840" height="164" fill="#454b5c" />
+            <rect data-hf-id="hf-cjqr" x="-960" y="700" width="3840" height="140" fill="#2e3340" />
+          </g>
+          <g data-hf-id="hf-w0df" stroke="#f4ead5" stroke-width="4" opacity="0.85">
+            <path data-hf-id="hf-gl5h" d="M-960 710 H2880" />
+            <path data-hf-id="hf-c3ko" d="M-960 830 H2880" />
+          </g>
+          <path data-hf-id="hf-g5hp" d="M-960 770 H2880" stroke="#f1c84b" stroke-width="6" stroke-dasharray="46 34" />
+          <g data-hf-id="hf-0vo6" id="km-taslari" fill="#f4ead5" filter="url(#golge)" />
+
+          <!-- Ölçü: ilk kameradan arabaya uzanan şerit ve kilometre sayacı (5–6. kareler) -->
+          <g data-hf-id="hf-5ate" id="olcu" opacity="0">
+            <path data-hf-id="hf-ktrf" d="M240 872 V904" stroke="#1b2845" stroke-width="8" stroke-linecap="round" />
+            <line data-hf-id="hf-nyms" id="olcu-cizgi" x1="240" y1="888" x2="240" y2="888" stroke="#1b2845" stroke-width="8" stroke-linecap="round" />
+            <line data-hf-id="hf-zhc6" id="olcu-uc" x1="240" y1="872" x2="240" y2="904" stroke="#1b2845" stroke-width="8" stroke-linecap="round" />
+            <g data-hf-id="hf-1pty" id="km-etiket" filter="url(#golge)">
+              <rect data-hf-id="hf-c662" x="-200" y="902" width="200" height="74" rx="12" fill="#1b2845" />
+              <text data-hf-id="hf-8vlr" id="km-sayac" x="-100" y="941" text-anchor="middle" dominant-baseline="central" font-size="52" font-weight="600" fill="#f4ead5">0 km</text>
+            </g>
+          </g>
+
+          <!-- Sınıra uyan araba (9. kare): sabit 90 km/h, aynı şeritte. -->
+          <g data-hf-id="hf-d4gu" id="araba90" transform="translate(-500 805)" opacity="0">
+            <g data-hf-id="hf-737b" filter="url(#golge)">
+              <rect data-hf-id="hf-0qtu" x="-75" y="-30" width="150" height="60" rx="20" fill="#a4ad63" />
+              <rect data-hf-id="hf-awn0" x="68" y="-25" width="7" height="13" rx="3" fill="#f1c84b" />
+              <rect data-hf-id="hf-yohj" x="68" y="12" width="7" height="13" rx="3" fill="#f1c84b" />
+              <path data-hf-id="hf-w59n" d="M24 -23 L46 -26 Q51 0 46 26 L24 23 Z" fill="#1b2845" />
+              <path data-hf-id="hf-ld76" d="M-36 -23 L-55 -25 Q-59 0 -55 25 L-36 23 Z" fill="#1b2845" />
+              <rect data-hf-id="hf-kb2d" x="-38" y="-24" width="64" height="48" rx="11" fill="#c3ca8b" />
+              <text data-hf-id="hf-uqnk" x="-6" y="1" text-anchor="middle" dominant-baseline="central" font-size="38" font-weight="700" fill="#1b2845">90</text>
+            </g>
+          </g>
+
+          <!-- Araba (kuş bakışı, sağa gider). Konumu zaman çizelgesindeki saatten hesaplanır. -->
+          <g data-hf-id="hf-yjrl" id="araba" transform="translate(-500 805)" opacity="0">
+            <g data-hf-id="hf-uslt" id="iz" stroke="#f4ead5" stroke-width="6" stroke-linecap="round">
+              <line data-hf-id="hf-lg6c" id="iz1" x1="-92" y1="-18" x2="-92" y2="-18" />
+              <line data-hf-id="hf-p71v" id="iz2" x1="-98" y1="0" x2="-98" y2="0" />
+              <line data-hf-id="hf-y0yq" id="iz3" x1="-92" y1="18" x2="-92" y2="18" />
+            </g>
+            <g data-hf-id="hf-6owa" filter="url(#golge)">
+              <rect data-hf-id="hf-8mbi" x="-75" y="-30" width="150" height="60" rx="20" fill="#f4ead5" />
+              <rect data-hf-id="hf-78dw" x="68" y="-25" width="7" height="13" rx="3" fill="#f1c84b" />
+              <rect data-hf-id="hf-nhx3" x="68" y="12" width="7" height="13" rx="3" fill="#f1c84b" />
+              <g data-hf-id="hf-181m" id="fren" opacity="0">
+                <rect data-hf-id="hf-dam2" x="-76" y="-25" width="8" height="15" rx="3" fill="#c5492f" />
+                <rect data-hf-id="hf-q5iz" x="-76" y="10" width="8" height="15" rx="3" fill="#c5492f" />
+              </g>
+              <path data-hf-id="hf-uykr" d="M24 -23 L46 -26 Q51 0 46 26 L24 23 Z" fill="#1b2845" />
+              <path data-hf-id="hf-yonq" d="M-36 -23 L-55 -25 Q-59 0 -55 25 L-36 23 Z" fill="#1b2845" />
+              <circle data-hf-id="hf-uief" cx="35" cy="-10" r="6" fill="#cdb98f" />
+              <circle data-hf-id="hf-6jby" cx="35" cy="10" r="6" fill="#cdb98f" />
+              <rect data-hf-id="hf-tn9u" x="-38" y="-24" width="64" height="48" rx="11" fill="#fbf4e4" />
+            </g>
+          </g>
+
+          <!-- Göstergelerden kameralara bağ -->
+          <g data-hf-id="hf-uw5n" stroke="#f4ead5" stroke-width="6" stroke-linecap="round" stroke-dasharray="1 18" fill="none">
+            <path data-hf-id="hf-nnyr" id="bagL" d="M240 742 L382 480" />
+            <path data-hf-id="hf-o65q" id="bagR" d="M1680 742 L1538 480" />
+          </g>
+
+          <!-- Kamera direkleri (yolun üstünden geçen köprü, kuş bakışı) -->
+          <g data-hf-id="hf-9d29" id="direkL" filter="url(#golge-yuksek)">
+            <rect data-hf-id="hf-7zsr" x="230" y="668" width="20" height="204" rx="6" fill="#1b2845" />
+            <rect data-hf-id="hf-1d9o" x="222" y="660" width="36" height="16" rx="5" fill="#f4ead5" />
+            <rect data-hf-id="hf-r4ye" x="222" y="864" width="36" height="16" rx="5" fill="#f4ead5" />
+            <rect data-hf-id="hf-obd1" x="216" y="746" width="48" height="48" rx="9" fill="#1b2845" />
+            <circle data-hf-id="hf-5lxb" cx="240" cy="770" r="12" fill="#f4ead5" />
+            <circle data-hf-id="hf-4r7w" cx="240" cy="770" r="5" fill="#1b2845" />
+          </g>
+          <g data-hf-id="hf-s4vz" id="direkR" filter="url(#golge-yuksek)">
+            <rect data-hf-id="hf-aods" x="1670" y="668" width="20" height="204" rx="6" fill="#1b2845" />
+            <rect data-hf-id="hf-gdlr" x="1662" y="660" width="36" height="16" rx="5" fill="#f4ead5" />
+            <rect data-hf-id="hf-eho5" x="1662" y="864" width="36" height="16" rx="5" fill="#f4ead5" />
+            <rect data-hf-id="hf-w3hw" x="1656" y="746" width="48" height="48" rx="9" fill="#1b2845" />
+            <circle data-hf-id="hf-lbhu" cx="1680" cy="770" r="12" fill="#f4ead5" />
+            <circle data-hf-id="hf-svzn" cx="1680" cy="770" r="5" fill="#1b2845" />
+          </g>
+          <circle data-hf-id="hf-p72c" id="cakmaL" cx="240" cy="770" r="70" fill="#f4ead5" opacity="0" />
+          <circle data-hf-id="hf-qtbr" id="cakmaR" cx="1680" cy="770" r="70" fill="#f4ead5" opacity="0" />
+
+          <!-- Tabela: sürat sınırı -->
+          <g data-hf-id="hf-5zpd" id="tabela" filter="url(#golge-yuksek)">
+            <path data-hf-id="hf-ojrs" d="M960 630 V690" stroke="#f4ead5" stroke-width="10" stroke-linecap="round" />
+            <circle data-hf-id="hf-7tx8" cx="960" cy="690" r="11" fill="#f4ead5" />
+            <circle data-hf-id="hf-5xv6" cx="960" cy="552" r="72" fill="#f4ead5" stroke="#c5492f" stroke-width="18" />
+            <text data-hf-id="hf-4kbb" x="960" y="554" text-anchor="middle" dominant-baseline="central" font-size="78" font-weight="700" fill="#1b2845">
+              90
+            </text>
+          </g>
+
+          <!-- Saat damgaları (3. kare) -->
+          <g data-hf-id="hf-k5ys" id="damgaL" filter="url(#golge-yuksek)">
+            <path data-hf-id="hf-mwde" d="M240 660 V470" stroke="#f4ead5" stroke-width="10" stroke-linecap="round" />
+            <rect data-hf-id="hf-b542" x="97" y="462" width="286" height="108" rx="14" fill="#1b2845" />
+            <circle data-hf-id="hf-1jr1" cx="151" cy="516" r="25" fill="none" stroke="#f4ead5" stroke-width="6" />
+            <path data-hf-id="hf-gv81" d="M151 499 V516 L163 509" fill="none" stroke="#f4ead5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <text data-hf-id="hf-0q5f" x="195" y="518" dominant-baseline="central" font-size="60" font-weight="600" fill="#f4ead5">14.00</text>
+          </g>
+          <g data-hf-id="hf-e04y" id="damgaR" filter="url(#golge-yuksek)">
+            <path data-hf-id="hf-a4qd" d="M1680 660 V470" stroke="#f4ead5" stroke-width="10" stroke-linecap="round" />
+            <rect data-hf-id="hf-hfde" x="1537" y="462" width="286" height="108" rx="14" fill="#1b2845" />
+            <circle data-hf-id="hf-1zpi" cx="1591" cy="516" r="25" fill="none" stroke="#f4ead5" stroke-width="6" />
+            <path data-hf-id="hf-qkam" d="M1591 499 V516 L1603 509" fill="none" stroke="#f4ead5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+            <text data-hf-id="hf-6l31" x="1635" y="518" dominant-baseline="central" font-size="60" font-weight="600" fill="#f4ead5">14.06</text>
+          </g>
+
+          <!-- Göstergeler -->
+          <g data-hf-id="hf-0ygx" id="gostergeDisL">
+            <g data-hf-id="hf-4mww" id="gostergeL" filter="url(#golge-yuksek)">
+              <circle data-hf-id="hf-wlx0" cx="480" cy="300" r="205" fill="#f4ead5" />
+              <circle data-hf-id="hf-j9i3" cx="480" cy="300" r="186" fill="#1b2845" />
+              <g data-hf-id="hf-j5xs" id="kadranL" />
+              <path data-hf-id="hf-8cuk" d="M465 96 H495 L480 128 Z" fill="#c5492f" />
+              <g data-hf-id="hf-3fbo" id="okumaL">
+                <text data-hf-id="hf-r5as" x="480" y="418" text-anchor="middle" font-size="96" font-weight="700" fill="#f4ead5">85</text>
+                <text data-hf-id="hf-ndzj" x="480" y="458" text-anchor="middle" font-size="28" font-weight="500" fill="#f4ead5">km/h</text>
+              </g>
+              <path data-hf-id="hf-tlvq" id="ibreL" d="M456 292 L630 297 V303 L456 308 Z" fill="#c5492f" />
+              <circle data-hf-id="hf-bucu" cx="480" cy="300" r="18" fill="#f4ead5" />
+              <circle data-hf-id="hf-h7x7" cx="480" cy="300" r="7" fill="#1b2845" />
+            </g>
+          </g>
+          <g data-hf-id="hf-jqan" id="gostergeDisR">
+            <g data-hf-id="hf-5b3a" id="gostergeR" filter="url(#golge-yuksek)">
+              <circle data-hf-id="hf-k0xj" cx="1440" cy="300" r="205" fill="#f4ead5" />
+              <circle data-hf-id="hf-1d2o" cx="1440" cy="300" r="186" fill="#1b2845" />
+              <g data-hf-id="hf-lkie" id="kadranR" />
+              <path data-hf-id="hf-rk8l" d="M1425 96 H1455 L1440 128 Z" fill="#c5492f" />
+              <g data-hf-id="hf-x9hu" id="okumaR">
+                <text data-hf-id="hf-jmrv" x="1440" y="418" text-anchor="middle" font-size="96" font-weight="700" fill="#f4ead5">85</text>
+                <text data-hf-id="hf-461q" x="1440" y="458" text-anchor="middle" font-size="28" font-weight="500" fill="#f4ead5">km/h</text>
+              </g>
+              <path data-hf-id="hf-o3p4" id="ibreR" d="M1416 292 L1590 297 V303 L1416 308 Z" fill="#c5492f" />
+              <circle data-hf-id="hf-1r7n" cx="1440" cy="300" r="18" fill="#f4ead5" />
+              <circle data-hf-id="hf-ostk" cx="1440" cy="300" r="7" fill="#1b2845" />
+            </g>
+          </g>
+          
+          <!-- Zarf (2. kare) -->
+          <g data-hf-id="hf-ynze" id="zarfDis" transform="rotate(-5 960 300)" data-layout-allow-overflow="">
+            <g data-hf-id="hf-2eph" id="zarf" filter="url(#golge-yuksek)">
+              <rect data-hf-id="hf-cwrp" x="770" y="175" width="380" height="250" rx="16" fill="#f4ead5" />
+              <path data-hf-id="hf-yddj" d="M770 409 L934 286 H986 L1150 409 Q1150 425 1134 425 H786 Q770 425 770 409 Z" fill="#eadcc0" />
+              <path data-hf-id="hf-dd0m" d="M770 191 Q770 175 786 175 H1134 Q1150 175 1150 191 L960 334 Z" fill="#dfcfad" filter="url(#golge)" />
+              <circle data-hf-id="hf-li8c" cx="960" cy="326" r="42" fill="#c5492f" filter="url(#golge)" />
+              <rect data-hf-id="hf-ryqa" x="937" y="313" width="46" height="30" rx="6" fill="#f4ead5" />
+              <rect data-hf-id="hf-mjzq" x="950" y="305" width="18" height="10" rx="3" fill="#f4ead5" />
+              <circle data-hf-id="hf-qv06" cx="960" cy="328" r="8" fill="#c5492f" />
+            </g>
+          </g>
+
+
+          <!-- Süre ayracı: iki damgayı birleştirir (7. kare) -->
+          <g data-hf-id="hf-7ga0" id="sure">
+            <path data-hf-id="hf-wmjq" id="sure-cizgi" d="M240 462 V400 H1680 V462" fill="none" stroke="#1b2845" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1564" stroke-dashoffset="0" />
+            <g data-hf-id="hf-uooz" id="sure-etiket" filter="url(#golge)">
+              <rect data-hf-id="hf-lpbc" x="860" y="363" width="200" height="74" rx="12" fill="#1b2845" />
+              <text data-hf-id="hf-ftsw" id="dk-sayac" x="960" y="402" text-anchor="middle" dominant-baseline="central" font-size="52" font-weight="600" fill="#f4ead5">6 dk</text>
+            </g>
+          </g>
+
+          <!-- Sınıra uyan arabanın süresi (9. kare) -->
+          <g data-hf-id="hf-xicy" id="dk8" filter="url(#golge)">
+            <rect data-hf-id="hf-51d1" x="1580" y="914" width="200" height="74" rx="12" fill="#a4ad63" />
+            <text data-hf-id="hf-wzbp" x="1680" y="953" text-anchor="middle" dominant-baseline="central" font-size="52" font-weight="600" fill="#1b2845">8 dk</text>
+          </g>
+
+          <!-- Ortalama ayracı: bütün şeridi sarar (11. kare) -->
+          <path data-hf-id="hf-w7lj" id="ayrac" d="M240 888 H1680" stroke="#1b2845" stroke-width="16" stroke-linecap="round" />
+
+          <!-- İşlem (8. kare) ve sonucu (8–11. kareler) -->
+          <g data-hf-id="hf-439p" id="islemA" filter="url(#golge-yuksek)">
+            <rect data-hf-id="hf-q8k6" x="650" y="160" width="620" height="120" rx="18" fill="#1b2845" />
+            <text data-hf-id="hf-jfqj" x="960" y="222" text-anchor="middle" dominant-baseline="central" font-size="72" font-weight="600" fill="#f4ead5">12 km ÷ 6 dk</text>
+          </g>
+          <g data-hf-id="hf-81dq" id="islemB" filter="url(#golge-yuksek)">
+            <rect data-hf-id="hf-1hgv" x="730" y="160" width="460" height="120" rx="18" fill="#1b2845" />
+            <text data-hf-id="hf-gea6" x="960" y="222" text-anchor="middle" dominant-baseline="central" font-size="84" font-weight="700" fill="#f4ead5">120 km/h</text>
+          </g>
+        </svg>
+
+        <!-- Ekrana sabit katman: arabanın göstergesi (4–6. kareler). Kamera hareketinden etkilenmez. -->
+        <svg data-hf-id="hf-u66k" id="ust" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+          <g data-hf-id="hf-s0x0" id="gostergeH" filter="url(#golge-yuksek)">
+            <circle data-hf-id="hf-b6pu" cx="1520" cy="250" r="195" fill="#f4ead5" />
+            <circle data-hf-id="hf-gdph" cx="1520" cy="250" r="177" fill="#1b2845" />
+            <g data-hf-id="hf-4cc4" id="kadranH" />
+            <path data-hf-id="hf-aa78" d="M1505 57 H1535 L1520 88 Z" fill="#c5492f" />
+            <text data-hf-id="hf-iqor" id="okumaH" x="1520" y="364" text-anchor="middle" font-size="84" font-weight="700" fill="#f4ead5">130</text>
+            <text data-hf-id="hf-xvl6" x="1520" y="400" text-anchor="middle" font-size="28" font-weight="500" fill="#f4ead5">km/h</text>
+            <path data-hf-id="hf-fwlf" id="ibreH" d="M1496 242 L1665 247 V253 L1496 258 Z" fill="#c5492f" />
+            <circle data-hf-id="hf-nhks" cx="1520" cy="250" r="18" fill="#f4ead5" />
+            <circle data-hf-id="hf-ivb9" cx="1520" cy="250" r="7" fill="#1b2845" />
+          </g>
+        </svg>
+
+      </section>
+
+      <!-- Kapanış kartı (12. kare). Klip değildir; perde ve kart 55. saniyeye kadar saydamdır. -->
+      <section data-hf-id="hf-kxgq" id="kapanis">
+        <div data-hf-id="hf-ia4r" id="perde"></div>
+        <div data-hf-id="hf-xslf" id="kart">
+          <p data-hf-id="hf-va8w" id="cumle">
+            <span data-hf-id="hf-kz16" class="satir" id="c1">Gösterge anı söyler,</span>
+            <span data-hf-id="hf-l71j" class="satir" id="c2">ortalama bütün yolu.</span>
+          </p>
+          <div data-hf-id="hf-96ft" id="cizgi"></div>
+          <p data-hf-id="hf-svjk" id="model">ortalama sürat = alınan toplam yol ÷ hareket süresi</p>
+        </div>
+      </section>
+
+      <!-- Anlatım (Gamze Özdemir, eleven_v4). Klipler ses düzeyi eşitlenmiş kopyalardır; ham hâlleri assets/ses/ içinde. -->
+      <audio id="ses-01" src="assets/ses-esit/01.mp3" data-start="0.5" data-duration="5.6" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-02" src="assets/ses-esit/02.mp3" data-start="6.5" data-duration="2.56" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-03" src="assets/ses-esit/03.mp3" data-start="9.7" data-duration="5.84" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-04" src="assets/ses-esit/04.mp3" data-start="16.2" data-duration="5.2" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-05" src="assets/ses-esit/05.mp3" data-start="21.8" data-duration="4.0" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-06" src="assets/ses-esit/06.mp3" data-start="26.4" data-duration="5.52" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-07" src="assets/ses-esit/07.mp3" data-start="32.7" data-duration="6.24" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-08" src="assets/ses-esit/08.mp3" data-start="39.5" data-duration="5.04" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-09" src="assets/ses-esit/09.mp3" data-start="45.0" data-duration="4.72" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-10" src="assets/ses-esit/10.mp3" data-start="50.4" data-duration="6.72" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-11" src="assets/ses-esit/11.mp3" data-start="57.7" data-duration="3.6" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-12" src="assets/ses-esit/12.mp3" data-start="63.2" data-duration="3.84" data-track-index="3" data-volume="1"></audio>
+
+      <!-- Kâğıt dişi: ekrana sabit, en üstte -->
+      <svg data-hf-id="hf-ca7t" id="dis-kat" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode: multiply">
+        <rect data-hf-id="hf-53so" width="1920" height="1080" filter="url(#dis)" />
+      </svg>
     </div>
     <script>
+      const NS = "http://www.w3.org/2000/svg";
+      const ekle = (ust, ad, oz) => {
+        const e = document.createElementNS(NS, ad);
+        for (const k in oz) e.setAttribute(k, oz[k]);
+        ust.appendChild(e);
+        return e;
+      };
+
+      /* Ölçek: 120 px = 1 km. */
+      const KM = 120,
+        SOL = 240,
+        SAG = SOL + 12 * KM,
+        YOL_Y = 770;
+      /* Kadran: 0 km/h 150°, 180 km/h 390°. Sınır (90) tam tepede (270°). */
+      const ACI0 = 150,
+        ACI_KMH = 240 / 180;
+      const aci = (kmh) => ACI0 + kmh * ACI_KMH;
+
+      const taslar = document.getElementById("km-taslari");
+      for (let k = 0; k <= 12; k++) ekle(taslar, "rect", { x: SOL + k * KM - 5, y: 660, width: 10, height: 24, rx: 3 });
+
+      function kadran(id, cx, cy) {
+        const g = document.getElementById(id);
+        for (let v = 0; v <= 180; v += 10) {
+          const r = (aci(v) * Math.PI) / 180,
+            buyuk = v % 20 === 0,
+            ic = buyuk ? 140 : 152;
+          ekle(g, "line", {
+            x1: cx + 168 * Math.cos(r),
+            y1: cy + 168 * Math.sin(r),
+            x2: cx + ic * Math.cos(r),
+            y2: cy + ic * Math.sin(r),
+            stroke: "#f4ead5",
+            "stroke-width": buyuk ? 6 : 3,
+            "stroke-linecap": "round",
+          });
+        }
+        for (const v of [60, 120]) {
+          const r = (aci(v) * Math.PI) / 180;
+          const t = ekle(g, "text", {
+            x: cx + 110 * Math.cos(r),
+            y: cy + 110 * Math.sin(r),
+            "text-anchor": "middle",
+            "dominant-baseline": "central",
+            "font-size": 28,
+            "font-weight": 500,
+            fill: "#f4ead5",
+          });
+          t.textContent = v;
+        }
+      }
+      kadran("kadranL", 480, 300);
+      kadran("kadranR", 1440, 300);
+      kadran("kadranH", 1520, 250);
+
+      /* Satır başlangıçları (sn). Ses üretilince gerçek klip sürelerine çekilir. */
+      /* Kare başlangıçları (sn) ve anlatım kliplerinin başlangıçları. Kliplerin gerçek sürelerinden ve cümle içi
+         duraklamalarından ölçüldü (assets/ses-esit/olcum.json); klipler yeniden üretilirse buradan düzeltilir. */
+      const T = { l1: 0, l2: 6.4, l3: 9.6, l4: 16.1, l5: 21.7, l6: 26.3, l7: 32.6, l8: 39.4, l9: 44.9, l10: 50.3, l11: 57.6, l12: 62.3, son: 71 };
+
       const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.6 }, 0);
+
+      function olcum(yan, cx, direkX, t) {
+        const O = cx + " 300";
+        tl.fromTo(
+          "#cakma" + yan,
+          { scale: 0.25, opacity: 0.95, svgOrigin: direkX + " " + YOL_Y },
+          { scale: 1.9, opacity: 0, duration: 0.55, ease: "power2.out", immediateRender: false },
+          t,
+        );
+        tl.fromTo("#bag" + yan, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, t + 0.2);
+        tl.fromTo(
+          "#gosterge" + yan,
+          { scale: 0, opacity: 0, svgOrigin: O },
+          { scale: 1, opacity: 1, duration: 0.6, ease: "power3.out" },
+          t + 0.2,
+        );
+        tl.fromTo(
+          "#ibre" + yan,
+          { rotation: aci(0), svgOrigin: O },
+          { rotation: aci(85), duration: 0.95, ease: "power2.out" },
+          t + 0.55,
+        );
+        tl.fromTo("#okuma" + yan, { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power1.out" }, t + 1.25);
+      }
+
+      /* Kare 1 — iki-gosterge */
+      olcum("L", 480, SOL, T.l1 + 0.7);
+      olcum("R", 1440, SAG, T.l1 + 1.8);
+      tl.fromTo(
+        "#tabela",
+        { scale: 0, opacity: 0, svgOrigin: "960 690" },
+        { scale: 1, opacity: 1, duration: 0.55, ease: "expo.out" },
+        T.l1 + 4.55,
+      );
+
+      /* Kare 2 — ceza: zarf iner, sonra kare donar ("Neden?"). */
+      tl.fromTo(
+        "#zarf",
+        { y: -540, rotation: -12, opacity: 0, svgOrigin: "960 300" },
+        { y: 0, rotation: 0, opacity: 1, duration: 0.65, ease: "power3.out" },
+        T.l2 + 0.35,
+      );
+
+      /* Kare 3 — saat: zarf çekilir, göstergeler küçülüp solar, direklere saat damgaları dikilir. */
+      tl.fromTo(
+        "#zarf",
+        { scale: 1, opacity: 1, y: 0 },
+        { scale: 0.6, opacity: 0, y: -70, duration: 0.4, ease: "power2.in", immediateRender: false },
+        T.l3 + 0.1,
+      );
+      for (const [yan, cx] of [["L", 480], ["R", 1440]]) {
+        tl.fromTo(
+          "#gostergeDis" + yan,
+          { scale: 1, opacity: 1, svgOrigin: cx + " 150" },
+          { scale: 0.55, opacity: 0.4, duration: 0.7, ease: "power2.inOut" },
+          T.l3 + 1.6,
+        );
+        tl.fromTo(
+          "#bag" + yan,
+          { opacity: 1 },
+          { opacity: 0, duration: 0.4, ease: "power1.in", immediateRender: false },
+          T.l3 + 1.6,
+        );
+      }
+      tl.fromTo(
+        "#damgaL",
+        { scale: 0, opacity: 0, svgOrigin: SOL + " 660" },
+        { scale: 1, opacity: 1, duration: 0.55, ease: "power3.out" },
+        T.l3 + 4.6,
+      );
+      tl.fromTo(
+        "#damgaR",
+        { scale: 0, opacity: 0, svgOrigin: SAG + " 660" },
+        { scale: 1, opacity: 1, duration: 0.55, ease: "power3.out" },
+        T.l3 + 4.8,
+      );
+
+      /* ---- Kareler 4–6: yolculuk ----
+         Sürat (km/h) zamanın parçalı doğrusal fonksiyonudur; arabanın konumu onun integralidir.
+         Ekranda 85 km/h = saniyede 100 px. Bu bölüm canlandırmadır: 6 dakikalık yol yaklaşık 10 saniyeye sığar;
+         ölçekli tekrar 9. karededir. */
+      /* İşaret anları anlatımdan gelir: "frene bastı" 18,2 · "gaza bastı" 22,9 · "Yine fren" 29,6.
+         İki kamera arası 1440 px olduğuna göre ekran ölçeği (PX: km/h başına px/sn) bu anlardan çözülür. */
+      const fren1 = T.l4 + 2.1,
+        cak1 = fren1 + 1.8,
+        gaz = T.l5 + 1.2,
+        gazSon = gaz + 1.4,
+        fren2 = T.l6 + 3.3,
+        cak2 = fren2 + 1.8;
+      const PX =
+        (SAG - SOL) /
+        (85 * (gaz - cak1) + ((85 + 130) / 2) * 1.4 + 130 * (fren2 - gazSon) + ((130 + 85) / 2) * 1.5 + 85 * 0.3);
+      const HIZ = [
+        [fren1, 130],
+        [fren1 + 1.5, 85],
+        [gaz, 85],
+        [gazSon, 130],
+        [fren2, 130],
+        [fren2 + 1.5, 85],
+      ];
+      function hiz(t) {
+        if (t <= HIZ[0][0]) return HIZ[0][1];
+        for (let i = 1; i < HIZ.length; i++)
+          if (t <= HIZ[i][0]) {
+            const [a, va] = HIZ[i - 1],
+              [b, vb] = HIZ[i];
+            return va + ((vb - va) * (t - a)) / (b - a);
+          }
+        return HIZ[HIZ.length - 1][1];
+      }
+      /* ∫ hız dt, HIZ[0] anından t'ye (km/h · sn) */
+      function yolInt(t) {
+        let s = (Math.min(t, HIZ[0][0]) - HIZ[0][0]) * HIZ[0][1];
+        for (let i = 1; i < HIZ.length; i++) {
+          const [a, va] = HIZ[i - 1],
+            [b, vb] = HIZ[i];
+          if (t <= a) break;
+          const u = Math.min(t, b);
+          s += ((va + (va + ((vb - va) * (u - a)) / (b - a))) / 2) * (u - a);
+        }
+        const son = HIZ[HIZ.length - 1];
+        if (t > son[0]) s += (t - son[0]) * son[1];
+        return s;
+      }
+      const konum = (t) => SOL + PX * (yolInt(t) - yolInt(cak1));
+
+      const dunya = document.getElementById("dunya"),
+        araba = document.getElementById("araba"),
+        frenIsik = document.getElementById("fren"),
+        izler = [1, 2, 3].map((i) => document.getElementById("iz" + i)),
+        olcu = document.getElementById("olcu"),
+        olcuCizgi = document.getElementById("olcu-cizgi"),
+        olcuUc = document.getElementById("olcu-uc"),
+        kmSayac = document.getElementById("km-sayac"),
+        kmEtiket = document.getElementById("km-etiket"),
+        ibreH = document.getElementById("ibreH"),
+        okumaH = document.getElementById("okumaH");
+      const YAKIN = { x: SOL - 480, y: 440, w: 960 };
+
+      /* ---- Kare 9: ölçekli tekrar. Sayaç dakikadır (0–8); iki arabanın konumu ondan hesaplanır. ---- */
+      const kis = (v, a, b) => Math.min(b, Math.max(a, v));
+      const yumusak = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
+      function dakika(t) {
+        const a = T.l9 + 0.8;
+        if (t <= a) return 0;
+        if (t <= a + 2.2) return (6 * (t - a)) / 2.2; /* gerçek araba 14.06'da varır */
+        if (t <= a + 2.6) return 6; /* kısa duruş: kamera çakar */
+        return Math.min(8, 6 + (2 * (t - a - 2.6)) / 0.9); /* yeşil araba "sekiz dakikada" derken varır */
+      }
+      /* Gerçek araba: uçlarda birer kilometre 95 km/h, ortadaki 10 km daha hızlı; 6. dakikada tam 12 km. */
+      const UC_DK = 60 / 95,
+        ORTA = 10 / (6 - 2 * UC_DK);
+      function gercekKm(m) {
+        if (m <= UC_DK) return m / UC_DK;
+        if (m <= 6 - UC_DK) return 1 + ORTA * (m - UC_DK);
+        return 11 + (m - (6 - UC_DK)) / UC_DK;
+      }
+      const araba90 = document.getElementById("araba90"),
+        dkSayac = document.getElementById("dk-sayac");
+      const kamSon = Math.max(YAKIN.x, konum(T.l7) - 480);
+
+      function ciz(t) {
+        const surus = konum(t);
+        /* Kamera: 4. karede sol uca yaklaşır, arabayı ortada tutarak izler, 7. karede geri çekilir. */
+        let kx, ky, kw;
+        if (t < T.l7) {
+          const p = kis((t - T.l4) / 1.1, 0, 1),
+            e = yumusak(p);
+          kx = p < 1 ? YAKIN.x * e : Math.max(YAKIN.x, surus - 480);
+          ky = YAKIN.y * e;
+          kw = 1920 - (1920 - YAKIN.w) * e;
+        } else {
+          const e = 1 - yumusak(kis((t - T.l7 - 0.1) / 1.3, 0, 1));
+          kx = kamSon * e;
+          ky = YAKIN.y * e;
+          kw = 1920 - (1920 - YAKIN.w) * e;
+        }
+        dunya.setAttribute("viewBox", kx.toFixed(2) + " " + ky.toFixed(2) + " " + kw.toFixed(2) + " " + ((kw * 9) / 16).toFixed(2));
+
+        /* Arabalar */
+        const m = dakika(t),
+          tekrar = t >= T.l9 && t < T.l10 + 0.5;
+        const x = tekrar ? SOL + KM * gercekKm(m) : t < T.l9 ? surus : -500;
+        const gorun = tekrar ? kis((t - T.l9 - 0.2) / 0.4, 0, 1) * (1 - kis((t - T.l10) / 0.4, 0, 1)) : 1;
+        araba.setAttribute("transform", "translate(" + x.toFixed(2) + " 805)");
+        araba.setAttribute("opacity", t >= T.l4 && t < T.l10 + 0.5 ? gorun.toFixed(2) : 0);
+        const m90 = m < 8 ? m : 8 + (2 / 0.9) * (t - (T.l9 + 4.3)); /* 8. dakikadan sonra aynı tempoda sürer */
+        araba90.setAttribute("transform", "translate(" + (SOL + KM * 1.5 * m90).toFixed(2) + " 805)");
+        araba90.setAttribute("opacity", tekrar ? gorun.toFixed(2) : 0);
+
+        const v = hiz(t),
+          yolda = t < T.l7;
+        const frende = yolda && ((t > fren1 && t < fren1 + 1.5) || (t > fren2 && t < fren2 + 1.5));
+        frenIsik.setAttribute("opacity", frende ? 1 : 0);
+        const k = yolda ? Math.max(0, (v - 85) / 45) : 0;
+        izler.forEach((cz, i) => {
+          cz.setAttribute("x2", (+cz.getAttribute("x1") - k * (i === 1 ? 84 : 58)).toFixed(1));
+          cz.setAttribute("opacity", (0.75 * k).toFixed(2));
+        });
+
+        /* Şerit metre: ilk kameradan arabaya; 7. karede etiket şeridin ortasına kayar. */
+        const uc = yolda ? kis(surus, SOL, SAG) : SAG;
+        const kay = -620 * yumusak(kis((t - T.l7 - 3.0) / 0.8, 0, 1));
+        olcu.setAttribute("opacity", t >= cak1 ? 1 : 0);
+        olcuCizgi.setAttribute("x2", uc.toFixed(2));
+        olcuUc.setAttribute("x1", uc.toFixed(2));
+        olcuUc.setAttribute("x2", uc.toFixed(2));
+        kmEtiket.setAttribute("transform", "translate(" + (uc + kay).toFixed(2) + " 0)");
+        kmSayac.textContent = Math.floor((uc - SOL) / KM + 1e-6) + " km";
+
+        /* Süre etiketi: 7. karede 0'dan 6'ya sayar; 9. karede sayaçla birlikte yeniden sayar. */
+        const dk = t < T.l9 + 0.8 ? Math.round(6 * kis((t - T.l7 - 4.8) / 0.7, 0, 1)) : Math.min(6, Math.floor(m + 1e-6));
+        dkSayac.textContent = dk + " dk";
+
+        /* Büyük gösterge */
+        ibreH.setAttribute("transform", "rotate(" + aci(v).toFixed(2) + " 1520 250)");
+        okumaH.textContent = Math.round(v);
+      }
+
+      const saat = { t: 0 };
+      tl.fromTo(saat, { t: 0 }, { t: T.son, duration: T.son, ease: "none", onUpdate: () => ciz(saat.t) }, 0);
+      ciz(0);
+
+      /* Kare 4'ün girişi: damgalar toplanır, soluk göstergeler silinir, büyük gösterge gelir. */
+      for (const [yan, dx] of [["L", SOL], ["R", SAG]]) {
+        tl.fromTo(
+          "#damga" + yan,
+          { scale: 1, opacity: 1, svgOrigin: dx + " 660" },
+          { scale: 0, opacity: 0, duration: 0.35, ease: "power2.in", immediateRender: false },
+          T.l4 + 0.1,
+        );
+        tl.fromTo(
+          "#gostergeDis" + yan,
+          { opacity: 0.4 },
+          { opacity: 0, duration: 0.4, ease: "power1.in", immediateRender: false },
+          T.l4 + 0.1,
+        );
+      }
+      tl.fromTo(
+        "#gostergeH",
+        { scale: 0, opacity: 0, svgOrigin: "1520 250" },
+        { scale: 1, opacity: 1, duration: 0.6, ease: "power3.out" },
+        T.l4 + 0.7,
+      );
+
+      /* Tabela: yakın planda büyük göstergenin arkasından geçmesin diye yatar; gösterge solunda kalınca
+         yerinden yeniden kalkar (araba x = 865'e vardığında tabela ekranda göstergenin hemen solundadır). */
+      let ta = cak1,
+        tb = cak2;
+      for (let i = 0; i < 40; i++) {
+        const tm = (ta + tb) / 2;
+        if (konum(tm) < 865) ta = tm;
+        else tb = tm;
+      }
+      const tabelaKalk = ta;
+      tl.fromTo(
+        "#tabela",
+        { scale: 1, opacity: 1, svgOrigin: "960 690" },
+        { scale: 0, opacity: 0, duration: 0.35, ease: "power2.in", immediateRender: false },
+        T.l4 + 0.1,
+      );
+      tl.fromTo(
+        "#tabela",
+        { scale: 0, opacity: 0, svgOrigin: "960 690" },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "expo.out", immediateRender: false },
+        tabelaKalk,
+      );
+
+      /* Kameralar: araba tam altından geçerken çakar, saat damgası direğe dikilir. */
+      for (const [yan, dx, t] of [["L", SOL, cak1], ["R", SAG, cak2]]) {
+        tl.fromTo(
+          "#cakma" + yan,
+          { scale: 0.25, opacity: 0.95, svgOrigin: dx + " " + YOL_Y },
+          { scale: 1.9, opacity: 0, duration: 0.55, ease: "power2.out", immediateRender: false },
+          t,
+        );
+        tl.fromTo(
+          "#damga" + yan,
+          { scale: 0, opacity: 0, svgOrigin: dx + " 660" },
+          { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out", immediateRender: false },
+          t + 0.12,
+        );
+      }
+
+      /* ---- Kare 7 — damgalar: kamera geri çekilir (ciz), büyük gösterge çıkar, süre ayracı çizilir. ---- */
+      tl.fromTo(
+        "#gostergeH",
+        { scale: 1, opacity: 1, svgOrigin: "1520 250" },
+        { scale: 0.5, opacity: 0, duration: 0.4, ease: "power2.in", immediateRender: false },
+        T.l7 + 0.1,
+      );
+      tl.fromTo("#sure-cizgi", { strokeDashoffset: 1564 }, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, T.l7 + 4.3);
+      tl.fromTo(
+        "#sure-etiket",
+        { scale: 0, opacity: 0, svgOrigin: "960 400" },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" },
+        T.l7 + 4.7,
+      );
+
+      /* ---- Kare 8 — bolme: işlem gelir, sonuca döner. ---- */
+      tl.fromTo(
+        "#islemA",
+        { scale: 0, opacity: 0, svgOrigin: "960 220" },
+        { scale: 1, opacity: 1, duration: 0.55, ease: "power3.out" },
+        T.l8 + 0.3,
+      );
+      tl.fromTo(
+        "#islemA",
+        { scale: 1, opacity: 1 },
+        { scale: 0.7, opacity: 0, duration: 0.3, ease: "power2.in", immediateRender: false },
+        T.l8 + 2.9,
+      );
+      tl.fromTo(
+        "#islemB",
+        { scale: 0.7, opacity: 0, y: 0, svgOrigin: "960 220" },
+        { scale: 1, opacity: 1, y: 0, duration: 0.5, ease: "power3.out" },
+        T.l8 + 3.1,
+      );
+
+      /* ---- Kare 9 — sinira-uyan: arabalar ciz içinde; gerçek araba varınca kamera çakar, sonra "8 dk". ---- */
+      tl.fromTo(
+        "#cakmaR",
+        { scale: 0.25, opacity: 0.95, svgOrigin: SAG + " " + YOL_Y },
+        { scale: 1.9, opacity: 0, duration: 0.55, ease: "power2.out", immediateRender: false },
+        T.l9 + 3.0,
+      );
+      tl.fromTo(
+        "#dk8",
+        { scale: 0, opacity: 0, svgOrigin: SAG + " 914" },
+        { scale: 1, opacity: 1, duration: 0.5, ease: "power3.out" },
+        T.l9 + 4.3,
+      );
+
+      /* ---- Kare 10 — anlik: süreler toplanır, 1. karedeki iki gösterge geri gelir ve kameralara bağlanır. ---- */
+      tl.fromTo("#sure", { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in" }, T.l10 + 0.1);
+      tl.fromTo("#dk8", { opacity: 1 }, { opacity: 0, duration: 0.35, ease: "power1.in", immediateRender: false }, T.l10 + 0.1);
+      for (const [yan, cx, dx, i] of [["L", 480, SOL, 0], ["R", 1440, SAG, 1]]) {
+        tl.fromTo(
+          "#damga" + yan,
+          { scale: 1, opacity: 1, svgOrigin: dx + " 660" },
+          { scale: 0, opacity: 0, duration: 0.35, ease: "power2.in", immediateRender: false },
+          T.l10 + 0.1,
+        );
+        tl.fromTo(
+          "#gostergeDis" + yan,
+          { scale: 0.55, opacity: 0, svgOrigin: cx + " 150" },
+          { scale: 1, opacity: 1, duration: 0.7, ease: "power3.out", immediateRender: false },
+          T.l10 + 0.5 + i * 0.25,
+        );
+        tl.fromTo(
+          "#bag" + yan,
+          { opacity: 0 },
+          { opacity: 1, duration: 0.4, ease: "power1.out", immediateRender: false },
+          T.l10 + 1.0 + i * 0.25,
+        );
+        /* "o anın sürati": bağın şeride değdiği nokta bir kez parlar */
+        tl.fromTo(
+          "#cakma" + yan,
+          { scale: 0.2, opacity: 0.9, svgOrigin: dx + " " + YOL_Y },
+          { scale: 1.0, opacity: 0, duration: 0.7, ease: "power2.out", immediateRender: false },
+          T.l10 + 3.3 + i * 0.25,
+        );
+      }
+
+      /* ---- Kare 11 — ortalama: kalın ayraç bütün şeridi sarar, 120 km/h ayraca iner. ---- */
+      tl.fromTo(
+        "#ayrac",
+        { scaleX: 0, opacity: 1, svgOrigin: SOL + " 888" },
+        { scaleX: 1, opacity: 1, duration: 1.0, ease: "power2.inOut" },
+        T.l11 + 1.2,
+      );
+      tl.fromTo("#km-etiket", { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "power1.in" }, T.l11 + 1.8);
+      tl.fromTo(
+        "#islemB",
+        { y: 0, scale: 1 },
+        { y: 726, scale: 0.8, duration: 0.8, ease: "power3.inOut", immediateRender: false },
+        T.l11 + 2.0,
+      );
+
+      /* ---- Kare 12 — kapanis: perde iner, kart gelir, cümle iki parça hâlinde okunur. ---- */
+      for (const yan of ["L", "R"]) {
+        tl.fromTo(
+          "#gostergeDis" + yan,
+          { opacity: 1 },
+          { opacity: 0, duration: 0.45, ease: "power1.in", immediateRender: false },
+          T.l12 + 0.05,
+        );
+        tl.fromTo("#bag" + yan, { opacity: 1 }, { opacity: 0, duration: 0.45, ease: "power1.in", immediateRender: false }, T.l12 + 0.05);
+      }
+      tl.fromTo(
+        "#tabela",
+        { scale: 1, opacity: 1, svgOrigin: "960 690" },
+        { scale: 0, opacity: 0, duration: 0.35, ease: "power2.in", immediateRender: false },
+        T.l12 + 0.05,
+      );
+      tl.fromTo("#perde", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power1.out" }, T.l12 + 0.1);
+      tl.fromTo("#kart", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, T.l12 + 0.3);
+      tl.fromTo("#c1", { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, T.l12 + 0.75);
+      tl.fromTo("#c2", { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: "power3.out" }, T.l12 + 3.1);
+      tl.fromTo("#cizgi", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, T.l12 + 4.7);
+      tl.fromTo("#model", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, T.l12 + 4.9);
+
       window.__timelines["main"] = tl;
-      tl.seek(0);
     </script>
   </body>
 </html>

@@ -1,0 +1,62 @@
+{
+ "10": {
+  "metin": "Göstergedeki seksen beş, arabanın yalnızca o andaki süratiydi; yani anlık sürati.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "11": {
+  "metin": "Yüz yirmi ise bütün yoldaki ortalama sürati.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "12": {
+  "metin": "Gösterge anı söyler, [short pause] ortalama bütün yolu.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "01": {
+  "metin": "Deniz'in dayısı iki kameranın önünden de seksen beşle geçti. Sınır doksandı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "02": {
+  "metin": "[curious] Yine de ceza geldi. Neden?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "03": {
+  "metin": "Çünkü o kameralar arabanın göstergesini görmez. Yalnızca geçtiği saati kaydeder.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "04": {
+  "metin": "İlk kameraya yaklaşırken dayısı frene bastı, gösterge seksen beşe indi.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "05": {
+  "metin": "Kamerayı geçer geçmez yine gaza bastı, yüz otuza çıktı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "06": {
+  "metin": "On iki kilometre sonra ikinci kamera göründü. Yine fren, yine seksen beş.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "07": {
+  "metin": "[thoughtful] İki kameranın kaydettiği saatlere bakılırsa araba on iki kilometreyi altı dakikada geçmişti.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "08": {
+  "metin": "Bu da dakikada iki kilometre, yani saatte yüz yirmi eder.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "09": {
+  "metin": "Sınıra uyan bir araba aynı yolu en az sekiz dakikada geçerdi.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ }
+}

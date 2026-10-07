@@ -7,7 +7,7 @@ destination: ders-ici-video
 aspect: 1920x1080
 language: tr
 audience: 9. sınıf öğrencileri
-length: 62s
+length: 71s
 narration: yes
 ---
 

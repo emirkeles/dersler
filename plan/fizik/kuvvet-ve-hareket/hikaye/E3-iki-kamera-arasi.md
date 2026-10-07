@@ -2,7 +2,7 @@
 
 **Ders:** 2. tema Kuvvet ve Hareket · E3 Sürat: ortalama ve anlık (son sahne)
 **Sıra:** fizik listesinde 2 numara, kademe I (`../../HIKAYE-ANIMASYONLARI.md`)
-**Durum (7 Ekim 2026):** HyperFrames projesi kuruldu, plan aşamasında. Senaryo ve kare listesi onay bekliyor; çizim, ses ve kompozisyon başlamadı.
+**Durum (7 Ekim 2026):** on iki kare kurulu ve seslendirildi (12 klip, 794 karakter, 58,9 saniye konuşma); film 71 saniye, zamanlama kliplere göre. `check` geçiyor. Video işlenmedi. Kullanıcı 1–6. kareleri görüp onayladı; 7–12. kareler ve seslendirme onay bekliyor.
 
 Ölçütler ve biçim: `../../../matematik/sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 1 ve 2. Üretim, HyperFrames'in (HeyGen) `general-video` iş akışıyla yürür; eklenti sürümü 0.8.140.
 
@@ -17,9 +17,10 @@ Senaryo, kare listesi ve niyet artık proje klasöründedir; bu dosya yalnızca 
 | `BRIEF.md` | neden, kimin için | `workflow: general-video` · `flow: automation` · `storyboard: yes` · mesaj, hedef, boyut, dil, kitle, süre. Gövde: Intent, Customizations, Notes |
 | `SCRIPT.md` | kilitli anlatım | 12 satır, 94 kelime, ses ve yönergeler, sayıların sağlaması. `araclar/hikaye-ses.js` bu dosyayı okur |
 | `STORYBOARD.md` | ne, kare kare | Kararlar, ölçek, ekrandaki sözcükler, yasaklar, açık sorular; 12 `## Frame` bölümü (hepsi `outline`) |
-| `frame.md` | nasıl görünür | Henüz yok; çizim dili onaylanınca yazılır |
-| `index.html` | kompozisyon | `hyperframes init` iskeleti; içi boş |
-| `storyboard.html` | eskiz sayfası | Henüz yok; plan onaylanınca çizilir |
+| `frame.md` | nasıl görünür | Kâğıt kesme üslubu, renk rolleri, yazı, iki plan (genel ve yakın); kullanıcı onayladı |
+| `index.html` | kompozisyon | On iki kare, tek dosya (yaklaşık 800 satır); `T` tablosu tahminî |
+| `kareler/` | görüntüler | Her karenin `poster` anındaki görüntüsü ve iki özet sayfası |
+| `storyboard.html` | eskiz sayfası | Çizilmedi; kullanıcı eskiz yerine kareleri doğrudan kurdurup görüntülerine baktı |
 
 ## 2. Hikâyenin işi
 
@@ -57,7 +58,7 @@ B7 projesindeki gibi tek dosya, tek kompozisyon, tek duraklatılmış GSAP zaman
 
 ### Katmanlar ve izler
 
-Kök: `<div id="root" data-composition-id="main" data-start="0" data-duration="62" data-width="1920" data-height="1080">`. Süre ses üretilince gerçek değere çekilir.
+Kök: `<div id="root" data-composition-id="main" data-start="0" data-duration="71" data-width="1920" data-height="1080">`.
 
 | Öğe | Zaman | İçerik |
 |---|---|---|
@@ -71,22 +72,24 @@ Kök: `<div id="root" data-composition-id="main" data-start="0" data-duration="6
 
 Tek sözlük bütün hareketi taşır: `const T = { l1, …, l12, son }`, satırların başlangıç saniyeleri. Her zaman çizelgesi çağrısı bir `T` değerine göre konumlanır; `<audio>` öğelerinin `data-start` değerleri aynı sayılardır. Klipler yeniden üretilirse yalnızca `T` ve `<audio>` satırları değişir. Sonunda `window.__timelines["main"] = tl`.
 
-Tahminî `T` (B7'nin temposundan; gerçek değerler kliplerden ölçülür):
+Gerçek `T` (kliplerden ölçüldü, 7 Ekim 2026). Klip başlangıcı kare başlangıcından 0,1–0,9 saniye sonradır; görüntü sesi önce karşılar.
 
-| Kare | Satır | Başlangıç – bitiş (sn) | `poster` |
+| Kare | Kare başlangıcı – bitişi (sn) | Klip (sn) | `poster` |
 |---|---|---|---|
-| 1 iki-gosterge | 1 | 0,0 – 5,5 | 4,5 |
-| 2 ceza | 2 | 5,5 – 9,0 | 8 |
-| 3 saat | 3 | 9,0 – 13,0 | 12 |
-| 4 ilk-kamera | 4 | 13,0 – 19,0 | 18 |
-| 5 gaz | 5 | 19,0 – 22,5 | 21,5 |
-| 6 ikinci-kamera | 6 | 22,5 – 29,5 | 28,5 |
-| 7 damgalar | 7 | 29,5 – 35,0 | 34 |
-| 8 bolme | 8 | 35,0 – 39,0 | 38,5 |
-| 9 sinira-uyan | 9 | 39,0 – 45,0 | 44 |
-| 10 anlik | 10 | 45,0 – 50,0 | 49 |
-| 11 ortalama | 11 | 50,0 – 55,0 | 54 |
-| 12 kapanis | 12 | 55,0 – 62,0 | 60 |
+| 1 iki-gosterge | 0 – 6,4 | 0,5 – 6,1 | 5,8 |
+| 2 ceza | 6,4 – 9,6 | 6,5 – 9,06 | 9,2 |
+| 3 saat | 9,6 – 16,1 | 9,7 – 15,54 | 15,6 |
+| 4 ilk-kamera | 16,1 – 21,7 | 16,2 – 21,4 | 21,2 |
+| 5 gaz | 21,7 – 26,3 | 21,8 – 25,8 | 25,6 |
+| 6 ikinci-kamera | 26,3 – 32,6 | 26,4 – 31,92 | 32,2 |
+| 7 damgalar | 32,6 – 39,4 | 32,7 – 38,94 | 38,8 |
+| 8 bolme | 39,4 – 44,9 | 39,5 – 44,54 | 44,3 |
+| 9 sinira-uyan | 44,9 – 50,3 | 45 – 49,72 | 49,5 |
+| 10 anlik | 50,3 – 57,6 | 50,4 – 57,12 | 56,5 |
+| 11 ortalama | 57,6 – 62,3 | 57,7 – 61,3 | 61,5 |
+| 12 kapanis | 62,3 – 71 | 63,2 – 67,04 | 69 |
+
+Cümle içi işaretler de anlatımdan alındı: fren "frene bastı"da (18,2), gaz "gaza bastı"dan hemen önce (22,9), ikinci fren "Yine fren"de (29,6). Yolculuğun ekran ölçeği bu üç andan çözülür; kliplerin yeri değişirse araba yine tam kameranın altında çakılır.
 
 Karelerin hareket kuralları `STORYBOARD.md` içinde her karenin `rules` satırındadır; adlar `hyperframes-animation/rules-index.md` içindendir (`viewport-change`, `control-target-sync`, `svg-path-draw`, `counting-dynamic-scale`, `scale-swap-transition`, `spring-pop-entrance`, `svg-icon-enrichment`, `coordinate-target-zoom`, `motion-blur-streak`, `waterfall-entry`).
 
@@ -113,7 +116,7 @@ Karelerin hareket kuralları `STORYBOARD.md` içinde her karenin `rules` satır�
 | 2 | Plan | `SCRIPT.md`, `STORYBOARD.md` (12 kare, `outline`) | **kullanıcı: onay ya da değişiklik; eskiz istenir mi** |
 | 3 | Görsel kimlik | `frame.md` (çizim dili, renk rolleri, yazı tipi) | kullanıcı: çizim dili |
 | 4 | Eskiz sayfası | `storyboard.html`; kareler `built` | kullanıcı: yerleşim onayı |
-| 5 | Ses | `assets/ses/01–12.mp3` (`node araclar/hikaye-ses.js e3-iki-kamera`) | kullanıcı ister (ücretli; 646 karakter) |
+| 5 | Ses | `assets/ses/01–12.mp3` (`node araclar/hikaye-ses.js e3-iki-kamera`), düzeyi eşitlenmiş kopyalar `assets/ses-esit/` | bitti (794 karakter); kullanıcı dinleyecek |
 | 6 | Kompozisyon | `index.html`; kareler `animated`; `T` gerçek sürelere çekilir | — |
 | 7 | Doğrulama | `npm run check`, kare görüntüleri | — |
 | 8 | Son önizleme ve işleme | `renders/e3-iki-kamera.mp4`, `kapak.jpg`, altyazı dosyası | kullanıcı: işle ya da değiştir |

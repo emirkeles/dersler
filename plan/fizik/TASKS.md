@@ -21,6 +21,17 @@ Plan: `kuvvet-ve-hareket/hikaye/E3-iki-kamera-arasi.md`
 - [x] HyperFrames 0.8.140 iş akışına göre yeniden düzenleme (`general-video`, `storyboard: yes`)
 - [x] Proje iskeleti (`fizik/kuvvet-ve-hareket/hikaye/e3-iki-kamera/`, `hyperframes init`)
 - [x] `BRIEF.md`, `SCRIPT.md` (12 satır, 94 kelime), `STORYBOARD.md` (12 kare, `outline`, 62 sn)
+- [x] 1. kare kuruldu (`index.html`, 0–5,5 sn) ve çizim dili önerisi yazıldı (`frame.md`); `check` geçti, görüntü `snapshots/kare-01-iki-gosterge.png`
+- [x] Kullanıcı onayı: 1. karenin görünüşü (7 Ekim 2026: beğendi; çizim dili kâğıt kesme olarak kesinleşti)
+- [x] 2 ve 3. kareler kuruldu (zarf, saat damgaları; 0–13 sn); `check` geçti; `snapshots/kare-02-ceza.png`, `kare-03-saat.png`
+- [x] Kullanıcı onayı: 2 ve 3. kareler (7 Ekim 2026)
+- [x] 4–6. kareler kuruldu: araba, büyük gösterge, kamera takibi, şerit metre ve kilometre sayacı (0–29,5 sn); `check` geçti; görüntüler `kareler/`
+- [x] Kullanıcı onayı: 4–6. kareler (7 Ekim 2026)
+- [x] 7–12. kareler kuruldu: süre ayracı, bölme, ölçekli tekrar (yeşil araba), göstergelerin dönüşü, ortalama ayracı, kapanış kartı; film 62 sn; `check` geçti
+- [ ] Kullanıcı onayı: 7–12. kareler ve filmin bütünü (Studio önizlemesi)
+- [x] Seslendirme: metin doğal anlatıma çekildi (114 kelime), 12 klip üretildi (ElevenLabs `eleven_v4`, 794 karakter, 58,9 sn), düzeyler eşitlendi, film kliplere göre yeniden zamanlandı (71 sn); `check` geçti
+- [ ] Kullanıcı: seslendirmeyi dinle (Studio önizlemesi); yanlış okunan satır varsa yalnızca o satır yeniden üretilir
+- [ ] `index.html` 350 satırı geçti (lint uyarısı); dünya ayrı bir alt kompozisyona taşınsın mı
 - [ ] Kullanıcı onayı (plan durağı): sıra (kanca başta mı, üç perde mi), senaryo, karakterler, sayılar
 - [ ] Kullanıcı kararı: eskiz sayfası (`storyboard.html`) çizilsin mi
 - [ ] Kullanıcı onayı: çizim dili; sonra `frame.md`
