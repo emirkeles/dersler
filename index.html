@@ -3,91 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>9. Sınıf Matematik — Sayılar</title>
+<title>9. Sınıf dersleri</title>
 <link rel="stylesheet" href="ortak/ders.css">
-<style>
-  /* ders.css dizüstünde sayfayı kilitler (tek ekran ders için); ders listesi kayabilmeli. */
-  html,body{height:auto;overflow:visible}
-  .hub{max-width:860px;margin:0 auto;padding:clamp(28px,7vh,72px) 24px 64px}
-  .hub .k{color:var(--muted);font-size:.95rem}
-  .hub h1{font-size:clamp(2.2rem,6vw,3.4rem);font-weight:700;margin:6px 0 14px;letter-spacing:-.02em;line-height:1.05}
-  .hub .lead{font-size:1.15rem;line-height:1.55;max-width:54ch;margin:0 0 36px;text-wrap:pretty}
-  .list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
-  .bolum{padding:34px 4px 10px;font-size:.95rem;font-weight:600;color:var(--a)}
-  .bolum:first-child{padding-top:0}
-  .lesson{display:grid;grid-template-columns:2.6rem minmax(0,1fr) auto;gap:4px 18px;align-items:baseline;padding:16px 4px;border-top:1px solid var(--line);text-decoration:none;color:inherit}
-  .lesson:hover{background:var(--surface)}
-  .lesson .no{font-size:1.5rem;font-weight:600;color:var(--a);font-variant-numeric:tabular-nums}
-  .lesson h2{margin:0;font-size:1.25rem;font-weight:600;line-height:1.25}
-  .lesson .hook{grid-column:2;color:var(--muted);font-size:1rem;line-height:1.5;max-width:60ch;text-wrap:pretty}
-  .lesson .st{grid-row:1;grid-column:3;font-size:.9rem;color:var(--muted);white-space:nowrap;text-align:right}
-  .lesson .st b{color:var(--text);font-weight:600}
-  .lesson .go{grid-column:3;grid-row:2;justify-self:end;align-self:start;color:var(--text);font-weight:600;font-size:.95rem;white-space:nowrap}
-  .lesson:hover .go{color:var(--a)}
-  .how{margin-top:28px;color:var(--muted);font-size:.95rem;line-height:1.6;max-width:62ch}
-  @media (max-width:640px){.lesson{grid-template-columns:2rem minmax(0,1fr)}.lesson .st,.lesson .go{grid-column:2;grid-row:auto;justify-self:start;text-align:left}}
-</style>
+<link rel="stylesheet" href="ortak/site.css">
 </head>
 <body>
-<main class="hub">
-  <div class="k">9. Sınıf Matematik · 1. Tema</div>
-  <h1>Sayılar</h1>
-  <p class="lead">Kuralı ezberleme, nereden geldiğini gör. Her ders bir soruyla başlar; önce sen tahmin edersin, sonra tahtada birlikte bakarız.</p>
-  <ul class="list" id="list"></ul>
-  <p class="how">Sahneler arasında <kbd>←</kbd> <kbd>→</kbd> ile gez, <kbd>Boşluk</kbd> ile duraklat. Öğrendiğin kurallar derste sağdaki deftere yazılır.</p>
-</main>
-<script>
-const BOLUMLER = [
-  { ad: 'A · Üslü ve köklü gösterimler', a: '#f5b04c', dersler: [
-    { id:'sayilar-a1', file:'a1-us-bir-sayactir.html', title:'Üs bir sayaçtır', hook:'Bir video 10 turda neden 1024 kişiye ulaşır?', scenes:5 },
-    { id:'sayilar-a2', file:'a2-geri-sar.html', title:'Geri sar: sıfır ve negatif üs', hook:'Videoyu başlangıcın da gerisine sararsak ne olur?', scenes:2 },
-    { id:'sayilar-a3', file:'a3-kok-yarim-us.html', title:'Kök = yarım üs', hook:'Yolculuğun tam ortasında kaç kişi vardı?', scenes:2 },
-    { id:'sayilar-a4', file:'a4-koklerle-islem.html', title:'Köklerle işlem', hook:'√9 + √16 ile √(9+16) aynı mı?', scenes:4 },
-    { id:'sayilar-a5', file:'a5-rasyonel-us.html', title:'Rasyonel üs ve n. kök', hook:'Yolu üçe bölersek ilk parçanın sonunda kaç kişi vardı?', scenes:4 },
-    { id:'sayilar-a6', file:'a6-eslenik.html', title:'Eşlenik', hook:'Paydada √3 − 1 varsa kökten nasıl kurtuluruz?', scenes:4 },
-    { id:'sayilar-a7', file:'a7-bilimsel-gosterim.html', title:'Bilimsel gösterim', hook:'150 000 000 km. Bu sıfırları her seferinde yazacak mıyız?', scenes:3 },
-    { id:'sayilar-a8', file:'a8-yaklasik-deger.html', title:'Yaklaşık değer', hook:'Alanı 1000 m² olan kare tarlanın kenarı kaç metre?', scenes:4 },
-  ] },
-  { ad: 'B · Aralıklar ve kümeler', a: '#ffc857', dersler: [
-    { id:'sayilar-b1', file:'b1-kume-dili.html', title:'Küme dili', hook:'Beğendiğin şarkıyı bir kez daha beğenirsen liste uzar mı?', scenes:5 },
-    { id:'sayilar-b2', file:'b2-dolu-nokta-bos-nokta.html', title:'Dolu nokta, boş nokta', hook:'Kapıda “140 cm ve üzeri” yazıyor. Tam 140 olan biner mi?', scenes:4 },
-    { id:'sayilar-b3', file:'b3-parantez-dili.html', title:'Parantez dili ve sonsuz', hook:'Bir aralık iki sayı ve iki parantezle nasıl yazılır?', scenes:3 },
-    { id:'sayilar-b4', file:'b4-dort-dil-tek-kume.html', title:'Dört dil, tek küme', hook:'ℝ yerine ℤ yazarsak aynı küme mi kalır?', scenes:3 },
-    { id:'sayilar-b5', file:'b5-kesisim-ve-birlesim.html', title:'Kesişim ve birleşim', hook:'İki oyuncağa da binebilenler kimler?', scenes:4 },
-    { id:'sayilar-b6', file:'b6-fark-ve-tumleme.html', title:'Fark ve tümleme', hook:'Hız trenine binip çarpışan arabaya binemeyenler kimler?', scenes:5 },
-    { id:'sayilar-b7', file:'b7-mutlak-degerle-aralik.html', title:'Mutlak değerle aralık', hook:'Boyunu 165 cm diye tahmin eden görevli hangi boylarda kazanır?', scenes:4 },
-  ] },
-  { ad: 'C · Sayı kümeleri', a: '#c792ff', dersler: [
-    { id:'sayilar-c1', file:'c1-her-kutu-bir-ihtiyac.html', title:'Her kutu bir ihtiyaçtan doğdu', hook:'3 − 5’in cevabı mı yok, yoksa cevabın konacağı kutu mu?', scenes:5 },
-    { id:'sayilar-c2', file:'c2-ondalik-acilim.html', title:'Ondalık açılımın adresi', hook:'0,333… hiç bitmiyor. Bitmeyen bir sayı hâlâ kesir midir?', scenes:4 },
-    { id:'sayilar-c3', file:'c3-sayi-dogrusundaki-delik.html', title:'Sayı doğrusundaki delik', hook:'Karenin köşegenini ölçebilirsin. Peki kesir olarak yazabilir misin?', scenes:4 },
-    { id:'sayilar-c4', file:'c4-siralama-ve-arada-olma.html', title:'Sıralama ve arada olma', hook:'3’ten sonraki tam sayı 4. Peki 0,5’ten sonraki sayı hangisi?', scenes:4 },
-    { id:'sayilar-c5', file:'c5-ispat-mi-karsi-ornek-mi.html', title:'İspat mı, karşı örnek mi?', hook:'Kaç örnek “her zaman” demeye yeter?', scenes:3 },
-  ] },
-  { ad: 'D · İşlem özellikleri ve cebir', a: '#3cc8e8', dersler: [
-    { id:'sayilar-d1', file:'d1-onerme.html', title:'Önerme: doğru ya da yanlış', hook:'“Her asal sayı tektir.” Yanlış çıkarmak için kaç sayı gerekir?', scenes:5 },
-    { id:'sayilar-d2', file:'d2-ve-veya-ya-da.html', title:'Ve, veya, ya da', hook:'6 için “çift veya 3’ün katı” demek doğru olur mu?', scenes:5 },
-    { id:'sayilar-d3', file:'d3-ise-ancak-ve-ancak.html', title:'İse, ancak ve ancak', hook:'“x > 5 ise x > 3” doğru. Tersi de doğru mu?', scenes:4 },
-    { id:'sayilar-d4', file:'d4-degisme-ve-birlesme.html', title:'Değişme ve birleşme', hook:'17 + 28 + 12: kasiyer önce hangi ikisini toplar?', scenes:5 },
-    { id:'sayilar-d5', file:'d5-dagilma.html', title:'Dağılma', hook:'Kasiyer 7 × 98’i hesap makinesinden önce nasıl buluyor?', scenes:5 },
-    { id:'sayilar-d6', file:'d6-birim-ters-yutan.html', title:'Birim, ters, yutan', hook:'Hangi sayıya basarsan hesap makinesinin ekranı değişmez?', scenes:5 },
-    { id:'sayilar-d7', file:'d7-ozdeslikler.html', title:'Özdeşlikler', hook:'(3 + 4)² ile 3² + 4² eşit mi?', scenes:4 },
-    { id:'sayilar-d8', file:'d8-carpanlara-ayirma.html', title:'Çarpanlara ayırma ve sıfır çarpım', hook:'Kasiyer 51 × 49’u zihinden nasıl söylüyor?', scenes:4 },
-  ] },
-];
-const kok = document.getElementById('list');
-for (const B of BOLUMLER) {
-  kok.insertAdjacentHTML('beforeend', `<li class="bolum" style="--a:${B.a}">${B.ad}</li>`);
-  B.dersler.forEach((L, k) => {
-    let p = null; try { p = JSON.parse(localStorage.getItem('ders:' + L.id)); } catch (e) {}
-    const done = p && p.done ? p.done.length : 0;
-    const total = L.scenes + 2;
-    const st = !done ? '' : done >= total ? '<b>Tamamlandı</b>' : `<b>${done}</b> / ${total} sahne`;
-    const score = p && p.total ? ` · sorular <b>${p.score}/${p.total}</b>` : '';
-    kok.insertAdjacentHTML('beforeend', `<li><a class="lesson" href="${L.file}" style="--a:${B.a}"><span class="no">${k + 1}</span><h2>${L.title}</h2><span class="st">${st}${score}</span><span class="hook">${L.hook}</span><span class="go">${done ? 'Devam et' : 'Başla'} ›</span></a></li>`);
-  });
-}
-</script>
-
+<script src="ortak/katalog.js"></script>
+<script src="ortak/site.js"></script>
+<script>Site.anasayfa();</script>
 </body>
 </html>

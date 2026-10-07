@@ -1,10 +1,11 @@
 {
   "name": "matematik-sayilar-araclar",
   "private": true,
-  "description": "Ders ölçüm ve ses üretim araçları (yalnızca geliştirme sırasında kullanılır; dersler bağımlılıksız çalışır).",
+  "description": "Ders ölçüm, ünite denetim ve ses üretim araçları (yalnızca geliştirme sırasında kullanılır; dersler bağımlılıksız çalışır).",
   "scripts": {
     "olc": "node olc.js",
-    "ses": "node ses-uret.js"
+    "ses": "node ses-uret.js",
+    "denetle": "node denetle.js"
   },
   "dependencies": {
     "puppeteer-core": "^25.12.0"

@@ -1,0 +1,139 @@
+/* Ana sayfa ve ünite sayfaları. ders.css'ten sonra yüklenir: renkler, yazı tipi ve odak çizgisi oradan gelir.
+   Sınıf adları ders.css'tekilerle çakışmamalı (.intro, .act, .note, .card, .next orada motorun parçalarıdır).
+   Fikir aynı: tahta sayfadaki tek renkli yüzeydir (kaldığın dersin açılış sorusu); listeler düz ve sessizdir.
+   Sarı yalnızca "şimdi bunu aç" demektir: Devam et düğmesi ve yarıda kalan ders. */
+body.site{
+  --cta:#ffd166; --cta-ink:#1a1405; --dim:#7d8698; --soft:#c9cfdb; --hair:#1f2532;
+  height:auto; min-height:100vh; overflow:visible;   /* ders.css dizüstünde sayfayı kilitler; burada sayfa kayar */
+}
+html:has(body.site){height:auto;overflow:visible}
+.site a{color:inherit;text-decoration:none}
+.site h1,.site h2,.site p,.site ol{margin:0}
+.site .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+.site .count,.site .code,.site .no{font-variant-numeric:tabular-nums}
+
+/* üst çubuk */
+.bar{border-bottom:1px solid var(--hair)}
+.bar .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:0 28px;min-height:60px}
+.brand{font-size:1.06rem;font-weight:600;display:inline-flex;align-items:center;min-height:44px}
+.trail{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:.9rem;color:var(--muted)}
+.trail a{display:inline-flex;align-items:center;min-height:44px}
+.trail a:hover{color:var(--text)}
+.trail span:last-child{color:var(--text)}
+
+.site .page{display:flex;flex-direction:column;gap:48px;padding-top:40px;padding-bottom:72px}
+
+/* tahta: kaldığın dersin açılış sorusu */
+.board{position:relative;display:flex;flex-direction:column;justify-content:center;aspect-ratio:16/9;background:var(--board);border-radius:10px;padding:8% 9%;overflow:hidden}
+.board .code{position:absolute;left:9%;top:9%;font-size:.95rem;font-weight:600;color:var(--k)}
+.board .ask{font-size:clamp(1.3rem,2.35vw,1.95rem);font-weight:600;line-height:1.22;letter-spacing:-.012em;text-wrap:balance}
+.board .ticks{position:absolute;left:9%;right:9%;bottom:9%}
+.ticks{display:flex;gap:4px}
+.ticks i{flex:1;height:4px;border-radius:2px;background:#27325a}
+.ticks i.on{background:var(--k)}
+
+/* kaldığın yerden */
+.resume{display:flex;flex-wrap:wrap;align-items:center;gap:28px 48px}
+.resume .board{flex:1 1 400px;max-width:560px}
+.resume-text{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.resume .state{font-size:.95rem;font-weight:600;color:var(--cta)}
+.resume h1{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:700;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+.resume .where{font-size:1rem;color:var(--muted);line-height:1.5;max-width:44ch}
+.resume .where .count{margin-left:10px;color:var(--soft)}
+.resume .actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;margin-top:10px}
+.resume.done h1{font-size:clamp(1.6rem,2.8vw,2.1rem);max-width:22ch}
+.go{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:var(--radius);background:var(--cta);color:var(--cta-ink)!important;font-weight:650;font-size:1.02rem}
+.go:hover{filter:brightness(1.07)}
+.more{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;color:var(--soft);text-decoration:underline!important;text-decoration-color:var(--line)!important;text-underline-offset:4px}
+.more:hover{color:var(--text);text-decoration-color:var(--muted)!important}
+
+/* ders bloğu (Matematik) */
+.subject{border-top:1px solid var(--line)}
+.subject-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:22px 0 18px}
+.glyph{flex:none;width:44px;height:44px;border-radius:var(--radius);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:var(--cta)}
+.subject-head .title{flex:1 1 220px;min-width:0}
+.subject-head h2{font-size:1.5rem;font-weight:650;line-height:1.2;letter-spacing:-.01em}
+.subject-head .title p{font-size:.9rem;color:var(--muted);margin-top:2px}
+.subject-head .count,.unit-top .count{font-size:.95rem;color:var(--muted)}
+.subject-head .count b,.unit-top .count b{color:var(--text);font-weight:650}
+
+.unit{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.unit-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:16px 20px 13px}
+.unit-head .no{font-size:.9rem;color:var(--muted)}
+.unit-head .name{font-size:1.2rem;font-weight:600}
+.unit-head .open{margin-left:auto;font-size:.9rem;font-weight:600}
+.unit-head:hover .open{color:var(--cta)}
+.topic{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;min-height:48px;padding:9px 20px;border-top:1px solid var(--hair)}
+.topic:hover{background:var(--surface)}
+.letter{flex:none;width:20px;font-size:.95rem;font-weight:700;color:var(--k)}
+.topic .name{flex:1 1 220px;min-width:0}
+.topic .count{flex:none;width:52px;text-align:right;font-size:.9rem;color:var(--muted)}
+.segs{flex:1 1 200px;display:flex;gap:4px}
+.segs i{flex:1;height:8px;border-radius:4px;background:var(--line)}
+.segs i.on{background:var(--k)}
+.segs i.half{background:color-mix(in srgb,var(--k) 45%,var(--line))}
+
+.soon{display:flex;flex-wrap:wrap;gap:6px 28px;padding:18px 0 0;color:var(--dim);font-size:.9rem;line-height:1.5}
+.soon p{flex:none}
+.soon ol{flex:1 1 420px;padding:0;list-style-position:inside;columns:2 220px;column-gap:28px}
+.soon li::marker{color:var(--dim)}
+
+/* ünite sayfası: başlık + ilerleme */
+.unit-top{display:flex;flex-wrap:wrap;align-items:flex-end;gap:28px 56px}
+.unit-intro{flex:1 1 460px;min-width:0}
+.unit-top .where{font-size:.95rem;color:var(--muted)}
+.unit-top h1{font-size:clamp(2.6rem,6vw,3.6rem);font-weight:700;line-height:1.02;letter-spacing:-.025em;margin:6px 0 14px}
+.unit-top .lead{font-size:1.12rem;line-height:1.55;color:var(--soft);max-width:54ch;text-wrap:pretty}
+.unit-top .progress{flex:1 1 300px;max-width:380px;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
+.unit-top .next{font-size:1.02rem;line-height:1.4}
+.unit-top .next span{display:block;font-size:.9rem;font-weight:600;color:var(--cta);margin-bottom:2px}
+.unit-top .next b{font-weight:650;margin-right:6px}
+.unit-top .go{margin-top:8px}
+
+/* konular: açılır liste; sıradaki konu açık gelir */
+.topics{border-bottom:1px solid var(--line)}
+.topic-block{border-top:1px solid var(--line)}
+.topic-block summary{display:flex;flex-wrap:wrap;align-items:center;gap:6px 16px;min-height:64px;padding:10px 4px;cursor:pointer;list-style:none}
+.topic-block summary::-webkit-details-marker{display:none}
+.topic-block summary::after{content:"+";flex:none;width:24px;text-align:center;font-size:1.4rem;line-height:1;color:var(--muted)}
+.topic-block[open] summary::after{content:"−"}
+.topic-block summary:hover::after{color:var(--text)}
+.topic-block summary .letter{width:24px;font-size:1.2rem}
+.topic-block summary .name{flex:1 1 240px;min-width:0;font-size:1.25rem;font-weight:600}
+.topic-block summary .segs{flex:0 1 200px}
+.topic-block summary .count{flex:none;font-size:.9rem;color:var(--muted);min-width:9ch;text-align:right}
+.lessons{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr));gap:0 40px;padding:0 4px 22px 44px}
+.lesson{display:flex;gap:14px;padding:15px 12px 15px 0;border-top:1px solid var(--hair)}
+.lesson:hover .name{color:var(--cta)}
+.lesson .code{flex:none;width:30px;padding-top:2px;font-size:.95rem;font-weight:600;color:var(--k)}
+.lesson .body{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.lesson .row{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 12px}
+.lesson .name{font-size:1.08rem;font-weight:600;line-height:1.3}
+.lesson .status{flex:none;display:inline-flex;align-items:center;gap:6px;font-size:.82rem;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.lesson .ask{font-size:.95rem;line-height:1.45;color:var(--muted);text-wrap:pretty}
+.lesson .do{font-size:.9rem;font-weight:600;margin-top:3px}
+.lesson.current .do,.lesson.current .status{color:var(--cta)}
+.lesson.done .name{color:var(--soft)}
+.lesson.done .do{color:var(--muted);font-weight:500}
+.tick{color:var(--text)}
+
+/* hikâyeler */
+.stories h2{font-size:1.4rem;font-weight:650;letter-spacing:-.01em}
+.stories .sub{font-size:.95rem;color:var(--muted);margin:4px 0 16px}
+.story-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr));gap:14px 40px}
+.story{display:flex;align-items:center;gap:16px}
+.story .thumb{flex:none;width:150px;aspect-ratio:16/9;border-radius:6px;background:var(--board);display:flex;align-items:center;justify-content:center;color:var(--text)}
+.story:hover .thumb{color:var(--cta)}
+.story .body{min-width:0;display:flex;flex-direction:column;gap:2px}
+.story .name{font-size:1.05rem;font-weight:600;line-height:1.3}
+.story .from{font-size:.88rem;color:var(--muted)}
+
+.hint{font-size:.9rem;line-height:1.7;color:var(--muted);max-width:62ch}
+
+@media (max-width:640px){
+  .site .wrap{padding:0 18px}
+  .site .page{gap:36px;padding-top:24px}
+  .lessons{padding-left:0}
+  .topic-block summary .segs{flex-basis:100%;order:5}
+  .soon ol{columns:1}
+}

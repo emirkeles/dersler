@@ -4,17 +4,19 @@
    node hikaye-ses.js a8-tarla-cit --liste   Satırları ve karakter sayısını göster (API çağrısı yok).
    node hikaye-ses.js a8-tarla-cit           Eksik ya da metni değişmiş klipleri üret.
 
-   Kaynak hikaye/<proje>/SCRIPT.md: her "## Line N" başlığının altındaki dört boşluk girintili satır okunur.
+   Kaynak <ünite>/hikaye/<proje>/SCRIPT.md: her "## Line N" başlığının altındaki dört boşluk girintili satır okunur.
    "**Delivery:** [curious]" gibi köşeli parantezle başlayan yönerge metnin başına eklenir; düz yazı
-   yönergeler yalnızca nottur. Klipler hikaye/<proje>/assets/ses/NN.mp3 olarak yazılır. */
+   yönergeler yalnızca nottur. Klipler <ünite>/hikaye/<proje>/assets/ses/NN.mp3 olarak yazılır. */
 const fs = require('fs'), path = require('path');
-const { KOK, SES, MODEL, seslendir, anahtarVar } = require('./ses-uret');
+const { SES, MODEL, seslendir, anahtarVar } = require('./ses-uret');
+const { uniteKlasorleri } = require('./tarayici');
 
 const args = process.argv.slice(2);
 const proje = args.find((a) => !a.startsWith('--'));
 if (!proje) { console.log(fs.readFileSync(__filename, 'utf8').split('*/')[0].replace('#!/usr/bin/env node\n/* ', '')); process.exit(0); }
 
-const kok = path.join(KOK, 'hikaye', proje);
+const kok = uniteKlasorleri().map((u) => path.join(u, 'hikaye', proje)).find((k) => fs.existsSync(k));
+if (!kok) { console.error('Hikâye bulunamadı: ' + proje); process.exit(1); }
 const satirlar = [];
 for (const bolum of fs.readFileSync(path.join(kok, 'SCRIPT.md'), 'utf8').split(/^## Line /m).slice(1)) {
   const no = parseInt(bolum, 10);

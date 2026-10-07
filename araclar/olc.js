@@ -8,13 +8,13 @@
    Denetlenenler (her altyazı anında):
      yerleşim  sayfa kayıyor mu · altyazı kutusuna sığıyor mu · "sıra sende" paneli yana taşıyor mu
      tahta     aynı anda görünen yazı (kelime, öğe) · en küçük punto · üst üste binen / tahtadan taşan yazı
-     bütçe     altyazı > 12 kelime · tahtada > 25 kelime · punto < 12 px   (plan/PLAN.md, yazı bütçesi) */
+     bütçe     altyazı > 12 kelime · tahtada > 25 kelime · punto < 12 px   (plan/matematik/sayilar/PLAN.md, yazı bütçesi) */
 const fs = require('fs'), path = require('path');
 const { dersDosyasi, dersiAc, sahneyiOynat, sleep } = require('./tarayici');
 
 const args = process.argv.slice(2);
 const deger = (ad) => { const i = args.indexOf(ad); return i >= 0 ? args[i + 1] : null; };
-const no = args.find((a) => /^[a-z]?\d+$/i.test(a));
+const no = args.find((a) => /^([\w-]+\/)*[a-z]?\d+$/i.test(a));
 if (!no) { console.log(fs.readFileSync(__filename, 'utf8').split('*/')[0].replace('#!/usr/bin/env node\n/* ', '')); process.exit(0); }
 const [vw, vh] = (deger('--boyut') || '1366x657').split('x').map(Number);
 const cikti = deger('--goruntu');

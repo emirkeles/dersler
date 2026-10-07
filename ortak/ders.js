@@ -136,7 +136,7 @@
     root.innerHTML = '';
     root.append(
       h('header', { class: 'top' },
-        h('a', { class: 'back', href: cfg.back || 'index.html', title: 'Tüm dersler' }, '‹ ' + cfg.title),
+        h('a', { class: 'back', href: cfg.back || 'index.html', title: 'Üniteye dön' }, '‹ ' + cfg.title),
         (el.head = h('div', { class: 'scenehead' })),
         (el.tools = h('div', { class: 'tools' }))),
       (el.prog = h('nav', { class: 'prog', 'aria-label': 'Sahneler' })),
@@ -362,6 +362,7 @@
       const tok = state.token;
       if (state.audio) state.audio.pause();
       state.i = i;
+      store.set('ders:son', { id: cfg.id, t: Date.now() });  // ana sayfadaki "kaldığın yerden" kartı için
       const sc = scenes[i];
       el.stage.innerHTML = ''; el.cap.innerHTML = ''; el.act.innerHTML = '';
       el.stage.classList.remove('enter'); void el.stage.offsetWidth; el.stage.classList.add('enter');
@@ -384,7 +385,7 @@
       if (tok !== state.token) return;
       state.done.add(i);
       el.prog.children[i].classList.add('done');
-      store.set('ders:' + cfg.id, { done: [...state.done], score: (store.get('ders:' + cfg.id) || {}).score });
+      store.set('ders:' + cfg.id, { ...(store.get('ders:' + cfg.id) || {}), done: [...state.done], sahne: scenes.length });
       if (i < scenes.length - 1) el.next.classList.add('ready');
     }
 
@@ -469,7 +470,7 @@
         });
       }
       const prev = store.get('ders:' + cfg.id) || {};
-      store.set('ders:' + cfg.id, { ...prev, done: [...state.done], score: Math.max(prev.score || 0, score), total: quiz.length });
+      store.set('ders:' + cfg.id, { ...prev, done: [...state.done], sahne: scenes.length, score: Math.max(prev.score || 0, score), total: quiz.length });
       sc.innerHTML = '';
       const msg = score === quiz.length ? 'Kusursuz. Konunun mantığını yakalamışsın.' : score / quiz.length >= 0.7 ? 'Çok iyi. Küçük bir eksik var.' : 'Güzel başlangıç. İşaretli sahneleri tekrar izlemek işe yarar.';
       const review = h('div', { class: 'review' });
@@ -492,12 +493,8 @@
         card.appendChild(row);
         await c.wait(500);
       }
-      const ORDER = [['01-uslu-ve-koklu.html', 'Aralıklar ve Küme Sembolleri'], ['02-araliklar-ve-kume-sembolleri.html', 'Sayı Kümeleri'], ['c1-her-kutu-bir-ihtiyac.html', 'İşlem Özellikleri'], ['04-islem-ozellikleri-cebirsel.html', null]];
-      const file = decodeURIComponent(location.pathname.split('/').pop());
-      const at = ORDER.findIndex((o) => o[0] === file);
-      if (!cfg.nextLesson && at >= 0 && at < ORDER.length - 1) cfg.nextLesson = { href: ORDER[at + 1][0], label: 'Sonraki ders: ' + ORDER[at][1] + ' ›' };
       if (cfg.nextLesson) card.appendChild(h('a', { class: 'btn', style: { textDecoration: 'none' }, href: cfg.nextLesson.href }, cfg.nextLesson.label || 'Sonraki ders ›'));
-      card.appendChild(h('a', { class: 'btn ghost', style: { textDecoration: 'none', alignSelf: 'flex-start' }, href: cfg.back || 'index.html' }, 'Tüm dersler'));
+      card.appendChild(h('a', { class: 'btn ghost', style: { textDecoration: 'none', alignSelf: 'flex-start' }, href: cfg.back || 'index.html' }, 'Üniteye dön'));
     }
 
     const api = { id: cfg.id, go, state, scenes };

@@ -2,16 +2,40 @@
 
 Bağımlılık yok, saf JS/SVG. Her ders bir HTML dosyası + bir JS dosyasıdır.
 
-## Ders HTML iskeleti (kök klasörde `NN-ad.html`)
+## Sitenin yapısı
+```
+index.html                      ana sayfa (kaldığın yerden + dersler ve üniteleri)
+<ders>/<ünite>/index.html       ünite sayfası (konular, kısa dersler, hikâyeler)
+<ders>/<ünite>/unite.js         ünitenin kısa ders listesi
+<ders>/<ünite>/a1-….html        kısa dersler; yanında dersler/ ses/ hikaye/
+ortak/ders.js ders.css          ders motoru
+ortak/katalog.js                dersler ve ünitelerin sırası; hangi ünitenin yayında olduğu
+ortak/site.js site.css          ana sayfa ve ünite sayfası
+plan/<ders>/<ünite>/            müfredat, plan, senaryolar (yalnızca geliştirme)
+```
+Adlar: Ders (Matematik) → Ünite (Sayılar; MEB "tema" der) → Konu (A · Üslü ve köklü gösterimler) → Kısa ders (A1). Kurallar `plan/KURALLAR.md` dosyasında. Örnek ünite: `matematik/sayilar/`.
+
+## Ünite ekleme
+Ünite yalnızca kendi klasörüne yazılarak eklenir; ortak dosyalara dokunulmaz (üniteler paralel yazılabilsin diye). Çalışan bir şablon `ortak/sablon/` klasöründedir: kopyala, `'sablon'` yazan yerlere ünitenin klasör adını yaz. Bir üniteyi baştan sona yazmanın adımları `plan/ISLEME.md` dosyasındadır.
+
+1. `<ders>/<ünite>/index.html`: `matematik/sayilar/index.html` dosyasının kopyası; başlık ve `Site.unite('<ders>', '<ünite>', { kok: '../../' })` satırı değişir. Sırayla `katalog.js`, kendi `unite.js` dosyası ve `site.js` yüklenir.
+2. `<ders>/<ünite>/unite.js`: `KATALOG.unite('<ders>', '<ünite>', { tanitim, konular, hikayeler })`. Biçim `ortak/katalog.js` dosyasının başında. Her kısa ders bir satır: `[dosya, başlık, açılış sorusu, sahne sayısı]`.
+3. Kısa dersler: aşağıdaki iskelet. Yeni ünitelerde her kısa ders kendi dosyasındadır (`a1-ad.html` + `dersler/a1-ad.js`, `Ders.start` doğrudan çağrılır); ünitenin ortak çizim araçları `dersler/kit.js` içinde `window.KIT` olarak durur ve ders dosyasından önce yüklenir. Aşağıda anlatılan `DERS_PARCA` düzeni yalnızca Sayılar ünitesine özgüdür (eski uzun derslerin bölünmesinden kaldı). Dersin `id` alanı `<ünite>-<kod>` olur (`sayilar-a1`); ana sayfa ilerlemeyi bu kimlikle bulur. `kicker` "Konu A · …" biçimindedir, `back: 'index.html'` ünite sayfasına döner.
+4. `node araclar/denetle.js <ders>/<ünite>` temiz çıkmalı.
+5. Yayın: ünite hazır olunca `ortak/katalog.js` içindeki satırına `yayinda: true` eklenir. O zamana kadar ana sayfada "Hazırlanan üniteler" arasında görünür; ünite sayfası doğrudan açılarak önizlenir.
+
+Ünitenin kimliği klasör adıdır ve `ortak/katalog.js` içinde kayıtlı olmalıdır. Konu renkleri için motorun paleti: `#f5b04c`, `#3ddc97`, `#c792ff`, `#3cc8e8`, `#6ea8ff`, `#ff8a5b`. `ortak/site.css` içindeki sınıf adları `ders.css`'tekilerle çakışmamalı.
+
+## Ders HTML iskeleti (ünite klasöründe `a1-ad.html`)
 ```html
 <!doctype html><html lang="tr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>…</title>
-<link rel="stylesheet" href="ortak/ders.css">
+<link rel="stylesheet" href="../../ortak/ders.css">
 <style>/* derse özel ek stil (isteğe bağlı) */</style></head>
 <body><div id="app"></div>
-<script src="ortak/ders.js"></script>
-<script src="ses/<ders-id>.js"></script>   <!-- kayıtlı anlatım dizini; araclar/ses-uret.js yazar -->
+<script src="../../ortak/ders.js"></script>
+<script src="ses/<ders-id>.js"></script>   <!-- kayıtlı anlatım dizini; araclar/ses-uret.js yazar. Seslendirme üretilene kadar bu satır konmaz -->
 <script src="dersler/NN-ad.js"></script></body></html>
 ```
 
@@ -30,9 +54,9 @@ Ders.start({
 ```
 Video sahnesi: `run` yerine `{ title, goal, video: 'hikaye/…mp4', altyazi: '…vtt' }` verilirse sahne videoyu tahtada oynatır (hikâye animasyonları). Duraklat ve hız düğmeleriyle uyumludur; video bitince ya da “Videoyu geç” ile sahne tamamlanır.
 
-Quiz ve Özet sahneleri otomatik eklenir. İlerleme `localStorage`'a yazılır.
+Quiz ve Özet sahneleri otomatik eklenir. İlerleme `localStorage`'a yazılır: `ders:<id>` = `{ done, sahne, score, total }` (biten sahneler, toplam sahne, çıkış sorusu puanı), `ders:son` = en son açılan ders. `back: 'index.html'` ünite sayfasına döner.
 
-Kısa dersler: bir bölümün sahneleri tek JS dosyasında durur, her kısa dersin kendi HTML sayfası vardır. Sayfa `<script>window.DERS_PARCA = 'a1';</script>` ile hangi parçayı istediğini söyler; JS dosyası sondaki `PARCALAR` tablosundan o parçanın sahnelerini, 2 çıkış sorusunu (`quizTitle: 'Çıkış soruları'`) ve özetini seçer (örnek: `dersler/01-uslu-ve-koklu.js`, sayfalar `a1-…html` – `a4-…html`). Ders kimliği `sayilar-a1` biçimindedir; araçlar `node olc.js a1` diye çağrılır.
+Kısa dersler: bir bölümün sahneleri tek JS dosyasında durur, her kısa dersin kendi HTML sayfası vardır. Sayfa `<script>window.DERS_PARCA = 'a1';</script>` ile hangi parçayı istediğini söyler; JS dosyası sondaki `PARCALAR` tablosundan o parçanın sahnelerini, 2 çıkış sorusunu (`quizTitle: 'Çıkış soruları'`) ve özetini seçer (örnek: `dersler/01-uslu-ve-koklu.js`, sayfalar `a1-…html` – `a4-…html`). Ders kimliği `sayilar-a1` biçimindedir; araçlar `node olc.js a1` diye çağrılır (aynı kod iki ünitede varsa `node olc.js sayilar/a1`).
 
 Bölümün çizim araçlarını kullanan yeni bir kısa ders kendi dosyasında da durabilir (örnek: `dersler/b1-kume-dili.js`; Bölüm D'de `dersler/d1-onerme.js`, araçlar `dersler/04-islem-ozellikleri-cebirsel.js` içinde). Dosya `window.DERS_EK.b1 = (K) => ({ title, hook, scenes, quiz, summary, next })` ile kaydolur; `K`, bölüm dosyasının sonundaki `KIT` nesnesidir. Sayfa bu dosyayı bölüm dosyasından **önce** yükler.
 
@@ -58,9 +82,10 @@ Görsel dil: tahta ekrandaki tek renkli yüzeydir; çevresi düz ve sessizdir. D
 
 Renk rolleri: `--c1` mavi, `--c2` turuncu, `--c3` yeşil, `--c4` mor, `--c5` sarı, `--c6` turkuaz; `--good`, `--bad`, `--warn`. SVG içinde `fill="var(--c1)"` çalışır. Bir kavrama bir renk ver ve ders boyunca aynı kalsın (örn. taban = sarı, üs = turkuaz). HTML sınıfları: `.t1…t6` renk, `.good/.bad/.warn/.muted`, `.m` matematik fontu.
 
-Yazı bütçesi (ayrıntı `plan/PLAN.md`): altyazı ≤ 12 kelime, tahtada aynı anda ≤ ~25 kelime, punto ≥ 12 px.
+Yazı bütçesi (ayrıntı `plan/matematik/sayilar/PLAN.md`): altyazı ≤ 12 kelime, tahtada aynı anda ≤ ~25 kelime, punto ≥ 12 px.
 
 ## Araçlar (`araclar/`, yalnızca geliştirme)
-İlk kullanımda `cd araclar && npm install`. Chrome gerekir (`CHROME_PATH` ile yol verilebilir; HyperFrames'in indirdiği `~/.cache/hyperframes/chrome/…/chrome-headless-shell` de olur).
-- `node olc.js 01 [--boyut 1366x657] [--goruntu klasör]` — dersi baştan sona oynatır (etkileşimleri otomatik geçer); sayfa kayması, taşan/üst üste yazı, punto, yazı bütçesi ve konsol hatalarını raporlar; istenirse her altyazıda ekran görüntüsü alır. Yeni ya da değişen her dersten sonra çalıştır ve görüntülere bak.
-- `node ses-uret.js 01 --liste` — seslendirilecek satırları ve karakter sayısını gösterir. `node ses-uret.js 01 [--sahne 1-3]` ElevenLabs ile eksik klipleri üretir. API anahtarı kökteki `.env` dosyasında (`ELEVENLABS_API_KEY`); anlatıcı sesi ve model betiğin başındaki `VARSAYILAN` içinde. Klipler `ses/<ders-id>/`, dizin `ses/<ders-id>.js`. Metni değişen altyazının klibi yeniden üretilir; önce metni kesinleştir, sonra seslendir.
+İlk kullanımda `cd araclar && npm install`. Komutlar proje kökünden `node araclar/<araç>.js …` diye çalıştırılır. Chrome gerekir; kurulu Chrome ya da HyperFrames'in indirdiği başsız Chrome (`~/.cache/hyperframes/chrome/`) kendiliğinden bulunur, başka bir yol `CHROME_PATH` ile verilir.
+- `node araclar/denetle.js <ders>/<ünite>` — ünitenin `unite.js` dosyasını kısa derslerle karşılaştırır: dosyalar, kimlikler, sahne sayıları, konsol hataları, ünite sayfasındaki kırık bağlantılar. Sorun varsa çıkış kodu 1.
+- `node araclar/olc.js a1 [--boyut 1366x657] [--goruntu klasör]` — dersi baştan sona oynatır (etkileşimleri otomatik geçer); sayfa kayması, taşan/üst üste yazı, punto, yazı bütçesi ve konsol hatalarını raporlar; istenirse her altyazıda ekran görüntüsü alır. Yeni ya da değişen her dersten sonra çalıştır ve görüntülere bak.
+- `node araclar/ses-uret.js a1 --liste` — seslendirilecek satırları ve karakter sayısını gösterir. `node araclar/ses-uret.js a1 [--sahne 1-3]` ElevenLabs ile eksik klipleri üretir. API anahtarı kökteki `.env` dosyasında (`ELEVENLABS_API_KEY`); anlatıcı sesi ve model betiğin başındaki `VARSAYILAN` içinde. Klipler dersin ünite klasöründe `ses/<ders-id>/`, dizin `ses/<ders-id>.js`. Metni değişen altyazının klibi yeniden üretilir; önce metni kesinleştir, sonra seslendir.
