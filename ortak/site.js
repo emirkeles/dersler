@@ -163,7 +163,7 @@
         <h2>Hikâyeler</h2>
         <p class="sub">Derslerin sonundaki kısa videolar. Sınavdan önce hızlı tekrar için.</p>
         <div class="story-list">${u.tema.hikayeler.map((h) => `<a class="story" href="${kok + u.tema.yol + h.video}">
-          <span class="thumb">${OYNAT}</span>
+          <span class="thumb">${h.kapak ? `<img src="${kok + u.tema.yol + h.kapak}" alt="" loading="lazy">` : ''}<span class="play">${OYNAT}</span></span>
           <span class="body"><span class="name">${esc(h.ad)}</span><span class="from">${h.kod} ${esc(h.ders)}</span></span></a>`).join('')}</div>
       </section>` : '';
 

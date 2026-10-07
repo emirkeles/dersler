@@ -41,7 +41,7 @@ KATALOG.tema('matematik', 'sayilar', {
   ],
   // Hikâye videoları dersin son sahnesinde de oynar; burada tek tek yeniden izlenebilir.
   hikayeler: [
-    { kod: 'A8', ders: 'Yaklaşık değer', ad: 'Bir dönüm tarla, kaç metre çit?', video: 'hikaye/a8-tarla-cit/renders/sesli-taslak.mp4' },
-    { kod: 'B7', ders: 'Mutlak değerle aralık', ad: 'Kombi 22 derecede', video: 'hikaye/b7-kombi-22/renders/b7-kombi-22.mp4' },
+    { kod: 'A8', ders: 'Yaklaşık değer', ad: 'Bir dönüm tarla, kaç metre çit?', video: 'hikaye/a8-tarla-cit/renders/sesli-taslak.mp4', kapak: 'hikaye/a8-tarla-cit/renders/kapak.jpg' },
+    { kod: 'B7', ders: 'Mutlak değerle aralık', ad: 'Kombi 22 derecede', video: 'hikaye/b7-kombi-22/renders/b7-kombi-22.mp4', kapak: 'hikaye/b7-kombi-22/renders/kapak.jpg' },
   ]
 });

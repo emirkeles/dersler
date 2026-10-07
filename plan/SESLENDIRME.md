@@ -11,7 +11,7 @@ Bütün temalar için ortak adımlar. Seslendirme işleme almanın dışındadı
 | Model | `eleven_v4` |
 | Biçim | `mp3_44100_64`. 128 kbps ile yan yana dinlendi, fark duyulmadı; boyut yarısı. Örnekler: `matematik/sayilar/ses/ornekler/dinle.html` |
 | Ne seslendirilir | Tahtada bir şey olurken beklenerek okunan açıklama altyazıları (`c.say`). `noWait` ile gösterilen yönergeler, soru panelleri, geri bildirimler, sınav ve özet seslendirilmez |
-| Yönergeler | Yalnızca `[curious]` (öğrenciye sorulan gerçek soru) ve `[excited]` (dersin "işte bu" anı). Yaklaşık on satırda bir; bir derste en çok iki üç tane. Gülme, ses efekti, başka yönerge yok |
+| Yönergeler | Kullanıcı dinleyip seçti (8 Ekim 2026). **Kullanılır:** `[curious]` (öğrenciye sorulan gerçek soru), `[thoughtful]` (yanılgı, tuzak ve "neden" anlatımları), `[short pause]` (cevaptan önce ve kuralın hemen öncesinde, cümle içinde). **Kullanılmaz:** `[excited]` (fazla coşkulu geldi). Yaklaşık on satırda bir; bir derste en çok iki üç tane. Gülme, ses efekti, başka yönerge yok; yeni bir etiket denenecekse önce `ses/ornekler/dinle.html` gibi bir örnekle dinlenir |
 
 Ses, model ve biçim `araclar/ses-uret.js` içindeki `VARSAYILAN` alanındadır. Üçünden biri değişirse eski klipler geçersiz sayılır ve bir sonraki çalıştırmada yeniden üretilir.
 
@@ -105,7 +105,7 @@ Karakter sayıları 7 Ekim 2026 dökümünden; metin denetiminde rakamlar kelime
 | Matematik | Sayılar | A | 8 | 109 | 11.531 | seslendirildi (109 klip, 15,8 dk, 7,7 MB) |
 | Matematik | Sayılar | B | 7 | 151 | 9.109 | seslendirildi (151 klip, 12,5 dk, 6,1 MB); 18 rakamlı satır kelimeye çevrildi, 9 yönerge; kullanıcı henüz dinlemedi |
 | Matematik | Sayılar | C | 5 | 80 | 3.913 | seslendirildi (80 klip, 5,5 dk, 2,69 MB); 48 satıra speak, 6 yönerge; %40 süre aykırısı yok; C1’de yerleşim bulguları, kullanıcı henüz dinlemedi |
-| Matematik | Sayılar | D | 8 | 122 | 5.623 | bekliyor; okunan metinde rakam var |
+| Matematik | Sayılar | D | 8 | 122 | 6.718 | seslendirildi (122 klip, 9,4 dk, 4,58 MB); okunuş `04-islem-ozellikleri-cebirsel.js` içindeki `spk` ile otomatik (rakam, simge, ek), 18 yönerge (`say(c, html, { ton, dur })`); kullanıcı henüz dinlemedi |
 | Matematik | Geometrik Şekiller | A–C | 9 | 118 | 5.853 | bekliyor |
 | Matematik | Nicelikler ve Değişimler | A–C | 32 | 526 | 23.998 | bekliyor; okunan metinde rakam ve simge var |
 | Fizik | Fizik Bilimi ve Kariyer Keşfi | A–D | 6 | 93 | 4.787 | üretildi (93 klip, 6,1 dk, 2,8 MB); pilot atlandı, kullanıcı henüz dinlemedi; yönerge yok |

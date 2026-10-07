@@ -1,6 +1,6 @@
 # Plan — 9. Sınıf Biyoloji · 1. Tema: Yaşam
 
-Dayanak: `MUFREDAT.md` (MEB sayfasından 7 Ekim 2026'da alındı; sayfadaki güncelleme tarihi 30.09.2026). Ortak kurallar: `../../KURALLAR.md` (kısa ders = bir fikir, 3–5 sahne, 4–6 dakika, sonunda 2 çıkış sorusu). Bu dosya yalnızca konuları ve kısa dersleri belirler; açık sorular (bölüm 6) tema işleme alınınca `../../ISLEME.md` içindeki kurallarla kapatılır.
+Dayanak: `MUFREDAT.md` (MEB sayfasından 7 Ekim 2026'da alındı; sayfadaki güncelleme tarihi 30.09.2026). Ortak kurallar: `../../KURALLAR.md` (kısa ders = bir fikir, 3–5 sahne, 4–6 dakika, sonunda 2 çıkış sorusu). İşleme kararları bölüm 7’dedir; bölüm 6 tarihî soru listesidir ve tamamı karara bağlanmıştır.
 
 Kısaltmalar: "çerçeve" = programın içerik çerçevesi; "uygulama" = BİY.9.1.x öğrenme-öğretme uygulamaları; "1.5.b" gibi kodlar süreç bileşenleridir (BİY.9.1.5 b).
 
@@ -57,7 +57,7 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   4. Biyolojinin gelişimine katkısı bulunan Türk-İslam bilim insanlarından Akşemseddin; yalnızca programın yazdığı kadarıyla (bölüm 6, soru 2).
   5. Bir katkıya farklı bakış açılarıyla bakma.
 - **Program dayanağı:** BİY.9.1.1 a) "Biyolojideki dönüm noktalarının insan hayatına katkılarını belirtir." Uygulama a): "…bilimsel araştırma ve buluşlarla ilgili örnekler [aşı, antibiyotik, DNA’nın yapısı, Crispr-Cas, kalıtım, klonlama, polimeraz zincir reaksiyonu (PZR), rekombinant DNA teknolojisi, insan genom projesi vb.] paylaşılır. Bu süreçte biyoloji disiplininin gelişiminde önemli katkıları bulunan Türk-İslam bilim insanlarından Akşemseddin’in ve diğer bilim insanlarının çalışmaları örneklendirilir. Öğrencilerden bu araştırma ve buluşların insan yaşamına katkılarını farklı bakış açılarıyla değerlendirerek düşüncelerini açıklamaları istenir." Köprü kurma: "…sağlık, çevre, enerji ve gıda alanında yaşanan toplumsal sorunlar için ürettiği çözümler örneklendirilebilir." Çerçeve: "Biyolojinin Önemi, Biyoloji Biliminin Gelişimindeki Dönüm Noktaları".
-- **Açılış sorusu:** Yüz yıl önce küçük bir kesik insanı öldürebiliyordu; bugün neden öldürmüyor?
+- **Açılış sorusu:** Bir biyoloji buluşu hangi soruna çözüm getirir?
 - **Akılda kalıcı cümle:** Her dönüm noktası, bir sorunun çözümüdür.
 
 #### A2 · Soru sor, kaynağını sına
@@ -79,7 +79,7 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   2. Bilim insanlarının biyolojiye katkıları üzerine çıkarım.
   3. Tablonun "Ne Öğrendim?" sütununun doldurulması.
 - **Program dayanağı:** BİY.9.1.1 d) "Biyolojideki dönüm noktalarının insan hayatına katkılarıyla ilgili topladığı bilgiler üzerinden çıkarım yapar." Uygulama d): "Öğrencilerden topladıkları bilgiler ışığında bilim insanlarının biyolojiye katkılarını tartışarak çıkarım yapmaları beklenir… “Ne Öğrendim?” bölümünü doldurmaları istenir."
-- **Açılış sorusu:** Aşıdan önce ve sonra aynı hastalığa yakalanan kişi sayısını gördün; bu iki sayı sana ne söyletir?
+- **Açılış sorusu:** Bir buluşun katkısı hakkında hangi çıkarım kanıta dayanır?
 - **Akılda kalıcı cümle:** Bilgi toplanır, çıkarım kurulur.
 
 ### Konu B · Bilimsel araştırma ve bilimin doğası (BİY.9.1.2)
@@ -142,7 +142,7 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   4. Doğrulanan bilgiyi kaydetme (1.3.ç): rapor satırı.
 - **Program dayanağı:** BİY.9.1.3 a)–ç). Uygulama a-b): "…seçtikleri olayın bilim etiğine uygunluğu ile ilgili bilgi toplamaları…". Uygulama c-ç): "Öğrencilerden topladıkları bilgileri içeren bir rapor hazırlamaları… istenir… Öğrenciler, rapordaki bilgilerin doğruluğunu farklı ve güvenilir kaynaklardan doğrulamalıdır."
 - **Açılış sorusu:** Bir haber "deney izinsiz yapıldı" diyor, başka biri "izin vardı" diyor; hangisine, neye bakarak inanırsın?
-- **Akılda kalıcı cümle:** Tek kaynak iddia, iki kaynak bilgi.
+- **Akılda kalıcı cümle:** Kaynak sayısı değil, kanıtın niteliği belirler.
 
 ### Konu D · Canlıların ortak özellikleri (BİY.9.1.4)
 
@@ -229,7 +229,7 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   3. Tablodan inorganik moleküllerin özelliklerinin tanımlanması (1.5.a).
 - **Program dayanağı:** BİY.9.1.5 a) "İnorganik moleküllerin özelliklerini tanımlar." Uygulama a): "…öğrencilerin inorganik bileşikleri “sindirime uğrama, hücresel solunumda kullanılma, canlılar tarafından üretilme/üretilmeme, hücre zarından geçiş, canlı yapısına katılma, yaşamsal faaliyetlerin düzenlenmesinde görev alma” gibi özellikler açısından değerlendirerek bu özellikleri tanımlamaları beklenir." Çerçeve: "İnorganik Moleküller (Su, Mineraller)".
 - **Açılış sorusu:** İçtiğin su ile yediğin ekmek vücutta aynı yoldan mı geçer?
-- **Akılda kalıcı cümle:** İnorganik molekül hazır alınır, olduğu gibi kullanılır.
+- **Akılda kalıcı cümle:** Su ve mineraller yaşamsal işlevlere katılır.
 
 #### E2 · Su tutunur: adezyon, kohezyon, yüzey gerilimi
 
@@ -240,7 +240,7 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   3. Yüzey gerilimi.
   4. Bu verilerden suyun canlılar için önemi hakkında yorum (1.5.c).
 - **Program dayanağı:** BİY.9.1.5 b), c). Uygulama b): "Öğrencilerden sınıfta/laboratuvarda basit deneyler yaparak suyun adezyon-kohezyon kuvveti, yüzey gerilimi, yoğunluğu, çözücülüğü ve ısı tutma kapasitesi (öz ısı) ile ilgili veri toplamaları ve topladıkları verileri kaydetmeleri istenir." Uygulama c): "Öğrenciler, su ile ilgili yaptıkları deneylerden elde ettikleri verileri kullanarak suyun canlılar için önemini yorumlar ve değerlendirir." Anahtar kavramlar: adezyon, kohezyon, yüzey gerilimi.
-- **Açılış sorusu:** Madenî paranın üstüne damla damla su koysan, taşmadan kaç damla sığar?
+- **Açılış sorusu:** Su dolu bardağa para eklenince yüzey nasıl değişir?
 - **Akılda kalıcı cümle:** Su suya da tutunur, yüzeye de.
 
 #### E3 · Su taşır ve dengeler: çözücülük, yoğunluk, öz ısı
@@ -275,7 +275,7 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   3. Öğrencinin kendi beslenme alışkanlığıyla ilişkilendirme.
 - **Program dayanağı:** BİY.9.1.5 c) "İnorganik moleküllerin önemiyle ilgili verileri yorumlar ve değerlendirir." Uygulama c): "Minerallerle ilgili edindikleri bilgileri kullanarak minerallerin eksikliğinde ortaya çıkabilecek sorunları en aza indirmek için yeterli ve dengeli beslenmenin önemini yorumlar ve değerlendirir. Öğrencilerden yorum ve değerlendirmelerini kendi beslenme alışkanlıklarıyla ilişkilendirmeleri… beklenir."
 - **Açılış sorusu:** Bir hafta boyunca yalnızca makarna yiyen birinin tabağında ne eksik kalır?
-- **Akılda kalıcı cümle:** Tabak çeşitlenirse eksik kalmaz.
+- **Akılda kalıcı cümle:** Çeşitli beslenme, eksiklik riskini azaltır.
 
 ### Konu F · Organik moleküller (BİY.9.1.6)
 
@@ -302,7 +302,7 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
   3. Beşinin işlevleri ve bulundukları yer.
 - **Program dayanağı:** Çerçeve: "Karbohidratlar [Monosakkaritler (Riboz, Deoksiriboz, Fruktoz, Glikoz, Galaktoz)]". Uygulama b-c): "…karbohidratlar, lipitler, proteinler ve nükleik asitlerin yapıları, genel özellikleri, işlevleri, çeşitleri… ile ilgili bilgi toplamaları istenir." Sınır: "…üç ve dört karbonlu monosakkaritlere, moleküllerin açık formüllerine… yer vermemeleri gerektiği hatırlatılır."
 - **Açılış sorusu:** Balın tadı ile sofra şekerinin tadı neden aynı değil?
-- **Akılda kalıcı cümle:** Tek halka, hazır yakıt.
+- **Akılda kalıcı cümle:** Şekerin türü, görevini değiştirir.
 
 #### F3 · Disakkaritler: iki şeker, bir bağ
 
@@ -334,8 +334,8 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
   2. Yağ asitleri.
   3. Trigliseritler: yapısı ve işlevi.
 - **Program dayanağı:** Çerçeve: "Lipitler (Yağ Asitleri, Trigliseritler, Fosfolipitler, Steroitler)". Uygulama b-c): "…yapıları, genel özellikleri, işlevleri, çeşitleri…".
-- **Açılış sorusu:** Zeytinyağı sıvı, tereyağı katı; ikisi de yağsa fark nereden geliyor?
-- **Akılda kalıcı cümle:** Yağ asidi dizilir, trigliserit olur.
+- **Açılış sorusu:** Depo yağı hangi parçalardan kurulur?
+- **Akılda kalıcı cümle:** Bir gliserol, üç yağ asidi: trigliserit.
 
 #### F6 · Lipitler: fosfolipitler ve steroitler
 
@@ -364,7 +364,7 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
 
 - **Tek fikir:** Bir tepkimenin başlaması için aşılması gereken enerji eşiği vardır; enzim bu eşiği düşürür.
 - **Anlatılacaklar:**
-  1. Enzimler proteinlerin bir çeşididir (çerçevede proteinler ayracının içinde).
+  1. Enzimler genellikle protein yapılı biyolojik katalizörlerdir (kitap, s. 64).
   2. Aktivasyon enerjisi.
   3. Enzimli ve enzimsiz tepkimenin karşılaştırılması.
 - **Program dayanağı:** Çerçeve: "Enzimler (Basit ve Bileşik Enzimler, Aktivasyon Enerjisi, Enzim-Substrat İlişkisi, Enzimatik Reaksiyonlara Etki Eden Faktörler)". Sınır: "Bu süreçte enzimlerin isimlendirilmesine, düzenlenme mekanizmalarına, enzim inhibitör ve aktivatörlerinin çalışma mekanizmalarına ve çeşitlerine değinilmez."
@@ -391,7 +391,7 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
   3. RNA'nın yapısı.
   4. DNA ile RNA'nın yapıca karşılaştırılması (F2'deki riboz ve deoksiriboz burada yerini bulur).
 - **Program dayanağı:** Çerçeve: "Nükleik Asitler (DNA ve RNA’nın Yapısı)". Uygulama b-c): "…nükleik asitlerin yapıları, genel özellikleri, işlevleri, çeşitleri…". Sınır: "…RNA çeşitlerine… yer vermemeleri gerektiği hatırlatılır."
-- **Açılış sorusu:** Saç telindeki bir hücreden kimin saçı olduğu nasıl anlaşılır?
+- **Açılış sorusu:** DNA ile RNA yapıca nasıl ayırt edilir?
 - **Akılda kalıcı cümle:** DNA çift, RNA tek iplik.
 
 #### F11 · Vitaminler: yağda çözünenler, suda çözünenler
@@ -402,8 +402,8 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
   2. Vitaminlerin işlevleri.
   3. Organik maddelerin yetersiz ve dengesiz alınmasının sağlık üzerindeki olumsuz sonuçları.
 - **Program dayanağı:** Çerçeve: "Vitaminler (Yağda Çözünen Vitaminler, Suda Çözünen Vitaminler)". Sınır: "…vitaminlerin ise sadece çeşitleri ve işlevleri…"; "…B vitamini çeşitlerine yer vermemeleri gerektiği hatırlatılır." Köprü kurma: "Beslenme sürecinde organik maddelerin yetersiz ve dengesiz alınmasının insan sağlığı üzerinde oluşturabileceği olumsuz durumlar ile ilgili örnekler verilerek organik maddelerin sağlıklı bir yaşam için gerekliliği vurgulanabilir."
-- **Açılış sorusu:** Fazla aldığın bir vitamin idrarla atılıyor, bir başkası vücutta birikiyor; farkı ne belirler?
-- **Akılda kalıcı cümle:** Suda çözünen atılır, yağda çözünen depolanır.
+- **Açılış sorusu:** Vitaminler hangi iki gruba ayrılır?
+- **Akılda kalıcı cümle:** Vitaminler çözündükleri ortama göre gruplanır.
 
 #### F12 · Organik molekül bilgisini doğrula ve kaydet
 
@@ -427,7 +427,7 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
   3. Besin etiketindeki bilgi ile basit test arasındaki ilişki.
 - **Program dayanağı:** Uygulama a): "Karbohidrat, lipit ve proteinlerin varlığını anlamak ve tespit etmek için kullanılan ayraçlar sınıfta veya laboratuvarda tanıtılır." Köprü kurma: "Marketlerden alınan gıdaların ambalajlarındaki besin etiketi bilgilerine ek olarak bu gıdalardaki karbohidrat, yağ, protein gibi bileşiklerin basit gözlemler ve testlerle tespit edilebileceği ifade edilebilir." Sınır: "niteliksel olarak gözlemlemek".
 - **Açılış sorusu:** Etiketi kopmuş bir kavanozdaki beyaz tozun un mu, süt tozu mu olduğunu tatmadan nasıl anlarsın?
-- **Akılda kalıcı cümle:** Renk değiştiyse aradığın orada.
+- **Akılda kalıcı cümle:** Doğru ayraç, aranan molekülü gösterir.
 
 #### G2 · Deneyi tasarla: hangi besin, hangi ayraç
 
@@ -489,106 +489,106 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
 
 ## 4. Müfredat denetimi
 
-Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir kez geçer. Sahne numaraları dersler yazılınca işlenir.
+Programın her isteği bir satır; her kısa dersin dayanağı vardır. Durum: ders / benzetim / site dışı. Sitede karşılanan bilgi, nitel benzetim ve sınıfta yapılacak ölçüm/ürün ayrıdır. D6 ve E1 kaynak erişimi nedeniyle kısmîdir; temiz ekran ölçümü tam kapsam anlamına gelmez. F’nin ayrıntılı sahne–içerik eşlemesi F-RAPOR.md’de de bulunur.
 
-| Programın istediği | Hangi kısa ders |
-|---|---|
-| Tema amacı: biyolojideki gelişmelerin insan hayatına katkılarını sorgulama | A1, A2, A3 |
-| Tema amacı: bilimin doğasını yorumlama | B1, B2, B3 |
-| Tema amacı: bilim etiğine uygunluk ve organik moleküller hakkında bilgi toplama | C1, C2; F1–F12 |
-| Tema amacı: canlıların özelliklerini gözlemleme; inorganik moleküllerin önemi hakkında çıkarım | D1–D6; E1–E5 |
-| Tema amacı: besinlerde karbohidrat, yağ, protein varlığı ve enzim aktivitesi deneyleri | G1–G3; H1–H3 |
-| BİY.9.1.1 a) dönüm noktalarının katkılarını belirtir | A1 |
-| BİY.9.1.1 b) katkılarla ilgili sorular sorar | A2 |
-| BİY.9.1.1 c) bilgi toplar | A2 |
-| BİY.9.1.1 ç) topladığı bilgilerin doğruluğunu değerlendirir | A2 |
-| BİY.9.1.1 d) topladığı bilgiler üzerinden çıkarım yapar | A3 |
-| Dönüm noktası örnekleri: aşı, antibiyotik, DNA'nın yapısı, Crispr-Cas, kalıtım, klonlama, PZR, rekombinant DNA teknolojisi, insan genom projesi | A1 |
-| Akşemseddin ve diğer bilim insanlarının çalışmalarının örneklendirilmesi | A1 (yalnızca programın yazdığı kadarıyla; bölüm 6, soru 2) |
-| Katkıları farklı bakış açılarıyla değerlendirme | A1 |
-| Köprü kurma: sağlık, çevre, enerji, gıda alanındaki toplumsal sorunlara çözümler | A1 |
-| "Ne Biliyorum?, Ne Bilmek İstiyorum?, Ne Öğrendim?" tablosu | A2 (ilk iki sütun), A3 (son sütun) |
-| Kaynakları not etme; kaynakların güvenilirliğini belirleme | A2 (C2 ve F12'de yeniden) |
-| Bilim insanlarının biyolojiye katkıları üzerine çıkarım | A3 |
-| BİY.9.1.2 a) araştırma süreçlerinde bilimin doğasının özelliklerini inceler | B2, B3 |
-| BİY.9.1.2 b) elde ettiği bilgileri bağlamdan kopmadan dönüştürür | B3 |
-| BİY.9.1.2 c) anlamı değiştirmeden kendi cümleleriyle yeniden ifade eder | B3 |
-| Problem tespiti, araştırılabilir soru, hipotez | B1 |
-| Fizik ve kimyada da benzer biçimde araştırma yapıldığı; deney ve gözlemden yararlanma (köprü kurma) | B1 |
-| Soruyla ilgili araştırma yapılıp yapılmadığına doğru kaynaklardan bakma | B2 |
-| Farklı yaklaşımlara dayanan araştırmalarda bilimsel yöntem basamaklarını inceleme | B2 |
-| İncelenen süreçlerde bilimin doğasının özelliklerini belirtme ve kaydetme | B3 |
-| BİY.9.1.3 a) kullanacağı araçları belirler | C2 |
-| BİY.9.1.3 b) belirlediği araçlarla bilgilere ulaşır | C2 |
-| BİY.9.1.3 c) ulaştığı bilgileri doğrular | C2 |
-| BİY.9.1.3 ç) ulaştığı bilgileri kaydeder | C2 |
-| Bilim etiğine uygunluğun sorgulandığı örnek olaylar | C1 |
-| Köprü kurma: aşı araştırmasında etik kurallar; acil durumlarda etik kuralların gevşetilmesi | C1 |
-| Bilim etiği ölçütlerini ve kanıt kullanarak değerlendirme | C1 |
-| Rapordaki bilgileri farklı ve güvenilir kaynaklardan doğrulama | C2 |
-| BİY.9.1.4 a) ortak özellikleri gözlemleyerek tanımlar | D2, D3 (doğrudan), D4, D5 (dolaylı) |
-| BİY.9.1.4 b) gözlemlerden veri toplar ve kaydeder | D1 (D2–D5'te form kullanılır) |
-| BİY.9.1.4 c) virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar | D6 |
-| İki farklı canlı; duyularla ya da basit araçlarla; üç gün, düzenli aralıklarla; gözlem formu | D1 |
-| Gözlenen canlılarda benzerlik ve farklılıklar | D2, D3 |
-| Dolaylı gözlemlenebilir özelliklere ilişkin tahmin ve güvenilir kaynaktan doğrulama | D4, D5 |
-| Köprü kurma: gözle görülebilen ve görülemeyen özellikler | D2–D5 |
-| Çerçeve: Hücresel Yapı, Organizasyon | D4 |
-| Çerçeve: Beslenme, Boşaltım, Büyüme ve Gelişme | D2 |
-| Çerçeve: Enerji Üretimi ve Tüketimi, Metabolizma, Homeostazi | D5 |
-| Çerçeve: Uyarılara Tepki, Üreme, Varyasyon ve Adaptasyon | D3 |
-| Virüslerin yapısı ve çoğalma mekanizması (genel olarak); canlılık ve cansızlık özellikleri | D6 |
-| BİY.9.1.5 a) inorganik moleküllerin özelliklerini tanımlar | E1 |
-| BİY.9.1.5 b) suyun genel özellikleri ile ilgili veri toplar ve kaydeder | E2, E3 |
-| BİY.9.1.5 b) minerallerin görevleri ile ilgili bilgi toplar ve kaydeder | E4 |
-| BİY.9.1.5 c) inorganik moleküllerin önemiyle ilgili verileri yorumlar ve değerlendirir | E2, E3 (su), E5 (mineraller) |
-| "İnorganik Bileşiklerin Genel Özellikler" tablosu ve altı özellik | E1 |
-| Suyun adezyon-kohezyon kuvveti, yüzey gerilimi | E2 |
-| Suyun yoğunluğu, çözücülüğü, ısı tutma kapasitesi (öz ısı) | E3 |
-| Köprü kurma: hücrelerde ve vücutta en fazla bulunan molekül su | E3 |
-| Mineraller (Ca, Mg, P, Fe, Na, K, I, S, Zn, F, Cl): görevleri, bulundukları besinler | E4 |
-| Minerallerin eksikliğinde ortaya çıkabilecek sorunlar; yeterli ve dengeli beslenme; kendi beslenme alışkanlığı | E5 |
-| BİY.9.1.6 a) kullanacağı araçları belirler | F12 |
-| BİY.9.1.6 b) belirlediği araçlarla bilgilere ulaşır | F1–F11 |
-| BİY.9.1.6 c) ulaştığı bilgileri doğrular | F12 |
-| BİY.9.1.6 ç) ulaştığı bilgileri kaydeder | F12 |
-| Çerçeve: Monosakkaritler (Riboz, Deoksiriboz, Fruktoz, Glikoz, Galaktoz) | F2 |
-| Çerçeve: Disakkaritler (Sükroz, Maltoz, Laktoz) | F3 |
-| Çerçeve: Polisakkaritler (Glikojen, Nişasta, Selüloz, Kitin) | F4 |
-| Çerçeve: Lipitler (Yağ Asitleri, Trigliseritler) | F5 |
-| Çerçeve: Lipitler (Fosfolipitler, Steroitler) | F6 |
-| Çerçeve: Proteinler (Amino Asitlerin Yapısı) | F7 |
-| Çerçeve: Enzimler (Aktivasyon Enerjisi) | F8 |
-| Çerçeve: Enzimler (Basit ve Bileşik Enzimler, Enzim-Substrat İlişkisi) | F9 |
-| Çerçeve: Enzimatik Reaksiyonlara Etki Eden Faktörler | H1, H2, H3 (yalnızca pH ve sıcaklık; bölüm 6, soru 9) |
-| Çerçeve: Nükleik Asitler (DNA ve RNA'nın Yapısı) | F10 |
-| Çerçeve: Vitaminler (Yağda Çözünen, Suda Çözünen); "sadece çeşitleri ve işlevleri" | F11 |
-| Karbohidrat, lipit, protein ve nükleik asitlerin yapıları, genel özellikleri, işlevleri, çeşitleri | F2–F10 |
-| Sınır: üç ve dört karbonlu monosakkaritler, açık formüller, RNA çeşitleri, B vitamini çeşitleri yok | F2, F10, F11 ve F'nin tamamı (uyulur) |
-| Sınır: enzimlerin isimlendirilmesi, düzenlenme mekanizmaları, inhibitör ve aktivatörler yok | F8, F9, H1–H3 (uyulur) |
-| Derlenen bilgiyi güvenilir kaynakla karşılaştırma; yanlışı düzeltme; bilgi görseli | F12 |
-| Köprü kurma: organik maddelerin yetersiz ve dengesiz alınmasının sonuçları | F11 |
-| BİY.9.1.7 a) deney tasarlar | G2 |
-| BİY.9.1.7 b) ayraç kullanarak analiz yapar | G3 |
-| Ayraçların tanıtılması | G1 |
-| Besinler (ekmek, patates, süt, meyve, yumurta, peynir, nohut, mercimek, zeytinyağı, fındık, fıstık); niteliksel gözlem | G2, G3 |
-| Deneysel hata durumunda deneyi tekrarlama | G3 |
-| Köprü kurma: besin etiketi ve basit testler | G1 |
-| BİY.9.1.8 a) deney tasarlar | H1 |
-| BİY.9.1.8 b) etkileri ölçer ve sonuçların analizini yapar | H2 (sıcaklık), H3 (pH) |
-| Enzim örnekleri: katalaz, amilaz, lipaz | H1 |
-| Olası hata kaynaklarını azaltacak tedbirler | H1 |
-| Tablo ve grafiklerle analiz | H2, H3 |
-| Günlük yaşam: mide asitliği; peynir ve yoğurt mayalanması, gıdaların saklanması | H3; H2 |
-| Köprü kurma: hamur mayası, optimal şartlar | H1 |
-| Anahtar kavramlar: bilimsel yöntem; bilim etiği | B2; C1 |
-| Anahtar kavramlar: prokaryot, ökaryot; beslenme çeşitleri | D4; D2 |
-| Anahtar kavramlar: adezyon, kohezyon, yüzey gerilimi; çözücülük | E2; E3 |
-| Anahtar kavramlar: polimerizasyon, dehidrasyon, hidroliz | F1 (F3, F4, F7'de uygulanır) |
-| Anahtar kavramlar: denatürasyon; indüklenmiş uyum | F7; F9 |
-| Temel kabuller (bilimsel araştırmaların genel basamakları, canlıların ortak özellikleri, inorganik ve organik bileşiklerin çeşitleri) | Ayrı ders yok; B2, D2 ve F1'de kısa hatırlatma |
-| Öğrenme kanıtları: küçük moleküllerin hücre zarından pasif geçişine yönelik deney | Derslerde yok (bölüm 5; bölüm 6, soru 11) |
-| Grup çalışması, büyük grup tartışması, ayrılıp birleşme tekniği, rapor, öğrenme günlüğü, zihin haritası, broşür, öz ve grup değerlendirme, dijital paylaşım | Derslerde yok (bölüm 5) |
+| Programın istediği | Hangi kısa ders | Durum | Sahne / karşılanma sınırı |
+|---|---|---|---|
+| Tema amacı: biyolojideki gelişmelerin insan hayatına katkılarını sorgulama | A1, A2, A3 | ders | A1 S1–5; A2 S1–4; A3 S1–3 |
+| Tema amacı: bilimin doğasını yorumlama | B1, B2, B3 | ders | B1 S1–4; B2 S1–4; B3 S1–4 |
+| Tema amacı: bilim etiğine uygunluk ve organik moleküller hakkında bilgi toplama | C1, C2; F1–F12 | ders | F1 S1–4; F2 S1–3; F3 S1–3; F4 S1–3; F5 S1–3; F6 S1–3; F7 S1–4; F8 S1–3; F9 S1–3; F10 S1–4; F11 S1–4; F12 S1–3; C1 S1–4; C2 S1–4 |
+| Tema amacı: canlıların özelliklerini gözlemleme; inorganik moleküllerin önemi hakkında çıkarım | D1–D6; E1–E5 | benzetim | D1 S1–4; D2 S1–4; D3 S1–4; D4 S1–3; D5 S1–3; D6 S1–3; E1 S1–3; E2 S1–4; E3 S1–4; E4 S1–4; E5 S1–4 |
+| Tema amacı: besinlerde karbohidrat, yağ, protein varlığı ve enzim aktivitesi deneyleri | G1–G3; H1–H3 | benzetim | G1 S1–4; G2 S1–4; G3 S1–4; H1 S1–4; H2 S1–4; H3 S1–4 |
+| BİY.9.1.1 a) dönüm noktalarının katkılarını belirtir | A1 | ders | A1 S1–5 |
+| BİY.9.1.1 b) katkılarla ilgili sorular sorar | A2 | benzetim | A2 S1 |
+| BİY.9.1.1 c) bilgi toplar | A2 | benzetim | A2 S2–4 |
+| BİY.9.1.1 ç) topladığı bilgilerin doğruluğunu değerlendirir | A2 | benzetim | A2 S3–4 |
+| BİY.9.1.1 d) topladığı bilgiler üzerinden çıkarım yapar | A3 | benzetim | A3 S1–3 |
+| Dönüm noktası örnekleri: aşı, antibiyotik, DNA'nın yapısı, Crispr-Cas, kalıtım, klonlama, PZR, rekombinant DNA teknolojisi, insan genom projesi | A1 | ders | A1 S1–4 |
+| Akşemseddin ve diğer bilim insanlarının çalışmalarının örneklendirilmesi | A1 (yalnızca programın yazdığı kadarıyla; bölüm 6, soru 2) | ders (program kadarıyla) | A1 S5 |
+| Katkıları farklı bakış açılarıyla değerlendirme | A1 | benzetim | A1 S5; A3 S2 |
+| Köprü kurma: sağlık, çevre, enerji, gıda alanındaki toplumsal sorunlara çözümler | A1 | benzetim | A1 S1–5 |
+| "Ne Biliyorum?, Ne Bilmek İstiyorum?, Ne Öğrendim?" tablosu | A2 (ilk iki sütun), A3 (son sütun) | benzetim | A2 S1; A3 S3 |
+| Kaynakları not etme; kaynakların güvenilirliğini belirleme | A2 (C2 ve F12'de yeniden) | benzetim | A2 S2–4; C2 S3–4; F12 S1–3 |
+| Bilim insanlarının biyolojiye katkıları üzerine çıkarım | A3 | benzetim | A3 S1–3 |
+| BİY.9.1.2 a) araştırma süreçlerinde bilimin doğasının özelliklerini inceler | B2, B3 | ders | B2 S1–4; B3 S1–3 |
+| BİY.9.1.2 b) elde ettiği bilgileri bağlamdan kopmadan dönüştürür | B3 | benzetim | B3 S1,4 |
+| BİY.9.1.2 c) anlamı değiştirmeden kendi cümleleriyle yeniden ifade eder | B3 | benzetim | B3 S4 |
+| Problem tespiti, araştırılabilir soru, hipotez | B1 | benzetim | B1 S1–3 |
+| Fizik ve kimyada da benzer biçimde araştırma yapıldığı; deney ve gözlemden yararlanma (köprü kurma) | B1 | ders | B1 S4 |
+| Soruyla ilgili araştırma yapılıp yapılmadığına doğru kaynaklardan bakma | B2 | benzetim (serbest tarama site dışı) | B2 S1 |
+| Farklı yaklaşımlara dayanan araştırmalarda bilimsel yöntem basamaklarını inceleme | B2 | ders | B2 S1–4 |
+| İncelenen süreçlerde bilimin doğasının özelliklerini belirtme ve kaydetme | B3 | benzetim | B3 S1–4 |
+| BİY.9.1.3 a) kullanacağı araçları belirler | C2 | benzetim | C2 S1 |
+| BİY.9.1.3 b) belirlediği araçlarla bilgilere ulaşır | C2 | benzetim | C2 S2 |
+| BİY.9.1.3 c) ulaştığı bilgileri doğrular | C2 | benzetim | C2 S3 |
+| BİY.9.1.3 ç) ulaştığı bilgileri kaydeder | C2 | benzetim | C2 S4 |
+| Bilim etiğine uygunluğun sorgulandığı örnek olaylar | C1 | benzetim | C1 S1–4 |
+| Köprü kurma: aşı araştırmasında etik kurallar; acil durumlarda etik kuralların gevşetilmesi | C1 | ders | C1 S3–4 |
+| Bilim etiği ölçütlerini ve kanıt kullanarak değerlendirme | C1 | benzetim | C1 S1–4 |
+| Rapordaki bilgileri farklı ve güvenilir kaynaklardan doğrulama | C2 | benzetim | C2 S3–4 |
+| BİY.9.1.4 a) ortak özellikleri gözlemleyerek tanımlar | D2, D3 (doğrudan), D4, D5 (dolaylı) | benzetim (hazır gözlem/model) | D2 S1–4; D3 S1–4; D4 S1–3; D5 S1–3 |
+| BİY.9.1.4 b) gözlemlerden veri toplar ve kaydeder | D1 (D2–D5'te form kullanılır) | benzetim; gerçek gözlem site dışı | D1 S1–4 |
+| BİY.9.1.4 c) virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar | D6 | ders (kısmî; yapı/çoğalma kaynağı bekliyor) | D6 S1–3 |
+| İki farklı canlı; duyularla ya da basit araçlarla; üç gün, düzenli aralıklarla; gözlem formu | D1 | benzetim; gerçek üç gün site dışı | D1 S1–4 |
+| Gözlenen canlılarda benzerlik ve farklılıklar | D2, D3 | benzetim | D2 S1–4; D3 S3–4 |
+| Dolaylı gözlemlenebilir özelliklere ilişkin tahmin ve güvenilir kaynaktan doğrulama | D4, D5 | benzetim | D1 S4; D4 S1–3; D5 S1–3 |
+| Köprü kurma: gözle görülebilen ve görülemeyen özellikler | D2–D5 | ders | D2 S1–4; D3 S1–4; D4 S1–3; D5 S1–3 |
+| Çerçeve: Hücresel Yapı, Organizasyon | D4 | ders | D4 S1–3 |
+| Çerçeve: Beslenme, Boşaltım, Büyüme ve Gelişme | D2 | ders | D2 S1–4 |
+| Çerçeve: Enerji Üretimi ve Tüketimi, Metabolizma, Homeostazi | D5 | ders | D5 S1–3 |
+| Çerçeve: Uyarılara Tepki, Üreme, Varyasyon ve Adaptasyon | D3 | ders | D3 S1–4 |
+| Virüslerin yapısı ve çoğalma mekanizması (genel olarak); canlılık ve cansızlık özellikleri | D6 | ders (kısmî; EBA kaynak bekliyor) | D6 S1–3; yapı/çoğalma öğretilmedi |
+| BİY.9.1.5 a) inorganik moleküllerin özelliklerini tanımlar | E1 | ders (kısmî; tam tablo kaynak bekliyor) | E1 S1–3 |
+| BİY.9.1.5 b) suyun genel özellikleri ile ilgili veri toplar ve kaydeder | E2, E3 | benzetim; gerçek veri toplama site dışı | E2 S1–3; E3 S1–3 |
+| BİY.9.1.5 b) minerallerin görevleri ile ilgili bilgi toplar ve kaydeder | E4 | benzetim (hazır kaynak bilgisi) | E4 S1–4 |
+| BİY.9.1.5 c) inorganik moleküllerin önemiyle ilgili verileri yorumlar ve değerlendirir | E2, E3 (su), E5 (mineraller) | benzetim | E2 S4; E3 S4; E5 S1–4 |
+| "İnorganik Bileşiklerin Genel Özellikler" tablosu ve altı özellik | E1 | ders (kısmî; tam karşılaştırma yok) | E1 S3; kaynaklı görevler S1–2 |
+| Suyun adezyon-kohezyon kuvveti, yüzey gerilimi | E2 | benzetim | E2 S1–4 |
+| Suyun yoğunluğu, çözücülüğü, ısı tutma kapasitesi (öz ısı) | E3 | benzetim | E3 S1–4 |
+| Köprü kurma: hücrelerde ve vücutta en fazla bulunan molekül su | E3 | ders | E1 S1 |
+| Mineraller (Ca, Mg, P, Fe, Na, K, I, S, Zn, F, Cl): görevleri, bulundukları besinler | E4 | ders | E4 S1–4 |
+| Minerallerin eksikliğinde ortaya çıkabilecek sorunlar; yeterli ve dengeli beslenme; kendi beslenme alışkanlığı | E5 | ders; kişisel paylaşım site dışı | E5 S1–4 |
+| BİY.9.1.6 a) kullanacağı araçları belirler | F12 | benzetim | F12 S1 |
+| BİY.9.1.6 b) belirlediği araçlarla bilgilere ulaşır | F1–F11 | ders (hazır bilgiye ulaşma) | F1–F11 (aşağıdaki yapı/işlev satırları) |
+| BİY.9.1.6 c) ulaştığı bilgileri doğrular | F12 | benzetim | F12 S2 |
+| BİY.9.1.6 ç) ulaştığı bilgileri kaydeder | F12 | benzetim; bilgi görseli ürünü site dışı | F12 S3 |
+| Çerçeve: Monosakkaritler (Riboz, Deoksiriboz, Fruktoz, Glikoz, Galaktoz) | F2 | ders | F2 S1–3 |
+| Çerçeve: Disakkaritler (Sükroz, Maltoz, Laktoz) | F3 | ders | F3 S1–3 |
+| Çerçeve: Polisakkaritler (Glikojen, Nişasta, Selüloz, Kitin) | F4 | ders | F4 S1–3 |
+| Çerçeve: Lipitler (Yağ Asitleri, Trigliseritler) | F5 | ders | F5 S1–3 |
+| Çerçeve: Lipitler (Fosfolipitler, Steroitler) | F6 | ders | F6 S1–3 |
+| Çerçeve: Proteinler (Amino Asitlerin Yapısı) | F7 | ders | F7 S1–3 |
+| Çerçeve: Enzimler (Aktivasyon Enerjisi) | F8 | ders | F8 S1–3 |
+| Çerçeve: Enzimler (Basit ve Bileşik Enzimler, Enzim-Substrat İlişkisi) | F9 | ders | F9 S1–3 |
+| Çerçeve: Enzimatik Reaksiyonlara Etki Eden Faktörler | H1, H2, H3 (yalnızca pH ve sıcaklık; bölüm 6, soru 9) | ders/benzetim (yalnız pH/sıcaklık) | H1 S1–3; H2 S1–4; H3 S1–4 |
+| Çerçeve: Nükleik Asitler (DNA ve RNA'nın Yapısı) | F10 | ders | F10 S1–4 |
+| Çerçeve: Vitaminler (Yağda Çözünen, Suda Çözünen); "sadece çeşitleri ve işlevleri" | F11 | ders | F11 S1–4 |
+| Karbohidrat, lipit, protein ve nükleik asitlerin yapıları, genel özellikleri, işlevleri, çeşitleri | F2–F10 | ders | F2–F10; ayrıntılı F-RAPOR tablosu |
+| Sınır: üç ve dört karbonlu monosakkaritler, açık formüller, RNA çeşitleri, B vitamini çeşitleri yok | F2, F10, F11 ve F'nin tamamı (uyulur) | ders (sınıra uyulur) | F2 S1–3; F10 S1–4; F11 S1–4 |
+| Sınır: enzimlerin isimlendirilmesi, düzenlenme mekanizmaları, inhibitör ve aktivatörler yok | F8, F9, H1–H3 (uyulur) | ders (sınıra uyulur) | H1 S1–4; H2 S1–4; H3 S1–4; F8 S1–3; F9 S1–3 |
+| Derlenen bilgiyi güvenilir kaynakla karşılaştırma; yanlışı düzeltme; bilgi görseli | F12 | benzetim; gerçek bilgi görseli site dışı | F12 S1–3 |
+| Köprü kurma: organik maddelerin yetersiz ve dengesiz alınmasının sonuçları | F11 | ders | F11 S4 |
+| BİY.9.1.7 a) deney tasarlar | G2 | benzetim | G2 S1–4 |
+| BİY.9.1.7 b) ayraç kullanarak analiz yapar | G3 | benzetim; gerçek besin deneyi site dışı | G3 S1–3 |
+| Ayraçların tanıtılması | G1 | ders/benzetim | G1 S1–4 |
+| Besinler (ekmek, patates, süt, meyve, yumurta, peynir, nohut, mercimek, zeytinyağı, fındık, fıstık); niteliksel gözlem | G2, G3 | benzetim; 11 örnek adları G2 seçiminde | G2 S1–4; G3 S4 |
+| Deneysel hata durumunda deneyi tekrarlama | G3 | benzetim | G3 S3–4 |
+| Köprü kurma: besin etiketi ve basit testler | G1 | ders | G1 S1 |
+| BİY.9.1.8 a) deney tasarlar | H1 | benzetim | H1 S1–3 |
+| BİY.9.1.8 b) etkileri ölçer ve sonuçların analizini yapar | H2 (sıcaklık), H3 (pH) | benzetim (nitel); gerçek ölçüm site dışı | H2 S1–4; H3 S1–4 |
+| Enzim örnekleri: katalaz, amilaz, lipaz | H1 | ders | H1 S1–2 |
+| Olası hata kaynaklarını azaltacak tedbirler | H1 | benzetim | H1 S3 |
+| Tablo ve grafiklerle analiz | H2, H3 | benzetim (koşul/nitel eğri); nicel ölçüm grafiği site dışı | H2 S1,3–4; H3 S2–3 |
+| Günlük yaşam: mide asitliği; peynir ve yoğurt mayalanması, gıdaların saklanması | H3; H2 | ders | H2 S4; H3 S4 |
+| Köprü kurma: hamur mayası, optimal şartlar | H1 | ders | H1 S4 |
+| Anahtar kavramlar: bilimsel yöntem; bilim etiği | B2; C1 | ders/benzetim | B2 S1–4; C1 S1–4 |
+| Anahtar kavramlar: prokaryot, ökaryot; beslenme çeşitleri | D4; D2 | ders | D4 S2; D2 S1–2 |
+| Anahtar kavramlar: adezyon, kohezyon, yüzey gerilimi; çözücülük | E2; E3 | ders/benzetim | E2 S1–4; E3 S2,4 |
+| Anahtar kavramlar: polimerizasyon, dehidrasyon, hidroliz | F1 (F3, F4, F7'de uygulanır) | ders | F1 S1–3; F3 S1,3; F4 S1; F7 S2 |
+| Anahtar kavramlar: denatürasyon; indüklenmiş uyum | F7; F9 | ders | F7 S4; F9 S2 |
+| Temel kabuller (bilimsel araştırmaların genel basamakları, canlıların ortak özellikleri, inorganik ve organik bileşiklerin çeşitleri) | Ayrı ders yok; B2, D2 ve F1'de kısa hatırlatma | ders (ön bilgi kullanılır, yeniden öğretilmez) | B2 S1–3; D2 S1; F1 S4 |
+| Öğrenme kanıtları: küçük moleküllerin hücre zarından pasif geçişine yönelik deney | Derslerde yok (bölüm 5; bölüm 6, soru 11) | site dışı (kapsam uyuşmazlığı) | —; çıktı/çerçeve/uygulama karşılığı yok |
+| Grup çalışması, büyük grup tartışması, ayrılıp birleşme tekniği, rapor, öğrenme günlüğü, zihin haritası, broşür, öz ve grup değerlendirme, dijital paylaşım | Derslerde yok (bölüm 5) | site dışı (sınıfta yapılır) | —; dayandığı bilgi yukarıdaki derslerde |
 
 ## 5. Bilerek alınmayanlar
 
@@ -638,10 +638,10 @@ Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir
 - Büyük grup tartışması, küçük grup çalışması, ayrılıp birleşme tekniği ve uzmanlık grupları.
 - Rapor, öğrenme günlüğü, zihin haritası, broşür, bilgi görselinin puanlanması; öz değerlendirme ve grup değerlendirme formları, portfolyo.
 - Deney sonuçlarının web araçlarıyla dijital ortamda paylaşılması.
-- Tabloya işlenen bilgilerin "ders kitabındaki bilgiler"le karşılaştırılması (sitede ders kitabı yoktur).
+- Serbest araştırma ve sınıf ürünü site dışıdır; kitap kaynak kartlarıyla karşılaştırma E4, C2 ve F12 içinde benzetilir.
 - Değer, eğilim ve sosyal-duygusal beceri kodlarına bağlı davranış beklentileri (sabır, çalışkanlık, mütevazılık gibi).
 
-## 6. Açık sorular
+## 6. İşleme öncesindeki sorular (tamamı kapandı)
 
 1. **İçeriğin kaynağı.** Program çoğu yerde yalnızca ad sayar: dönüm noktalarının ne olduğu ve neye katkı yaptığı, on bir mineralin görevleri, besinleri ve eksiklik sorunları, molekül çeşitlerinin yapı ve işlevleri, suyun özelliklerinin tanımları program metninde yazmaz; "güvenilir kaynaklardan" toplanması istenir. `KURALLAR.md` dayanak olarak yalnızca `MUFREDAT.md` dosyasını tanır. Bu içerik hangi kaynaktan alınacak (MEB ders kitabı mı), ve derste ne kadarı verilecek? En çok A1, E4, E5 ve F2–F11'i etkiler.
 2. **Akşemseddin.** Program adını anıyor, çalışmasını anlatmıyor ("Akşemseddin’in ve diğer bilim insanlarının çalışmaları örneklendirilir"). Yalnızca adıyla mı anılacak, yoksa çalışması bir sahne olacak mı? "Diğer bilim insanları" için program ad vermiyor.
@@ -657,3 +657,136 @@ Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir
 12. **Benzetimin yetmediği yerler.** (a) BİY.9.1.4 öğrencinin kendi çevresinden seçtiği iki canlıyı üç gün gözlemesini ister; D1–D5'teki hazır gözlem verisi bunun yerini tam tutmaz. Dersin sonunda gerçek gözlem için indirilebilir bir form önerilsin mi? (b) BİY.9.1.1, 9.1.3 ve 9.1.6 serbest bilgi toplama ister; sitede yalnızca hazır kaynak kartları sunulabilir. (c) E2–E3'teki su deneyleri evde yapılabilecek kadar basittir; program hangi deneylerin yapılacağını saymaz, benzetimde hangi düzenekler gösterilecek?
 13. **"Lipit" ve "yağ".** Çıktı BİY.9.1.7 ve çerçeve "lipit" der; tema amacı, öğrenme kanıtları ve köprü kurma "yağ" der. Derslerde hangisi kullanılacak? Öneri: terim "lipit", günlük dil örneklerinde "yağ".
 14. **D konusunun süreç ağırlığı.** Canlıların ortak özellikleri ön bilgi sayıldığı hâlde çerçeve on birini tek tek sayıyor ve anahtar kavramlara prokaryot, ökaryot, beslenme çeşitlerini ekliyor. Bu üç kavram ne kadar açılacak (beslenme çeşitlerinin adları program metninde yok)?
+
+## 7. Kararlar
+
+Tarih: 7 Ekim 2026. Bölüm 6’daki bütün sorular aşağıdaki kararlarla kapanmıştır. Kaynak erişimi sınırlamaları tamamlanmış içerik gibi gösterilmez.
+
+| # | Soru | Karar | ISLEME kuralı |
+|---|---|---|---|
+| 1 | İçerik kaynağı | MEB 2026 kitabı alındı. İçerik kapsamı MUFREDAT.md; bütün ayrıntılar aşağıdaki sayfalardan. Kitapta bulunmayan veri uydurulmaz. | 1–4 |
+| 2 | Akşemseddin | A1’de yalnızca programdaki katkı vurgusuyla adı anılır; biyografi, tarih ve ayrıntılı çalışma eklenmez. Diğer bilim insanlarının katkısı kitap s. 18–19’da seçilen dönüm noktaları üzerinden verilir. | 4 |
+| 3 | Ön bilgi listeleri | B2’de yedi basamak (s. 25–26) araştırma içinde bulunur; B3 özellikleri (s. 23–24) kullanır, listeyi yeniden öğretmez. Evrensel ve değişmez bir sıra iddiası kurulmaz. | 3–4 |
+| 4 | Etik ölçüt ve olay | C1 kitabın park ödevi olayını (s. 31–32) ve aşı/onam tartışmasını (s. 30) kullanır. Franklin ve HeLa etik vakaları zenginleştirme olduğu için yok. | 1–4 |
+| 5 | Doğrudan/dolaylı gözlem | D1–D5 sabit özellik etiketleri öğretmez: araç, süre ve kanıta göre değerlendirme yapılır. Varyasyon/adaptasyon tek fotoğraftan kanıtlanmış sayılmaz (s. 40–41). | 3–4,7 |
+| 6 | Virüs ek örnekleri | Hastalık ve bakteriyofaj fırsatı program kadarıyla anılır; tedavi ayrıntısı eklenmez. Kitap s. 41–42 yapı/çoğalmayı EBA videosuna bırakıyor; bağlantı giriş ekranına yönlendi. Kaynak doğrulanana kadar D6 bu bölümde açık kaynak sınırı gösterir. | 1,4 |
+| 7 | Organik yapı derinliği | Amino asit bölümleri ve nükleotit parçaları, DNA/RNA bazları kitap s. 63,68–70’ten şemayla verilir. Açık formül, bağ adları, doymuş/doymamış ayrımı, esansiyel ayrımı ve sentez mekanizması yok. F1 kalır; üç anahtar kavram beş sahneye sığar. | 1–4,6 |
+| 8 | Ayraçlar | Lugol–nişasta, Benedict–glikoz/fruktoz, Biüret–protein, Sudan III/IV–lipit; ad ve renkler s. 75’ten. Diğer ayraçlar zorunlu ayrı liste değildir. G gerçek laboratuvar deneyine hazırlık benzetimidir. | 3–4,7 |
+| 9 | Enzim deneyi | Katalaz, amilaz ve lipaz adları programdan; isimlendirme kuralları yok. Düzenek s. 80–83; s. 82 ölçüm tabloları boş. Sayısal kabarcık verisi ve katalaz optimumu üretilemez. H2/H3 kitap s. 67’nin nitel eğrilerini ve s. 83 koşullarını analiz eder; gerçek ölçüm site dışıdır. Yalnız pH/sıcaklık. | 1–4 |
+| 10 | Ders sayısı | 37/44=0,84; birleştirme zorunlu değil. Mineraller bir defada değil ardışık kaynak kartlarıyla verilir. | 5–7 |
+| 11 | Pasif geçiş deneyi | Bir öğrenme kanıtıdır, çıktı/uygulama/çerçeve dayanağı yok. Ayrı ders açılmaz; site dışı ve kapsam uyuşmazlığı olarak raporlanır. | 2,4b |
+| 12 | Benzetim sınırı | Gerçek üç günlük gözlem, serbest kaynak taraması, sınıf deneyi ve rapor site dışı. Suyun altı düzeneği s. 47–49’dan; gözlem örnekleri örnek kayıt etiketi taşır. İndirilebilir form zorunlu olmadığı için eklenmez. | 4,4b,7 |
+| 13 | Terim | Bilimsel terim lipit; günlük dilde yağ. | 7 |
+| 14 | D süreç ağırlığı | Prokaryot/ökaryot s. 34’teki çekirdek ayrımı kadar; beslenme üretici/tüketici ve ikisi birlikte (s. 35) kadar; organel öğretimi yok. | 1–4 |
+| 15 | İlk soru | Her kısa ders ilk sorudan önce 2–3 bilgilendirici altyazıyla bağlam ve kavramı kurar. Cevap bu altyazılarda verilmez. Fizik 1. tema kararı 17 örnek alındı. | kullanıcı yönergesi 3 |
+| 16 | Görseller | Gerçekçi canlı görüntüleri kitaptan alınır; şema, grafik ve düzenek SVG. Görsel üretimi/ses/yayın yok. Kaynak ve saklı haklar KAYNAK.md’de açık yazılır. | kullanıcı yönergesi 2; KURALLAR 5.1 |
+| 17 | Yazma sınırı | ISLEME 7.4’teki TEMALAR.md güncellemesi kapsam dışı olduğu için yapılmaz; 8 konu/37 ders durum bilgisi bu klasörde raporlanır. | kullanıcı sınırı |
+
+## 8. Ders kitabı kaynak dökümü
+
+Kaynak: [MEB 9. sınıf Biyoloji ders kitabı](https://tymm.meb.gov.tr/kitap/36/biyoloji-dersi-9sinif-ders-kitabi), PDF `biyoloji-dersi-9sinif-ders-kitabi_20261006_220008_456.pdf`. Alınma: 7 Ekim 2026; sayfa güncellemesi: 6 Ekim 2026. PDF 184 sayfa; basılı sayfa ile PDF sıra numarası aynı. PDF, çıkarılan tam metin ve sayfa görüntüleri proje dışında `/tmp/yasam-kitap/` altındadır. PyMuPDF `page.get_text()` ve `page.get_pixmap()` kullanıldı.
+
+| Dersler | Kitap sayfası | Kaynaklanan içerik |
+|---|---|---|
+| A1 | 17–19 | Biyolojinin sağlık/çevre/gıda katkıları; dokuz program buluşunun tanımı ve katkısı |
+| A2–A3 | 18–20 | Buluş kartları, soru/bilgi/çıkarım ayrımı, kaynak değerlendirme ölçütleri ve üç sütunlu öğrenme tablosu |
+| B1–B2 | 25–29 | Güve gözlemi ve deney yaklaşımı; söğüt gözlemi, hipotezi ve kontrollü deney; yöntem basamakları |
+| B3 | 23–24,28 | Bilimin doğası özellikleri ve bağlamı koruyan yorum |
+| C1–C2 | 30–32 | Aşı araştırması/onam/adalet soruları; park ödevi vakası; veriyi değiştirmeme ve kaynak/katkı gösterme |
+| D1–D5 | 33–41 | Gözlem formu, canlılık örnekleri, prokaryot/ökaryot, beslenme, organizasyon, metabolizma, homeostazi |
+| D6 | 41–42,88 | Hücre tanımına tam uymama; yapı/çoğalma için EBA video yönlendirmesi. Video doğrulanamadı; ayrıntı eklenmez |
+| E1 | 45–46,51 | İnorganik tablo altı özelliği; suyun görevleri ve minerallerin dışarıdan alınması. Boş tablonun kaynakta bulunmayan cevapları yazılmaz |
+| E2–E3 | 47–51 | Altı su deneyi; adezyon/kohezyon, yüzey gerilimi, buz yoğunluğu, çözücülük, ısı tutma ilişkisi; sayısal ölçüm yok |
+| E4–E5 | 51–53,170 (Form 8) | On bir mineralin işlevi, besinleri ve eksiklik sonuçları; dengeli beslenme |
+| F1 | 56–57 | Beş organik grup; monomer/polimer, dehidrasyon/hidroliz; lipitlerin polimer olmaması |
+| F2–F4 | 57–61 | Beş monosakkarit, üç disakkarit bileşimi, dört polisakkaritin yapı/depo görevleri |
+| F5–F6 | 61–62 | Yağ asidi ve trigliserit (gliserol + üç yağ asidi), fosfolipit (iki kuyruk/fosfat), steroit dört halka |
+| F7 | 63–64 | Amino asit bölümleri, protein işlevleri, denatürasyon; her denatürasyon kalıcı değildir |
+| F8–F9 | 64–66 | Genellikle protein yapılı enzim; aktivasyon eşiği; substrat, indüklenmiş uyum, basit/bileşik enzim |
+| F10 | 68–70 | Nükleotit parçaları, DNA/RNA şeker/baz/iplik ayrımı, A–T ve G–C eşleşmesi |
+| F11 | 71–72,55 | A/D/E/K ve B/C çeşitleri/işlevleri; yetersiz/dengesiz beslenme. Vitamin yapısı ve B alt türleri yok |
+| F12 | 56,61–62 | Bilgi araçları, karşılaştırma/düzeltme/kaydetme; lipitlerle ilgili yanlış iddiayı düzeltme |
+| G1–G3 | 74–78 | Seçilen dört ayraç ve pozitif renkleri; nitel analiz, besin seçimi, hata durumunda tekrarlama |
+| H1 | 79–83 | Enzim adları, katalaz düzeneği, değişkenler, beş dakikalık ölçüm yöntemi ve güvenlik |
+| H2–H3 | 67,79,82–83 | Nitel sıcaklık/pH eğrileri, sekiz tüpün kitap koşulları, günlük yaşam ilişkileri. Gerçek kabarcık sayısı verilmemiştir |
+
+Kitap s. 42 virüs videosu ve s. 45 inorganik animasyon karekodları `ders.eba.gov.tr/ders//redirectContent.jsp` üzerinden EBA giriş sayfasına yönlendi. Video/animasyon içerikleri alınamadı. Kitap s. 170 mineral tablosu okunup sayfa görüntüsüyle denetlenir.
+
+## 9. Uygulama ve denetim planı
+
+PLAN.md içerik kararlarını, TASKS.md yapılacak işleri, DURUM.md ders bazında devam noktasını tutar. Sıra: kaynak/karar → senaryolar → tema iskeleti → A örnek konusu → konu bazında dersler → ölçüm → tema denetimi → kapsam/sahne eşlemesi → rapor.
+
+Yalnız `biyoloji/yasam/` ve `plan/biyoloji/yasam/` yazılır. Ortak motor değişmez; HTML/JS/SVG ve kit.js kullanılır. Her ders 3–5 özgün sahne, iki çıkış sorusu ve kısa defter kuralı içerir. İlk sorudan önce 2–3 bağlam altyazısı. Kaynak kartları tek tek açılır; molekül şemaları açık formül taşımaz.
+
+Doğrulama: her derste `node araclar/olc.js biyoloji/yasam/<kod> --goruntu /tmp/yasam-olc/<kod>`; tüm temada `node araclar/denetle.js biyoloji/yasam`. Ölçümün çıkış kodu bütçe uyarılarını tek başına temsil etmez; çıktıdaki bütün sayaçlar ve tamamlanamayan sahneler ayrıca okunur.
+
+## 10. Kısa ders başına anlatım seçimi
+
+Her kısa dersin yöntem tercihi biyolojik fikre göre yapılır; matematik şablonu kopyalanmaz.
+
+| Kısa ders | Anlatım | Gerekçe | Kaynak |
+|---|---|---|---|
+| A1 | Ardışık buluş–katkı eşleştirmesi | Dokuz örnek tarih ezberine çevrilmeden katkısıyla ayrılır; önce bilgi, sonra uygulama. | s.17–19 |
+| A2 | Soru, kaynak inceleme ve kayıt seçimi | Bilgi ihtiyacını ve kaynağın izlenebilirliğini araştırma sürecinde kullanır. | s.19–20 |
+| A3 | Kanıt → çıkarım ve kapsam sınıflandırması | Desteklenen sonuç ile bilinmeyeni ayırır; kaynaksız aşı sayıları gerekmez. | s.17–20 |
+| B1 | Gözlem şeması → soru → hipotez → deney karşılaştırması | Gözlenen desenden sınanabilir açıklamaya geçiş görünür; kişisel yargı ve kesin sonuç yanılgısı ayırt edilir. | s.25–27 |
+| B2 | Olay–basamak eşleştirmesiyle kurulan süreç; geri dönüş oku; ikinci deney şeması | Yedi basamak ezber tanım yerine araştırma içinde kullanılır; yetersiz kanıtta dönüş ve yaklaşım çeşitliliği görünür. | s.23,25–28 |
+| B3 | Kanıt–yorum ağı ve anlamı koruyan kayıt seçimi | Drenaj yakınlığı kesin neden ilan edilmez; sayı kapsamı ve yeni kanıtla yeniden değerlendirme korunur. | s.23,27–28 |
+| C1 | Örnek olayda kanıt–etik ölçüt eşleştirmesi | Somut rapor davranışı ve aşı vakası üzerinden onam/acil durum sorgulanır. | s.30–32 |
+| C2 | Belge seçimi → doğrulama → kayıt | Aynı fotoğraftan çıkarılamayan hüküm ve ek belge ihtiyacı görünür olur. | s.31–32 |
+| D1 | Canlı fotoğrafları → boş üç günlük plan → örnek kayıt → gözlenememe; kayıt/yorum seçimi | Gerçek gözlem yerine hazır sonuç sunmaz; gözlenmedi/yok ayrımını öğretir. | s.33,40–41 |
+| D2 | Üretici/tüketici fotoğraf karşılaştırması, öglena iki yol şeması, atık ve büyüme/gelişme sınıflandırması | Ortak özellik ön bilgisini farklı yolların kanıtlarına uygular; boşaltım atlanmaz. | s.35,37,40 |
+| D3 | Işığa yönelen temsili bitki, iki üreme yolu, kelebek desenleri ve ördek ayağı | Anlık tepkiyi kalıtsal uyumdan, farkı genetik neden iddiasından ayırır. | s.37–39 |
+| D4 | Fotoğraf→inceleme aracı, çekirdek var/yok, hücresel organizasyon | Prokaryot/ökaryot yalnız çekirdek düzeyinde; organel öğretimi yok. | s.34–35,41 |
+| D5 | Yapım/yıkım, besin→ATP→kas, terleme→iç denge; nitel ilişki seçimi | Metabolizma iki yönüyle kullanılır; kaynaksız sıcaklık veya ölçüm sonucu üretilmez. | s.36–39 |
+| D6 | Hücre karşılaştırması, ölçekli olmayan boyut şeritleri, iki sınıf arasında virüs | s.41 biyolojik bilgisiyle sınıflandırma sınırını öğretir; kaynak denetimi dersine dönüşmez. | s.34,41–42; s.88 yalnız kapsam kontrolü |
+| E1 | Su görevleri, toprak→bitki→hayvan mineral yolu, 6 değerlendirme yönünü ardışık karşılaştırma | Kaynaklı görevlerden doğrudan biyolojik çıkarım; boş tablonun cevapları uydurulmaz. | s.45–46,51 |
+| E2 | İki lam/su tabakası, dolu bardağa para, karabiber/parmak koşulu, bitkide su yolu | Su–cam/su–su çekimleri ile yüzey gerilimi, aynı kaynak düzeneklerinden nitel olarak açıklanır. | s.47–48,50–51 |
+| E3 | Buz yüzmesi, beş bardak çözme düzeni, eşit su/yağ koşulları ve boş ölçüm planı, yaşama katkı | Öğrenci malzeme/koşul seçer; kaynaklı nitel sonuç görür. Gerçek sıcaklık ve maddeye özgü çözünme sonucu üretilmez. | s.48–49,51; taşıma s.45 |
+| E4 | Genel bağlam seçimi → her mineralin görev/besin öğretimi → çift eşleştirmesi → kayıt; her kartta tek mineral | Bütün program listesi kapsanır; 25 kelime sınırı için kartlar sırayla açılır. | s.170 Form8; bağlam s.51–53 |
+| E5 | Genel bağlam seçimi → 11 mineralin görev/eksiklik ilişkisinin öğretimi → kayıt uygulaması → beslenme yorumu | Eksiklik bilgisi beslenmenin önemini açıklar; belirtilerden kişisel teşhis veya takviye önerisi çıkarılmaz. | s.170 Form8,s.53 |
+| F1 | Birim–zincir süreç canlandırması | Birim zincir animasyonu kurulma/ayrılma yönünü görünür kılar; lipit için ayrı üç kuyruk modeli genellemeyi önler. | s. 56–57 |
+| F2 | Şeker–yer–işlev eşleştirmesi | Beş ve altı köşeli semboller karbon sayısını modelle ayırır; şeker–molekül ve şeker–işlev eşleşmesi yalnız yakıt yanılgısını düzeltir. | s. 57–58 |
+| F3 | İki birimin birleşip ayrılması | Renkli halka sembollerinin birleşip ayrılması üç disakkaritin bileşimini ezber listesinden modele dönüştürür. | s. 58–59 |
+| F4 | Depo ve destek modelleri | Zincir modelleri depo kutusu ve destek duvarıyla ilişkilendirilir; yalnız ad ezberi yerine yapı–işlev karşılaştırması yapılır. | s. 59–61 |
+| F5 | Gliserol–üç yağ asidi modeli | Üç kuyruk ayrı yağ asitleri olarak gliserole birleştirilir; aynı yapı depo simgesine bağlanır. | s. 61–62 |
+| F6 | Çift katman ve halka modeli | İki kuyruklu fosfolipit çift katmana yerleşir; dört birleşik halkalı steroit modeliyle yapı ve görev karşılaştırılır. | s. 62 |
+| F7 | Etiketli amino asit ve biçim değişimi | Etiketli dört parçalı amino asit modeli; zincir/katlanma ve açılma karşılaştırması yapı–işlev ilişkisini gösterir. Ortak parçalar açık formül çizilmeden adlandırılır. | s. 63–64 |
+| F8 | Nitel enerji eşiği grafiği | Sayısız nitel enerji eğrileri aynı başlangıç/sonla çizilir; eşik yüksekliği ve net fark ayrı oklarla karşılaştırılır. | s. 64,66 |
+| F9 | Substrat bağlanma ve uyum modeli | Substrat aktif bölgeye hareket eder; enzim çizgisi bağlanma anında değişerek indüklenmiş uyumu gösterir. Ayrı yardımcı parça basit/bileşik ayrımını kurar. | s. 64–66 |
+| F10 | Nükleotit/iplik/baz şeması | Üç parçalı nükleotit modeli, iki iplik/tek iplik ve karşılıklı baz yerleşimi karşılaştırılır; açık formül ve bağ adı kullanılmaz. | s. 68–70 |
+| F11 | Çeşit–işlev sınıflandırması | İki ortam kutusunda vitamin sınıflandırması; göz/koruyucu çevre/kemik/pıhtı ve ağ modelleri çeşitleri işlevle eşleştirir. Yapı ve B alt türleri yok. | s. 55,71–72 |
+| F12 | İddia–kanıt karşılaştırma ve kayıt | Yanlış iddia üç farklı lipit modeliyle sınanır; düzeltme ve izlenebilir kayıt araştırma süreci benzetimini tamamlar. Gerçek grup ürünü site dışıdır. | s. 56,61–62 |
+| G1 | Damla→model tüp→renk animasyonu; hedef–ayraç seçimi | Nitel tepkime görülebilir olur; gerçek besin sonucu uydurulmaz. | s.74–75 |
+| G2 | Besin seçimi kaydırıcısı ve besin→hedef→ayraç planı; ayrı pozitif model | Öğrenci deney tasarlar, hedef seçimi ayracı gerekçelendirir; planın tahmin olduğu korunur. | s.75–76 |
+| G3 | Model sonucu kaydı, nitel tablo, yanlış ayraçtan düzeltip tekrar yolu | Sonuç analizi ile yöntem hatası ayrılır; model sonucu gerçek ölçüme taşınmaz. | s.75–77 |
+| H1 | Etiketli katalaz düzeneği ve değişken seçimi | Değiştirilen, ölçülen, sabit tutulanlar somut ölçüm olayına bağlanır. | s.26,79–83 |
+| H2 | Süreç karşılaştırması ve nitel sıcaklık eğrisi | Yavaşlama ile biçim bozulmasını ayırır; koşul tablosu sonuç gibi sunulmaz. | s.67,79,82–83 |
+| H3 | İki nitel pH eğrisi ve kontrol koşulu seçimi | Nötr pH her enzim için optimum değildir; iki katalaz düzeneği ayrı gösterilir. | s.67,82–83 |
+
+Renk kararı: Motorun altı rengi A–F için birer kez seçildi. Sekiz konu için palet altı renkle sınırlı olduğu ve konular aynı renk alamadığı için G `#c7ce73`, H `#ec9ec4` seçildi; sessiz tahta üslubu korunur. Ortak palette değişiklik yapılmadı.
+
+### Kullanıcı yönlendirmesi — bağımsız kurs (7 Ekim 2026)
+
+Kitap içerik kaynağıdır; öğrenci yanında kitap açıkmış gibi anlatılmaz. Öğrenci tahtasından sayfa numaraları kaldırıldı. “Kitapta var/kitabın sayfasını incele” türü açıklamalar doğrudan konu anlatımına dönüştürülür. Bütün sorular gerekli bağlam ve görselle dersin içinde kurulmalıdır. Kitap görselleri kırpılarak ders içinde kullanılır. Kaynak sayfaları PLAN.md, senaryo, JS yorumları ve görsel kaydında tutulur; tahtada gösterilmez. Kaynak inceleme kazanımlarında kaynak adı/kayıt örneği yer alabilir; bu, dış sayfayı açma zorunluluğu oluşturmaz. Doğrulanamayan içeriğin yerine öğrenciye geliştirme sürecini öğreten sahneler yazılmaz; dersin kapsam eksikliği geliştirme raporunda tutulur. Kural: kullanıcının ek yönergesi.
+
+### H konusu anlatım seçimi
+
+| Kısa ders | Anlatım | Gerekçe | Kaynak |
+|---|---|---|---|
+| H1 | Etiketli katalaz düzeneği + kontrol değişkeni seçimi | Bağımlı/bağımsız/sabit koşullar ölçülen olaya bağlanır; yanlış süre ve sızıntı gibi hatalar anlam kazanır. | s. 79–83 |
+| H2 | Soğukta yavaş etkileşim / sıcakta biçim bozulması + nitel eğri | İki farklı mekanizma görünür olur; ölçülmemiş kabarcık sayıları üretilmez. | s. 67,79,82–83 |
+| H3 | İki enzimin nitel pH eğrisini karşılaştırma + katalaz koşul seçimi | Her enzimde nötr optimum yanılgısını giderir; deney koşulu ile ölçüm sonucu ayrılır. | s. 67,82–83 |
+
+### İnceleme kararları — 7 Ekim 2026
+
+- A1’de ilk seçim artık buluşun toplumsal etkisini araştıran soru seçimidir. Penisilin, DNA ve CRISPR-Cas bilgileri önce anlatılır; sonraki seçimler bilgiyi uygular. Öğretilmemiş buluş adını tahmin ettirme kaldırıldı. Kaynak s. 17–19.
+- A3 kanıtın kapsamı/desteklenmeyen sonuç; C2 aynı fotoğraftan çıkarılamayan hüküm ve gerekli ek belge seçimiyle derinleştirildi. Yeni gerçek araştırma veya veri eklenmedi; kaynaklı vaka üstünde yöntem/çıkarım benzetimi.
+- C1 aşı vakasında sağlıklı gönüllülere kontrollü virüs verilmesi ve doktor gözetimi (s. 30) bağlamı içeride anlatılır.
+- H1 değiştirilen/ölçülen/eşit tutulan ile bağımsız/bağımlı/kontrol değişkenleri eşleştirilir (s. 26,82).
+- H2/H3 s. 83 numaralı tüpleri **karaciğer özütü–balon hacmi** örneği olarak gösterir. S. 80–82’deki **maya–ters silindir–beş dakikalık kabarcık sayısı** yöntemi ayrı örnek olarak anlatılır. İki düzenek karıştırılmaz. Koşul tablosundan ölçüm sonucu veya katalaz optimumu çıkarılmaz.
+- H2 sıcaklık işareti çizilmiş SVG eğrisinin kendi geometrisini izler; 35–40 °C model bandı seçilebilir. H3 pH işareti yüksek aktivite bölgesi dahil tüm eğrileri keser. Sayılar/grafik kaynağı s. 67; grafik koordinatları ölçüm verisi değildir.
+- 4–6 dakika hedefi öğrenci düşünme/etkileşim süresini içerir. Otomatik oynatma anlatım süresini ölçer; gerçek öğrenci süresi sınıfta doğrulanmadığı için bu hedef test edilmiş başarı olarak raporlanmaz. Kısa anlatımların gereksiz beklemeyle uzatılması yerine anlamlı uygulamalar seçilir.
+
+- E1’de hücrelerde ve vücutta en fazla bulunan molekülün su olduğu köprü bilgisi doğrudan anılır (program köprü kurma; kitap s. 45). E3 miktar artışının karşılaştırma amacı seçimden önce kurulur; yalnız kaynak protokolünü ezberden bekleme yoktur.
+- G2 besin seçimi programın adıyla saydığı 11 örneğin tamamını içerir. Kitapta sonuç olmayan besinler için yalnız ad kullanılır; içerik/pozitif test sonucu atanmaz. Kural 1 ve 4.

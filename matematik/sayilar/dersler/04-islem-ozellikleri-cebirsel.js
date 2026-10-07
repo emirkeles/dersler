@@ -18,14 +18,43 @@
   }
   const fire = (p) => { if (p && p.catch) p.catch((e) => { if (!(e instanceof Ders.Cancelled)) console.error(e); }); };
   const par = (...ps) => Promise.all(ps);
+  /* Okunacak metin: ekran yazısı kelimeye çevrilir (rakam, simge, ek). Kendi okunuşu olan satır { speak } ile verilir.
+     Oyunculuk yönergesi { ton: 'curious' | 'thoughtful' } ile, cümle içi duraklama metinde [short pause] ile eklenir. */
+  const BIR = ['sıfır', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz'];
+  const ON = ['', 'on', 'yirmi', 'otuz', 'kırk', 'elli', 'altmış', 'yetmiş', 'seksen', 'doksan'];
+  function sayiKelime(n) {
+    if (n === 0) return BIR[0];
+    const ucluk = (k) => {
+      const y = Math.floor(k / 100), o = Math.floor((k % 100) / 10), b = k % 10;
+      return [y ? (y === 1 ? '' : BIR[y] + ' ') + 'yüz' : '', ON[o], b ? BIR[b] : ''].filter(Boolean).join(' ');
+    };
+    const bin = Math.floor(n / 1000), kalan = n % 1000;
+    return [bin ? (bin === 1 ? '' : ucluk(bin) + ' ') + 'bin' : '', kalan ? ucluk(kalan) : ''].filter(Boolean).join(' ');
+  }
+  function ekle(kelime, ek) { // "dört" + "ü" -> "dördü"
+    return (/t$/.test(kelime) && /^[aeıioöuü]/.test(ek) ? kelime.slice(0, -1) + 'd' : kelime) + ek;
+  }
   function spk(html) {
     const d = document.createElement('div'); d.innerHTML = html;
     return (d.textContent || '')
+      .replace(/\b([A-ZÇĞİÖŞÜ])(\d+)[’'](?:da|te)ki/g, (m, h, n) => h + ' ' + sayiKelime(+n) + ' dersindeki')
+      .replace(/(\d)([a-z]+)\b/g, (m, n, h) => n + ' ' + h.split('').join(' '))
+      .replace(/ℕ[’'][a-zçğıöşü]+/g, 'doğal sayılarda').replace(/ℤ[’'][a-zçğıöşü]+/g, 'tam sayılarda').replace(/ℚ[’'][a-zçğıöşü]+/g, 'rasyonel sayılarda')
+      .replace(/²[’']([a-zçğıöşü]+)/g, (m, ek) => ' kare' + ek).replace(/\bTL\b/g, 'lira')
+      .replace(/(\d+)[’']([a-zçğıöşü]+)/g, (m, n, ek) => ekle(sayiKelime(+n), ek))
+      .replace(/(\d+),(\d+)/g, (m, i, k) => i + ' virgül ' + k.split('').map((x) => BIR[x]).join(' '))
+      .replace(/(\d+)\/(\d+)/g, '$1 bölü $2')
+      .replace(/\d+/g, (n) => sayiKelime(+n))
       .replace(/\s*[×·]\s*/g, ' çarpı ').replace(/\s*÷\s*/g, ' bölü ').replace(/−/g, ' eksi ').replace(/\+/g, ' artı ')
       .replace(/≠/g, ' eşit değildir ').replace(/=/g, ' eşittir ').replace(/\(/g, ' parantez aç ').replace(/\)/g, ' parantez kapa ')
-      .replace(/²/g, ' kare ').replace(/\s+/g, ' ').trim();
+      .replace(/</g, ' küçüktür ').replace(/>/g, ' büyüktür ').replace(/≤/g, ' küçük eşittir ').replace(/≥/g, ' büyük eşittir ')
+      .replace(/⇔/g, ' ancak ve ancak ').replace(/⇒/g, ' ise ').replace(/⊻/g, ' ya da ').replace(/∧/g, ' ve ').replace(/∨/g, ' veya ')
+      .replace(/∀/g, 'her simgesi').replace(/∃/g, 'bazı simgesi').replace(/′/g, ' değili')
+      .replace(/ℕ/g, 'doğal sayılar').replace(/ℤ/g, 'tam sayılar').replace(/ℚ/g, 'rasyonel sayılar').replace(/ℝ/g, 'gerçek sayılar')
+      .replace(/²/g, ' kare ').replace(/³/g, ' küp ')
+      .replace(/\s+([,.:;?!])/g, '$1').replace(/\s+/g, ' ').trim();
   }
-  const say = (c, html, o) => c.say(html, Object.assign({ speak: spk(html) }, o));
+  const say = (c, html, o) => c.say(html, Object.assign({ speak: (o && o.ton ? '[' + o.ton + '] ' : '') + (o && o.dur ? spk(html).replace(':', ': [short pause]') : spk(html)) }, o));
 
   /* ---------- SVG yardımcıları ---------- */
   const g = (p, a) => SV('g', a || {}, p);
@@ -331,7 +360,7 @@
     R(ov, 0, 0, 1000, 562, { rx: 0, fill: '#070b1c', fo: 0.965 });
     const t1 = T(ov, 500, 292, 'Sihir mi?', { anchor: 'middle', size: 76, w: 800 }); hide(t1);
     const t2 = T(ov, 500, 372, 'Hayır. İşlem özelliği.', { anchor: 'middle', size: 46, fill: B, w: 800 }); hide(t2);
-    await par(say(c, 'Ezberlemedi. Peki ne yaptı?'), (async () => {
+    await par(say(c, 'Ezberlemedi. Peki ne yaptı?', { ton:'curious' }), (async () => {
       await c.wait(900);
       await fade(c, ov, 800, 1, 0);
       t1.style.opacity = 1; await c.tween(700, (e) => aboutC(t1, 500, 270, 0.6 + 0.4 * e), ease.back);
@@ -406,7 +435,7 @@
     });
 
     /* kes */
-    await par(say(c, 'Fazlayı keseriz: <b>700 − 14 = 686</b>.'), (async () => {
+    await par(say(c, 'Fazlayı keseriz: <b>700 − 14 = 686</b>.', { dur:1 }), (async () => {
       scissors.setAttribute('transform', `translate(${sx0 + SWd / 2} ${OY - 10})`); await fade(c, scissors, 250);
       await c.tween(350, (e) => { place(blade1, 0, 0, 1, -22 * Math.sin(e * Math.PI * 2)); place(blade2, 0, 0, 1, 22 * Math.sin(e * Math.PI * 2)); }, ease.linear);
       fire(fade(c, scissors, 300, 0));
@@ -454,7 +483,7 @@
     const wrong = TS(svg, OX, 478, [['700 ' + MIN + ' 2 = 698', BAD]], { size: 34, w: 800 }); hide(wrong);
     const cross = L(svg, OX - 6, 468, OX + 262, 468, '#fff', 3); hide(cross);
     const msg = T(svg, OX, 520, 'Şeridin 7 satırı da atılmalı: 7 × 2 = 14', { size: 26, fill: A, w: 800 }); hide(msg);
-    await par(say(c, 'Sık hata: <b>700 − 2</b>. Şeridin 7 satırı da gider.'), (async () => {
+    await par(say(c, 'Sık hata: <b>700 − 2</b>. Şeridin 7 satırı da gider.', { ton:'thoughtful' }), (async () => {
       stripCount.style.opacity = 0;
       await fade(c, wrong, 400); await fade(c, cross, 300);
       await c.tween(700, (e) => { strip.setAttribute('transform', `translate(${sx0 + 88 * (1 - e)} ${OY})`); }, ease.inOut);
@@ -560,7 +589,7 @@
       T(nl, XV(v), AX + 40, v < 0 ? MIN + String(-v) : String(v), { anchor: 'middle', size: 22, fill: v === 0 ? INK : MUTE, w: v === 0 ? 800 : 500 });
     }
     hide(nl);
-    await par(say(c, 'Çıkarmada? <b>5 − 3</b> = 2, ama <b>3 − 5</b> = −2.'), (async () => {
+    await par(say(c, 'Çıkarmada? <b>5 − 3</b> = 2, ama <b>3 − 5</b> = −2.', { ton: 'curious' }), (async () => {
       await fade(c, nl, 500);
       const dot0 = Ci(scene, XV(5), AX, 12, { fill: A }); dot0.style.opacity = 0; await popIn(c, dot0, XV(5), AX, 350);
       const j1 = arcJump(scene, XV(5), XV(2), AX - 14, 62, A, MIN + '3');
@@ -809,7 +838,7 @@
       await c.wait(600);
     })());
 
-    await say(c, 'Parantezin yeri, neyin çıkarılacağını değiştirdi.', { ms: 2600 });
+    await say(c, 'Parantezin yeri, neyin çıkarılacağını değiştirdi.', { ton:'thoughtful', ms: 2600 });
     c.note('Çıkarmada <b>birleşme yok</b>:<br>(10 − 5) − 2 = 3 &nbsp;ama&nbsp; 10 − (5 − 2) = 7', 'Çıkarmada birleşme yok', 'kural-cikarma-birlesme');
   }
 
@@ -1083,7 +1112,7 @@
     const lblT = T(gb, X0 + 10 * U + 22, Y2 + 42, '', { size: 28, w: 800, fill: MUTE });
     const wrongG = g(gb); hide(wrongG);
     await fade(c, gb, 600);
-    await par(say(c, 'İşaret tuzağı: <b>10 − (3 + 2)</b>. Parantezin içi birlikte çıkar.'), (async () => {
+    await par(say(c, 'İşaret tuzağı: <b>10 − (3 + 2)</b>. Parantezin içi birlikte çıkar.', { ton:'thoughtful' }), (async () => {
       await c.wait(600);
       [7, 8, 9].forEach((i) => paintCell(cellsB[i], B)); [5, 6].forEach((i) => paintCell(cellsB[i], C));
       await c.wait(400);
@@ -1492,7 +1521,7 @@
     const t3 = tok('3', 290, 310, KN), t2 = tok('2', 380, 310, KN);
     const tm3 = tok(MIN + '3', 290, 310, KZ), th = tok('1/2', 380, 310, KQ);
     const t0 = tok('0', 290, 310, OK), t1 = tok('1', 380, 310, OK);
-    await par(say(c, 'Bu özellikler her sayı kümesinde var mı?'), (async () => { await fade(c, kg, 600); await par(fade(c, t3, 400), fade(c, t2, 400)); })());
+    await par(say(c, 'Bu özellikler her sayı kümesinde var mı?', { ton:'curious' }), (async () => { await fade(c, kg, 600); await par(fade(c, t3, 400), fade(c, t2, 400)); })());
     await c.choice({
       tag: 'Tahmin et', q: '3’ün toplamaya göre tersi −3. İlk kez hangi kümede var?', options: ['ℕ', 'ℤ', 'ℚ'], answer: 1,
       hints: ['ℕ = {0, 1, 2, …}: negatif sayı yok.', '', 'Daha küçük bir kümede de var: −3 bir tam sayı.'],

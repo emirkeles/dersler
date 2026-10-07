@@ -1,0 +1,2 @@
+/* Uzun kimyasal gösterimler küçük ekranlarda da panel içinde kalır. */
+.act .q, .act .opt, .notes .note { overflow-wrap: anywhere; }

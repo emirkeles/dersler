@@ -13,7 +13,7 @@
        tanitim: 'tema sayfasının başındaki bir iki cümle',
        konular: [ { harf: 'A', ad: 'Konu adı', renk: '#f5b04c', dersler: [
          ['a1-dosya-adi.html', 'Başlık', 'Açılış sorusu', sahneSayisi], … ] }, … ],
-       hikayeler: [ { kod: 'A8', ders: 'Dersin başlığı', ad: 'Hikâyenin adı', video: 'hikaye/…mp4' } ],   // isteğe bağlı
+       hikayeler: [ { kod: 'A8', ders: 'Dersin başlığı', ad: 'Hikâyenin adı', video: 'hikaye/…mp4', kapak: 'hikaye/…/kapak.jpg' } ],   // isteğe bağlı; kapak da isteğe bağlı
      });
    Kısa dersin kimliği <tema kimliği>-<dosyanın kodu> olur (sayilar-a1) ve dersin kendi `id` alanıyla aynı
    olmalıdır; ilerleme tarayıcıda 'ders:<kimlik>' anahtarıyla durur. Yayındaki temanın kimliği ve ders kodları

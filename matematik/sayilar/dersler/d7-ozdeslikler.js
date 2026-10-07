@@ -53,7 +53,7 @@
       await fade(c, satir(pr, 296, ['9 + 12 + 12 + 16 = ', ['49', OK]], 28), 400);
       await fade(c, satir(pr, 340, ['(3 + 4)² = 7² = 49'], 28), 400);
     })());
-    await par(say(c, 'Yalnızca kareleri sayarsan 25: eksik 24, dikdörtgenlerde.'), (async () => {
+    await par(say(c, 'Yalnızca kareleri sayarsan 25: eksik 24, dikdörtgenlerde.', { ton:'thoughtful' }), (async () => {
       [pc.ab1, pc.ab2].forEach((q) => { q.r.setAttribute('stroke', BAD); q.r.setAttribute('stroke-width', 4); q.r.setAttribute('stroke-dasharray', '9 6'); });
       await fade(c, satir(pr, 426, [['a² + b² = 25', BAD]], 28), 400);
       await fade(c, satir(pr, 468, [['eksik: 2ab = 24', BAD]], 26), 400);
@@ -80,7 +80,7 @@
       setParts(deg, [['a = ' + a, A], '     ', ['b = ' + b, B]]);
     }
     upd();
-    await say(c, 'Bir iddia: a = 1, b = 0 için tutuyor.');
+    await say(c, 'Bir iddia: a = 1, b = 0 için tutuyor.', { ton:'curious' });
     await c.choice({
       tag: 'Tahmin et', q: 'Bir örnekte tuttu. Bu eşitlik her a ve b için doğru mu?', options: ['Evet', 'Hayır'], answer: 1,
       hints: ['Tek örnek kanıtlamaz. Başka değerler dene: a = 3, b = 4.', ''],

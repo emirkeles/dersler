@@ -64,9 +64,9 @@
   async function yaDa(c) {
     const { s, son } = kur(c, [['p', A], ' ⊻ ', ['q', B]], '⊻: “ya da”');
     s.yak((n) => CIFT(n) || UC(n));
-    await say(c, 'Önce “veya”: sekiz sayı yanıyor.');
+    await say(c, 'Önce “veya”: sekiz sayı yanıyor.', { ton:'curious' });
     await say(c, '<b>p ⊻ q</b>: yalnızca biri doğru olmalı.');
-    await par(say(c, 'İkisi birden doğruysa “ya da” yanlış: 6 ve 12 söndü.'), (async () => {
+    await par(say(c, 'İkisi birden doğruysa “ya da” yanlış: 6 ve 12 söndü.', { ton:'thoughtful' }), (async () => {
       for (const n of [6, 12]) { const it = s.items[n - 1]; it.d.setAttribute('stroke', BAD); await c.wait(450); s.boya(it, false); await c.wait(250); }
       son.textContent = 'p ⊻ q doğru: 2, 3, 4, 8, 9, 10';
     })());

@@ -35,6 +35,7 @@ Başlangıç ve bitiş: 7 Ekim 2026. Çalışma klasörü paylaşıldığı içi
 - Tel sesi (kullanıcı geri bildirimi, 7 Ekim 2026: "tel titriyor ama ses çıkmıyor"): A1 S1'de tel çekilip bırakılınca gitar teli sesi duyulur. Ses dosyası yok; `a1-fizik-baglarindan-taninir.js` içinde Karplus–Strong yöntemiyle üretilir (sol teli, 196 Hz). Teldeki salınımın genliği sesin zarfından okunur; vida teli gererken ses iki yarım ses incelir. "Ses kapalı" iken çalmaz, ders duraklatılınca söner, anlatım kliplerinin üstüne binmez. Başsız tarayıcıda çözümleyiciyle ölçüldü: 196 Hz, sönen ses, gerilirken yaklaşık 220 Hz'e yükseliyor, altyazı okunurken sessiz. Kulakla dinlenmedi. Altyazı metni değişmediği için klip yeniden üretilmedi.
 - Yayın: 7 Ekim 2026'da kullanıcı istedi; `ortak/katalog.js` içinde `yayinda: true`. Ana sayfa Fizik altında temayı ve altı dersi gösteriyor, konsol temiz. Yayına alındığında klipler henüz dinlenmemişti, iki resim üretilmemişti.
 - Yapılmayanlar: görsel üretimi, hikâye videosu.
+- Geriye dönük düzeltme yok (kullanıcı kararı, 7 Ekim 2026): `KURALLAR.md` 3 aynı gün değişti (ders uzunluğu tavan değil, her sorudan önce gereken bilgi öğretilir) ve kullanıcı seslendirmede yönerge istedi. Bu tema yeni kurallara göre yeniden yazılmaz, klipleri yönerge eklemek için yeniden üretilmez; kurallar sonraki temalarda uygulanır.
 
 ## Seslendirme
 

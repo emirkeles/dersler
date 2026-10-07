@@ -33,6 +33,8 @@ Bu planlar 7 Ekim 2026'da, ortak kurallar genişletilmeden önce yazıldı: dene
 - `senaryolar/` — kısa derslerin sahne sahne senaryoları (tema işleme alınınca).
 - `DURUM.md` — tema işleme alınınca oluşur; hangi adımın ve hangi kısa dersin bittiğini tutar.
 
+Dersin bütününe ait: `plan/fizik/HIKAYE-ANIMASYONLARI.md` — dört temanın hikâye animasyonu adayları, önem sırasıyla (7 Ekim 2026 taslağı; 20 hikâye, onay bekliyor).
+
 Site içeriği (tema sayfası, `tema.js`, kısa dersler) `fizik/<klasör>/` altında duracak. Ortak kurallar: `../KURALLAR.md`; tema ekleme adımları: `ortak/API.md`.
 
 ## Kural

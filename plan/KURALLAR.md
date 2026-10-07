@@ -1,6 +1,6 @@
 # Ortak kurallar
 
-Bütün dersler ve temalar için bağlayıcıdır. Sayılar teması yazılırken alınan kararlardan derlendi (`plan/matematik/sayilar/PLAN.md`); 7 Ekim 2026'da fen ve sosyal dersler eklenince genişletildi (içerik kaynağı, deney ve ürün isteyen çıktılar, formülsüz dersler, görseller, veri). Bir temaya özgü kararlar o temanın `PLAN.md` dosyasında durur.
+Bütün dersler ve temalar için bağlayıcıdır. Sayılar teması yazılırken alınan kararlardan derlendi (`plan/matematik/sayilar/PLAN.md`); 7 Ekim 2026'da fen ve sosyal dersler eklenince genişletildi (içerik kaynağı, deney ve ürün isteyen çıktılar, formülsüz dersler, görseller, veri); aynı gün bölüm 3 değişti (kısa dersin uzunluğu, önce bilgi sonra soru). Bir temaya özgü kararlar o temanın `PLAN.md` dosyasında durur.
 
 Adlar bütün derslerde aynıdır: Ders → Tema → Konu → Kısa ders. MEB bazı derslerde (fizik, tarih, coğrafya) "ünite" der; sitede ve plan dosyalarında hepsi "tema"dır, MEB'in adı `MUFREDAT.md` kaynak satırında belirtilir.
 
@@ -43,14 +43,29 @@ Gerçek veri (ölçüm tablosu, nüfus, biyoçeşitlilik sayısı, tarih, harita
 
 ## 3. Kısa ders
 
-Bir kısa ders = bir fikir, 4–6 dakika, 3–5 sahne, sonunda 2 çıkış sorusu. İskelet her derste aynıdır, öğrenci ritmi öğrenir:
+Bir kısa ders = bir fikir, sonunda 2 çıkış sorusu. Çoğu ders 4–6 dakika ve 3–5 sahne tutar; bu bir tavan değildir. Uzunluğu içerik belirler: fikrin gerektirdiği bilgi sığmıyorsa sahne ya da adım eklenir, bilgi atılmaz, anlatım kısaltılmaz. Yazı bütçesi (bölüm 4) uzun derste de aynıdır; uzayan şey sahne ve adım sayısıdır. Bir derste iki fikir varsa ders uzatılmaz, ayrılır.
 
-1. **Kanca** (≤ 15 sn): hayattan tek soru, tek görsel.
-2. **Tahmin et:** öğrenci önce tahmin eder (`c.choice`).
+### 3.1 Önce bilgi, sonra soru
+
+Öğrenciye, cevaplayabilmesi için gereken bilgi verilmeden soru sorulmaz. Bu, dersin her sorusu için geçerlidir (tahmin, dene, çıkış soruları), yalnızca ilki için değil. Her sorudan önce bakılır: öğrenci bunu ön bilgisiyle ya da sezgisiyle cevaplayabilir mi?
+
+- **Cevaplayabilir** (bir büyüklüğü kestirmek, iki şekli karşılaştırmak, bir örüntüyü sürdürmek gibi): soru doğrudan sorulur; ders kancayla açılabilir.
+- **Cevaplayamaz** (soru bir ada, tanıma, sınıflandırmaya, olaya, kişiye, birime ya da formüle dayanıyor): önce o bilgi öğretilir, soru sonra gelir. Sorunun cevabı söylenmez; verilen şey, tahmini kör atış olmaktan çıkaran bilgidir.
+
+Hangi açılışın seçildiği dersten derse değişir; ders ya da tema düzeyinde tek bir kalıp dayatılmaz. Seçim senaryoda her kısa ders için yazılır.
+
+### 3.2 İskelet
+
+Sıra her derste aynıdır, öğrenci ritmi öğrenir; değişen yalnızca açılıştır:
+
+1. **Açılış**, iki biçimden biri:
+   - **Kanca** (≤ 15 sn): hayattan tek soru, tek görsel. Soru sezgiyle cevaplanabiliyorsa.
+   - **Öğret:** olay ya da bağlam tanıtılır, sorunun dayandığı kavramlar adlandırılır ve tahtada gösterilir. En az 2–3 altyazı; bilgi çoksa ayrı bir sahne olur. Soru bilgi gerektiriyorsa.
+2. **Tahmin et:** öğrenci gösterimden önce tahmin eder (`c.choice`).
 3. **Gör:** animasyon cevabı gösterir; bu sırada altyazı en çok bir satır.
 4. **Adlandır:** kural tek cümle olarak gelir, deftere düşer. Formülü olan derste tek formül eşlik eder; formülü olmayan derste (kavram, sınıflandırma, olay, metin) cümlenin yanında tek örnek, en çok dört satırlık bir tablo ya da etiketli bir şema olur.
-5. **Dene:** bir kaydırıcı ya da sürükle-bırak. Sayısı olmayan derslerde sınıflandırma (kartı doğru kutuya), sıralama (zaman şeridi, basamaklar), eşleştirme ya da haritada/şemada yer gösterme.
-6. **Çıkış soruları:** 2 soru.
+5. **Dene:** bir kaydırıcı ya da sürükle-bırak. Sayısı olmayan derslerde sınıflandırma (kartı doğru kutuya), sıralama (zaman şeridi, basamaklar), eşleştirme ya da haritada/şemada yer gösterme. Yalnızca derste öğretilmiş olan sorulur.
+6. **Çıkış soruları:** 2 soru; ikisi de derste öğretilenle cevaplanabilir.
 
 Her ders bir akılda kalıcı cümleyle biter.
 

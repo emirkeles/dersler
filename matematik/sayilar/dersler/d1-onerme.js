@@ -87,7 +87,7 @@
       right: '3 ≤ 3 doğru: 3, 3’e eşit.',
     });
     setParts(soru, ['“3 > 3”  ', ['yanlış', BAD], '        “3 ≤ 3”  ', ['doğru', OK]]);
-    await par(say(c, '“Büyük değil” demek: küçük <b>ya da eşit</b>.'), fade(c, kalan, 600));
+    await par(say(c, '“Büyük değil” demek: küçük <b>ya da eşit</b>.', { ton:'thoughtful' }), fade(c, kalan, 600));
     c.note('p yanlışsa p′ doğrudur.<br>“&gt;” işaretinin değili “≤”.', 'Değil', 'kural-degil');
   }
 
@@ -100,9 +100,9 @@
     const oku = T(svg, 330, 312, '∀: “her”', { anchor: 'middle', size: 24, fill: MUTE, w: 600 });
     const dmg = T(svg, 330, 430, 'Yanlış', { anchor: 'middle', size: 44, fill: BAD, w: 800 });
     hide(sem, oku, dmg);
-    await par(say(c, '<b>∀</b>, “her” demektir: istisnasız hepsi.'), (async () => { await fade(c, sem, 500); await fade(c, oku, 400); })());
+    await par(say(c, '<b>∀</b>, “her” demektir: istisnasız hepsi.', { dur:1 }), (async () => { await fade(c, sem, 500); await fade(c, oku, 400); })());
     const ex = [['3² = 9', 112], ['(' + MIN + '2)² = 4', 160], ['(1/2)² = 1/4', 208]].map(([s, y]) => satir(pr, y, [s, '   ', ['> 0', OK]], 30));
-    await par(say(c, 'Üç örnek tuttu. Yeter mi?'), (async () => { for (const r of ex) { await fade(c, r, 400); await c.wait(200); } })());
+    await par(say(c, 'Üç örnek tuttu. Yeter mi?', { ton:'curious' }), (async () => { for (const r of ex) { await fade(c, r, 400); await c.wait(200); } })());
     await c.choice({
       tag: 'Tahmin et', q: '“∀x ∈ ℝ, x² > 0” önermesi doğru mu?', options: ['Doğru', 'Yanlış'], answer: 1,
       hints: ['Örnekler tutuyor; ama “her” diyor. Karesi pozitif olmayan bir sayı ara.', ''],
@@ -144,7 +144,7 @@
     const dd = T(svg, 500, 276, 'değili', { anchor: 'middle', size: 24, fill: MUTE, w: 600 });
     const d2 = TS(svg, 500, 350, [['∃', OK], 'x ∈ ℝ,  x² ≤ 0      ', ['doğru: x = 0', OK]], { anchor: 'middle', size: 40, w: 800 });
     hide(d1, dd, d2);
-    await par(say(c, 'Düşen “her”in değili bir “bazı”dır.'), (async () => { await fade(c, d1, 500); await fade(c, dd, 300); await fade(c, d2, 500); })());
+    await par(say(c, 'Düşen “her”in değili bir “bazı”dır.', { ton:'thoughtful' }), (async () => { await fade(c, d1, 500); await fade(c, dd, 300); await fade(c, d2, 500); })());
     c.note('<b>∃</b>: bazı (en az bir). Tek örnek doğrular.<br>∃x ∈ ℤ, x² = x doğru: x = 1', 'Bazı: ∃', 'kural-bazi');
   }
 

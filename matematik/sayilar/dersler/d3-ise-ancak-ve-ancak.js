@@ -27,7 +27,7 @@
     upd(7);
     hide(bas, oku);
     await say(c, 'Mavi şeritteki her nokta sarı şeridin de içinde.');
-    await par(say(c, '<b>p ⇒ q</b>: p doğruysa q da doğrudur.'), (async () => { await fade(c, bas, 500); await fade(c, oku, 400); })());
+    await par(say(c, '<b>p ⇒ q</b>: p doğruysa q da doğrudur.', { dur:1 }), (async () => { await fade(c, bas, 500); await fade(c, oku, 400); })());
     const sl = c.slider({ label: '<b>x</b>', min: 0, max: 9, step: 0.5, value: 7, fmt: (v) => num(v), onInput: (v) => upd(+v) });
     await say(c, 'Noktayı kaydır: p doğruyken q hiç yanlış oluyor mu?', { noWait: true });
     await c.cont('Devam ›');
@@ -39,7 +39,7 @@
     });
     upd(4);
     setParts(ters, [['x > 3  ⇒  x > 5   yanlış:  x = 4', BAD]]);
-    await say(c, 'x = 4 sarıda var, mavide yok: ters yön yanlış.');
+    await say(c, 'x = 4 sarıda var, mavide yok: ters yön yanlış.', { ton:'thoughtful' });
     c.note('<b>p ⇒ q</b>: p doğruysa q da doğru.<br>x &gt; 5 ⇒ x &gt; 3; tersi yanlış (x = 4)', 'İse: ⇒', 'kural-ise');
   }
 

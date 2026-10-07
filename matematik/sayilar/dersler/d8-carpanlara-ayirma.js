@@ -118,13 +118,13 @@
       await fade(c, satir(pr, 112, [a_, ' · ', b_, ' = 0'], 36), 400);
       await fade(c, satir(pr, 160, [['⇔  ', OK], a_, ' = 0  ∨  ', b_, ' = 0'], 28), 400);
     })());
-    await say(c, 'Çarpım 0 ise çarpanlardan <b>en az biri</b> 0’dır.');
+    await say(c, 'Çarpım 0 ise çarpanlardan <b>en az biri</b> 0’dır.', { dur:1 });
     await c.choice({
       tag: 'Tahmin et', q: 'Değili: “a · b ≠ 0” ne zaman doğrudur?', options: ['a ≠ 0 ∧ b ≠ 0', 'a ≠ 0 ∨ b ≠ 0'], answer: 0,
       hints: ['', 'Yalnızca biri sıfırdan farklıysa öteki 0 olabilir: çarpım yine 0 çıkar.'],
       right: 'İkisi de sıfırdan farklı olmalı.',
     });
-    await par(say(c, '“Veya”nın değili “ve” oldu.'), (async () => {
+    await par(say(c, '“Veya”nın değili “ve” oldu.', { ton:'thoughtful' }), (async () => {
       await fade(c, satir(pr, 262, [a_, ' · ', b_, ' ≠ 0'], 36), 400);
       await fade(c, satir(pr, 310, [['⇔  ', OK], a_, ' ≠ 0  ∧  ', b_, ' ≠ 0'], 28), 400);
     })());

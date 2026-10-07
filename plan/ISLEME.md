@@ -50,7 +50,7 @@ Plan, içeriği programda yazmayan bir şeye dayanıyorsa (formül, tanım, list
 3. Program bir sınır koyuyorsa sınır geçilmez.
 4. Program bir şeyi anıyor ama içeriğini vermiyorsa içerik ders kitabından, sayfa numarasıyla alınır (2b). Bu, programın bir çıktıyla istediği şeyler içindir: bir modelin formülü, bir sınıflandırmanın ögeleri, bir deneyin düzeneği. Programın yalnızca andığı şeyler (bir kişinin adı, bir kitap, tarihî bir olay, "söz edilebilir" denen örnek) program metninde yazdığı kadarıyla anılır. Hiçbir durumda ayrıntı hafızadan eklenmez; kitapta da yoksa konu program kadarıyla kalır.
 4b. Sitede karşılanamayan istek (ürün, sınıf etkinliği, gerçek deney) derse çevrilmez; denetim tablosunda `site dışı` yazılır (`KURALLAR.md` 2.2). Deney ve gözlem `benzetim` olur.
-5. Birleştir ya da ayır sorularında: kısa ders sayısı ders saati başına 0,85'i geçiyorsa planın önerdiği birleştirmeler uygulanır. Bir fikir 5 sahneye sığmıyorsa ayrılır.
+5. Birleştir ya da ayır sorularında: kısa ders sayısı ders saati başına 0,85'i geçiyorsa planın önerdiği birleştirmeler uygulanır. Bir kısa derste iki fikir varsa ayrılır; tek fikir, öğretilmesi gereken bilgi yüzünden 5 sahneyi aşıyorsa ayrılmaz, sahne eklenir (`KURALLAR.md` 3).
 6. Bu kararlardan sonra bir kısa dersin içeriği 3 sahneyi doldurmuyorsa ayrı ders olmaz; en yakın kısa derse sahne olarak katılır.
 7. Geri kalan, yalnızca anlatım tercihine dair sorularda en sade seçenek alınır: en az yeni kavram ve en az adım isteyen.
 
@@ -60,7 +60,7 @@ Kararları `PLAN.md` sonuna "## 7. Kararlar" başlığıyla yaz: soru, karar, ha
 
 ## 4. Senaryolar
 
-Her konu için bir dosya: `plan/<ders>/<tema>/senaryolar/<harf>-<konu-adi>.md`. Her kısa ders yarım sayfa: fikir, açılış sorusu, ana görsel, 3–5 sahne (sahnede ne olduğu; ekran metni değil), hedeflenen yanılgı, akılda kalıcı cümle, 2 çıkış sorusu ve çeldiricileri. Örnek: `plan/matematik/sayilar/senaryolar/D-islem-ozellikleri-ve-cebir.md`.
+Her konu için bir dosya: `plan/<ders>/<tema>/senaryolar/<harf>-<konu-adi>.md`. Her kısa ders yarım sayfa: fikir, açılış sorusu, ana görsel, açılış biçimi (kanca ya da öğret) ve her sorudan önce öğretilen bilgi (`KURALLAR.md` 3.1), sahneler (çoğu derste 3–5, gerekirse daha çok; sahnede ne olduğu, ekran metni değil), hedeflenen yanılgı, akılda kalıcı cümle, 2 çıkış sorusu ve çeldiricileri. Örnek: `plan/matematik/sayilar/senaryolar/D-islem-ozellikleri-ve-cebir.md`.
 
 Resim gereken sahne (`KURALLAR.md` 5.1) senaryoda "Resim:" satırıyla işaretlenir: ne görünecek, sahnedeki işi ne, üstüne hangi etiketler gelecek. Bu sahnelerin istemleri `plan/<ders>/<tema>/GORSELLER.md` dosyasında toplanır: temanın üslup cümlesi, her resim için dosya adı, istem, ders kitabında karşılaştırılacağı sayfa. Vektörle çizilebilen şey için resim istenmez.
 
