@@ -45,6 +45,30 @@ Matematikte yapılanın aynısı: her tema için `MUFREDAT.md` (MEB sayfasından
 - [x] Ana sayfa görüntüsüne bak (yedi ders)
 - [x] Rapor
 
+## Fizik Bilimi ve Kariyer Keşfi temasını işleme al (7 Ekim 2026)
+
+Ayrıntılı ilerleme: `plan/fizik/fizik-bilimi-ve-kariyer-kesfi/DURUM.md`. Doğrudan `main`'e commitlendi.
+
+- [x] 0 `DURUM.md`
+- [x] 1 Müfredat (vardı), 2 Plan (vardı)
+- [x] 2b Ders kitabını al, 1. üniteyi oku (s. 12–49)
+- [x] 3 Açık soruları kapat; kitap içeriğini ve kararları `PLAN.md`'ye yaz; denetim tablosuna durum sütunu
+- [x] 4 Senaryolar: A, B, C, D; `GORSELLER.md`
+- [x] 5 İskelet: `fizik/fizik-bilimi-ve-kariyer-kesfi/` (`index.html`, `tema.js`, `dersler/kit.js`)
+- [x] 6 Kısa dersler (her biri `olc.js` temiz)
+  - [x] A1 Fizik, öteki bilimlerle bağından tanınır
+  - [x] B1 Görselleri neye göre ayırırsın?
+  - [x] B2 Her grubun bir adı var: fiziğin alt dalları
+  - [x] C1 Dört bilim insanı, ortak bir çalışma biçimi
+  - [x] D1 Bilimsel araştırma merkezinde fizik: merak et, sor
+  - [x] D2 Bu bilgi güvenilir mi? Kaynaktan mesleğe
+- [x] 7 Tema denetimi: `denetle.js`, tema sayfası görüntüsü, denetim tablosu, `plan/fizik/TEMALAR.md`
+- [x] 8 Rapor
+- [x] İlk sahnelere soru öncesi bilgilendirme (kullanıcı geri bildirimi; `PLAN.md` karar 17)
+- [x] Seslendirme: 6 ders, 93 klip (`plan/SESLENDIRME.md` adım 1, 2, 4, 5, 6); ayrıntı `DURUM.md` "Seslendirme"
+- [ ] Seslendirme adım 3 ve 6.4: kullanıcı A1'i ve her konudan bir dersi sesli izler (pilot atlanmıştı)
+- [ ] Dinlemeden sonra: yönerge (`[curious]`, `[excited]`) ve okunuş düzeltmeleri, ilgili klipleri yeniden üret
+
 ## Seslendirme: Sayılar A konusu ve ortak plan (7 Ekim 2026)
 
 Kararlar: Gamze Özdemir, `eleven_v4`, 64 kbps; yönergeler seyrek (`[curious]`, `[excited]`).
@@ -67,4 +91,6 @@ Kararlar: Gamze Özdemir, `eleven_v4`, 64 kbps; yönergeler seyrek (`[curious]`,
 - [ ] Tema sayfasından dersleri izle; `DURUM.md` “Kalanlar” bölümündeki sahnelere elle bak
 - [ ] Yerel araçları `dersler/kit.js` içine topla (ayrı temizlik işi)
 - [ ] Yayına al (`ortak/katalog.js`), seslendirme, hikâye videoları
+- [ ] Fizik Bilimi ve Kariyer Keşfi: dersleri izle; B1'in kutup ışıkları ve kristal görselleri için resim üret (`plan/fizik/fizik-bilimi-ve-kariyer-kesfi/GORSELLER.md`)
+- [ ] `kit.js` içindeki `sec`, `sirayla`, `kart`, `etiket`, `sar` araçlarını `ortak/` altına taşımayı değerlendir (sözel temalar için)
 - [ ] Commit ve push

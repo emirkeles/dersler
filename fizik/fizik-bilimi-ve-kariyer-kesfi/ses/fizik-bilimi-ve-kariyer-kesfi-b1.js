@@ -1,0 +1,2 @@
+/* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
+Ders.ses['fizik-bilimi-ve-kariyer-kesfi-b1'] = { base: 'ses/fizik-bilimi-ve-kariyer-kesfi-b1/', clips: { '1864b6cd': '1864b6cd.mp3', '1ce42d5a': '1ce42d5a.mp3', '2309f684': '2309f684.mp3', '249cb499': '249cb499.mp3', '2a4b6680': '2a4b6680.mp3', '47ec97f0': '47ec97f0.mp3', '63f100f9': '63f100f9.mp3', '72ca2431': '72ca2431.mp3', '781025a9': '781025a9.mp3', '81ba24c3': '81ba24c3.mp3', '9963f58e': '9963f58e.mp3', 'a221e7ab': 'a221e7ab.mp3' } };

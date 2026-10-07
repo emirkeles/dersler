@@ -108,6 +108,7 @@ Karakter sayıları 7 Ekim 2026 dökümünden; metin denetiminde rakamlar kelime
 | Matematik | Sayılar | D | 8 | 122 | 5.623 | bekliyor; okunan metinde rakam var |
 | Matematik | Geometrik Şekiller | A–C | 9 | 118 | 5.853 | bekliyor |
 | Matematik | Nicelikler ve Değişimler | A–C | 32 | 526 | 23.998 | bekliyor; okunan metinde rakam ve simge var |
+| Fizik | Fizik Bilimi ve Kariyer Keşfi | A–D | 6 | 93 | 4.787 | üretildi (93 klip, 6,1 dk, 2,8 MB); pilot atlandı, kullanıcı henüz dinlemedi; yönerge yok |
 
 Yazılmamış temalar işleme alındıkça bu tabloya eklenir.
 
