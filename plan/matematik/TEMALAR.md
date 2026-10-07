@@ -18,7 +18,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
 | 1 | Sayılar | `sayilar` | <https://tymm.meb.gov.tr/matematik-dersi/unite/21> | 38 | 4 | 28 | yazıldı, yayında |
-| 2 | Nicelikler ve Değişimler | `nicelikler-ve-degisimler` | <https://tymm.meb.gov.tr/matematik-dersi/unite/23> | 38 | 3 | 32 | yazıldı (7 Ekim 2026); yayında değil |
+| 2 | Nicelikler ve Değişimler | `nicelikler-ve-degisimler` | <https://tymm.meb.gov.tr/matematik-dersi/unite/23> | 38 | 3 | 32 | yazıldı, yayında (seslendirme sonra) |
 | 3 | Geometrik Şekiller | `geometrik-sekiller` | <https://tymm.meb.gov.tr/matematik-dersi/unite/25> | 12 | 3 | 9 | yazıldı (7 Ekim 2026); izlenmeyi ve yayına alınmayı bekliyor |
 | 4 | Eşlik ve Benzerlik | `eslik-ve-benzerlik` | <https://tymm.meb.gov.tr/matematik-dersi/unite/83> | 36 | 5 | 18 | plan taslağı; işleme alınmayı bekliyor |
 | 5 | Algoritma ve Bilişim | `algoritma-ve-bilisim` | <https://tymm.meb.gov.tr/matematik-dersi/unite/24> | 30 | 7 | 31 | plan taslağı; işleme alınmayı bekliyor |

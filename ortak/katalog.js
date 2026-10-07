@@ -24,7 +24,7 @@ window.KATALOG = {
   dersler: [
     { id: 'matematik', ad: 'Matematik', simge: '√x', temalar: [
       { id: 'sayilar', ad: 'Sayılar', yayinda: true },
-      { id: 'nicelikler-ve-degisimler', ad: 'Nicelikler ve Değişimler' },
+      { id: 'nicelikler-ve-degisimler', ad: 'Nicelikler ve Değişimler', yayinda: true },
       { id: 'geometrik-sekiller', ad: 'Geometrik Şekiller' },
       { id: 'eslik-ve-benzerlik', ad: 'Eşlik ve Benzerlik' },
       { id: 'algoritma-ve-bilisim', ad: 'Algoritma ve Bilişim' },
