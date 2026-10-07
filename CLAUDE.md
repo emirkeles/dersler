@@ -45,3 +45,10 @@ node araclar/denetle.js <ders>/<ünite>         # ünite: katalog, kimlikler, sa
 ```
 
 Komutlar proje kökünden çalıştırılır. Chrome kendiliğinden bulunur (kurulu Chrome ya da HyperFrames'in başsız Chrome'u); başka bir yol `CHROME_PATH` ile verilir. İş bitti demeden önce ikisi de temiz olmalı.
+
+## Working Style
+
+- When a step doesn't need my input, keep going. Stop only when you can't continue without me, or before anything destructive.
+- For multi-step work, keep a checklist in `TASKS.md`; tick items as you finish them and add anything new you discover.
+- End every long run with three headings: **Blocked on me**, **Changed**, **Found**.
+- For research, mark anything you couldn't confirm and say where you looked.
