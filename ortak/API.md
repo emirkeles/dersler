@@ -4,7 +4,7 @@ Bağımlılık yok, saf JS/SVG. Her ders bir HTML dosyası + bir JS dosyasıdır
 
 ## Sitenin yapısı
 ```
-index.html                      ana sayfa (kaldığın yerden + dersler ve temaları)
+index.html                      ana sayfa (solda dersler, sağda seçili dersin kaldığın yeri ve temaları; index.html#fizik)
 <ders>/<tema>/index.html       tema sayfası (konular, kısa dersler, hikâyeler)
 <ders>/<tema>/tema.js         temanın kısa ders listesi
 <ders>/<tema>/a1-….html        kısa dersler; yanında dersler/ ses/ hikaye/

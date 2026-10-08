@@ -10,7 +10,10 @@ html:has(body.site){height:auto;overflow:visible}
 .site a{color:inherit;text-decoration:none}
 .site h1,.site h2,.site p,.site ol{margin:0}
 .site .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
-.site .count,.site .code,.site .no{font-variant-numeric:tabular-nums}
+.site .wrap.wide{max-width:1320px}
+.site .count,.site .code,.site .no,.site .time{font-variant-numeric:tabular-nums}
+/* yaklaşık süre (tema.js satırındaki saniyeden; araclar/sure.js ölçer) */
+.site .time{flex:none;font-size:.9rem;color:var(--muted);white-space:nowrap}
 
 /* üst çubuk */
 .bar{border-bottom:1px solid var(--hair)}
@@ -23,10 +26,10 @@ html:has(body.site){height:auto;overflow:visible}
 
 .site .page{display:flex;flex-direction:column;gap:48px;padding-top:40px;padding-bottom:72px}
 
-/* tahta: kaldığın dersin açılış sorusu */
-.board{position:relative;display:flex;flex-direction:column;justify-content:center;aspect-ratio:16/9;background:var(--board);border-radius:10px;padding:8% 9%;overflow:hidden}
+/* tahta: kaldığın dersin açılış sorusu. Yazı ve kenar boşluğu tahtanın kendi genişliğine bağlıdır (cqw); en uzun soru da kod ile çizgilerin arasına sığar. */
+.board{position:relative;display:flex;flex-direction:column;justify-content:center;aspect-ratio:16/9;background:var(--board);border-radius:10px;overflow:hidden;container-type:inline-size}
 .board .code{position:absolute;left:9%;top:9%;font-size:.95rem;font-weight:600;color:var(--k)}
-.board .ask{font-size:clamp(1.3rem,2.35vw,1.95rem);font-weight:600;line-height:1.22;letter-spacing:-.012em;text-wrap:balance}
+.board .ask{padding:0 9cqw;font-size:clamp(.95rem,5.4cqw,1.95rem);font-weight:600;line-height:1.22;letter-spacing:-.012em;text-wrap:balance}
 .board .ticks{position:absolute;left:9%;right:9%;bottom:9%}
 .ticks{display:flex;gap:4px}
 .ticks i{flex:1;height:4px;border-radius:2px;background:#27325a}
@@ -37,25 +40,35 @@ html:has(body.site){height:auto;overflow:visible}
 .resume .board{flex:1 1 400px;max-width:560px}
 .resume-text{flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:10px}
 .resume .state{font-size:.95rem;font-weight:600;color:var(--cta)}
-.resume h1{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:700;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
+.resume h2{font-size:clamp(1.5rem,2.4vw,1.9rem);font-weight:700;line-height:1.08;letter-spacing:-.02em;text-wrap:balance}
 .resume .where{font-size:1rem;color:var(--muted);line-height:1.5;max-width:44ch}
 .resume .where .count{margin-left:10px;color:var(--soft)}
 .resume .actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 22px;margin-top:10px}
-.resume.done h1{font-size:clamp(1.6rem,2.8vw,2.1rem);max-width:22ch}
+.resume.done h2{max-width:24ch}
 .go{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 24px;border-radius:var(--radius);background:var(--cta);color:var(--cta-ink)!important;font-weight:650;font-size:1.02rem}
 .go:hover{filter:brightness(1.07)}
 .more{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;color:var(--soft);text-decoration:underline!important;text-decoration-color:var(--line)!important;text-underline-offset:4px}
 .more:hover{color:var(--text);text-decoration-color:var(--muted)!important}
 
-/* ders bloğu (Matematik) */
-.subject{border-top:1px solid var(--line)}
-.subject-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:22px 0 18px}
-.glyph{flex:none;width:44px;height:44px;border-radius:var(--radius);background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:600;color:var(--cta)}
-.subject-head .title{flex:1 1 220px;min-width:0}
-.subject-head h2{font-size:1.5rem;font-weight:650;line-height:1.2;letter-spacing:-.01em}
-.subject-head .title p{font-size:.9rem;color:var(--muted);margin-top:2px}
-.subject-head .count,.unit-top .count{font-size:.95rem;color:var(--muted)}
-.subject-head .count b,.unit-top .count b{color:var(--text);font-weight:650}
+/* ana sayfa: solda dersler, sağda seçili ders. --d dersin rengidir (katalog.js). */
+.split{display:grid;grid-template-columns:clamp(260px,26vw,340px) minmax(0,1fr);gap:0 clamp(28px,3.4vw,44px);align-items:start}
+.subjects{position:sticky;top:20px;display:flex;flex-direction:column;gap:4px}
+.site .subjects-title{font-size:1.5rem;font-weight:700;letter-spacing:-.015em;margin:0 0 14px 4px}
+.subj{display:flex;align-items:center;gap:14px;min-height:68px;padding:10px 14px 10px 10px;border-radius:12px;border:1px solid transparent}
+.subj:hover{background:var(--surface)}
+.subj.on{background:var(--surface2);border-color:var(--line);box-shadow:inset 4px 0 0 var(--d)}
+.glyph{flex:none;width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:700;background:color-mix(in srgb,var(--d) 16%,transparent);color:var(--d)}
+.subj.on .glyph{background:var(--d);color:#0b0d12}
+.subj .name{flex:1;min-width:0;font-size:1.1rem;font-weight:600;line-height:1.25}
+.subj small{display:block;font-size:.85rem;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+.pane{display:flex;flex-direction:column;gap:28px;min-width:0}
+.pane-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 28px;padding-bottom:20px;border-bottom:2px solid var(--d)}
+.pane-head h1{flex:1 1 300px;font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:700;line-height:1;letter-spacing:-.025em}
+.pane-head .count,.unit-top .count{font-size:.95rem;color:var(--muted)}
+.pane-head .count b,.unit-top .count b{color:var(--text);font-weight:650}
+.pane .resume .board{flex:1 1 300px;max-width:400px}
+.pane .segs{flex-basis:140px}
+.empty{padding:28px;border:1px dashed var(--line);border-radius:12px;color:var(--soft);line-height:1.55;max-width:60ch}
 
 .unit{border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .unit-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:16px 20px 13px}
@@ -68,15 +81,16 @@ html:has(body.site){height:auto;overflow:visible}
 .letter{flex:none;width:20px;font-size:.95rem;font-weight:700;color:var(--k)}
 .topic .name{flex:1 1 220px;min-width:0}
 .topic .count{flex:none;width:52px;text-align:right;font-size:.9rem;color:var(--muted)}
+.topic .time{width:62px;text-align:right}
 .segs{flex:1 1 200px;display:flex;gap:4px}
 .segs i{flex:1;height:8px;border-radius:4px;background:var(--line)}
 .segs i.on{background:var(--k)}
 .segs i.half{background:color-mix(in srgb,var(--k) 45%,var(--line))}
 
-.soon{display:flex;flex-wrap:wrap;gap:6px 28px;padding:18px 0 0;color:var(--dim);font-size:.9rem;line-height:1.5}
-.soon p{flex:none}
-.soon ol{flex:1 1 420px;padding:0;list-style-position:inside;columns:2 220px;column-gap:28px}
-.soon li::marker{color:var(--dim)}
+.soon > p{font-size:.95rem;color:var(--dim);margin-bottom:10px}
+.soon ol{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px;padding:0;list-style:none}
+.soon li{display:flex;gap:10px;align-items:baseline;padding:14px 16px;border:1px dashed var(--line);border-radius:10px;color:var(--soft);line-height:1.35}
+.soon li .no{color:var(--dim)}
 
 /* tema sayfası: başlık + ilerleme */
 .unit-top{display:flex;flex-wrap:wrap;align-items:flex-end;gap:28px 56px}
@@ -102,6 +116,7 @@ html:has(body.site){height:auto;overflow:visible}
 .topic-block summary .name{flex:1 1 240px;min-width:0;font-size:1.25rem;font-weight:600}
 .topic-block summary .segs{flex:0 1 200px}
 .topic-block summary .count{flex:none;font-size:.9rem;color:var(--muted);min-width:9ch;text-align:right}
+.topic-block summary .time{min-width:62px;text-align:right}
 .lessons{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,430px),1fr));gap:0 40px;padding:0 4px 22px 44px}
 .lesson{display:flex;gap:14px;padding:15px 12px 15px 0;border-top:1px solid var(--hair)}
 .lesson:hover .name{color:var(--cta)}
@@ -135,10 +150,16 @@ html:has(body.site){height:auto;overflow:visible}
 
 .hint{font-size:.9rem;line-height:1.7;color:var(--muted);max-width:62ch}
 
+@media (max-width:1000px){
+  .split{grid-template-columns:minmax(0,1fr);gap:24px}
+  .subjects{position:static;flex-direction:row;overflow-x:auto;padding-bottom:6px}
+  .subjects-title{display:none}
+  .subj{flex:none;min-height:60px}
+  .subj small{display:none}
+}
 @media (max-width:640px){
   .site .wrap{padding:0 18px}
   .site .page{gap:36px;padding-top:24px}
   .lessons{padding-left:0}
   .topic-block summary .segs{flex-basis:100%;order:5}
-  .soon ol{columns:1}
 }
