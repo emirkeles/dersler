@@ -401,7 +401,7 @@ Proje: `matematik/sayilar/hikaye/d3-yildizlar-bunu-giyiyor/`. Adımlar: plan dos
 - [ ] Kullanıcı: filmi derste sesli izler; 6. klibin ilk sözcüğü (döküm "Reknam" yazdı, "Reklam" olmalı) ve "BLACKPINK" okunuşu kulakla denetlenmedi
 - [ ] Kullanıcı: gerçek grubun logosu ve üyelerinin kurgu bir reklamda yayınlanması (izin alınmadı; plan dosyası bölüm 4); karar kullanıcıda
 - [ ] Altyazı dosyası (`.vtt`) yapılmadı
-- [ ] Commit ve push (kullanıcı ayrıca ister)
+- [x] Commit ve push (8 Ekim 2026, `main`, `5c7c878`); site kuruldu, video ve kapak canlı adreste 200 dönüyor; video Taildrop ile `trexo-mac-mini` cihazına gönderildi
 - [ ] `plan/SESLENDIRME.md` durum tablosuna hikâye satırı (ortak dosya; eklenmedi)
 
 ## Proje incelemesi: bulguları düzelt (8 Ekim 2026)
