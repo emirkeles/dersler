@@ -43,4 +43,5 @@ Başlangıç: 7 Ekim 2026 (9 kısa ders, 37 sahne). Genişletme: 8 Ekim 2026 (12
   - B2 S2'de açılar satırda bir ondalıkla yazılır, üçgenin üstünde ölçü yoktur (tam sayıya yuvarlama iki satırı çeliştirebiliyordu); iki kenar 0,05 birimden yakınsa eşit sayılır.
 - α, β, γ harfleri `ortak/fonts/` içindeki Plex alt kümelerinde yok; tarayıcının yedek yazı tipiyle çiziliyor. Paralellik `d // BC` biçiminde yazıldı (∥ simgesi yedek yazı tipinde okunmuyordu).
 - `HIKAYE-ANIMASYONLARI.md` 7 Ekim'deki ders kodlarını kullanıyor; güncellenmedi (hikâye videoları işleme almanın dışında).
-- Yapılmayanlar (işleme almanın dışında): yayın, seslendirme, hikâye videosu, commit.
+- Yayına alındı (8 Ekim 2026): `ortak/katalog.js` içinde `yayinda: true`; `denetle.js` temiz, ana sayfa temayı 12 dersiyle konsol hatasız yüklüyor.
+- Yapılmayanlar (işleme almanın dışında): seslendirme, hikâye videosu.

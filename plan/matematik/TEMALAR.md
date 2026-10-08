@@ -19,7 +19,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 |---|---|---|---|---|---|---|---|
 | 1 | Sayılar | `sayilar` | <https://tymm.meb.gov.tr/matematik-dersi/unite/21> | 38 | 4 | 28 | yazıldı, yayında |
 | 2 | Nicelikler ve Değişimler | `nicelikler-ve-degisimler` | <https://tymm.meb.gov.tr/matematik-dersi/unite/23> | 38 | 3 | 32 | yazıldı, yayında, seslendirildi (8 Ekim 2026; kullanıcı henüz dinlemedi) |
-| 3 | Geometrik Şekiller | `geometrik-sekiller` | <https://tymm.meb.gov.tr/matematik-dersi/unite/25> | 12 | 3 | 12 | yazıldı (7 Ekim 2026), genişletildi (8 Ekim 2026: 9 → 12 kısa ders, ders kitabıyla karşılaştırılarak); izlenmeyi ve yayına alınmayı bekliyor |
+| 3 | Geometrik Şekiller | `geometrik-sekiller` | <https://tymm.meb.gov.tr/matematik-dersi/unite/25> | 12 | 3 | 12 | yazıldı (7 Ekim 2026), genişletildi (8 Ekim 2026: 9 → 12 kısa ders, ders kitabıyla karşılaştırılarak); yayında (8 Ekim 2026); seslendirilmedi, kullanıcı henüz izlemedi |
 | 4 | Eşlik ve Benzerlik | `eslik-ve-benzerlik` | <https://tymm.meb.gov.tr/matematik-dersi/unite/83> | 36 | 5 | 18 | plan taslağı; işleme alınmayı bekliyor |
 | 5 | Algoritma ve Bilişim | `algoritma-ve-bilisim` | <https://tymm.meb.gov.tr/matematik-dersi/unite/24> | 30 | 7 | 31 | plan taslağı; işleme alınmayı bekliyor |
 | 6 | İstatistiksel Araştırma Süreci | `istatistiksel-arastirma-sureci` | <https://tymm.meb.gov.tr/matematik-dersi/unite/91> | 34 | 6 | 24 | plan taslağı; işleme alınmayı bekliyor |

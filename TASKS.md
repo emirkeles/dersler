@@ -261,7 +261,8 @@ Yayındaki derslerde, öğrencinin gördüğü eksikler:
 
 Yazılmış ama yayında olmayan:
 
-- [ ] Geometrik Şekiller: 12 ders yazıldı, yayında değil, seslendirilmedi (222 satır, 11.048 karakter)
+- [x] Geometrik Şekiller: yayına alındı (8 Ekim 2026; `ortak/katalog.js` içinde `yayinda: true`, `denetle.js` temiz, ana sayfa görüntüsüne bakıldı)
+- [ ] Geometrik Şekiller seslendirilmedi (222 satır, 11.048 karakter); kullanıcı temayı henüz izlemedi
 - [x] Hikâye E3 İki kamera arası: işlendi ve derse bağlandı (8 Ekim 2026)
 - [ ] Hikâye A1 Çantanın askısı işlendi ama teması (Akışkanlar) yazılmadı
 

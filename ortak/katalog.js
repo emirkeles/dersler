@@ -29,7 +29,7 @@ window.KATALOG = {
     { id: 'matematik', ad: 'Matematik', simge: '√x', renk: '#6ea8ff', temalar: [
       { id: 'sayilar', ad: 'Sayılar', yayinda: true },
       { id: 'nicelikler-ve-degisimler', ad: 'Nicelikler ve Değişimler', yayinda: true },
-      { id: 'geometrik-sekiller', ad: 'Geometrik Şekiller' },
+      { id: 'geometrik-sekiller', ad: 'Geometrik Şekiller', yayinda: true },
       { id: 'eslik-ve-benzerlik', ad: 'Eşlik ve Benzerlik' },
       { id: 'algoritma-ve-bilisim', ad: 'Algoritma ve Bilişim' },
       { id: 'istatistiksel-arastirma-sureci', ad: 'İstatistiksel Araştırma Süreci' },
