@@ -9,6 +9,7 @@ body.site{
 html:has(body.site){height:auto;overflow:visible}
 .site a{color:inherit;text-decoration:none}
 .site h1,.site h2,.site p,.site ol{margin:0}
+.site h1:focus{outline:none}   /* görünüm değişince odak başlığa taşınır */
 .site .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
 .site .wrap.wide{max-width:1320px}
 .site .count,.site .code,.site .no,.site .time{font-variant-numeric:tabular-nums}
@@ -23,6 +24,10 @@ html:has(body.site){height:auto;overflow:visible}
 .trail a{display:inline-flex;align-items:center;min-height:44px}
 .trail a:hover{color:var(--text)}
 .trail span:last-child{color:var(--text)}
+.sitenav{margin-left:auto;display:flex;align-items:center;gap:28px;font-size:.95rem;color:var(--muted)}
+.sitenav a{display:inline-flex;align-items:center;min-height:44px}
+.sitenav a:hover{color:var(--text)}
+.sitenav a[aria-current]{color:var(--text);font-weight:600;box-shadow:inset 0 -2px 0 var(--text)}
 
 .site .page{display:flex;flex-direction:column;gap:48px;padding-top:40px;padding-bottom:72px}
 
@@ -50,24 +55,58 @@ html:has(body.site){height:auto;overflow:visible}
 .more{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;color:var(--soft);text-decoration:underline!important;text-decoration-color:var(--line)!important;text-underline-offset:4px}
 .more:hover{color:var(--text);text-decoration-color:var(--muted)!important}
 
-/* ana sayfa: solda dersler, sağda seçili ders. --d dersin rengidir (katalog.js). */
-.split{display:grid;grid-template-columns:clamp(260px,26vw,340px) minmax(0,1fr);gap:0 clamp(28px,3.4vw,44px);align-items:start}
-.subjects{position:sticky;top:20px;display:flex;flex-direction:column;gap:4px}
-.site .subjects-title{font-size:1.5rem;font-weight:700;letter-spacing:-.015em;margin:0 0 14px 4px}
-.subj{display:flex;align-items:center;gap:14px;min-height:68px;padding:10px 14px 10px 10px;border-radius:12px;border:1px solid transparent}
-.subj:hover{background:var(--surface)}
-.subj.on{background:var(--surface2);border-color:var(--line);box-shadow:inset 4px 0 0 var(--d)}
-.glyph{flex:none;width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:700;background:color-mix(in srgb,var(--d) 16%,transparent);color:var(--d)}
-.subj.on .glyph{background:var(--d);color:#0b0d12}
-.subj .name{flex:1;min-width:0;font-size:1.1rem;font-weight:600;line-height:1.25}
-.subj small{display:block;font-size:.85rem;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
-.pane{display:flex;flex-direction:column;gap:28px;min-width:0}
-.pane-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 28px;padding-bottom:20px;border-bottom:2px solid var(--d)}
-.pane-head h1{flex:1 1 300px;font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:700;line-height:1;letter-spacing:-.025em}
-.pane-head .count,.unit-top .count{font-size:.95rem;color:var(--muted)}
+/* ana sayfa: ders kartları. --d dersin rengidir (katalog.js). */
+.page-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:8px 28px}
+.page-head h1,.pane-head h1{font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:700;line-height:1;letter-spacing:-.025em}
+.page-head .count,.pane-head .count,.unit-top .count{font-size:.95rem;color:var(--muted)}
 .pane-head .count b,.unit-top .count b{color:var(--text);font-weight:650}
-.pane .resume .board{flex:1 1 300px;max-width:400px}
-.pane .segs{flex-basis:140px}
+.home{display:flex;flex-direction:column;gap:28px}
+.courses{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:20px}
+.glyph{flex:none;width:48px;height:48px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.05rem;font-weight:700;background:color-mix(in srgb,var(--d) 16%,transparent);color:var(--d)}
+.course{display:flex;flex-direction:column;gap:20px;min-height:348px;padding:24px;background:var(--surface);border:1px solid var(--line);border-radius:12px;transition:border-color .15s,background .15s}
+.course:hover{border-color:var(--d);background:#181d29}
+.course-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.course .glyph{width:56px;height:56px;border-radius:12px;font-size:1.1rem}
+.course .here{font-size:.88rem;font-weight:600;color:var(--cta)}
+.course h2{font-size:1.75rem;font-weight:700;line-height:1.1;letter-spacing:-.02em}
+.course .meta{margin-top:6px;font-size:.95rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.course ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.98rem;line-height:1.35;color:var(--soft)}
+.course .wait{color:var(--dim)}
+.course-foot{margin-top:auto;display:flex;flex-direction:column;gap:10px}
+.meter{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.meter i{display:block;height:100%;border-radius:3px;background:var(--d)}
+.course-foot .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:.92rem}
+.course-foot .count{color:var(--muted)}
+.course-foot .count b{color:var(--text);font-weight:650}
+.course-foot .do{font-weight:600}
+.course-foot .do.now{color:var(--cta)}
+.soon-courses{display:flex;flex-direction:column;gap:12px}
+.soon-courses h2{font-size:.95rem;font-weight:400;color:var(--dim)}
+.course-soon{display:flex;align-items:center;gap:14px;padding:16px 20px;border:1px dashed var(--line);border-radius:12px}
+.course-soon:hover{border-color:var(--muted)}
+.course-soon .glyph{width:44px;height:44px;font-size:1rem;background:color-mix(in srgb,var(--d) 10%,transparent)}
+.course-soon .name{min-width:0;font-size:1.05rem;font-weight:600;line-height:1.25;color:var(--soft)}
+.course-soon small{display:block;font-size:.88rem;font-weight:400;color:var(--muted);font-variant-numeric:tabular-nums}
+/* hikâyelere giden kart: tahta rengi, sayfanın ikinci renkli yüzeyi */
+.story-band{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px 48px;padding:28px 32px;background:var(--board);border-radius:12px}
+.story-band .text{flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.story-band .label{font-size:.95rem;font-weight:600;color:var(--muted)}
+.story-band h2{font-size:clamp(1.4rem,2.4vw,1.8rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;max-width:22ch}
+.story-band .meta{font-size:.95rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.story-band .goto{margin-top:6px;font-size:.95rem;font-weight:600}
+.story-band:hover .goto{color:var(--cta)}
+.story-band .covers{display:flex;flex-wrap:wrap;gap:12px}
+.story-band .covers img{display:block;width:184px;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
+
+/* ders sayfası (index.html#fizik) */
+.pane-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 28px;padding-bottom:22px;border-bottom:2px solid var(--d)}
+.pane-head .title{flex:1 1 300px;min-width:0;display:flex;align-items:center;gap:18px}
+.pane-head .glyph{width:60px;height:60px;border-radius:12px;font-size:1.25rem;background:var(--d);color:#0b0d12}
+.course-page .resume .board{flex:1 1 320px;max-width:480px}
+.units-sec{display:flex;flex-direction:column;gap:16px}
+.units-sec h2{font-size:1.4rem;font-weight:650;letter-spacing:-.01em}
+.units{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,520px),1fr));gap:20px;align-items:start}
+.units .segs{flex-basis:140px}
 .empty{padding:28px;border:1px dashed var(--line);border-radius:12px;color:var(--soft);line-height:1.55;max-width:60ch}
 
 .unit{border:1px solid var(--line);border-radius:10px;overflow:hidden}
@@ -147,19 +186,47 @@ html:has(body.site){height:auto;overflow:visible}
 .story .body{min-width:0;display:flex;flex-direction:column;gap:2px}
 .story .name{font-size:1.05rem;font-weight:600;line-height:1.3}
 .story .from{font-size:.88rem;color:var(--muted)}
+.stories-head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 24px;margin-bottom:12px}
+.stories-head a{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;font-weight:600;color:var(--soft)}
+.stories-head a:hover{color:var(--text)}
+
+/* hikâyeler sayfası (index.html#hikayeler) */
+.site .story-page{gap:32px}
+.story-top{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:14px}
+.story-top .lead{font-size:1.12rem;line-height:1.55;color:var(--soft);max-width:54ch}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;border-radius:22px;border:1px solid var(--line);color:var(--soft);font-size:.95rem;font-variant-numeric:tabular-nums}
+.chip:hover{border-color:var(--muted);color:var(--text)}
+.chip i,.story-card .from i{flex:none;width:10px;height:10px;border-radius:3px;background:var(--d)}
+.chip .n{color:var(--muted)}
+.site .chip[aria-current]{background:var(--text);border-color:var(--text);color:var(--bg);font-weight:600}
+.chip[aria-current] .n{color:#3a4152}
+.story-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:24px}
+.story-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.story-card .cover{position:relative;aspect-ratio:16/9;background:var(--board);display:flex;align-items:center;justify-content:center}
+.story-card .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.story-card .play{position:relative;width:52px;height:52px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;display:flex;align-items:center;justify-content:center;transition:background .15s}
+.story-card .cover:hover .play{background:var(--cta);color:var(--cta-ink)}
+.story-card .body{flex:1;display:flex;flex-direction:column;gap:8px;padding:18px 20px 20px}
+.story-card .from{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted)}
+.story-card h2{font-size:1.25rem;font-weight:600;line-height:1.25;letter-spacing:-.01em}
+.story-card .of{font-size:.95rem;line-height:1.45;color:var(--muted)}
+.story-card .of b{font-weight:600}
+.story-card .actions{margin-top:auto;padding-top:10px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px}
+.site .watch{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 22px;border-radius:var(--radius);background:var(--text);color:var(--bg);font-weight:650;font-size:.98rem}
+.site .watch:hover{background:#fff}
+.site .to-lesson{display:inline-flex;align-items:center;min-height:44px;font-size:.95rem;font-weight:600;color:var(--soft)}
+.site .to-lesson:hover{color:var(--text)}
 
 .hint{font-size:.9rem;line-height:1.7;color:var(--muted);max-width:62ch}
 
-@media (max-width:1000px){
-  .split{grid-template-columns:minmax(0,1fr);gap:24px}
-  .subjects{position:static;flex-direction:row;overflow-x:auto;padding-bottom:6px}
-  .subjects-title{display:none}
-  .subj{flex:none;min-height:60px}
-  .subj small{display:none}
-}
 @media (max-width:640px){
   .site .wrap{padding:0 18px}
   .site .page{gap:36px;padding-top:24px}
+  .course{min-height:0}
+  .story-band{padding:22px 20px}
+  .story-band .covers{flex:1 1 100%;min-width:0;flex-wrap:nowrap}
+  .story-band .covers img{flex:1;min-width:0;width:auto}
   .lessons{padding-left:0}
   .topic-block summary .segs{flex-basis:100%;order:5}
 }

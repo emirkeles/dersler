@@ -4,7 +4,7 @@ Bağımlılık yok, saf JS/SVG. Her ders bir HTML dosyası + bir JS dosyasıdır
 
 ## Sitenin yapısı
 ```
-index.html                      ana sayfa (solda dersler, sağda seçili dersin kaldığın yeri ve temaları; index.html#fizik)
+index.html                      ana sayfa: ders kartları; index.html#fizik dersin sayfası (kaldığın yer, temalar, dersin hikâyeleri); index.html#hikayeler bütün hikâyeler
 <ders>/<tema>/index.html       tema sayfası (konular, kısa dersler, hikâyeler)
 <ders>/<tema>/tema.js         temanın kısa ders listesi
 <ders>/<tema>/a1-….html        kısa dersler; yanında dersler/ ses/ hikaye/
@@ -22,7 +22,7 @@ Tema yalnızca kendi klasörüne yazılarak eklenir; ortak dosyalara dokunulmaz 
 2. `<ders>/<tema>/tema.js`: `KATALOG.tema('<ders>', '<tema>', { tanitim, konular, hikayeler })`. Biçim `ortak/katalog.js` dosyasının başında. Her kısa ders bir satır: `[dosya, başlık, açılış sorusu, sahne sayısı]`; beşinci öğeyi (yaklaşık süre, saniye) `araclar/sure.js` ekler.
 3. Kısa dersler: aşağıdaki iskelet. Yeni temalarda her kısa ders kendi dosyasındadır (`a1-ad.html` + `dersler/a1-ad.js`, `Ders.start` doğrudan çağrılır); temanın ortak çizim araçları `dersler/kit.js` içinde `window.KIT` olarak durur ve ders dosyasından önce yüklenir. Aşağıda anlatılan `DERS_PARCA` düzeni yalnızca Sayılar temasına özgüdür (eski uzun derslerin bölünmesinden kaldı). Dersin `id` alanı `<tema>-<kod>` olur (`sayilar-a1`); ana sayfa ilerlemeyi bu kimlikle bulur. `kicker` "Konu A · …" biçimindedir, `back: 'index.html'` tema sayfasına döner.
 4. `node araclar/sure.js <ders>/<tema>` süreleri yazar; ardından `node araclar/denetle.js <ders>/<tema>` temiz çıkmalı.
-5. Yayın: tema hazır olunca `ortak/katalog.js` içindeki satırına `yayinda: true` eklenir. O zamana kadar ana sayfada "Hazırlanan temalar" arasında görünür; tema sayfası doğrudan açılarak önizlenir.
+5. Yayın: tema hazır olunca `ortak/katalog.js` içindeki satırına `yayinda: true` eklenir. O zamana kadar dersin sayfasında (`index.html#<ders>`) "Hazırlanan temalar" arasında görünür; tema sayfası doğrudan açılarak önizlenir.
 
 Temanın kimliği klasör adıdır ve `ortak/katalog.js` içinde kayıtlı olmalıdır. Konu renkleri için motorun paleti: `#f5b04c`, `#3ddc97`, `#c792ff`, `#3cc8e8`, `#6ea8ff`, `#ff8a5b`. `ortak/site.css` içindeki sınıf adları `ders.css`'tekilerle çakışmamalı.
 
