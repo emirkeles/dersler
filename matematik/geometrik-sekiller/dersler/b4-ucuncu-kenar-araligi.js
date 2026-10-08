@@ -260,12 +260,24 @@
         why: ['5 < a < 11: 6, 7, 8, 9, 10. Beş değer.', 'Uçlardan biri (5 ya da 11) sayılmış; ikisi de dahil değil.', '5 ve 11 dahil değil; yalnızca aradakiler sayılır.'],
         scene: 3,
       },
+      {
+        q: 'İki kenar 4 ve 13. Mert “üçüncü kenar 17’den küçük her uzunluk olabilir” diyor. Mert haklı mı?',
+        options: ['Haklı; toplamdan küçük olması yeter.', 'Haksız; üçüncü kenar 13’ten de küçük olmalı.', 'Haksız; üçüncü kenar 9’dan da büyük olmalı.'], answer: 2,
+        why: ['Üçüncü kenar 5 olsa 4 + 5 = 9 eder; 13’e yetmez.', '14, 15 ve 16 da olur: hepsi 9 ile 17 arasında.', '13 − 4 = 9: üçüncü kenar farktan büyük olmalı; 9 &lt; a &lt; 17.'],
+        scene: 2,
+      },
+      {
+        q: 'İkizkenar bir üçgenin eşit kenarları 8’er cm. Tabanın alabileceği en büyük tam sayı değeri kaçtır?',
+        options: ['8', '15', '16'], answer: 1,
+        why: ['8 olabilir; ama taban 16’dan küçük her değeri alır.', '8 − 8 &lt; a &lt; 8 + 8, yani 0 &lt; a &lt; 16: en büyük tam sayı 15.', '16 uçtur; orada iki kenar tabanın üstüne yatar.'],
+        scene: 3,
+      },
     ],
     summary: [
       '<b>Üçüncü kenar, farktan büyük, toplamdan küçüktür.</b>',
       '|b − c| &lt; a &lt; b + c. Uçlar dahil değil: orada çubuklar tek çizgiye yatar.',
       'Ortak kenarlı iki üçgende kenar, iki aralığın kesişiminde kalır.',
     ],
-    nextLesson: { href: 'c1-bu-ispat-her-ucgende-calisir-mi.html', label: 'Sonraki: Bu ispat her üçgende çalışır mı? ›' },
+    nextLesson: { href: 'b5-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

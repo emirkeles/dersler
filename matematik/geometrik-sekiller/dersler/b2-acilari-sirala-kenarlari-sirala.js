@@ -240,6 +240,18 @@
         why: ['Taban açıları eşit: ikisi de 50°. Tepe açısı kalandır.', '180° − 50° − 50° = 80°.', '130°, yalnızca bir taban açısı çıkarılınca kalır; iki taban açısı var.'],
         scene: 2,
       },
+      {
+        q: 'Üçgen bir parkın köşelerinde kapı, havuz ve çardak var. Havuz ile çardak arası 40 m, kapı ile çardak arası 55 m, kapı ile havuz arası 70 m. En dar köşe hangisidir?',
+        options: ['Kapı', 'Havuz', 'Çardak'], answer: 0,
+        why: ['En kısa kenar havuz ile çardak arası; karşısındaki köşe kapı.', 'Havuzun karşısındaki kenar 55 m: ortanca kenar, ortanca açı.', 'Çardağın karşısındaki kenar 70 m: en uzunu; en geniş köşe orası.'],
+        scene: 0,
+      },
+      {
+        q: 'Bir ABC üçgeninde A’daki açı 50°, B’deki açı 30°. En uzun kenar hangisidir?',
+        options: ['a', 'b', 'c'], answer: 2,
+        why: ['a, 50°’nin karşısında; ama üçüncü açı daha büyük.', 'b, 30°’nin karşısında: en kısa kenar.', 'C’deki açı 180° − 50° − 30° = 100°: en büyük açı, karşısında c.'],
+        scene: 3,
+      },
     ],
     summary: [
       '<b>Kenarların sırası, karşılarındaki açıların sırasıdır.</b>',

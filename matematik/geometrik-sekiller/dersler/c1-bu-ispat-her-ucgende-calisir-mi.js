@@ -155,6 +155,18 @@
         why: ['Sonuç doğru olsa da adımlar yalnızca özel bir üçgende işliyor olabilir.', 'Her adım yeni üçgende de tutuyorsa ispat o üçgene uyar.', 'Boy değişir, açılar ve tür aynı kalır; yeni bir durum sınanmaz.'],
         scene: 2,
       },
+      {
+        q: 'Dik üçgenle yapılan bir ispat, geniş açılı üçgende çöktü. Bu durumda ne söylenebilir?',
+        options: ['Sonuç doğru olabilir; yalnızca bu yol o üçgende işlemiyor.', 'İç açılar toplamı geniş açılı üçgende 180° değildir.', 'İspat dik üçgende de geçersiz sayılır.'], answer: 0,
+        why: ['Çöken yoldur, sonuç değil; paralel doğru ispatı geniş açılı üçgende de tutuyor.', 'Yol çöktü diye sonuç yanlış olmaz; iç açılar toplamı her üçgende 180°dir.', 'Dik üçgende adımların hepsi tutar; sınama yalnızca ispatın kapsamını gösterir.'],
+        scene: 1,
+      },
+      {
+        q: 'Mert kâğıttan kestiği bir dik üçgenin üç köşesini yan yana koyup düz bir çizgi elde etti. Çalışmasını güçlendirmek için ne yapmalı?',
+        options: ['Aynı dik üçgeni bir kez daha dikkatle kesmeli.', 'Çizginin düz olup olmadığını cetvelle ölçmeli.', 'Dar açılı ve geniş açılı üçgenlerle de denemeli.'], answer: 2,
+        why: ['Aynı üçgeni yinelemek yeni bir tür sınamaz.', 'Çizginin düz çıktığı zaten görülüyor; eksik olan, denenen üçgenin türünün tek olması.', 'Farklı türler denenir; yine de bu bir doğrulama olur, ispat olmaz.'],
+        scene: 3,
+      },
     ],
     summary: [
       '<b>İspat, çizdiğin üçgene değil her üçgene uymalı.</b>',

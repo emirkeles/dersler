@@ -540,4 +540,13 @@ Tema 2 · Sayılar (görev tanımı: `plan/matematik/sayilar/gorev/ek-soru-gorev
 - [x] 2b.4 İçerik denetimi: 56 ek soru ve 40 tekrar sorusu elle doğrulandı; C2'de sonraki dersin terimi ("irrasyonel") şıktan çıkarıldı, B2 ve B4'te doğru şıkkın yeri değiştirildi (B'de dördüncü sorunun cevabı hep son şıktı); dört tekrar dersinden görüntülere bakıldı
 - [x] 2b.5 Commit `fbfaf43`, `origin/main`e gönderildi (yalnızca bu temanın dosyaları ve kayıtlar; Kimya Çeşitlilik commit dışında). Canlı sitede doğrulanmadı; bu satırın kendisi commit edilmedi
 
-Sıradaki temalar: Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
+Tema 3 · Geometrik Şekiller B ve C (görev tanımı: `plan/matematik/geometrik-sekiller/gorev/ek-soru-gorevi.md`; ilerleme `plan/matematik/geometrik-sekiller/DURUM.md` "2b" bölümü)
+
+- [x] 2b.1 Konu B (ana oturum, örnek): 4 derse ikişer çıkış sorusu (üç şıklı; biri yeni durum, biri yanılgı), `b5-tekrar` (altı kural, sekiz soru; `olc.js` temiz, dört görüntüye bakıldı), B4 → B5 → C1 bağlantısı, `tema.js` satırı
+- [x] 2b.2 Konu C (3 ders, 6 soru + `c4-tekrar`: altı kural, sekiz soru): bir Sonnet ajanı; `olc.js` temiz, iki görüntüye bakıldı
+- [x] 2b.3 Ölçüm: `olc.js` B1–B5 ve C1–C4'te bütün sayaçlar 0, konsol temiz (Haiku); `sure.js` tema 90:39; `denetle.js` "15 kısa ders, yayında. Sorun yok."; `tema.js` satırları (B5, C4) ve süreler
+- [x] 2b.4 İçerik denetimi: 14 ek soru ve 16 tekrar sorusu elle doğrulandı; C3'te yinelenen sayılar (6 ve 10) değiştirildi, "iletki" → "açıölçer", C4'te iki yazım düzeltmesi; doğru şıkkın yeri dengeli
+- [ ] 2b.5 Commit yapıldı (`feat: Geometrik Şekiller B ve C'ye ek çıkış soruları ve iki konu tekrarı dersi`; yalnızca bu temanın dosyaları ve kayıtlar; bu satır da commit'te). **Push yapılmadı, kullanıcıyı bekliyor:** yerel `main`'de gönderilmemiş `ef5629e` (Kimya Çeşitlilik, seslendirilmemiş 44 ders) var; push onu da canlı siteye çıkarır
+- [x] İş panosu (sürüm 8: 167 kısa ders, 10 konu tekrarı, 2b 7 temadan 3'ü, "Push kararı" kartı)
+
+Sıradaki temalar: Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).

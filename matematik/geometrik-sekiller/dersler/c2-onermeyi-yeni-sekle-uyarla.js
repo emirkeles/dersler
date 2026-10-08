@@ -259,6 +259,18 @@
         why: ['Üçgen eşitsizliği kenar uzunluklarıyla ilgilidir; ispatta açılar vardı.', 'Önce ABE, sonra DEC üçgeninde: dış açı, uzaktaki iki iç açının toplamıdır.', 'Kenar uzunluklarını hiç kullanmadık.'],
         scene: 1,
       },
+      {
+        q: 'Ok ucu biçimli bir dörtgende içe dönük köşedeki açı x = 140°. Öbür üç açıdan ikisi 55° ve 40°. Üçüncü açı kaç derecedir?',
+        options: ['45°', '95°', '235°'], answer: 0,
+        why: ['x = a + b + c: 140° − 55° − 40° = 45°.', '95°, bilinen iki açının toplamıdır; üçüncüsü x’ten bu toplam çıkarılarak bulunur.', '235°, üç sayıyı toplamaktır; x zaten üç açının toplamı.'],
+        scene: 2,
+      },
+      {
+        q: 'x = a + b + c eşitliğini 50°, 30° ve 25° ile bulduk. Bu eşitlik neden başka açı değerlerinde de geçerlidir?',
+        options: ['Bu üç sayıya özgü bir rastlantıdır.', 'Başka sayılarla denenmedi; geçerli olmayabilir.', 'İspat, sayıları değil dış açı önermesinin adımlarını kullandı.'], answer: 2,
+        why: ['Sayılar yalnızca örnekti; adımlar a, b, c harfleriyle yürüdü.', 'İspat harflerle yapıldı; hangi değer olursa olsun adımlar aynı.', 'Önce ABE, sonra DEC üçgeninde dış açı önermesi kullanıldı; sayılar hiç devreye girmedi.'],
+        scene: 1,
+      },
     ],
     summary: [
       '<b>Yeni şekilde tanıdık üçgeni ara.</b>',

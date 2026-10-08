@@ -267,6 +267,18 @@
         why: ['Her üç uzunluk üçgen kurmaz.', 'En uzun kiriş, öbür ikisinin toplamından kısa olmalı.', '4 + 5 = 9; 10’a yetmiyor.'],
         scene: 1,
       },
+      {
+        q: 'Bir mimar, üçgen biçimli bir gölgeliğin iki kenarını 8 m ve 15 m seçti. Üçüncü kenar kaç metre olabilir?',
+        options: ['7 m', '20 m', '23 m'], answer: 1,
+        why: ['15 − 8 = 7 aralığın ucudur; orada kenarlar tek çizgiye yatar.', '7 &lt; a &lt; 23 aralığında kalıyor.', '8 + 15 = 23 aralığın öbür ucudur ve dahil değildir.'],
+        scene: 1,
+      },
+      {
+        q: 'Bir öğrenci, üçgenin iki açısını 60° ve 50° ölçtü. Üçüncüyü iç açılar toplamıyla 70° buldu; açıölçerle ölçünce 72° çıktı. Nasıl yorumlanır?',
+        options: ['İç açılar toplamı ispatlıdır; fark ölçüm hatasıdır.', 'Bu üçgende iç açılar toplamı 180° olmayabilir.', 'Hesap yanlıştır; ölçme her zaman daha doğrudur.'], answer: 0,
+        why: ['İspatlı bilgi ölçmeden de sonuç verir; açıölçer küçük sapmalar yapabilir.', 'İç açılar toplamı ispatlandı; her üçgende 180°dir.', 'Hesap ispatlı bir önermeye dayanıyor; ölçme ise küçük hata taşır.'],
+        scene: 5,
+      },
     ],
     summary: [
       '<b>İspatlı bilgi, ölçmeden de sonuç verir.</b>',
@@ -274,5 +286,6 @@
       'Kenarlar verilmişse: kenar–açı sıralaması ya da üçgen eşitsizliği.',
       'Çok adımlı soruda her adım tek bir önermedir.',
     ],
+    nextLesson: { href: 'c4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

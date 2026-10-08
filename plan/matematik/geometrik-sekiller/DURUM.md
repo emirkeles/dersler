@@ -141,3 +141,30 @@ Dinlenmesi gerekenler (kullanıcı):
 - İki harfli adlar bitişik yazıldı ("AB kenarı", "AC keseni", "BC doğrusunu").
 
 Açık içerik sorusu: A2'de "bir noktadan tek paralel" ve "doğru açı 180°dir" taşları "başka bilgilere dayanan" bilgi olarak duruyor (eski içerik).
+
+## Yürütme planı 2b: B ve C konularına sese dokunmayan ekler (8 Ekim 2026)
+
+`plan/YURUTME.md` 2b. Anlatım, altyazı, sahne ve `speak` değişmedi; klip yeniden üretilmedi. Görev tanımı: `plan/matematik/geometrik-sekiller/gorev/ek-soru-gorevi.md`. A konusu pilotta yeniden yazıldığı için bu işin dışında.
+
+| Konu | Ek sorular | Konu tekrarı | Kim | Durum |
+|---|---|---|---|---|
+| B Kenarlar ve açılar | B1–B4, 8 soru (üç şıklı) | `b5-tekrar` (altı kural, sekiz soru; üç kural çizimle) | ana oturum (örnek) | bitti |
+| C Doğrulamayı sınamak ve kullanmak | C1–C3, 6 soru | `c4-tekrar` (altı kural, sekiz soru; kural 3 bumerang çizimiyle) | Sonnet | bitti |
+
+Denetim (8 Ekim 2026): `olc.js` B1–B5 ve C1–C4'te bütün yerleşim ve bütçe sayaçları 0, konsol temiz (Haiku ajanı; ajanlar bittikten sonra sırayla). `sure.js` tema 90:39 (A 40:21, B 26:54, C 23:24; B5 4:05, C4 4:24). `denetle.js`: "15 kısa ders, yayında. Sorun yok." Karşılaştırmada B ve C derslerinde yalnızca `quiz` dizileri ile B4 ve C3'ün `nextLesson` satırı değişti. İki tekrar dersinden altı görüntüye bakıldı.
+
+Notlar:
+
+- Ana oturumun düzeltmeleri (C, Sonnet çıktısı): C3'ün yeni durum sorusu 6 m ve 10 m kullanıyordu (B4'ün çıkış sorusuyla ve C3'ün çatı makasıyla aynı sayılar), 8 m ve 15 m oldu; "iletki" → "açıölçer" (tema bu sözcüğü kullanıyor); C4'te "55°’e" → "55°’ye" ve bir geri bildirim cümlesi.
+- Doğru şıkkın yeri: C'nin eski altı sorusunun beşinde cevap ortadaydı; eklenen altı sorunun yalnızca biri ortada. B'de eklenenler 1, 2 · 0, 2 · 2, 1 · 2, 1.
+- İki tekrar dersi seslendirilmedi (sayfalarda `ses/…` satırı yok); `a6-tekrar` seslidir. Rakamlı altyazılarda `speak` hazır: seslendirme istenirse B5 13, C4 15 altyazı.
+- Tekrar derslerinin defter notları derslerdeki notların kimliğini kullanır (`gs-en-uzun-kenar` gibi); yeni kimlikler: `gs-ortak-kenar`, `gs-ozel-ucgen`, `gs-ispatli-bilgi`.
+- Kullanıcının bakabileceği sorular: C4 soru 6 (dikdörtgen adımı; C1'in sahne içi sorusuna yakın), C4 soru 5 ("kesinlikle olamaz": iç nokta önermesi derste ölçerek doğrulandı, ispatlanmadı), C3'ün yanılgı sorusu (hesap 70°, açıölçer 72°: "ölçüm hatası" sözü derste açıkça geçmiyor).
+
+## Sıradaki
+
+- Bu temada 2b'nin yazımı ve denetimi bitti, yerel `main`'e commit edildi. **Push yapılmadı:** yerel `main`'de gönderilmemiş `ef5629e` (Kimya Çeşitlilik, seslendirilmemiş 44 ders; katalogda kapalı ama adresle açılır) duruyor ve push onu da canlı siteye çıkarır; kullanıcı karar verir. Sonraki oturum önce `git status -sb` ile buna bakar; kullanıcı izin vermediyse push yapmadan sürer.
+- Yürütme sırası: `plan/YURUTME.md` 2b, sıradaki tema Biyoloji Yaşam (`biyoloji/yasam/`, 8 konu: A–H). Önce derslerin dosya düzenine, şık sayısına ve kit olup olmadığına bakılır (`ls biyoloji/yasam biyoloji/yasam/dersler`, bir dersin `quiz` dizisi); görev tanımı bu temanınkinden (`plan/matematik/geometrik-sekiller/gorev/ek-soru-gorevi.md`: ders başına dosya ve kit düzeni) ya da Sayılar'ınkinden (bölüm dosyası düzeni) kopyalanıp `plan/biyoloji/yasam/gorev/` altına uyarlanır.
+- 2b.1: A konusu ana oturumda (örnek); 2b.2: B–H konuları, konu başına bir Sonnet ajanı (aynı anda en çok dört); ajanlar bittikten sonra `olc.js` Haiku ajanıyla sırayla (ajanlar çalışırken toplu ölçüm boş dönüyor), sonra `sure.js` ve `denetle.js` ana oturumda.
+- Sözel temada da geçerli iki kural: şıkta ve geri bildirimde sonraki dersin terimi geçmez (`grep -ln` ile doğrula); bir konuda eklenen soruların doğru şıkkı aynı yerde toplanmaz. Ajan çıktısında var olan sorularla ya da başka dersin örneğiyle aynı sayı ve bağlam aranır.
+

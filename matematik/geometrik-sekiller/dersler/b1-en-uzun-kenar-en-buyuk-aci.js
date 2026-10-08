@@ -162,6 +162,18 @@
         why: ['Tek üçgende ölçmek ispat değildir; üstelik üç türde denedik.', 'Dar, dik ve geniş açılı üçgende ölçtük: bu bir doğrulama.', 'Aksiyom ispatsız kabul edilir; biz ölçerek sınadık.'],
         scene: 2,
       },
+      {
+        q: 'Üçgen bir tarlanın köşeleri K, L ve M. |KL| = 80 m, |LM| = 50 m, |KM| = 110 m. En geniş köşe hangisidir?',
+        options: ['K', 'L', 'M'], answer: 1,
+        why: ['K’nin karşısındaki kenar LM = 50 m: en kısası.', 'En uzun kenar KM; ona değmeyen köşe L.', 'M’nin karşısındaki kenar KL = 80 m; en uzunu değil.'],
+        scene: 2,
+      },
+      {
+        q: 'Menteşeli iki çubuğun arasındaki açı 40°’den 80°’ye çıkarıldı. Uçlarını birleştiren kenar için ne söylenir?',
+        options: ['Tam iki katına çıkar.', 'Değişmez; çubukların boyu sabit.', 'Uzar, ama iki katına çıkmaz.'], answer: 2,
+        why: ['Açı ile karşı kenar aynı oranda büyümez: 60°’den 120°’ye çıkınca kenar 5,6’dan 9,5’e çıkmıştı.', 'Çubukların boyu sabit; ama uçları arasındaki uzaklık açıyla değişir.', 'Açı büyüyünce karşı kenar uzar; ama aynı oranda değil.'],
+        scene: 1,
+      },
     ],
     summary: [
       '<b>En uzun kenarın karşısı en geniş açıdır.</b>',

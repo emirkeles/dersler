@@ -138,6 +138,18 @@
         why: ['İki kısa çubuk birlikte en uzununa yetişmiyor.', 'Boyları farklı çubuklar da üçgen kurabilir: 5, 6, 10 gibi.', 'Sayının çift ya da tek olması önemli değil; toplam önemli.'],
         scene: 0,
       },
+      {
+        q: 'Ece 2, 6 ve 9 cm’lik çubuklar için “6 + 9, 2’den büyük; üçgen kurulur” diyor. Ece nerede yanılıyor?',
+        options: ['Yanılmıyor; bir toplamın büyük olması yeter.', 'Üç çubuğun boyu da farklı; üçgen kurulmaz.', 'En uzun çubuğu kontrol etmedi: 2 + 6, 9’dan küçük.'], answer: 2,
+        why: ['Koşul her kenar için tutmalı; biri tutmazsa üçgen kapanmaz.', 'Boyları farklı çubuklar da üçgen kurar: 5, 7, 10 gibi.', 'İki kısa çubuk birlikte en uzununa yetişmiyor.'],
+        scene: 2,
+      },
+      {
+        q: '40 cm’lik bir tel üç parçaya bölünüp uçları birleştirilecek. Hangi bölme bir üçgen verir?',
+        options: ['20, 10, 10', '18, 12, 10', '22, 10, 8'], answer: 1,
+        why: ['10 + 10 = 20: toplam eşit, tel düz çizgi olur.', '12 + 10 = 22; 18’den büyük.', '10 + 8 = 18; 22’ye yetmiyor.'],
+        scene: 1,
+      },
     ],
     summary: [
       '<b>Her kenar, öbür ikisinin toplamından kısadır.</b>',
