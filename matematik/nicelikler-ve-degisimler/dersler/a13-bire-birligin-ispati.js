@@ -144,6 +144,10 @@
         why: ['Bu hükümdür; ispat ona varır, ondan başlamaz.', 'Çıktılar eşit varsayılır, girdilerin eşitliğine varılır.', 'Bu, artanlık ispatının hipotezidir.'], scene: 1 },
       { q: 'ax<sub>1</sub> = ax<sub>2</sub> eşitliğinden x<sub>1</sub> = x<sub>2</sub> sonucuna geçmek için hangi koşul gerekir?', options: ['b ≠ 0', 'a &gt; 0', 'a ≠ 0'], answer: 2,
         why: ['b önceki adımda iki yandan çıkarıldı; bölmeyle ilgisi yok.', 'a negatif de olabilir; yeter ki sıfır olmasın.', 'İki yan a’ya bölünür; sıfıra bölünmez.'], scene: 1 },
+      { q: 'h(x) = 5x + 2 için h(x<sub>1</sub>) = h(x<sub>2</sub>) = 17 ise hangisi doğrudur?', options: ['x<sub>1</sub> = 3, x<sub>2</sub> = −3', 'Bilinemez', 'x<sub>1</sub> = x<sub>2</sub> = 3'], answer: 2,
+        why: ['h(−3) = −13; 17 değil.', 'a = 5 sıfır değil: h bire birdir, bu çıktının tek girdisi vardır.', '5x + 2 = 17 ise x = 3; bire bir fonksiyonda girdi tektir.'], scene: 2 },
+      { q: 'h(x) = 0 · x + 6 bire bir midir?', options: ['Evet; kuralı ax + b biçiminde', 'Hayır; bütün girdiler 6 çıktısını verir', 'Evet; b ≠ 0'], answer: 1,
+        why: ['İspat a ≠ 0 ister; burada a = 0.', 'a = 0: farklı girdiler aynı çıktıyı verir.', 'b’nin bire birlikle ilgisi yok; belirleyen a’dır.'], scene: 1 },
     ],
     summary: [
       '<b>Aynı çıktıyı veren iki girdi aslında aynı girdidir.</b>',

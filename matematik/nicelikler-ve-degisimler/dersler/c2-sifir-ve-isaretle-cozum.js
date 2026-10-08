@@ -182,6 +182,10 @@
         why: ['Doğru artan: kökün solunda değerler negatiftir.', 'Kök 4; artan doğru kökün sağında pozitiftir.', 'x = 4 için değer 0’dır; 0 &gt; 0 olmaz.'], scene: 1 },
       { q: 'f(x) = 0 denkleminin çözümü grafikte nerededir?', options: ['y eksenini kestiği yerde', 'En yüksek noktada', 'x eksenini kestiği yerde'], answer: 2,
         why: ['Orada x = 0’dır; f(x)’in 0 olması gerekmez.', 'Doğrunun en yüksek noktası yoktur; aranan, değerin 0 olduğu yerdir.', 'x ekseninde değer 0’dır: f(x) = 0.'], scene: 0 },
+      { q: 'Bir çay ocağının kârı k(x) = 4x − 60 kuralıyla bulunuyor (x satılan çay sayısı, k(x) lira). Kâr hangi x’ler için pozitiftir?', options: ['x &lt; 15', 'x &gt; 15', 'x &gt; 60'], answer: 1,
+        why: ['Artan doğru kökün solunda negatiftir: orada zarar var.', 'Kök 15’tir; artan doğru kökün sağında pozitiftir.', '60 yalnızca sabit terimdir; kök −b/a = 15.'], scene: 1 },
+      { q: 'Bir mumun boyu h(x) = 30 − 6x kuralıyla değişiyor (x saat, h(x) cm). h(x) &lt; 0 eşitsizliğinin çözümü x &gt; 5 bulundu. Bu, mum için ne anlama gelir?', options: ['Mum 5. saatte biter; sonrasındaki eksi boy mumda gerçekleşmez', 'Mum 5. saatten sonra eksi boyda yanmaya devam eder', 'Mum 5. saatten sonra daha hızlı kısalır'], answer: 0,
+        why: ['h(5) = 0: mum tükenir. Eksi boy mum için anlamsızdır.', 'Boy eksi olamaz; kural gerçek sayılarda çözülür, sonuç probleme göre yorumlanır.', 'Kısalma hızı değişmez: her saat 6 cm.'], scene: 2 },
     ],
     summary: [
       '<b>Çözüm, fonksiyonun sıfırından ve işaretinden okunur.</b>',

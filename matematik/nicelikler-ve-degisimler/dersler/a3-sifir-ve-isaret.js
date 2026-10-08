@@ -131,6 +131,10 @@
         why: ['0 dahil olmaz: f(0) = 0, negatif değil.', 'Sıfırın solunda grafik eksenin altında; 0’ın kendisi hariç.', 'Burada grafik eksenin üstünde: f pozitif.'], scene: 2 },
       { q: 'Grafikte fonksiyonun <b>sıfırı</b> nerededir?', options: ['x eksenini kestiği yerde', 'y eksenini kestiği yerde', 'En alçak noktasında'], answer: 0,
         why: ['Orada f(x) = 0 olur.', 'y ekseninde x = 0’dır; orada okunan f(0) değeridir, sıfır değil.', 'En alçak nokta değerin 0 olduğu yer olmak zorunda değil.'], scene: 0 },
+      { q: 'f(x) = x, [−5, −1] aralığında tanımlı. Hangisi doğrudur?', options: ['Sıfırı x = −1’dedir', 'Önce negatif, sonra pozitiftir', 'Her yerde negatiftir ve sıfırı yoktur'], answer: 2,
+        why: ['f(−1) = −1; sıfır değil.', 'Pozitif olması için aralıkta 0’dan büyük x olmalıydı.', 'Bütün girdiler 0’dan küçük; çıktıyı 0 yapan x = 0 aralıkta yok.'], scene: 2 },
+      { q: 'f(x) = x, [0, 4] aralığında tanımlı. f hangi x’lerde <b>pozitiftir</b>?', options: ['[0, 4]', '(0, 4]', '[1, 4]'], answer: 1,
+        why: ['0 dahil olmaz: f(0) = 0, pozitif değil.', '0’ın kendisi hariç bütün aralıkta grafik eksenin üstünde.', '0 ile 1 arasındaki sayılar da pozitiftir: f(0,5) = 0,5.'], scene: 1 },
     ],
     summary: [
       '<b>Sıfır, işaretin değiştiği yerdir.</b>',

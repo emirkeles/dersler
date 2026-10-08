@@ -136,12 +136,16 @@
         why: ['5 = 1 + 4, ama ilk kural yalnızca x &lt; 1 için geçerli.', '1 ≥ 1 koşulunu sağlar: ikinci kural, 2 · 1 = 2.', 'İki kuralın sonucu toplanmaz; her girdi tek satıra düşer.'], scene: 2 },
       { q: 'Parçalı gösterimde hangi kuralın kullanılacağını ne belirler?', options: ['Çıktının işareti', 'x’in hangi aralıkta olduğu', 'Hangisi kolaysa'], answer: 1,
         why: ['Çıktı, kural seçildikten sonra bulunur.', 'Önce girdinin aralığına bakılır, sonra o satırın kuralı uygulanır.', 'Seçim serbest değil; her girdinin tek bir satırı var.'], scene: 3 },
+      { q: 'p(x), x ≤ 3 için 2x, x &gt; 3 için x + 3 olsun. p(5) − p(2) kaçtır?', options: ['6', '4', '3'], answer: 1,
+        why: ['İki girdi için de ilk kural kullanılmış; 5, x &gt; 3 satırına düşer.', 'p(5) = 5 + 3 = 8 ve p(2) = 2 · 2 = 4; fark 4.', 'İki girdi için de ikinci kural kullanılmış; 2, x ≤ 3 satırına düşer.'], scene: 3 },
+      { q: 'Üç satırlı bir parçalı gösterim kaç fonksiyon tanımlar?', options: ['Tek fonksiyon', 'Üç ayrı fonksiyon', 'Girdiye göre değişir'], answer: 0,
+        why: ['Parçalı gösterim tek fonksiyondur; her girdi bir satırı kullanır.', 'Satırlar ayrı fonksiyon değil, aynı fonksiyonun parçalarıdır.', 'Fonksiyon tektir; girdiye göre değişen yalnızca kullanılan satırdır.'], scene: 2 },
     ],
     summary: [
       '<b>Her aralığın kendi kuralı vardır.</b>',
       '<b>Parçalı gösterim</b> tek bir fonksiyondur; her girdi yalnızca bir satırı kullanır.',
       'Önce aralığı bul, sonra o satırın kuralını uygula.',
     ],
-    nextLesson: { href: 'b1-mutlak-deger-ile-x.html', label: 'Sonraki: |x| ile f(x) = x ›' },
+    nextLesson: { href: 'a17-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

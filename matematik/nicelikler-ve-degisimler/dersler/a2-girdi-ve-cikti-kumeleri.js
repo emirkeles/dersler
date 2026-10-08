@@ -129,6 +129,10 @@
         why: ['Girdi sınırlıysa çıktı da sınırlıdır; her değer çıkmaz.', 'Çıktı girdiye eşit: en küçük −1, en büyük 5.', 'f(−1) = −1 de çıkar; negatif çıktılar unutulmuş.'], scene: 2 },
       { q: 'Grafikte <b>tanım kümesi</b> hangi eksende okunur?', options: ['y ekseninde', 'İkisinde de', 'x ekseninde'], answer: 2,
         why: ['y ekseninde çıktılar, yani görüntü kümesi okunur.', 'Girdiler yalnızca x eksenindedir.', 'Girdiler x eksenindedir; grafiğin oradaki gölgesi tanım kümesidir.'], scene: 0 },
+      { q: 'Bir tartı 0 ile 150 kg arasını ölçüyor ve üstüne konan ağırlığı ekrana yazıyor. Ekranda 200 görülebilir mi?', options: ['Evet; ekranda her sayı görülebilir', 'Hayır; girdi 150’yi geçmediği için çıktı da geçmez', 'Yalnızca tartı boşken'], answer: 1,
+        why: ['Çıkabilen değerler girebilenlere bağlıdır; tanım kümesi sınırlı.', 'Çıktı girdiye eşit: görüntü kümesi de [0, 150].', 'Tartı boşken girdi 0’dır; ekranda 0 yazar.'], scene: 2 },
+      { q: 'Bir grafiğin <b>y eksenindeki</b> gölgesi [1, 4] aralığıdır. Bu aralık neyi gösterir?', options: ['Görüntü kümesini', 'Tanım kümesini', 'Grafiğin uzunluğunu'], answer: 0,
+        why: ['y ekseninde çıktılar okunur: çıkabilen değerler [1, 4].', 'Tanım kümesi x eksenindeki gölgedir.', 'Gölge bir uzunluk değil, çıkabilen değerlerin kümesidir.'], scene: 1 },
     ],
     summary: [
       '<b>Girebildiklerin tanım kümesi, çıkabildiklerin görüntü kümesidir.</b>',

@@ -212,6 +212,10 @@
         why: ['Eksiyi iki kez say: x = −b/a = −(−8)/2 = 4.', '2x − 8 = 0 ise 2x = 8, x = 4.', '8 sabit terimin büyüklüğü; x’in katsayısına bölmek gerekir.'], scene: 0 },
       { q: 'h(x) = −x + 3 hangi x’lerde pozitiftir?', options: ['x > 3', 'x > −3', 'x < 3'], answer: 2,
         why: ['Doğru azalan; sıfırın sağında negatiftir.', 'Sıfır −3 değil 3: −x + 3 = 0 ise x = 3.', 'Sıfırı 3; azalan doğru sıfırın solunda pozitiftir.'], scene: 2 },
+      { q: 'Bir dondurucuda sıcaklık h(x) = −2x + 10 kuralıyla değişiyor (x dakika, h °C). Sıcaklık hangi dakikalarda sıfırın altındadır?', options: ['x &lt; 5', 'x &gt; 5', 'x &gt; −5'], answer: 1,
+        why: ['Azalan doğru sıfırın solunda pozitiftir.', 'Sıfırı 5; azalan doğru sıfırın sağında negatiftir.', 'Sıfır −5 değil 5: −2x + 10 = 0 ise x = 5.'], scene: 1 },
+      { q: 'h(x) = 3x + 6 için işaret tablosu hangisidir?', options: ['x = 2’nin solunda −, sağında +', 'x = −2’nin solunda +, sağında −', 'x = −2’nin solunda −, sağında +'], answer: 2,
+        why: ['Sıfır 2 değil: 3x + 6 = 0 ise x = −2.', 'Bu sıra azalan doğrunundur; burada a = 3 pozitif.', 'Sıfırı −2; artan doğru solda −, sağda +.'], scene: 2 },
     ],
     summary: [
       '<b>Fonksiyon sıfırın iki yanında işaret değiştirir.</b>',

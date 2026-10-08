@@ -178,6 +178,10 @@
         why: ['9 yalnızca doğrunun yerini belirler; yönüne a karar verir.', 'a = −2 negatif: fonksiyon azalandır.', 'Sabit olması için a = 0 olmalıydı.'], scene: 1 },
       { q: 'h(x) = ax − 5 artan ise a hangisi olabilir?', options: ['−3', '0', '3'], answer: 2,
         why: ['a negatifse fonksiyon azalan olur.', 'a = 0 ise fonksiyon sabittir: h(x) = −5.', 'a = 3 pozitif: fonksiyon artandır.'], scene: 3 },
+      { q: 'Bir havuzdaki su h(x) = −3x + 60 kuralıyla değişiyor (x dakika, h litre). Su için hangisi doğrudur?', options: ['Zamanla azalıyor', 'Zamanla artıyor', 'Değişmiyor'], answer: 0,
+        why: ['a = −3 negatif: fonksiyon azalandır.', 'Artması için a pozitif olmalıydı; 60 yalnızca başlangıç miktarıdır.', 'Değişmemesi için a = 0 olmalıydı.'], scene: 2 },
+      { q: 'h(x) = 2x − 100 için hangisi doğrudur?', options: ['Azalandır, çünkü −100 negatif', 'Bazı yerlerde artan, bazı yerlerde azalandır', 'Artandır'], answer: 2,
+        why: ['−100 yalnızca doğrunun yerini belirler; yönüne a karar verir.', 'Doğrunun yönü her yerde aynıdır; a tek bir sayıdır.', 'a = 2 pozitif: fonksiyon her yerde artandır.'], scene: 3 },
     ],
     summary: [
       '<b>a pozitifse artar, negatifse azalır.</b>',

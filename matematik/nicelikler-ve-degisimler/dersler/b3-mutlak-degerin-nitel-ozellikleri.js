@@ -200,6 +200,10 @@
         why: ['Bu |x|’in görüntü kümesidir; −|x| hiç pozitif olmaz.', 'En büyük değer 0’dır ve kollar aşağı iner.', '−|x| pozitif değer almaz.'], scene: 2 },
       { q: 'n(x) = |x| hangi x’lerde azalandır?', options: ['x &gt; 0', 'Hiçbir x’te', 'x &lt; 0'], answer: 2,
         why: ['Sağ kolda sağa gittikçe grafik yükselir: orada artandır.', 'Sol kolda sağa gittikçe grafik alçalır.', 'Sol kolda girdi büyürken çıktı küçülür.'], scene: 0 },
+      { q: 'Bir dağın zirvesine göre yükseklik farkı h(x) = −|x| metre ile veriliyor (x zirveden yatay uzaklık; solda negatif, sağda pozitif). Zirvenin 4 m solundaki ve 4 m sağındaki noktaların yükseklik farkı nedir?', options: ['İkisinde de 4 m', 'Solda 4 m, sağda −4 m', 'İkisinde de −4 m'], answer: 2,
+        why: ['−|x| hiç pozitif olmaz; zirve en yüksek noktadır.', 'h(−4) = −|−4| = −4; solda 4 çıkmaz.', 'h(−4) = −4 ve h(4) = −4: ters V’nin iki kolu eşit iner.'], scene: 2 },
+      { q: 'Aşağıdaki girdi çiftlerinden hangisi |x| fonksiyonunun artan <b>olmadığını</b> gösterir?', options: ['x = −4 ve x = −1', 'x = 1 ve x = 3', 'x = 2 ve x = 5'], answer: 0,
+        why: ['−4 &lt; −1 iken |−4| = 4 &gt; 1 = |−1|: girdi büyürken çıktı küçüldü.', '1 &lt; 3 ve |1| &lt; |3|: bu çift artanlığı bozmaz.', '2 &lt; 5 ve |2| &lt; |5|: bu çift artanlığı bozmaz.'], scene: 0 },
     ],
     summary: [
       '<b>|x|’in en küçük değeri 0, −|x|’in en büyük değeri 0’dır.</b>',

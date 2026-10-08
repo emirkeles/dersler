@@ -121,6 +121,10 @@
         why: ['−4 sol uçtaki değerdir: en küçük değer.', '4 bu aralıkta çıkmaz; en büyük girdi 1.', 'Artan fonksiyon en büyük değerini sağ uçta alır: f(1) = 1.'], scene: 2 },
       { q: 'f(x) = x için hangisi doğrudur?', options: ['x büyüdükçe f(x) de büyür', 'x büyüdükçe f(x) küçülür', 'x değişse de f(x) değişmez'], answer: 0,
         why: ['f artandır: çıktı girdiyle birlikte büyür.', 'Çıktı girdiye eşit; girdi büyürken küçülemez.', 'Çıktı girdiye eşit; girdi değişince çıktı da değişir.'], scene: 0 },
+      { q: 'Bir asansör −2. kattan 7. kata çıkıyor; ekranda bulunduğu katın numarası yazıyor. Ekrandaki <b>en küçük</b> sayı nerede görülür?', options: ['Yolun ortasında', 'En üst katta', 'Yolun başında'], answer: 2,
+        why: ['Artan fonksiyonda değer baştan sona büyür; uç değer ortada olmaz.', 'En üstte en büyük sayı görülür: 7.', 'Artan fonksiyon en küçük değerini sol uçta alır: −2.'], scene: 2 },
+      { q: 'f(x) = x gerçek sayılarda tanımlı. <b>En büyük değeri</b> için hangisi doğrudur?', options: ['En büyük değeri yoktur', 'Çok büyük bir sayıdır', '0’dır'], answer: 0,
+        why: ['Hangi sayıyı söylersen bir büyüğü de çıkar.', 'Ne kadar büyük olursa olsun, ondan büyük bir girdi daha vardır.', '0 fonksiyonun sıfırıdır; f(1) = 1 ondan büyüktür.'], scene: 1 },
     ],
     summary: [
       '<b>Artan fonksiyon sağa gittikçe yükselir.</b>',

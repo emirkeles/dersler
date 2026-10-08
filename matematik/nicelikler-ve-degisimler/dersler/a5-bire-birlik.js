@@ -107,6 +107,10 @@
         why: ['Bire bir fonksiyonda iki farklı girdi aynı çıktıyı vermez.', 'Aynı çıktı tek girdiden gelir: a = b = 7.', 'f bire bir olduğu için bilinir: a = b.'], scene: 3 },
       { q: '<b>Bire birliği</b> hangisi anlatır?', options: ['Her girdinin bir çıktısı vardır', 'Çıktılar girdilerden büyüktür', 'Farklı girdiler farklı çıktı verir'], answer: 2,
         why: ['Bu her fonksiyon için geçerlidir; bire birlik daha fazlasını ister.', 'Bire birlik büyüklükle ilgili değildir.', 'İki farklı girdi hiçbir zaman aynı çıktıyı vermez.'], scene: 0 },
+      { q: 'Bir tabloda girdiler 1, 2, 3, 4; çıktılar 5, 8, 5, 9. Bu fonksiyon bire bir midir?', options: ['Evet; her girdinin bir çıktısı var', 'Hayır; 1 ve 3 aynı çıktıyı veriyor', 'Evet; çıktılar girdilerden büyük'], answer: 1,
+        why: ['Her girdinin çıktısı olması yetmez; çıktılar tekrar etmemeli.', 'İki farklı girdi 5 çıktısını veriyor: bire bir değil.', 'Bire birlik büyüklükle ilgili değildir; çıktı satırında tekrar var.'], scene: 1 },
+      { q: 'Bir grafikte 3 yüksekliğinde iki ayrı nokta var. Bu fonksiyon için ne söylenir?', options: ['Bire bir değildir', 'Bire birdir', 'Grafikten anlaşılmaz'], answer: 0,
+        why: ['İki farklı girdi aynı çıktıyı, 3’ü veriyor.', 'Bire birde her yükseklikte en çok bir nokta olur.', 'Aynı yükseklikteki iki nokta, tekrar eden çıktıyı doğrudan gösterir.'], scene: 2 },
     ],
     summary: [
       '<b>Bire birde iki farklı girdi aynı çıktıyı vermez.</b>',

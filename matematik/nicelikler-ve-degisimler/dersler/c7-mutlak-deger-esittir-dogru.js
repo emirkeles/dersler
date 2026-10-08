@@ -171,6 +171,10 @@
         why: ['2 için sol yan 0, sağ yan 2 eder; 2 çözüm değildir.', 'x &lt; 2 durumundan x = 1 çıkar ve |1 − 2| = 1 tutar.', 'x = 1 denklemi sağlar: |1 − 2| = 1.'], scene: 3 },
       { q: 'Bulunan sayı neden denklemde denenir?', options: ['Denklem her zaman iki çözümlüdür.', 'Denemeye gerek yoktur.', 'Durumun koşulunu sağlamayan sahte çözüm çıkabilir.'], answer: 2,
         why: ['Çözüm sayısı değişir: iki, bir ya da hiç olabilir.', 'Denemeden sahte çözüm fark edilmez: |x − 1| = 2x + 4’te −5 gibi.', 'Bir durumdan çıkan sayı o durumun koşulunu sağlamayabilir; yerine koymak bunu yakalar.'], scene: 2 },
+      { q: '|x + 1| ile g(x) = x/2 + 2 grafikleri (−2, 1) ve (2, 3) noktalarında kesişiyor. |x + 1| = x/2 + 2 denkleminin çözüm kümesi hangisidir?', options: ['{1, 3}', '{−2, 2}', '{−2, 1, 2, 3}'], answer: 1,
+        why: ['1 ve 3 kesişimlerin y’leridir; çözüm x’lerdir.', 'Çözümler kesişimlerin x değerleridir: −2 ve 2.', 'Koordinatların hepsi çözüm olmaz; yalnızca x’ler çözümdür.'], scene: 0 },
+      { q: '|x + 4| = 3x denkleminin çözüm kümesi hangisidir?', options: ['{2}', '{−1, 2}', '{−1}'], answer: 0,
+        why: ['x + 4 = 3x ise x = 2 ve tutar; öbür durumdan çıkan −1 koşulu sağlamaz.', '−1 için |−1 + 4| = 3, ama 3 · (−1) = −3: tutmaz.', 'Yalnızca sahte sayı alınmış; x = 2 gerçek çözümdür.'], scene: 2 },
     ],
     summary: [
       '<b>Önce işarete bak, iki yola ayrıl, sonunda yerine koy.</b>',

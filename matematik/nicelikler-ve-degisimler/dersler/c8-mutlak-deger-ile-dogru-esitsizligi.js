@@ -197,6 +197,10 @@
         why: ['Bunlar dış bölgeler; denenen 4 ise ortadaki bölgede.', 'Uçlarda eşitlik var; ≤ işareti uçları da alır.', 'Denenen 4 ortadaki bölgede; eşitlik olduğu için uçlar da çözümde.'], scene: 2 },
       { q: 'V’nin doğrunun üstünde ya da üzerinde kaldığı yerler hangi eşitsizliğin çözümüdür?', options: ['|f(x)| ≤ g(x)', '|f(x)| ≥ g(x)', '|f(x)| = g(x)'], answer: 1,
         why: ['Bu, V’nin doğrunun altında ya da üzerinde kaldığı yerleri sorar.', 'Üstte kalan grafik daha büyük değeri verir: |f(x)| ≥ g(x).', 'Eşitlik yalnızca kesişim noktalarını verir.'], scene: 1 },
+      { q: '|x − 4| = x/2 + 1 denkleminin çözümleri 2 ve 10’dur. |x − 4| ≥ x/2 + 1 eşitsizliğinin çözüm kümesi hangisidir?', options: ['[2, 10]', '(−∞, 2) ∪ (10, ∞)', '(−∞, 2] ∪ [10, ∞)'], answer: 2,
+        why: ['x = 5 dene: 1 ≥ 3,5 yanlış; orta bölge çözüm değil.', 'Uçlarda eşitlik var; ≥ uçları da alır.', 'x = 0 ve x = 12 sağlar; uçlar eşitlikten dolayı dahil.'], scene: 2 },
+      { q: 'V ile doğru x = 1 ve x = 5’te kesişiyor; ikisinin arasında V doğrunun altında kalıyor. |f(x)| &lt; g(x) eşitsizliğinin çözüm kümesi hangisidir?', options: ['(1, 5)', '[1, 5]', '(−∞, 1) ∪ (5, ∞)'], answer: 0,
+        why: ['Kesişimlerde eşitlik var; &lt; eşitliği almaz, uçlar dışarıda kalır.', 'Uçları da alan işaret ≤ olurdu; &lt; eşitliği kabul etmez.', 'V dış bölgelerde doğrunun üstünde; &lt; için altında kaldığı aralık gerekir.'], scene: 0 },
     ],
     summary: [
       '<b>Önce eşitliği çöz, sonra hangi grafiğin üstte kaldığına bak.</b>',

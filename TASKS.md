@@ -482,7 +482,7 @@ Ayrıntı: `plan/matematik/geometrik-sekiller/DURUM.md` "Pilot" bölümü. Sonra
 - [x] Kullanıcı A konusunu izledi ve onayladı (8 Ekim 2026: "bunları beğendim")
 - [x] "Hatırla" sahnelerinin açılış cümlesi eşitlendi; `olc.js`, `sure.js`, `denetle.js` yeniden temiz
 - [x] A konusunun seslendirilmesi: 199 klip (131 yeni), 14,0 dk; ayrıntı `DURUM.md` "Pilotun seslendirilmesi ve yayını"
-- [ ] Pilotun commit'i ve yayını (seslendirmeden sonra; önce yapılırsa canlıda A1–A5 sessiz kalır)
+- [x] Pilotun commit'i ve yayını: `664a09a`, `main` üzerinde
 - [ ] `plan/YOL-HARITASI.md` 2. adım: Kimya Çeşitlilik ve yedi temaya sese dokunmayan ekler
 
 ## Yürütme planı ve temiz oturuma devir (8 Ekim 2026)
@@ -506,7 +506,7 @@ Kullanıcı: "seslendirme, commit ve yayına geçebilirsin. bu context'i clear y
 - [x] 1.4 Altı sayfaya `ses/<ders-id>.js` satırı
 - [x] 1.5 Doğrulama: dizin, dosyalar ve döküm birebir; 1 süre aykırısı (A3); `olc.js` temiz; `sure.js` A konusu 40:21; `denetle.js` "Sorun yok"
 - [x] 1.6 Kayıt: `DURUM.md`, `SESLENDIRME.md`, `TEMALAR.md`, `YURUTME.md` tarih
-- [ ] 1.7 Commit ve push (yalnızca pilot dosyaları, klipler, plan dosyaları; `ortak/` hariç)
+- [x] 1.7 Commit ve push: `664a09a` (uzaktaki `a44ff7e` ile birleştirme `a7599b0`); `ortak/` değişikliği başka oturumca `09634d2` ile ayrıca gönderilmişti
 - [ ] İş panosu
 
 ## Yürütme planı 2a: Kimya · Çeşitlilik (8 Ekim 2026)
@@ -515,9 +515,21 @@ Ayrıntı: `plan/kimya/cesitlilik/DURUM.md`.
 
 - [x] 2a.1 Müfredat (vardı), ders kitabı (s. 104–211 okundu), açık sorular kapatıldı (`PLAN.md` bölüm 7), kitaptan alınanlar (bölüm 8), denetim tablosuna durum sütunu
 - [x] 2a.2 Konu A senaryosu (`senaryolar/A-metalik-bag.md`), iskelet, `kit.js`, A1 (`olc.js` temiz, görüntülere bakıldı)
-- [ ] 2a.3 Denetim noktası: A2 ve A3 (tekrar) Sonnet ile; pilotla karşılaştırma
-- [ ] 2a.4 B–M senaryoları (Sonnet; ana oturum program metniyle karşılaştırır)
-- [ ] 2a.5 B–M dersleri ve konu tekrarları
-- [ ] 2a.6 Konu başına ölçüm, `tema.js` satırları
-- [ ] 2a.7 Tema denetimi
-- [ ] 2a.8 Rapor
+- [x] 2a.3 Denetim noktası: A2 ve A3 Sonnet ile yazıldı, `olc.js` temiz, görüntüler pilotla karşılaştırıldı: yeterli, ders kodu Sonnet'te kalır. `tema.js` satırları, `sure.js` (Konu A 17:01), `denetle.js` temiz
+- [x] 2a.4 B–M senaryoları (Sonnet): on iki konu yazıldı; ana oturum her birini program metniyle karşılaştırdı (altyazı uzunluğu, kapsam dışı terim, karşılaştırma tablosu); bulgular `DURUM.md` notlarında
+- [x] 2a.5 B–M dersleri ve konu tekrarları: 41 ders (konu başına bir Sonnet ajanı); her biri ana oturumca yeniden ölçüldü, konu başına en az iki sahnenin görüntüsüne bakıldı; tahta–altyazı kayması A–E'de düzeltildi, F–M kuralla yazıldı
+- [x] 2a.6 Konu başına ölçüm, `tema.js` satırları (13 konu, 44 satır; konu tekrarları sonraki konuya `nextLesson` ile bağlı)
+- [x] 2a.7 Tema denetimi: `sure.js` (tema 398:02; 15 dk'yı geçen F3 ve J2 tek fikir, kaldı; I1, L1, L2'de soruyla açılan sahneye anlatım eklendi), `denetle.js` "Sorun yok", tema sayfası görüntüsü, denetim tablosuna sahne numaraları, `plan/kimya/TEMALAR.md`
+- [x] 2a.8 Rapor (8 Ekim 2026). Commit edilmedi; seslendirme, yayın ve H1 için yedi resim kullanıcıdan ayrıca istenir
+
+### 2b. Yedi eski temaya sese dokunmayan ekler (`plan/YURUTME.md` 2b)
+
+Tema 1 · Nicelikler ve Değişimler (görev tanımı: `plan/matematik/nicelikler-ve-degisimler/gorev/ek-soru-gorevi.md`)
+
+- [x] 2b.1 Konu A (ana oturum, örnek): 16 derse ikişer çıkış sorusu (biri yeni durum, biri yanılgı), `a17-tekrar` (sekiz kural, on soru; `olc.js` temiz, dört görüntüye bakıldı), A16 → A17 → B1 bağlantısı, `tema.js` satırı
+- [x] 2b.2 Konu B (6 ders + `b7-tekrar`) ve Konu C (10 ders + `c11-tekrar`): birer Sonnet ajanı
+- [x] 2b.3 Ölçüm: `olc.js` A1–A17 (Haiku) ve B, C'den sekiz ders temiz; `sure.js` tema 155:02; `denetle.js` "35 kısa ders, yayında. Sorun yok."
+- [x] 2b.4 İçerik denetimi: 64 ek soru ve 30 tekrar sorusu elle doğrulandı; üç tekrar dersinden görüntülere bakıldı
+- [ ] 2b.5 Commit ve push (yalnızca bu temanın dosyaları)
+
+Sıradaki temalar: Sayılar (4 konu), Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).

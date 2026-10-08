@@ -247,6 +247,10 @@
         why: ['Bu, |x − 1| &gt; 3 eşitsizliğinin çözümüdür; küçüktür tek aralık verir.', '−3 &lt; x − 1 &lt; 3; her yana 1 eklenince −2 &lt; x &lt; 4.', 'Her yana 1 eklenir, çıkarılmaz: −3 + 1 = −2 ve 3 + 1 = 4.'], scene: 2 },
       { q: '|x + 5| &gt; 0 eşitsizliğinin çözüm kümesi hangisidir?', options: ['ℝ', '∅', 'ℝ ∖ {−5}'], answer: 2,
         why: ['x = −5 için mutlak değer 0 olur; 0 &gt; 0 yanlıştır.', 'Mutlak değer −5 dışındaki her sayıda pozitiftir; çözüm boş değil.', '|x + 5| yalnızca x = −5’te sıfırdır; öteki her sayıda pozitiftir.'], scene: 3 },
+      { q: 'Bir fırının sıcaklığı 180 °C’den 5 dereceden az sapmalı: |t − 180| &lt; 5. Hangi sıcaklık uygundur?', options: ['176 °C', '172 °C', '190 °C'], answer: 0,
+        why: ['|176 − 180| = 4 ve 4 &lt; 5.', '|172 − 180| = 8; 5’ten büyük.', '|190 − 180| = 10; 5’ten büyük.'], scene: 0 },
+      { q: '|2x − 4| &gt; 6 eşitsizliğinin çözüm kümesi hangisidir?', options: ['(−1, 5)', '(5, ∞)', '(−∞, −1) ∪ (5, ∞)'], answer: 2,
+        why: ['Bu, |2x − 4| &lt; 6 eşitsizliğinin çözümüdür; büyüktür iki ayrı aralık verir.', 'Yalnızca 2x − 4 &gt; 6 kolu alınmış; 2x − 4 &lt; −6 kolu da var.', '2x − 4 &gt; 6 ise x &gt; 5; 2x − 4 &lt; −6 ise x &lt; −1.'], scene: 2 },
     ],
     summary: [
       '<b>Küçüktür tek aralık, büyüktür iki ayrı aralık verir.</b>',

@@ -88,7 +88,7 @@ Sonra kullanıcıya: kaç klip, kaç dakika, harcanan karakter, dinlenmesi gerek
 
 **İzin:** yazım için var (yol haritası onaylı). Seslendirme ve yayın her tema için ayrıca istenir.
 
-#### 2a. Kimya · Çeşitlilik (31 ders, 13 konu, her konuya bir konu tekrarı)
+#### 2a. Kimya · Çeşitlilik (31 ders, 13 konu, her konuya bir konu tekrarı) (yazım bitti: 8 Ekim 2026; commit, seslendirme, yayın bekliyor)
 
 `ISLEME.md` baştan sona uygulanır; şablon `ortak/sablon/` (`kural: 2` satırı kalır).
 
@@ -112,6 +112,8 @@ Anlatım ve altyazı değişmez; klip yeniden üretilmez. Tema başına iş:
 - `tema.js` içine `kural: 2` yazılmaz (hatırla sahnesi ve birlikte çöz bu temalarda yok); denetim `denetle.js --kural` özetiyle izlenir.
 
 Sıra: Nicelikler ve Değişimler (3 konu), Sayılar (4), Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
+
+Biten: Nicelikler ve Değişimler (8 Ekim 2026; görev tanımı örneği `plan/matematik/nicelikler-ve-degisimler/gorev/ek-soru-gorevi.md`, sonraki temada kopyalanıp uyarlanır). Sıradaki: Sayılar.
 
 | # | İş | Kim |
 |---|---|---|

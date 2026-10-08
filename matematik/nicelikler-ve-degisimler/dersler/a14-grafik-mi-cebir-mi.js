@@ -153,6 +153,10 @@
         why: ['Üç örnek bütün durumları kapsamaz; dördüncüsü bozabilir.', 'Grafikler yalnızca çizilen örnekler için konuşur.', 'Destekleyen örnekler önermeyi çürütmez; karşı örnek çürütür.'], scene: 0 },
       { q: '“∀a &gt; 0 için …” diye başlayan bir önermeden emin olmanın yolu hangisidir?', options: ['On grafik çizmek', 'Büyük bir tablo yapmak', 'Cebirsel ispat'], answer: 2,
         why: ['On grafik on örnektir; a’nın sonsuz değeri var.', 'Tablo ne kadar büyük olsa da sonlu sayıda örnek içerir.', 'İspat bütün a değerlerini birden kapsar.'], scene: 2 },
+      { q: 'Bir öğrenci “Her doğrusal fonksiyon artandır” diyor. Hangisi bu iddiayı <b>çürütür</b>?', options: ['h(x) = 2x + 1 artandır', 'h(x) = −x + 3 azalandır', 'h(x) = 5x artandır'], answer: 1,
+        why: ['Destekleyen örnek iddiayı çürütmez.', 'Tek karşı örnek yeter: bu doğrusal fonksiyon artan değil.', 'Bu da iddiayı destekleyen bir örnektir.'], scene: 1 },
+      { q: '“Her … için” diye başlayan bir önermeyi 100 örnek destekliyor, 1 örnek bozuyor. Önerme için ne söylenir?', options: ['Yanlıştır', 'Büyük ölçüde doğrudur', 'Daha çok örneğe bakılmalı'], answer: 0,
+        why: ['Tek karşı örnek önermeyi düşürür.', '“Her” diyen önerme tek istisnayı bile kaldırmaz.', 'Karşı örnek bulundu; yeni örnekler bunu değiştirmez.'], scene: 1 },
     ],
     summary: [
       '<b>Grafik gösterir, ispat garanti eder.</b>',

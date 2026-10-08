@@ -115,3 +115,15 @@ Süre aykırıları (karakter başına süre, dersin ortancasından %30'dan fazl
 | C10 | 2 | `f7df2fba` | +%34 | 3,4 sn | [thoughtful] Çöz: negatife bölerken yön döner. |
 
 Dinlerken bakılacak okunuşlar (ajanların kararsız kaldıkları): tek harfe gelen ekler ("x’e", "a’ya", "b’yi", "V’nin"), "h x bir / h x iki" (A12), "iki bir noktası" (B5), tırnaklı “ve” / “veya” (C6), "x numaralı kattasın" (B4).
+
+## Ek çıkış soruları ve konu tekrarı (8 Ekim 2026; `plan/YURUTME.md` 2b)
+
+Anlatım, altyazı ve klipler değişmedi. 32 dersin her birinde çıkış soruları 2'den 4'e çıktı (biri bilgiyi yeni bir duruma uygulatır, biri dersin yanılgısını sınar); her konuya tekrar dersi yazıldı: `a17-tekrar` (sekiz kural, on soru), `b7-tekrar` (altı kural, on soru), `c11-tekrar` (yedi kural, on soru). Tekrar dersleri seslendirilmedi (sayfalarında ses satırı yok). Bağlantılar: A16 → A17 → B1, B6 → B7 → C1, C10 → C11.
+
+- Konu A ana oturumca yazıldı (örnek); B ve C birer Sonnet ajanıyla. Görev tanımı: `gorev/ek-soru-gorevi.md`.
+- Ölçüm: `olc.js` A1–A17 (Haiku), B2, B3, B6, B7, C1, C5, C8, C11 temiz; `denetle.js` "35 kısa ders, yayında. Sorun yok."; `--kural` özeti: çıkış sorusu 4–5 değil 0/35, konu tekrarı yok 0/3.
+- `sure.js`: tema 155:02 (A 69:32, B 32:28, C 53:02); önceki toplam 114 dakikaydı, artış ek sorulardan ve üç tekrar dersinden.
+- İçerik denetimi (ana oturum): 64 ek sorunun ve 30 tekrar sorusunun hesapları elle doğrulandı; her soruda tek doğru şık var, sonraki dersin kavramına dayanan soru yok.
+- Kalan (eski kurallardan, bu adımın işi değil): "Hatırla" sahnesi ve "Birlikte çöz" yok; `sure.js` 12 dersi "ilk sorudan önce en çok bir altyazı" diye not ediyor. Bunlar anlatımın yeniden yazımında ele alınır (`YURUTME.md` 4. adım, seslendirme gerektirir).
+- Dinlenmesi gerekmez; sitede bakılacak: tekrar derslerinin sessiz olması yadırgatıyor mu (temanın öteki dersleri sesli).
+

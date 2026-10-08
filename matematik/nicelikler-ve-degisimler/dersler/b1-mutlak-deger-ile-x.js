@@ -211,6 +211,10 @@
         why: ['x negatifken |x| pozitif, f(x) negatiftir.', 'x ≥ 0 iken |x| = x: iki grafik üst üstedir.', 'Sağ yarıda iki grafik çakışır: |2| = 2 = f(2).'], scene: 2 },
       { q: 'n(−5) kaçtır?', options: ['−5', '0', '5'], answer: 2,
         why: ['Mutlak değer işareti atar; çıktı negatif olmaz.', '0 yalnızca x = 0 için çıkar.', '−5’in sıfıra uzaklığı 5’tir: |−5| = 5.'], scene: 0 },
+      { q: 'Bir otoparkta zemin kat 0, bodrum katlar eksi sayılarla numaralanıyor. Üç asansör −6., 0. ve 4. katlarda. Üçünün zemin kata uzaklıkları toplamı kaç kattır?', options: ['−2', '10', '0'], answer: 1,
+        why: ['−6 + 0 + 4 = −2 olur; ama uzaklık negatif olmaz, |−6| = 6.', 'Uzaklıklar |−6| = 6, |0| = 0 ve |4| = 4; toplam 10.', 'Sıfır yalnızca zemin kattaki asansörün uzaklığıdır.'], scene: 0 },
+      { q: 'Selin “|x| her x için pozitiftir” diyor. Bu iddia için hangisi doğrudur?', options: ['Yanlış; x negatifken |x| negatiftir', 'Doğru; uzaklık hep pozitiftir', 'Yanlış; x = 0 için |x| = 0 olur'], answer: 2,
+        why: ['x negatifken |x| pozitif olur: |−3| = 3.', 'Sıfıra uzaklık negatif olmaz, ama sıfır da olabilir: |0| = 0.', '|0| = 0 pozitif değildir; |x| için doğru söz “negatif olmaz”dır.'], scene: 0 },
     ],
     summary: [
       '<b>Mutlak değer işareti atar, uzaklığı bırakır.</b>',

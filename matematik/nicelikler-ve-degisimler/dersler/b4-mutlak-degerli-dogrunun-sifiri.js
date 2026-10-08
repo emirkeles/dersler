@@ -204,6 +204,10 @@
         why: ['|2 · (−5) − 10| = 20 eder; sıfır değil.', '|2 · 10 − 10| = 10 eder; sıfır değil.', '2x − 10 = 0 için x = 5.'], scene: 1 },
       { q: '|h(x)| grafiği h grafiğinden nasıl elde edilir?', options: ['Tamamı yukarı kayar', 'x ekseninin altındaki kısım yukarı katlanır', 'Hiç değişmez'], answer: 1,
         why: ['Eksenin üstündeki kısım yerinde kalır; yalnızca alttaki değişir.', 'Negatif çıktıların işareti çevrilir: alttaki kısım üste katlanır.', 'h negatif değer alır, |h| almaz; alttaki kısım katlanır.'], scene: 0 },
+      { q: 'Bir su tankında hedef seviyeden sapma s(x) = |−2x + 6| litre ile veriliyor (x dakika). Sapma kaçıncı dakikada sıfır olur?', options: ['3', '−3', '6'], answer: 0,
+        why: ['−2x + 6 = 0 ise x = 3; |h| de orada sıfırdır.', 'x = −3 için |−2 · (−3) + 6| = 12 çıkar; sıfır değil.', 'x = 6 için |−2 · 6 + 6| = 6 çıkar; sıfır değil.'], scene: 1 },
+      { q: 'h(x) = 2x + 6 artan bir doğrudur. |h(x)| için hangisi doğrudur?', options: ['Baştan sona artandır', 'x &lt; −3’te azalan, x &gt; −3’te artandır', 'Baştan sona azalandır'], answer: 1,
+        why: ['Eksen altındaki kısım katlanınca sol kol aşağı iner; |h| baştan sona artan olmaz.', 'h’nin sıfırı −3; solunda katlanan kol azalır, sağında h’nin kendisi artar.', 'Sağ kol, h’nin kendisidir ve yükselir.'], scene: 2 },
     ],
     summary: [
       '<b>|ax + b|’nin sıfırı ax + b’nin sıfırıdır; grafik orada kırılır.</b>',

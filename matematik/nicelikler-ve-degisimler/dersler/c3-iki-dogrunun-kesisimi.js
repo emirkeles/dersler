@@ -159,6 +159,10 @@
         why: ['7, kesişimin y’sidir: f(3) = 7. Çözüm x’tir.', '2x + 1 = x + 4 ise x = 3.', 'f(5) = 11, g(5) = 9: eşit değil.'], scene: 1 },
       { q: 'İki doğrunun kesişim noktası (3, 7) ise hangisi doğrudur?', options: ['f(7) = g(7) = 3', 'f(3) = 7 ve g(7) = 3', 'f(3) = g(3) = 7'], answer: 2,
         why: ['Noktanın ilk sayısı girdidir: x = 3.', 'Kesişimde iki fonksiyon aynı girdide aynı değeri verir.', 'İkisi de x = 3 için 7 verir.'], scene: 1 },
+      { q: 'Bir bisiklet kiralama dükkânı f(x) = 5x + 8 lira, öbürü g(x) = 2x + 20 lira alıyor (x saat). İki dükkân kaç saatte aynı ücreti ister?', options: ['28', '12', '4'], answer: 2,
+        why: ['28 ortak ücrettir (kesişimin y’si); sorulan saat sayısı x’tir.', '12 bir ara adımdır: 3x = 12.', '5x + 8 = 2x + 20 ise 3x = 12, yani x = 4.'], scene: 1 },
+      { q: 'f(x) = 6x + 1 ve g(x) = 2x + 9 için f(x) = g(x) denklemi hangi fonksiyonun sıfırını bulmaya dönüşür?', options: ['8x + 10', '4x − 8', '4x + 8'], answer: 1,
+        why: ['8x + 10, f(x) + g(x) toplamıdır; denklem farkı sıfırlar.', 'f(x) − g(x) = 6x + 1 − 2x − 9 = 4x − 8.', 'İşaret hatası: 1 − 9 = −8, +8 değil.'], scene: 2 },
     ],
     summary: [
       '<b>Doğruların kesiştiği yerde iki fonksiyon eşittir.</b>',

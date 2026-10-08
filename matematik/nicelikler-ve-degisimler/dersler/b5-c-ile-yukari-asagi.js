@@ -159,6 +159,10 @@
         why: ['4, en küçük değerin alındığı x’tir.', '|x − 4| en az 0’dır; 3 eklenince en az 3 olur.', '0, |x − 4|’ün en küçük değeridir; c = 3 grafiği yukarı taşır.'], scene: 0 },
       { q: 'm(x) = −|x| + 2 fonksiyonunun kaç sıfırı vardır?', options: ['2', '1', '0'], answer: 0,
         why: ['Tepe (0, 2)’de; kollar ekseni −2’de ve 2’de keser.', 'Tek sıfır c = 0 iken olur; burada tepe eksenin üstünde.', 'Ters V’de c pozitifse kollar aşağı inerken ekseni keser.'], scene: 2 },
+      { q: 'Bir vadinin deniz seviyesine göre yüksekliği v(x) = |x + 2| − 3 km ile modelleniyor (x kilometre). Vadinin en alçak noktası (x, v) olarak hangisidir?', options: ['(2, −3)', '(−2, −3)', '(−2, 3)'], answer: 1,
+        why: ['v(2) = |4| − 3 = 1; en alçak değil.', '|x + 2| en az 0’dır ve x = −2’de olur; c = −3 bu değeri −3 yapar.', 'v(−2) = 0 − 3 = −3, 3 değil: c negatif olduğu için uç eksenin altında.'], scene: 0 },
+      { q: 'Beyza “c pozitifse mutlak değerli fonksiyonun sıfırı yoktur” diyor. Hangi fonksiyon bu iddiayı çürütür?', options: ['m(x) = |x − 3| + 3', 'm(x) = |x| + 3', 'm(x) = −|x| + 3'], answer: 2,
+        why: ['Uç (3, 3) eksenin üstünde ve kollar yukarı çıkıyor: sıfır yok.', 'Uç (0, 3) eksenin üstünde ve kollar yukarı çıkıyor: sıfır yok.', 'Ters V’nin tepesi (0, 3); kollar aşağı inip ekseni iki yerde keser: iki sıfır var.'], scene: 2 },
     ],
     summary: [
       '<b>c grafiği taşır; sıfırların sayısı da değişir.</b>',

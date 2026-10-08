@@ -185,6 +185,10 @@
         why: ['Mutlak değer negatif olmaz; −7 için ikinci satır geçerlidir.', '−7 &lt; 0 olduğu için kural −x: −(−7) = 7.', 'x’in değeri −7’dir, 7 değil; 7’yi veren kural −x’tir.'], scene: 2 },
       { q: '|x|’in parçalı gösteriminde iki parça hangi x’te ayrılır?', options: ['x = 1', 'x = −1', 'x = 0'], answer: 2,
         why: ['1’in iki yanında da kural x’tir.', '−1’in iki yanında da kural −x’tir.', 'x ≥ 0 ve x &lt; 0 koşulları 0’da ayrılır; V’nin ucu da oradadır.'], scene: 1 },
+      { q: 'Bir drone kalkış noktasından x metre doğuya (x negatifse batıya) gidiyor. Kalkış noktasına uzaklık p(x) = x (x ≥ 0), p(x) = −x (x &lt; 0) ile bulunuyor. x = −7 ve x = 7 konumlarındaki uzaklıkların toplamı kaç metredir?', options: ['0', '14', '7'], answer: 1,
+        why: ['−7 + 7 = 0 olurdu, ama p(−7) = −(−7) = 7: uzaklık negatif değil.', 'p(−7) = 7 ve p(7) = 7; toplam 14.', '7, yalnızca bir konumun uzaklığıdır.'], scene: 2 },
+      { q: 'x negatif bir sayı olsun. Hangisi her zaman pozitiftir?', options: ['−x', 'x', 'x + x'], answer: 0,
+        why: ['x negatifken −x, x’in işareti çevrilmişidir: pozitiftir.', 'x negatif olarak seçildi; pozitif olamaz.', 'İki negatif sayının toplamı negatiftir.'], scene: 0 },
     ],
     summary: [
       '<b>|x|, x negatifse −x, değilse x’tir.</b>',

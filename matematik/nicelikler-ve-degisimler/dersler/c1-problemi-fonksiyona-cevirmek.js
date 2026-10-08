@@ -207,6 +207,10 @@
         why: ['Saatle çarpılan 10 lira olmalı; 30 lira bir kez ödenir.', 'Bir kez 30 lira, üstüne x tane 10 lira.', 'Giriş ücreti saate bağlı değil; x ile çarpılmaz.'], scene: 0 },
       { q: 'f(x) = 5x + 20 kuralında 20 neyi anlatır?', options: ['Kilo başına ücreti', 'En çok ağırlığı', 'Ağırlıktan bağımsız sabit ücreti'], answer: 2,
         why: ['Kilo başına ücret x’in katsayısıdır: 5.', 'Kuralda ağırlık için bir sınır yok.', '20, x ile çarpılmaz: paket boşken de ödenir.'], scene: 1 },
+      { q: 'Bir spor salonu aylık üyelik için 80 lira, her ders için 12 lira alıyor. Bir ayda en çok 200 lira ödemek isteyen biri en fazla kaç ders alabilir?', options: ['16', '10', '23'], answer: 1,
+        why: ['200 / 12 ≈ 16,7: sabit 80 lira hesaba katılmamış.', '12x + 80 ≤ 200 ise 12x ≤ 120, yani x ≤ 10.', '280 / 12 ≈ 23,3: 80 çıkarılmak yerine eklenmiş.'], scene: 2 },
+      { q: 'Bir kuryenin kazancı f(x) = 4x + 25 kuralıyla bulunuyor (x teslimat sayısı, f(x) lira). “Kazanç en az 100 lira olsun” cümlesi hangisidir?', options: ['4x + 25 = 100', '4x + 25 ≤ 100', '4x + 25 ≥ 100'], answer: 2,
+        why: ['“Tam 100 lira” denklem olurdu; “en az” eşitsizlik kurar.', '“En çok” için ≤ yazılır; “en az” bunun tersidir.', 'En az 100: kazanç 100’e eşit ya da ondan büyük.'], scene: 2 },
     ],
     summary: [
       '<b>Sözü fonksiyona, fonksiyonu grafiğe çevir.</b>',

@@ -206,6 +206,10 @@
         why: ['Yalnızca x − 4 = 6 yolu çözülmüş; x − 4 = −6 yolu da var.', '|2 − 4| = 2 eder; 6 etmez.', 'x − 4 = 6 ya da x − 4 = −6: 10 ve −2.'], scene: 2 },
       { q: '|3x + 1| = −2 denkleminin kaç çözümü vardır?', options: ['2', '0', '1'], answer: 1,
         why: ['İki çözüm k pozitifken olur; burada k negatif.', 'Mutlak değer hiçbir x için −2 etmez.', 'Tek çözüm k = 0 iken olur; burada k negatif.'], scene: 1 },
+      { q: '|3x + 6| = 12 denkleminin çözüm kümesi hangisidir?', options: ['{−6, 2}', '{2}', '{−2, 6}'], answer: 0,
+        why: ['3x + 6 = 12 ise x = 2; 3x + 6 = −12 ise x = −6.', 'Yalnızca 3x + 6 = 12 yolu çözülmüş; −12 yolu da var.', '|3 · 6 + 6| = 24 eder; 12 etmez.'], scene: 2 },
+      { q: '|5 − 2x| = 0 denkleminin kaç çözümü vardır?', options: ['2', '1', '0'], answer: 1,
+        why: ['0’ın eksilisi yine 0’dır; iki yol aynı denkleme döner.', '5 − 2x = 0 ise yalnızca x = 2,5.', 'x = 2,5 denklemi sağlar: |5 − 5| = 0.'], scene: 1 },
     ],
     summary: [
       '<b>Mutlak değer k ise iki yol vardır; k negatifse yoktur.</b>',

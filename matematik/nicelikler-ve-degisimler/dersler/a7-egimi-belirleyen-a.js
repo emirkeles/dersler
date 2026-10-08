@@ -197,6 +197,10 @@
         why: ['1, f’nin artışıdır; g onu 3 ile çarpar.', 'Eğim a = 3: 1 sağa gidince 3 yukarı çıkılır.', 'Çıktı 3’e bölünmez, 3 ile çarpılır.'], scene: 1 },
       { q: 'Hangisinin grafiği en diktir?', options: ['g(x) = x + 4', 'g(x) = x/4', 'g(x) = 4x'], answer: 2,
         why: ['4 eklemek doğruyu kaydırır; eğim 1 kalır.', 'Burada a = 1/4: doğru f’den yatıktır.', 'a = 4: 1 sağa gidince 4 yukarı çıkılır.'], scene: 1 },
+      { q: 'Bir doğruda 1 birim sağa gidince 5 birim aşağı iniliyor. Kuralı hangisi olabilir?', options: ['g(x) = −5x', 'g(x) = 5x', 'g(x) = x − 5'], answer: 0,
+        why: ['a = −5: 1 sağa, 5 aşağı.', '5x’te 1 sağa gidince 5 yukarı çıkılır.', 'x − 5 kaydırılmış doğrudur; eğimi 1’dir.'], scene: 2 },
+      { q: 'g(x) = 0,5x grafiği f(x) = x grafiğine göre nasıldır?', options: ['Daha dik', 'Sağa doğru alçalır', 'Daha yatık'], answer: 2,
+        why: ['Dikleşmesi için a 1’den büyük olmalıydı.', 'Alçalması için a negatif olmalıydı; 0,5 pozitiftir.', 'a = 0,5: 1 sağa gidince yalnızca 0,5 yukarı çıkılır.'], scene: 1 },
     ],
     summary: [
       '<b>Eğimi belirleyen katsayıdır, a.</b>',

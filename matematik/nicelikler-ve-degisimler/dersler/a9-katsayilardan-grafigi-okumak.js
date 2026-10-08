@@ -194,6 +194,10 @@
         why: ['2, girdiden çıkan sayıdır; doğruyu sağa kaydırır.', 'Eğim, f’nin önündeki çarpandır: a = 3.', '1, çıktıya eklenen sayıdır; doğruyu yukarı kaydırır.'], scene: 0 },
       { q: 'g(x) = 2 · f(x) − 6 grafiği x eksenini hangi noktada keser?', options: ['x = −6', 'x = −3', 'x = 3'], answer: 2,
         why: ['−6, y eksenindeki kesişimdir: g(0) = −6.', 'g(−3) = 2 · (−3) − 6 = −12; sıfır değil.', 'g(3) = 2 · 3 − 6 = 0.'], scene: 1 },
+      { q: 'Bir firma 30 lira sabit ücret ve kilo başına 10 lira, öbürü yalnızca kilo başına 20 lira alıyor. Ücretler kaç kiloda eşitlenir?', options: ['2', '3', '6'], answer: 1,
+        why: ['2 kiloda ücretler 50 ve 40 lira; eşit değil.', '3 kiloda ikisi de 60 lira: doğrular orada kesişir.', '6 kiloda ücretler 90 ve 120 lira; eşit değil.'], scene: 2 },
+      { q: 'g(x) = 2 · f(x − 1) + 3 doğrusu hangi noktadan geçer?', options: ['(1, 3)', '(3, 1)', '(−1, 3)'], answer: 0,
+        why: ['Doğru (r, k)’den geçer: g(1) = 2 · 0 + 3 = 3.', 'r ile k yer değiştirmiş: g(3) = 2 · 2 + 3 = 7.', 'g(−1) = 2 · (−2) + 3 = −1; 3 değil.'], scene: 0 },
     ],
     summary: [
       '<b>Eğim a’da, yer r ile k’de saklıdır.</b>',

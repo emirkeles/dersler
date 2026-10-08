@@ -193,6 +193,10 @@
         why: ['Kuralda x yok; girdi çıktıyı etkilemez.', 'Sabit fonksiyon her girdiye aynı çıktıyı verir: 7.', 'Kuralda x yok; 7 hiçbir şeyle çarpılmaz.'], scene: 3 },
       { q: 'g(x) = ax + 4’te a = 0 olursa grafik nasıl olur?', options: ['4 yüksekliğinde yatay doğru', 'Orijinden geçen doğru', 'Dikey doğru'], answer: 0,
         why: ['0 · x = 0 olur, g(x) = 4 kalır: her girdide 4.', 'g(0) = 4; doğru orijinden değil, (0, 4)’ten geçer.', 'a küçüldükçe doğru yatar; a = 0’da yatay olur.'], scene: 1 },
+      { q: 'Bir otopark, kaç saat kalırsan kal 50 lira alıyor. Saat–ücret grafiği nasıldır?', options: ['Sağa doğru yükselen doğru', '50 yüksekliğinde yatay doğru', 'Orijinden geçen doğru'], answer: 1,
+        why: ['Yükselmesi için ücret saatle artmalıydı.', 'Çıktı hep 50: sabit fonksiyon, yatay doğru.', 'Orijinden geçseydi 0 saatte ücret 0 olurdu; burada 50.'], scene: 0 },
+      { q: 'g(x) = 4 fonksiyonunun <b>görüntü kümesi</b> hangisidir?', options: ['ℝ', '[0, 4]', '{4}'], answer: 2,
+        why: ['Girdi her gerçek sayı olabilir, ama çıktı hep 4’tür.', '0 ile 4 arasındaki sayılar hiç çıkmaz.', 'Çıkabilen tek değer 4’tür.'], scene: 2 },
     ],
     summary: [
       '<b>Girdi ne olursa olsun çıktı değişmiyorsa fonksiyon sabittir.</b>',

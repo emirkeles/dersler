@@ -181,6 +181,10 @@
         why: ['Toplama, sayının işaretine bakmadan yönü korur.', 'Yön, çarpan pozitif olduğu için aynı kalır.', 'Bu hipotezdir; a ile ilgisi yoktur.'], scene: 1 },
       { q: 'a &lt; 0 ve x<sub>1</sub> &lt; x<sub>2</sub> ise hangisi doğrudur?', options: ['h(x<sub>1</sub>) &lt; h(x<sub>2</sub>)', 'h(x<sub>1</sub>) = h(x<sub>2</sub>)', 'h(x<sub>1</sub>) &gt; h(x<sub>2</sub>)'], answer: 2,
         why: ['Bu, a pozitifken çıkan sonuçtur.', 'Farklı girdiler eşit çıktı vermez; yön döner, eşitlik olmaz.', 'Negatifle çarpınca yön döner: fonksiyon azalandır.'], scene: 2 },
+      { q: 'h(x) = 4x − 1 ve x<sub>1</sub> &lt; x<sub>2</sub>. İspatın sonunda hangisine varılır?', options: ['h(x<sub>1</sub>) &lt; h(x<sub>2</sub>)', 'h(x<sub>1</sub>) &gt; h(x<sub>2</sub>)', 'x<sub>1</sub> = x<sub>2</sub>'], answer: 0,
+        why: ['a = 4 pozitif: 4 ile çarpmak da 1 çıkarmak da yönü korur.', 'Yön yalnızca negatif sayıyla çarpınca döner.', 'Hipotez girdilerin farklı olduğunu söyler: x<sub>1</sub> &lt; x<sub>2</sub>.'], scene: 1 },
+      { q: 'x<sub>1</sub> &lt; x<sub>2</sub> eşitsizliğinin iki yanına −7 eklenirse yön ne olur?', options: ['Döner', 'Aynı kalır', 'Eşitlik olur'], answer: 1,
+        why: ['Yön, negatif sayıyla çarpınca döner; eklerken dönmez.', 'Toplama, sayının işaretine bakmadan yönü korur.', 'İki yana aynı sayı eklenir; aradaki fark kapanmaz.'], scene: 1 },
     ],
     summary: [
       '<b>x<sub>1</sub> &lt; x<sub>2</sub> ile başla, h(x<sub>1</sub>) &lt; h(x<sub>2</sub>)’ye var.</b>',

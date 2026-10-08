@@ -507,6 +507,7 @@ Sahne numaraları dersler yazıldıktan sonra işlendi (7 Ekim 2026). S1, dersin
 | Anahtar kavramlar: fonksiyonların parçalı gösterimi | A16, B2, B6 |
 | Anahtar kavramlar: mutlak değer fonksiyonu | B1–B6 |
 | Anahtar kavramlar: doğrusal denklem ve eşitsizlik, kök | C1–C8 |
+| Konu tekrarı (`KURALLAR.md` 3.4; 8 Ekim 2026'da eklendi): her konunun kuralları ve 8–10 karışık soru. Yeni bilgi içermez, seslendirilmedi | A17, B7, C11 (tekrar) |
 
 ## 5. Bilerek alınmayanlar
 

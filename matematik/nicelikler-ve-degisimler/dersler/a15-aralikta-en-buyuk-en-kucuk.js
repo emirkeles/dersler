@@ -186,6 +186,10 @@
         why: ['−2 sol uçtaki değer; artan fonksiyonda en küçüğü odur.', 'Artan fonksiyon en büyük değerini sağ uçta alır: h(4) = 10.', '4 girdidir; sorulan çıktı: h(4) = 10.'], scene: 0 },
       { q: 'h(x) = x + 1, (2, 5) aralığında en küçük değeri kaçtır?', options: ['3', '2', 'Yoktur'], answer: 2,
         why: ['3 = h(2) olurdu, ama 2 aralıkta değil.', '2 aralığın ucu, bir çıktı değil; üstelik aralığa dahil değil.', 'Sol uç dahil değil: değerler 3’e yaklaşır, 3’ü alamaz.'], scene: 2 },
+      { q: 'h(x) = −2x + 10, [1, 4] aralığında en büyük değerini kaç alır?', options: ['8', '2', '10'], answer: 0,
+        why: ['Azalan fonksiyon en büyük değerini sol uçta alır: h(1) = 8.', '2 sağ uçtaki değerdir: en küçük değer.', '10 = h(0) olurdu, ama 0 aralıkta değil.'], scene: 1 },
+      { q: 'h(x) = 2x, [0, 5) aralığında tanımlı. Hangisi doğrudur?', options: ['En büyük değeri 10’dur', 'Ne en büyük ne en küçük değeri vardır', 'En küçük değeri 0’dır, en büyük değeri yoktur'], answer: 2,
+        why: ['10 = h(5) olurdu, ama 5 aralığa dahil değil.', '0 aralığa dahil: en küçük değer h(0) = 0 alınır.', 'Sol uç dahil, sağ uç değil: değerler 10’a yaklaşır, 10’u alamaz.'], scene: 2 },
     ],
     summary: [
       '<b>Uç aralığa dahil değilse o uçtaki değer alınamaz.</b>',

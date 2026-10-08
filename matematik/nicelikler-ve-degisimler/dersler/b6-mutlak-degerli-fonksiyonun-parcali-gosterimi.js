@@ -174,12 +174,16 @@
         why: ['Bu x ≥ 3 için geçerli kuraldır: (x − 3) + 2.', 'Eksi, −3’ün de işaretini çevirir: −(x − 3) = −x + 3.', '−(x − 3) + 2 = −x + 3 + 2 = −x + 5.'], scene: 1 },
       { q: '|3x + 6| ifadesinin parçalı gösteriminde parçalar hangi x’te ayrılır?', options: ['x = 2', 'x = −2', 'x = 6'], answer: 1,
         why: ['3 · 2 + 6 = 12 eder; içerisi sıfır olmaz.', '3x + 6 = 0 için x = −2: parçalar içerinin sıfırında ayrılır.', '6 sabit terimdir; ayrılma yeri içerinin sıfırıdır.'], scene: 0 },
+      { q: 'Bir kargo şirketinin teslimat ücreti ü(x) = |2x − 10| + 3 liradır (x, adresin yol üzerindeki kilometre konumu). x ≥ 5 için ücret kuralı hangisidir?', options: ['−2x + 13', '2x − 13', '2x − 7'], answer: 2,
+        why: ['Bu x &lt; 5 için geçerli kuraldır: −(2x − 10) + 3.', 'Sondaki 3 eklenir, çıkarılmaz: (2x − 10) + 3 = 2x − 7.', 'x ≥ 5’te 2x − 10 ≥ 0: mutlak değer aynen çıkar, (2x − 10) + 3 = 2x − 7.'], scene: 1 },
+      { q: 'g(x) = |3x − 6| + 2 grafiğinin sol ve sağ kollarının eğimi sırasıyla nedir?', options: ['−3 ve 3', 'Her ikisi de 3', '3 ve −3'], answer: 0,
+        why: ['x &lt; 2’de kural −3x + 8, x ≥ 2’de 3x − 4: eğimler −3 ve 3.', 'Sol kol azalır; iki kolun eğimi aynı olsaydı grafik V olmazdı.', 'Bu sıra ters V’ye aittir; burada sol kol alçalır, sağ kol yükselir.'], scene: 0 },
     ],
     summary: [
       '<b>Mutlak değeri açmak, işarete göre iki yol çizmektir.</b>',
       'İçerisi pozitifse mutlak değer aynen, negatifse eksiyle çıkar; parçalar içerinin sıfırında ayrılır.',
       '|2x − 4| + 1: x ≥ 2 için 2x − 3, x &lt; 2 için −2x + 5.',
     ],
-    nextLesson: { href: 'c1-problemi-fonksiyona-cevirmek.html', label: 'Sonraki: Problemi fonksiyona çevirmek ›' },
+    nextLesson: { href: 'b7-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

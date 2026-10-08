@@ -119,18 +119,18 @@ h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
     <div class="lead">
       <div>
         <h1>Dersler İş Panosu</h1>
-        <p class="sub">9. sınıf · 8 Ekim 2026 durumu, pilot onaylandı · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
+        <p class="sub">9. sınıf · 8 Ekim 2026 durumu, pilot yayında, Kimya Çeşitlilik yazıldı · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
       </div>
       <div class="figs">
-        <div class="fig"><span class="label">Kısa ders</span><b>157<i> / 534</i></b></div>
+        <div class="fig"><span class="label">Kısa ders</span><b>158<i> / 534</i></b></div>
         <div class="fig"><span class="label">Yayındaki tema</span><b>7<i> / 30</i></b></div>
-        <div class="fig"><span class="label">Ses</span><b>4.875<i> klip · 382 dk</i></b></div>
+        <div class="fig"><span class="label">Ses</span><b>4.980<i> klip · 390 dk</i></b></div>
         <div class="fig"><span class="label">Konu tekrarı dersi</span><b>1<i> / 144</i></b></div>
       </div>
       <div class="hat">
         <span class="label">Tema hattı · her kare bir tema</span>
         <div class="stages" id="stages"></div>
-        <p class="note">Yazılan yedi tema yayında ve sesli, ama baştan sona dinlenmedi. Yeni anlatım kuralları Geometrik Şekiller’in A konusunda denendi ve onaylandı; o konu seslendirilip yayına girecek. Kalan 23 temada yalnızca müfredat ve plan taslağı var.</p>
+        <p class="note">Yazılan yedi tema yayında ve sesli, ama baştan sona dinlenmedi. Yeni anlatım kuralları Geometrik Şekiller’in A konusunda denendi, onaylandı; konu yeni metinle seslendirilip yayına girdi. Kimya Çeşitlilik yeni kurallarla yazıldı (44 ders); izlenmeyi, seslendirmeyi ve yayını bekliyor. Kalan 22 temada yalnızca müfredat ve plan taslağı var.</p>
       </div>
     </div>
     <div class="dersler">
@@ -147,9 +147,9 @@ h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
 
 <script>
 const DERS = {
-  mat:{ad:'Matematik', plan:161, bitti:72},
+  mat:{ad:'Matematik', plan:164, bitti:76},
   fiz:{ad:'Fizik', plan:60, bitti:30},
-  kim:{ad:'Kimya', plan:55, bitti:18},
+  kim:{ad:'Kimya', plan:68, bitti:18},
   biy:{ad:'Biyoloji', plan:57, bitti:37},
   tde:{ad:'Türk Dili ve Edebiyatı', plan:91, bitti:0},
   tar:{ad:'Tarih', plan:56, bitti:0},
@@ -162,7 +162,7 @@ const TEMALAR = [
   ['mat','Sayılar',3],['mat','Nicelikler ve Değişimler',3],['mat','Geometrik Şekiller',3],
   ['mat','Eşlik ve Benzerlik',0],['mat','Algoritma ve Bilişim',0],['mat','İstatistiksel Araştırma Süreci',0],['mat','Veriden Olasılığa',0],
   ['fiz','Fizik Bilimi ve Kariyer Keşfi',3],['fiz','Kuvvet ve Hareket',3],['fiz','Akışkanlar',0],['fiz','Enerji',0],
-  ['kim','Etkileşim',3],['kim','Çeşitlilik',0],['kim','Sürdürülebilirlik',0],
+  ['kim','Etkileşim',3],['kim','Çeşitlilik',1],['kim','Sürdürülebilirlik',0],
   ['biy','Yaşam',3],['biy','Organizasyon',0],
   ['tde','Sözün İnceliği',0],['tde','Anlam Arayışı',0],['tde','Anlamın Yapı Taşları',0],['tde','Dilin Zenginliği',0],
   ['tar','Geçmişin İnşa Sürecinde Tarih',0],['tar','Eski Çağ Medeniyetleri',0],['tar','Orta Çağ Medeniyetleri',0],
@@ -195,16 +195,16 @@ const ISLER = [
   ['sonra','gen','Hikâyelere müzik, efekt ve altyazı','9 film','Sitedeki filmlerin hiçbirinde yok.'],
   ['sonra','gen','Depo temizliği','','Altı eski uzak dal silinebilir. Yerel araçlar kit.js içine toplanacak.'],
 
-  ['sira','kim','Çeşitlilik','31 + 13 ders','Yeni kurallarla baştan yazılır; 13 konunun her birine konu tekrarı dersi.','Sınıfta gerekeceği zaman: aralık başı'],
-  ['sira','gen','Yedi eski temaya ekler','152 ders · 35 konu','Çıkış soruları 2’den 4’e çıkar, her konuya tekrar dersi yazılır. Klip yeniden üretilmez.','Çeşitlilik ile birlikte yürür'],
   ['sira','mat','Eşlik ve Benzerlik','18 ders','36 ders saati.','Sınıfta gerekeceği zaman: ocak'],
   ['sira','fiz','Akışkanlar','15 ders','18 ders saati. İki hikâyesi hazır (A1).','Sınıfta gerekeceği zaman: ocak sonu'],
   ['sira','biy','Organizasyon','20 ders','24 ders saati.','Sınıfta gerekeceği zaman: mart'],
 
-  ['suruyor','mat','Pilotu kapat: Geometrik Şekiller A konusu','131 klip','Altı ders yeni kurallarla yazıldı ve onaylandı. Kalan: seslendirme, commit, yayın.','Yürütme planı, 1. adım',2/3],
 
+  ['suruyor','gen','Yedi eski temaya ekler','7 temadan 1’i bitti','Çıkış soruları 2’den 4’e çıkar, her konuya tekrar dersi yazılır; klip yeniden üretilmez. Nicelikler ve Değişimler bitti (32 derse 64 soru, 3 tekrar dersi). Sırada Sayılar.','Yürütme planı, adım 2b',0.14],
+
+  ['sende','kim','Çeşitlilik’i izle, sonra seslendirme ve yayını iste','44 ders · 6 sa 38 dk','13 konu yazıldı (31 ders + 13 konu tekrarı), ölçüm ve denetim temiz; depoya girmedi. Kitap dışı kurulan yerler ve bakılacak dersler DURUM.md notlarında. H1 için yedi resim istemi hazır (GORSELLER.md).'],
   ['sende','gen','Yayındaki yedi temayı sesli izle','≈ 17 saat','Konu başına en az bir ders yeter. 55 klip süre olarak uzun yönde aykırı; listeler DURUM.md dosyalarında.'],
-  ['sende','mat','Pilotu sesli izle','6 ders','Seslendirme bitince A1–A6. Mümkünse bir 9. sınıf öğrencisi de izlesin; hiçbir kural bunun yerini tutmaz.'],
+  ['sende','mat','Pilotu sesli izle','6 ders · 14 dk ses','A1–A6 yeni metinle yayında. “x” içeren satırlar (A3, A4) ve tek harfe ek gelen dört eski klip özellikle dinlenmeli. Mümkünse bir 9. sınıf öğrencisi de izlesin.'],
   ['sende','mat','A2’deki iki taş','','“Bir noktadan tek paralel” ve “doğru açı 180°dir” başka bilgilere dayanan bilgi gibi duruyor; ilki aksiyoma, ikincisi tanıma daha yakın.'],
   ['sende','gen','“Kısa ders” adı','','Kural olarak kalktı ama sitede hâlâ böyle yazıyor. “Ders” olsun mu?'],
   ['sende','tde','Bu ders yazılacak mı?','91 ders','Tam plan, yalnızca okuma ve dil bilgisi, ya da hiç. İsteklerin %40–46’sı site dışı; metin telifi belirsiz.'],
@@ -213,10 +213,10 @@ const ISLER = [
   ['sende','biy','D6 ve E1’i sitede izle','2 ders','E1’de “üretilir mi” satırı “Dışarıdan alınır mı?” diye sorulsun mu?'],
 
   ['bitti','gen','Yeni anlatım kuralları ve araç denetimleri','c7e1ea7','Önce anlat, örnek, hatırla, konu tekrarı. denetle.js ve sure.js bunları denetliyor.'],
-  ['bitti','mat','Pilot: Geometrik Şekiller A konusu','6 ders','Yeniden yazıldı ve onaylandı. 24:30 → 37:25; çıkış sorusu 10 → 28.'],
+  ['bitti','mat','Pilot: Geometrik Şekiller A konusu','6 ders · 199 klip','Yeniden yazıldı, onaylandı, seslendirildi (131 yeni klip), yayında. 24:30 → 40:21; çıkış sorusu 10 → 28.'],
   ['bitti','mat','Sayılar','28 ders','496 klip · 4 hikâye'],
-  ['bitti','mat','Nicelikler ve Değişimler','32 ders','526 klip'],
-  ['bitti','mat','Geometrik Şekiller','12 ders','222 klip · 1 hikâye'],
+  ['bitti','mat','Nicelikler ve Değişimler','35 ders','526 klip · 4 çıkış sorusu · üç konu tekrarı (sessiz)'],
+  ['bitti','mat','Geometrik Şekiller','13 ders','327 klip · 1 hikâye'],
   ['bitti','fiz','Fizik Bilimi ve Kariyer Keşfi','6 ders','93 klip'],
   ['bitti','fiz','Kuvvet ve Hareket','24 ders','1.472 klip · 1 hikâye'],
   ['bitti','kim','Etkileşim','18 ders','1.126 klip'],

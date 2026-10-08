@@ -194,11 +194,16 @@
         why: ['Negatif gün olmaz; 150. günden sonra da derinlik negatif çıkar.', 'Gün 0’dan başlar, göl 150. günde kurur.', '150. günden sonra model negatif derinlik verir; anlamsızdır.'], scene: 2 },
       { q: 'Bu modelin zayıf yanı hangisidir?', options: ['Grafiği çizilemez.', 'Hiçbir günü doğru vermez.', 'Koşullar değişirse kural geçerliliğini yitirir.'], answer: 2,
         why: ['Grafiği bir doğrudur; çizilebilir.', 'Koşullar aynı kaldıkça aralığındaki günleri doğru verir.', 'Yağmur yağarsa “her gün 2 cm” artık doğru olmaz.'], scene: 2 },
+      { q: 'Bir bitkinin boyu u(x) = 12 + 1,5x modeline göre değişiyor (x gün, u(x) cm). Bu modele göre bitki kaçıncı günde 60 cm olur?', options: ['40', '32', '48'], answer: 1,
+        why: ['60 / 1,5 = 40: başlangıç boyu olan 12 cm hesaba katılmamış.', '12 + 1,5x = 60 ise 1,5x = 48, yani x = 32.', '48, 1,5x’in değeridir; gün sayısı 48 / 1,5 = 32.'], scene: 1 },
+      { q: 'Aynı model 400. gün için u(400) = 612 cm veriyor. Bu sonuç için hangisi doğrudur?', options: ['Bitki gerçekten 612 cm olur: model hesapladığı için doğrudur', 'Hesap yanlıştır: 12 + 1,5 · 400, 612 etmez', 'Bitki sonsuza dek aynı hızla uzamaz; model bu uzak günde güvenilmez'], answer: 2,
+        why: ['Hesap doğru ama koşullar değişince model geçerliliğini yitirir.', '12 + 600 = 612: hesap doğru; sorun modelin kapsamında.', 'Model yalnızca koşulların sürdüğü aralıkta kullanılır.'], scene: 2 },
     ],
     summary: [
       '<b>Model, doğru olduğu aralıkta kullanılır.</b>',
       'Model bir durumu anlatan kuraldır; ölçmeden önceden söyler.',
       'Aralığın dışında ya da koşullar değişince modelin sözüne güvenilmez.',
     ],
+    nextLesson: { href: 'c11-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

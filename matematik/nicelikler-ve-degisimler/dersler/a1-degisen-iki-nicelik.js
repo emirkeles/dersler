@@ -148,6 +148,10 @@
         why: ['Süre kendi başına ilerler; yol ona bağlı değişir.', 'Yol süreye bağlı değişir: bağımlı değişkendir.', 'Biri kendi değişir, öbürü ona bağlıdır.'], scene: 0 },
       { q: 'f(x) = x için f(−4) kaçtır?', options: ['4', '−4', '0'], answer: 1,
         why: ['f işareti değiştirmez; çıktı girdinin kendisidir.', 'Çıktı girdiye eşit: f(−4) = −4.', '0 yalnızca x = 0 için çıkar.'], scene: 3 },
+      { q: 'Bir depoya her saat 3 kova su ekleniyor. 0, 1, 2 ve 3. saatte depodaki kova sayısı hangisi olabilir?', options: ['0, 3, 9, 27', '0, 3, 6, 9', '3, 3, 3, 3'], answer: 1,
+        why: ['Artışlar 3, 6, 18: eşit değil, doğrusal değişim olmaz.', 'Her saat aynı artış var: +3.', 'Sayı hiç artmıyor; oysa her saat su ekleniyor.'], scene: 1 },
+      { q: 'f(x) = x’in tablosunda yalnızca 0, 1, 2, 3 girdileri yazılı. f(1,5) için hangisi doğrudur?', options: ['Tanımsızdır; tabloda yok', '2’dir', '1,5’tir'], answer: 2,
+        why: ['Tablo birkaç örneği gösterir; kural her gerçek sayıya uygulanır.', 'Çıktı yuvarlanmaz; girdinin kendisidir.', 'Çıktı girdiye eşit: f(1,5) = 1,5.'], scene: 2 },
     ],
     summary: [
       '<b>Biri değişince öbürü nasıl değişiyor, fonksiyon onu söyler.</b>',

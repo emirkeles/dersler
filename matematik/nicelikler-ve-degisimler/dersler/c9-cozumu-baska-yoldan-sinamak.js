@@ -186,6 +186,10 @@
         why: ['2 · 5 + 3 = 13 eder, 11 etmez.', 'Sol yan 13, sağ yan 11: eşit değil. Doğrusu x = 4.', 'Yerine koymak kesin sonuç verir: iki yan ya eşittir ya değildir.'], scene: 0 },
       { q: '−x + 2 &lt; 0 için “x &lt; 2” bulundu. Hangi deneme hatayı gösterir?', options: ['x = 2: 0 &lt; 0 yanlış', 'Hiçbir deneme hatayı göstermez', 'x = 0: çözümde sayılıyor ama 2 &lt; 0 yanlış'], answer: 2,
         why: ['2 zaten “x &lt; 2” içinde değil; bu deneme hatayı göstermez.', 'Çözümde sayılan ama eşitsizliği sağlamayan tek sayı hatayı gösterir.', '0, “x &lt; 2” içinde ama eşitsizliği sağlamıyor. Doğrusu x &gt; 2.'], scene: 2 },
+      { q: '2x − 1 = x + 3 denkleminin çözümü x = 4 bulundu. Bunu grafikle sınamak için ne yapılır?', options: ['Doğruların x = 4’te x eksenini kestiğine bakılır', 'Doğruların y eksenini 4’te kestiğine bakılır', 'Doğruların x = 4’te aynı yüksekliğe geldiğine bakılır'], answer: 2,
+        why: ['Eksenle kesişim sıfırı verir; çözüm iki doğrunun kesişimidir.', 'y eksenindeki kesişim x = 0’daki değeri verir; sınanan x = 4.', 'f(4) = g(4) = 7: iki doğru x = 4’te kesişiyor.'], scene: 1 },
+      { q: '5 − 3x &gt; −4 için “x &gt; −3” bulundu. Biri yalnızca x = 0 deneyip eşitsizliğin sağlandığını görünce çözümü doğru sayıyor. Hangisi doğrudur?', options: ['Yeterli: bir sayı sağladığına göre çözüm doğrudur', 'Yeterli değil: x = 5 bu çözümde ama eşitsizliği sağlamıyor', 'Yeterli değil: x = 0 bu çözümde değil'], answer: 1,
+        why: ['Bir sayı tek başına aralığın tamamını doğrulamaz.', 'x = 5: 5 − 15 = −10 ve −10 &gt; −4 yanlış. Doğru çözüm x &lt; 3.', 'x = 0, x &gt; −3 içindedir ve eşitsizliği sağlar.'], scene: 2 },
     ],
     summary: [
       '<b>Bir yoldan bulduğunu başka bir yoldan sına.</b>',

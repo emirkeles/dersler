@@ -230,6 +230,10 @@
         why: ['Çıktıdan 4 çıkarıldı; noktalar yukarı değil, aşağı gider.', 'Çıktıya sayı eklemek ya da çıkarmak eğimi değiştirmez.', 'Her çıktı 4 küçülür: doğru 4 birim aşağı kayar.'], scene: 0 },
       { q: 'g(x) = f(x − 3) grafiği x eksenini hangi noktada keser?', options: ['x = −3', 'x = 3', 'x = 0'], answer: 1,
         why: ['g(−3) = f(−6) = −6; sıfır değil. Girdiden çıkarmak sağa kaydırır.', 'g(3) = f(0) = 0: doğru 3 birim sağa kaymıştır.', 'x = 0 f’nin sıfırıdır; g(0) = f(−3) = −3.'], scene: 1 },
+      { q: 'f(x) = x doğrusu 3 birim sağa ve 2 birim yukarı kaydırılıyor. Yeni doğrunun kuralı hangisidir?', options: ['g(x) = f(x + 3) + 2', 'g(x) = f(x − 2) + 3', 'g(x) = f(x − 3) + 2'], answer: 2,
+        why: ['f(x + 3) doğruyu sola kaydırır.', 'r ile k yer değiştirmiş: bu kural 2 sağa, 3 yukarı kaydırır.', 'Girdiden 3 çıkar: sağa 3. Çıktıya 2 ekle: yukarı 2.'], scene: 2 },
+      { q: 'g(x) = f(x + 5) grafiği x eksenini hangi noktada keser?', options: ['x = 5', 'x = −5', 'x = 0'], answer: 1,
+        why: ['g(5) = f(10) = 10; sıfır değil. Girdiye eklemek sola kaydırır.', 'g(−5) = f(0) = 0: doğru 5 birim sola kaymıştır.', 'g(0) = f(5) = 5; sıfır değil.'], scene: 1 },
     ],
     summary: [
       '<b>Kaydırma doğrunun eğimini değil, yerini değiştirir.</b>',

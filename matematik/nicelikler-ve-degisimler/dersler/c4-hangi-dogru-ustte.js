@@ -181,6 +181,10 @@
         why: ['x = 4 dene: f(4) = 10, g(4) = 12. Sağlamıyor.', 'x + 6 ≥ 3x ise 6 ≥ 2x, yani x ≤ 3.', 'x = 6 dene: f(6) = 12, g(6) = 18. Sağlamıyor.'], scene: 1 },
       { q: 'f(x) &lt; 0, f(x) &lt; g(x) eşitsizliğinin özel hâlidir. Bu hâlde g(x) kaçtır?', options: ['x', '1', '0'], answer: 2,
         why: ['g(x) = x olsaydı eşitsizlik f(x) &lt; x olurdu.', 'g(x) = 1 olsaydı eşitsizlik f(x) &lt; 1 olurdu.', 'g(x) = 0: grafiği x eksenidir.'], scene: 2 },
+      { q: 'Bir telefon tarifesinde A hattı f(x) = 2x + 30, B hattı g(x) = 5x lira alıyor (x GB). A hattının B’den pahalı olmaması için f(x) ≤ g(x) eşitsizliğinin çözümü hangisidir?', options: ['x ≤ 10', 'x ≥ 10', 'x ≥ 6'], answer: 1,
+        why: ['x = 12 sağlar (f = 54, g = 60) ama bu seçenekte yok.', '2x + 30 ≤ 5x ise 30 ≤ 3x, yani x ≥ 10.', 'x = 7 dene: f(7) = 44, g(7) = 35; f altta değil.'], scene: 1 },
+      { q: 'f ve g doğruları (6, 20) noktasında kesişiyor. x = 6, f(x) &lt; g(x) eşitsizliğinin çözümüne girer mi?', options: ['Hayır: f(6) = g(6) = 20 olduğundan f(6) &lt; g(6) yanlıştır', 'Evet: kesişimde iki değer eşit olduğu için sağlanır', 'Evet, ama yalnızca f artansa'], answer: 0,
+        why: ['Değerler eşit; &lt; eşitliği almaz. ≤ olsaydı 6 girerdi.', '“Eşit” demek “daha küçük” demek değildir.', 'Eğimin işareti sonucu değiştirmez; kesişimde değerler yine eşittir.'], scene: 0 },
     ],
     summary: [
       '<b>Eşitsizlik, hangi doğrunun üstte kaldığını sorar.</b>',
