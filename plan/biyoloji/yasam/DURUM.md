@@ -276,7 +276,7 @@ Notlar:
 
 ## Sıradaki
 
-- Bu temada 2b bitti. Açık iş yok.
+- Bu temada 2b bitti ve yayında (`6f65b67`, 9 Ekim 2026). Açık iş yok.
 - Yürütme sırası: `plan/YURUTME.md` 2b, sıradaki tema Fizik Bilimi ve Kariyer Keşfi (`fizik/fizik-bilimi-ve-kariyer-kesfi/`, 4 konu). Önce derslerin dosya düzenine, şık sayısına ve kit olup olmadığına bakılır. Dosyalar tek biçimde değilse bu temanın üç aracı (`plan/biyoloji/yasam/gorev/*.cjs`; içlerindeki klasör yolu değiştirilerek) ve görev tanımı kopyalanıp `plan/fizik/fizik-bilimi-ve-kariyer-kesfi/gorev/` altına uyarlanır.
 - 2b.1: A konusu ana oturumda (örnek); 2b.2: kalan konular, konu başına bir Sonnet ajanı (aynı anda en çok dört; on iki dersi aşan konuda soru ekleme iki ajana, tekrar dersi üçüncü ajana bölünür); ajanlar bittikten sonra `olc.js` Haiku ajanıyla sırayla (45 ders 36 dakika sürdü), sonra `sure.js` ve `denetle.js` ana oturumda.
 - Görev iletisinde cevap yerleri verilirken: bir derste eklenen iki soru aynı yerde olamayacağı için bir yerin sayısı ders sayısını aşamaz; "cevabı 2 olan soru her derste aynı sırada olmasın" açıkça yazılır.
