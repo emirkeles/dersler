@@ -525,3 +525,95 @@ Tablodaki `A1.3` A1'in üçüncü içerik sahnesidir; otomatik çıkış sorular
 Çalışma sırasında başka oturum `KURALLAR.md` 3 ve `ISLEME.md` 4'ü güncelledi. Güncel kurallar da uygulandı: öğretim gerekli bilgi verilmeden soru sorulmaz; süre ve sahne sayısı tavan değildir. Her senaryoda açılış biçimi ve her soru/çıkış sorusunun bilgi dayanağı bulunur. Kanca, sezgi/ön bilgi/görünür veriyle cevaplanan sorularda kalır; bilgi isteyen ad, tanım, sınıflandırma ve kurallar önce öğretilir. Seçici ziyareti temel öğrenme için varsayılmaz; gerekli kartlar zorunlu akışta gösterilir.
 
 Bağımsız inceleme E2'de Pauli/Hund'u geçerli orbital yerleşiminin tamamlayıcı koşulları olarak kabul etti. H3'ün çentik açıklaması ile ardışık enerjiden valans bulma işlemleri ayrıldı: çentik açıklaması H2.4, ardışık süreç H3.1–3. Konu ve ders sayısı 8/18; içerik sahnesi 80 kaldı. Bölüm 7 kararları ve bölüm 4 eşlemeleri bu son hâli gösterir. Her öğretim değişikliğinden sonra ölçüm ve görsel denetim tekrarlanır.
+
+## 12. Anlatımın yeniden planlanması — 7 Ekim 2026
+
+Kullanıcı yayındaki temayı izleyince anlatımı geri çevirdi: dersler tek cümle söyleyip soruya geçiyor ("Ürün türü ve kullanım amacı birlikte incelenir." → soru), "bu ölçümler kitapta hazır verilmiştir" gibi sözlerle öğrencinin önünde ders kitabı açıkmış gibi kurulmuş. İstek: siteye giren kişi ders kitabını izlemek zorunda değildir; bilgi bu kursta, kitaptan bağımsız öğretilir, soru sonra gelir; dersler bu kadar kısa olmaz; her ders konuyla ilgili bilgi vererek başlar.
+
+Ölçülen durum: 18 derste 80 sahne ve 270 anlatım cümlesi vardı (sahne başına 3,4 cümle; A1'de 8 cümle).
+
+Bu bölüm 3, 9 ve 11'deki anlatım biçimini ve sekiz senaryo dosyasını geçersiz kılar. Kapsam (bölüm 1–2, 4–5), kitap ve veri kaydı (bölüm 8) ve 18 dersin kodları değişmez.
+
+### Kurallar
+
+1. **Ders kendi başına yeter.** Öğrencinin ders kitabı yok sayılır. Altyazıda, tahtada, soruda, geri bildirimde, defterde ve özetlerde kitaba, sayfaya, "kaynak"a, "hazır veri"ye, sınıfa ("sınıfta yapılır") ya da dersin kendisine ("bu derste deney yapmıyoruz") gönderme olmaz. Kitap yazarın kaynağıdır (`KURALLAR.md` 2.1); sayfa numarası yalnızca senaryonun "Kaynak" satırında ve bu dosyada durur. Bu kursun önceki derslerine gönderme serbesttir ("Önceki derste gördük: …"); ders kodu söylenmez.
+2. **Veri bir durumun içinde sunulur:** kim ölçtü, neyi, neden. "Kitabın tablosu" diye sunulmaz.
+3. **Her ders "Öğret" açılışıyla başlar.** Dersin ilk sorusundan önce en az 5 anlatım cümlesi: hayattan bağlam, kavramların adı ve tanımı. Bu temada kanca açılışı kullanılmaz.
+4. **Her sorudan önce o sorunun gerektirdiği bilgi öğretilmiştir:** aynı sahnede sorudan önce en az 3 anlatım cümlesi. Soru, öğretilenin yeni bir örneğe uygulanması ya da öğretilen değişkenle kurulan bir önermedir; kör tahmin ya da bir önceki cümlenin tekrarı değildir. Her sorunun yanına dayandığı cümleler yazılır.
+5. **Sorudan sonra açıklama gelir:** en az 1 cümle "neden".
+6. **Uzunluk içeriğe göre:** ders başına yaklaşık 30–60 anlatım cümlesi ve 5–8 sahne; sahne başına en az 4 cümle. Tavan değildir. Sahne soruyla açılmaz, anlatımsız bitmez.
+7. **Yazı bütçesi aynıdır** (`KURALLAR.md` 4): altyazı tek cümle ve en çok 12 kelime, tahtada aynı anda en çok ~25 kelime.
+8. **Terim ilk geçtiği yerde tanımlanır.** Ortaokul ön bilgisi bir iki cümleyle hatırlatılabilir; senaryoda "(ön bilgi)" diye işaretlenir.
+9. **İçerik kuralı değişmez:** kapsamı program belirler, ayrıntı kitaptan sayfa numarasıyla alınır, hafızadan tanım, sayı, tarih ya da ad yazılmaz. Kitapta boş bırakılan deney sonuçları doldurulmaz.
+10. **Açıklama cümlesi `noWait` ile gösterilmez;** bütün anlatım beklenerek okunur ve seslendirilir. `noWait` yalnızca kısa etkileşim yönergesi içindir.
+11. **Ders kodları ve kimlikleri değişmez** (tema yayında). Bir ders iki fikre bölünmeyi gerektiriyorsa senaryoda not edilir, kendiliğinden bölünmez.
+
+### Senaryo biçimi
+
+Örnek: `senaryolar/A-gunluk-hayatta-kimya.md`. Her sahne için tahta, numaralı anlatım cümleleri (altyazının kendisi), soru ve dayandığı cümleler, sorudan sonraki cümleler, defter. Biçim denetimi: `node plan/kimya/etkilesim/senaryo-denetle.cjs` (kelime sayısı, gönderme arama, soru öncesi cümle sayısı, ders başına sayım).
+
+### Sıra
+
+1. Senaryolar yeniden yazılır (A örnek; B–H aynı kalıpla).
+2. Kullanıcı senaryoları onaylar.
+3. Dersler yeni senaryolara göre yeniden yazılır; bölüm 4 denetim tablosundaki sahne numaraları güncellenir; `olc.js` ve `denetle.js` temiz.
+4. Seslendirme yeni metinle baştan yapılır. 7 Ekim 2026'da yazılan `speak` metinleri ve A1 pilot klipleri (8 klip) eski anlatıma aittir; dersler yeniden yazılınca geçersiz kalır.
+
+### Sonuç: yeni senaryolar (7 Ekim 2026)
+
+Sekiz senaryo dosyası yeniden yazıldı (A ana oturum; B, C, D+G, E, F, H alt ajanlar). `senaryo-denetle.cjs` hepsinde temiz. Dersler henüz yeniden yazılmadı; kullanıcı onayı bekleniyor.
+
+| Ders | Eski sahne / cümle | Yeni sahne / cümle | Soru | Dene | Not |
+|---|---|---|---|---|---|
+| A1 | 5 / 8 | 6 / 54 | 5 | 2 | |
+| A2 | 5 / 9 | 7 / 55 | 6 | 1 | |
+| B1 | 4 / 14 | 7 / 65 | 6 | 1 | beş örnek olay |
+| B2 | 5 / 33 | 8 / 74 | 6 | 2 | bölünme adayı: işaretler (1–4), kurallar ve değerlendirme (5–8) |
+| C1 | 5 / 8 | 7 / 66 | 6 | 3 | bölünme adayı: modeller (1–3), tanecik verisi (4–7) |
+| C2 | 5 / 18 | 7 / 65 | 6 | 3 | |
+| D1 | 5 / 8 | 6 / 61 | 7 | 1 | |
+| E1 | 4 / 10 | 7 / 66 | 6 | 1 | |
+| E2 | 4 / 14 | 7 / 59 | 6 | 1 | |
+| E3 | 4 / 15 | 7 / 58 | 6 | 1 | bölünme adayı: valans (1–3), küresel simetri (4–7) |
+| F1 | 4 / 25 | 8 / 72 | 8 | 1 | |
+| F2 | 4 / 17 | 6 / 60 | 6 | 1 | |
+| F3 | 4 / 35 | 7 / 67 | 6 | 2 | bölünme adayı: bloklar (1–3), özel adlı gruplar (4–6) |
+| G1 | 5 / 12 | 7 / 68 | 8 | 2 | bölünme adayı: iyon oluşumu (1–6), izoelektronik (7) |
+| H1 | 5 / 11 | 6 / 71 | 7 | 3 | bölünme adayı: eğilimler (1–4), iyon ve izoelektronik yarıçap (5–6) |
+| H2 | 5 / 8 | 6 / 57 | 7 | 2 | |
+| H3 | 3 / 12 | 6 / 54 | 6 | 1 | |
+| H4 | 4 / 13 | 6 / 54 | 6 | 2 | |
+| **Toplam** | **80 / 270** | **121 / 1.126** | **114** | **30** | |
+
+Terim birliği: "enerji seviyesi" (1., 2., 3. …) ve "alt enerji seviyesi" (s, p, d, f). "Düzey", "kabuk", "alt düzey" kullanılmaz; soğurma ve yaymada "daha düşük / daha yüksek enerji seviyesi" denir. "Katman" yalnızca F1 ve F2'de ortaokuldaki yöntemin adı olarak geçer (program "katman elektron dağılımı" der).
+
+### Senaryolar yazılırken bulunanlar
+
+Eski derslerdeki içerik hataları (yeni senaryoda düzeltildi; dersler yeniden yazılırken uygulanır):
+
+- B2: eldiven işareti genel koruyucu ekipman diye anlatılmıştı; s. 15'te sıcak yüzey işaretidir. Eldiven kuralı s. 36'dan, göz koruması gözlük işaretinden alınır.
+- B1: derz animasyonunda seramiğin zarar görmediği gösteriliyordu; kitapta dayanağı yok.
+- C2: "Bu, ölçüm cihazının bozuk olmasına bağlı değildir." ve çok elektronlu atomlarla ilgili açıklama kitapta yok; çıkarıldı.
+- E1: akılda kalıcı cümledeki "en düşük enerjili boş orbital" yanlış (helyumun ikinci elektronu yarı dolu 1s'ye girer). Yenisi: "yer olan en düşük enerjili orbital". Bölüm 3'teki cümle buna göre okunur.
+- E3: küresel simetri yalnızca p orbitalleriyle verilmişti; s örnekleri (H, Be) ve B eklendi (s. 62–64).
+- F1: "Dolu katmanlar içinde en yüksek n" yanlış; en yüksek seviyenin dolu olması gerekmez.
+- F3: 7A için "oda sıcaklığında gaz" yanlış genelleme; flor ve klor gaz, brom sıvı, iyot katı (s. 72). f satırları 14 kutu çizilmiş; kitabın tablosunda 15.
+- G1: çıkış sorusunda henüz öğretilmemiş "atom yarıçapı" çeldiricisi vardı.
+- H2: alüminyum ve kükürt düzensizliği için verilen "3p daha yüksek enerjili" ve "eşleşme" açıklamaları kitabın bu bölümünde yok; yalnızca küresel simetri ve kararlılık kalır.
+- H3: sıçrama oranla değil farkla bulunur (kitabın yöntemi; alüminyumda oranlar yanıltıcı).
+- H4: bölüm 3'teki akılda kalıcı cümle "küçük atom daha çok çeker" kitabın verisiyle çelişiyor (C 77 pm ve 2,55; Cl 99 pm ve 3,16). Senaryoda değişti; ilişki yalnızca 3. periyot ve gruplarla, "genellikle" diye verilir. Soy gaz çizgisinin gerekçesi: bağ yapmadıkları için değerleri yoktur (s. 85).
+
+Kaynak eklemeleri (bölüm 3 ve 8'e ek):
+
+- B: s. 15 (piktogram anlamları), s. 34 (KBRN), s. 35 (sektörler), s. 43 (üç öğrenci durumu); beşinci örnek olay (restoran mutfağı, s. 39–40) kullanıldı.
+- H, bölüm 8 veri kaydına ek: s. 78 Be 112, Mg 160, Ca 197, F 72 pm; s. 79 Cl⁻ 181, K⁺ 133, Ca²⁺ 99 pm; s. 81 Be 900, B 800, Ca 590 kJ/mol; s. 83 Be 900/1757/14 849/21 006 ve B 800/2427/3660/25 026 kJ/mol.
+- C: Heisenberg'in okunuşu kitapta "Haysenbörg" (s. 47).
+
+Kullanıcı kararı bekleyenler:
+
+1. Bölünme adayları (B2, C1, E3, F3, G1, H1): tek uzun ders mi, iki ders mi. Tema yayında; bölünürse yeni ders kodu gerekir.
+2. Kitapta cümle olarak bulunmayan ama programın istediği açıklamalar senaryoda yazarın çıkarımıdır: küresel simetrinin tanımı (E3), periyotta yarıçapın küçülme nedeni, anyonun büyüme nedeni, ardışık enerjilerin büyüme nedeni, elektronegatiflik eğiliminin nedeni (H), Dalton, Thomson ve Rutherford varsayımları (C1; kitapta tablo boş), "ilk 36 element için katman yolunun uygulanabilirliği" sonucu (F1–F2), B'de dört çıkarım cümlesi. Her biri ilgili senaryonun "Sayım ve kapsam" bölümünde işaretli.
+3. C1 keşif yılları (s. 48: 1832, 1891, 1906, 1913): kitabın yılları kullanıldı; alt ajan bunları şüpheli buldu, kitap dışı kaynakla doğrulanmadı. Keşfeden adları alınmadı, sorular sıraya dayanıyor.
+4. Krom ve bakır (kitap s. 64–65'te küresel simetri örneği; programda yok): alınmadı.
+5. F'de "katman" sözünün ortaokul yönteminin adı olarak kalması.
+
