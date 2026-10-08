@@ -11,9 +11,9 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
 | 1 | Etkileşim | `etkilesim` | <https://tymm.meb.gov.tr/kimya-dersi/unite/92> | 22 | 8 | 18 | yazıldı, yayında (7 Ekim 2026); anlatım aynı gün yeniden yazıldı (121 sahne); seslendirildi (1.126 klip, 93 dk), kullanıcı henüz dinlemedi |
-| 2 | Çeşitlilik | `cesitlilik` | <https://tymm.meb.gov.tr/kimya-dersi/unite/121> | 38 | 13 | 31 | plan taslağı; işleme alınmayı bekliyor |
+| 2 | Çeşitlilik | `cesitlilik` | <https://tymm.meb.gov.tr/kimya-dersi/unite/121> | 38 | 13 | 44 | yazıldı (8 Ekim 2026; 31 ders + 13 konu tekrarı, yaklaşık 6 sa 38 dk); yayında değil, seslendirilmedi, commit edilmedi; H1 sahne 2 için yedi resim bekliyor (`cesitlilik/GORSELLER.md`) |
 | 3 | Sürdürülebilirlik | `surdurulebilirlik` | <https://tymm.meb.gov.tr/kimya-dersi/unite/137> | 8 | 2 | 6 | plan taslağı; işleme alınmayı bekliyor |
-| | **Toplam** | | | **68** | **23** | **55** | |
+| | **Toplam** | | | **68** | **23** | **68** | |
 
 Planların hepsi taslaktır; konu ve kısa ders sayıları işleme alınırken değişebilir. Her `PLAN.md` dosyasının 6. bölümündeki açık sorular, tema işleme alınınca `../ISLEME.md` içindeki kurallarla kapatılır ve kararlar aynı dosyaya yazılır.
 

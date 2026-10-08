@@ -1,6 +1,6 @@
 # Plan — 9. Sınıf Kimya · 2. Tema: Çeşitlilik
 
-Dayanak: `MUFREDAT.md` (MEB sayfasından 7 Ekim 2026'da alındı). Ortak kurallar: `../../KURALLAR.md`; yazım adımları: `../../ISLEME.md`. Kısa ders biçimi: bir fikir, 3–5 sahne, 4–6 dakika, sonunda 2 çıkış sorusu. Bu dosya yalnızca konuları ve kısa dersleri belirler; açık sorular (bölüm 6) henüz kapatılmadı, senaryo ve kod yazılmadı.
+Dayanak: `MUFREDAT.md` (MEB sayfasından 7 Ekim 2026'da alındı). Ortak kurallar: `../../KURALLAR.md`; yazım adımları: `../../ISLEME.md`. Kısa ders biçimi `KURALLAR.md` 3–3.4'tedir (8 Ekim 2026): bir fikir, sahne ve süre sınırı yok, önce anlat sonra sor, hatırla sahnesi, birlikte çöz, 4–5 çıkış sorusu, her konunun sonunda konu tekrarı. Açık sorular 8 Ekim 2026'da kapatıldı (bölüm 7); ders kitabından alınan içerik bölüm 8'dedir. Bölüm 3'teki "sahne" sayıları ve bölüm 6'daki "5 sahneye sığmazsa" kaygıları eski biçime aittir, geçersizdir.
 
 Kısaltmalar: "çerçeve" = programın içerik çerçevesi; "uygulama" = KİM.9.2.x öğrenme-öğretme uygulamaları metni; "2.a" gibi kodlar süreç bileşenleridir (KİM.9.2.2 a).
 
@@ -455,122 +455,124 @@ Zincirler: A1 (itme–çekme dengesi) B ve C'nin dayanağıdır. D3 (ortaklanmam
 
 ## 4. Müfredat denetimi
 
-Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir kez geçer. Sahne numaraları dersler yazılınca işlenir.
+Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir kez geçer. Sahne numaraları 8 Ekim 2026'da işlendi; numara dersin sayfasındaki sahne sırasıdır (Hatırla sahnesi 1 sayılır).
 
-| Programın istediği | Hangi kısa ders |
-|---|---|
-| Tema amacı: bağların oluşumu, Lewis yapısı, polarlık, adlandırma, moleküller arası etkileşimler, katı ve sıvıların özellikleri | A–M (tema geneli) |
-| KİM.9.2.1 a) pozitif yüklü metal iyonları ile elektron denizi arasında örüntü | A2 |
-| KİM.9.2.1 b) metalik bağın oluşumuna ilişkin genelleme | A2 |
-| Uygulama 9.2.1: iki hidrojen atomu arasında itme ve çekme modeli; yaklaşırken kuvvetlerin değişimi; net kuvvetin sıfır olması | A1 |
-| Uygulama 9.2.1: valans elektron sayısı farklı metallerin gösterimleri; metalik bağın tanımı | A2 |
-| Uygulama 9.2.1: serbest valans elektron sayısı ve pozitif iyon yükü ile bağ kuvveti | A2 |
-| Uygulama 9.2.1: kavram karikatüründe yanılgıyı bulma ve düzeltme | A2 |
-| KİM.9.2.2 a) katyon–anyon etkileşimine ilişkin gözlem temelli önermeler | B1, B2 |
-| KİM.9.2.2 b) gözleme dayalı olan ve olmayan önermeleri karşılaştırma | B1 |
-| KİM.9.2.2 c) tahmini temellendirmek için gözlem verilerinden sonuç çıkarma | B2 |
-| KİM.9.2.2 ç) gözlemlenmemiş durumlara ilişkin tahmin | B2 |
-| KİM.9.2.2 d) tahminlerin geçerliliğini sorgulama | B2 |
-| Uygulama 9.2.2: metal–ametal tepkimesinin gözlenmesi (deney videosu); katyon ve anyon oluşumu | B1 |
-| Uygulama 9.2.2: iyonlaşma enerjisiyle ilişkilendirme | B2 |
-| Uygulama 9.2.2: farklı iyonik tuzlar; ilk örnekle karşılaştırma; bilimsel açıklamayla karşılaştırma | B2 |
-| Uygulama 9.2.2: tek atomlu ve çok atomlu iyonlar tablosu; iyonik bileşik formülü tahmini | B3 |
-| KİM.9.2.3 a) çekirdekler ve ortak kullanılan elektronlar arasındaki etkileşime ilişkin önermeler | C1 |
-| KİM.9.2.3 b) gözleme dayalı olan ve olmayan önermeler | C1 |
-| KİM.9.2.3 c) gözlem verilerinden sonuç çıkarma | C1 |
-| KİM.9.2.3 ç) gözlemlenmemiş durumlara ilişkin tahmin | C2 |
-| KİM.9.2.3 d) tahminlerin geçerliliğini sorgulama | C2 |
-| Uygulama 9.2.3: iki ametal atom yaklaşırken elektronların davranışı (animasyon) | C1 |
-| Uygulama 9.2.3: gözlemlenemeyen çekim kuvvetlerini tahmin, model çizimi, süreç aşamalı görselle karşılaştırma; farklı bileşikler | C2 |
-| KİM.9.2.4 a) Lewis nokta yapısına ilişkin varsayım | D1 |
-| KİM.9.2.4 b) Lewis nokta yapısıyla moleküllerin yapısına ilişkin örüntü | D1 |
-| KİM.9.2.4 c) örüntülerle farklı moleküllerin yapılarını karşılaştırma | D2, D3 |
-| KİM.9.2.4 ç) Lewis nokta yapısının oluşturulmasına ilişkin önermeler | D2 |
-| KİM.9.2.4 d) önermeleri farklı moleküllerin Lewis yapılarıyla değerlendirme | D2 |
-| Uygulama 9.2.4: valans elektronlarının sembol etrafına yerleşimi; verilen Lewis yapıları | D1 |
-| Uygulama 9.2.4: oktet ve dublet kuralı | D2 |
-| Uygulama 9.2.4: merkez atomda ortaklanmamış çift, uzay-dolgu modeli, elektron itmesinin yapıya etkisi | D3 |
-| KİM.9.2.5 a) polarlık ölçütleri: elektronegatiflik farkı, merkez atomdaki ortaklanmamış çift | E1, E2 |
-| KİM.9.2.5 b) elektronegatiflik farkı ve elektron çifti itmesiyle oluşan yapıları ayrıştırma | E2 |
-| KİM.9.2.5 c) molekülleri dipol momentine göre gruplandırma | E2 |
-| KİM.9.2.5 ç) molekülleri polar ya da apolar olarak adlandırma | E2 |
-| Uygulama 9.2.5: ad, formül, Lewis yapısı, uzay-dolgu gösterimi ve elektronegatiflik tablosu | E1 |
-| Uygulama 9.2.5: sınıflandırmanın gerekçesini söyleme | E2 |
-| KİM.9.2.6 a) bileşikleri oluşturan atom ya da iyonları belirleme | F1, F3 |
-| KİM.9.2.6 b) atom ya da iyon adları ile bileşik adı arasında ilişki | F1, F3 |
-| KİM.9.2.6 c) adlandırma kurallarına ilişkin genelleme | F1, F2, F3 |
-| Uygulama 9.2.6: tek bir tür katyonu olan metallerin iyonik bileşikleri | F1 |
-| Uygulama 9.2.6: birden fazla katyonu olan geçiş metalleri (Cr, Mn, Cu, Pb, Sn, Fe, Co); sabit ve değişken değerlik farkı | F2 |
-| Uygulama 9.2.6: kovalent bileşikler, Latince ön ekler, birinci ve ikinci ametal farkı | F3 |
-| Uygulama 9.2.6: ad–formül eşleştirme (tarsia yapboz) | F3 |
-| KİM.9.2.7 a) sınıflandırma ölçütleri: atom, iyon, polar molekül, apolar molekül | G1 |
-| KİM.9.2.7 b) aynı ya da farklı türler arasındaki etkileşimleri ayrıştırma | G1, G2 |
-| KİM.9.2.7 c) etkileşimleri gruplandırma | G2, G3, G4 |
-| KİM.9.2.7 ç) grupları adlandırıp bilimsel karşılığıyla kıyaslama | G2, G3, G4 |
-| Uygulama 9.2.7: gecko ve toz parçacıkları soruları | G1 |
-| Uygulama 9.2.7: molekül-molekül, iyon-molekül, atom-atom ayrımı | G1 |
-| Uygulama 9.2.7: dipol-dipol, iyon-dipol | G2 |
-| Uygulama 9.2.7: dipol-indüklenmiş dipol, iyon-indüklenmiş dipol, London | G3 |
-| Uygulama 9.2.7: kanıt kartları; dipol-dipol ölçütleri | G2 |
-| Uygulama 9.2.7: F-H, O-H, N-H bağları; hidrojen bağı oluşturabilen moleküller | G4 |
-| Uygulama 9.2.7: DNA'daki hidrojen bağları okuma parçası | G4 |
-| Uygulama 9.2.7: yapılandırılmış gridle madde çiftleri arasındaki etkileşim | G3 |
-| KİM.9.2.8 a) farklı etkileşimlere sahip katıların niteliklerindeki fark | H1, H2 |
-| KİM.9.2.8 b) gözlem verisi ya da hazır veri setiyle etkileşim–katı ilişkisi | H2 |
-| KİM.9.2.8 c) çıkarımı bilim insanlarının çıkarımıyla karşılaştırma | H2 |
-| Uygulama 9.2.8: kristal ve amorf katılar; yedi örnek katı | H1 |
-| Uygulama 9.2.8: sertlik, erime noktası, iletkenlik; kristal katı türleri için genelleme | H2 |
-| Uygulama 9.2.8: kristal silisyum ingot külçesi projesi | H1 |
-| KİM.9.2.9 a) buhar basıncını etkileyebilecek faktörler için sorular | I1 |
-| KİM.9.2.9 b) faktörlerin etkisini neden–sonuç ilişkisiyle belirtme | I2 |
-| KİM.9.2.9 c) bağımlı, bağımsız ve kontrol değişkenleri | I2 |
-| KİM.9.2.9 ç) değişkenler arasındaki ilişki için denemeler | I2 |
-| KİM.9.2.9 d) önermeleri bilimsel kuramlarla destekleme | I2 |
-| Uygulama 9.2.9: buharlaşma hızı farkı; buhar basıncı ve denge buhar basıncı tanımı | I1 |
-| Uygulama 9.2.9: 25 °C ve 1 atm'deki hazır veriler; moleküller arası etkileşimle açıklama | I2 |
-| KİM.9.2.10 a) ölçütler: moleküller arası etkileşimin türü ve açık hava basıncı | J1, J2 |
-| KİM.9.2.10 b) verileri değişkenler arası ilişkiyi gösterecek biçimde düzenleme | J1, J2 |
-| KİM.9.2.10 c) iddiayı kanıta dayalı açıklama | J1, J2 |
-| Uygulama 9.2.10: suyun 100 °C'tan farklı sıcaklıkta kaynaması | J1 |
-| Uygulama 9.2.10: sıcaklık–buhar basıncı grafiği, tanecikli model, kaynama koşulu | J1 |
-| Uygulama 9.2.10: dış basıncın kaynama noktasına etkisi | J1 |
-| Uygulama 9.2.10: hidrojen bağının etkisi; hidrojen bağı sayısı; F, O, N elektronegatifliği | J2 |
-| KİM.9.2.11 a) sıvıların viskozitesine ilişkin niteliklerin farkı | K1 |
-| KİM.9.2.11 b) veri toplama ve kaydetme | K1, K2 |
-| KİM.9.2.11 c) benzer verilerden keşfedilen örüntüleri açıklama | K1, K2 |
-| Uygulama 9.2.11: viskozite tanımı; akışkanlıkla ilişkisi | K1 |
-| Uygulama 9.2.11: farklı saf sıvıların akışkanlık deneyi; moleküller arası etkileşimle açıklama | K1 |
-| Uygulama 9.2.11: sıcaklığın akışkanlığa etkisi deneyi | K2 |
-| KİM.9.2.12 a) farklı etkileşimlere sahip sıvıların özelliklerindeki farklar | L1, L2 |
-| KİM.9.2.12 b) gözlem verisi ve hazır veri setiyle etkileşim–özellik ilişkisi | L1, L2 |
-| KİM.9.2.12 c) çıkarımı bilim insanlarının çıkarımıyla karşılaştırma | L1 |
-| Uygulama 9.2.12: adezyon, kohezyon, ıslatma/ıslatmama, içbükey–dışbükey görünüm | L1 |
-| Uygulama 9.2.12: yüzey gerilimi verileri ve alt mikro gösterimler; kılcallık | L2 |
-| Uygulama 9.2.12: suyun organizmalardaki rolü; boşluk doldurma | L2 |
-| KİM.9.2.13 a) araştırılabilir sorular | M1 |
-| KİM.9.2.13 b) moleküller arası etkileşim teorileriyle önermeler | M1 |
-| KİM.9.2.13 c) planlanan araştırmayı uygulama | M1, M2 |
-| KİM.9.2.13 ç) verileri yorumlama | M1, M2 |
-| KİM.9.2.13 d) sonuçları bilimsel bilgilerle karşılaştırma | M2 |
-| KİM.9.2.13 e) günlük hayattaki yüzey gerilimi problemlerini bilimsel bilgiyle ilişkilendirme | M2 |
-| Uygulama 9.2.13: sıcaklığın etkisi (dolaylı deney) | M1 |
-| Uygulama 9.2.13: çözünen madde cinsinin etkisi (dolaylı deney); etkileşim kuvvetiyle gerekçelendirme | M2 |
-| Çerçeve, Etkileşimler: Metalik Bağ, İyonik Bağ, Kovalent Bağ, Lewis Nokta Yapısı, Molekül Polarlığı ve Apolarlığı, Bileşiklerin Adlandırılması | A, B, C, D, E, F |
-| Çerçeve, Etkileşimden Maddeye: Moleküller Arası Etkileşimler; Katılar ve Özellikleri (Amorf ve Kristal Katılar) | G; H1, H2 |
-| Çerçeve, Etkileşimden Maddeye: Sıvılar ve Özellikleri (Kaynama Sıcaklığı ve Buhar Basıncı, Viskozite, Adezyon ve Kohezyon Kuvvetleri, Yüzey Gerilimi) | I, J; K; L; M |
-| Köprü kurma: metal içerikli malzemeler, tuz gibi kristal katılar, su gibi kovalent bağlı moleküler maddeler | A2, B1, C1 (açılış soruları), H1 |
-| Köprü kurma: yağmurluk, yapraktaki su damlası, su üstündeki böcek, balın akışı, bitkilerde su taşınması | L1, L2, K1 (açılış soruları ve sahneler) |
-| Anahtar kavramlar: metalik bağ, iyonik bağ, kovalent bağ | A2, B2, C1 |
-| Anahtar kavramlar: polar kovalent, apolar kovalent, dipol | E1 |
-| Anahtar kavramlar: polar molekül, apolar molekül, dipol moment | E2 |
-| Anahtar kavramlar: dipol-dipol etkileşimi, indüklenmiş dipol, London kuvveti, hidrojen bağı | G2, G3, G4 |
-| Anahtar kavram: van der Waals etkileşimi | Yeri belirsiz (bölüm 6, soru 10) |
-| Anahtar kavramlar: kristal katı, amorf katı, iyonik katı, metalik katı, moleküler katı | H1, H2 |
-| Anahtar kavramlar: buhar basıncı, kaynama noktası | I1, J1 |
-| Anahtar kavramlar: viskozite, akışkanlık | K1 |
-| Anahtar kavramlar: adezyon kuvveti, kohezyon kuvveti, kılcallık (kapiler etki), yüzey gerilimi | L1, L2, M1 |
-| Temel kabuller (tanecikli model, yükler arası itme ve çekme, yaygın adlar, katı ve sıvıların temel özellikleri, kaynama ve buharlaşma) | Ayrı ders yok; A1, F1, I1'de üzerine kurulur |
-| Sınıf içi tartışma, grup çalışması, etkinlik kâğıdı, yansıtma notu, metin yazma, öz ve akran değerlendirme, planlama formları, performans görevi, araştırma ödevi | Derslerde yok (bölüm 5) |
+| Programın istediği | Hangi kısa ders | Durum |
+|---|---|---|
+| Tema amacı: bağların oluşumu, Lewis yapısı, polarlık, adlandırma, moleküller arası etkileşimler, katı ve sıvıların özellikleri | A–M (tema geneli) | ders |
+| KİM.9.2.1 a) pozitif yüklü metal iyonları ile elektron denizi arasında örüntü | A2 sahne 3 | ders |
+| KİM.9.2.1 b) metalik bağın oluşumuna ilişkin genelleme | A2 sahne 2–3 | ders |
+| Uygulama 9.2.1: iki hidrojen atomu arasında itme ve çekme modeli; yaklaşırken kuvvetlerin değişimi; net kuvvetin sıfır olması | A1 sahne 1–4 | ders |
+| Uygulama 9.2.1: valans elektron sayısı farklı metallerin gösterimleri; metalik bağın tanımı | A2 sahne 2–3 | ders |
+| Uygulama 9.2.1: serbest valans elektron sayısı ve pozitif iyon yükü ile bağ kuvveti | A2 sahne 4 | ders |
+| Uygulama 9.2.1: kavram karikatüründe yanılgıyı bulma ve düzeltme | A2 sahne 5 | ders |
+| KİM.9.2.2 a) katyon–anyon etkileşimine ilişkin gözlem temelli önermeler | B1 sahne 7–8; B2 sahne 2 | benzetim |
+| KİM.9.2.2 b) gözleme dayalı olan ve olmayan önermeleri karşılaştırma | B1 sahne 7–8 | benzetim |
+| KİM.9.2.2 c) tahmini temellendirmek için gözlem verilerinden sonuç çıkarma | B2 sahne 2–4 | benzetim |
+| KİM.9.2.2 ç) gözlemlenmemiş durumlara ilişkin tahmin | B2 sahne 4–5 | benzetim |
+| KİM.9.2.2 d) tahminlerin geçerliliğini sorgulama | B2 sahne 3, 6 | benzetim |
+| Uygulama 9.2.2: metal–ametal tepkimesinin gözlenmesi (deney videosu); katyon ve anyon oluşumu | B1 sahne 2–6 | benzetim |
+| Uygulama 9.2.2: iyonlaşma enerjisiyle ilişkilendirme | B2 sahne 3 | ders |
+| Uygulama 9.2.2: farklı iyonik tuzlar; ilk örnekle karşılaştırma; bilimsel açıklamayla karşılaştırma | B2 sahne 4–6 | benzetim |
+| Uygulama 9.2.2: tek atomlu ve çok atomlu iyonlar tablosu; iyonik bileşik formülü tahmini | B3 sahne 2–8 | ders |
+| KİM.9.2.3 a) çekirdekler ve ortak kullanılan elektronlar arasındaki etkileşime ilişkin önermeler | C1 sahne 4–5 | benzetim |
+| KİM.9.2.3 b) gözleme dayalı olan ve olmayan önermeler | C1 sahne 5 | benzetim |
+| KİM.9.2.3 c) gözlem verilerinden sonuç çıkarma | C1 sahne 2–3, 5 | benzetim |
+| KİM.9.2.3 ç) gözlemlenmemiş durumlara ilişkin tahmin | C2 sahne 2, 5 | benzetim |
+| KİM.9.2.3 d) tahminlerin geçerliliğini sorgulama | C2 sahne 3–5 | benzetim |
+| Uygulama 9.2.3: iki ametal atom yaklaşırken elektronların davranışı (animasyon) | C1 sahne 4 | benzetim |
+| Uygulama 9.2.3: gözlemlenemeyen çekim kuvvetlerini tahmin, model çizimi, süreç aşamalı görselle karşılaştırma; farklı bileşikler | C2 sahne 2–6 | benzetim |
+| KİM.9.2.4 a) Lewis nokta yapısına ilişkin varsayım | D1 sahne 7 | ders |
+| KİM.9.2.4 b) Lewis nokta yapısıyla moleküllerin yapısına ilişkin örüntü | D1 sahne 6–7 | ders |
+| KİM.9.2.4 c) örüntülerle farklı moleküllerin yapılarını karşılaştırma | D2 sahne 2, 6; D3 sahne 3–4 | ders |
+| KİM.9.2.4 ç) Lewis nokta yapısının oluşturulmasına ilişkin önermeler | D2 sahne 4–5, 7–8 | ders |
+| KİM.9.2.4 d) önermeleri farklı moleküllerin Lewis yapılarıyla değerlendirme | D2 sahne 7–8 | ders |
+| Uygulama 9.2.4: valans elektronlarının sembol etrafına yerleşimi; verilen Lewis yapıları | D1 sahne 2–7 | ders |
+| Uygulama 9.2.4: oktet ve dublet kuralı | D2 sahne 2–3 | ders |
+| Uygulama 9.2.4: merkez atomda ortaklanmamış çift, uzay-dolgu modeli, elektron itmesinin yapıya etkisi | D3 sahne 2–6 | ders |
+| KİM.9.2.5 a) polarlık ölçütleri: elektronegatiflik farkı, merkez atomdaki ortaklanmamış çift | E1 sahne 3–4; E2 sahne 3–4 | ders |
+| KİM.9.2.5 b) elektronegatiflik farkı ve elektron çifti itmesiyle oluşan yapıları ayrıştırma | E2 sahne 3–4 | ders |
+| KİM.9.2.5 c) molekülleri dipol momentine göre gruplandırma | E2 sahne 5 | ders |
+| KİM.9.2.5 ç) molekülleri polar ya da apolar olarak adlandırma | E2 sahne 5, 7 | ders |
+| Uygulama 9.2.5: ad, formül, Lewis yapısı, uzay-dolgu gösterimi ve elektronegatiflik tablosu | E1 sahne 5 | ders |
+| Uygulama 9.2.5: sınıflandırmanın gerekçesini söyleme | E2 sahne 4–7 | ders |
+| KİM.9.2.6 a) bileşikleri oluşturan atom ya da iyonları belirleme | F1 sahne 2, 4; F3 sahne 2, 4, 9 | ders |
+| KİM.9.2.6 b) atom ya da iyon adları ile bileşik adı arasında ilişki | F1 sahne 3–6; F3 sahne 3–5, 8 | ders |
+| KİM.9.2.6 c) adlandırma kurallarına ilişkin genelleme | F1 sahne 3, 7; F2 sahne 7; F3 sahne 8 | ders |
+| Uygulama 9.2.6: tek bir tür katyonu olan metallerin iyonik bileşikleri | F1 sahne 2–3, 5 | ders |
+| Uygulama 9.2.6: birden fazla katyonu olan geçiş metalleri (Cr, Mn, Cu, Pb, Sn, Fe, Co); sabit ve değişken değerlik farkı | F2 sahne 2–7 | ders |
+| Uygulama 9.2.6: kovalent bileşikler, Latince ön ekler, birinci ve ikinci ametal farkı | F3 sahne 2–7 (sahne 6–7 programda adıyla yok, ders kitabından: formülde atom sırası, su ve amonyağın yaygın adı; bölüm 8) | ders |
+| Uygulama 9.2.6: ad–formül eşleştirme (tarsia yapboz) | F3 sahne 10 | ders |
+| KİM.9.2.7 a) sınıflandırma ölçütleri: atom, iyon, polar molekül, apolar molekül | G1 sahne 2–4 | ders |
+| KİM.9.2.7 b) aynı ya da farklı türler arasındaki etkileşimleri ayrıştırma | G1 sahne 4–5; G2 sahne 6; G4 sahne 5 | ders |
+| KİM.9.2.7 c) etkileşimleri gruplandırma | G2 sahne 4, 6; G3 sahne 6–7; G4 sahne 3–4 | ders |
+| KİM.9.2.7 ç) grupları adlandırıp bilimsel karşılığıyla kıyaslama | G2 sahne 4; G3 sahne 6; G4 sahne 2, 4 | ders |
+| Uygulama 9.2.7: gecko ve toz parçacıkları soruları | G1 sahne 6 (yalnızca gecko; toz parçacıkları sorusunun cevabı ders kitabında yok, alınmadı: karar 9) | ders |
+| Uygulama 9.2.7: molekül-molekül, iyon-molekül, atom-atom ayrımı | G1 sahne 4–5 | ders |
+| Uygulama 9.2.7: dipol-dipol, iyon-dipol | G2 sahne 3–6 | ders |
+| Uygulama 9.2.7: dipol-indüklenmiş dipol, iyon-indüklenmiş dipol, London | G3 sahne 2–7 | ders |
+| Uygulama 9.2.7: kanıt kartları; dipol-dipol ölçütleri | G2 sahne 4 | ders |
+| Uygulama 9.2.7: F-H, O-H, N-H bağları; hidrojen bağı oluşturabilen moleküller | G4 sahne 3 | ders |
+| Uygulama 9.2.7: DNA'daki hidrojen bağları okuma parçası | G4 sahne 6 | ders |
+| Uygulama 9.2.7: yapılandırılmış gridle madde çiftleri arasındaki etkileşim | G3 sahne 7 | ders |
+| KİM.9.2.8 a) farklı etkileşimlere sahip katıların niteliklerindeki fark | H1 sahne 3–6; H2 sahne 4–8 | ders |
+| KİM.9.2.8 b) gözlem verisi ya da hazır veri setiyle etkileşim–katı ilişkisi | H2 sahne 4–7 | ders |
+| KİM.9.2.8 c) çıkarımı bilim insanlarının çıkarımıyla karşılaştırma | H2 sahne 9 | ders |
+| Uygulama 9.2.8: kristal ve amorf katılar; yedi örnek katı | H1 sahne 2–6 | ders |
+| Uygulama 9.2.8: sertlik, erime noktası, iletkenlik; kristal katı türleri için genelleme | H2 sahne 4–8, 10 | ders |
+| Uygulama 9.2.8: kristal silisyum ingot külçesi projesi | H1 sahne 7 | ders |
+| KİM.9.2.9 a) buhar basıncını etkileyebilecek faktörler için sorular | I1 sahne 8 | benzetim |
+| KİM.9.2.9 b) faktörlerin etkisini neden–sonuç ilişkisiyle belirtme | I2 sahne 2–3, 5–7 | benzetim |
+| KİM.9.2.9 c) bağımlı, bağımsız ve kontrol değişkenleri | I2 sahne 4–7 | benzetim |
+| KİM.9.2.9 ç) değişkenler arasındaki ilişki için denemeler | I2 sahne 5–7 | benzetim |
+| KİM.9.2.9 d) önermeleri bilimsel kuramlarla destekleme | I2 sahne 8–9 | ders |
+| Uygulama 9.2.9: buharlaşma hızı farkı; buhar basıncı ve denge buhar basıncı tanımı | I1 sahne 2–7 | ders |
+| Uygulama 9.2.9: 25 °C ve 1 atm'deki hazır veriler; moleküller arası etkileşimle açıklama | I2 sahne 2–3, 8 | ders |
+| KİM.9.2.10 a) ölçütler: moleküller arası etkileşimin türü ve açık hava basıncı | J1 sahne 3–6; J2 sahne 2–7 | ders |
+| KİM.9.2.10 b) verileri değişkenler arası ilişkiyi gösterecek biçimde düzenleme | J1 sahne 6; J2 sahne 6 | ders |
+| KİM.9.2.10 c) iddiayı kanıta dayalı açıklama | J1 sahne 7; J2 sahne 8 | ders |
+| Uygulama 9.2.10: suyun 100 °C'tan farklı sıcaklıkta kaynaması | J1 sahne 2, 5 | benzetim |
+| Uygulama 9.2.10: sıcaklık–buhar basıncı grafiği, tanecikli model, kaynama koşulu | J1 sahne 3–5 | ders |
+| Uygulama 9.2.10: dış basıncın kaynama noktasına etkisi | J1 sahne 4–6 | ders |
+| Uygulama 9.2.10: hidrojen bağının etkisi; hidrojen bağı sayısı; F, O, N elektronegatifliği | J2 sahne 3–5 | ders |
+| KİM.9.2.11 a) sıvıların viskozitesine ilişkin niteliklerin farkı | K1 sahne 2, 4–5 | ders |
+| KİM.9.2.11 b) veri toplama ve kaydetme | K1 sahne 6; K2 sahne 3, 6 | benzetim |
+| KİM.9.2.11 c) benzer verilerden keşfedilen örüntüleri açıklama | K1 sahne 7–8; K2 sahne 6–8 | ders |
+| Uygulama 9.2.11: viskozite tanımı; akışkanlıkla ilişkisi | K1 sahne 2–5 | ders |
+| Uygulama 9.2.11: farklı saf sıvıların akışkanlık deneyi; moleküller arası etkileşimle açıklama | K1 sahne 6–8 | benzetim |
+| Uygulama 9.2.11: sıcaklığın akışkanlığa etkisi deneyi | K2 sahne 2–6 | benzetim |
+| KİM.9.2.12 a) farklı etkileşimlere sahip sıvıların özelliklerindeki farklar | L1 sahne 4–6; L2 sahne 4–6, 8 | ders |
+| KİM.9.2.12 b) gözlem verisi ve hazır veri setiyle etkileşim–özellik ilişkisi | L1 sahne 4–5, 7; L2 sahne 4–6, 8 | ders |
+| KİM.9.2.12 c) çıkarımı bilim insanlarının çıkarımıyla karşılaştırma | L1 sahne 7 | ders |
+| Uygulama 9.2.12: adezyon, kohezyon, ıslatma/ıslatmama, içbükey–dışbükey görünüm | L1 sahne 3–6, 8 | ders |
+| Uygulama 9.2.12: yüzey gerilimi verileri ve alt mikro gösterimler; kılcallık | L2 sahne 4–6 | ders |
+| Uygulama 9.2.12: suyun organizmalardaki rolü; boşluk doldurma | L2 sahne 7–8 | ders |
+| KİM.9.2.13 a) araştırılabilir sorular | M1 sahne 4 | benzetim |
+| KİM.9.2.13 b) moleküller arası etkileşim teorileriyle önermeler | M1 sahne 5 | benzetim |
+| KİM.9.2.13 c) planlanan araştırmayı uygulama | M1 sahne 6–7, 9; M2 sahne 2–3 | benzetim |
+| KİM.9.2.13 ç) verileri yorumlama | M1 sahne 7–8; M2 sahne 3–5 | benzetim |
+| KİM.9.2.13 d) sonuçları bilimsel bilgilerle karşılaştırma | M2 sahne 6 | ders |
+| KİM.9.2.13 e) günlük hayattaki yüzey gerilimi problemlerini bilimsel bilgiyle ilişkilendirme | M2 sahne 7–9 | ders |
+| Uygulama 9.2.13: sıcaklığın etkisi (dolaylı deney) | M1 sahne 2–3, 7 | benzetim |
+| Uygulama 9.2.13: çözünen madde cinsinin etkisi (dolaylı deney); etkileşim kuvvetiyle gerekçelendirme | M2 sahne 2–5 | benzetim |
+| Çerçeve, Etkileşimler: Metalik Bağ, İyonik Bağ, Kovalent Bağ, Lewis Nokta Yapısı, Molekül Polarlığı ve Apolarlığı, Bileşiklerin Adlandırılması | A, B, C, D, E, F | ders |
+| Çerçeve, Etkileşimden Maddeye: Moleküller Arası Etkileşimler; Katılar ve Özellikleri (Amorf ve Kristal Katılar) | G; H1, H2 | ders |
+| Çerçeve, Etkileşimden Maddeye: Sıvılar ve Özellikleri (Kaynama Sıcaklığı ve Buhar Basıncı, Viskozite, Adezyon ve Kohezyon Kuvvetleri, Yüzey Gerilimi) | I, J; K; L; M | ders |
+| Köprü kurma: metal içerikli malzemeler, tuz gibi kristal katılar, su gibi kovalent bağlı moleküler maddeler | A2, B1, C1 (açılış soruları), H1 sahne 3 | ders |
+| Köprü kurma: yağmurluk, yapraktaki su damlası, su üstündeki böcek, balın akışı, bitkilerde su taşınması | L1 sahne 2–3, 6, 8; L2 sahne 2–3, 7; K1 sahne 2 (açılış soruları ve sahneler) | ders |
+| Anahtar kavramlar: metalik bağ, iyonik bağ, kovalent bağ | A2 sahne 2–3; B2 sahne 2, 7; C1 sahne 6–7 | ders |
+| Anahtar kavramlar: polar kovalent, apolar kovalent, dipol | E1 sahne 2–3 | ders |
+| Anahtar kavramlar: polar molekül, apolar molekül, dipol moment | E2 sahne 2, 5 | ders |
+| Anahtar kavramlar: dipol-dipol etkileşimi, indüklenmiş dipol, London kuvveti, hidrojen bağı | G2 sahne 2–4; G3 sahne 2–6; G4 sahne 2 | ders |
+| Anahtar kavram: van der Waals etkileşimi | G3 sahne 6 (karar 10) | ders |
+| Anahtar kavramlar: kristal katı, amorf katı, iyonik katı, metalik katı, moleküler katı | H1 sahne 3–4; H2 sahne 2–3 | ders |
+| Anahtar kavramlar: buhar basıncı, kaynama noktası | I1 sahne 4–7; J1 sahne 3–5 | ders |
+| Anahtar kavramlar: viskozite, akışkanlık | K1 sahne 2–4 | ders |
+| Anahtar kavramlar: adezyon kuvveti, kohezyon kuvveti, kılcallık (kapiler etki), yüzey gerilimi | L1 sahne 3–6; L2 sahne 3, 6; M1 sahne 2–8 | ders |
+| Temel kabuller (tanecikli model, yükler arası itme ve çekme, yaygın adlar, katı ve sıvıların temel özellikleri, kaynama ve buharlaşma) | Ayrı ders yok; A1, F1, I1'de üzerine kurulur | ön bilgi |
+| Sınıf içi tartışma, grup çalışması, etkinlik kâğıdı, yansıtma notu, metin yazma, öz ve akran değerlendirme, planlama formları, performans görevi, araştırma ödevi | Derslerde yok (bölüm 5) | site dışı (sınıfta yapılır) |
+| Konu tekrarı (`KURALLAR.md` 3.4): her konunun kuralları ve 6–10 karışık soru | A3, B4, C3, D4, E3, F4, G5, H3, I3, J3, K3, L3, M3 | tekrar |
+| Performans görevi (viskozite deneyi tasarlama, raporlama); yüzey gerilimi için farklı bir deney tasarlama; biyomimikri araştırma ödevi; afiş | Derslerde yok | site dışı (sınıfta yapılır) |
 
 ## 5. Bilerek alınmayanlar
 
@@ -638,3 +640,60 @@ Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir
 16. **Konu harfi "I".** 13 konu A–M harflerini alıyor. "I" harfinin Türkçe küçük hâli "ı" olduğu için dosya adı ve kimlikte (`i1-…` mi, `ı1-…` mi) karışıklık çıkabilir; motorun ve denetim aracının bunu nasıl ele aldığına bakılmadı. Gerekirse I atlanır ya da konular iki bölüme göre yeniden harflendirilir.
 17. **Kısa okuma sahneleri.** Program üç yerde kısa bir bilgi parçası anıyor ve içeriğini vermiyor: DNA'daki hidrojen bağları (G4), silisyum ingot külçesi projesi (H1), suyun organizmalardaki rolü (L2). Planda üçü de tek sahne ve program metninde yazdığı kadar; daha fazlası için kaynak gerekir.
 18. **Saat dağılımı.** Program 38 saati temaya veriyor; çıktılara ya da iki bölüme dağıtmıyor. Kısa derslerin konulara dağılımı (Etkileşimler 15, Etkileşimden Maddeye 16) bizim kararımız.
+
+## 7. Kararlar
+
+8 Ekim 2026'da `ISLEME.md` 3. adımdaki kurallarla verildi ("kural n" o adımdaki numaradır). Ders kitabı: MEB Kimya 9 (<https://tymm.meb.gov.tr/kitap/39/kimya-9sinif-ders-kitabi>, PDF 8 Ekim 2026'da alındı; 2. tema s. 104–233; basılı sayfa numarası PDF sayfasıyla aynı). Kitaptan alınan içerik bölüm 8'dedir.
+
+| # | Soru | Karar | Dayanak |
+|---|---|---|---|
+| 1 | Ders sayısı ve birleştirmeler | 31 kısa ders kalır (38 saatte 0,82; sınır 0,85). Her konunun sonuna bir konu tekrarı dersi eklenir: A3, B4, C3, D4, E3, F4, G5, H3, I3, J3, K3, L3, M3 (toplam 44 dosya; tekrarlar orana girmez). E2, J1, L1, M2 bölünmez: sahne sınırı kalktı, tek fikir sahne eklenerek anlatılır | kural 5; `KURALLAR.md` 3, 3.4 |
+| 2 | Önerme kurma ve yazma | Önerme, soru ve hipotez bentleri seçenekli tahmin ve sınıflandırmayla karşılanır (`benzetim`). Yazma, paylaşma, yansıtma notu `site dışı` | kural 4b; `KURALLAR.md` 2.2 |
+| 3 | Deneyin benzetimle karşılanması | Dört deney benzetim olur; düzenek ve sayılar kitaptan (bölüm 8). Yüzey geriliminin dolaylı yöntemi: madenî para üstünde taşmadan duran damla sayısı ve damlanın bombesi (s. 204–208). Malzeme seçme, gerçek ölçüm, rapor ve performans görevi `site dışı`; derse "evde dene" notu konmaz | kural 4, 4b |
+| 4 | B1'deki tepkime | Sodyum ile klor gazı → sodyum klorür (s. 114–120). "Farklı iyonik tuzlar": lityum ve potasyumun klor gazıyla tepkimesi, LiCl ve KCl (s. 118–119) | kural 4 |
+| 5 | B3'ün kapsamı ve kuralı | Ders kalır (F konusunun dayanağı). Kural yük denkliğidir: katyon ve anyon yüklerinin toplamı sıfır olacak en az sayıda iyon (s. 121); çaprazlama anlatılmaz (kitapta yok). İyonlar: Tablo 2.1 ve 2.2 (s. 141), alıştırma tablosu s. 122. CN⁻ (siyanür) programın sekiz çok atomlu iyonu arasında olmadığı için alınmaz | kural 1, 2, 4 |
+| 6 | Örnek moleküller | Kitabın örnekleri: H₂, F₂, N₂, O₂, Cl₂, HF, HCl, H₂O, NH₃, CH₄, NCl₃; alıştırmada BH₃, CCl₄, CO₂, NBr₃, H₂S, HBr, CF₄, NF₃ (s. 132–134, 138). O₂, N₂ ve CO₂ kitabın tablosunda olduğu için gösterilir; "tekli, ikili, üçlü bağ" adları verilmez, ortaklanan çift sayısı söylenir. BH₃ okteti tamamlamaz; kitap istisnayı anlatmadığı için BH₃ yalnız polarlıkta (E2) kullanılır, D2'de kullanılmaz | kural 2, 4 |
+| 7 | E1 ile E2'nin ayrımı | İki ders kalır: "polar kovalent" ve "apolar kovalent" anahtar kavramdır, kitap bağın polarlığını ayrı anlatır (s. 130). Sayısal eşik yok. Kısmi yük gösterimi (δ⁺, δ⁻) kullanılır (s. 130, 150); vektör toplama ve dipol momenti hesabı yok. Elektronegatiflik değerleri bölüm 8'de | kural 1, 4 |
+| 8 | Adlandırma kurallarının içeriği | Kitaptan (s. 139–143, bölüm 8): katyon adı + anyon adı, atom sayıları ada girmez; birden fazla katyonu olan metalde yükseltgenme basamağı Romen rakamıyla; yedi metalin basamakları Tablo 2.3; Latince ön ekler 1–8 (Tablo 2.4); ilk elementte "mono" kullanılmaz; oksit önünde ön ekin son seslisi düşer. Gümüş (Tablo 2.3'te var) programın yedi metali arasında olmadığı için alınmaz | kural 3, 4 |
+| 9 | Gecko ve toz soruları | Gecko G1'in açılış sorusudur; cevabı dersin sonunda kitabın yazdığı kadar verilir: ayaktaki çok ince tüycüklerin uçları yüzeyle moleküler düzeyde etkileşir; milyonlarca zayıf etkileşimin toplamı büyük bir tutunma kuvveti eder (s. 146; kitap tüycük sayısı vermez). Toz parçacıkları sorusunun cevabı kitapta yok; kullanılmaz. GeckoBot ve biyomimikri ödevi alınmaz (yan konu; ödev `site dışı`) | kural 4; `KURALLAR.md` 2 |
+| 10 | "van der Waals etkileşimi" | G3'te tek cümle ve defter satırı: London kuvveti, dipol-dipol ve dipol-indüklenmiş dipol etkileşimlerinin ortak adı (s. 152) | kural 1, 4 |
+| 11 | Katı örnekleri ve kristal türleri | Sınıflandırma kitabın on iki katısıyla yapılır (s. 159–163). Amorf: cam. Kristal katı dört türdür: iyonik, moleküler, kovalent, metalik; "kovalent katı" programın saydığı elmas ve kurşun kalem ucunun (grafit) türü olduğu için kitaptaki kadarıyla alınır; elmas ile grafitin farkı anlatılmaz (zenginleştirme). Programın örneklerinden sofra tuzu, elmas, kurşun kalem ucu, kar tanesi (buz) ve cam sınıflandırılır; çelik kaşık ve bilgisayar ekranı kitapta sınıflandırılmadığı için yalnızca açılışta anılır. Kuvarsın formülü yazılmaz (kitapta SiO₄ diye geçiyor). Silisyum ingot külçesi s. 158'deki kadar | kural 1, 4 |
+| 12 | Buhar basıncını etkileyen faktörler | Etkileyen: sıvının cinsi ve sıcaklık. Etkilemeyen: sıvı miktarı, kabın biçimi, kabın hacmi (s. 172, Görsel 2.21); I2'de "değiştir, bak, değişmedi" denemesi olarak yer alır. "Saflık derecesi" alınmaz: program saf sıvıyla sınırlı | kural 3, 4 |
+| 13 | Yüzey gerilimi: çözünenler, günlük hayat | Çözünenler: sofra tuzu (artırır), sabun ve deterjan (azaltır; yüzey aktif madde) (s. 210). Günlük hayat: ebruda sığır ödü (s. 203); süt ve gıda boyasına deterjan damlatılınca boyaların dağılması (s. 211; kitap yalnızca gözlemi verir, neden s. 210 ve s. 201'in birleşimidir); gölette batan ördekler (s. 211; kitap nedeni sormakla yetinir, deterjan açıklaması s. 201 ve s. 210'un birleşimidir). Sabunun temizleme mekanizması kitapta anlatılmadığı için alınmaz. Sabun molekülünün hidrofil ve hidrofob kısımları kitabın yazdığı kadar, tek sahne; misel yok | kural 4 |
+| 14 | Önceki temadan gelen kavramlar | 1. tema (Etkileşim) valans elektronunu (E3), iyon oluşumunu (G1), iyonlaşma enerjisini (H2) ve elektronegatifliği (H4) anlatıyor; ayrı sahne açılmaz. İlk kullanıldıkları derste tek cümleyle hatırlatılır | `KURALLAR.md` 2 |
+| 15 | Veri setleri ve yön bilgileri | Hepsi kitaptan, sayfa numarasıyla bölüm 8'de. Yönler: katılar s. 163, buhar basıncı s. 172, kaynama s. 178–179 ve 184, viskozite s. 191 ve 193, yüzey gerilimi s. 210. M1 ve M2'nin akılda kalıcı cümleleri yönü söyleyecek biçimde senaryoda yeniden yazılır | kural 4 |
+| 16 | Konu harfi "I" | Harf kalır. Dosya adı ve kimlikte küçük ASCII "i" kullanılır (`i1-….html`, `cesitlilik-i1`); ekranda "Konu I" | kural 7 |
+| 17 | Kısa okuma sahneleri | Kitabın yazdığı kadar, birer sahne: DNA'da A–T ve G–C arasındaki hidrojen bağları iki zinciri birleştirir (s. 155); silisyum ingot külçesi (s. 158); suyun bitkide kökten yaprağa taşınması ve ince tüple kan alma (s. 201) | kural 4 |
+| 18 | Saat dağılımı | Değişmez; dağılım bizim kararımızdır | kural 7 |
+
+Kararların kısa ders listesine etkisi: bölüm 3'teki 31 dersin fikirleri değişmedi. Değişenler: H2 dört kristal türünü anlatır (karar 11); I2'ye etkilemeyen üç faktör eklenir (karar 12); G1'in sonunda gecko sorusunun cevabı verilir (karar 9); M1 ve M2'nin akılda kalıcı cümleleri yön söyler (karar 15). A1'in sınırı sürer: yalnız kuvvet; potansiyel enerji grafiği (s. 129) ve bağ uzunluğu alınmaz.
+
+## 8. Ders kitabından alınanlar
+
+Sayfa numaraları MEB Kimya 9 ders kitabınındır. Öğrenciye kitap, sayfa ya da "hazır veri" denmez (`KURALLAR.md` 2.1); veri bir durumun içinde sunulur.
+
+**A · Metalik bağ (s. 108–112).** Aynı yükler iter, zıt yükler çeker (s. 108–109). Bağ oluştuğunda itme ve çekme kuvvetleri dengelenir, çekirdekler üzerinde net kuvvet gözlenmez (s. 109). İki atomlu modelde dört etkileşim: çekirdek–çekirdek itme, elektron–elektron itme, her çekirdeğin öteki atomun elektronunu çekmesi (s. 109, 127). Metalik bağ gösterimleri: Na⁺, Mg²⁺, Ca²⁺, Al³⁺ iyonları ve serbest valans elektronları (s. 111). Tanım: pozitif yüklü metal iyonları ile serbest dolaşan valans elektronları (elektron denizi) arasındaki elektrostatik çekim (s. 112). Katyon yükü ve serbest valans elektron sayısı arttıkça bağ kuvvetlenir (s. 112). Yanılgı ifadeleri (s. 112): "metal atomunun çekirdeği ile valans elektronları arasında oluşur", "farklı metal atomları arasında oluşur", "elektronların ortak kullanılmasıyla oluşur"; doğrusu "metal katyonları ile serbest valans elektronları arasında oluşur".
+
+**B · İyonik bağ (s. 114–123).** Sodyum suyla hızlı tepkir; klor keskin kokulu, zehirli bir gazdır; ürün beyaz, kristal yapılı sodyum klorür (s. 114). Isıtılan sodyum klor gazıyla hızla tepkir: parlak sarı ışık, yüksek ısı; sodyum gaz hâline geçer, klor molekülleri atomlarına ayrılır; sodyum atomu elektron kaybedip Na⁺, klor atomu elektron alıp Cl⁻ olur; zıt yüklü iyonlar çekimle bir araya gelip kristali oluşturur (s. 120). İyonik bağ: zıt yüklü iyonlar arasındaki güçlü elektrostatik etkileşim (s. 120). NaCl kristalinde her Na⁺ altı Cl⁻ ile, her Cl⁻ altı Na⁺ ile çevrilidir (s. 121). Yanılgılar (s. 123): "bir sodyum iyonu yalnızca elektronunu verdiği klorür iyonuna bağlanır", "bir sodyum atomu yalnızca bir iyonik bağ oluşturur". Lityum ve potasyum da klor gazıyla LiCl ve KCl verir (s. 118). İyonlaşma enerjisi (kJ/mol) ve elektronegatiflik: Li 520 ve 0,98; Na 496 ve 0,93; Mg 738 ve 1,31; F 1681 ve 4,00; Cl 1255 ve 3,16; O 1314 ve 3,44 (s. 123). Formül: yükler toplamı sıfır; NaCl 1:1, CaCl₂ 1:2, MgO 1:1, MgCO₃ 1:1, Mg₃(PO₄)₂ 3:2, NaF 1:1 (s. 121–122). Çok atomlu iyon yüklü bir atom topluluğudur (s. 121). Alıştırma tablosu (s. 122): katyonlar Na⁺, Mg²⁺, Al³⁺, NH₄⁺, Ca²⁺, K⁺, Fe²⁺, Fe³⁺; anyonlar F⁻, O²⁻, N³⁻, OH⁻, CO₃²⁻, NO₃⁻, PO₄³⁻, SO₄²⁻, CH₃COO⁻.
+
+**C · Kovalent bağ (s. 125–131).** Ametallerin iyonlaşma enerjisi ve elektronegatifliği yüksektir; bir ametalin ötekinden elektron koparması beklenmez, elektronlar ortaklaşa kullanılır (s. 125, 128). Değerler: H 1312 ve 2,20; F 1681 ve 4,00; Na 496 ve 0,93 (s. 125). Süreç (s. 127): uzak iki hidrojen atomu etkileşmez; yaklaşırken her atomun elektronu öteki çekirdekçe çekilir, çekirdekler birbirini, elektronlar birbirini iter; yeterince yaklaşınca itme ve çekme dengelenir, valans elektronları ortaklaşa kullanılır; ortak elektronlar çoğunlukla iki çekirdeğin arasında, sürekli hareket hâlindedir. Çok yaklaşırlarsa itme baskın olur (s. 128). Kovalent bağ: çekirdekler ile ortaklaşa kullanılan elektronlar arasındaki güçlü etkileşim; molekül: kovalent bağla bağlı atom grubu (s. 128). İkinci örnek: hidrojen ile flor (s. 127). Alınmaz: potansiyel enerji grafiği, pm değerleri, bağ uzunluğu (s. 129).
+
+**D · Lewis nokta yapısı (s. 132–134).** Sembol çekirdeği ve iç elektronları, noktalar valans elektronlarını gösterir; noktalar önce tek tek, dördü aşınca çift olarak yerleştirilir (s. 132). Bağa katılmayan valans elektronları ortaklanmamış elektronlardır (s. 132). Dublet: helyum gibi ikiye, oktet: öteki soy gazlar gibi sekize tamamlama (s. 133). Merkez atom: öteki atomların bağlandığı atom (s. 134). Uzay-dolgu modelleriyle verilen dört molekül: CH₄, NH₃, H₂O, CO₂ (s. 134). Moleküller karar 6'da.
+
+**E · Polarlık (s. 130, 136–138).** Elektronegatiflik: H 2,20; C 2,55; N 3,04; O 3,44; F 4,00 (s. 136); Cl 3,16 (s. 131); S 2,58 (s. 142). Aynı elektronegatiflikte atomlar arasındaki bağ apolar kovalent (H₂, O₂, N₂, Cl₂); elektronegatiflik farkı olan atomlar arasındaki bağ polar kovalent (H₂O, HCl, NH₃); fark arttıkça polarlık artar; elektronegatifliği büyük atom kısmen eksi (δ⁻), öteki kısmen artı (δ⁺) (s. 130). Dipol moment molekülün kutupsallığının ölçüsüdür; merkez atomunda ortaklanmamış çift bulunan molekülde yük dağılımı dengede değildir, dipol moment sıfırdan farklıdır; bulunmayan ve yük dağılımı dengede olan molekülde sıfırdır; sıfırsa apolar, değilse polar (s. 137). Tablo molekülleri: H₂, F₂, N₂, O₂, HF, CH₄, NH₃, H₂O (s. 136); alıştırma: CCl₄, NCl₃, CO₂, BH₃, H₂S, HBr, PH₃, CF₄, CS₂, PF₃ (s. 138).
+
+**F · Adlandırma (s. 139–144).** Örnekler: NaCl sodyum klorür, Na₂S sodyum sülfür, Al₂S₃ alüminyum sülfür, MgBr₂ magnezyum bromür, MgCl₂ magnezyum klorür (s. 139); CaCO₃, Mg(NO₃)₂, (NH₄)₂SO₄, K₃PO₄ (s. 140). Katyonlar (Tablo 2.1): Li⁺, Na⁺, K⁺, Rb⁺, Cs⁺, Mg²⁺, Ca²⁺, Sr²⁺, Ba²⁺, Al³⁺, Zn²⁺, NH₄⁺ (amonyum). Anyonlar (Tablo 2.2): F⁻ florür, Cl⁻ klorür, Br⁻ bromür, I⁻ iyodür, S²⁻ sülfür, N³⁻ nitrür, C⁴⁻ karbür, H⁻ hidrür, O²⁻ oksit, SO₄²⁻ sülfat, NO₃⁻ nitrat, CO₃²⁻ karbonat, PO₄³⁻ fosfat, OH⁻ hidroksit, HCO₃⁻ bikarbonat, CH₃COO⁻ asetat (s. 141). Tablo 2.3 (en yaygın basamak koyu): Cr +2, **+3**, +6; Mn **+2**, +4, +7; Cu +1, **+2**; Pb **+2**, +4; Sn **+2**, +4; Fe +2, **+3**; Co **+2**, +3. Örnekler: CuO bakır(II) oksit, Cu₂O bakır(I) oksit, CuF₂ bakır(II) florür, CuBr bakır(I) bromür; FeCl₃ demir(III) klorür, "demir üç klorür" okunur (s. 140, 142). Kovalent: N₂O₃ diazot trioksit, SO₃ kükürt trioksit, CS₂ karbon disülfür, CCl₄ karbon tetraklorür, N₂O diazot monoksit, CO karbon monoksit (s. 142); alıştırma SO₂, N₂O₅ (s. 143). Formülde genellikle elektronegatifliği az olan öne yazılır (s. 143). Ön ekler (Tablo 2.4): 1 mono, 2 di, 3 tri, 4 tetra, 5 penta, 6 hekza, 7 hepta, 8 okta. İlk elementte mono kullanılmaz; monoksit, tetroksit, pentoksit (s. 143). Su ve amonyak geleneksel adlarıyla anılır (s. 143). Eşleştirme için: Al₂(SO₄)₃, MgH₂, SF₆, N₂O, CuCl, FeO, Ca(OH)₂, NH₄Br (s. 144).
+
+**G · Moleküller arası etkileşimler (s. 146–157).** Bu etkileşimler metalik, iyonik ve kovalent bağdan zayıftır (s. 147). Örnek çiftler (s. 148, sayfa görüntüsünden doğrulandı; sayfada on ikişer çiftli iki tablo var: CH₄–N₂ ve HF–BH₃ yalnızca ilkinde, C₂H₆–C₃H₈ ve CO–BH₃ yalnızca ikincisinde): He–He, O₂–O₂, H₂S–H₂S, CH₄–HF, Mg²⁺–CO₂, CH₄–N₂, C₂H₆–C₃H₈, Na⁺–H₂O, He–Ne, Cl⁻–H₂O, N₂–O₂, HF–BH₃, CO–BH₃, NH₃–HF. Adlandırma: apolar molekül ya da soy gaz atomu "indüklenmiş dipol", polar molekül "dipol", iyon "iyon" (s. 148). Kalıcı dipol; geçici (indüklenmiş) dipol: elektron dağılımındaki anlık dalgalanma ya da yaklaşan bir tanecik yük dağılımını geçici olarak bozar (s. 150–151). Dipol-dipol: polar moleküllerin zıt kutupları arasında, aynı ya da farklı tür moleküllerde (HCl örneği, s. 151). İyon-dipol: tuzun suda çözünmesi, Na⁺ ve Cl⁻ ile su (s. 151). London: soy gaz atomları ve apolar moleküllerde belirleyici; "elektron sayısı fazla ve elektron bulutu dağılmış ise" kutuplanma kolaylaşır, London kuvveti artar (s. 151–152). İyon-indüklenmiş dipol: iyon ile helyum atomu; dipol-indüklenmiş dipol: HCl ile He (s. 152). van der Waals: London, dipol-dipol ve dipol-indüklenmiş dipol (s. 152). Hidrojen bağı: H doğrudan F, O ya da N atomuna bağlıysa; dipol-dipolden güçlü; aynı ya da farklı moleküller arasında (s. 154). Hidrojenli çiftler (s. 153, sayfa görüntüsünden doğrulandı): F₂–HF, NH₃–H₂O, H₂O–H₂O, HF–HF, H₂S–H₂S, HCl–HCl, HF–HCl, NH₃–NH₃; aynı sayfada P 2,19 elektronegatifliği. Tablo 2.5 (kJ/mol): London 0,05–20; dipol-dipol 3–20; hidrojen bağı 10–40 (s. 154). DNA (s. 155; kitap G–C ve A–T arasındaki bağları "molekül içi hidrojen bağları" diye anar, iki zinciri birleştirdiğini ve genetik kodu koruduğunu yazar). Sınıflandırma alıştırması: CH₄, CH₂O, HCl, NH₃, NaCl, Cl₂, H₂O (s. 156). Gecko (s. 146).
+
+**H · Katılar (s. 158–165).** Amorf katıda tanecikler düzensizdir, belirli erime noktası yoktur (cam, lastik, plastik, mum, tereyağı); kristal katıda tanecikler yinelenen düzenli bir yapı kurar, belirli erime noktası vardır (s. 161). İyonik katı: iyonlar, iyonik bağ (NaCl, CaO, KI). Moleküler katı: moleküller; hidrojen bağı, dipol-dipol, London (buz, kuru buz). Kovalent katı: kovalent bağlı atomlar (elmas, grafit, kuvars). Metalik katı: metal katyonları ve elektron denizi (Na, Mg, Al) (s. 162). Veri (s. 162; erime noktası °C · elektrik iletkenliği · Mohs sertliği): elmas 3550 · iletmez · 10; potasyum iyodür 681 · iletmez · 2; grafit 3927 · iletir · 1,5; buz 0 · iletmez · 1,5; sodyum 98 · iletir · 0,5; kuvars 1785 · iletmez · 7; alüminyum 660 · iletir · 2,75; sodyum klorür 801 · iletmez · 2,5; kalsiyum oksit 2572 · iletmez · 3,5; magnezyum 650 · iletir · 2,5; kuru buz −79 · iletmez · 2. Genelleme (s. 163): iyonik katı yüksek erime noktası, sert, kırılgan, yalıtkan; moleküler katı düşük erime noktası, yumuşak, yalıtkan; kovalent katı yüksek erime noktası, genellikle sert ve yalıtkan; metalik katı düşük ya da yüksek erime noktası, yumuşak ya da sert, parlak, iletken. Silisyum: 2022'de Niğde Ömer Halisdemir Üniversitesi ile KOP Bölge Kalkınma İdaresi iş birliğiyle Türkiye'nin ilk endüstriyel boyutta kristal silisyum ingot külçesi üretildi; güneş hücrelerinin çoğu kristal silisyumdandır (s. 158).
+
+**I · Buhar basıncı (s. 166–173).** Durum: özdeş kaplarda 25 °C'ta 10 mL su ve 10 mL etil alkol; alkol önce biter (s. 166). Kapalı kapta buharlaşmayla birlikte yoğuşma da olur; buhar basıncı: buhar moleküllerinin kabın yüzeyine çarpmasıyla oluşan basınç; buharlaşma hızı yoğuşma hızına eşitlenince denge kurulur, iki olay aynı hızla sürer; sıvısıyla dengedeki buharın basıncı denge buhar basıncıdır (s. 168–169). Veri (s. 171): su 25 °C 23,8 mmHg, 40 °C 55,3 mmHg (hidrojen bağı); benzen 25 °C 95,3 mmHg, 40 °C 183 mmHg (London). Çekim zayıfladıkça buhar basıncı artar; sıcaklık arttıkça artar; buhar basıncı büyük olan daha uçucudur (s. 172). Bağlı olmadıkları: kabın hacmi, kabın biçimi, sıvı miktarı (s. 172). Düzenek: kapalı kap ve U borusundaki cıva seviyesi farkı (s. 168–169). Ek veri, kPa, 0–100 °C'ta yirmişer derece arayla (s. 185): su 0,61 · 2,33 · 7,37 · 19,92 · 47,34 · 101,33; etil alkol 1,63 · 5,85 · 18,04 · 47,02 · 108,34 · 225,75; dietil eter 24,70 · 58,96 · 122,80 · 230,65 · 399,11 · 647,87.
+
+**J · Kaynama sıcaklığı (s. 174–185).** Kaynama: sıvının içinde buhar kabarcıkları oluşur ve yüzeye çıkar; kabarcıktaki buharın basıncı dış basınca eşit olduğunda gözlenir; kaynama noktası buhar basıncının dış basınca eşit olduğu sıcaklıktır (s. 175, 183). Şırınga deneyi: yaklaşık 50 °C'taki su şırıngaya çekilir, ucu kapatılıp piston çekilince su kaynar (s. 175–176). Deniz seviyesinde 1 atm (760 mmHg) altında su 100 °C'ta, Everest'in zirvesinde 0,3 atm altında 70 °C'ta kaynar (s. 180). Basınç (mmHg) ve suyun kaynama sıcaklığı (°C): 760 · 100; 931 · 106; 1448 · 119; 1862 · 127; 2069 · 131; 2482 · 137; 2896 · 142; 3517 · 149 (s. 181). Dış basınç arttıkça kaynama sıcaklığı yükselir (s. 184). Etkileşim güçlendikçe kaynama sıcaklığı yükselir: metan 112,65 K (London), hidrojen sülfür 213,15 K (dipol-dipol), su 373,15 K (hidrojen bağı) (s. 178–179). Hidrojen bağlı üç sıvı, 1 atm: H₂O 100 °C, HF 19,5 °C, NH₃ −33,3 °C; bir su molekülü dört, bir HF molekülü iki hidrojen bağı kurabilir; H–F bağında elektronegatiflik farkı en büyüktür, HF'nin NH₃'ten yüksek kaynaması bununla açıklanır (s. 179). Aynı ortamda kaynayan sıvıların buhar basınçları eşittir (s. 184). Alınmaz: çözeltide kaynama noktası yükselmesi (s. 185), gayzerler.
+
+**K · Viskozite (s. 186–194).** Tanım: akmaya karşı gösterilen direnç; viskozite arttıkça akışkanlık azalır (s. 187). Tablo 2.6, 20 °C, Pa·s: su 1,01×10⁻³; etanol 1,20×10⁻³; propanol 1,94×10⁻³; etilen glikol 19,83×10⁻³; gliserin 1,49; aseton 0,316×10⁻³; benzen 0,625×10⁻³; karbon tetraklorür 0,969×10⁻³; zeytinyağı 81×10⁻³; bal 2–10 (s. 187). Ölçme yolları: sıvının büretten akma süresi, eğik yüzeyde akış, sıvıya bırakılan çelik bilyenin dibe iniş süresi (s. 189). Etkileşim güçlendikçe akışkanlık azalır; gliserinde molekül başına hidrojen bağı sayısı su ve etilen glikolden fazladır (etanol 1, etilen glikol 2, gliserin 3 OH grubu) (s. 191). Bilye deneyi (s. 193): özdeş tüplerde propil alkol, propilen glikol, gliserin; özdeş çelik bilyeler aynı anda bırakılır, 10 saniye sonraki konumlarına bakılır; I–III. tüpler 25 °C, IV–VI. tüpler 30, 15 ve 60 °C; bilyenin aldığı yol şekilden okunur, sayı olarak verilmez (benzetimde yol sıralaması kullanılır, cm değeri "örnek veri" diye adlandırılır). Sıcaklık arttıkça etkileşim zayıflar, akışkanlık artar; zift ısıtılarak dökülür, reçel kavanoza sıcak doldurulur (s. 193). Alınmaz: Newton tipi akışkan, molekül biçimi ve kütlesi, hidrokarbon tablosu (Tablo 2.7), motor yağı sınıfları.
+
+**L · Adezyon ve kohezyon (s. 195–202).** Kohezyon: aynı tür moleküllerin birbirine uyguladığı çekim; adezyon: farklı maddelerin tanecikleri arasındaki çekim; yapraktaki damlanın yuvarlaklığı kohezyon, yaprağa tutunması adezyon (s. 196). 25 °C'ta yüzey gerilimi: cıva 480 dyn/cm, su 72 dyn/cm; su camda yayılır ve tüpte içbükey durur, cıva yayılmaz ve dışbükey durur (s. 197–198). Adezyon büyükse sıvı yayılır (ıslatır), kohezyon büyükse damla kalır; kapta kohezyon büyükse dışbükey, adezyon büyükse içbükey, eşitse düz (s. 201). Yüzey gerilimi kohezyonun sonucudur: içteki molekül her yönden eşit çekilir, yüzeydeki yalnızca yandan ve alttan; yüzey küçülür (s. 200). 20 °C'ta yüzey gerilimi (dyn/cm): su 73, gliserin 63, etil alkol 22, n-hekzan 18 (s. 199). Su üstünde duran böcek ve ataş (s. 196–197). Kılcallık: ince tüpte adezyon yeterince büyükse sıvı kendiliğinden yükselir; kan alma tüpü; bitkide suyun kökten yaprağa taşınması (s. 201). Alınmaz: temas açısı, "ormanlar yağmuru çeker" metni.
+
+**M · Yüzey gerilimi (s. 203–211).** Yöntem: madenî paranın üstüne damla damla sıvı eklenir, taşmadan duran damla sayısı ve bombenin yüksekliği karşılaştırılır; bombe ne kadar yüksekse yüzey gerilimi o kadar büyüktür (s. 204–205). Veri, N/m (s. 209): su 20 °C 0,073, 50 °C 0,068; sabunlu su 20 °C 0,025; etanol 0,022 ve 0,020; etilen glikol 0,048 ve 0,044; gliserin 0,063 ve 0,058 (20 ve 50 °C). Sıcaklık arttıkça çekim zayıflar, yüzey gerilimi azalır; suda çok çözünen madde (tuz) artırır, sabun ve deterjan azaltır; sabun molekülünün suyu seven ve sevmeyen kısımları vardır, moleküller yüzeye yerleşip su molekülleri arasındaki çekimi zayıflatır (s. 210). Damla sayıları kitapta yoktur; benzetimde sıralama N/m değerlerinden türetilir, damla sayıları "örnek veri" diye adlandırılır.
