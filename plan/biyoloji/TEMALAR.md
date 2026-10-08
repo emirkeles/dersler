@@ -10,7 +10,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
-| 1 | Yaşam | `yasam` | <https://tymm.meb.gov.tr/biyoloji-dersi/unite/2> | 44 | 8 | 37 | yazıldı, yayında (7 Ekim 2026); 8 Ekim'de 21 dersin anlatımı yeniden yazıldı (D6 ve E1 kitap dışı bilgiyle tamamlandı), 16 ders eski hâliyle; seslendirme bekliyor |
+| 1 | Yaşam | `yasam` | <https://tymm.meb.gov.tr/biyoloji-dersi/unite/2> | 44 | 8 | 37 | yazıldı, yayında (7 Ekim 2026); 8 Ekim'de 21 dersin anlatımı yeniden yazıldı (D6 ve E1 kitap dışı bilgiyle tamamlandı), 16 ders eski hâliyle; seslendirildi (8 Ekim 2026; 940 klip, 72,5 dk, 33,7 MB), A1 dışındaki dersler henüz dinlenmedi |
 | 2 | Organizasyon | `organizasyon` | <https://tymm.meb.gov.tr/biyoloji-dersi/unite/3> | 24 | 6 | 20 | plan taslağı; işleme alınmayı bekliyor |
 | | **Toplam** | | | **68** | **14** | **57** | |
 

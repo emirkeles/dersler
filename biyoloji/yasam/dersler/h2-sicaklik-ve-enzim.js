@@ -107,7 +107,7 @@
     await c.say('Enzim aktivitesi bu yüzden sıcaklıkla birlikte artar.');
     const ad = yazi(c, g, 330, 455, 'Protein yapılı enzim', 28, R);
     await K.belir(c, ad, 350);
-    await c.say('Ama enzimler genellikle protein yapılıdır; işlevleri üç boyutlu biçimlerine bağlıdır.');
+    await c.say('Ama enzimler genellikle protein yapılıdır; işlevleri üç boyutlu biçimlerine bağlıdır.', { speak: '[curious] Ama enzimler genellikle protein yapılıdır; işlevleri üç boyutlu biçimlerine bağlıdır.' });
     await c.tween(1600, (e) => { derece(0.55 + 0.42 * e, e > 0.4 ? SICAK : ILIK); enz.setAttribute('d', bicim(NORMAL.map((n, i) => Ders.lerp(n, BOZUK[i], e)))); });
     ad.textContent = 'Denatürasyon'; ad.style.fill = SICAK;
     await c.say('Yüksek sıcaklıkta protein doğal biçimini kaybeder; buna denatürasyon denir.', { speak: 'Yüksek sıcaklıkta protein doğal biçimini kaybeder; buna [short pause] denatürasyon denir.' });
@@ -232,7 +232,7 @@
       options: ['Soğuk, enzimlerin yapısını kalıcı olarak bozar.', 'Mayalanmayı sağlayan enzimler ılıkta hızlı çalışır.', 'Sıcaklık ne kadar yüksekse enzimler o kadar hızlıdır.'], answer: 1,
       hints: ['Soğuk enzimi bozmaz, yalnızca yavaşlatır.', '', 'Optimumun üstünde enzim denatüre olur; hız düşer.'],
       right: 'Ilık ortam optimuma yakındır. Soğukta mayalanma yavaşlar, aşırı sıcakta enzimler bozulur.' });
-    await c.say('Her enzimin en hızlı çalıştığı bir optimum sıcaklık vardır.', { speak: '[curious] Her enzimin en hızlı çalıştığı bir optimum sıcaklık vardır.' });
+    await c.say('Her enzimin en hızlı çalıştığı bir optimum sıcaklık vardır.');
     c.note('<b>Optimum sıcaklık: aktivitenin en yüksek olduğu sıcaklık.</b><br>İnsanda birçok enzim: 35–40 °C', 'Optimum sıcaklık');
   }
 

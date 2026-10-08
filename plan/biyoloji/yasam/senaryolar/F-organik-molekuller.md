@@ -38,7 +38,7 @@ Kaynak: MEB Biyoloji 9 (7 Ekim 2026), s.55–72. BİY.9.1.6 ve içerik çerçeve
 - Ana görsel ve anlatım seçimi: Renkli halka sembollerinin birleşip ayrılması üç disakkaritin bileşimini ezber listesinden modele dönüştürür.
 - Kaynak: s. 58–59.
 - Sahne akışı:
-  1. İki birimden bir molekül. Model etkileşimi: İki birimin birleşmesinde hangi süreci araştırırsın? Bağlam: Süt, sofra şekeri ve arpadaki şekerler aynı değildir. Disakkarit, iki monosakkaritin birleşmesiyle oluşur. Birleşen birimler farklıysa ortaya çıkan şeker de farklılaşır.
+  1. İki birimden bir molekül. Model etkileşimi: İki birimin birleşmesinde hangi süreci araştırırsın? Bağlam: Süt, çay şekeri ve arpadaki şekerler aynı değildir. Disakkarit, iki monosakkaritin birleşmesiyle oluşur. Birleşen birimler farklıysa ortaya çıkan şeker de farklılaşır.
   2. Üç farklı birleşim. Model etkileşimi: Glikoz ve fruktoz birleşirse hangi disakkarit oluşur? Bağlam: 
   3. Süt şekerini ayır. Model etkileşimi: Laktoz hidrolizinde hangi birimleri beklersin? Bağlam: Laktoz sindirim enzimleriyle birimlerine ayrılır. Bazı insanlar laktozu parçalayacak enzimi yeterince üretemez. Bu durum, kitapta laktoz intoleransı olarak adlandırılır.
 - Hedeflenen yanılgı: Bütün disakkaritler aynı iki birimden oluşur.
@@ -178,7 +178,7 @@ Kaynak: MEB Biyoloji 9 (7 Ekim 2026), s.55–72. BİY.9.1.6 ve içerik çerçeve
 - Sahne akışı:
   1. Soruya uygun araç. Model etkileşimi: Bu iddiayı araştırmak için hangi aracı seçersin? Bağlam: Lipitlerle ilgili bir iddiayı doğrulayacağımız kısa araştırmayı canlandıracağız. Bilgiye ulaşma aracı, soruya uygun ve izlenebilir olmalıdır. Önce araç seçilecek, sonra bilgi karşılaştırılıp kaydedilecek.
   2. İddiayı yapı ve işlevle karşılaştır. Model etkileşimi: Bu bilgiler ilk iddiayı nasıl değiştirir?; Lipitleri polimer sayan ikinci iddia için ne kaydedersin? Bağlam: Lipitler enerji depolama, zar yapısı ve düzenlemede görev alır. Bu üç yapı, aynı grubun farklı görevlerini temsil eder. Yanlış genellemeyi, yapı ve işlev bilgisiyle düzeltiriz.
-  3. Doğrulanan bilgiyi kaydet. Model etkileşimi: Hangi kayıt yeniden kontrol etmeyi sağlar? Bağlam: Kayda yalnız doğrulanan bilgi ve onu destekleyen kaynak girer. Bu ekran bilgi toplama ve kayıt sürecinin benzetimidir. Serbest kaynak taraması ve grup bilgi görseli sınıfta yapılır.
+  3. Doğrulanan bilgiyi kaydet. Model etkileşimi: Hangi kayıt yeniden kontrol etmeyi sağlar? Bağlam: Kayda yalnız doğrulanan bilgi ve onu destekleyen kaynak girer. Bu ekran bilgi toplama ve kayıt sürecinin benzetimidir.
 - Hedeflenen yanılgı: Popüler iddia doğru sayılır; kaynak kayıt için gereksizdir.
 - Çıkış 1: Tüm lipitler zararlıdır iddiasını hangi bilgi düzeltir? Doğru: Lipitler zar yapısı ve enerji deposunda görevlidir. Çeldiriciler: Lipitler yalnız DNA’dır, Lipitler polimerdir.
 - Çıkış 2: Doğrulanan bilgi kaydına hangisi eklenmelidir? Doğru: Bilgiyi destekleyen kaynak. Çeldiriciler: Yalnız iddianın popülerliği, Yalnız arkadaşın adı.

@@ -59,7 +59,7 @@
     yazi(c, kilit, 730, 430, 'Anahtar-kilit', 30, R);
     await K.belir(c, kilit);
     await c.say('Bazı enzimlerde ise bağlanırken belirgin bir biçim değişimi olmaz.');
-    await c.say('Bu ilişki anahtar-kilit modeliyle açıklanır.');
+    await c.say('Bu ilişki anahtar-kilit modeliyle açıklanır.', { speak: 'Bu ilişki anahtar kilit modeliyle açıklanır.' });
     await c.choice({ tag: 'Uygula', q: 'Bir enzimin aktif bölgesi, substrat bağlanırken onu saracak biçimde daralıyor. Bu hangi modele uyar?',
       options: ['İndüklenmiş uyum', 'Anahtar-kilit', 'İkisine de uymaz'], answer: 0,
       hints: ['', 'Anahtar-kilit modelinde enzimin biçimi belirgin olarak değişmez.', 'Biçim değişimi iki modelden birinin ayırt edici özelliğiydi.'],

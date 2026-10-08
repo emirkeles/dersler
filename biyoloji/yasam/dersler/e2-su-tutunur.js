@@ -31,7 +31,7 @@
     await K.belir(c, alt, 350);
     await c.say('Damla yapraktan kayıp düşmez; çünkü su yaprağın yüzeyine de tutunur.');
     await K.belir(c, K.yazi(c, g, 500, 500, 'Adezyon: su–başka madde çekimi', { size: 30, renk: ADZ }), 350);
-    await c.say('Farklı moleküllerin birbirini çekmesine adezyon denir.');
+    await c.say('Farklı moleküllerin birbirini çekmesine adezyon denir.', { speak: 'Farklı moleküllerin birbirini çekmesine [short pause] adezyon denir.' });
     await sil(c, g);
 
     /* İki lam: üstteki cam inerken damla ince bir tabaka hâlinde yayılır. */

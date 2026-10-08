@@ -294,6 +294,23 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [ ] Kullanıcı filmi izler (7–12. kareler ve seslendirme işlemeden önce onaylanmamıştı); altyazı dosyası yok
 - [ ] D6 ve E1 seslendirilmedi (biyoloji seslendirmesiyle birlikte)
 
+## Seslendirme: Biyoloji Yaşam (8 Ekim 2026)
+
+`plan/SESLENDIRME.md` adımları; 37 ders, 945 satır, 59.180 karakter (denetim öncesi döküm). Metin denetimi ve kayıt Sonnet 5.5, üretim ve doğrulama Haiku 5.5 alt ajanlarıyla; ajan raporlarının denetimi ana oturumda. Alt ajanlar `DURUM.md` ve `TASKS.md`'ye yazmaz.
+
+- [x] 1–2 Döküm ve metin denetimi, beş Sonnet ajanı (API çağrısı yok): A–B (6 ders), C–D (8), E + F1–F4 (9), F5–F12 (8), G–H (6); 20 dosya değişti, yalnızca `speak`
+- [x] 2 sonu (ana oturum): 37 dersin son dökümü betikle tarandı: 945 satır, 59.373 karakter, 115 yönerge (yalnızca curious, thoughtful, short pause); rakam, simge, kısaltma yok; altyazı ve kod HEAD ile aynı (`speak` dışında); okunuşlar gruplar arasında aynı. G1–G3'te "mavi-mor" için `speak` "mavi mor" eklendi (5 satır; F9 "anahtar kilit" ile aynı kural). A3, B1, B3'te yedi satırda tırnak işareti kaldı (bilerek). `olc.js`: değişen derslerde ajanlar çalıştırdı, temiz; G1–G3 pilot ajanında; 37 dersin tamamı adım 6'da
+- [x] Altyazı bulguları (ilk hâliyle dokunulmadı; kullanıcı kararıyla düzeltildi, aşağıda): F6 sahne 1 eksik cümle ("Baş suyla, kuyruklar ise suyla daha az temas eder."); F12 sahne 3 iki "sınıfta yapılır / sınıf ürünü" cümlesi; E3 sahne 3 "hangi sıvının hızını ölçtüğünü" ve yazara konuşan dört cümle; F3 sahne 2 "Glikoz ve Glikoz", "sofra şekeri / çay şekeri"; F10 sahne 3 ve F2 sahne 2 yinelenen cümle. Yazım hatası bulunmadı; E2 "deneyimi" yeniden yazımda kalkmış
+- [x] 3 Pilot: A1 yeni metinle üretildi (Haiku): 42 klip, 211,8 sn, 1,64 MB, 2.925 karakter; ortanca 0,073 sn/karakter, %30 süre aykırısı yok; eski 24 klip silindi; `olc.js` (A1, G1–G3) ve `denetle.js` temiz
+- [x] 3 Pilot onayı: kullanıcı A1'i dinledi, "onaylıyorum" (8 Ekim 2026)
+- [x] Kullanıcı onayıyla altyazı düzeltmeleri ("önerdiğin şekilde düzelt"): F6 sahne 1; E3 sahne 3 ve yazara konuşan dört cümle çıkarıldı; F3 "İki glikoz…", "çay şekeri"; F12 "sınıfta yapılır" çıkarıldı, "Sınıf ürününde…" yeniden yazıldı; F senaryosu eşitlendi
+- [x] 4 Üretim: kalan 36 ders, üç Haiku ajanı (A2–D3 289 klip, D4–F4 299, F5–H3 310); hata ve yeniden deneme yok; her derste `--liste` "Üretilecek: 0 klip". Toplam A1 ile 940 klip, 72,5 dk, 33,7 MB, 59.071 karakter
+- [x] 5 Sayfalara `ses/<ders-id>.js` satırı (36 sayfa betikle eklendi; 37 sayfada var)
+- [x] 6 Doğrulama (Haiku): 940 klip, 72,5 dk, 33,71 MB, 59.071 karakter; dizin ile dosyalar eşleşiyor; kısa yönde süre aykırısı yok, 12 klip uzun yönde aykırı (liste `plan/biyoloji/yasam/DURUM.md`); `olc.js` 37 derste temiz; `sure.js` yeniden çalıştı (tema 180:19); `denetle.js` temiz
+- [x] 7 Kayıt (Sonnet): `plan/biyoloji/yasam/DURUM.md`, `plan/SESLENDIRME.md` durum satırı, `plan/biyoloji/TEMALAR.md`; rapor
+- [ ] Kullanıcı: A1 dinlendi; öteki konulardan en az bir dersi sesli izler (kulak verilecekler ve 12 uzun aykırı klip `plan/biyoloji/yasam/DURUM.md` içinde)
+- [x] Commit ve push (8 Ekim 2026, `main`; 940 klip depoda)
+
 ## Seslendirme: Geometrik Şekiller (8 Ekim 2026)
 
 `plan/SESLENDIRME.md` adımları. Metin denetimi Sonnet 5.5, üretim ve doğrulama Haiku 5.5 alt ajanlarıyla. Ayrıntı: `plan/matematik/geometrik-sekiller/DURUM.md` "Seslendirme".
@@ -315,19 +332,6 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [x] A4 S2 ve C2 S2: okunan metin iki tahmin kolunda aynı, "Tahminin tuttu." yalnızca ekranda; yeni klip yok, `olc.js` ve `denetle.js` temiz
 - [ ] Kullanıcı: her konudan en az bir dersi sesli izler; 7 aykırı klip ve harf okunuşları (`DURUM.md`)
 
-## Üretilmiş hikâyeleri siteye ekle (8 Ekim 2026)
-
-Teması yayında olmayan hikâye temanın `ortak/katalog.js` satırına yazılır; tema yazılınca `tema.js` dosyasına taşınır.
-
-- [x] `ortak/site.js`: hikâyeler yayında olmayan temalardan da toplanır; `ortak/katalog.js` ve `ortak/API.md` açıklaması
-- [x] Akışkanlar A1 "Çantanın askısı": kapak, katalog satırı
-- [x] Akışkanlar A1 "Karda neden batıyorum?" (`~/9-sinif-animasyon/episode-01-hyperframes/final.mp4`): video, kapak, katalog satırı
-- [x] Enerji F1 "Metal neden daha soğuk hissettiriyor?" (`episode-10/final.mp4`): video, kapak, katalog satırı
-- [x] Geometrik Şekiller B3 "Çadır neden kapanmıyor?" (`episode-05/final.mp4`): video, kapak, `tema.js`
-- [x] Görüntü denetimi (ana sayfa, `#hikayeler`, `#fizik`, tema sayfası), `denetle.js matematik/geometrik-sekiller`
-- [x] Sayılar A7 "3 nanometre": işlendi ve `matematik/sayilar/tema.js` içine eklendi (8 Ekim 2026)
-- [ ] Çadır hikâyesini B3 dersinin son sahnesine bağlamak (istenirse)
-- [ ] Akışkanlar ve Enerji yazılınca katalogdaki `hikayeler` listelerini `tema.js` dosyalarına taşı
 ## Hikâye: A7 3 nanometre ne kadar küçük? (8 Ekim 2026)
 
 Plan: `plan/matematik/sayilar/hikaye/A7-3-nanometre.md`. Proje: `matematik/sayilar/hikaye/a7-3-nanometre/`.
@@ -346,3 +350,16 @@ Plan: `plan/matematik/sayilar/hikaye/A7-3-nanometre.md`. Proje: `matematik/sayil
 - [ ] Kullanıcı: filmi derste sesli izler (George'un Türkçe okunuşu kulakla denetlenmedi)
 - [ ] `plan/SESLENDIRME.md` durum tablosuna A7 hikâye satırı (ortak dosya; eklenmedi)
 
+## Üretilmiş hikâyeleri siteye ekle (8 Ekim 2026)
+
+Teması yayında olmayan hikâye temanın `ortak/katalog.js` satırına yazılır; tema yazılınca `tema.js` dosyasına taşınır.
+
+- [x] `ortak/site.js`: hikâyeler yayında olmayan temalardan da toplanır; `ortak/katalog.js` ve `ortak/API.md` açıklaması
+- [x] Akışkanlar A1 "Çantanın askısı": kapak, katalog satırı
+- [x] Akışkanlar A1 "Karda neden batıyorum?" (`~/9-sinif-animasyon/episode-01-hyperframes/final.mp4`): video, kapak, katalog satırı
+- [x] Enerji F1 "Metal neden daha soğuk hissettiriyor?" (`episode-10/final.mp4`): video, kapak, katalog satırı
+- [x] Geometrik Şekiller B3 "Çadır neden kapanmıyor?" (`episode-05/final.mp4`): video, kapak, `tema.js`
+- [x] Görüntü denetimi (ana sayfa, `#hikayeler`, `#fizik`, tema sayfası), `denetle.js matematik/geometrik-sekiller`
+- [x] Sayılar A7 "3 nanometre": işlendi ve `matematik/sayilar/tema.js` içine eklendi (8 Ekim 2026)
+- [ ] Çadır hikâyesini B3 dersinin son sahnesine bağlamak (istenirse)
+- [ ] Akışkanlar ve Enerji yazılınca katalogdaki `hikayeler` listelerini `tema.js` dosyalarına taşı

@@ -68,7 +68,7 @@
     const etiket = (y, metin, x1, y1, renk) => { const g = c.S('g', {}, et); K.cizgi(c, g, x1, y1, 470, y - 9, renk, { width: 2 }); K.yazi(c, g, 485, y, metin, { hiza: 'start', size: 28, renk }); return g; };
     kap.style.opacity = .35;
     await K.belir(c, etiket(190, 'Genetik madde: DNA ya da RNA', X + 40, Y - 20, GEN), 350);
-    await c.say('Ortada genetik madde vardır: DNA ya da RNA.');
+    await c.say('Ortada genetik madde vardır: DNA ya da RNA.', { speak: 'Ortada genetik madde vardır: de ne a ya da re ne a.' });
     await c.say('Genetik madde, yeni virüslerin nasıl yapılacağının bilgisini taşır.');
     kap.style.opacity = 1; ip.style.opacity = .35;
     await K.belir(c, etiket(290, 'Protein kılıf: kapsit', X + r * .87, Y + 30, IKINCI), 350);
@@ -87,7 +87,7 @@
       options: ['Evet, genetik maddesi yeter.', 'Hayır, bir hücrenin ribozomuna muhtaçtır.', 'Evet, proteini dışarıdan hazır alır.'], answer: 1,
       hints: ['Genetik madde bilgidir; proteini üretecek yapı da gerekir.', '', 'Virüs beslenmez; dışarıdan madde almaz.'],
       right: 'Virüs bilgiyi taşır ama üretimi yapacak yapısı yoktur.' });
-    await c.say('Bu yüzden virüs, tek başınayken hiçbir yaşamsal faaliyet göstermez.');
+    await c.say('Bu yüzden virüs, tek başınayken hiçbir yaşamsal faaliyet göstermez.', { speak: '[thoughtful] Bu yüzden virüs, tek başınayken hiçbir yaşamsal faaliyet göstermez.' });
     c.note('<b>Virüs = genetik madde + protein kılıf.</b><br>Ribozomu ve enerji üreten yapısı yoktur.', 'Virüsün yapısı');
   }
 
@@ -168,7 +168,7 @@
     K.kart(c, s, 60, 100, 410, 290, 'Cansıza benzer', [], { renk: 'var(--muted)' });
     K.kart(c, s, 530, 100, 410, 290, 'Canlıya benzer', [], { renk: R });
     const ekle = (sol, i, metin) => K.belir(c, K.yazi(c, s, sol ? 265 : 735, 215 + i * 55, metin, { size: 27 }), 350);
-    await c.say('Şimdi virüsü canlıların ortak özellikleriyle karşılaştıralım.');
+    await c.say('Şimdi virüsü canlıların ortak özellikleriyle karşılaştıralım.', { speak: '[curious] Şimdi virüsü canlıların ortak özellikleriyle karşılaştıralım.' });
     await ekle(true, 0, 'Hücresi yok');
     await c.say('Canlılar hücreden oluşur; virüsün hücresel yapısı yoktur.');
     await ekle(true, 1, 'Metabolizması yok');
@@ -180,7 +180,7 @@
       hints: ['Virüste enerji üreten yapı yoktu.', '', 'Virüs bir hücre değildi.'],
       right: 'Genetik madde ve çoğalma, canlılarla ortak özellikleridir.' });
     await ekle(false, 0, 'Genetik maddesi var');
-    await c.say('Virüs, canlılar gibi genetik madde taşır: DNA ya da RNA.');
+    await c.say('Virüs, canlılar gibi genetik madde taşır: DNA ya da RNA.', { speak: 'Virüs, canlılar gibi genetik madde taşır: de ne a ya da re ne a.' });
     await ekle(false, 1, 'Hücrede çoğalır');
     await c.say('Uygun hücrenin içinde çoğalır ve özelliklerini yeni virüslere aktarır.');
     await ekle(false, 2, 'Zamanla değişebilir');

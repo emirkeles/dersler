@@ -114,11 +114,11 @@
   async function yorum(c) {
     const s = c.svg(1000, 562), g = c.S('g', {}, s);
     await K.belir(c, K.kart(c, g, 60, 110, 420, 180, 'Elif', ['“Tavşan otu yedi.”'], { renk: R }));
-    await c.say('Elif defterine şunu yazmıştı: “Tavşan otu yedi.”');
+    await c.say('Elif defterine şunu yazmıştı: “Tavşan otu yedi.”', { speak: 'Elif defterine şunu yazmıştı: Tavşan otu yedi.' });
     await K.belir(c, K.yazi(c, g, 270, 350, 'Gözlem: görülen', { size: 28, renk: R }), 350);
     await c.say('Bunu kendi gözüyle gördü: bu bir gözlemdir.');
     await K.belir(c, K.kart(c, g, 520, 110, 420, 180, 'Arda', ['“Tavşan çok acıkmıştı.”'], { renk: HAYVAN }));
-    await c.say('Arda aynı olayı şöyle yazdı: “Tavşan çok acıkmıştı.”');
+    await c.say('Arda aynı olayı şöyle yazdı: “Tavşan çok acıkmıştı.”', { speak: 'Arda aynı olayı şöyle yazdı: Tavşan çok acıkmıştı.' });
     await c.say('Açlık gözle görülmez; Arda gördüğünden bir sonuç çıkardı.', { speak: '[thoughtful] Açlık gözle görülmez; Arda gördüğünden bir sonuç çıkardı.' });
     await K.belir(c, K.yazi(c, g, 730, 350, 'Yorum: görülenden çıkarılan', { size: 28, renk: HAYVAN }), 350);
     await c.say('Görülenden çıkarılan açıklamaya yorum denir.', { speak: 'Görülenden çıkarılan açıklamaya [short pause] yorum denir.' });
@@ -156,7 +156,7 @@
       options: ['Tavşan ve menekşe üremez.', 'Üreme bu üç günde gözlemlenemedi.', 'Elif üreme satırına bakmayı unuttu.'], answer: 1,
       hints: ['Görmemek, özelliğin olmadığını göstermez.', '', 'Elif her gün baktı; eksi, baktığı hâlde göremediğini gösterir.'],
       right: 'Eksi, özelliğin olmadığını değil, bu sürede görülmediğini gösterir.' });
-    await c.say('Eksi “yok” demek değildir: özellik bu sürede görülmemiştir.');
+    await c.say('Eksi “yok” demek değildir: özellik bu sürede görülmemiştir.', { speak: 'Eksi, yok demek değildir: özellik bu sürede görülmemiştir.' });
     await c.say('Elif iki canlının da ürediğini güvenilir bir kaynaktan doğruluyor.');
     await c.say('Tablodaki öteki eksiler de böyle okunur: görülmedi, ama yok sayılmaz.');
     await c.say('Gözlem düzenli yapılır, hemen yazılır; görülmeyen de kaydedilir.',

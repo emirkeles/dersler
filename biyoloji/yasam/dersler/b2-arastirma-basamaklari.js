@@ -50,14 +50,14 @@
   async function ilkUc(c) {
     const s = c.svg(1000, 562), g = c.S('g', {}, s);
     await K.belir(c, kanat(c, g, 500, 300, true, 0.9));
-    await c.say('Önceki derste güvenin göz desenlerinden bir hipoteze ulaştık.');
+    await c.say('Önceki derste güvenin göz desenlerinden bir hipoteze ulaştık.', { speak: 'Önceki derste güve’nin göz desenlerinden bir hipoteze ulaştık.' });
     const ser = serit(c, s);
     await K.belir(c, ser.g, 350);
     await c.say('Araştırmalarda sık izlenen yol yedi basamaktan oluşur.');
     ser.ac(0);
     const alt = K.yazi(c, g, 500, 485, 'Kanatlarda göz desenleri fark edilir', { size: 28, renk });
     await K.belir(c, alt, 300);
-    await c.say('İlk basamak gözlemdir: güvenin kanatlarındaki göz desenleri fark edilir.');
+    await c.say('İlk basamak gözlemdir: güvenin kanatlarındaki göz desenleri fark edilir.', { speak: 'İlk basamak gözlemdir: güve’nin kanatlarındaki göz desenleri fark edilir.' });
     ser.ac(1);
     alt.textContent = '“Kanatlarda neden göz deseni var?”';
     await c.say('İkinci basamakta problem belirlenir: bu desenler neden var?');
@@ -98,7 +98,7 @@
       { speak: 'Hipotez sınanmadan önce ondan akıl yürütmeyle çıkarılan sonuca [short pause] tahmin denir.' });
     tanim.remove();
     await K.belir(c, K.kart(c, g, 150, 305, 700, 175, 'Tahmin', ['Kanatta göz deseni varsa', 'avcı kuşlar güveyi yemekten kaçınır.'], { renk }));
-    await c.say('Tahminimiz: güvenin kanadında göz deseni varsa avcı kuşlar onu yemekten kaçınır.');
+    await c.say('Tahminimiz: güvenin kanadında göz deseni varsa avcı kuşlar onu yemekten kaçınır.', { speak: 'Tahminimiz: güve’nin kanadında göz deseni varsa avcı kuşlar onu yemekten kaçınır.' });
     await c.say('Tahmin, sınamada neye bakılacağını önceden belirler; araştırmayı kolaylaştırır.');
     await sil(c, g);
     const l = c.S('g', {}, s);

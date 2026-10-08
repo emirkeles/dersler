@@ -1,0 +1,2 @@
+/* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
+Ders.ses['yasam-f12'] = { base: 'ses/yasam-f12/', clips: { '00aa768a': '00aa768a.mp3', '021cd098': '021cd098.mp3', '21b9d592': '21b9d592.mp3', '2318a16e': '2318a16e.mp3', '2b9a27e1': '2b9a27e1.mp3', '2c914580': '2c914580.mp3', '4033ba18': '4033ba18.mp3', '6976c579': '6976c579.mp3', '6df84888': '6df84888.mp3', '968e1817': '968e1817.mp3', 'cb1294ee': 'cb1294ee.mp3', 'ccb95af4': 'ccb95af4.mp3', 'ec98b5b4': 'ec98b5b4.mp3' } };

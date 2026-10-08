@@ -27,7 +27,7 @@
     await c.say('Kanatlarında baykuş yüzüne benzeyen göz desenleri var.');
     await K.belir(c, K.yazi(c, g, 500, 70, 'Gözlem: dikkatli bilgi toplama', { size: 30 }), 350);
     await c.say('Duyularla ya da araçlarla dikkatli bilgi toplamaya gözlem denir.');
-    await c.say('Gözlem çoğu zaman bir soru doğurur: neden, nasıl?');
+    await c.say('Gözlem çoğu zaman bir soru doğurur: neden, nasıl?', { speak: '[curious] Gözlem çoğu zaman bir soru doğurur: neden, nasıl?' });
     await sil(c, g);
     const zincir = c.S('g', {}, s);
     K.kart(c, zincir, 70, 170, 350, 170, 'Gözlem', ['Kanatta göz desenleri'], { renk });
@@ -53,7 +53,7 @@
     await c.say('“En güzel güve hangisi?” sorusunun cevabı kişiden kişiye değişir.');
     const b = K.kart(c, g, 530, 150, 400, 190, 'Araştırılabilir', ['“Göz desenleri', 'avlanmayı etkiler mi?”'], { renk });
     await K.belir(c, b);
-    await c.say('“Göz desenleri güvenin avlanmasını etkiler mi?” sorusu ise sınanabilir.');
+    await c.say('“Göz desenleri güvenin avlanmasını etkiler mi?” sorusu ise sınanabilir.', { speak: 'Göz desenleri güve’nin avlanmasını etkiler mi sorusu ise sınanabilir.' });
     const cift = c.S('g', {}, g);
     kanat(c, cift, 640, 440, true, 0.42); kanat(c, cift, 820, 440, false, 0.42);
     await K.belir(c, cift, 350);

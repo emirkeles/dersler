@@ -135,7 +135,7 @@
       options: ['Tahıl yediği için bütün mineralleri alır.', 'Mineraller vücutta üretildiği için sorun olmaz.', 'Süt, et, meyve ve sebzedeki mineraller eksik kalır.'], answer: 2,
       hints: ['Tahıllar bazı mineralleri sağlar; kalsiyum ve potasyum başka besinlerdedir.', 'Vücut mineralleri üretemez; hepsi besinlerle alınır.', ''],
       right: 'Tek tür besin, öteki besinlerdeki mineralleri sağlayamaz.' });
-    await c.say('Tek tür besinle beslenen kişide bazı mineraller eksik kalır.');
+    await c.say('Tek tür besinle beslenen kişide bazı mineraller eksik kalır.', { speak: '[thoughtful] Tek tür besinle beslenen kişide bazı mineraller eksik kalır.' });
     await c.choice({ tag: 'Uygula', q: 'Kahvaltıda yalnızca çay içip ekmek yiyorsun. Kalsiyum için tabağa ne eklersin?',
       options: ['Peynir ya da yoğurt', 'Bir bardak çay daha', 'Bir dilim ekmek daha'], answer: 0,
       hints: ['', 'Çay flor sağlar; kalsiyum süt ürünlerindedir.', 'Ekmek bir tahıl ürünüdür; kalsiyum süt ürünlerindedir.'],

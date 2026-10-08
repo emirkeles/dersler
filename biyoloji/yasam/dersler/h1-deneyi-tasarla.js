@@ -72,7 +72,7 @@
     const sag = c.S('g', {}, g);
     kase(c, sag, 730, 270); yazi(c, sag, 730, 420, 'Soğuk ortam', 28, SOGUK);
     await K.belir(c, sag);
-    await c.say('Soğuk bir yerde bekleyen hamur ise kabarmaz.');
+    await c.say('Soğuk bir yerde bekleyen hamur ise kabarmaz.', { speak: '[curious] Soğuk bir yerde bekleyen hamur ise kabarmaz.' });
     const ust = yazi(c, g, 500, 70, 'Hamuru kabartan: mayadaki enzimler', 30);
     await K.belir(c, ust, 350);
     await c.say('Hamuru kabartan, mayanın enzimlerle yürüttüğü tepkimelerdir.');
@@ -138,7 +138,7 @@
     await kabarciklar(c, d, 2400);
     await c.say('Oksijen, silindirin içinde kabarcıklar hâlinde yükselir.');
     await K.belir(c, yazi(c, dg, 620, 520, 'Süre: 5 dakika', 28, R), 350);
-    await c.say('Beş dakika boyunca çıkan kabarcıklar sayılır.', { speak: '[thoughtful] Beş dakika boyunca çıkan kabarcıklar sayılır.' });
+    await c.say('Beş dakika boyunca çıkan kabarcıklar sayılır.');
     await c.choice({ tag: 'Uygula', q: 'İki tüpten birinde aynı sürede daha çok kabarcık sayıldı. Bu ne anlama gelir?',
       options: ['O tüpte katalaz daha yavaş çalışmıştır.', 'İki tüpte katalaz aynı hızda çalışmıştır.', 'O tüpte katalaz daha hızlı çalışmıştır.'], answer: 2,
       hints: ['Kabarcık tepkimenin ürünüdür; yavaş tepkime az ürün verir.', 'Hız aynı olsaydı aynı sürede aynı sayıda kabarcık çıkardı.', ''],
@@ -172,7 +172,7 @@
     await K.belir(c, kontrol.r, 350);
     await c.say('Öteki koşullar iki tüpte aynı tutulur; bunlar kontrol değişkenleridir.');
     await c.say('Maya ve hidrojen peroksit miktarı, pH ve süre iki tüpte eşittir.', { speak: 'Maya ve hidrojen peroksit miktarı, pehaş ve süre iki tüpte eşittir.' });
-    await c.say('Böylece kabarcık sayısındaki fark yalnızca sıcaklığa bağlanabilir.');
+    await c.say('Böylece kabarcık sayısındaki fark yalnızca sıcaklığa bağlanabilir.', { speak: '[thoughtful] Böylece kabarcık sayısındaki fark yalnızca sıcaklığa bağlanabilir.' });
     hip.textContent = 'Katalaz · amilaz · lipaz';
     await K.belir(c, hip, 350);
     await c.say('Aynı tasarım amilaz ya da lipaz gibi başka enzimlerle de kurulur.');
@@ -211,7 +211,7 @@
     const kacak = c.S('g', {}, dg);
     K.ok(c, kacak, 128, 150, 70, 105, 'var(--warn)'); yazi(c, kacak, 150, 85, 'Oksijen kaçar', 26, 'var(--warn)');
     await K.belir(c, kacak, 350);
-    await c.say('Bu yüzden tıpa her tüpte sıkıca kapatılır.');
+    await c.say('Bu yüzden tıpa her tüpte sıkıca kapatılır.', { speak: '[thoughtful] Bu yüzden tıpa her tüpte sıkıca kapatılır.' });
     await sil(c, dg);
     const liste = c.S('g', {}, s);
     yazi(c, liste, 500, 80, 'Hatayı azaltan önlemler', 30, R);
@@ -237,7 +237,7 @@
     yazi(c, sonuc, 500, 510, 'Beş dakikada sayılan kabarcık', 26, 'var(--muted)');
     await K.belir(c, sonuc);
     await c.say('Hipotez doğruysa soğuk sudaki tüpte daha az kabarcık sayılır.');
-    await c.say('Düşük sıcaklık gerçekten enzimi yavaşlatır; hamur da bu yüzden kabarmaz.', { speak: '[curious] Düşük sıcaklık gerçekten enzimi yavaşlatır; hamur da bu yüzden kabarmaz.' });
+    await c.say('Düşük sıcaklık gerçekten enzimi yavaşlatır; hamur da bu yüzden kabarmaz.');
   }
 
   Ders.start({

@@ -86,7 +86,7 @@
     await K.belir(c, g);
     await c.say('Ekip dört besini test etti ve gördüğü renkleri tabloya yazdı.');
     await doldur(0);
-    await c.say('Mısır Lugol ile mavi-mor oldu: mısırda nişasta var.');
+    await c.say('Mısır Lugol ile mavi-mor oldu: mısırda nişasta var.', { speak: 'Mısır Lugol ile mavi mor oldu: mısırda nişasta var.' });
     await doldur(2);
     await c.say('Zeytinyağı Sudan ile kırmızı oldu: zeytinyağında yağ var.');
     sonuc[1].textContent = '?';
@@ -119,7 +119,7 @@
     K.yazi(c, kart, 560, 205, 'Beklenen: mor renk', { size: 26, hiza: 'start' });
     K.yazi(c, kart, 560, 260, 'Görülen: renk oluşmadı', { size: 26, hiza: 'start', renk: IKINCI });
     await K.belir(c, kart);
-    await c.say('Oysa yumurtada protein bulunur; planda mor renk bekleniyordu.');
+    await c.say('Oysa yumurtada protein bulunur; planda mor renk bekleniyordu.', { speak: '[curious] Oysa yumurtada protein bulunur; planda mor renk bekleniyordu.' });
     await c.say('Renk oluşmamasının iki nedeni olabilir.');
     const neden = c.S('g', {}, g);
     K.yazi(c, neden, 745, 365, 'Molekül yok mu?', { size: 28 });

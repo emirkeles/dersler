@@ -258,7 +258,7 @@
     await K.belir(c, cr);
     await c.tween(800, (e) => { [10, 11, 12, 13].forEach((i) => { serit.children[i].setAttribute('fill', e > 0.5 ? '#ffffff' : BAZ[SIRA[i]]); }); cerceve.setAttribute('stroke', e > 0.5 ? IKINCI : '#fff'); });
     await c.say('CRISPR-Cas, DNA’nın istenen bir gen bölgesinde kontrollü düzenleme yapmayı sağlar.',
-      { speak: 'Krispır kas, de ne a’nın istenen bir gen bölgesinde kontrollü düzenleme yapmayı sağlar.' });
+      { speak: 'Krispır Kas, de ne a’nın istenen bir gen bölgesinde kontrollü düzenleme yapmayı sağlar.' });
     await K.belir(c, K.yazi(c, cr, 500, 440, 'Sağlık: genetik hastalıkların düzeltilmesi', { size: 28 }), 350);
     await c.say('Sağlık alanında gen tedavisinin ve genetik hastalıkların düzeltilmesinin yolunu açtı.');
     await K.belir(c, K.yazi(c, cr, 500, 495, 'Gıda: bitki ve hayvanlarda iyileştirme', { size: 28 }), 350);

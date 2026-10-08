@@ -52,7 +52,7 @@
     await ayrac(c, misir, 'Lugol');
     await c.say('Lugol, nişastayı arayan bir iyot çözeltisidir.');
     await damlat(c, misir, MAVIMOR, 'mavi-mor');
-    await c.say('Ezilmiş mısıra Lugol damlatılınca karışım mavi-mor oldu: nişasta bulundu.');
+    await c.say('Ezilmiş mısıra Lugol damlatılınca karışım mavi-mor oldu: nişasta bulundu.', { speak: 'Ezilmiş mısıra Lugol damlatılınca karışım mavi mor oldu: nişasta bulundu.' });
     const su = tup(c, d, 700, 165, 'Su');
     await K.belir(c, su.g);
     await ayrac(c, su, 'Lugol');
@@ -71,7 +71,7 @@
     const s = c.svg(1000, 562), g = c.S('g', {}, s);
     const bal = tup(c, g, 200, 165, 'Bal');
     await K.belir(c, bal.g);
-    await c.say('Karbohidratların hepsi nişasta değildir.');
+    await c.say('Karbohidratların hepsi nişasta değildir.', { speak: '[thoughtful] Karbohidratların hepsi nişasta değildir.' });
     await K.belir(c, K.yazi(c, g, 700, 62, 'Fruktoz, glikoz: tek birimli şeker', { size: 28 }), 350);
     await c.say('Bal fruktoz içerir; fruktoz, glikoz gibi tek birimli bir şekerdir.');
     await K.belir(c, K.kart(c, g, 470, 100, 460, 150, 'Nişasta', ['Lugol → mavi-mor'], { renk: 'var(--muted)' }));

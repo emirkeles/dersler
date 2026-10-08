@@ -113,7 +113,7 @@ Karakter sayıları 7 Ekim 2026 dökümünden; metin denetiminde rakamlar kelime
 | Fizik | Akışkanlar | hikâye A1 | — | 14 | 767 | üretildi (14 klip, 58,9 sn; `fizik/akiskanlar/hikaye/a1-canta-askisi/assets/ses/`); üç yönerge; kullanıcı henüz dinlemedi |
 | Fizik | Kuvvet ve Hareket | A–F | 24 | 1.472 | 89.388 | seslendirildi (1.472 klip, 115,7 dk, 57 MB); okunacak metni altı Sonnet 5.5 alt ajanı hazırladı, 144 yönerge; pilot kullanıcı kararıyla atlandı; kısa yönde süre aykırısı yok, 14 klip uzun yönde aykırı (liste `plan/fizik/kuvvet-ve-hareket/DURUM.md`); kullanıcı henüz dinlemedi |
 | Kimya | Etkileşim | A–H | 18 | 1.126 | 73.019 | seslendirildi (1.126 klip, 93,1 dk, 43,2 MB); anlatım 7 Ekim 2026'da yeniden yazıldıktan sonra yeni metinle üretildi, 111 yönerge; kısa yönde süre aykırısı yok, 14 klip uzun yönde aykırı (sayma ve dizilim cümleleri); kullanıcı henüz dinlemedi |
-| Biyoloji | Yaşam | A–H | 37 | 945 | 59.180 | bekliyor. 8 Ekim 2026 dökümü (21 dersin anlatımı yeniden yazıldıktan sonra); eski metnin `speak` ve yönergeleri yeniden denetlenecek. A1 pilotu (24 klip) eski metne ait, yeni derste çalmıyor; kullanıcı dinlemedi |
+| Biyoloji | Yaşam | A–H | 37 | 940 | 59.071 | seslendirildi (940 klip, 72,5 dk, 33,7 MB; 8 Ekim 2026); okunacak metni beş Sonnet 5.5 alt ajanı hazırladı, üretimi üç Haiku 5.5 alt ajanı yaptı; 115 yönerge; A1 pilotunu kullanıcı dinleyip onayladı; kısa yönde süre aykırısı yok, 12 klip uzun yönde aykırı (liste `plan/biyoloji/yasam/DURUM.md`); 16 ders eski anlatımla seslendirildi; kullanıcı öteki dersleri henüz dinlemedi |
 
 Yazılmamış temalar işleme alındıkça bu tabloya eklenir.
 

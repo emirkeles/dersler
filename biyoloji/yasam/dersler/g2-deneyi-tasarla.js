@@ -48,7 +48,7 @@
     });
     const yaz = (i, besin) => K.belir(c, K.yazi(c, g, 190 + i * 310, 230 + dolu[i]++ * 60, besin, { size: 28 }), 350);
     await K.belir(c, tablo);
-    await c.say('Tasarım tahminle başlar: hangi besinde hangi molekül var?');
+    await c.say('Tasarım tahminle başlar: hangi besinde hangi molekül var?', { speak: '[curious] Tasarım tahminle başlar: hangi besinde hangi molekül var?' });
     await yaz(0, 'Mısır');
     await c.say('Mısır tanesi nişasta depolar; karbohidrat sütununa yazılır.');
     await Promise.all([yaz(2, 'Zeytinyağı'), yaz(1, 'Yumurta')]);
@@ -89,7 +89,7 @@
     await c.say('Her tahmin, planda bir satıra dönüşür.');
     await c.say('Satırda dört şey yazar: besin, aranan molekül, ayraç, beklenen renk.');
     await K.belir(c, satir(0, ['Mısır', 'Nişasta', 'Lugol', 'mavi-mor']));
-    await c.say('Mısırda nişasta aranacak: ayraç Lugol, beklenen renk mavi-mor.');
+    await c.say('Mısırda nişasta aranacak: ayraç Lugol, beklenen renk mavi-mor.', { speak: 'Mısırda nişasta aranacak: ayraç Lugol, beklenen renk mavi mor.' });
     await c.say('Ayracı besinin adı değil, aranan molekül belirler.');
     await c.say('Beklenen rengi yazarsan tüpte neye bakacağını bilirsin.');
     const yumurta = satir(1, ['Yumurta', 'Protein', '?', '?']);
@@ -132,7 +132,7 @@
       hints: ['Suda nişasta yok; kontrol tüpünde Lugolün bulacağı bir şey yok.', '', 'Nişasta mısır tüpünde; renk orada beklenir.'],
       right: 'Renk yalnızca nişastanın bulunduğu tüpte oluşur.' });
     await Promise.all([damlat(c, misir, MAVIMOR, 'mavi-mor'), damlat(c, su, null, 'renk oluşmadı')]);
-    await c.say('Mısır tüpü mavi-mor oldu; kontrol tüpünde renk oluşmadı.');
+    await c.say('Mısır tüpü mavi-mor oldu; kontrol tüpünde renk oluşmadı.', { speak: 'Mısır tüpü mavi mor oldu; kontrol tüpünde renk oluşmadı.' });
     await c.say('Fark besinden geliyor: mısırda nişasta var.');
     c.note('<b>Kontrol tüpü: besin yok, yalnızca su ve aynı ayraç.</b><br>Tek fark besin olmalı.', 'Kontrol tüpü');
   }
@@ -159,7 +159,7 @@
       c.tween(750, (e) => iki.sivi.setAttribute('fill', karis(BOS, MOR, e))),
     ]);
     await Promise.all([sonucYaz(c, bir, MAVIMOR, 'mavi-mor'), sonucYaz(c, iki, MOR, 'açık mavi ya da mor')]);
-    await c.say('Tahminler doğruysa birinci tüp mavi-mor, ikinci tüp mor olur.');
+    await c.say('Tahminler doğruysa birinci tüp mavi-mor, ikinci tüp mor olur.', { speak: 'Tahminler doğruysa birinci tüp mavi mor, ikinci tüp mor olur.' });
     await sil(c, g);
     const ozet = c.S('g', {}, s);
     ['Tahmin', 'Plan satırı', 'Kontrol tüpü', 'Ayrı tüpler'].forEach((ad, i) => {

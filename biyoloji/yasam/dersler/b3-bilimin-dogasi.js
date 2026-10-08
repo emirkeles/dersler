@@ -154,7 +154,7 @@
     await K.belir(c, dallar);
     await c.say('Fizikte deney ve matematiksel model, sosyal bilimlerde gözlem ve anket öne çıkar.');
     await K.belir(c, K.yazi(c, g, 500, 400, '“Her araştırma aynı sırayla ilerler”: yanılgı', { size: 28 }), 300);
-    await c.say('Basamakların her araştırmada aynı sırayla ilerlemesi gerektiği düşüncesi bir yanılgıdır.');
+    await c.say('Basamakların her araştırmada aynı sırayla ilerlemesi gerektiği düşüncesi bir yanılgıdır.', { speak: '[thoughtful] Basamakların her araştırmada aynı sırayla ilerlemesi gerektiği düşüncesi bir yanılgıdır.' });
     await c.choice({ tag: 'Uygula', q: 'Bir araştırmacı deney yapmıyor; yıllarca gözlem yaparak sonuca ulaşıyor. Bu çalışma bilimsel sayılır mı?',
       options: ['Sayılmaz; her araştırmada deney zorunludur.', 'Sayılmaz; gözlem bilimsel değildir.', 'Sayılır; bilimde tek bir yöntem yoktur.'], answer: 2,
       hints: ['Basamakların her araştırmada aynı biçimde izlenmesi gerekmez.', 'Gözlem, bilimsel bilginin dayanaklarından biridir.', ''],

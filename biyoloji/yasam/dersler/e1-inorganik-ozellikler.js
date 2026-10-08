@@ -44,7 +44,7 @@
  async function gorev(c){const s=c.svg(1000,562),satir=tablo(c,s);
   await c.say('Mineralleri hiçbir canlı kendi bünyesinde üretemez; hepsi dışarıdan alınır.');
   await c.say('Canlı, ihtiyacı olan suyu da dışarıdan alır.');
-  await c.say('Bazı tepkimelerde su açığa çıkar, ama bu ihtiyacı karşılamaz.');
+  await c.say('Bazı tepkimelerde su açığa çıkar, ama bu ihtiyacı karşılamaz.',{speak:'[thoughtful] Bazı tepkimelerde su açığa çıkar, ama bu ihtiyacı karşılamaz.'});
   await satir(0,'Dışarıdan alınır mı?','Evet','Evet');
   await c.say('Su, hücrenin büyük bölümünü oluşturur.');
   await c.say('Kalsiyum ve fosfor mineralleri kemiklerin ve dişlerin yapısına katılır.');

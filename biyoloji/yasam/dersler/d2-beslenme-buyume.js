@@ -87,7 +87,7 @@
       right: 'Kütle artışı büyüme, yeni bir görevi yapabilmek gelişmedir.' });
     bebek.remove();
     K.yazi(c, s, 270, 320, 'Kilo alma', { size: 28, renk: R }); K.yazi(c, s, 730, 320, 'Emekleme', { size: 28, renk: IKINCI });
-    await c.say('Kilo almak kütle artışıdır; emeklemek yeni bir görevi yapabilmektir.');
+    await c.say('Kilo almak kütle artışıdır; emeklemek yeni bir görevi yapabilmektir.', { speak: '[thoughtful] Kilo almak kütle artışıdır; emeklemek yeni bir görevi yapabilmektir.' });
     await K.belir(c, K.yazi(c, s, 500, 420, 'Hayvan: büyüme sınırlı · Bitki: yaşam boyu', { size: 28 }), 350);
     await c.say('Hayvanlarda büyüme sınırlıdır; bitkiler yaşamları boyunca büyür.');
     await c.say('Beslenme, boşaltım, büyüme ve gelişme bütün canlılarda ortaktır; yolları farklıdır.',
