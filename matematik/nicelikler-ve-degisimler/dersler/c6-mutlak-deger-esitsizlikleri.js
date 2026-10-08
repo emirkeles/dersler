@@ -66,7 +66,7 @@
       await belir(c, [d1, d2], 350); s.el.style.opacity = 0.9;
       await c.tween(800, (e) => s.ayarla(lerp(4, 2, e), lerp(4, 6, e)), ease.inOut);
     })());
-    await par(soyle(c, 'Uçlarda sapma tam 2: çözüme girmezler, noktalar boş.'), (async () => {
+    await par(soyle(c, 'Uçlarda sapma tam 2: çözüme girmezler, noktalar boş.', { ton: 'thoughtful' }), (async () => {
       await par(pop(c, k1, dz.X(2), dz.Y(2), 320), pop(c, k2, dz.X(6), dz.Y(2), 320));
       await par(pop(c, u1, dz.X(2), dz.Y(0), 320), pop(c, u2, dz.X(6), dz.Y(0), 320));
       await belir(c, cozum, 400);
@@ -134,7 +134,7 @@
 
     await par(soyle(c, 'Mutlak değeri 2’den küçük olan sayılar −2 ile 2 arasındadır.'), (async () => { await belir(c, aBas, 400); await c.wait(500); await belir(c, a1, 450); })());
     await par(soyle(c, 'Her yana 4 ekle; x yalnız kalır.'), belir(c, a2, 450));
-    await par(soyle(c, 'x hem 2’den büyük hem 6’dan küçük: bu bir <b>ve</b>.'), (async () => {
+    await par(soyle(c, 'x hem 2’den büyük hem 6’dan küçük: bu bir <b>ve</b>.', { speak: 'x hem ikiden büyük hem altıdan küçük: bu bir “ve” durumu.', dur: true }), (async () => {
       await belir(c, [sdA.g, ...aAd], 350);
       await belir(c, aI1, 400); await belir(c, aI2, 400);
       await belir(c, [aBant, ...aUc], 450); await belir(c, [aI1, aI2], 300, 0.25);
@@ -158,9 +158,9 @@
       hints: ['Bir sayı hem −4’ten küçük hem 4’ten büyük olamaz.', '', 'Bu, mutlak değerin 4’ten küçük olduğu durumdur.'],
       right: 'İçteki sayı ya 4’ün üstünde ya −4’ün altındadır.',
     });
-    await par(soyle(c, '4’ten büyük ya da −4’ten küçük: iki ayrı eşitsizlik.'), belir(c, b1, 450));
+    await par(soyle(c, '4’ten büyük ya da −4’ten küçük: iki ayrı eşitsizlik.', { speak: 'Dörtten büyük ya da eksi dörtten küçük: iki ayrı eşitsizlik.' }), belir(c, b1, 450));
     await par(soyle(c, 'İkisini ayrı ayrı çöz.'), belir(c, b2, 450));
-    await par(soyle(c, 'Birini sağlamak yeter: bu bir <b>veya</b>, çözüm iki parça.'), (async () => {
+    await par(soyle(c, 'Birini sağlamak yeter: bu bir <b>veya</b>, çözüm iki parça.', { speak: 'Birini sağlamak yeter: bu bir “veya” durumu, çözüm iki parça.' }), (async () => {
       await belir(c, [sdB.g, ...bAd], 350); await belir(c, [bI[0], bUc[0]], 400); await belir(c, [bI[1], bUc[1]], 400);
     })());
     await c.wait(500);
@@ -175,7 +175,7 @@
     yazi(gF, 70, 442, [['veya', RENK.sifir], ': iki aralık'], { size: 26, hiza: 'start', renk: RENK.soluk });
     const fB = sayiDogrusu(gF, Object.assign({ y: 390 }, SF)); fB.isin(1, -1); fB.isin(5, 1); fB.uc(1); fB.uc(5); fB.ad(1); fB.ad(5);
     gizle(gF);
-    await par(soyle(c, 'Küçüktür bir <b>ve</b>, büyüktür bir <b>veya</b>dır.'), belir(c, gF, 500));
+    await par(soyle(c, 'Küçüktür bir <b>ve</b>, büyüktür bir <b>veya</b>dır.', { speak: '“Küçüktür” bir “ve” durumudur, “büyüktür” bir “veya” durumudur.' }), belir(c, gF, 500));
     c.note('Küçüktür <b>ve</b>: −k &lt; f(x) &lt; k<br>Büyüktür <b>veya</b>: iki ayrı eşitsizlik', 'Cebirle', 'c6-cebir');
   }
 
@@ -214,7 +214,7 @@
       right: 'Mutlak değer negatif olmaz; 0’dan küçük değeri yoktur.',
     });
     yaz(cozum, '∅');
-    await par(soyle(c, 'V eksenin altına hiç inmez: çözüm kümesi boş.'), (async () => { await belir(c, altBolge.el, 500); await c.wait(900); await kaybol(c, altBolge.el, 500); })());
+    await par(soyle(c, 'V eksenin altına hiç inmez: çözüm kümesi boş.', { speak: 'V grafiği eksenin altına hiç inmez: çözüm kümesi boş.' }), (async () => { await belir(c, altBolge.el, 500); await c.wait(900); await kaybol(c, altBolge.el, 500); })());
     await par(soyle(c, 'Şimdi işareti çevir: mutlak değer 0’dan büyük olsun.'), belir(c, esit2, 400));
     await c.choice({
       tag: 'Tahmin et', q: '|x − 4| &gt; 0 eşitsizliğinin çözümü hangisidir?',
@@ -222,12 +222,12 @@
       hints: ['x = 4 için mutlak değer 0 olur; 0 &gt; 0 yanlıştır.', 'Sol kol da eksenin üstünde: x = 3 için mutlak değer 1.', ''],
       right: 'Mutlak değer yalnızca x = 4’te sıfırdır; öteki her yerde pozitiftir.',
     });
-    await par(soyle(c, 'V, ucu dışında her yerde eksenin üstünde.'), (async () => {
+    await par(soyle(c, 'V, ucu dışında her yerde eksenin üstünde.', { speak: 'V grafiği, ucu dışında her yerde eksenin üstünde.' }), (async () => {
       await ciz(c, vKalin, 900); s.ayarla(4, 4); s.el.style.opacity = 0.9;
       await c.tween(900, (e) => s.ayarla(lerp(4, -1, e), lerp(4, 9, e)), ease.inOut);
     })());
     u1.git(4, 0);
-    await par(soyle(c, 'Yalnızca 4 çözümde değil: orada mutlak değer 0.'), (async () => { await pop(c, u1, dz.X(4), dz.Y(0), 350); await belir(c, cozum2, 400); })());
+    await par(soyle(c, 'Yalnızca 4 çözümde değil: orada mutlak değer 0.', { speak: 'Yalnızca dört sayısı çözümde değil: orada mutlak değer sıfır.', ton: 'thoughtful' }), (async () => { await pop(c, u1, dz.X(4), dz.Y(0), 350); await belir(c, cozum2, 400); })());
     c.note('|f(x)| &lt; 0: ∅<br>|f(x)| &gt; 0: f’nin sıfırı dışında her sayı', 'k = 0 olunca', 'c6-k-sifir');
   }
 

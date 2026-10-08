@@ -41,7 +41,7 @@
       hints: ['', 'Hava ısınınca saat hızlanmaz; saat kendi başına ilerler.'],
       right: 'Saat kendi başına ilerler; sıcaklık ona göre değişir.',
     });
-    await par(soyle(c, 'Kendi başına değişen nicelik: <b>bağımsız değişken</b>.'), belir(c, bagimsiz, 500));
+    await par(soyle(c, 'Kendi başına değişen nicelik: <b>bağımsız değişken</b>.', { dur: true }), belir(c, bagimsiz, 500));
     await par(soyle(c, 'Ona bağlı değişen nicelik: <b>bağımlı değişken</b>.'), (async () => { await belir(c, ok, 400); await belir(c, bagimli, 500); })());
     await belir(c, [saatAd, termAd], 300, 0.6);
     c.note('<b>Bağımsız değişken</b> kendi değişir, <b>bağımlı değişken</b> ona göre.<br>saat → sıcaklık', 'İki değişken', 'a1-degisken');
@@ -79,7 +79,7 @@
       right: 'Her dakika 1 litre: 5 dakikada 5 litre.',
     });
     await dakika(4); await dakika(5);
-    await soyle(c, 'Her dakikada aynı artış: buna <b>doğrusal değişim</b> denir.');
+    await soyle(c, 'Her dakikada aynı artış: buna <b>doğrusal değişim</b> denir.', { dur: true });
     c.note('<b>Doğrusal değişim:</b> eşit adımda eşit artış.<br>Her dakika +1 litre', 'Doğrusal değişim', 'a1-dogrusal');
   }
 
@@ -107,7 +107,7 @@
     await par(soyle(c, 'Girdi her gerçek sayı olabilir: doğru iki yana uzar.'),
       c.tween(1100, (e) => d.ayarla(1, 0, lerp(0, -5, e), lerp(3, 5, e)), ease.inOut));
     await par(soyle(c, 'Kuralı kısa: çıktı girdiye eşit.'), belir(c, kuralT, 500));
-    await soyle(c, 'Bu fonksiyonun adı: <b>doğrusal referans fonksiyon</b>.');
+    await soyle(c, 'Bu fonksiyonun adı: <b>doğrusal referans fonksiyon</b>.', { dur: true });
     await soyle(c, 'Tablo, grafik ve kural aynı fonksiyonu gösterir.');
     c.note('<b>Doğrusal referans fonksiyon:</b> f(x) = x<br>f(3) = 3', 'f(x) = x', 'a1-referans');
   }

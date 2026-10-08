@@ -52,7 +52,7 @@
     await kaybol(c, tb.g, 300);
     await par(soyle(c, 'Doğrusal fonksiyonların genel biçimi böyle yazılır.'), belir(c, genel, 450));
     await soyle(c, 'Burada a = 20, b = 30.');
-    await soyle(c, 'Peki her doğrusal fonksiyon artan mı?');
+    await soyle(c, 'Peki her doğrusal fonksiyon artan mı?', { ton: 'curious' });
   }
 
   /* ---- 2. Örüntü ara ---- */
@@ -136,7 +136,7 @@
     c.slider({ label: 'a', min: -3, max: 3, step: 0.5, value: A, fmt: (v) => sayi(v), onInput: (v) => { A = v; koy(A, B); } });
     c.slider({ label: 'b', min: -4, max: 4, step: 1, value: B, fmt: (v) => sayi(v), tag: false, onInput: (v) => { B = v; koy(A, B); } });
     await c.cont('Devam ›');
-    await soyle(c, 'b yalnızca yeri değiştirdi; artan mı azalan mı, a belirledi.');
+    await soyle(c, 'b yalnızca yeri değiştirdi; artan mı azalan mı, a belirledi.', { ton: 'thoughtful' });
   }
 
   /* ---- 4. Önerme ---- */
@@ -154,7 +154,7 @@
 
     await soyle(c, 'Varsayım her denemede tuttu; şimdi önerme olarak yazalım.');
     await par(soyle(c, 'a pozitifken doğru hep yükseldi.'), demetAc(ust));
-    await par(soyle(c, 'Niceleyiciyle yaz: her pozitif a için.'), (async () => { await belir(c, a1, 400); await belir(c, a2, 400); })());
+    await par(soyle(c, 'Niceleyiciyle yaz: her pozitif a için.', { dur: true }), (async () => { await belir(c, a1, 400); await belir(c, a2, 400); })());
     await par(soyle(c, 'a negatifken doğru hep alçaldı.'), demetAc(alt));
     await par(soyle(c, 'Negatif a için önerme “azalandır” diye biter.'), (async () => { await belir(c, b1, 400); await belir(c, b2, 400); })());
     await par(soyle(c, 'Taksiye dön: kilometre ücreti 20, yani a pozitif.'), belir(c, taksiT, 450));

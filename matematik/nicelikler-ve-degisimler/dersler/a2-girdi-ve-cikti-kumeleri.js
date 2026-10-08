@@ -29,14 +29,14 @@
       hints: ['Tuş takımında 0 yok; yalnızca 1’den 9’a kadar girilir.', ''],
       right: 'Girebildiklerin belli: 1, 2, …, 9.',
     });
-    await par(soyle(c, 'Girebildiğin sayıların kümesi: <b>tanım kümesi</b>.'), belir(c, [kume, kumeAd], 500));
+    await par(soyle(c, 'Girebildiğin sayıların kümesi: <b>tanım kümesi</b>.', { dur: true }), belir(c, [kume, kumeAd], 500));
     await kaybol(c, [tus, kume, kumeAd], 400);
 
     const dz = duzlem(svg, D); dz.g.style.opacity = 0;
     dogru(dz, 1, 0);
     const sx = serit(dz, 'x', -5, 5); gizle(sx.el);
     const t = kumeYazisi(svg, 210, 'tanım kümesi', RENK.sifir); yaz(t.deger, 'ℝ'); gizle(t.ad, t.deger);
-    await par(soyle(c, 'f(x) = x’e her gerçek sayı girebilir.'), belir(c, dz.g, 500));
+    await par(soyle(c, 'f(x) = x’e her gerçek sayı girebilir.', { speak: 'f x eşittir x fonksiyonuna her gerçek sayı girebilir.' }), belir(c, dz.g, 500));
     await par(soyle(c, 'Tanım kümesi x ekseninin tamamıdır.'), ciz(c, sx, 1000), belir(c, [t.ad, t.deger], 500));
     c.note('<b>Tanım kümesi:</b> girebilen x’lerin kümesi.<br>f(x) = x için ℝ', 'Tanım kümesi', 'a2-tanim');
   }
@@ -64,7 +64,7 @@
       await c.tween(2000, (e) => { const x = lerp(-5, 5, e); yuru(x); sy.ayarla(-5, x); }, ease.inOut);
       await kaybol(c, [izler.g, p.el], 300);
     })());
-    await par(soyle(c, 'Çıkabilen değerlerin kümesi: <b>görüntü kümesi</b>.'), belir(c, [g.ad, g.deger], 500));
+    await par(soyle(c, 'Çıkabilen değerlerin kümesi: <b>görüntü kümesi</b>.', { dur: true }), belir(c, [g.ad, g.deger], 500));
     c.note('<b>Görüntü kümesi:</b> çıkabilen değerlerin kümesi.<br>f(x) = x için ℝ', 'Görüntü kümesi', 'a2-goruntu');
   }
 

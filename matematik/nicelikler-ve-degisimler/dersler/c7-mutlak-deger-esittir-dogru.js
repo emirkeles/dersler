@@ -66,10 +66,10 @@
     gizle(sagB.el, solB.el, sagKol.el, solKol.el, p6.el, p2.el, bas, aK, aD, aS, bK, bD, bS);
 
     await par(soyle(c, 'Kesişimleri cebirle bul: önce mutlak değerin içine bak.'), belir(c, bas, 450));
-    await par(soyle(c, '3’ün sağında içi negatif değil: mutlak değer aynen çıkar.'), (async () => {
+    await par(soyle(c, '3’ün sağında içi negatif değil: mutlak değer aynen çıkar.', { speak: 'Üçün sağında içi negatif değil: mutlak değer aynen çıkar.', dur: true }), (async () => {
       await par(belir(c, sagB.el, 400), belir(c, v.el, 300, 0.35)); await ciz(c, sagKol, 600); await belir(c, aK, 350); await belir(c, aD, 400);
     })());
-    await par(soyle(c, 'Çöz: 6 çıkar ve koşula uyar.'), (async () => { await donustur(c, aD, 'x = 6', RENK.sifir); await pop(c, p6, dz.X(6), dz.Y(3), 350); })());
+    await par(soyle(c, 'Çöz: 6 çıkar ve koşula uyar.', { speak: 'Çöz: x eşittir altı çıkar ve koşula uyar.' }), (async () => { await donustur(c, aD, 'x = 6', RENK.sifir); await pop(c, p6, dz.X(6), dz.Y(3), 350); })());
     await par(kaybol(c, [sagB.el, sagKol.el], 300));
     await c.choice({
       tag: 'Tahmin et', q: 'x &lt; 3 için |x − 3| hangisine eşittir?',
@@ -77,15 +77,15 @@
       hints: ['x &lt; 3 iken x − 3 negatiftir; mutlak değer negatif olmaz.', '', 'İçteki ifadenin tamamı işaret değiştirir: −(x − 3).'],
       right: 'İçi negatif; eksiyle çarpılarak çıkar: −(x − 3) = −x + 3.',
     });
-    await par(soyle(c, '3’ün solunda içi negatif: işaret değiştirerek çıkar.'), (async () => {
+    await par(soyle(c, '3’ün solunda içi negatif: işaret değiştirerek çıkar.', { speak: 'Üçün solunda içi negatif: işaret değiştirerek çıkar.' }), (async () => {
       await belir(c, solB.el, 400); await ciz(c, solKol, 600); await belir(c, bK, 350); await belir(c, bD, 400);
     })());
-    await par(soyle(c, 'Çöz: 2 çıkar, o da koşuluna uyar.'), (async () => { await donustur(c, bD, 'x = 2', RENK.sifir); await pop(c, p2, dz.X(2), dz.Y(1), 350); })());
+    await par(soyle(c, 'Çöz: 2 çıkar, o da koşuluna uyar.', { speak: 'Çöz: x eşittir iki çıkar, o da koşuluna uyar.' }), (async () => { await donustur(c, bD, 'x = 2', RENK.sifir); await pop(c, p2, dz.X(2), dz.Y(1), 350); })());
     await par(kaybol(c, [solB.el, solKol.el], 300), belir(c, v.el, 300));
     await par(soyle(c, 'Son adım: bulduğun sayıları denklemde yerine koy.'), belir(c, aS, 450));
-    await par(soyle(c, '6 için iki yan da 3.'), donustur(c, aS, '3 = 3', RENK.iyi));
+    await par(soyle(c, '6 için iki yan da 3.', { speak: 'Altı için iki yan da üç.' }), donustur(c, aS, '3 = 3', RENK.iyi));
     await belir(c, bS, 400);
-    await par(soyle(c, '2 için iki yan da 1: ikisi de çözüm.'), donustur(c, bS, '1 = 1', RENK.iyi));
+    await par(soyle(c, '2 için iki yan da 1: ikisi de çözüm.', { speak: 'İki için iki yan da bir: ikisi de çözüm.', dur: true }), donustur(c, bS, '1 = 1', RENK.iyi));
     c.note('<b>|f(x)| = g(x):</b> işarete göre iki durum, sonra yerine koy.', 'İki durum', 'c7-iki-durum');
   }
 
@@ -108,9 +108,9 @@
     gizle(v.el, g.el, uzanti.el, pk.el, ps.el, dk, ds, mk, ms, bas, aK, aD, aS, bK, bD, cizik, onay, cozum);
 
     await par(soyle(c, 'Aynı yolu bu denklemde dene.'), belir(c, bas, 450));
-    await par(soyle(c, '1’in sağında mutlak değer aynen çıkar.'), (async () => { await belir(c, aK, 350); await belir(c, aD, 400); })());
+    await par(soyle(c, '1’in sağında mutlak değer aynen çıkar.', { speak: 'Birin sağında mutlak değer aynen çıkar.' }), (async () => { await belir(c, aK, 350); await belir(c, aD, 400); })());
     await par(soyle(c, 'Çözünce −5 çıkar.'), donustur(c, aD, 'x = −5', RENK.sifir));
-    await par(soyle(c, '1’in solunda işaret değiştirerek çıkar.'), (async () => { await belir(c, bK, 350); await belir(c, bD, 400); })());
+    await par(soyle(c, '1’in solunda işaret değiştirerek çıkar.', { speak: 'Birin solunda işaret değiştirerek çıkar.' }), (async () => { await belir(c, bK, 350); await belir(c, bD, 400); })());
     await par(soyle(c, 'Çözünce −1 çıkar.'), donustur(c, bD, 'x = −1', RENK.sifir));
     await c.choice({
       tag: 'Tahmin et', q: 'İki sayı da denklemin çözümü mü?',
@@ -121,13 +121,13 @@
     await par(soyle(c, 'Grafiğe bak: yalnızca bir kesişim var.'), (async () => {
       await par(ciz(c, v, 800), ciz(c, g, 800)); await pop(c, pk, dz.X(-1), dz.Y(2), 350); await belir(c, [dk, mk], 300);
     })());
-    await par(soyle(c, '−5, sağ kolun uzantısında çıktı; V orada değil.'), (async () => {
+    await par(soyle(c, '−5, sağ kolun uzantısında çıktı; V orada değil.', { speak: 'Eksi beş, sağ kolun uzantısında çıktı; V grafiği orada değil.' }), (async () => {
       await belir(c, uzanti.el, 500); await pop(c, ps, dz.X(-5), dz.Y(-6), 350); await belir(c, [ds, ms], 300);
     })());
     aK.style.fill = RENK.kotu;
-    await soyle(c, '−5, kendi koşulunu sağlamıyor: 1’den küçük.');
+    await soyle(c, '−5, kendi koşulunu sağlamıyor: 1’den küçük.', { speak: 'Eksi beş, kendi koşulunu sağlamıyor: birden küçük.', ton: 'thoughtful' });
     await par(soyle(c, 'Yerine koy: sol yan 6, sağ yan −6.'), (async () => { await belir(c, aS, 400); await belir(c, cizik, 300); })());
-    await par(soyle(c, '−5 sahte çözüm; −1 için iki yan da 2.'), (async () => { await belir(c, onay, 350); await belir(c, cozum, 450); })());
+    await par(soyle(c, '−5 sahte çözüm; −1 için iki yan da 2.', { speak: 'Eksi beş sahte çözüm; eksi bir için iki yan da iki.' }), (async () => { await belir(c, onay, 350); await belir(c, cozum, 450); })());
     c.note('<b>Sahte çözüm:</b> koşulunu sağlamayan sayı.<br>x ≥ 1 ama x = −5', 'Sahte çözüm', 'c7-sahte');
   }
 

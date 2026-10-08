@@ -53,7 +53,7 @@
 
     await par(soyle(c, 'Kargo fişinde iki kalem var: sabit ücret ve kilo ücreti.'),
       (async () => { await belir(c, s1, 400); await c.wait(500); await belir(c, s2, 400); })());
-    await par(soyle(c, '4 kiloluk pakette 20 liraya 4 tane 5 lira eklenir.'), (async () => {
+    await par(soyle(c, '4 kiloluk pakette 20 liraya 4 tane 5 lira eklenir.', { speak: 'Dört kiloluk pakette yirmi liraya, dört tane beş lira eklenir.' }), (async () => {
       await par(pop(c, paket, PX, PALT - 50), belir(c, agirlik, 400));
       await belir(c, hesap, 500); await belir(c, [ayrac, s3], 400);
     })());
@@ -69,7 +69,7 @@
       await c.wait(1100);
       await kaybol(c, hesap, 300); yaz(toplam, [['f(x)', RENK.f], ' lira']); await belir(c, kuralT, 500);
     })());
-    await par(soyle(c, 'Paket boşken de ödenen 20: kuralın <b>sabit terimi</b>.'), belir(c, sabit, 500));
+    await par(soyle(c, 'Paket boşken de ödenen 20: kuralın <b>sabit terimi</b>.', { dur: true }), belir(c, sabit, 500));
     await par(soyle(c, 'Her kiloda eklenen 5: kuralın <b>katsayısı</b>.'), belir(c, katsayi, 500));
     c.note('<b>Kural:</b> f(x) = 5x + 20<br>5 katsayı, 20 sabit terim', 'Sözden kurala', 'c1-kural');
   }
@@ -101,7 +101,7 @@
       for (const n of noktalar) { await pop(c, n, dz.X(n.x), dz.Y(n.y), 350); await c.wait(150); }
     })());
     await par(soyle(c, 'Aradaki ağırlıklar için de nokta var: noktalar doğruya dönüşür.'), ciz(c, d, 900));
-    await par(soyle(c, 'Ağırlık negatif olmaz: grafik x = 0’dan başlar.'),
+    await par(soyle(c, 'Ağırlık negatif olmaz: grafik x = 0’dan başlar.', { ton: 'thoughtful' }),
       (async () => { await belir(c, sol.el, 400, 0.8); await c.wait(900); await kaybol(c, sol.el, 500); })());
     await kaybol(c, [tb.g].concat(noktalar.map((n) => n.el)), 350);
     await par(soyle(c, 'Sabit terim grafikte de görünür: doğru 20’den başlar.'),

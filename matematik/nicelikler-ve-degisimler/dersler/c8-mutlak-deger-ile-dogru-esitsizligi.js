@@ -34,19 +34,19 @@
     await par(soyle(c, 'Kuryeler aynı; kesişimler yine 2 ve 6.'), (async () => {
       await par(ciz(c, v, 800), ciz(c, g, 800)); await par(pop(c, p1, dz.X(2), dz.Y(1), 320), pop(c, p2, dz.X(6), dz.Y(3), 320));
     })());
-    await par(soyle(c, 'Birinci kurye daha pahalı olmasın: V, doğruyu aşmasın.'), belir(c, esit, 450));
+    await par(soyle(c, 'Birinci kurye daha pahalı olmasın: V, doğruyu aşmasın.', { speak: 'Birinci kurye daha pahalı olmasın: V grafiği doğruyu aşmasın.' }), belir(c, esit, 450));
     await c.choice({
       tag: 'Tahmin et', q: 'V hangi x’lerde doğrunun altında ya da üzerinde?',
       options: ['2’den küçüklerde', '2 ile 6 arasında', '6’dan büyüklerde'], answer: 1,
       hints: ['Orada sol kol doğrunun üstünde: x = 0’da 3’e karşı 0.', '', 'Orada sağ kol doğrunun üstünde: x = 8’de 5’e karşı 4.'],
       right: 'İki kesişim arasında V altta kalır.',
     });
-    await par(soyle(c, 'İki kesişim arasında V, doğrunun altında kalıyor.'), (async () => { await belir(c, v.el, 300, 0.35); await ciz(c, alt, 800); })());
+    await par(soyle(c, 'İki kesişim arasında V, doğrunun altında kalıyor.', { speak: 'İki kesişim arasında V grafiği doğrunun altında kalıyor.' }), (async () => { await belir(c, v.el, 300, 0.35); await ciz(c, alt, 800); })());
     await par(soyle(c, 'Gölgesi x ekseninde tek parça.'), (async () => {
       await belir(c, [d1, d2], 350); s.el.style.opacity = 0.9;
       await c.tween(800, (e) => s.ayarla(lerp(4, 2, e), lerp(4, 6, e)), ease.inOut);
     })());
-    await par(soyle(c, 'Kesişimlerde eşitlik var: ≤ uçları da alır, noktalar dolu.'), (async () => {
+    await par(soyle(c, 'Kesişimlerde eşitlik var: ≤ uçları da alır, noktalar dolu.', { speak: 'Kesişimlerde eşitlik var: küçük eşit işareti uçları da alır, noktalar dolu.' }), (async () => {
       await par(pop(c, u1, dz.X(2), dz.Y(0), 320), pop(c, u2, dz.X(6), dz.Y(0), 320)); await belir(c, cozum, 400);
     })());
     c.note('<b>|f(x)| ≤ g(x):</b> V’nin doğrunun altında kaldığı aralık.<br>[2, 6]', 'Altta kalan', 'c8-altta');
@@ -68,21 +68,21 @@
     const kars = yazi(svg, SAG, 400, '', { size: 50, kalin: 700 });
     gizle(ust1.el, ust2.el, d1, d2, s1.el, s2.el, u1.el, u2.el, esit, cozum, sonda, sv.el, sg.el);
 
-    await par(soyle(c, 'Şimdi tersini sor: V nerede doğrunun üstünde ya da üzerinde?'), belir(c, esit, 450));
+    await par(soyle(c, 'Şimdi tersini sor: V nerede doğrunun üstünde ya da üzerinde?', { speak: 'Şimdi tersini sor: V grafiği nerede doğrunun üstünde ya da üzerinde?', ton: 'curious' }), belir(c, esit, 450));
     await c.choice({
       tag: 'Tahmin et', q: 'x = 2 bu eşitsizliğin çözümü mü?',
       options: ['Hayır: orada V üstte değil', 'Evet: orada iki yan eşit'], answer: 1,
       hints: ['≥ işareti eşitliği de kabul eder; 2’de iki yan da 1.', ''],
       right: '≥ işareti eşitliği de kabul eder.',
     });
-    await par(soyle(c, 'V iki kolda doğrunun üstünde.'), (async () => { await belir(c, v.el, 300, 0.35); await par(ciz(c, ust1, 700), ciz(c, ust2, 700)); })());
+    await par(soyle(c, 'V iki kolda doğrunun üstünde.', { speak: 'V grafiği iki kolda doğrunun üstünde.' }), (async () => { await belir(c, v.el, 300, 0.35); await par(ciz(c, ust1, 700), ciz(c, ust2, 700)); })());
     await par(soyle(c, 'Gölgeler iki yana uzar; uçlar bu kez dolu.'), (async () => {
       await belir(c, [d1, d2], 350); s1.el.style.opacity = 0.9; s2.el.style.opacity = 0.9;
       await c.tween(900, (e) => { s1.ayarla(lerp(2, -1, e), 2); s2.ayarla(6, lerp(6, 9, e)); }, ease.inOut);
       await par(pop(c, u1, dz.X(2), dz.Y(0), 320), pop(c, u2, dz.X(6), dz.Y(0), 320));
     })());
     await par(soyle(c, 'Çözüm iki aralığın birleşimi.'), belir(c, cozum, 450));
-    await soyle(c, '2 ve 6 iki çözümde de var: orada eşitlik sağlanır.');
+    await soyle(c, '2 ve 6 iki çözümde de var: orada eşitlik sağlanır.', { speak: 'İki ile altı, her iki çözümde de var: orada eşitlik sağlanır.' });
     c.note('<b>|f(x)| ≥ g(x):</b> V’nin üstte kaldığı yerler.<br>(−∞, 2] ∪ [6, ∞)', 'Üstte kalan', 'c8-ustte');
 
     const koy = (x) => {
@@ -121,7 +121,7 @@
     gizle(bas, eksen, bant, ayrac, es, esAd, den, denAd, sonuc, cozum);
 
     await par(soyle(c, 'Grafik olmadan da çözülür: önce eşitliği çöz.'), (async () => { await belir(c, bas, 450); await belir(c, eksen, 400); })());
-    await par(soyle(c, 'Eşitliği önceki derste çözdün: 2 ve 6.'), belir(c, [...es, ...esAd], 450));
+    await par(soyle(c, 'Eşitliği önceki derste çözdün: 2 ve 6.', { dur: true }), belir(c, [...es, ...esAd], 450));
     await par(soyle(c, 'Bu iki sayı ekseni üç bölgeye ayırır.'), belir(c, ayrac, 450, 0.7));
     await par(soyle(c, 'Her bölgeden bir sayı seç ve eşitsizlikte dene.'), belir(c, [...den, ...denAd], 450));
     await par(soyle(c, 'Soldan 0: sol yan 3, sağ yan 0.'), belir(c, sonuc[0], 450));
@@ -133,7 +133,7 @@
     });
     await par(soyle(c, 'Ortadaki bölge eşitsizliği sağlıyor.'), belir(c, sonuc[1], 450));
     await par(soyle(c, 'Sağdan 8: sol yan 5, sağ yan 4.'), belir(c, sonuc[2], 450));
-    await soyle(c, 'Bölge içinde üstteki grafik değişmez; tek deneme yeter.');
+    await soyle(c, 'Bölge içinde üstteki grafik değişmez; tek deneme yeter.', { ton: 'thoughtful' });
     await par(soyle(c, 'Çözüm ortadaki bölge; eşitlik olduğu için uçlar dahil.'), (async () => { await belir(c, bant, 450, 0.9); await belir(c, cozum, 450); })());
     c.note('Önce eşitliği çöz.<br>Sonra her bölgeden bir sayı dene.', 'Cebirle', 'c8-cebir');
   }
@@ -178,7 +178,7 @@
       right: 'Sol bölge ve eşitlik noktası birlikte.', sonra: '(−∞, −1]', kanit: 'sol bölge ve kesişim noktası', renk: RENK.sifir,
       onPick: (k, ok) => { if (ok) { v.el.style.opacity = 0.35; p0.el.style.opacity = 0; p3.el.style.opacity = 0; m0.style.opacity = 0; m3.style.opacity = 0; s.el.style.opacity = 0.9; ac(sol, uc); } },
     });
-    await soyle(c, 'Sol kol doğrunun üstünde: çözüm −1 ve solu.');
+    await soyle(c, 'Sol kol doğrunun üstünde: çözüm −1 ve solu.', { speak: 'Sol kol doğrunun üstünde: çözüm, eksi bir ve eksi birden küçük bütün sayılar.' });
   }
 
   Ders.start({

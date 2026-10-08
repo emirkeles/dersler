@@ -32,7 +32,7 @@
     etiket(dz, 6, 120, '120', { renk: RENK.g, dx: -14, dy: -8, hiza: 'end', katman: sonda });
     gizle(f.el, g.el, fAlt.el, gAlt.el, cozum.el, uc.el, kes.el, aAd, bAd, esitsizlik, sonda);
 
-    await par(soyle(c, 'İki kargo firması: A’nın sabit ücreti var, B’nin yok.'),
+    await par(soyle(c, 'İki kargo firması: A’nın sabit ücreti var, B’nin yok.', { speak: 'İki kargo firması: A firmasının sabit ücreti var, B firmasının yok.' }),
       (async () => { await par(ciz(c, f, 800), belir(c, aAd, 400)); await par(ciz(c, g, 800), belir(c, bAd, 400)); })());
     await par(soyle(c, 'Doğrular 4 kiloda kesişir: orada ücretler eşit.'), pop(c, kes, dz.X(4), dz.Y(80)));
     await c.choice({
@@ -44,10 +44,10 @@
     });
     await soyle(c, 'Ucuz olan, grafikte altta kalan doğrudur.');
     await kaybol(c, sonda, 300);
-    await par(soyle(c, 'Kesişimin sağında f altta, solunda g altta.'),
+    await par(soyle(c, 'Kesişimin sağında f altta, solunda g altta.', { speak: 'Kesişimin sağında f fonksiyonu altta, solunda g fonksiyonu altta.' }),
       (async () => { await belir(c, [f.el, g.el], 400, 0.4); await ciz(c, gAlt, 600); await ciz(c, fAlt, 600); })());
-    await par(soyle(c, '“A daha pahalı değil” demek f(x) ≤ g(x) demek.'), belir(c, esitsizlik, 500));
-    await par(soyle(c, 'Çözüm, f’nin altta ya da eşit olduğu ağırlıklar.'), (async () => {
+    await par(soyle(c, '“A daha pahalı değil” demek f(x) ≤ g(x) demek.', { speak: '“A firması daha pahalı değil” demek, f x küçük eşit g x demek.' }), belir(c, esitsizlik, 500));
+    await par(soyle(c, 'Çözüm, f’nin altta ya da eşit olduğu ağırlıklar.', { speak: 'Çözüm, f fonksiyonunun altta ya da eşit olduğu ağırlıklar.' }), (async () => {
       cozum.el.style.opacity = 0.9; uc.el.style.opacity = 1;
       await c.tween(900, (e) => cozum.ayarla(4, lerp(4, 8, e)), ease.inOut);
     })());
@@ -81,14 +81,14 @@
       hints: ['≤ eşitliği de kabul eder; 4 kiloda ücretler eşit.', ''],
       right: 'f(4) = g(4) = 80: eşitlik sağlanıyor.',
     });
-    await par(soyle(c, 'Çözüm [4, ∞): grafikte dolu noktayla başlayan şerit.'),
+    await par(soyle(c, 'Çözüm [4, ∞): grafikte dolu noktayla başlayan şerit.', { speak: 'Çözüm, dört ve dörtten büyük bütün sayılar: grafikte dolu noktayla başlayan şerit.', dur: true }),
       (async () => { await pop(c, uc, dz.X(4), dz.Y(0)); await belir(c, cozum.el, 500, 0.9); })());
     await par(kaybol(c, [s1, s2], 300), c.tween(500, (e) => s3.setAttribute('y', lerp(272, 156, e)), ease.inOut));
-    await par(soyle(c, 'f(x) ≥ g(x) ise öbür yan: f üstte ya da eşit.'), (async () => {
+    await par(soyle(c, 'f(x) ≥ g(x) ise öbür yan: f üstte ya da eşit.', { speak: 'f x büyük eşit g x ise öbür yan: f fonksiyonu üstte ya da eşit.' }), (async () => {
       await belir(c, h2, 400); await belir(c, t, 400);
       await c.tween(900, (e) => cozum.ayarla(lerp(4, 0, e), lerp(8, 4, e)), ease.inOut);
     })());
-    await par(soyle(c, 'Ağırlık negatif olmaz: çözüm 0 ile 4 arası.'), (async () => { await pop(c, bas, dz.X(0), dz.Y(0)); yaz(t, '0 ≤ x ≤ 4'); })());
+    await par(soyle(c, 'Ağırlık negatif olmaz: çözüm 0 ile 4 arası.', { dur: true }), (async () => { await pop(c, bas, dz.X(0), dz.Y(0)); yaz(t, '0 ≤ x ≤ 4'); })());
     c.note('10x + 40 ≤ 20x → x ≥ 4<br>Çözüm [4, ∞): uç dahil.', 'Cebirle', 'c4-cebir');
   }
 
@@ -132,7 +132,7 @@
       right: 'g(x) yerine 0 yaz: f(x) &lt; 0.',
     });
     await kaybol(c, noktalar.map((n) => n.el).concat(nAd), 300);
-    await par(soyle(c, 'x ekseni de bir fonksiyonun grafiğidir: g(x) = 0.'), belir(c, r3, 500));
+    await par(soyle(c, 'x ekseni de bir fonksiyonun grafiğidir: g(x) = 0.', { ton: 'thoughtful' }), belir(c, r3, 500));
     await soyle(c, 'Yani f(x) &lt; 0, bu dersin özel bir hâlidir.');
     c.note('<b>f(x) &lt; 0:</b> f(x) &lt; g(x)’in g(x) = 0 hâli.', 'Özel hâl', 'c4-ozel');
   }

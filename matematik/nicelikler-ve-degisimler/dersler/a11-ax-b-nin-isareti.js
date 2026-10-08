@@ -55,7 +55,7 @@
     await par(soyle(c, 'Denklemi çözünce aynı sayı çıkıyor.'), belir(c, adim2, 450));
     await kaybol(c, [adim1, adim2], 300);
     await par(soyle(c, 'Her doğrusal fonksiyonda yol aynıdır.'), (async () => { await belir(c, genel1, 450); await c.wait(500); await belir(c, genel2, 450); })());
-    await par(soyle(c, 'Eksiye dikkat: −100, −20’ye bölünür.'), belir(c, ornek, 450));
+    await par(soyle(c, 'Eksiye dikkat: −100, −20’ye bölünür.', { ton: 'thoughtful' }), belir(c, ornek, 450));
     c.note('<b>Sıfır:</b> x = −b/a<br>−20x + 100 → x = 5', 'Doğrunun sıfırı', 'a11-sifir');
   }
 
@@ -134,7 +134,7 @@
       hints: ['Bu, azalan doğrunun tablosu. Artan doğru soldan alttan gelir.', ''],
       right: 'Artan doğru sıfırın solunda eksenin altında, sağında üstündedir.',
     });
-    await par(soyle(c, 'Doğru soldan eksenin altından geliyor: negatif.'), (async () => {
+    await par(soyle(c, 'Doğru soldan eksenin altından geliyor: negatif.', { dur: true }), (async () => {
       await belir(c, [mor2.el, a2m.el], 450); await belir(c, t2.sol, 350);
     })());
     await par(soyle(c, 'Sıfırdan sonra eksenin üstüne çıkıyor: pozitif.'), (async () => {
@@ -155,7 +155,7 @@
     const tanim = serit(dz, 'x', 0, 8), uc = nokta(dz, 4, h(4), { renk: RENK.arti, r: 9 });
     gizle(sonuc, tanim.el, uc.el);
 
-    await soyle(c, 'Hesabı yalnızca ilk 4 gün izlersen ne değişir?');
+    await soyle(c, 'Hesabı yalnızca ilk 4 gün izlersen ne değişir?', { ton: 'curious' });
     await c.choice({
       tag: 'Tahmin et', q: 'Tanım kümesi [0, 4] olursa h’nin sıfırı olur mu?',
       options: ['Olur: 5', 'Olmaz'], answer: 1,

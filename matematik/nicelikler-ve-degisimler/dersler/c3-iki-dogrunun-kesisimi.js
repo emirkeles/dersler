@@ -68,7 +68,7 @@
     await par(kaybol(c, r2, 300), c.tween(500, (e) => r3.setAttribute('y', lerp(248, 190, e)), ease.inOut));
     await par(soyle(c, 'Fiyat için x’i kurallardan birine yaz.'), belir(c, r4, 500), belir(c, izler.g, 500));
     yaz(r4, [['f(5)', RENK.f], ' = ', ['g(5)', RENK.g], ' = ', ['10', RENK.sifir]]);
-    await soyle(c, 'Öbür kural da aynı fiyatı veriyor: çözüm doğru.');
+    await soyle(c, 'Öbür kural da aynı fiyatı veriyor: çözüm doğru.', { dur: true });
     await par(soyle(c, 'Alıcıyla satıcının buluştuğu fiyata <b>denge fiyatı</b> denir.'), belir(c, denge, 500));
     await soyle(c, 'Denklemin çözümü x = 5; denge fiyatı o noktanın y’si.');
     c.note('<b>f(x) = g(x):</b> çözüm, kesişimin x’i.<br>Burada x = 5', 'Kesişim', 'c3-kesisim');
@@ -102,7 +102,7 @@
 
     await par(soyle(c, 'Talep doğrusu biraz yukarı kaysın; kesişim de kayar.'),
       (async () => { await c.wait(500); await c.tween(1200, (e) => koy(lerp(20, 22, e)), ease.inOut); await belir(c, a1, 400); })());
-    await par(soyle(c, 'Grafik yaklaşık yeri gösterir: 5 ile 6 arasında bir yer.'), belir(c, [dik].concat(sayilar), 500));
+    await par(soyle(c, 'Grafik yaklaşık yeri gösterir: 5 ile 6 arasında bir yer.', { ton: 'thoughtful' }), belir(c, [dik].concat(sayilar), 500));
     await par(soyle(c, 'Cebir kesin değeri verir.'), (async () => { await belir(c, a2, 400); await c.wait(500); await belir(c, a3, 400); })());
     await par(kaybol(c, [a1, a2, a3].concat(sayilar), 300), c.tween(900, (e) => koy(lerp(22, 20, e)), ease.inOut));
     await par(soyle(c, 'İlk denkleme dön: kesişim yine 5’te.'), belir(c, b1, 400));
@@ -112,7 +112,7 @@
       hints: ['Bu, iki kuralın toplamı. Her şeyi eşitliğin bir yanına taşı.', '', 'Sayıları da taşı: 5 − 20 = −15 eder.'],
       right: 'x + 5 − (−2x + 20) = 3x − 15.',
     });
-    await par(soyle(c, 'Her şeyi bir yana topla: denklem tek fonksiyonun sıfırına döner.'),
+    await par(soyle(c, 'Her şeyi bir yana topla: denklem tek fonksiyonun sıfırına döner.', { dur: true }),
       (async () => { await belir(c, b2, 500); await ciz(c, h, 900); await belir(c, hAd, 300); })());
     await par(soyle(c, 'Bu doğrunun kökü, kesişimin tam altında.'),
       (async () => { await pop(c, kok, dz.X(5), dz.Y(0)); await belir(c, kokAd, 300); })());

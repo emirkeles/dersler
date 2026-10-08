@@ -50,7 +50,7 @@
       await belir(c, solEt, 400);
     })());
     yak(-1);
-    await par(soyle(c, 'İki doğru x = 2’de buluşuyor: içteki 2x − 4’ün sıfırı.'), pop(c, uc, dz.X(2), dz.Y(1), 450), belir(c, [izler.g, ayrilma], 500));
+    await par(soyle(c, 'İki doğru x = 2’de buluşuyor: içteki 2x − 4’ün sıfırı.', { speak: 'İki doğru x eşittir ikide buluşuyor: içteki iki x eksi dört ifadesinin sıfırı.' }), pop(c, uc, dz.X(2), dz.Y(1), 450), belir(c, [izler.g, ayrilma], 500));
     c.note('Kollar, içteki doğrunun sıfırında ayrılır.<br>|2x − 4|: x = 2', 'V’nin iki kolu', 'b6-ayrilma');
   }
 
@@ -72,7 +72,7 @@
     gizle(pr.satir[0].g, pr.satir[1].g, serit, W);
 
     await soyle(c, 'Mutlak değeri açmak için içindekinin işaretine bak.');
-    await par(soyle(c, 'İçteki 2x − 4, 2’nin solunda negatif, sağında pozitif.'), belir(c, serit, 500));
+    await par(soyle(c, 'İçteki 2x − 4, 2’nin solunda negatif, sağında pozitif.', { speak: 'İçteki iki x eksi dört ifadesi, ikinin solunda negatif, sağında pozitif.' }), belir(c, serit, 500));
     yan(0); yaz(W, [['(2x − 4)', RENK.f], ' + 1']);
     await par(soyle(c, 'Sağda içerisi pozitif: mutlak değer aynen çıkar.'), belir(c, W, 500));
     await degis(c, W, '2x − 4 + 1');
@@ -87,7 +87,7 @@
     });
     yaz(W, [['−(2x − 4)', RENK.g], ' + 1']);
     await par(soyle(c, 'Solda içerisi negatif: mutlak değer eksiyle çıkar.'), belir(c, W, 500));
-    await par(soyle(c, 'Eksi iki terime de dağılır; sondaki 1 değişmez.'), degis(c, W, '−2x + 4 + 1'));
+    await par(soyle(c, 'Eksi iki terime de dağılır; sondaki 1 değişmez.', { speak: 'Eksi işareti iki terime de dağılır; sondaki bir değişmez.' }), degis(c, W, '−2x + 4 + 1'));
     await degis(c, W, [['−2x + 5', RENK.g]]);
     await kaybol(c, W, 250); await belir(c, pr.satir[1].g, 450);
     yan(-1);
@@ -120,11 +120,11 @@
     await par(pop(c, uc, dz.X(-1), dz.Y(3), 450), belir(c, kilavuz, 400));
     yak(0); yaz(W, ['−', ['(x + 1)', RENK.f], ' + 3']);
     await par(soyle(c, 'Sağda içerisi pozitif: aynen çıkar, önündeki eksi kalır.'), belir(c, W, 500));
-    await par(soyle(c, 'Eksi iki terime dağılır; 3 yerinde kalır.'), degis(c, W, '−x − 1 + 3'));
+    await par(soyle(c, 'Eksi iki terime dağılır; 3 yerinde kalır.', { speak: 'Eksi işareti iki terime de dağılır; üç yerinde kalır.' }), degis(c, W, '−x − 1 + 3'));
     await degis(c, W, [['−x + 2', RENK.f]]);
     await kaybol(c, W, 250); await belir(c, [pr.satir[0].g, sagUz.el], 450);
     yak(1); yaz(W, ['−', ['(−(x + 1))', RENK.g], ' + 3']);
-    await par(soyle(c, 'Solda içerisi negatif: eksiyle çıkar; öndeki eksiyle iki eksi olur.'), belir(c, W, 500));
+    await par(soyle(c, 'Solda içerisi negatif: eksiyle çıkar; öndeki eksiyle iki eksi olur.', { ton: 'thoughtful' }), belir(c, W, 500));
     await par(soyle(c, 'İki eksi birbirini götürür.'), degis(c, W, 'x + 1 + 3'));
     await degis(c, W, [['x + 4', RENK.g]]);
     await kaybol(c, W, 250); await belir(c, [pr.satir[1].g, solUz.el], 450);
@@ -155,7 +155,7 @@
     await c.tween(700, (e) => koy(lerp(x0, 2, e)), ease.inOut);
     koy(2); yak(-1); pr.yak(-1);
     yaz(deger, ['en küçük değer:  ', ['1', RENK.sifir]]); deger.setAttribute('font-size', 32);
-    await soyle(c, 'Sol parça azalan, sağ parça artan: en küçük değer birleşme yerinde.');
+    await soyle(c, 'Sol parça azalan, sağ parça artan: en küçük değer birleşme yerinde.', { dur: true });
   }
 
   Ders.start({

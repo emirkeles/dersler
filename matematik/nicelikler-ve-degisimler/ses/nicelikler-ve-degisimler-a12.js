@@ -1,0 +1,2 @@
+/* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
+Ders.ses['nicelikler-ve-degisimler-a12'] = { base: 'ses/nicelikler-ve-degisimler-a12/', clips: { '1eb5ca3e': '1eb5ca3e.mp3', '2e65a2b4': '2e65a2b4.mp3', '3a3674d2': '3a3674d2.mp3', '452bdac9': '452bdac9.mp3', '46c76cec': '46c76cec.mp3', '51f15f67': '51f15f67.mp3', '5290c583': '5290c583.mp3', '63f096f5': '63f096f5.mp3', '6c8712a4': '6c8712a4.mp3', '800d8fbd': '800d8fbd.mp3', '83f04b2b': '83f04b2b.mp3', '8fcc3642': '8fcc3642.mp3', '9396d6a6': '9396d6a6.mp3', 'a9e953d8': 'a9e953d8.mp3' } };

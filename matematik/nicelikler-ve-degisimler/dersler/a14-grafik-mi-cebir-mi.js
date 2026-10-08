@@ -66,7 +66,7 @@
       right: '2x − 4 = 0 ise x = 2.',
     });
     await par(soyle(c, 'Sıfırı 2: eksenin sağ yanında, pozitif.'), (async () => { await pop(c, k.sifir, t.dz.X(2), t.dz.Y(0)); await belir(c, k.ad, 300); })());
-    await par(soyle(c, 'Tek <b>karşı örnek</b> yetti: varsayım düştü.'), ciz(c, t.cizik, 500));
+    await par(soyle(c, 'Tek <b>karşı örnek</b> yetti: varsayım düştü.', { ton: 'thoughtful' }), ciz(c, t.cizik, 500));
     await c.choice({
       tag: 'Tahmin et', q: 'İlk üç örnekte ortak olup gözden kaçan neydi?',
       options: ['Hepsinde a > 1', 'Hepsinde b > 0', 'Hepsi orijinden geçiyor'], answer: 1,
@@ -97,7 +97,7 @@
     const s3 = ad.ekle([['−b/a', RENK.eksi], ' < 0'], 'hüküm');
 
     await soyle(c, 'Düzeltilmiş varsayımı bu kez cebirle sınayalım.');
-    await par(soyle(c, 'ax + b’nin sıfırını biliyoruz.'), belir(c, s1.g, 500));
+    await par(soyle(c, 'ax + b’nin sıfırını biliyoruz.', { speak: 'a x artı b fonksiyonunun sıfırını biliyoruz.' }), belir(c, s1.g, 500));
     await c.choice({
       tag: 'Tahmin et', q: 'a ve b pozitifse b/a’nın işareti nedir?',
       options: ['Negatif', 'Pozitif', 'Bilinemez'], answer: 1,
@@ -105,10 +105,10 @@
       right: 'Pozitif bölü pozitif, pozitiftir.',
     });
     await par(soyle(c, 'Pozitif bir sayının pozitife bölümü pozitiftir.'), belir(c, s2.g, 500));
-    await par(soyle(c, 'Önüne eksi gelince negatif olur: hüküm çıktı.'), belir(c, s3.g, 500));
-    await soyle(c, 'Örnek gerekmedi; ispat bütün pozitif a ve b’leri kapsar.');
+    await par(soyle(c, 'Önüne eksi gelince negatif olur: hüküm çıktı.', { dur: true }), belir(c, s3.g, 500));
+    await soyle(c, 'Örnek gerekmedi; ispat bütün pozitif a ve b’leri kapsar.', { speak: 'Örnek gerekmedi; ispat bütün pozitif a ve b değerlerini kapsar.' });
     await belir(c, [d.el, z.el], 400); await belir(c, sol.el, 300, 0.55);
-    await par(soyle(c, 'Hangi pozitif a ve b’yi seçersen seç, sıfır solda kalır.'),
+    await par(soyle(c, 'Hangi pozitif a ve b’yi seçersen seç, sıfır solda kalır.', { speak: 'Hangi pozitif a ve b değerlerini seçersen seç, sıfır solda kalır.' }),
       c.tween(5600, (e, t) => { const [a, b] = ab(t); d.ayarla(a, b); z.git(-b / a, 0); }, ease.linear));
     c.note('<b>İspatlandı:</b> a &gt; 0 ve b &gt; 0 ise −b/a &lt; 0', 'Sıfırın işareti', 'a14-ispat');
   }

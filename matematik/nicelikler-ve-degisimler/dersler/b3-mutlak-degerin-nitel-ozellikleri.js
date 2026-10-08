@@ -45,7 +45,7 @@
       hints: ['Grafik eksenin altına inmiyor; en alttaki noktası belli.', '', '|x| hiç negatif olmaz.'],
       right: 'En alttaki nokta (0, 0): en küçük değer 0.',
     });
-    await par(soyle(c, 'En alttaki nokta <b>minimum noktası</b>: en küçük değer 0.'), pop(c, uc, dz.X(0), dz.Y(0), 450), ac(c, B, 2));
+    await par(soyle(c, 'En alttaki nokta <b>minimum noktası</b>: en küçük değer 0.', { dur: true }), pop(c, uc, dz.X(0), dz.Y(0), 450), ac(c, B, 2));
     await par(soyle(c, 'Kollar yukarı doğru hiç durmadan çıkar.'), belir(c, oklar, 450), ac(c, B, 3));
     await belir(c, B, 300);
     c.note('<b>|x|:</b> solda azalan, sağda artan; minimum noktası (0, 0)', '|x|’in özellikleri', 'b3-ozellik');
@@ -74,21 +74,21 @@
     const goruntu = oge(284, 'görüntü kümesi'), isaret = oge(328, 'işaret'), artanlik = oge(372, 'artanlık'), minimum = oge(416, 'minimum'), bireBir = oge(460, 'bire birlik');
     const sonuc = yazi(svg, 341, 462, [['|−3| = |3|', RENK.sifir], ':  bire bir değil'], { size: 30 }); gizle(sonuc);
 
-    await soyle(c, 'İki grafiği yan yana koy: hangi özellik aynı kaldı?');
+    await soyle(c, 'İki grafiği yan yana koy: hangi özellik aynı kaldı?', { ton: 'curious' });
     await par(soyle(c, 'İkisinde de her gerçek sayı girdi olabilir.'), belir(c, [hA, tanim], 400), c.tween(900, (e) => xS.forEach((s_) => s_.ayarla(-4 * e, 4 * e)), ease.inOut));
     await kaybol(c, xS.map((s_) => s_.el), 300);
     await par(soyle(c, 'İkisinin de tek sıfırı var: x = 0.'), belir(c, sifir, 400), pop(c, s1, d1.X(0), d1.Y(0), 400), pop(c, s2, d2.X(0), d2.Y(0), 400));
-    await par(soyle(c, 'Çıktılar: f’de her gerçek sayı, |x|’te negatif yok.'), belir(c, [hF, goruntu], 400),
+    await par(soyle(c, 'Çıktılar: f’de her gerçek sayı, |x|’te negatif yok.', { speak: 'Çıktılar: f fonksiyonunda her gerçek sayı, x’in mutlak değerinde negatif yok.' }), belir(c, [hF, goruntu], 400),
       c.tween(900, (e) => { yS[0].ayarla(-4 * e, 4 * e); yS[1].ayarla(0, 4 * e); }, ease.inOut));
     await kaybol(c, yS.map((s_) => s_.el), 300);
-    await par(soyle(c, 'f solda negatif, sağda pozitif; |x| iki yanda da pozitif.'), belir(c, isaret, 400), belir(c, [neg1.el, poz1.el, poz2.el], 500));
+    await par(soyle(c, 'f solda negatif, sağda pozitif; |x| iki yanda da pozitif.', { speak: 'f fonksiyonu solda negatif, sağda pozitif; mutlak değer fonksiyonu iki yanda da pozitif.' }), belir(c, isaret, 400), belir(c, [neg1.el, poz1.el, poz2.el], 500));
     await kaybol(c, [neg1.el, poz1.el, poz2.el], 300);
     g1.el.style.opacity = 1; g2.el.style.opacity = 1;
-    await par(soyle(c, 'f hep artan; |x| solda azalan, sağda artan.'), belir(c, artanlik, 400),
+    await par(soyle(c, 'f hep artan; |x| solda azalan, sağda artan.', { speak: 'f fonksiyonu hep artan; mutlak değer fonksiyonu solda azalan, sağda artan.' }), belir(c, artanlik, 400),
       c.tween(2400, (e) => { const x = lerp(-3.5, 3.5, e); g1.git(x, x); g2.git(x, Math.abs(x)); }, ease.inOut));
     await kaybol(c, [g1.el, g2.el], 250);
-    await par(soyle(c, 'f’nin en küçük değeri yok; |x|’inki 0.'), belir(c, minimum, 400), pop(c, s2, d2.X(0), d2.Y(0), 450));
-    await par(soyle(c, 'Aynı yükseklikte f’de bir nokta var, |x|’te iki.'), (async () => {
+    await par(soyle(c, 'f’nin en küçük değeri yok; |x|’inki 0.', { speak: 'f fonksiyonunun en küçük değeri yok; mutlak değer fonksiyonunun en küçük değeri sıfır.' }), belir(c, minimum, 400), pop(c, s2, d2.X(0), d2.Y(0), 450));
+    await par(soyle(c, 'Aynı yükseklikte f’de bir nokta var, |x|’te iki.', { speak: 'Aynı yükseklikte f fonksiyonunda bir nokta var, mutlak değer fonksiyonunda iki.' }), (async () => {
       await belir(c, [y1.el, y2.el], 400);
       await par(...kes.map((k) => pop(c, k, k.el.getAttribute('cx'), k.el.getAttribute('cy'), 350)));
     })());
@@ -98,7 +98,7 @@
       hints: ['Yatay çizgi V’yi iki noktada kesti: iki girdi, tek çıktı.', ''],
       right: '−3 ve 3 farklı girdiler ama çıktıları aynı: 3.',
     });
-    await par(soyle(c, 'İki farklı girdi aynı çıktıyı veriyor: |x| bire bir değil.'), belir(c, [bireBir, sonuc], 500));
+    await par(soyle(c, 'İki farklı girdi aynı çıktıyı veriyor: |x| bire bir değil.', { speak: 'İki farklı girdi aynı çıktıyı veriyor: mutlak değer fonksiyonu bire bir değil.', ton: 'thoughtful' }), belir(c, [bireBir, sonuc], 500));
     c.note('<b>|x| bire bir değildir:</b> |−3| = |3|', '|x| ve bire birlik', 'b3-bire-bir');
   }
 
@@ -116,7 +116,7 @@
     const B = satirlar(svg, 230, 68, [['maksimum noktası:  ', ['(0, 0)', RENK.sifir]], 'minimumu yok', ['görüntü kümesi:  ', ['(−∞, 0]', RENK.g]]], 28);
     gizle(p1.el, p2.el, uc.el, oklar, pr.g);
 
-    await soyle(c, 'Şimdi |x|’in önüne bir eksi koy.');
+    await soyle(c, 'Şimdi |x|’in önüne bir eksi koy.', { speak: 'Şimdi x’in mutlak değerinin önüne bir eksi koy.' });
     await c.choice({
       tag: 'Tahmin et', q: '−|3| kaçtır?',
       options: ['3', '−3'], answer: 1,

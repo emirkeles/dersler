@@ -35,17 +35,17 @@
     const sT = yazi(svg, 765, 360, ['sıfırı:  ', ['x = 3', RENK.sifir]], { size: 34 });
     gizle(dz.g, h.el, p.el, hT, tT, sT);
 
-    await par(soyle(c, 'Asansör 3. katta bekliyor; sen x. kattasın.'), belir(c, bina, 500));
-    await par(soyle(c, '5. kattaysan aradaki fark 2 kat; 1. kattaysan yine 2.'), (async () => {
+    await par(soyle(c, 'Asansör 3. katta bekliyor; sen x. kattasın.', { speak: 'Asansör üçüncü katta bekliyor; sen x numaralı kattasın.' }), belir(c, bina, 500));
+    await par(soyle(c, '5. kattaysan aradaki fark 2 kat; 1. kattaysan yine 2.', { speak: 'Beşinci kattaysan aradaki fark iki kat; birinci kattaysan yine iki.' }), (async () => {
       await belir(c, [olcu, farkT], 300);
       await c.wait(1100);
       await c.tween(1300, (e) => senKoy(lerp(5, 1, e)), ease.inOut);
     })());
-    await par(soyle(c, 'Fark negatif olmaz: kat farkı x − 3’ün mutlak değeridir.'), belir(c, tT, 500));
+    await par(soyle(c, 'Fark negatif olmaz: kat farkı x − 3’ün mutlak değeridir.', { speak: 'Fark negatif olmaz: kat farkı, x eksi üç ifadesinin mutlak değeridir.', ton: 'thoughtful' }), belir(c, tT, 500));
     await kaybol(c, bina, 350);
     await belir(c, dz.g, 400);
     await par(soyle(c, 'Önce mutlak değerin içindeki doğruyu çiz.'), ciz(c, h, 800), belir(c, hT, 400));
-    await par(soyle(c, 'h’nin sıfırı 3: doğru ekseni orada keser.'), pop(c, p, dz.X(3), dz.Y(0), 450));
+    await par(soyle(c, 'h’nin sıfırı 3: doğru ekseni orada keser.', { speak: 'h fonksiyonunun sıfırı üç: doğru ekseni orada keser.' }), pop(c, p, dz.X(3), dz.Y(0), 450));
     await c.choice({
       tag: 'Tahmin et', q: '|x − 3| nerede sıfır olur?',
       options: ['x = −3', 'x = 3', 'x = 0'], answer: 1,
@@ -53,7 +53,7 @@
       right: '|3 − 3| = 0: asansörle aynı kattasın.',
     });
     await par(soyle(c, 'Eksenin altındaki kısmı yukarı katla.'), katla(c, dz, 1, -3, { renk: RENK.mutlak, ms: 1600 }), belir(c, h.el, 600, 0.45));
-    await par(soyle(c, 'V’nin ucu tam 3’te: h’nin sıfırı, |h|’in de sıfırı.'), belir(c, sT, 500), pop(c, p, dz.X(3), dz.Y(0), 450));
+    await par(soyle(c, 'V’nin ucu tam 3’te: h’nin sıfırı, |h|’in de sıfırı.', { speak: 'V’nin ucu tam üçte: hem h fonksiyonunun hem de h’nin mutlak değerinin sıfırı.' }), belir(c, sT, 500), pop(c, p, dz.X(3), dz.Y(0), 450));
     c.note('<b>|h(x)|’in sıfırı h’nin sıfırıdır.</b><br>|x − 3| = 0 → x = 3', '|h|’in sıfırı', 'b4-sifir');
   }
 
@@ -74,7 +74,7 @@
       yaz(sT, ['kırılma:  ', ['x = ' + kesir(-b, a), RENK.sifir]]);
     };
     koy(1, -3);
-    await soyle(c, 'İçteki doğru değişirse V nereye gider?');
+    await soyle(c, 'İçteki doğru değişirse V nereye gider?', { ton: 'curious' });
     yaz(tT, 't(x) = |2x − 4|'); yaz(hT, 'h(x) = 2x − 4'); gizle(sT);
     await c.choice({
       tag: 'Tahmin et', q: '|2x − 4| grafiği hangi x’te kırılır?',
@@ -89,7 +89,7 @@
     c.slider({ label: 'a', min: 1, max: 3, step: 1, value: 2, onInput: (x) => { A = x; koy(A, B); } });
     c.slider({ label: 'b', tag: false, min: -6, max: 6, step: 1, value: -4, fmt: (x) => sayi(x), onInput: (x) => { B = x; koy(A, B); } });
     await c.cont('Devam ›');
-    await soyle(c, 'Kırılma noktası hep h’nin sıfırında: x = −b/a.');
+    await soyle(c, 'Kırılma noktası hep h’nin sıfırında: x = −b/a.', { speak: 'Kırılma noktası hep h fonksiyonunun sıfırında: x eşittir eksi b bölü a.', dur: true });
     c.note('<b>|ax + b|</b> grafiği −b/a’da kırılır.<br>|2x − 4|: x = 2', 'Kırılma noktası', 'b4-kirilma');
   }
 
@@ -121,7 +121,7 @@
     const ok1 = yon(2, 0, [[-20, 12], [18, -12]]), ok2 = yon(2, 1, [[-26, -12], [-4, 12], [18, -12]]);
 
     await soyle(c, 'Doğru ile katlanmış hâlini yan yana koy.');
-    await par(soyle(c, 'h sıfırda işaret değiştirir; |h| hiç negatif olmaz.'), belir(c, [neg1.el, poz1.el, poz2.el], 500));
+    await par(soyle(c, 'h sıfırda işaret değiştirir; |h| hiç negatif olmaz.', { speak: 'h fonksiyonu sıfırda işaret değiştirir; h’nin mutlak değeri hiç negatif olmaz.' }), belir(c, [neg1.el, poz1.el, poz2.el], 500));
     tb.yaz(1, 0, [['−', RENK.eksi], ', 0, ', ['+', RENK.arti]]); tb.yaz(1, 1, ['0, ', ['+', RENK.arti]]);
     await c.wait(500);
     await kaybol(c, [neg1.el, poz1.el, poz2.el], 300);
@@ -132,11 +132,11 @@
       right: 'Katlanan kısım yön değiştirdi: solda azalan, sağda artan.',
     });
     g1.el.style.opacity = 1; g2.el.style.opacity = 1;
-    await par(soyle(c, 'h hep artan; |h| sıfırın solunda azalan, sağında artan.'), belir(c, [ok1, ok2], 400),
+    await par(soyle(c, 'h hep artan; |h| sıfırın solunda azalan, sağında artan.', { speak: 'h fonksiyonu hep artan; h’nin mutlak değeri sıfırın solunda azalan, sağında artan.' }), belir(c, [ok1, ok2], 400),
       c.tween(2400, (e) => { const x = lerp(-1.5, 7.5, e); g1.git(x, x - 3); g2.git(x, Math.abs(x - 3)); }, ease.inOut));
     await kaybol(c, [g1.el, g2.el], 250);
     tb.yaz(3, 0, 'yok'); tb.yaz(3, 1, '0', RENK.sifir);
-    await par(soyle(c, 'h’nin en küçük değeri yok; |h|’inki 0.'), pop(c, s2, d2.X(3), d2.Y(0), 450));
+    await par(soyle(c, 'h’nin en küçük değeri yok; |h|’inki 0.', { speak: 'h fonksiyonunun en küçük değeri yok; h’nin mutlak değerinin en küçük değeri sıfır.' }), pop(c, s2, d2.X(3), d2.Y(0), 450));
     await par(soyle(c, 'Değişmeyen şey sıfır: ikisinde de x = 3.'), pop(c, s1, d1.X(3), d1.Y(0), 450), pop(c, s2, d2.X(3), d2.Y(0), 450), belir(c, [e1, e2], 400));
     c.note('<b>h ile |h|:</b> sıfırları aynı; |h| negatif olmaz, en küçük değeri 0.', 'h ile |h|', 'b4-fark');
   }

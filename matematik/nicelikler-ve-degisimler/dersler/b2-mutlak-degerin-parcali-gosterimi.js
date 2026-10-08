@@ -80,7 +80,7 @@
       hints: ['Baştaki eksi “negatif” demek değildir; “işareti çevir” demektir.', '', 'x negatif dedik; işareti çevrilince hep pozitif olur.'],
       right: 'Negatif sayının işareti çevrilince pozitif olur: −(−40) = 40.',
     });
-    await par(soyle(c, 'x negatifken −x pozitiftir: x’in sıfıra uzaklığıdır.'), (async () => {
+    await par(soyle(c, 'x negatifken −x pozitiftir: x’in sıfıra uzaklığıdır.', { ton: 'thoughtful' }), (async () => {
       await c.tween(1300, (e) => koy(Math.round(lerp(-40, -10, e))), ease.inOut);
       await c.wait(300);
       await c.tween(1100, (e) => koy(Math.round(lerp(-10, -30, e))), ease.inOut);
@@ -118,7 +118,7 @@
       await belir(c, sol, 400);
     })());
     yak(-1);
-    await par(soyle(c, 'İki ayrı fonksiyon değil: sıfırda birleşen tek bir grafik.'), pop(c, uc, dz.X(0), dz.Y(0), 450));
+    await par(soyle(c, 'İki ayrı fonksiyon değil: sıfırda birleşen tek bir grafik.', { ton: 'thoughtful' }), pop(c, uc, dz.X(0), dz.Y(0), 450));
     c.note('<b>|x| grafiği:</b> y = x’in sağ yarısı, y = −x’in sol yarısı.', 'V’nin iki kolu', 'b2-iki-yari');
   }
 
@@ -131,7 +131,7 @@
     const p = nokta(dz, -7, 7, { r: 10 }), uc = nokta(dz, 0, 0, { r: 10 });
     gizle(pr.g, pr.satir[0].g, pr.satir[1].g, hesap, p.el, uc.el);
 
-    await par(soyle(c, 'İki yarıyı tek kuralda toplayan yazım: <b>parçalı gösterim</b>.'), belir(c, pr.g, 500));
+    await par(soyle(c, 'İki yarıyı tek kuralda toplayan yazım: <b>parçalı gösterim</b>.', { dur: true }), belir(c, pr.g, 500));
     yak(0);
     await par(soyle(c, 'Sağ kol: girdi negatif değilse çıktı girdinin kendisi.'), belir(c, pr.satir[0].g, 500));
     yak(1);

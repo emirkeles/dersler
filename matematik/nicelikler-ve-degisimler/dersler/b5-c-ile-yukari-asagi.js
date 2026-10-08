@@ -23,7 +23,7 @@
     gizle(golge.el, yatay.el, v.el, uc.el, kuralT, ucT, sayT);
 
     await par(soyle(c, 'Paketleme makinesinin sapması bu fonksiyonla veriliyor.'), belir(c, kuralT, 500));
-    await par(soyle(c, 'Önce tanıdık kısmı çiz: |x − 2|, ucu 2’de.'), ciz(c, v, 900));
+    await par(soyle(c, 'Önce tanıdık kısmı çiz: |x − 2|, ucu 2’de.', { speak: 'Önce tanıdık kısmı çiz: x eksi ikinin mutlak değeri, ucu ikide.' }), ciz(c, v, 900));
     golge.el.style.opacity = 0.6;
     await par(soyle(c, 'Sonra her çıktıya 1 ekle: V bir birim yukarı kayar.'), c.tween(1500, (e) => v.ayarla(mutlakNoktalar(dz, 1, -2, e)), ease.inOut));
     await c.choice({
@@ -32,8 +32,8 @@
       hints: ['m(2) = |2 − 2| + 1 = 1 eder; sıfır değil.', 'Grafik x eksenine hiç inmiyor.', ''],
       right: '|x − 2| en az 0’dır; 1 eklenince en az 1 olur.',
     });
-    await par(soyle(c, 'En alttaki nokta (2, 1): en küçük değer 1.'), pop(c, uc, dz.X(2), dz.Y(1), 450), belir(c, [yatay.el, ucT], 500));
-    await par(soyle(c, 'Grafik x eksenine değmiyor: bu fonksiyonun sıfırı yok.'), belir(c, sayT, 500));
+    await par(soyle(c, 'En alttaki nokta (2, 1): en küçük değer 1.', { speak: 'En alttaki nokta, iki bir noktası: en küçük değer bir.', dur: true }), pop(c, uc, dz.X(2), dz.Y(1), 450), belir(c, [yatay.el, ucT], 500));
+    await par(soyle(c, 'Grafik x eksenine değmiyor: bu fonksiyonun sıfırı yok.', { ton: 'thoughtful' }), belir(c, sayT, 500));
     await soyle(c, 'Makinenin sapması da hiç 0 olmaz; en azı 1’dir.');
     c.note('<b>|h(x)| + c ≥ c</b><br>|x − 2| + 1 ≥ 1', 'c ile yukarı', 'b5-yukari');
   }
@@ -82,7 +82,7 @@
     await soyle(c, 'c’yi değiştir; sıfır sayısını izle.', { noWait: true });
     c.slider({ label: 'c', min: -3, max: 3, step: 0.5, value: -3, fmt: (x) => sayi(x), onInput: k.koy });
     await c.cont('Devam ›');
-    await soyle(c, 'c pozitifse sıfır yok, sıfırsa bir, negatifse iki sıfır var.');
+    await soyle(c, 'c pozitifse sıfır yok, sıfırsa bir, negatifse iki sıfır var.', { speak: 'c pozitifse sıfır yok, c sıfırsa tek sıfır var, c negatifse iki sıfır var.' });
     c.note('c pozitif: sıfır yok<br>c sıfır: bir sıfır<br>c negatif: iki sıfır', '|h(x)| + c’nin sıfırları', 'b5-sifir-sayisi');
   }
 
@@ -102,7 +102,7 @@
     await soyle(c, 'c’yi değiştir; hangi c’lerde sıfır kalmıyor?', { noWait: true });
     c.slider({ label: 'c', min: -3, max: 3, step: 0.5, value: 2, fmt: (x) => sayi(x), onInput: k.koy });
     await c.cont('Devam ›');
-    await soyle(c, 'Ters V’de durum tersine döner: c negatifse sıfır yok.');
+    await soyle(c, 'Ters V’de durum tersine döner: c negatifse sıfır yok.', { ton: 'thoughtful' });
     c.note('c pozitif: iki sıfır<br>c sıfır: bir sıfır<br>c negatif: sıfır yok', '−|h(x)| + c’nin sıfırları', 'b5-ters');
   }
 

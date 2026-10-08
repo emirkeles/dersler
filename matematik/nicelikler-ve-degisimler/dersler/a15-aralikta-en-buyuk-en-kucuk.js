@@ -113,7 +113,7 @@
     gizle(satirlar, buyuk, kucuk, h2, gezen.el);
     const git = (x0, x1, ms) => c.tween(ms, (e) => { const x = lerp(x0, x1, e); gezen.git(x, pr.f(x)); }, ease.out);
 
-    await soyle(c, 'Aynı doğru; bu kez 3 aralığa dahil değil.');
+    await soyle(c, 'Aynı doğru; bu kez 3 aralığa dahil değil.', { speak: 'Aynı doğru; bu kez üç sayısı aralığa dahil değil.' });
     gezen.el.style.opacity = 1;
     await par(soyle(c, 'Nokta 3’e yaklaşıyor ama 3’ü alamıyor.'), (async () => { await git(1, 2.9, 1500); await belir(c, satirlar[0], 350); })());
     await par(soyle(c, 'Her adımda değer büyüyor; 7’ye hep biraz kalıyor.'), (async () => {
@@ -127,11 +127,11 @@
       right: 'Hangi değeri söylesen daha büyüğü var.',
     });
     await kaybol(c, [...satirlar, gezen.el], 300);
-    await par(soyle(c, 'Hangi değeri seçersen seç, daha büyüğü var.'), belir(c, buyuk, 450));
+    await par(soyle(c, 'Hangi değeri seçersen seç, daha büyüğü var.', { ton: 'thoughtful' }), belir(c, buyuk, 450));
     await par(soyle(c, 'Sol uç aralıkta; en küçük değer yine −1.'), (async () => {
       sari(sol); await belir(c, h2, 350); await belir(c, kucuk, 400);
     })());
-    await soyle(c, 'Çocuk biletinde de böyle: 12 dahil değil, en pahalı yaş yok.');
+    await soyle(c, 'Çocuk biletinde de böyle: 12 dahil değil, en pahalı yaş yok.', { dur: true });
     c.note('Uç dahil değilse oradaki değer alınamaz.<br>[−1, 3): en büyük değer yok', 'Dahil olmayan uç', 'a15-acik');
   }
 

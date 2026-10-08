@@ -70,7 +70,7 @@
     [0, 1, 2].forEach((x, k) => tb.yaz(0, k, sayi(x), RENK.f));
     gizle(kuralT, acik, tb.g);
 
-    await par(soyle(c, 'g, f’nin her çıktısını 2 ile çarpıyor.'), belir(c, kuralT, 450));
+    await par(soyle(c, 'g, f’nin her çıktısını 2 ile çarpıyor.', { speak: 'g, f fonksiyonunun her çıktısını iki ile çarpıyor.' }), belir(c, kuralT, 450));
     await par(soyle(c, 'Tabloda her çıktı iki katına çıktı.'), (async () => {
       await belir(c, tb.g, 400);
       for (let k = 0; k < 3; k++) { await c.wait(350); tb.yaz(1, k, sayi(2 * k), RENK.g); }
@@ -87,8 +87,8 @@
     await kaybol(c, tb.g, 300);
     await par(soyle(c, 'Doğru orijin çevresinde döndü: dikleşti.'), belir(c, gAd, 400));
     await kaybol(c, oklar.map((o) => o.g).concat(fn.map((n) => n.el), gn.map((n) => n.el), orijin.el), 300);
-    await par(soyle(c, 'Eğim: 1 birim sağa gidince kaç birim yükseldiğin.'), belir(c, bs.g, 500));
-    await soyle(c, 'g’de 1 sağa, 2 yukarı: eğim 2.');
+    await par(soyle(c, 'Eğim: 1 birim sağa gidince kaç birim yükseldiğin.', { dur: true }), belir(c, bs.g, 500));
+    await soyle(c, 'g’de 1 sağa, 2 yukarı: eğim 2.', { speak: 'g fonksiyonunda bir sağa, iki yukarı: eğim iki.' });
     await par(soyle(c, 'Kuralı kısa: çıktı, girdinin 2 katı.'), belir(c, acik, 450));
   }
 
@@ -122,7 +122,7 @@
     await soyle(c, 'a’yı değiştir; basamağın yüksekliğini izle.', { noWait: true });
     c.slider({ label: 'a', min: 0.5, max: 3, step: 0.5, value: 3, fmt: (v) => sayi(v), onInput: t.koy });
     await c.cont('Devam ›');
-    await soyle(c, 'Basamağın yüksekliği hep a: doğrunun eğimi a’dır.');
+    await soyle(c, 'Basamağın yüksekliği hep a: doğrunun eğimi a’dır.', { speak: 'Basamağın yüksekliği hep a: doğrunun eğimi a sayısıdır.', dur: true });
     c.note('<b>g(x) = a · f(x) = ax</b><br>Eğimi a’dır: 2x’in eğimi 2', 'Eğim', 'a7-egim');
   }
 
@@ -139,9 +139,9 @@
       right: 'g(1) = −2: 1 sağa gidince 2 birim alçalırsın.',
     });
     await belir(c, [t.g.el, t.bs.g], 300);
-    await par(soyle(c, 'Çarpan küçüldükçe doğru dönüyor, sıfırı geçince aşağı eğiliyor.'), c.tween(2600, (e) => t.koy(lerp(1, -2, e)), ease.inOut));
+    await par(soyle(c, 'Çarpan küçüldükçe doğru dönüyor, sıfırı geçince aşağı eğiliyor.', { ton: 'thoughtful' }), c.tween(2600, (e) => t.koy(lerp(1, -2, e)), ease.inOut));
     await par(soyle(c, 'Artık 1 sağa gidince 2 aşağı iniyorsun.'), belir(c, [t.kuralT, t.egim], 450));
-    await par(soyle(c, 'Kesikli doğru 2x: ikisi de aynı diklikte.'), belir(c, ayna.el, 500, 0.7));
+    await par(soyle(c, 'Kesikli doğru 2x: ikisi de aynı diklikte.', { speak: 'Kesikli doğru, iki x doğrusu: ikisi de aynı diklikte.' }), belir(c, ayna.el, 500, 0.7));
     await kaybol(c, ayna.el, 300);
     yaz(t.ust, GENEL);
     await soyle(c, 'a’yı −3 ile 3 arasında gezdir; doğru ne zaman alçalıyor?', { noWait: true });

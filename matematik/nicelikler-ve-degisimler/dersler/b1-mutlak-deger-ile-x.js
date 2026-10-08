@@ -64,7 +64,7 @@
     })());
     await c.tween(400, (e) => { const x = lerp(3, 0, e); gez.setAttribute('cx', X(x)); gezC.setAttribute('x2', X(x)); }, ease.inOut);
     tb.h[0][3].style.fill = RENK.sifir; tb.h[1][3].style.fill = RENK.sifir;
-    await soyle(c, 'Sıfırın çıktısı sıfır: mutlak değer her zaman pozitif değildir.');
+    await soyle(c, 'Sıfırın çıktısı sıfır: mutlak değer her zaman pozitif değildir.', { ton: 'thoughtful' });
     c.note('<b>Mutlak değer fonksiyonu:</b> n(x) = |x|<br>|−3| = 3', 'n(x) = |x|', 'b1-mutlak');
   }
 
@@ -100,7 +100,7 @@
       hints: ['Doğru orada eksenin altında; |x| ise negatif olmaz.', '', 'Eksenin üzerinde çıktı 0’dır; |−3| ise 3 eder.'],
       right: '|−3| = 3: nokta eksenin 3 birim üstünde.',
     });
-    await par(soyle(c, 'Negatif girdilerin çıktısı pozitif: noktalar eksenin üstünde.'), (async () => { for (const k of [2, 1, 0]) await koy(k); })());
+    await par(soyle(c, 'Negatif girdilerin çıktısı pozitif: noktalar eksenin üstünde.', { dur: true }), (async () => { for (const k of [2, 1, 0]) await koy(k); })());
     await kaybol(c, tb.g, 300);
     await belir(c, fEt, 300);
     await par(soyle(c, 'Doğrunun eksen altındaki yarısını yukarı katla.'), belir(c, ok, 400), katla(c, dz, 1, 0, { renk: RENK.mutlak, ms: 1600 }));
@@ -139,13 +139,13 @@
     gizle(ayni, farkli, tb.g);
 
     git(0); await belir(c, [pf.el, pn.el], 250);
-    await par(soyle(c, 'x ≥ 0’da iki grafik üst üste: çıktılar aynı.'), (async () => {
+    await par(soyle(c, 'x ≥ 0’da iki grafik üst üste: çıktılar aynı.', { speak: 'x sıfırdan büyük ya da sıfıra eşitken iki grafik üst üste: çıktılar aynı.' }), (async () => {
       await c.tween(1500, (e) => git(lerp(0, 3.6, e)), ease.inOut);
       await belir(c, ayni, 300);
     })());
     await c.tween(700, (e) => git(lerp(3.6, 0, e)), ease.inOut);
     bag.style.opacity = 1;
-    await par(soyle(c, 'x &lt; 0’da ayrılırlar: biri aşağıda, öbürü yukarıda.'), (async () => {
+    await par(soyle(c, 'x &lt; 0’da ayrılırlar: biri aşağıda, öbürü yukarıda.', { speak: 'x sıfırdan küçükken ayrılırlar: biri aşağıda, öbürü yukarıda.' }), (async () => {
       await c.tween(1500, (e) => git(lerp(0, -3.6, e)), ease.inOut);
       await belir(c, farkli, 300);
     })());
@@ -163,11 +163,11 @@
       tb.yaz(1, 0, 'ℝ'); tb.yaz(1, 1, 'ℝ');
     })());
     await belir(c, tanimS.el, 300, 0);
-    await par(soyle(c, 'f her gerçek sayıyı çıktı olarak verir.'), (async () => {
+    await par(soyle(c, 'f her gerçek sayıyı çıktı olarak verir.', { speak: 'f fonksiyonu her gerçek sayıyı çıktı olarak verir.' }), (async () => {
       await c.tween(900, (e) => fS.ayarla(-4 * e, 4 * e), ease.inOut);
       tb.yaz(2, 0, 'ℝ');
     })());
-    await par(soyle(c, 'n ise yalnızca sıfırı ve pozitif sayıları verir.'), (async () => {
+    await par(soyle(c, 'n ise yalnızca sıfırı ve pozitif sayıları verir.', { speak: 'n fonksiyonu ise yalnızca sıfırı ve pozitif sayıları verir.' }), (async () => {
       await c.tween(900, (e) => nS.ayarla(0, 4 * e), ease.inOut);
       tb.yaz(2, 1, '[0, ∞)', RENK.mutlak);
     })());

@@ -78,7 +78,7 @@
     await kaybol(c, [gezen.el, izler.g], 250);
     await soyle(c, 'Çıktısı hiç değişmeyen fonksiyona <b>sabit fonksiyon</b> denir.');
     sabitTerim = RENK.sifir; koy(0);
-    await soyle(c, 'Değeri, kuralda x’e bağlı olmayan sayıdır: <b>sabit terim</b>.');
+    await soyle(c, 'Değeri, kuralda x’e bağlı olmayan sayıdır: <b>sabit terim</b>.', { dur: true });
     c.note('<b>Sabit fonksiyon:</b> a = 0, çıktı hep sabit terim.<br>g(x) = 3', 'Sabit fonksiyon', 'a8-sabit');
     await soyle(c, 'a’yı değiştir; doğru yalnızca a = 0’da yatay.', { noWait: true });
     c.slider({ label: 'a', min: 0, max: 2, step: 0.5, value: 0, fmt: (v) => sayi(v), onInput: (v) => { koy(v); acik.style.opacity = v === 0 ? 1 : 0; } });
@@ -118,7 +118,7 @@
       hints: ['Çıktı hiç değişmiyor; 3’ten başka değer çıkmaz.', 'Çıkan değer 0 değil, sabit terim: 3.', ''],
       right: 'Çıkabilen tek değer 3.',
     });
-    await par(soyle(c, 'Sağda her girdinin çıktısı 3: tek elemanlı küme.'), (async () => {
+    await par(soyle(c, 'Sağda her girdinin çıktısı 3: tek elemanlı küme.', { dur: true }), (async () => {
       await belir(c, [sag.p.el, sag.izler.g], 250);
       await c.tween(2400, (e) => sag.yuru(lerp(-5, 5, e)), ease.inOut);
       await pop(c, tek, sag.dz.X(0), sag.dz.Y(3));
@@ -128,7 +128,7 @@
     yaz(sol.yon, 'artan');
     await soyle(c, 'Soldaki sağa gittikçe yükselir: artan.');
     yaz(sag.yon, 'ne artan ne azalan');
-    await soyle(c, 'Sabit fonksiyon sağa gittikçe ne yükselir ne alçalır.');
+    await soyle(c, 'Sabit fonksiyon sağa gittikçe ne yükselir ne alçalır.', { ton: 'thoughtful' });
     c.note('<b>g(x) = 3</b> için görüntü kümesi {3}.<br>Grafiği yatay doğru', 'Sabit fonksiyonun grafiği', 'a8-grafik');
   }
 

@@ -52,7 +52,7 @@
       (async () => { await bosalt(4, 12, 3200); await pop(c, kok, dz.X(12), dz.Y(0)); })());
     await par(soyle(c, 'Tankın boşaldığı an, f(x) = 0 denkleminin çözümüdür.'), belir(c, denk, 500));
     await par(soyle(c, 'Denklemin çözümü fonksiyonun sıfırıdır; adı <b>kök</b>.'), belir(c, kokAd, 500));
-    await par(soyle(c, 'Hesapla da bulunur: a = −5, b = 60.'), belir(c, cozum, 500));
+    await par(soyle(c, 'Hesapla da bulunur: a = −5, b = 60.', { dur: true }), belir(c, cozum, 500));
     c.note('<b>Kök:</b> f(x) = 0’ın çözümü.<br>−5x + 60 için 12', 'f(x) = 0', 'c2-kok');
   }
 
@@ -110,7 +110,7 @@
     const aralik = yazi(svg, 775, 436, '(12, ∞)', { size: 34, kalin: 700, renk: RENK.sifir }); gizle(aralik);
     it.g.style.opacity = 1;
 
-    await par(soyle(c, 'Şimdi öbür soru: f(x) hangi x’lerde negatif?'), belir(c, baslik, 500));
+    await par(soyle(c, 'Şimdi öbür soru: f(x) hangi x’lerde negatif?', { speak: 'Şimdi öbür soru: f x hangi x değerleri için negatif?', ton: 'curious' }), belir(c, baslik, 500));
     await c.choice({
       tag: 'Tahmin et', q: 'Gerçek sayılarda f(x) &lt; 0’ın çözümü hangisi?',
       options: ['(−∞, 12)', '[12, ∞)', '(12, ∞)'], answer: 2,
@@ -123,7 +123,7 @@
       await c.tween(800, (e) => cozum.ayarla(12, lerp(12, 18, e)), ease.inOut);
       yaz(sonuc, 'x > 12'); await belir(c, sonuc, 400); await belir(c, aralik, 400);
     })());
-    await soyle(c, 'Tank için bunun anlamı yok: su eksiye düşmez.');
+    await soyle(c, 'Tank için bunun anlamı yok: su eksiye düşmez.', { ton: 'thoughtful' });
     await soyle(c, 'Kural gerçek sayılarda çözülür; sonuç probleme göre yorumlanır.');
     c.note('<b>f(x) &lt; 0:</b> grafik eksenin altında.<br>Burada x &gt; 12', 'f(x) < 0', 'c2-negatif');
   }

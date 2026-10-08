@@ -57,8 +57,8 @@
     XS.forEach((x, k) => tb.yaz(0, k, sayi(x), RENK.f));
     gizle(tb.g);
 
-    await par(soyle(c, 'f’nin her çıktısına 2 ekleyen yeni bir fonksiyon: g.'), belir(c, kuralT, 450));
-    await par(soyle(c, 'Tabloda g’nin her çıktısı f’ninkinden 2 büyük.'), (async () => {
+    await par(soyle(c, 'f’nin her çıktısına 2 ekleyen yeni bir fonksiyon: g.', { speak: 'f fonksiyonunun her çıktısına iki ekleyen yeni bir fonksiyon: g.' }), belir(c, kuralT, 450));
+    await par(soyle(c, 'Tabloda g’nin her çıktısı f’ninkinden 2 büyük.', { speak: 'Tabloda g fonksiyonunun her çıktısı, f fonksiyonunun çıktısından iki büyük.' }), (async () => {
       await belir(c, tb.g, 400);
       for (let k = 0; k < XS.length; k++) { await c.wait(350); tb.yaz(1, k, sayi(XS[k] + 2), RENK.g); }
     })());
@@ -76,7 +76,7 @@
     })());
     await kaybol(c, tb.g, 300);
     await par(soyle(c, 'Doğru yukarı kaydı; eğimi aynı kaldı.'), belir(c, gAd, 400));
-    await par(soyle(c, 'Kuralı kısa: çıktı, girdinin 2 fazlası.'), belir(c, acik, 450));
+    await par(soyle(c, 'Kuralı kısa: çıktı, girdinin 2 fazlası.', { dur: true }), belir(c, acik, 450));
     c.note('<b>g(x) = f(x) + k</b><br>k = 2: doğru 2 birim yukarı', 'Çıktıya ekle', 'a6-k');
     await kaybol(c, [fark, gAd], 250);
     kuralYaz(-3);
@@ -112,13 +112,13 @@
     const kuralYaz = (s) => { yaz(kuralT, [['g(x)', RENK.g], ' = ', ['f(x ', RENK.f], [isaretli(-s), RENK.sifir], [')', RENK.f]]); yaz(acik, '= ' + kural(1, -s)); };
     kuralYaz(2); gizle(kuralT, acik, hesap);
 
-    await par(soyle(c, 'Bu kez sayı çıktıya değil, girdiye dokunuyor.'), belir(c, kuralT, 450));
-    await soyle(c, 'g, f’nin 2 önceki girdiye verdiği çıktıyı verir.');
+    await par(soyle(c, 'Bu kez sayı çıktıya değil, girdiye dokunuyor.', { ton: 'thoughtful' }), belir(c, kuralT, 450));
+    await soyle(c, 'g, f’nin 2 önceki girdiye verdiği çıktıyı verir.', { speak: 'g, f fonksiyonunun iki önceki girdiye verdiği çıktıyı verir.' });
     yaz(hesap, ['g(2) = ', ['f(0)', RENK.f], ' = 0']);
-    await par(soyle(c, 'g(2) için f’nin 0’daki çıktısına bakılır.'), belir(c, hesap, 350), pop(c, fn[0], dz.X(0), dz.Y(0)));
+    await par(soyle(c, 'g(2) için f’nin 0’daki çıktısına bakılır.', { speak: 'g fonksiyonunun ikideki değeri için, f fonksiyonunun sıfırdaki çıktısına bakılır.' }), belir(c, hesap, 350), pop(c, fn[0], dz.X(0), dz.Y(0)));
     await kaybol(c, hesap, 200);
     yaz(hesap, ['g(3) = ', ['f(1)', RENK.f], ' = 1']);
-    await par(soyle(c, 'g(3) için f’nin 1’deki çıktısına.'), belir(c, hesap, 350), pop(c, fn[1], dz.X(1), dz.Y(1)));
+    await par(soyle(c, 'g(3) için f’nin 1’deki çıktısına.', { speak: 'g fonksiyonunun üçteki değeri için, f fonksiyonunun birdeki çıktısına.' }), belir(c, hesap, 350), pop(c, fn[1], dz.X(1), dz.Y(1)));
     await c.choice({
       tag: 'Tahmin et', q: 'g’nin grafiği f’ye göre hangi yöne kayar?',
       options: ['Sola 2 birim', 'Sağa 2 birim', 'Yukarı 2 birim'], answer: 1,
@@ -135,7 +135,7 @@
     c.note('<b>g(x) = f(x − r)</b><br>r = 2: doğru 2 birim sağa', 'Girdiden çıkar', 'a6-r');
     await kaybol(c, gAd, 250);
     kuralYaz(-2);
-    await par(soyle(c, 'Girdiye 2 eklenirse doğru 2 birim sola kayar.'), (async () => {
+    await par(soyle(c, 'Girdiye 2 eklenirse doğru 2 birim sola kayar.', { ton: 'thoughtful' }), (async () => {
       await c.tween(2200, (e) => koy(lerp(2, -2, e)), ease.inOut);
       await belir(c, gAd, 300);
     })());
@@ -165,13 +165,13 @@
     await soyle(c, 'Şimdi iki kaydırmayı arka arkaya yapalım.');
     await par(soyle(c, 'Girdiden 2 çıkar: doğru 2 birim sağa.'), c.tween(1500, (e) => koy(2 * e, 0, 2, 0), ease.inOut));
     await par(soyle(c, 'Çıktıya 1 ekle: doğru 1 birim yukarı.'), c.tween(1200, (e) => koy(2, e, 2, 1), ease.inOut));
-    await soyle(c, 'Orijindeki nokta (2, 1)’e taşındı; eğim aynı.');
+    await soyle(c, 'Orijindeki nokta (2, 1)’e taşındı; eğim aynı.', { speak: 'Orijindeki nokta, iki, bir noktasına taşındı; eğim aynı.' });
     let R = 2, K = 1;
     await soyle(c, 'r ile k’yi değiştir; eğim hiç değişiyor mu?', { noWait: true });
     c.slider({ label: 'r (sağa)', min: -3, max: 3, step: 1, value: R, fmt: (v) => sayi(v), onInput: (v) => { R = v; koy(R, K); } });
     c.slider({ label: 'k (yukarı)', min: -3, max: 3, step: 1, value: K, fmt: (v) => sayi(v), tag: false, onInput: (v) => { K = v; koy(R, K); } });
     await c.cont('Devam ›');
-    await soyle(c, 'Hangi r ve k’yi seçersen seç, eğim değişmedi.');
+    await soyle(c, 'Hangi r ve k’yi seçersen seç, eğim değişmedi.', { speak: 'Hangi r ve k sayılarını seçersen seç, eğim değişmedi.' });
     c.note('<b>g(x) = f(x − r) + k</b><br>r sağa, k yukarı kaydırır', 'İki kaydırma', 'a6-rk');
   }
 

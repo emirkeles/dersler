@@ -46,7 +46,7 @@
       right: 'Sıcaklık 2. dakikadan sonra 0’da kalıyor; tek doğru yetmez.',
     });
     await par(soyle(c, 'İlk üç noktanın doğrusu ötekileri ıskalıyor.'), ciz(c, uzanti, 500));
-    await soyle(c, 'Sıcaklık baştan sona aynı hızla yükselmiyor.');
+    await soyle(c, 'Sıcaklık baştan sona aynı hızla yükselmiyor.', { ton: 'thoughtful' });
   }
 
   /* ---- 2. Üç parça ---- */
@@ -63,7 +63,7 @@
     const parca = async (i) => { await ciz(c, g.parcalar[i], 700); await belir(c, satir[i], 400); };
 
     await par(soyle(c, 'İlk 2 dakika: −20’den başlar, dakikada 10 °C yükselir.'), parca(0));
-    await par(soyle(c, '2 ile 6 arasında sıcaklık 0’da kalır: sabit fonksiyon.'), parca(1));
+    await par(soyle(c, '2 ile 6 arasında sıcaklık 0’da kalır: sabit fonksiyon.', { speak: 'İki ile altı arasında sıcaklık sıfırda kalır: sabit fonksiyon.' }), parca(1));
     await c.choice({
       tag: 'Tahmin et', q: 'Son parçada sıcaklık dakikada kaç derece yükseliyor?',
       options: ['10 °C', '5 °C', 'Hiç yükselmiyor'], answer: 1,
@@ -97,7 +97,7 @@
       right: '6 &lt; 7 ≤ 8: üçüncü satır.',
     });
     pc.yak(2); g.yak(2);
-    await par(soyle(c, 't yerine 7 yaz: 5 · 7 − 30 = 5.'), (async () => {
+    await par(soyle(c, 't yerine 7 yaz: 5 · 7 − 30 = 5.', { dur: true }), (async () => {
       await pop(c, p, dz.X(7), dz.Y(5)); await belir(c, [izler.g, bes], 400);
     })());
     c.note('<b>Parçalı gösterim:</b> her aralığın kendi kuralı.<br>T(7) = 5 · 7 − 30', 'Parçalı gösterim', 'a16-parcali');

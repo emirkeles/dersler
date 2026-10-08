@@ -45,7 +45,7 @@
     await par(soyle(c, 'Her ürünün barkodu ayrıysa bu iki paket aynı üründür.'), c.tween(500, (e) => {
       [p1, p2].forEach((p) => { p.kutu.setAttribute('stroke', e > 0.5 ? RENK.sifir : RENK.kenar); });
     }));
-    await par(soyle(c, 'Bire birliğin tanımı: farklı girdiler farklı çıktı verir.'), belir(c, tanim, 500));
+    await par(soyle(c, 'Bire birliğin tanımı: farklı girdiler farklı çıktı verir.', { dur: true }), belir(c, tanim, 500));
     await par(soyle(c, 'Barkod aynı kuralı öbür yanından okudu.'), belir(c, cevrik, 500));
     await c.choice({
       tag: 'Tahmin et', q: 'Bu iki cümle aynı şeyi mi söyler?',
@@ -88,7 +88,7 @@
     await par(soyle(c, 'Hüküm çıktı: iki girdi aslında aynı girdi.'), (async () => {
       await pop(c, kesisim, dz.X(3), dz.Y(4)); await belir(c, [dik, girdi.el], 400);
     })());
-    await soyle(c, 'a sıfır olsaydı bu adım atılamazdı: sıfıra bölünmez.');
+    await soyle(c, 'a sıfır olsaydı bu adım atılamazdı: sıfıra bölünmez.', { ton: 'thoughtful' });
     c.note('<b>a ≠ 0:</b> ax<sub>1</sub> = ax<sub>2</sub> ise x<sub>1</sub> = x<sub>2</sub>', 'Bire birliğin ispatı', 'a13-ispat');
   }
 

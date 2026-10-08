@@ -42,7 +42,7 @@
     const denklem = yazi(svg, 765, 220, 'f(x) = 0', { size: 46, kalin: 700 });
     const cozum = yazi(svg, 765, 300, 'x = 0', { size: 52, kalin: 700, renk: RENK.sifir });
     gizle(denklem, cozum);
-    await soyle(c, 'f(x) = x’in grafiği x eksenini bir yerde kesiyor.');
+    await soyle(c, 'f(x) = x’in grafiği x eksenini bir yerde kesiyor.', { speak: 'f x eşittir x fonksiyonunun grafiği x eksenini bir yerde kesiyor.' });
     await c.choice({
       tag: 'Tahmin et', q: 'f(x) = x hangi x için 0 değerini alır?',
       options: ['x = 1', 'x = 0', 'Hiçbir x için'], answer: 1,
@@ -50,7 +50,7 @@
       right: 'f(0) = 0.',
     });
     await par(soyle(c, 'Doğru x eksenini tam burada keser.'), pop(c, p, dz.X(0), dz.Y(0)), belir(c, denklem, 500));
-    await par(soyle(c, 'f(x) = 0 yapan x: fonksiyonun <b>sıfırı</b>.'), belir(c, cozum, 500));
+    await par(soyle(c, 'f(x) = 0 yapan x: fonksiyonun <b>sıfırı</b>.', { dur: true }), belir(c, cozum, 500));
     c.note('<b>Fonksiyonun sıfırı:</b> f(x) = 0 yapan x.<br>f(x) = x için x = 0', 'Sıfır', 'a3-sifir');
   }
 
@@ -84,12 +84,12 @@
     const u1 = nokta(dz, -2, -2, { renk: RENK.f, r: 9 }), u2 = nokta(dz, 4, 4, { renk: RENK.f, r: 9 }); gizle(u1.el, u2.el);
     const o = ozet(svg, 120); ozetYaz(o, -2, 4);
     const hepsi = [o.sifir, o.neg, o.poz].flatMap((s_) => [s_.ad, s_.deger]); gizle(hepsi);
-    await par(soyle(c, 'Tanım kümesi [−2, 4] olsun.'), (async () => {
+    await par(soyle(c, 'Tanım kümesi [−2, 4] olsun.', { speak: 'Tanım kümesi eksi iki ile dört arasındaki kapalı aralık olsun.' }), (async () => {
       await c.tween(1000, (e) => b.koy(lerp(-5, -2, e), lerp(5, 4, e)), ease.inOut);
       await belir(c, [u1.el, u2.el], 300);
     })());
     await par(soyle(c, 'Negatif olduğu yer kısaldı; sıfırı yerinde.'), belir(c, hepsi, 500));
-    await par(soyle(c, 'Şimdi tanım kümesi [1, 4].'), (async () => {
+    await par(soyle(c, 'Şimdi tanım kümesi [1, 4].', { speak: 'Şimdi tanım kümesi bir ile dört arasındaki kapalı aralık.' }), (async () => {
       await kaybol(c, hepsi, 300);
       await c.tween(1100, (e) => { const a = lerp(-2, 1, e); b.koy(a, 4); u1.git(a, a); }, ease.inOut);
     })());
@@ -100,7 +100,7 @@
       right: 'Aralıkta 0 yok; f hep pozitif.',
     });
     ozetYaz(o, 1, 4);
-    await par(soyle(c, 'İşaret ve sıfır, tanım kümesine bağlıdır.'), belir(c, hepsi, 500));
+    await par(soyle(c, 'İşaret ve sıfır, tanım kümesine bağlıdır.', { ton: 'thoughtful' }), belir(c, hepsi, 500));
   }
 
   /* ---- 4. Dene ---- */

@@ -73,7 +73,7 @@
     yaz(kuralT, KURAL());
     await par(soyle(c, 'Orijindeki nokta buraya taşındı.'), belir(c, [yer, gAd], 450));
     await par(soyle(c, 'Eğim hâlâ 2: 1 sağa, 2 yukarı.'), belir(c, bs, 450));
-    await soyle(c, 'Doğru (r, k) noktasından geçer; eğimi a’dır.');
+    await soyle(c, 'Doğru (r, k) noktasından geçer; eğimi a’dır.', { speak: 'Doğru r, k noktasından geçer; eğimi a’dır.' });
     c.note('<b>a · f(x − r) + k:</b> (r, k)’den geçer, eğimi a.', 'Üç sayı', 'a9-uc-sayi');
   }
 
@@ -108,7 +108,7 @@
       right: 'g(2) = 2 · (−1) + 2 = 0.',
     });
     await degistir(c, kuralT, hesap(2)); yaz(sonuc, '= 0');
-    await par(soyle(c, 'x ekseninde çıktı 0’dır: x = 2 bunu sağlıyor.'), belir(c, sonuc, 400), pop(c, xk, dz.X(2), dz.Y(0)));
+    await par(soyle(c, 'x ekseninde çıktı 0’dır: x = 2 bunu sağlıyor.', { dur: true }), belir(c, sonuc, 400), pop(c, xk, dz.X(2), dz.Y(0)));
     await par(soyle(c, 'Şimdi çiz: doğru iki noktadan da geçiyor.'), c.tween(1500, (e) => g.ayarla(2, -4, lerp(3, -5, e), lerp(4, 5, e)), ease.inOut));
     await kaybol(c, sonuc, 200); await degistir(c, kuralT, KURAL());
     yaz(sonuc, '= 2x − 4'); sonuc.style.fill = RENK.g;
@@ -136,7 +136,7 @@
       hints: ['2 kiloda A 60, B 40 lira alır.', '', '6 kiloda A 100, B 120 lira alır.'],
       right: '4 kiloda ikisi de 80 lira alır.',
     });
-    await par(soyle(c, 'B’nin doğrusunu uzat: A ile 4 kiloda, 80 lirada kesişiyor.'), (async () => {
+    await par(soyle(c, 'B’nin doğrusunu uzat: A ile 4 kiloda, 80 lirada kesişiyor.', { speak: 'B firmasının doğrusunu uzat: A firmasıyla dört kiloda, seksen lirada kesişiyor.' }), (async () => {
       await c.tween(1500, (e) => B.ayarla(20, 0, 0, lerp(1.5, 6, e)), ease.inOut);
       await pop(c, kes, dz.X(4), dz.Y(80)); await belir(c, izler.g, 350);
     })());
@@ -160,7 +160,7 @@
       hints: ['f’nin önünde eksi var: çarpan −1.', '', '2, girdiden çıkan sayı; eğim f’nin önündeki çarpandır.'],
       right: 'a = −1: 1 sağa gidince 1 birim inersin.', kanit: 'a = −1', renk: RENK.sifir,
     });
-    await par(soyle(c, 'Doğru (2, 1)’den geçer; 1 sağa gidince 1 iner.'), pop(c, p, dz.X(2), dz.Y(1)));
+    await par(soyle(c, 'Doğru (2, 1)’den geçer; 1 sağa gidince 1 iner.', { speak: 'Doğru iki, bir noktasından geçer; bir sağa gidince bir iner.' }), pop(c, p, dz.X(2), dz.Y(1)));
     await tb.sor(KART, {
       q: 'y eksenini nerede keser?', options: ['1', '−1', '3'], answer: 2,
       hints: ['1, doğrunun x = 2’deki yüksekliği; y ekseninde x = 0’dır.', 'x = 0 koy: −(0 − 2) + 1.', ''],
@@ -172,7 +172,7 @@
       hints: ['g(2) = 1; sıfır değil.', '', 'g(−3) = 5 + 1 = 6; sıfır değil.'],
       right: 'g(3) = −1 + 1 = 0.', kanit: 'g(3) = −1 + 1 = 0', renk: RENK.sifir,
     });
-    await par(soyle(c, 'Doğruyu uzat: x eksenini de 3’te kesiyor.'), (async () => {
+    await par(soyle(c, 'Doğruyu uzat: x eksenini de 3’te kesiyor.', { dur: true }), (async () => {
       await c.tween(1200, (e) => g.ayarla(-1, 3, lerp(0, -5, e), lerp(2, 5, e)), ease.inOut);
       await pop(c, xk, dz.X(3), dz.Y(0));
     })());

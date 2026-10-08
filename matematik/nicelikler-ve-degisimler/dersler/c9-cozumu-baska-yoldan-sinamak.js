@@ -45,7 +45,7 @@
     await par(soyle(c, 'Bir arkadaşın bu denklemi böyle çözmüş.'), (async () => { for (const d of [d1, d2, d3]) { await c.wait(350); await belir(c, d, 400); } })());
     kt.koy(-2, 8);
     await par(soyle(c, 'x yerine 1 koy: sol yan −2, sağ yan 8.'), (async () => { await belir(c, ok, 400); await belir(c, kt.g, 450); })());
-    await soyle(c, 'İki yan eşit değil: çözümde bir hata var.');
+    await soyle(c, 'İki yan eşit değil: çözümde bir hata var.', { dur: true });
     await c.choice({
       tag: 'Tahmin et', q: 'Hata hangi adımda?',
       options: ['2x = 2 adımında', '3x − x = 7 − 5 adımında', 'x = 1 adımında'], answer: 1,
@@ -53,7 +53,7 @@
       right: '−5 karşıya +5 olarak geçmeliydi.',
     });
     d1.style.fill = RENK.kotu;
-    await par(soyle(c, '−5 karşıya geçerken +5 olmalıydı.'), (async () => { await kaybol(c, [kt.g, ok], 300); await c.wait(500); await donustur(c, d1, ['3x − x = 7 ', ['+ 5', RENK.iyi]], RENK.yazi); })());
+    await par(soyle(c, '−5 karşıya geçerken +5 olmalıydı.', { speak: 'Eksi beş karşıya geçerken artı beş olmalıydı.' }), (async () => { await kaybol(c, [kt.g, ok], 300); await c.wait(500); await donustur(c, d1, ['3x − x = 7 ', ['+ 5', RENK.iyi]], RENK.yazi); })());
     await par(soyle(c, 'Düzelt: 12’nin yarısı 6.'), (async () => { await donustur(c, d2, '2x = 12'); await donustur(c, d3, 'x = 6'); })());
     kt.koy(13, 13);
     await par(soyle(c, 'Yeniden yerine koy: iki yan da 13.'), (async () => { await belir(c, ok, 400); await belir(c, kt.g, 450); })());
@@ -89,10 +89,10 @@
       hints: ['Çözümde iki yan eşit olur: doğrular orada buluşur.', '', 'Üst üste gelselerdi her x çözüm olurdu.'],
       right: 'Çözümde iki yan eşittir: doğrular orada kesişir.',
     });
-    await par(soyle(c, 'x = 1’de doğrular birbirinden 10 birim uzak.'), (async () => {
+    await par(soyle(c, 'x = 1’de doğrular birbirinden 10 birim uzak.', { speak: 'x bir olduğunda doğrular birbirinden on birim uzak.' }), (async () => {
       await par(pop(c, pf, dz.X(1), dz.Y(-2), 300), pop(c, pg, dz.X(1), dz.Y(8), 300)); await belir(c, [fark, xAd, farkAd], 400);
     })());
-    await par(soyle(c, 'Doğrular 6’da kesişiyor: iki yan da 13.'), (async () => { await pop(c, pk, dz.X(6), dz.Y(13), 380); await belir(c, [izler.g, pkAd], 400); })());
+    await par(soyle(c, 'Doğrular 6’da kesişiyor: iki yan da 13.', { dur: true }), (async () => { await pop(c, pk, dz.X(6), dz.Y(13), 380); await belir(c, [izler.g, pkAd], 400); })());
     await soyle(c, 'Grafik hem yanlışı hem doğruyu gösterir.');
     c.note('<b>Grafikle sına:</b> çözüm, doğruların kesiştiği x’tir.<br>(6, 13)', 'Grafikle sına', 'c9-grafik');
     await par(kaybol(c, [xAd, farkAd], 300), belir(c, kt.g, 400));
@@ -126,9 +126,9 @@
       hints: ['−2 · 4 + 6 = −2 eder; −2 &gt; 0 yanlıştır.', ''],
       right: '−2 · 4 + 6 = −2 eder; −2 &gt; 0 yanlış.',
     });
-    await par(soyle(c, '4 çözümde sayılıyordu ama eşitsizliği sağlamıyor.'), belir(c, deneme, 450));
+    await par(soyle(c, '4 çözümde sayılıyordu ama eşitsizliği sağlamıyor.', { speak: 'Dört sayısı çözümde sayılıyordu ama eşitsizliği sağlamıyor.' }), belir(c, deneme, 450));
     e2.style.fill = RENK.kotu;
-    await par(soyle(c, 'Hata son adımda: negatif sayıya bölünce yön döner.'), (async () => { await belir(c, gerekce, 400); await c.wait(600); await donustur(c, e2, 'x < 3', RENK.iyi); })());
+    await par(soyle(c, 'Hata son adımda: negatif sayıya bölünce yön döner.', { ton: 'thoughtful' }), (async () => { await belir(c, gerekce, 400); await c.wait(600); await donustur(c, e2, 'x < 3', RENK.iyi); })());
     await kaybol(c, deneme, 300);
     await par(soyle(c, 'Grafik de aynısını söyler: azalan doğru, 3’ün solunda pozitif.'), belir(c, dz.g, 500));
     await par(soyle(c, 'İşaret tablosunda da artı, sıfırın solunda.'), belir(c, tb.g, 500));

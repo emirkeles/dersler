@@ -100,15 +100,49 @@ window.KIT = (() => {
       el.setAttribute('transform', `translate(${cx} ${cy}) scale(${k}) translate(${-cx} ${-cy})`); el.style.opacity = Math.min(1, t * 3);
     }, ease.back).then(() => el.removeAttribute('transform'));
   }
-  /* Altyazı; seslendirme metnini sembolleri okunur kelimelere çevirerek kendisi üretir. */
+  /* Altyazı; seslendirme metnini kendisi üretir: rakam, simge, birim ve ekler okunur kelimelere çevrilir.
+     Çevirinin yetmediği satır { speak: '…' } ile kendi okunuşunu verir (ekrandaki yazı değişmez).
+     Oyunculuk yönergesi { ton: 'curious' | 'thoughtful' } ile başa, { dur: true } ile ilk iki noktadan sonra [short pause] eklenir. */
+  const BIR = ['sıfır', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz'];
+  const ON = ['', 'on', 'yirmi', 'otuz', 'kırk', 'elli', 'altmış', 'yetmiş', 'seksen', 'doksan'];
+  const SIRA = { sıfır: 'sıfırıncı', bir: 'birinci', iki: 'ikinci', üç: 'üçüncü', dört: 'dördüncü', beş: 'beşinci', altı: 'altıncı', yedi: 'yedinci', sekiz: 'sekizinci', dokuz: 'dokuzuncu',
+    on: 'onuncu', yirmi: 'yirminci', otuz: 'otuzuncu', kırk: 'kırkıncı', elli: 'ellinci', altmış: 'altmışıncı', yetmiş: 'yetmişinci', seksen: 'sekseninci', doksan: 'doksanıncı', yüz: 'yüzüncü', bin: 'bininci' };
+  function sayiKelime(n) {
+    if (n === 0) return BIR[0];
+    const ucluk = (k) => {
+      const y = Math.floor(k / 100), o = Math.floor((k % 100) / 10), b = k % 10;
+      return [y ? (y === 1 ? '' : BIR[y] + ' ') + 'yüz' : '', ON[o], b ? BIR[b] : ''].filter(Boolean).join(' ');
+    };
+    const bin = Math.floor(n / 1000), kalan = n % 1000;
+    return [bin ? (bin === 1 ? '' : ucluk(bin) + ' ') + 'bin' : '', kalan ? ucluk(kalan) : ''].filter(Boolean).join(' ');
+  }
+  const sirali = (n) => sayiKelime(n).replace(/\S+$/, (son) => SIRA[son] || son);
+  const ekle = (kelime, ek) => (/t$/.test(kelime) && /^[aeıioöuü]/.test(ek) ? kelime.slice(0, -1) + 'd' : kelime) + ek; // "dört" + "ü" -> "dördü"
   function oku(html) {
     const d = document.createElement('div'); d.innerHTML = html.replace(/<sub>/g, ' ').replace(/<sup>2<\/sup>/g, ' kare ');
     return (d.textContent || '')
-      .replace(/\|([^|]+)\|/g, ' mutlak değer $1 ').replace(/≤/g, ' küçük eşit ').replace(/≥/g, ' büyük eşit ').replace(/</g, ' küçüktür ').replace(/>/g, ' büyüktür ')
+      .replace(/\s*°C[’']?/g, ' derece').replace(/\bkm\b/g, 'kilometre').replace(/\bcm\b/g, 'santimetre').replace(/\bTL\b/g, 'lira')
+      .replace(/\b([a-zA-Z])\(([^()]*)\)/g, '$1 $2 ')                                   // f(x) -> f x
+      .replace(/(\d)([a-z])\b/g, '$1 $2').replace(/\b([abkm])x\b/g, '$1 x')              // 2x -> 2 x, ax -> a x
+      .replace(/([\w)|])\s*\/\s*([\w(|−])/g, '$1 bölü $2')
+      .replace(/\|([^|]+)\|/g, ' mutlak değer $1 ')
+      .replace(/(\d)\.(\d{3})\b/g, '$1$2')
+      .replace(/(\d+)\.(?= [a-zçğıöşü])/g, (m, n) => sirali(+n))                         // 6. dakika -> altıncı dakika
+      .replace(/(\d+),(\d+)/g, (m, i, k) => i + ' virgül ' + k.split('').map((x) => BIR[x]).join(' '))
+      .replace(/(\d+)[’']([a-zçğıöşü]+)/g, (m, n, ek) => ekle(sayiKelime(+n), ek))        // 4’ü -> dördü
+      .replace(/\d+/g, (n) => sayiKelime(+n))
+      .replace(/≤/g, ' küçük eşit ').replace(/≥/g, ' büyük eşit ').replace(/</g, ' küçüktür ').replace(/>/g, ' büyüktür ')
       .replace(/≠/g, ' eşit değildir ').replace(/=/g, ' eşittir ').replace(/\s*[·×]\s*/g, ' çarpı ').replace(/−/g, ' eksi ').replace(/\+/g, ' artı ')
-      .replace(/∀/g, ' her ').replace(/∈/g, ' elemanıdır ').replace(/ℝ/g, ' gerçek sayılar ').replace(/∞/g, ' sonsuz ').replace(/\s+/g, ' ').trim();
+      .replace(/∀/g, ' her ').replace(/∈/g, ' elemanıdır ').replace(/ℝ/g, ' gerçek sayılar ').replace(/∞/g, ' sonsuz ')
+      .replace(/\s+([,.:;?!’'])/g, '$1').replace(/\s+/g, ' ').trim()
+      .replace(/^[a-zçğıöşü](?=[a-zçğıöşü])/, (h) => h.toLocaleUpperCase('tr'));                         // "5’ten önce" -> "Beşten önce"
   }
-  const soyle = (c, html, o) => c.say(html, Object.assign({ speak: oku(html) }, o));
+  const soyle = (c, html, o) => {
+    let speak = o && o.speak != null ? o.speak : oku(html);
+    if (o && o.dur) speak = speak.replace(':', ': [short pause]');
+    if (o && o.ton) speak = '[' + o.ton + '] ' + speak;
+    return c.say(html, Object.assign({}, o, { speak }));
+  };
 
   /* ---------- koordinat düzlemi ----------
      duzlem(p, { x0, y0, w, h, xmin, xmax, ymin, ymax, xadim, yadim, xad, yad, xyaz, yyaz, izgara, sayilar })

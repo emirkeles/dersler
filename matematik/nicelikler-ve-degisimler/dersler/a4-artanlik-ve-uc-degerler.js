@@ -21,7 +21,7 @@
     xs.forEach((v, k) => tb.yaz(0, k, sayi(v)));
     const izler = iz(dz, -2, -2, { renk: RENK.sifir }), p = nokta(dz, -2, -2, { r: 10 });
     gizle(izler.g, p.el);
-    await soyle(c, 'f(x) = x’te girdiyi adım adım büyütelim.');
+    await soyle(c, 'f(x) = x’te girdiyi adım adım büyütelim.', { speak: 'f x eşittir x fonksiyonunda girdiyi adım adım büyütelim.' });
     await c.choice({
       tag: 'Tahmin et', q: 'x büyürse f(x) ne olur?',
       options: ['Küçülür', 'Büyür', 'Değişmez'], answer: 1,
@@ -36,7 +36,7 @@
         tb.yaz(1, k, sayi(xs[k]), RENK.f); await c.wait(200);
       }
     })());
-    await soyle(c, 'Girdi büyüdükçe çıktı da büyüyor: f <b>artan</b>.');
+    await soyle(c, 'Girdi büyüdükçe çıktı da büyüyor: f <b>artan</b>.', { dur: true });
     c.note('<b>Artan:</b> x büyürse f(x) de büyür.<br>f(x) = x artandır', 'Artan fonksiyon', 'a4-artan');
   }
 
@@ -57,11 +57,11 @@
       hints: ['Hangi değeri söylersen bir fazlası da çıkar.', ''],
       right: 'Her değerin sağında daha büyüğü var.',
     });
-    await par(soyle(c, 'Bir değer seç: sağında hep daha büyüğü var.'), c.tween(2200, (e) => koy(lerp(2, 5, e)), ease.inOut));
+    await par(soyle(c, 'Bir değer seç: sağında hep daha büyüğü var.', { ton: 'thoughtful' }), c.tween(2200, (e) => koy(lerp(2, 5, e)), ease.inOut));
     await belir(c, [b.ad, b.deger], 400);
     await par(soyle(c, 'Solda da hep daha küçüğü var.'), c.tween(2600, (e) => koy(lerp(5, -5, e)), ease.inOut));
     await belir(c, [k.ad, k.deger], 400);
-    await soyle(c, 'Gerçek sayılarda f(x) = x’in maksimumu da minimumu da yok.');
+    await soyle(c, 'Gerçek sayılarda f(x) = x’in maksimumu da minimumu da yok.', { speak: 'Gerçek sayılarda f x eşittir x fonksiyonunun maksimumu da minimumu da yok.' });
   }
 
   /* [a, b] aralığında f(x) = x: parça, maksimum ve minimum noktası */
@@ -78,7 +78,7 @@
     const u = uclu(dz, -5, 5); gizle(u.mn.el, u.mx.el);
     const b = satir(svg, 150, 'maksimum noktası', MAKS), k = satir(svg, 310, 'minimum noktası', MIN_);
     yaz(b.deger, cift(3)); yaz(k.deger, cift(-2)); gizle(b.ad, b.deger, k.ad, k.deger);
-    await par(soyle(c, 'Tanım kümesi [−2, 3] olsun: uçlar dahil.'), c.tween(1000, (e) => u.d.ayarla(1, 0, lerp(-5, -2, e), lerp(5, 3, e)), ease.inOut));
+    await par(soyle(c, 'Tanım kümesi [−2, 3] olsun: uçlar dahil.', { speak: 'Tanım kümesi eksi iki ile üç arasındaki kapalı aralık olsun: uçlar dahil.' }), c.tween(1000, (e) => u.d.ayarla(1, 0, lerp(-5, -2, e), lerp(5, 3, e)), ease.inOut));
     u.koy(-2, 3);
     await c.choice({
       tag: 'Tahmin et', q: 'f en büyük değerini hangi x’te alır?',

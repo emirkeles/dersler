@@ -52,5 +52,66 @@ Dal: `tema/nicelikler-ve-degisimler`. İşleme alma 7 Ekim 2026'da başladı.
 - **Kite taşınacak yerel araçlar.** Alt ajanlar kiti değiştiremediği için aynı araç birkaç derste yerel işlev olarak duruyor: yalnızca x eksenine inen kesik iz (C3–C8, C10), sayı doğrusu (B2, C5, C6, C8), yazıyı yerinde değiştirme (B6, C7, C9), eğim basamağı (A7, A9, A10), iki nokta arasında ok (A6, A7, A9), aç-kapa düğmesi (A15). Dersler çalışıyor; birleştirme ayrı bir temizlik işi.
 - **Ölçücünün görmedikleri.** `olc.js` kaydırıcıları ve A15'in düğmelerini oynatmaz; uç değerler alt ajanlarca ayrı betikle denendi, ana oturumda yalnızca başlangıç durumları görüldü. Elle bakmaya değer: A6 S3, A7 S2–S3, A12 S1, A15 S4, B4 S2, B5 S2–S3, C5 S2, C10 S3.
 - **Defter kuralları.** Sembol ağırlıklı birkaç kural 12 kelimeyi 1–3 kelime aşıyor (ölçücü simgeleri kelime sayıyor; uyarı vermiyor).
-- **Seslendirme öncesi.** `KIT.oku` “|x|’in” ve “−b/a” gibi ifadeleri düzgün çevirmiyor; ses üretilmeden önce `--liste` çıktısına bakılmalı.
-- **Yayın, seslendirme, hikâye videoları, commit:** yapılmadı; kullanıcı ayrıca ister.
+- **Seslendirme:** yapıldı (8 Ekim 2026); aşağıdaki "Seslendirme" bölümü. Kullanıcı henüz dinlemedi.
+- **C9, 2. sahne:** `olc.js` "tahtada > 25 kelime 1/19" diyor (27 kelime); ders yazımından kalma, seslendirmede dokunulmadı.
+- **Hikâye videoları, commit:** yapılmadı; kullanıcı ayrıca ister.
+
+## Seslendirme (8 Ekim 2026)
+
+`plan/SESLENDIRME.md` adımları 1, 2, 4, 5 ve 6.1–6.3 uygulandı. Pilot (adım 3) atlandı; kullanıcı henüz dinlemedi (6.4 açık).
+
+- **Okunuş.** Bütün altyazılar `KIT.soyle` üzerinden geçer; okunan metni `dersler/kit.js` içindeki `oku` üretir: rakam (ekleriyle), sıra sayısı, ondalık, `°C`, `km`, `cm`, `TL`, kesir, `f(x)`, `ax`, `|x|`, simgeler. Otomatik çevirinin yetmediği 102 satırda `{ speak }` elle yazıldı (aralık ve nokta yazımı, fonksiyon adına gelen ek, mutlak değerin bittiği yer, "V grafiği").
+- **Yönergeler.** 83 adet: 42 `[short pause]` (`{ dur: true }`), 35 `[thoughtful]`, 6 `[curious]` (`{ ton }`). Seslendirilen satırlarda öğrenciye sorulan gerçek soru az; sorular çoğunlukla `noWait` satırlarında.
+- **Toplam.** 32 ders, 526 klip, 36,1 dk, 16,83 MB, 26.807 karakter. Konu başına: A 238 klip, 15,5 dk; B 105 klip, 7,9 dk; C 183 klip, 12,8 dk.
+- **Doğrulama.** Her derste dizin ile klip dosyaları birebir; `--liste` "Üretilecek: 0 klip"; 32 sayfada `ses/<ders-id>.js` satırı; `olc.js` çıkış kodu 0 ve konsol temiz; `denetle.js` "Sorun yok". Üretimde hata ya da yeniden deneme olmadı; hiçbir klip iki kez üretilmedi.
+- **Model.** Metin denetimi Sonnet 5.5 (dört ajan), üretim ve doğrulama Haiku 5.5 (üç ajan), `oku` çeviricisi ve son okuma ana oturumda.
+
+| Ders | Klip | Karakter | Süre | Yönerge | Durum |
+|---|---|---|---|---|---|
+| A1 | 12 | 576 | 45,4 sn | 3 | üretildi |
+| A2 | 11 | 538 | 43,3 sn | 2 | üretildi |
+| A3 | 11 | 521 | 42,2 sn | 2 | üretildi |
+| A4 | 9 | 467 | 38,2 sn | 2 | üretildi |
+| A5 | 9 | 499 | 40,2 sn | 2 | üretildi |
+| A6 | 19 | 971 | 77,1 sn | 3 | üretildi |
+| A7 | 16 | 772 | 62,8 sn | 3 | üretildi |
+| A8 | 14 | 670 | 57,0 sn | 3 | üretildi |
+| A9 | 20 | 955 | 79,9 sn | 2 | üretildi |
+| A10 | 24 | 1140 | 92,2 sn | 3 | üretildi |
+| A11 | 22 | 946 | 75,7 sn | 3 | üretildi |
+| A12 | 14 | 678 | 59,0 sn | 2 | üretildi |
+| A13 | 14 | 648 | 53,8 sn | 2 | üretildi |
+| A14 | 16 | 764 | 60,4 sn | 2 | üretildi |
+| A15 | 14 | 659 | 53,1 sn | 2 | üretildi |
+| A16 | 13 | 650 | 50,6 sn | 2 | üretildi |
+| B1 | 16 | 883 | 70,1 sn | 2 | üretildi |
+| B2 | 14 | 813 | 63,8 sn | 3 | üretildi |
+| B3 | 24 | 1328 | 103,7 sn | 3 | üretildi |
+| B4 | 19 | 1091 | 87,0 sn | 3 | üretildi |
+| B5 | 14 | 788 | 64,6 sn | 3 | üretildi |
+| B6 | 18 | 986 | 82,0 sn | 2 | üretildi |
+| C1 | 16 | 870 | 66,9 sn | 2 | üretildi |
+| C2 | 17 | 946 | 79,0 sn | 3 | üretildi |
+| C3 | 18 | 905 | 69,8 sn | 3 | üretildi |
+| C4 | 17 | 947 | 80,2 sn | 3 | üretildi |
+| C5 | 14 | 778 | 62,2 sn | 3 | üretildi |
+| C6 | 24 | 1259 | 103,0 sn | 3 | üretildi |
+| C7 | 23 | 1056 | 86,1 sn | 3 | üretildi |
+| C8 | 20 | 1013 | 84,4 sn | 3 | üretildi |
+| C9 | 17 | 864 | 70,1 sn | 3 | üretildi |
+| C10 | 17 | 826 | 64,8 sn | 3 | üretildi |
+
+Süre aykırıları (karakter başına süre, dersin ortancasından %30'dan fazla sapan). Kısa yönde aykırı yok; sekizi de uzun yönde, harf adı ve sayı sayan cümleler. Dinlenmeli:
+
+| Ders | Sahne | Klip | Sapma | Süre | Okunan metin |
+|---|---|---|---|---|---|
+| A6 | 2 | `78136fca` | +%32 | 3,0 sn | g, x eksenini ikide kesiyor. |
+| A10 | 1 | `6a986495` | +%35 | 4,3 sn | Burada a eşittir yirmi, b eşittir otuz. |
+| A12 | 2 | `8fcc3642` | +%48 | 5,4 sn | h x eşittir a x artı b ve a pozitif olsun. |
+| A13 | 2 | `bf1171c0` | +%51 | 6,3 sn | h x eşittir a x artı b ve a sıfırdan farklı olsun. |
+| A16 | 3 | `05298ad0` | +%45 | 6,3 sn | t yerine yedi yaz: [short pause] beş çarpı yedi eksi otuz eşittir beş. |
+| C8 | 3 | `9c126da2` | +%33 | 4,5 sn | Soldan sıfır: sol yan üç, sağ yan sıfır. |
+| C8 | 3 | `54d210d2` | +%30 | 4,4 sn | Sağdan sekiz: sol yan beş, sağ yan dört. |
+| C10 | 2 | `f7df2fba` | +%34 | 3,4 sn | [thoughtful] Çöz: negatife bölerken yön döner. |
+
+Dinlerken bakılacak okunuşlar (ajanların kararsız kaldıkları): tek harfe gelen ekler ("x’e", "a’ya", "b’yi", "V’nin"), "h x bir / h x iki" (A12), "iki bir noktası" (B5), tırnaklı “ve” / “veya” (C6), "x numaralı kattasın" (B4).

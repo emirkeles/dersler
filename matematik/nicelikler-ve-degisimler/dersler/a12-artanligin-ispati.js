@@ -108,7 +108,7 @@
     await par(soyle(c, 'Sol yan h(x<sub>1</sub>), sağ yan h(x<sub>2</sub>): hüküm çıktı.'), (async () => {
       await belir(c, t.satir[3].g, 500); await belir(c, t.cikti, 500);
     })());
-    await soyle(c, 'Sayı kullanmadık; ispat her x<sub>1</sub> &lt; x<sub>2</sub> çifti için geçerli.');
+    await soyle(c, 'Sayı kullanmadık; ispat her x<sub>1</sub> &lt; x<sub>2</sub> çifti için geçerli.', { speak: 'Sayı kullanmadık; ispat, x bir x ikiden küçük olan her çift için geçerli.' });
     c.note('<b>İspat:</b> x<sub>1</sub> &lt; x<sub>2</sub> → ax<sub>1</sub> &lt; ax<sub>2</sub> → h(x<sub>1</sub>) &lt; h(x<sub>2</sub>)', 'a > 0 ise artan', 'a12-ispat');
   }
 
@@ -130,11 +130,11 @@
       right: 'Negatifle çarpınca yön döner: 2 &lt; 3 iken −4 &gt; −6.',
     });
     yaz(t.satir[1].ifade, t.ifade[1](don));
-    await par(soyle(c, 'Negatif sayıyla çarpınca eşitsizliğin yönü döner.'), belir(c, t.satir[1].g, 500));
+    await par(soyle(c, 'Negatif sayıyla çarpınca eşitsizliğin yönü döner.', { ton: 'thoughtful' }), belir(c, t.satir[1].g, 500));
     yaz(t.satir[2].ifade, t.ifade[2](don));
     await par(soyle(c, 'b eklemek yönü yine değiştirmez.'), belir(c, t.satir[2].g, 500));
     yaz(t.satir[3].ifade, t.ifade[3](don));
-    await par(soyle(c, 'Soldaki girdinin çıktısı daha büyük: fonksiyon <b>azalan</b>.'), (async () => {
+    await par(soyle(c, 'Soldaki girdinin çıktısı daha büyük: fonksiyon <b>azalan</b>.', { dur: true }), (async () => {
       await belir(c, t.satir[3].g, 500); await belir(c, t.cikti, 500);
     })());
     c.note('<b>a &lt; 0:</b> x<sub>1</sub> &lt; x<sub>2</sub> iken h(x<sub>1</sub>) &gt; h(x<sub>2</sub>), azalan', 'a < 0 ise azalan', 'a12-azalan');

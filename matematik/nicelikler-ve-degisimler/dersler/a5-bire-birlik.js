@@ -15,7 +15,7 @@
     const noT = no.map((v, k) => tb.yaz(1, k, v, RENK.f)), ayT = ay.map((v, k) => tb.yaz(2, k, v));
     gizle(noT, ayT);
     await par(soyle(c, 'Dört öğrenci, dört ayrı okul numarası.'), (async () => { for (const t of noT) { await belir(c, t, 250); } })());
-    await par(soyle(c, 'Doğdukları ayda ise iki öğrenci aynı: mart.'), (async () => {
+    await par(soyle(c, 'Doğdukları ayda ise iki öğrenci aynı: mart.', { ton: 'thoughtful' }), (async () => {
       for (const t of ayT) { await belir(c, t, 250); }
       ayT[0].style.fill = RENK.g; ayT[2].style.fill = RENK.g;
     })());
@@ -25,7 +25,7 @@
       hints: ['“Mart” deyince iki öğrenci çıkıyor: Ada ve Ece.', ''],
       right: 'Her numara tek bir öğrenciye ait.',
     });
-    await soyle(c, 'Farklı girdiye hep farklı çıktı: buna <b>bire bir</b> denir.');
+    await soyle(c, 'Farklı girdiye hep farklı çıktı: buna <b>bire bir</b> denir.', { dur: true });
     c.note('<b>Bire bir:</b> farklı girdiler farklı çıktı verir.<br>Okul numarası bire birdir', 'Bire birlik', 'a5-tanim');
   }
 
@@ -36,7 +36,7 @@
     const xs = [-2, -1, 0, 1, 2];
     xs.forEach((v, k) => { tb.yaz(0, k, sayi(v)); tb.yaz(1, k, sayi(v), RENK.f); });
     const alt = yazi(svg, 500, 380, '', { size: 34, kalin: 700 });
-    await soyle(c, 'f(x) = x’in tablosu: alt satırda tekrar eden sayı yok.');
+    await soyle(c, 'f(x) = x’in tablosu: alt satırda tekrar eden sayı yok.', { speak: 'f x eşittir x fonksiyonunun tablosu: alt satırda tekrar eden sayı yok.' });
     tb.yaz(0, 5, '?', RENK.sifir); tb.yaz(1, 5, '3', RENK.f);
     await c.choice({
       tag: 'Tahmin et', q: 'Çıktı 3 ise girdi kaç olabilir?',
@@ -66,7 +66,7 @@
     const sl = c.slider({ label: 'Çıktı', min: -4, max: 4, step: 0.5, value: 2, fmt: (v) => sayi(v), onInput: koy });
     await c.cont('Devam ›');
     sl.remove();
-    await soyle(c, 'Her yükseklikte tek kesişim: f(x) = x bire birdir.');
+    await soyle(c, 'Her yükseklikte tek kesişim: f(x) = x bire birdir.', { speak: 'Her yükseklikte tek kesişim: f x eşittir x fonksiyonu bire birdir.' });
   }
 
   /* ---- 4. Sembolle ---- */
@@ -77,7 +77,7 @@
     const acik = yazi(svg, 500, 360, 'çünkü f(2) = 2 ve f(5) = 5', { size: 26, renk: RENK.soluk });
     gizle(sol, ornek, acik);
     await par(soyle(c, 'Tanımı sembolle yazalım: iki farklı girdi, iki farklı çıktı.'), belir(c, sol, 600));
-    await par(soyle(c, 'f(x) = x’te çıktı girdinin kendisi; farklı kalır.'), (async () => { await belir(c, ornek, 500); await belir(c, acik, 400); })());
+    await par(soyle(c, 'f(x) = x’te çıktı girdinin kendisi; farklı kalır.', { speak: 'f x eşittir x fonksiyonunda çıktı girdinin kendisi; farklı kalır.' }), (async () => { await belir(c, ornek, 500); await belir(c, acik, 400); })());
     c.note('<b>Bire bir:</b> x<sub>1</sub> ≠ x<sub>2</sub> ise f(x<sub>1</sub>) ≠ f(x<sub>2</sub>)<br>f(x) = x bire birdir', 'Bire birlik, sembolle', 'a5-sembol');
     await kaybol(c, [ornek, acik], 300);
     const tb = soruTahtasi(c, svg, { x: 150, y: 200, w: 700, h: 150 });

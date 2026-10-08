@@ -46,7 +46,7 @@
     const kalip = yazi(svg, SAG, 430, [['başlangıç', RENK.sifir], ' ve ', ['her adımdaki değişim', RENK.eksi]], { size: 26 });
     gizle(modelAd, kural, tank, hesap, kalip);
 
-    await par(soyle(c, 'Gölün derinliği 300 cm; su her gün 2 cm çekiliyor.'), c.tween(3200, (e) => koy(lerp(0, 20, e)), ease.inOut));
+    await par(soyle(c, 'Gölün derinliği 300 cm; su her gün 2 cm çekiliyor.', { speak: 'Gölün derinliği üç yüz santimetre; su her gün iki santimetre çekiliyor.' }), c.tween(3200, (e) => koy(lerp(0, 20, e)), ease.inOut));
     await c.choice({
       tag: 'Tahmin et', q: 'x gün sonraki derinlik hangi kuralla bulunur?',
       options: ['2x + 300', '300 − 2x', '300x − 2'], answer: 1,
@@ -90,7 +90,7 @@
     });
     await kaybol(c, [iz40.g, p40.el, ad40, kural], 300);
     await par(soyle(c, 'Bu bir eşitsizlik: derinlik 200’den küçük olsun.'), (async () => { await belir(c, cizgi.el, 400); await belir(c, a1.g, 450); })());
-    await par(soyle(c, 'Çöz: negatife bölerken yön döner.'), (async () => { await belir(c, a2.g, 450); await c.wait(500); await belir(c, a3.g, 450); })());
+    await par(soyle(c, 'Çöz: negatife bölerken yön döner.', { ton: 'thoughtful' }), (async () => { await belir(c, a2.g, 450); await c.wait(500); await belir(c, a3.g, 450); })());
     await par(soyle(c, 'Grafikte de 50. günden sonra doğru, çizginin altında.'), (async () => {
       await pop(c, p50, dz.X(50), dz.Y(200), 350); await belir(c, [d50, m50], 300); s.el.style.opacity = 0.9;
       await c.tween(900, (e) => s.ayarla(50, lerp(50, 150, e)), ease.inOut); await pop(c, u50, dz.X(50), dz.Y(0), 300);
@@ -125,10 +125,10 @@
       hints: ['Kuralı uygula: 300 − 2 · 200.', '', '100 cm, 100. gündeki derinliktir.'],
       right: '300 − 2 · 200 = −100.',
     });
-    await par(soyle(c, 'Model −100 cm diyor; derinlik negatif olamaz.'), (async () => {
+    await par(soyle(c, 'Model −100 cm diyor; derinlik negatif olamaz.', { speak: 'Model eksi yüz santimetre diyor; derinlik negatif olamaz.' }), (async () => {
       await belir(c, uz.el, 500, 0.55); await pop(c, p200, dz.X(200), dz.Y(-100), 380); await belir(c, ad200, 350);
     })());
-    await par(soyle(c, 'Göl 150. günde kurur: model orada biter.'), (async () => {
+    await par(soyle(c, 'Göl 150. günde kurur: model orada biter.', { dur: true }), (async () => {
       await c.tween(1500, (e) => { const x = lerp(0, 150, e); gl.ayarla(h(x)); yaz(deger, 'h(' + Math.round(x) + ') = ' + sayi(Math.round(h(x))) + ' cm'); }, ease.inOut);
       await pop(c, p150, dz.X(150), dz.Y(0), 380); await belir(c, m150, 300);
     })());
@@ -136,7 +136,7 @@
       s.el.style.opacity = 0.9; await c.tween(900, (e) => s.ayarla(0, lerp(0, 150, e)), ease.inOut);
       await belir(c, u0.el, 250); await belir(c, aralik, 450);
     })());
-    await par(soyle(c, 'Yağmur yağarsa “her gün 2 cm” de değişir.'), belir(c, yg.el, 600));
+    await par(soyle(c, 'Yağmur yağarsa “her gün 2 cm” de değişir.', { speak: 'Yağmur yağarsa “her gün iki santimetre” de değişir.', ton: 'thoughtful' }), belir(c, yg.el, 600));
     c.note('<b>Modelin sınırı:</b> yalnızca anlamlı olduğu aralıkta geçerli.<br>0 ≤ x ≤ 150', 'Modelin sınırı', 'c10-sinir');
     await c.wait(600);
     await kaybol(c, [yg.el, ad200, p200.el], 300);

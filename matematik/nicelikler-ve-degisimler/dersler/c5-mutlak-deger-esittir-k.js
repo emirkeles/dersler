@@ -43,7 +43,7 @@
     gizle(yay, yayAd, uc, yol, yaDa);
 
     await par(soyle(c, 'Makinenin hedefi 500 gram; ama paketler biraz sapabilir.'), (async () => { await c.wait(700); await c.tween(1500, (e) => koy(lerp(500, 507, e)), ease.inOut); })());
-    await par(soyle(c, 'Hafif paket de sapmıştır: sapma, 500’e uzaklıktır.'), c.tween(2200, (e) => koy(lerp(507, 494, e)), ease.inOut));
+    await par(soyle(c, 'Hafif paket de sapmıştır: sapma, 500’e uzaklıktır.', { ton: 'thoughtful' }), c.tween(2200, (e) => koy(lerp(507, 494, e)), ease.inOut));
     await c.choice({
       tag: 'Tahmin et', q: 'Sapma tam 10 gramsa paket kaç gram olabilir?',
       options: ['Yalnızca 510', '490 ya da 510', 'Yalnızca 490'], answer: 1,
@@ -52,7 +52,7 @@
     });
     await kaybol(c, [paket, mesafe], 300);
     yaz(ustT, ['|x − 500| = ', ['10', RENK.mutlak]]);
-    await par(soyle(c, '500’e uzaklığı 10 olan iki nokta var.'), (async () => {
+    await par(soyle(c, '500’e uzaklığı 10 olan iki nokta var.', { speak: 'Beş yüze uzaklığı on olan iki nokta var.' }), (async () => {
       await par(ciz(c, yay[1], 700), ciz(c, yay[0], 700)); await belir(c, yayAd, 300);
       uc.forEach((u) => { u.style.opacity = 1; }); [490, 510].forEach((g) => { ad[g].style.fill = RENK.sifir; });
     })());
@@ -87,8 +87,8 @@
     koy(4);
     gizle(v.el, cizgi.el, kuralT, kT);
 
-    await par(soyle(c, 'Bir mutlak değer fonksiyonu: grafiği V biçiminde.'), ciz(c, v, 1100), belir(c, kuralT, 500));
-    await par(soyle(c, 'Turuncu çizgi y = 4: V’yle buluştuğu yerler çözümdür.'),
+    await par(soyle(c, 'Bir mutlak değer fonksiyonu: grafiği V biçiminde.', { speak: 'Bir mutlak değer fonksiyonu: grafiği V harfi biçiminde.' }), ciz(c, v, 1100), belir(c, kuralT, 500));
+    await par(soyle(c, 'Turuncu çizgi y = 4: V’yle buluştuğu yerler çözümdür.', { speak: 'Turuncu çizgi y eşittir dört: V grafiğiyle buluştuğu yerler çözümdür.', dur: true }),
       (async () => { await par(ciz(c, cizgi, 700), belir(c, kT, 400)); acik = true; koy(4); await par(pop(c, p1, dz.X(1), dz.Y(4)), pop(c, p2, dz.X(5), dz.Y(4))); })());
     await c.choice({
       tag: 'Tahmin et', q: 'Çizgi k = 0’a inerse kaç çözüm kalır?',
@@ -97,8 +97,8 @@
       right: 'Çizgi V’ye yalnızca ucunda değer.',
     });
     await c.tween(2000, (e) => koy(lerp(4, 0.01, e)), ease.inOut); koy(0);
-    await soyle(c, 'k = 0 iken tek çözüm: V’nin ucu, içerideki ifadenin sıfırı.');
-    await par(soyle(c, 'k negatifken çizgi V’nin altında kalır: çözüm yok.'), c.tween(1200, (e) => koy(lerp(-0.01, -2, e)), ease.inOut));
+    await soyle(c, 'k = 0 iken tek çözüm: V’nin ucu, içerideki ifadenin sıfırı.', { speak: 'k eşittir sıfır iken tek çözüm: V grafiğinin ucu, içerideki ifadenin sıfırı.' });
+    await par(soyle(c, 'k negatifken çizgi V’nin altında kalır: çözüm yok.', { speak: 'k negatifken çizgi V grafiğinin altında kalır: çözüm yok.', ton: 'thoughtful' }), c.tween(1200, (e) => koy(lerp(-0.01, -2, e)), ease.inOut));
     await soyle(c, 'k’yi değiştir; çizgiyle V’nin kesişimlerini say.', { noWait: true });
     c.slider({ label: 'k', min: -2, max: 6, step: 1, value: 4, fmt: (x) => sayi(x), onInput: koy });
     await c.cont('Devam ›');
@@ -141,7 +141,7 @@
     await par(soyle(c, 'İki sayıyı da denklemde yerine koy.'), (async () => { await belir(c, k2, 500); await c.wait(500); await belir(c, k1, 500); })());
     await kaybol(c, [k1, k2], 300);
     await belir(c, dogruG, 500);
-    await par(soyle(c, 'Çözümler, 2x − 6’nın sıfırı olan 3’e eşit uzaklıkta.'),
+    await par(soyle(c, 'Çözümler, 2x − 6’nın sıfırı olan 3’e eşit uzaklıkta.', { speak: 'Çözümler, iki x eksi altı ifadesinin sıfırı olan üçe eşit uzaklıkta.' }),
       (async () => { await belir(c, orta, 400); await par(ciz(c, yay[0], 600), ciz(c, yay[1], 600)); await belir(c, yayAd, 300); })());
     c.note('|f(x)| = k → f(x) = k ya da f(x) = −k', 'İki yol', 'c5-iki-yol');
   }
