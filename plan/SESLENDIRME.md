@@ -107,13 +107,13 @@ Karakter sayıları 7 Ekim 2026 dökümünden; metin denetiminde rakamlar kelime
 | Matematik | Sayılar | B | 7 | 151 | 9.109 | seslendirildi (151 klip, 12,5 dk, 6,1 MB); 18 rakamlı satır kelimeye çevrildi, 9 yönerge; kullanıcı henüz dinlemedi |
 | Matematik | Sayılar | C | 5 | 80 | 3.913 | seslendirildi (80 klip, 5,5 dk, 2,69 MB); 48 satıra speak, 6 yönerge; %40 süre aykırısı yok; C1’de yerleşim bulguları, kullanıcı henüz dinlemedi |
 | Matematik | Sayılar | D | 8 | 122 | 6.718 | seslendirildi (122 klip, 9,4 dk, 4,58 MB); okunuş `04-islem-ozellikleri-cebirsel.js` içindeki `spk` ile otomatik (rakam, simge, ek), 18 yönerge (`say(c, html, { ton, dur })`); kullanıcı henüz dinlemedi |
-| Matematik | Geometrik Şekiller | A–C | 9 | 118 | 5.853 | bekliyor |
+| Matematik | Geometrik Şekiller | A–C | 12 | 222 | 11.048 | bekliyor (8 Ekim 2026 dökümü, tema 12 derse genişledikten sonra; metin denetimi yapılmadı) |
 | Matematik | Nicelikler ve Değişimler | A–C | 32 | 526 | 26.807 | seslendirildi (526 klip, 36,1 dk, 16,83 MB); okunuş `dersler/kit.js` içindeki `oku` ile otomatik (rakam, ek, birim, kesir), 102 satıra elle `speak`, 83 yönerge (`soyle(c, html, { ton, dur })`); kısa yönde süre aykırısı yok, 8 klip uzun yönde aykırı; pilot atlandı, kullanıcı henüz dinlemedi |
 | Fizik | Fizik Bilimi ve Kariyer Keşfi | A–D | 6 | 93 | 4.787 | üretildi (93 klip, 6,1 dk, 2,8 MB); pilot atlandı, kullanıcı henüz dinlemedi; yönerge yok |
 | Fizik | Akışkanlar | hikâye A1 | — | 14 | 767 | üretildi (14 klip, 58,9 sn; `fizik/akiskanlar/hikaye/a1-canta-askisi/assets/ses/`); üç yönerge; kullanıcı henüz dinlemedi |
 | Fizik | Kuvvet ve Hareket | A–F | 24 | 1.472 | 89.388 | seslendirildi (1.472 klip, 115,7 dk, 57 MB); okunacak metni altı Sonnet 5.5 alt ajanı hazırladı, 144 yönerge; pilot kullanıcı kararıyla atlandı; kısa yönde süre aykırısı yok, 14 klip uzun yönde aykırı (liste `plan/fizik/kuvvet-ve-hareket/DURUM.md`); kullanıcı henüz dinlemedi |
 | Kimya | Etkileşim | A–H | 18 | 1.126 | 73.019 | seslendirildi (1.126 klip, 93,1 dk, 43,2 MB); anlatım 7 Ekim 2026'da yeniden yazıldıktan sonra yeni metinle üretildi, 111 yönerge; kısa yönde süre aykırısı yok, 14 klip uzun yönde aykırı (sayma ve dizilim cümleleri); kullanıcı henüz dinlemedi |
-| Biyoloji | Yaşam | A–H | 37 | 738 | 44.393 | metin hazır (124 satıra speak, 77 yönerge); pilot A1 üretildi (24 klip, 114,4 sn), kullanıcı henüz dinlemedi; 36 ders bekliyor, D6 ve E1 kaynak gelince |
+| Biyoloji | Yaşam | A–H | 37 | 945 | 59.180 | bekliyor. 8 Ekim 2026 dökümü (21 dersin anlatımı yeniden yazıldıktan sonra); eski metnin `speak` ve yönergeleri yeniden denetlenecek. A1 pilotu (24 klip) eski metne ait, yeni derste çalmıyor; kullanıcı dinlemedi |
 
 Yazılmamış temalar işleme alındıkça bu tabloya eklenir.
 

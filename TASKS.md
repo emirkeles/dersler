@@ -122,7 +122,7 @@ C ölçüm sonuçları (1366×657): C2–C5 temiz; tüm derslerde konsol ve yaz�
 - [ ] Yayına al (`ortak/katalog.js`), seslendirme, hikâye videoları
 - [ ] Fizik Bilimi ve Kariyer Keşfi: dersleri izle; B1'in kutup ışıkları ve kristal görselleri için resim üret (`plan/fizik/fizik-bilimi-ve-kariyer-kesfi/GORSELLER.md`)
 - [ ] `kit.js` içindeki `sec`, `sirayla`, `kart`, `etiket`, `sar` araçlarını `ortak/` altına taşımayı değerlendir (sözel temalar için)
-- [ ] Commit ve push
+- [x] Commit ve push (8 Ekim 2026, `main`)
 
 ## Kimya Etkileşim ve Biyoloji Yaşam: yayın ve seslendirme (7 Ekim 2026)
 
@@ -167,7 +167,7 @@ Kullanıcı geri bildirimi: dersler tek cümleyle soruya geçiyor, "kitapta veri
 - [x] Üç taslak hazırla (gerçek katalog verisiyle, proje dışında tek dosya), ekran görüntüsüyle denetle: 1 Karolar, 2 İki bölme, 3 Tahtalar
 - [x] Kullanıcı birini seçer: 2 İki bölme
 - [x] Seçileni `ortak/site.js`, `ortak/site.css`, `ortak/katalog.js` (ders başına `renk`) içine uygula; beş yayındaki temada `denetle.js` temiz
-- [ ] Kullanıcı tarayıcıda bakar; isterse commit
+- [ ] Kullanıcı tarayıcıda bakar (commit ve push yapıldı, 8 Ekim 2026)
 
 ## Fizik: Kuvvet ve Hareket planı (7 Ekim 2026)
 
@@ -243,4 +243,52 @@ Kullanıcı: temaların ve derslerin içeriğine göre yaklaşık ne kadar süre
 - [x] Belgeler: `ortak/API.md`, `ortak/katalog.js` başlığı, `plan/ISLEME.md`, `CLAUDE.md`
 - [x] Doğrulama: `denetle.js` bütün temalarda, görüntüler
 - [ ] Kullanıcı: `INSAN` değerleri (düşünme payı, okuma hızı) kabul; gerçek öğrenciyle ölçülmedi
-- [ ] Bulundu, başka oturumların işi: `denetle.js` biyoloji/yasam B2 sahne sayısı (5, `tema.js` 4); geometrik-sekiller B2→B3, C2→C3 adlandırması yarım (`tema.js` eski adlarda, yeni dosyaların süresi yok)
+- [x] Bulundu, başka oturumların işi: `denetle.js` biyoloji/yasam B2 sahne sayısı (5, `tema.js` 4); geometrik-sekiller B2→B3, C2→C3 adlandırması yarım (ikisi de kapandı: 8 Ekim 2026'da `denetle.js` yedi temada temiz)
+
+## Proje incelemesi: açık kalanlar (8 Ekim 2026)
+
+Kuvvet ve Hareket yayına alındıktan sonra bütün proje tarandı. `denetle.js` yedi temada temiz; ana sayfa dört derste konsol hatasız; canlı site (GitHub Pages, `main`) son commit'le kuruldu. `olc.js` bu taramada yeniden çalıştırılmadı.
+
+Yayındaki derslerde, öğrencinin gördüğü eksikler:
+
+- [x] Biyoloji D6 sahne 3: "Virüsün yapı ve çoğalma bölümü bu derste henüz eksiktir." yer tutucu cümlesi yayında (8 Ekim 2026: D6 baştan yazıldı, aşağıdaki bölüm)
+- [x] Biyoloji E1: su ve minerallerin karşılaştırması kısmî (8 Ekim 2026: altı özellik tablosu yazıldı, aşağıdaki bölüm)
+- [ ] Biyoloji: 37 dersin hepsi sessiz (üretilecek 945 klip, 59.180 karakter; 8 Ekim dökümü); A1'in 24 pilot klibi eski metne ait, yeni derste çalmıyor. Klipler ve `ses/yasam-a1.js` depoda boşta duruyor
+- [ ] Biyoloji: 17 ders eski anlatımla (D3–D6, E1, E3, F1–F8, F10–F12); F12'de "… sınıfta yapılır." cümlesi `KURALLAR.md` 2.1'e aykırı; F3 ve F6'daki metin pürüzleri (`plan/biyoloji/yasam/DURUM.md` "Açık bulgular")
+- [ ] Kimya: `noWait` ile gösterildiği için seslendirilmeyen açıklama cümleleri ve H derslerindeki uzun sessiz sahneler (`plan/kimya/etkilesim/DURUM.md` "Açık bulgular"; yeniden yazımdan sonra yeniden bakılmadı)
+- [ ] Fizik Bilimi ve Kariyer Keşfi B1: kutup ışıkları ve kristal görselleri yerinde vektör çizim duruyor
+- [ ] Hiçbir temanın seslendirmesi kullanıcı tarafından baştan sona dinlenmedi; uzun yönde aykırı klipler: kimya 14, Kuvvet ve Hareket 14, Nicelikler 8
+
+Yazılmış ama yayında olmayan:
+
+- [ ] Geometrik Şekiller: 12 ders yazıldı, yayında değil, seslendirilmedi (222 satır, 11.048 karakter)
+- [x] Hikâye E3 İki kamera arası: işlendi ve derse bağlandı (8 Ekim 2026)
+- [ ] Hikâye A1 Çantanın askısı işlendi ama teması (Akışkanlar) yazılmadı
+
+Yazılmamış temalar (hepsinde yalnızca müfredat ve plan taslağı):
+
+- [ ] Matematik 4 (Eşlik ve Benzerlik, Algoritma ve Bilişim, İstatistiksel Araştırma Süreci, Veriden Olasılığa), fizik 2 (Akışkanlar, Enerji), kimya 2 (Çeşitlilik, Sürdürülebilirlik), biyoloji 1 (Organizasyon)
+- [ ] Türk Dili ve Edebiyatı 4, Tarih 3, Coğrafya 7 tema: derslerin ana sayfada "Hazırlanıyor" yazıyor
+
+Depo:
+
+- [ ] `origin` adresi eski (`emirkeles/matematik-sayilar`); depo `emirkeles/dersler` adına taşınmış, push yönlendirmeyle geçiyor
+- [ ] Altı uzak dal `main`'e girmiş durumda, silinebilir (`docs/claude-md-calisma-bicimi`, `hikaye-a8-tarla-cit`, `plan/yeni-dersler`, `tema/geometrik-sekiller`, `tema/nicelikler-ve-degisimler`, `yapi/ders-unite-klasorleri`)
+- [ ] Kimya `PLAN.md` bölüm 4 denetim tablosu yeni sahne numaralarıyla eşlenmedi
+
+## Biyoloji D6 ve E1'i tamamla, E3 hikâyesini siteye bağla (8 Ekim 2026)
+
+Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi vermeden ve gereksiz ayrıntıya girmeden anlatılsın; "İki kamera arası" işlenip siteye yüklensin. İçerik dökümü: `plan/biyoloji/yasam/PLAN.md` bölüm 13.
+
+- [x] Ders kitabını yeniden oku (s. 41, 42, 45, 46, 51): virüsün yapısı ve çoğalması kitapta yok; E1 tablosunun altı satırı var, cevapları yok
+- [x] `plan/KURALLAR.md` 2.1: açılamayan e-içerik için istisna (kullanıcı kararı)
+- [x] D6 baştan: 5 sahne (hücre ile virüs, yapı, çoğalma, hastalık ve bakteriyofaj, canlı mı cansız mı); `olc.js` temiz, görüntüler incelendi
+- [x] E1: 3 ve 4. sahne altı özelliğin tablosu; `olc.js` temiz, görüntüler incelendi
+- [x] Tema sayfasındaki "henüz eksiktir" dipnotu silindi; `tema.js` sahne sayıları ve açılış soruları; `sure.js`, `denetle.js` temiz
+- [x] Senaryolar (D6, E1), `PLAN.md` denetim tablosu ve bölüm 13, `DURUM.md`, `plan/biyoloji/TEMALAR.md`
+- [x] E3 filmi: `check` geçti, işlendi (71 sn, 17,6 MB), kapak; E3'ün 9. sahnesi ve `tema.js` `hikayeler`; `olc.js`, `denetle.js` temiz
+- [x] Kuvvet ve Hareket süreleri yeniden ölçüldü: 14 dersin süresi klipler üretilmeden önceki değerde kalmıştı
+- [x] Commit ve push
+- [ ] Kullanıcı D6 ve E1'i sitede izler; E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulmasına karar (`PLAN.md` bölüm 13)
+- [ ] Kullanıcı filmi izler (7–12. kareler ve seslendirme işlemeden önce onaylanmamıştı); altyazı dosyası yok
+- [ ] D6 ve E1 seslendirilmedi (biyoloji seslendirmesiyle birlikte)
