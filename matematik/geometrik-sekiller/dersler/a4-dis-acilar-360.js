@@ -1,9 +1,9 @@
 /* A4 — Dış açıların toplamı 360°dir
-   İki yol karşılaştırılır: dolaşma (doğrulama) ve hesap (ispat).
+   İki yol karşılaştırılır: dolaşma (doğrulama) ve hesap (ispat). Son sahnede önerme bilinmeyenli sorularda kullanılır.
    Senaryo: plan/matematik/geometrik-sekiller/senaryolar/A-acilar-ve-ispat.md */
 (() => {
   'use strict';
-  const { RENK, yon, ileri, ara, kisa, yazi, renkli, parcaKoy, cizgi, koy, kutu, gizle, belir, par, dilimYolu, ucgen, disAci, ok, adimlar, tahminAl, tepeKontrol } = window.KIT;
+  const { RENK, yon, ileri, ara, kisa, yazi, renkli, parcaKoy, cizgi, koy, kutu, gizle, belir, par, dilimYolu, ucgen, disAci, ok, adimlar, tahminAl, tepeKontrol, tepe, cevapla } = window.KIT;
   const { ease } = Ders;
   let tahmin = null;   // 1. sahnede yapılan tahmin; 2. sahnede anılır
 
@@ -142,6 +142,63 @@
     await c.say('Yol 1 nedenini sezdirir; kesinlik için Yol 2’yi seçeriz.');
   }
 
+  /* ---- 5. Sıra sende ---- */
+  async function siraSende(c) {
+    const svg = c.svg(1000, 562);
+    const B = [300, 400], C = [640, 400];
+    let g = null;
+    /* Açılarına göre üçgen ve üç dış açısı; dis sırası C, A, B. */
+    const kur = (beta, gama, o) => { if (g) g.remove(); g = c.S('g', {}, svg); return disli(c, g, tepe(B, C, beta, gama), B, C, o); };
+    await c.say('Sıra sende: dış açılar toplamını kullan.', { noWait: true });
+
+    let s = kur(60, 60);
+    s.dis.forEach((d) => d.yaz('?'));
+    await c.choice({
+      tag: 'Soru 1 / 4', q: 'Üç dış açı birbirine eşit. Her biri kaç derece?',
+      options: ['60°', '120°', '180°'], answer: 1,
+      hints: ['60°, bu üçgenin iç açısıdır; dış açı onu 180°’ye tamamlar.', '', 'Üçü birlikte 360° etmeli; 180° olsa toplam 540° olurdu.'],
+      right: '360° : 3 = 120°.',
+    });
+    s.dis.forEach((d) => cevapla(d.yazi, '120°'));
+    await c.wait(700);
+
+    s = kur(36, 60);
+    s.dis[0].yaz('120°'); s.dis[1].yaz('2x'); s.dis[2].yaz('3x');
+    await c.choice({
+      tag: 'Soru 2 / 4', q: 'Dış açılar 2x, 3x ve 120°. x kaç derece?',
+      options: ['40°', '48°', '72°'], answer: 1,
+      hints: ['Eşitliği kur: 2x + 3x + 120° = 360°.', '', '72° olsaydı 5x tek başına 360° ederdi.'],
+      right: '5x = 240°, x = 48°.',
+    });
+    cevapla(s.dis[1].yazi, '96°'); cevapla(s.dis[2].yazi, '144°');
+    await c.wait(700);
+
+    s = kur(50, 60, { olcu: ['', '', '?'], olcuSize: 24 });
+    s.dis[1].yaz('110°'); s.dis[2].yaz('130°');
+    await c.choice({
+      tag: 'Soru 3 / 4', q: 'İki dış açı 110° ve 130°. Üçüncü köşedeki <b>iç</b> açı kaç derece?',
+      options: ['120°', '60°', '100°'], answer: 1,
+      hints: ['120°, üçüncü dış açıdır; sorulan onun yanındaki iç açı.', '', 'Önce üçüncü dış açıyı bul: 360° − 110° − 130°.'],
+      right: 'Üçüncü dış açı 120°; iç açı 180° − 120° = 60°.',
+    });
+    s.dis[0].yaz('120°'); cevapla(s.u.olculer[2], '60°');
+    await c.wait(700);
+
+    s = kur(55, 60);
+    const d2 = disAci(c, g, C, s.u.K()[0], B);
+    s.dis[0].yaz('120°'); d2.yaz('?');
+    gizle(s.dis[1].g, s.dis[2].g, d2.g);
+    await par(c.say('C köşesinde öbür kenarı da uzatıyoruz: ikinci bir dış açı.'), belir(c, d2.g, 500));
+    await c.choice({
+      tag: 'Soru 4 / 4', q: 'C köşesindeki iki dış açı için ne söylenir?',
+      options: ['Eşittirler: ters açılar', 'Toplamları 360° eder', 'Biri iç açıya eşittir'], answer: 0,
+      hints: ['', 'İkisi de iç açıyı 180°’ye tamamlar; toplamları 240° eder.', 'İkisi de iç açının yanında durur; ona eşit değil, onu 180°’ye tamamlar.'],
+      right: 'İki uzantı bir X çizer: karşı karşıya duran açılar eşittir.',
+    });
+    cevapla(d2.yazi, '120°');
+    await c.say('Toplamda her köşeden yalnızca biri sayılır.');
+  }
+
   Ders.start({
     id: 'geometrik-sekiller-a4', kicker: 'Konu A · Açılar ve ispat', title: 'Dış açıların toplamı 360°dir', accent: '#6ea8ff', back: 'index.html',
     intro: {
@@ -149,12 +206,13 @@
       hook: 'Üçgen biçimli bir parkın çevresini dolaşıp başladığın yöne döndün. Toplam <b>kaç derece</b> dönmüş olursun?',
       button: 'Derse başla ›',
     },
-    goals: ['Üçgende dış açıyı tanır.', 'Dış açılar toplamının 360° olduğunu iki ayrı yoldan görür.', 'Bir doğrulama ile bir ispatı karşılaştırır, uygun olanı seçer.'],
+    goals: ['Üçgende dış açıyı tanır.', 'Dış açılar toplamının 360° olduğunu iki ayrı yoldan görür.', 'Bir doğrulama ile bir ispatı karşılaştırır, uygun olanı seçer.', 'Önermeyi bilinmeyenli sorularda kullanır.'],
     scenes: [
       { title: 'Dış açı', goal: 'Dış açının uzantı ile kenar arasındaki açı olduğunu gör.', run: disAciNedir },
       { title: 'Yol 1: dolaş', goal: 'Köşelerde dönülen açıların bir tam tur ettiğini gör.', run: dolas },
       { title: 'Yol 2: hesapla', goal: 'Üç doğru açıdan iç açıları çıkar.', run: hesapla },
       { title: 'Karşılaştır, seç', goal: 'Doğrulama ile ispatı ayır; uygun yolu seç.', run: karsilastir },
+      { title: 'Sıra sende', goal: 'Dış açılar toplamını dört soruda kullan.', run: siraSende },
     ],
     quizTitle: 'Çıkış soruları',
     quiz: [
@@ -173,7 +231,7 @@
     ],
     summary: [
       '<b>Dış açılar bir tam turdur: 360°.</b>',
-      '<b>Dış açı:</b> bir kenarın uzantısı ile öbür kenar arasındaki açı. İç açı + dış açı = 180°.',
+      '<b>Dış açı:</b> bir kenarın uzantısı ile öbür kenar arasındaki açı. İç açı + dış açı = 180°. Toplamda her köşeden biri sayılır.',
       'Dolaşmak <b>doğrular</b>; 3 · 180° − 180° = 360° hesabı <b>ispatlar</b>.',
     ],
     nextLesson: { href: 'a5-dis-aci-iki-ic-aci.html', label: 'Sonraki: Dış açı, uzaktaki iki iç açının toplamıdır ›' },

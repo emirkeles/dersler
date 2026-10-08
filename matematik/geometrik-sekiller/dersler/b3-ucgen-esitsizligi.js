@@ -1,4 +1,4 @@
-/* B2 — Üçgen eşitsizliği: her üç uzunluk üçgen kurmaz
+/* B3 — Üçgen eşitsizliği: her üç uzunluk üçgen kurmaz
    Üç uzunluk, ancak her biri öbür ikisinin toplamından kısaysa üçgen kurar. Program doğrulama ister.
    Senaryo: plan/matematik/geometrik-sekiller/senaryolar/B-kenarlar-ve-acilar.md */
 (() => {
@@ -111,7 +111,7 @@
   }
 
   Ders.start({
-    id: 'geometrik-sekiller-b2', kicker: 'Konu B · Kenarlar ve açılar', title: 'Üçgen eşitsizliği', accent: '#ff8a5b', back: 'index.html',
+    id: 'geometrik-sekiller-b3', kicker: 'Konu B · Kenarlar ve açılar', title: 'Üçgen eşitsizliği', accent: '#ff8a5b', back: 'index.html',
     intro: {
       title: 'Üçgen eşitsizliği: her üç uzunluk üçgen kurmaz',
       hook: 'Bir mühendisin elinde <b>3 m, 4 m ve 8 m</b>’lik üç çelik çubuk var. Bunlarla üçgen bir destek kurabilir mi?',
@@ -144,6 +144,6 @@
       'Toplam <b>eşit</b> çıkarsa düz çizgi olur, üçgen olmaz.',
       'Kısa yol: en uzun kenarı öbür ikisinin toplamıyla karşılaştır.',
     ],
-    nextLesson: { href: 'c1-bu-ispat-her-ucgende-calisir-mi.html', label: 'Sonraki: Bu ispat her üçgende çalışır mı? ›' },
+    nextLesson: { href: 'b4-ucuncu-kenar-araligi.html', label: 'Sonraki: Üçüncü kenar hangi aralıkta? ›' },
   });
 })();

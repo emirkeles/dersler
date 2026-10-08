@@ -3,7 +3,7 @@
    Senaryo: plan/matematik/geometrik-sekiller/senaryolar/B-kenarlar-ve-acilar.md */
 (() => {
   'use strict';
-  const { RENK, rad, uz, ileri, ara, yazi, cizgi, koy, nokta, gizle, belir, par, dilim, ucgen, kenarlar, ok, tahminAl, tepeKontrol } = window.KIT;
+  const { RENK, rad, uz, ileri, ara, yazi, cizgi, koy, nokta, gizle, belir, par, dilim, ucgen, kenarlar, ok, tahminAl, tepeKontrol, mentese } = window.KIT;
   const { lerp, ease } = Ders;
   const sayi = (x) => x.toFixed(1).replace('.', ',');
 
@@ -38,26 +38,12 @@
   /* ---- 2. Aç, kapa ---- */
   async function acKapa(c) {
     const svg = c.svg(1000, 562);
-    const A = [300, 440], B = [540, 440], S = 40;
-    const karsi = cizgi(c, svg, B, B, RENK.A, 8);
-    cizgi(c, svg, A, B, RENK.cizgi, 5);
-    const kol = cizgi(c, svg, A, A, RENK.cizgi, 5);
-    const d = dilim(c, svg, A, B, B, RENK.A, 54);
-    nokta(c, svg, A, RENK.yazi, 8);
-    yazi(c, svg, A[0] - 24, A[1] + 30, 'A', { size: 24, kalin: 700 }); yazi(c, svg, B[0] + 24, B[1] + 10, 'B', { size: 24, kalin: 700 });
-    const hC = yazi(c, svg, 0, 0, 'C', { size: 24, kalin: 700 });
-    yazi(c, svg, 420, 476, '6', { size: 22, kalin: 600, renk: RENK.soluk });
-    const bes = yazi(c, svg, 0, 0, '5', { size: 22, kalin: 600, renk: RENK.soluk });
+    const m = mentese(c, svg, { A: [300, 440], taban: 6, kol: 5, S: 40, harf: true });
     yazi(c, svg, 800, 170, 'A’daki açı', { size: 22, kalin: 500, renk: RENK.soluk });
     const tAci = yazi(c, svg, 800, 224, '', { size: 46, kalin: 700, renk: RENK.A });
     yazi(c, svg, 800, 320, 'karşı kenar', { size: 22, kalin: 500, renk: RENK.soluk });
     const tKenar = yazi(c, svg, 800, 374, '', { size: 46, kalin: 700, renk: RENK.A });
-    const ciz = (derece) => {
-      const t = -rad(derece), C = ileri(A, t, 5 * S), hy = ileri(C, t, 24), by = ileri(ara(A, C, 0.5), t - Math.PI / 2, 22);
-      koy(kol, A, C); koy(karsi, B, C); d.ciz(A, B, C);
-      hC.setAttribute('x', hy[0]); hC.setAttribute('y', hy[1] + 8); bes.setAttribute('x', by[0]); bes.setAttribute('y', by[1] + 8);
-      tAci.textContent = Math.round(derece) + '°'; tKenar.textContent = sayi(uz(B, C) / S);
-    };
+    const ciz = (derece) => { m.ciz(derece); tAci.textContent = Math.round(derece) + '°'; tKenar.textContent = sayi(m.karsi()); };
     ciz(60);
     await par(c.say('A’da menteşeli iki çubuk: boyları sabit, aradaki açı değişiyor.'), (async () => {
       await c.tween(1500, (e) => ciz(lerp(60, 130, e)), ease.inOut); await c.tween(1500, (e) => ciz(lerp(130, 60, e)), ease.inOut);
@@ -73,6 +59,16 @@
       right: 'Kollar açıldıkça uçlar birbirinden uzaklaşır.',
     });
     await c.say('Açı açıldıkça karşısındaki kenar uzuyor.');
+    ciz(60);
+    await c.say('Açı 60° iken karşı kenar 5,6 birim.', { speak: 'Açı altmış derece iken karşı kenar beş virgül altı birim.' });
+    await par(c.say('Açıyı iki katına, 120°’ye çıkarıyoruz.', { speak: 'Açıyı iki katına, yüz yirmi dereceye çıkarıyoruz.' }), c.tween(1700, (e) => ciz(lerp(60, 120, e)), ease.inOut));
+    await c.choice({
+      tag: 'Ne gördün?', q: 'Açı iki katına çıktı. Karşı kenar da iki katına çıktı mı?',
+      options: ['Evet: 5,6’dan 11,2’ye', 'Hayır: 5,6’dan 9,5’e'], answer: 1,
+      hints: ['Tahtadaki boya bak: karşı kenar şimdi 9,5.', ''],
+      right: 'Kenar uzadı; ama iki katına çıkmadı.',
+    });
+    await c.say('Açı büyüyünce karşı kenar uzar; ama aynı oranda değil.');
   }
 
   /* ---- 3. Üç türde dene ---- */
@@ -148,7 +144,7 @@
     goals: ['Bir açının karşısındaki kenarı gösterir.', 'En uzun kenarın karşısındaki açının en büyük olduğunu farklı türde üçgenlerde doğrular.'],
     scenes: [
       { title: 'Karşı kenar', goal: 'Her açının karşısındaki kenarı bul.', run: karsiKenar },
-      { title: 'Aç, kapa', goal: 'Açı büyüdükçe karşı kenarın uzadığını gör.', run: acKapa },
+      { title: 'Aç, kapa', goal: 'Açı büyüdükçe karşı kenarın uzadığını, ama aynı oranda uzamadığını gör.', run: acKapa },
       { title: 'Üç türde dene', goal: 'Önermeyi dar, dik ve geniş açılı üçgende doğrula.', run: ucTur },
       { title: 'Sıra sende', goal: 'Üçgeni değiştir; en uzun kenar ile en büyük açıyı izle.', run: siraSende },
     ],
@@ -172,6 +168,6 @@
       'Bir açının <b>karşısındaki kenar</b>, o köşeye değmeyen kenardır.',
       'Önermeyi dar, dik ve geniş açılı üçgenlerde ölçerek <b>doğruladık</b>.',
     ],
-    nextLesson: { href: 'b2-ucgen-esitsizligi.html', label: 'Sonraki: Üçgen eşitsizliği ›' },
+    nextLesson: { href: 'b2-acilari-sirala-kenarlari-sirala.html', label: 'Sonraki: Açıları sırala, kenarları sırala ›' },
   });
 })();

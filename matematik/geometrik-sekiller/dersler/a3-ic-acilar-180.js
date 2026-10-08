@@ -3,7 +3,7 @@
    Senaryo: plan/matematik/geometrik-sekiller/senaryolar/A-acilar-ve-ispat.md */
 (() => {
   'use strict';
-  const { RENK, yon, ileri, ara, kisa, yazi, renkli, parcaKoy, cizgi, koy, nokta, gizle, belir, par, dilim, ucgen, adimlar, tepeKontrol, paralelDuzen: duzen, aciTasi: tasi } = window.KIT;
+  const { RENK, yon, ileri, ara, kisa, yazi, renkli, parcaKoy, cizgi, koy, nokta, gizle, belir, par, dilim, ucgen, adimlar, tepeKontrol, tepe, cevapla, paralelDuzen: duzen, aciTasi: tasi } = window.KIT;
   const { lerp, ease } = Ders;
 
   /* ---- 1. Kopar, yan yana koy ---- */
@@ -81,7 +81,27 @@
     const iz = (noktalar, renk) => { const p = c.S('polyline', { points: noktalar.map((q) => q.join(',')).join(' '), fill: 'none', stroke: renk, 'stroke-width': 12, 'stroke-opacity': 0.3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg); gizle(p); return p; };
     const zB = iz([[A[0] - 190, A[1]], A, B, [B[0] + 190, B[1]]], RENK.B), zC = iz([[A[0] + 190, A[1]], A, C, [C[0] - 190, C[1]]], RENK.C);
     const s = duzen(c, svg, A, B, C);
-    gizle(s.bK.el, s.gK.el, s.bAd, s.gAd, s.dg);
+    gizle(s.bK.el, s.gK.el, s.bAd, s.gAd, s.dg, s.u.g);
+    /* Hatırlatma: iki paralel, bir kesen ve üç eş açı çifti. Sabit dilim P1'de; eşi çiftine göre yer değiştirir. */
+    const h = c.S('g', {}, svg), P1 = [423.5, 190], P2 = [576.5, 370], ustUc = [330, 80], altUc = [670, 480];
+    cizgi(c, h, [150, 190], [850, 190], RENK.paralel, 3); cizgi(c, h, [150, 370], [850, 370], RENK.paralel, 3);
+    cizgi(c, h, ustUc, altUc, RENK.cizgi, 3);
+    dilim(c, h, P1, [P1[0] + 100, 190], P2, RENK.B, 48);
+    const es = dilim(c, h, P2, [P2[0] + 100, 370], altUc, RENK.B, 48);
+    const cift = yazi(c, h, 760, 130, '', { size: 34, kalin: 700, renk: RENK.B });
+    gizle(es.el);
+    const goster = async (V, P, Q, ad) => {
+      await belir(c, [es.el, cift], 250, 0);
+      es.ciz(V, P, Q); cift.textContent = ad;
+      await belir(c, [es.el, cift], 400);
+    };
+    await c.say('Hatırla: iki paralel doğruyu bir kesen kesiyor.');
+    await par(c.say('Kesenin aynı yanında, aynı konumdaki açılar: <b>yöndeş</b>.'), goster(P2, [P2[0] + 100, 370], altUc, 'yöndeş'));
+    await par(c.say('Paralellerin arasında, kesenin zıt yanlarındakiler: <b>iç ters</b>.'), goster(P2, [P2[0] - 100, 370], P1, 'iç ters'));
+    await par(c.say('Aynı köşede karşı karşıya duranlar: <b>ters</b> açılar.'), goster(P1, [P1[0] - 100, 190], ustUc, 'ters'));
+    await c.say('Üç çiftte de açılar birbirine eşittir.');
+    await belir(c, h, 400, 0); h.remove();
+    await belir(c, s.u.g, 400);
     await par(c.say('A’dan BC’ye paralel d doğrusunu çizdik.'), belir(c, s.dg, 500));
     await par(c.say('AB, iki paraleli kesiyor. B’deki açıyı A’ya taşıyalım.'), (async () => {
       await belir(c, zB, 400); s.bK.el.style.opacity = 1;
@@ -151,6 +171,50 @@
     await c.say('Bu yüzden sonuç bütün üçgenler için geçerli: bu bir <b>ispat</b>.');
   }
 
+  /* ---- 6. Sıra sende ---- */
+  async function siraSende(c) {
+    const svg = c.svg(1000, 562);
+    const B = [210, 470], C = [790, 470];
+    let g = null;
+    const yeni = () => { if (g) g.remove(); g = c.S('g', {}, svg); return g; };
+    await c.say('Sıra sende: bilinmeyen açıyı bul.', { noWait: true });
+
+    let u = ucgen(c, yeni(), tepe(B, C, 60, 30), B, C, { harf: false, olcu: ['3x', '2x', 'x'], olcuSize: 26, r: 46 });
+    await c.choice({
+      tag: 'Soru 1 / 3', q: 'Açılar x, 2x ve 3x. En büyük açı kaç derece?',
+      options: ['30°', '60°', '90°'], answer: 2,
+      hints: ['30°, x’in değeri; en büyük açı 3x.', '60°, 2x’in değeri; en büyük açı 3x.', ''],
+      right: 'x + 2x + 3x = 180°, x = 30°; 3x = 90°.',
+    });
+    ['90°', '60°', '30°'].forEach((m, i) => cevapla(u.olculer[i], m));
+    await c.wait(700);
+
+    u = ucgen(c, yeni(), tepe(B, C, 50, 60), B, C, { harf: false, olcu: ['2x − 10°', 'x + 10°', 'x + 20°'], olcuSize: 24, r: 40 });
+    /* uzun etiketler kenarlara binmesin: tabandakiler dilimin yanına, tepedeki dilimin altına */
+    const yer = (t, x, y, hiza) => { t.setAttribute('x', x); t.setAttribute('y', y); t.setAttribute('text-anchor', hiza); };
+    yer(u.olculer[0], u.K()[0][0], u.K()[0][1] + 112, 'middle'); yer(u.olculer[1], B[0] + 58, B[1] - 14, 'start'); yer(u.olculer[2], C[0] - 58, C[1] - 14, 'end');
+    await c.choice({
+      tag: 'Soru 2 / 3', q: 'Açılar x + 10°, x + 20° ve 2x − 10°. x kaç derece?',
+      options: ['40°', '45°', '50°'], answer: 0,
+      hints: ['', 'Üç açıyı topla: 4x + 20° = 180°.', '50°, en küçük açının ölçüsü; sorulan x.'],
+      right: '4x + 20° = 180°, x = 40°.',
+    });
+    ['70°', '50°', '60°'].forEach((m, i) => cevapla(u.olculer[i], m));
+    await c.wait(700);
+
+    const s = duzen(c, yeni(), tepe([240, 440], [680, 440], 48, 62), [240, 440], [680, 440], { olcu: ['?', '', ''] });
+    s.bAd.textContent = '48°'; s.gAd.textContent = '62°';
+    s.bAd.setAttribute('x', +s.bAd.getAttribute('x') - 22); s.gAd.setAttribute('x', +s.gAd.getAttribute('x') + 22);   // ölçüler kenarların üstüne binmesin
+    await c.choice({
+      tag: 'Soru 3 / 3', q: 'd // BC. d ile AB arası 48°, d ile AC arası 62°. A’daki açı kaç derece?',
+      options: ['70°', '110°', '48°'], answer: 0,
+      hints: ['', '110°, iki açının toplamı; A’daki açı doğru açıdan kalandır.', '48°, B’deki açının iç ters eşi.'],
+      right: 'Üçü bir doğru açı eder: 180° − 48° − 62° = 70°.',
+    });
+    cevapla(s.u.olculer[0], '70°');
+    await c.say('Üç açının toplamı 180°: bilinmeyeni bu eşitlik verir.', { speak: 'Üç açının toplamı yüz seksen derece: bilinmeyeni bu eşitlik verir.' });
+  }
+
   Ders.start({
     id: 'geometrik-sekiller-a3', kicker: 'Konu A · Açılar ve ispat', title: 'İç açıların toplamı 180°dir', accent: '#6ea8ff', back: 'index.html',
     intro: {
@@ -158,13 +222,14 @@
       hook: 'Bir ressam üç köşeli bir kompozisyon çiziyor. Üç köşedeki açıların toplamını <b>çizmeden</b> bilebilir mi?',
       button: 'Derse başla ›',
     },
-    goals: ['İç açılar toplamının 180° olduğunu paralel doğru yardımıyla ispatlar.', 'İspatın her adımının gerekçesini söyler.'],
+    goals: ['İç açılar toplamının 180° olduğunu paralel doğru yardımıyla ispatlar.', 'İspatın her adımının gerekçesini söyler.', 'Önermeyi bilinmeyenli açı sorularında kullanır.'],
     scenes: [
       { title: 'Kopar, yan yana koy', goal: 'Üç köşenin bir düz çizgi ettiğini tek üçgende doğrula.', run: kopar },
       { title: 'Tek paralel', goal: 'Bir noktadan bir doğruya yalnızca bir paralel çizildiğini gör.', run: tekParalel },
-      { title: 'İç ters açılar', goal: 'B ve C’deki açıların eşlerini A’da bul.', run: icTers },
+      { title: 'İç ters açılar', goal: 'Eş açı çiftlerini hatırla; B ve C’deki açıların eşlerini A’da bul.', run: icTers },
       { title: 'İspatı tamamla', goal: 'Üç açının bir doğru açıyı doldurduğunu gerekçesiyle söyle.', run: tamamla },
       { title: 'Her üçgende', goal: 'Adımların üçgenin biçimine bağlı olmadığını gör.', run: herUcgende },
+      { title: 'Sıra sende', goal: 'Bilinmeyen açıyı üç soruda bul.', run: siraSende },
     ],
     quizTitle: 'Çıkış soruları',
     quiz: [

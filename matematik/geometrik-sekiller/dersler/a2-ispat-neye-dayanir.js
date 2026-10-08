@@ -1,10 +1,11 @@
 /* A2 — İspat doğru bilgilerin üstüne kurulur
    Her ispat doğruluğundan emin olunan bilgilere dayanır; en altta aksiyomlar durur (Öklid geometrisi).
-   Son sahne programın andığı bilim insanlarını ve Geometri kitabını yalnızca programın yazdığı kadarıyla tanıtır.
+   Tarih şeridi ve Geometri kitabının terimleri ders kitabının yazdığı kadardır (Matematik 9, 1. Kitap, s. 183, 192);
+   dört bilim insanı yalnızca adlarıyla anılır.
    Senaryo: plan/matematik/geometrik-sekiller/senaryolar/A-acilar-ve-ispat.md */
 (() => {
   'use strict';
-  const { RENK, yazi, kutu, cizgi, nokta, gizle, belir, par } = window.KIT;
+  const { RENK, yazi, kutu, cizgi, nokta, gizle, belir, par, ok, cevapla } = window.KIT;
   const { lerp, ease } = Ders;
 
   /* Taş: içinde yazı olan (ya da boş) kutu. tasi(dx, dy, açı) taşı yerinden oynatır. */
@@ -73,7 +74,43 @@
     c.note('<b>Aksiyom:</b> ispatsız kabul edilen temel bilgi.<br>İki noktadan bir doğru geçer.', 'Aksiyom', 'gs-aksiyom');
   }
 
-  /* ---- 3. Geometri bir yapıdır ---- */
+  /* ---- 3. Ölçmeden ispata ---- */
+  async function serit(c) {
+    const svg = c.svg(1000, 562);
+    const Y = 300, X = [140, 330, 500, 670, 860];
+    const ad = ['Babil, Mısır', 'Tales', 'Pisagor', 'Platon', 'Öklid'], et = ['arazi ölçümü', 'öncü', 'soyut düşünce', 'akademi', 'Elemanlar'];
+    const hat = cizgi(c, svg, [50, Y], [50, Y], RENK.ince, 4);
+    const durak = X.map((x, i) => {
+      const g = c.S('g', {}, svg);
+      nokta(c, g, [x, Y], i === 4 ? RENK.dis : RENK.cizgi, 9);
+      yazi(c, g, x, Y - 30, ad[i], { size: 24, kalin: 700 });
+      yazi(c, g, x, Y + 46, et[i], { size: 20, kalin: 500, renk: RENK.soluk });
+      gizle(g); return g;
+    });
+    /* arazi: eşit kare parseller; Elemanlar: on üç cilt */
+    const parsel = c.S('g', {}, svg), cilt = c.S('g', {}, svg);
+    for (let i = 0; i < 3; i++) for (let j = 0; j < 2; j++) c.S('rect', { x: 95 + i * 30, y: 150 + j * 30, width: 30, height: 30, fill: 'rgba(110,168,255,.07)', stroke: RENK.ince, 'stroke-width': 2 }, parsel);
+    for (let i = 0; i < 13; i++) c.S('rect', { x: 796 + i * 10, y: 150, width: 8, height: 60, rx: 2, fill: '#22305f', stroke: RENK.dis, 'stroke-width': 1.5 }, cilt);
+    yazi(c, cilt, 860, Y + 76, '13 cilt', { size: 20, kalin: 600, renk: RENK.dis });
+    gizle(parsel, cilt);
+    const uzat = (x, ms = 700) => { const x0 = +hat.getAttribute('x2'); return c.tween(ms, (e) => hat.setAttribute('x2', lerp(x0, x, e)), ease.inOut); };
+    const gel = async (i) => { await uzat(X[i] + (i === 4 ? 60 : 0)); await belir(c, durak[i], 350); };
+    await par(c.say('Geometri arazi ölçmekle başladı: Babil’de ve eski Mısır’da.'), (async () => { await gel(0); await belir(c, parsel, 400); })());
+    await c.say('Belli işler için kurallar buldular; ayrıntılı doğrulama aramadılar.');
+    await par(c.say('Yunan geometrisinin öncüsü Miletli Tales, geometriyi daha anlaşılır kıldı.'), gel(1));
+    await par(c.say('Pisagor Okulu’yla soyut düşünce hız kazandı.'), gel(2));
+    await par(c.say('Platon bir matematik akademisi kurdu.'), gel(3));
+    await par(c.say('O akademide yetişen Öklid, on üç ciltlik <b>Elemanlar</b>’ı yazdı.'), (async () => { await gel(4); await belir(c, cilt, 450); })());
+    await c.choice({
+      tag: 'Ne değişti?', q: 'Babil ve Mısır’dan Öklid’e uzanan yolda geometri neye dönüştü?',
+      options: ['Pratik ölçme kurallarından kuramsal bir yapıya', 'Kuramsal bir yapıdan ölçme kurallarına', 'Hiç değişmedi'], answer: 0,
+      hints: ['', 'Başlangıçta yalnızca işe yarayan kurallar vardı; kuram sonra geldi.', 'Arazi ölçen kurallar ile on üç ciltlik bir eser aynı şey değil.'],
+      right: 'Geometri zamanla kuramsal ve aksiyomatik bir yapı kazandı.',
+    });
+    await c.say('Kurallar artık tek tek durmuyor: bir yapının parçaları.');
+  }
+
+  /* ---- 4. Geometri bir yapıdır ---- */
   async function yapi(c) {
     const svg = c.svg(1000, 562);
     const W = 150, H = 56;
@@ -86,7 +123,7 @@
     const altAd = yazi(c, svg, 500, 500, 'aksiyomlar', { size: 24, kalin: 700, renk: RENK.dis });
     const ustAd = yazi(c, svg, 760, 310, 'ispatlanan önermeler', { hiza: 'start', size: 20, kalin: 500, renk: RENK.soluk });
     gizle(baslik, altAd, ustAd);
-    await c.say('Geometri tarihî süreçte ortaya çıktı.');
+    await c.say('Tek tek bulunmuş bilgiler başta dağınık duruyordu.');
     await par(c.say('Zamanla kuramsal ve <b>aksiyomatik</b> bir yapı kazandı.'), c.tween(1700, yerlestir, ease.inOut));
     taslar.slice(0, 4).forEach((t) => boya(t, RENK.dis));
     await par(c.say('<b>Öklid geometrisi</b> böyle bir yapıdır: altta aksiyomlar, üstte ispatlananlar.'),
@@ -104,12 +141,13 @@
     c.note('<b>Öklid geometrisi:</b> aksiyomlar üstüne kurulu yapı.<br>Her ispat bu yapıya dayanır.', 'Öklid geometrisi', 'gs-oklid');
   }
 
-  /* ---- 4. Geometriye katkı sağlayanlar ---- */
+  /* ---- 5. Katkı sağlayanlar ve Geometri kitabı ---- */
   async function katki(c) {
     const svg = c.svg(1000, 562);
-    const baslik = yazi(c, svg, 310, 76, 'Geometriye katkı sağlamış bilim insanları', { size: 24, kalin: 600, renk: RENK.soluk });
+    const isimler = c.S('g', {}, svg);
+    const baslik = yazi(c, isimler, 310, 76, 'Geometriye katkı sağlamış bilim insanları', { size: 24, kalin: 600, renk: RENK.soluk });
     const adlar = ['Ebülvefa Buzcani', 'Kuşyar bin Lebban', 'Kadızade-i Rumi', 'Nasirüddin Tusi']
-      .map((ad, i) => tas(c, svg, 40 + (i % 2) * 280, 120 + Math.floor(i / 2) * 120, 260, 96, ad));
+      .map((ad, i) => tas(c, isimler, 40 + (i % 2) * 280, 120 + Math.floor(i / 2) * 120, 260, 96, ad));
     const kitap = c.S('g', {}, svg);
     c.S('rect', { x: 668, y: 110, width: 244, height: 310, rx: 6, fill: '#22305f', stroke: RENK.dis, 'stroke-width': 3 }, kitap);
     cizgi(c, kitap, [694, 112], [694, 418], RENK.dis, 2);
@@ -117,21 +155,47 @@
     yazi(c, kitap, 804, 226, 'Geometri', { size: 38, kalin: 700 });
     yazi(c, kitap, 804, 300, '1936–1937', { size: 24, kalin: 600, renk: RENK.dis });
     const yazar = yazi(c, svg, 790, 466, 'Mustafa Kemal Atatürk', { size: 22, kalin: 600 });
+    /* Eşleşme satırı: solda eski terim, sağda kitabın ürettiği karşılık ('?' ise sorulur). */
+    const satir = (i, eski, yeni) => {
+      const g = c.S('g', {}, svg), y = 96 + i * 92;
+      tas(c, g, 14, y, 392, 66, eski, { size: 18 });
+      ok(c, g, [412, y + 33], [436, y + 33], RENK.soluk, 3);
+      const sag = tas(c, g, 444, y, 200, 66, yeni, { size: 21, renk: RENK.dis });
+      gizle(g); return { g, sag };
+    };
+    const r = [
+      satir(0, 'müselles-i mütesâviyü’l-adlâ', 'eşkenar üçgen'), satir(1, 're’sen mütekabil zâviye', 'ters açı'),
+      satir(2, 'kaim zaviyeli müselles', '?'), satir(3, 'zaviyetan-ı mütekabiletan-ı dahiletan', '?'),
+    ];
     gizle(baslik, adlar.map((a) => a.g), kitap, yazar);
     await par(c.say('Türk kültür ve medeniyetinde geometriye katkı sağlamış dört bilim insanı.'), (async () => {
       await belir(c, baslik, 350);
       for (const a of adlar) { await belir(c, a.g, 350); await c.wait(450); }
     })());
+    await c.wait(900);
     await par(c.say('1936–1937’de Atatürk bir <b>Geometri</b> kitabı hazırladı.', { speak: 'Bin dokuz yüz otuz altı, otuz yedi yıllarında Atatürk bir Geometri kitabı hazırladı.' }),
-      (async () => { await belir(c, kitap, 500); await belir(c, yazar, 350); })());
-    await c.say('Kitap, bazı geometri terimlerinin bugünkü karşılıklarına yer verir.');
+      (async () => { await belir(c, isimler, 400, 0); isimler.remove(); await belir(c, kitap, 500); await belir(c, yazar, 350); })());
+    await c.say('Kitap, Arapça ve Farsça kökenli terimlerin yerine Türkçe terimler üretti.');
+    await par(c.say('Solda eski terim, sağda kitabın ürettiği karşılık.'), belir(c, r[0].g, 450));
+    await par(c.say('Bir örnek daha: bu kez bir açı çifti.'), belir(c, r[1].g, 450));
+    await belir(c, r[2].g, 400);
     await c.choice({
-      tag: 'Hatırla', q: '<i>Geometri</i> kitabı hangi özelliğiyle anılır?',
-      options: ['Bazı geometri terimlerinin bugün kullanılan karşılıklarına yer vermesiyle', 'İç açılar toplamını ilk kez ispatlamasıyla', 'Yalnızca ölçme yöntemlerini anlatmasıyla'], answer: 0,
-      hints: ['', 'Kitap terimleriyle anılır: bugün kullandığımız karşılıklar.', 'Kitap terimleriyle anılır: bugün kullandığımız karşılıklar.'],
-      right: 'Bugün kullandığımız bazı geometri terimleri bu kitapta yer alır.',
+      tag: 'Eşleştir', q: '“kaim zaviyeli müselles” bugün hangi terimdir?',
+      options: ['dik üçgen', 'ters açı', 'eşkenar üçgen'], answer: 0,
+      hints: ['', '“müselles” eşkenar üçgenin eski adında da vardı: bu bir üçgen.', 'Eşkenar üçgenin eski adı ilk satırda; bu başka bir üçgen.'],
+      right: 'Kitap “dikey üçgen” dedi; bugün dik üçgen diyoruz.',
     });
-    c.note('<b>Geometri</b> (Atatürk, 1936–1937):<br>bazı geometri terimlerinin bugünkü karşılıkları.', 'Geometri kitabı', 'gs-geometri-kitabi');
+    cevapla(r[2].sag.t, 'dik üçgen');
+    await belir(c, r[3].g, 400);
+    await c.choice({
+      tag: 'Eşleştir', q: '“zaviyetan-ı mütekabiletan-ı dahiletan” bugün hangi terimdir?',
+      options: ['ikizkenar üçgen', 'yöndeş açı', 'iç ters açılar'], answer: 2,
+      hints: ['“zâviye” ters açının eski adında da vardı: bu bir açı adı.', '“mütekabil” sözü ters açının eski adında da geçiyor.', ''],
+      right: 'İç ters açılar: sonraki derste ispatta kullanacağın terim.',
+    });
+    cevapla(r[3].sag.t, 'iç ters açılar');
+    await c.say('Kitabın ürettiği terimlerin çoğu bugün de kullanılıyor.');
+    c.note('<b>Geometri</b> (Atatürk, 1936–1937):<br>Türkçe terimler: ters açı, iç ters açılar, eşkenar üçgen.', 'Geometri kitabı', 'gs-geometri-kitabi');
   }
 
   Ders.start({
@@ -141,12 +205,13 @@
       hook: 'Bir mimar “bu çizim doğru” derken hangi bilgilere güvenir?',
       button: 'Derse başla ›',
     },
-    goals: ['Bir ispatın doğruluğundan emin olunan bilgilere dayandığını görür.', 'Aksiyomu ve Öklid geometrisinin aksiyomatik yapısını tanır.', 'Geometrinin gelişimine katkı sağlayan isimleri ve <i>Geometri</i> kitabını tanır.'],
+    goals: ['Bir ispatın doğruluğundan emin olunan bilgilere dayandığını görür.', 'Aksiyomu ve Öklid geometrisinin aksiyomatik yapısını tanır.', 'Geometrinin ölçme kurallarından kuramsal bir yapıya nasıl dönüştüğünü anlatır.', 'Geometriye katkı sağlayan isimleri ve <i>Geometri</i> kitabının terimlerini tanır.'],
     scenes: [
       { title: 'Havada duran taş', goal: 'İspatın doğruluğundan emin olunan bilgilere dayandığını gör.', run: havadaTas },
       { title: 'Zincir nerede biter?', goal: 'Zincirin sonunda aksiyomların durduğunu gör.', run: zincir },
+      { title: 'Ölçmeden ispata', goal: 'Geometrinin arazi ölçümünden kuramsal bir yapıya uzanan yolunu izle.', run: serit },
       { title: 'Geometri bir yapıdır', goal: 'Öklid geometrisinin aksiyomlar üstüne kurulduğunu gör.', run: yapi },
-      { title: 'Geometriye katkı sağlayanlar', goal: 'Dört bilim insanını ve Geometri kitabını tanı.', run: katki },
+      { title: 'Katkı sağlayanlar ve Geometri kitabı', goal: 'Dört bilim insanını tanı; eski terimleri bugünküyle eşleştir.', run: katki },
     ],
     quizTitle: 'Çıkış soruları',
     quiz: [
@@ -160,13 +225,14 @@
         q: 'Öklid geometrisinde ispatların temelini ne oluşturur?',
         options: ['En çok tekrar edilen ölçümler', 'Çizimlerin düzgünlüğü', 'Aksiyomlara dayanan yapı'], answer: 2,
         why: ['Tekrar edilen ölçüm yine örnektir.', 'Düzgün çizim tek bir şekli gösterir.', 'Altta aksiyomlar, üstte onlara dayanarak ispatlananlar durur.'],
-        scene: 2,
+        scene: 3,
       },
     ],
     summary: [
       '<b>İspat, doğru bilgilerin üstüne taş taş kurulur.</b>',
       '<b>Aksiyom:</b> ispatsız kabul edilen temel bilgi. Öklid geometrisi aksiyomlar üstüne kurulur.',
-      'Geometriye katkı sağlayanlar: Ebülvefa Buzcani, Kuşyar bin Lebban, Kadızade-i Rumi, Nasirüddin Tusi. Atatürk 1936–1937’de <i>Geometri</i> kitabını hazırladı.',
+      'Geometri arazi ölçmekle başladı; zamanla kuramsal ve aksiyomatik bir yapı kazandı.',
+      'Geometriye katkı sağlayanlar: Ebülvefa Buzcani, Kuşyar bin Lebban, Kadızade-i Rumi, Nasirüddin Tusi. Atatürk 1936–1937’de hazırladığı <i>Geometri</i> kitabında Türkçe terimler üretti.',
     ],
     nextLesson: { href: 'a3-ic-acilar-180.html', label: 'Sonraki: İç açıların toplamı 180°dir ›' },
   });

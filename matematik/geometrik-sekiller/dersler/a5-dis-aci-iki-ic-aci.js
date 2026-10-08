@@ -1,9 +1,10 @@
 /* A5 — Dış açı, uzaktaki iki iç açının toplamıdır
-   Bir dış açı, kendisine komşu olmayan iki iç açının toplamına eşittir; ispatı iç açılar toplamından çıkar.
+   Bir dış açı, kendisine komşu olmayan iki iç açının toplamına eşittir. İki ispat: iç açılar toplamından ve
+   C'den AB'ye çizilen paralelden (iç ters ve yöndeş açılar); ikisi karşılaştırılır.
    Senaryo: plan/matematik/geometrik-sekiller/senaryolar/A-acilar-ve-ispat.md */
 (() => {
   'use strict';
-  const { RENK, rad, yon, ileri, ara, kisa, renkli, parcaKoy, cizgi, gizle, belir, par, dilim, ucgen, disAci, adimlar, tepeKontrol } = window.KIT;
+  const { RENK, rad, yon, ileri, ara, kisa, orta, yazi, renkli, parcaKoy, cizgi, koy, gizle, belir, par, dilim, ucgen, disAci, adimlar, tepeKontrol } = window.KIT;
   const { ease } = Ders;
   const R = 42;
 
@@ -76,7 +77,65 @@
     c.note('<b>dış açı = α + β</b><br>Örnek: 50° + 60° = 110°', 'Dış açı', 'gs-dis-aci');
   }
 
-  /* ---- 3. Dene ---- */
+  /* ---- 3. İkinci yol: paralel ---- */
+  async function ikinciYol(c) {
+    const svg = c.svg(1000, 562);
+    const B = [100, 440], C = [420, 440], A = tepe(B, C, 60, 70), tAB = yon(B, A), D = ileri(C, 0, 150), E = ileri(C, tAB, 290);
+    const iz = c.S('polyline', { points: [B, A, C, E].map((q) => q.join(',')).join(' '), fill: 'none', stroke: RENK.A, 'stroke-width': 12, 'stroke-opacity': 0.3, 'stroke-linecap': 'round', 'stroke-linejoin': 'round' }, svg);
+    const dg = c.S('g', {}, svg), d = cizgi(c, dg, C, C, RENK.paralel, 3);
+    const dAd = yazi(c, dg, E[0] + 22, E[1] + 4, 'd', { size: 24, kalin: 700, renk: RENK.paralel });
+    disAci(c, svg, C, B, A, { uzun: 150 });
+    ucgen(c, svg, A, B, C, { harf: false, olcu: ['α', 'β', 'γ'] });
+    const kA = dilim(c, svg, A, B, C, RENK.A, R, { dolgu: 0.8 }), kB = dilim(c, svg, B, C, A, RENK.B, R, { dolgu: 0.8 });
+    const ad = (V, P, Q, m, renk) => { const y = ileri(V, orta(V, P, Q), R + 22); return yazi(c, svg, y[0], y[1] + 8, m, { size: 22, kalin: 700, renk }); };
+    const aAd = ad(C, E, A, 'α', RENK.A), bAd = ad(C, D, E, 'β', RENK.B);
+    gizle(iz, dAd, kA.el, kB.el, aAd, bAd);
+    const liste = adimlar(c, svg, 660, 120, { size: 28, aralik: 96 });
+    const a1 = liste.ekle('d // AB', 'tek paralel'), a2 = liste.ekle('α eşi', ''), a3 = liste.ekle('β eşi', ''), a4 = liste.ekle('dış = α + β', '');
+    await c.say('Aynı önermeyi bu kez başka bir yoldan ispatlayalım.');
+    await par(c.say('C’den AB’ye paralel d doğrusunu çiziyoruz.'), (async () => {
+      await c.tween(900, (e) => koy(d, ileri(C, tAB, -100 * e), ileri(C, tAB, 290 * e)), ease.inOut);
+      await belir(c, dAd, 300); await belir(c, a1.g, 400);
+    })());
+    await c.say('Paralel, dış açıyı iki parçaya ayırdı.');
+    await par(c.say('Önce A’daki açı: AC keseni boyunca C’ye taşınıyor.'), (async () => {
+      await belir(c, iz, 400); kA.el.style.opacity = 1;
+      const a0 = yon(A, B), sw = kisa(yon(A, C) - a0);
+      await c.tween(1200, (e) => kA.yon(a0 + Math.PI * e, sw, ara(A, C, e), R), ease.inOut);
+      await belir(c, aAd, 300); await belir(c, a2.g, 400);
+    })());
+    await c.choice({
+      tag: 'Boşluğu doldur', q: 'α ile C’deki mavi açı eşittir, çünkü bunlar … açılardır.',
+      options: ['yöndeş', 'iç ters', 'ters'], answer: 1,
+      hints: ['Yöndeş açılar kesenin aynı yanında durur; bunlar AC’nin zıt yanlarında.', '', 'Ters açılar aynı köşede durur; bunların köşeleri farklı.'],
+      right: 'AB // d ve kesen AC: iç ters açılar eşittir.',
+    });
+    a2.gerekce('iç ters');
+    await belir(c, iz, 300, 0);
+    await par(c.say('Şimdi B’deki açı: BC keseni boyunca C’ye kayıyor.'), (async () => {
+      kB.el.style.opacity = 1;
+      const b0 = yon(B, C), sw = kisa(yon(B, A) - b0);
+      await c.tween(1100, (e) => kB.yon(b0, sw, ara(B, C, e), R), ease.inOut);
+      await belir(c, bAd, 300); await belir(c, a3.g, 400);
+    })());
+    await c.choice({
+      tag: 'Boşluğu doldur', q: 'β ile C’deki turuncu açı eşittir, çünkü bunlar … açılardır.',
+      options: ['yöndeş', 'iç ters', 'ters'], answer: 0,
+      hints: ['', 'İç ters açılar kesenin zıt yanlarında durur; bunlar BC’nin aynı yanında.', 'Ters açılar aynı köşede durur; bunların köşeleri farklı.'],
+      right: 'AB // d ve kesen BC: yöndeş açılar eşittir.',
+    });
+    a3.gerekce('yöndeş');
+    await par(c.say('İki parça birlikte dış açının tamamı: ispat tamam.'), belir(c, a4.g, 450));
+    await c.choice({
+      tag: 'Karşılaştır', q: 'İki ispat aynı sonuca vardı. Dayanakları nasıl?',
+      options: ['İkisi de ölçüme dayanıyor', 'İlki iç açılar toplamına, ikincisi paralel doğruya dayanıyor', 'İkisi de aynı adımları kullanıyor'], answer: 1,
+      hints: ['İkisinde de ölçüm yok; her adımın bir gerekçesi var.', '', 'İlkinde paralel doğru yoktu; ikincisinde iç açılar toplamı yok.'],
+      right: 'Aynı önerme, iki ayrı dayanak; ikisi de ispat.',
+    });
+    await c.say('Bir önermenin birden çok ispatı olabilir.');
+  }
+
+  /* ---- 4. Dene ---- */
   async function dene(c) {
     const svg = c.svg(1000, 562);
     const B = [180, 430], C = [520, 430], A0 = [400, 150];
@@ -108,7 +167,7 @@
     await par(c.say('Her dış açı, uzağındaki iki iç açının toplamıdır.'), belir(c, esit, 350, 1));
   }
 
-  /* ---- 4. Sıra sende ---- */
+  /* ---- 5. Sıra sende ---- */
   async function siraSende(c) {
     const svg = c.svg(1000, 562);
     let sahne = null;
@@ -163,10 +222,11 @@
       hook: 'Çelik bir köprünün üçgen kafesinde <b>dışarı bakan</b> bir açıyı ölçtün. İçerideki hangi açılarla ilgilidir?',
       button: 'Derse başla ›',
     },
-    goals: ['Bir dış açının, komşu olmayan iki iç açının toplamına eşit olduğunu ispatlar.', 'İspatın iç açılar toplamına dayandığını görür.'],
+    goals: ['Bir dış açının, komşu olmayan iki iç açının toplamına eşit olduğunu ispatlar.', 'İlk ispatın iç açılar toplamına dayandığını görür.', 'Önermeyi paralel doğruyla ikinci kez ispatlar; iki ispatı karşılaştırır.'],
     scenes: [
       { title: 'Hangi açılar?', goal: 'Uzaktaki iki açının dış açıyı doldurduğunu gör.', run: hangiAcilar },
       { title: 'İspat', goal: 'Üç adımın gerekçelerini doldur.', run: ispat },
+      { title: 'İkinci yol: paralel', goal: 'Aynı önermeyi paralel doğruyla ispatla; iki yolu karşılaştır.', run: ikinciYol },
       { title: 'Dene', goal: 'Üçgen değişse de eşitliğin sürdüğünü gör.', run: dene },
       { title: 'Sıra sende', goal: 'Önermeyi üç soruda kullan.', run: siraSende },
     ],
@@ -179,15 +239,16 @@
         scene: 0,
       },
       {
-        q: 'Bu dersteki ispat hangi iki bilgiye dayandı?',
+        q: 'Dersteki ilk ispat hangi iki bilgiye dayandı?',
         options: ['Doğru açı 180° ve iç açılar toplamı 180°', 'Dış açılar toplamı 360° ve üçgen eşitsizliği', 'İç ters açılar ve en uzun kenar'], answer: 0,
-        why: ['γ + dış = 180° (doğru açı) ve α + β + γ = 180° (iç açılar).', 'İkisi de bu ispatta kullanılmadı.', 'İspatta paralel doğru ya da kenar uzunluğu yoktu.'],
+        why: ['γ + dış = 180° (doğru açı) ve α + β + γ = 180° (iç açılar).', 'İkisi de bu ispatta kullanılmadı.', 'İç ters açılar ikinci yolun dayanağıydı; kenar uzunluğu hiç kullanılmadı.'],
         scene: 1,
       },
     ],
     summary: [
       '<b>Dış açı, uzaktaki iki iç açının toplamıdır.</b>',
       'İspat: γ + dış = 180° ve α + β + γ = 180°; öyleyse <b>dış = α + β</b>.',
+      'İkinci yol: C’den AB’ye paralel; <b>iç ters</b> ve <b>yöndeş</b> açılar dış açıyı doldurur.',
       'İspatlanmış bir önerme (iç açılar toplamı) yeni bir ispatın dayanağı oldu.',
     ],
     nextLesson: { href: 'b1-en-uzun-kenar-en-buyuk-aci.html', label: 'Sonraki: En uzun kenarın karşısı en büyük açıdır ›' },

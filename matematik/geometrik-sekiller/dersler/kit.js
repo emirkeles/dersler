@@ -24,6 +24,11 @@ window.KIT = (() => {
   const acilar = (A, B, C) => { const a = Math.round(aci(A, B, C)), b = Math.round(aci(B, A, C)); return [a, b, 180 - a - b]; };
   /* V köşesinin açıortay yönü (içe doğru). */
   const orta = (V, P, Q) => { const a = yon(V, P); return a + kisa(yon(V, Q) - a) / 2; };
+  /* B ve C köşeleri ile bu köşelerdeki açılar (derece) verilince A köşesi (BC yatay, A üstte). */
+  const tepe = (B, C, beta, gama) => {
+    const ab = ((C[0] - B[0]) * Math.sin(rad(gama))) / Math.sin(rad(180 - beta - gama));
+    return [B[0] + ab * Math.cos(rad(beta)), B[1] - ab * Math.sin(rad(beta))];
+  };
 
   /* ---- temel çizim ---- */
   const liste = (x) => (Array.isArray(x) ? x : [x]);
@@ -52,6 +57,8 @@ window.KIT = (() => {
     return c.tween(ms, (e) => es.forEach((x, i) => { x.style.opacity = bas[i] + (hedef - bas[i]) * e; }));
   };
   const par = (...ps) => Promise.all(ps);
+  /* Soru işaretli etiketi cevabıyla değiştirir (yeşil). */
+  const cevapla = (t, metin) => { t.textContent = metin; t.style.fill = RENK.iyi; };
 
   /* ---- açı dilimi ---- */
   /* V merkezli, a0 yönünden başlayıp d radyan dönen dilim (d her büyüklükte olabilir). */
@@ -155,6 +162,37 @@ window.KIT = (() => {
     return c.tween(ms, (e) => k.yon(a0 + Math.PI * e, d, ara(V, A, e), r), Ders.ease.inOut);
   };
 
+  /* ---- menteşe düzeneği: A'da menteşeli iki çubuk ----
+     Taban (A → B) yatay ve sabit, kol (A → C) açıyla döner; BC karşı kenardır ve A'nın rengindedir.
+     o: { A, taban, kol (birim), S: birim başına piksel, r, harf: true ise A, B, C yazılır }.
+     ciz(derece) 0°–180° arasında her şeyi yeniden çizer; karsi() karşı kenarın boyunu birim olarak verir. */
+  function mentese(c, p, o) {
+    const A = o.A, S = o.S || 40, r = o.r || 54, B = [A[0] + o.taban * S, A[1]], g = c.S('g', {}, p);
+    const karsiHat = cizgi(c, g, B, B, RENK.A, 8);
+    cizgi(c, g, A, B, RENK.cizgi, 5);
+    const kol = cizgi(c, g, A, A, RENK.cizgi, 5);
+    const d = dilim(c, g, A, B, B, RENK.A, r);
+    nokta(c, g, A, RENK.yazi, 8);
+    yazi(c, g, (A[0] + B[0]) / 2, A[1] + 36, String(o.taban), { size: 22, kalin: 600, renk: RENK.soluk });
+    const tK = yazi(c, g, 0, 0, String(o.kol), { size: 22, kalin: 600, renk: RENK.soluk });
+    let hC = null;
+    if (o.harf) {
+      yazi(c, g, A[0] - 24, A[1] + 30, 'A', { size: 24, kalin: 700 }); yazi(c, g, B[0] + 24, B[1] + 10, 'B', { size: 24, kalin: 700 });
+      hC = yazi(c, g, 0, 0, 'C', { size: 24, kalin: 700 });
+    }
+    let C = B;
+    function ciz(derece) {
+      const t = -rad(derece), by = ileri(ara(A, ileri(A, t, o.kol * S), 0.5), t - Math.PI / 2, 22);
+      C = ileri(A, t, o.kol * S);
+      koy(kol, A, C); koy(karsiHat, B, C);
+      if (derece < 0.5) d.el.setAttribute('d', ''); else d.yon(0, t, A, r);   // kol tabana yatınca dilim kalmaz
+      tK.setAttribute('x', by[0]); tK.setAttribute('y', by[1] + 8);
+      if (hC) { const hy = ileri(C, t, 24); hC.setAttribute('x', hy[0]); hC.setAttribute('y', hy[1] + 8); }
+    }
+    ciz(60);
+    return { g, A, B, C: () => C, ciz, karsi: () => uz(B, C) / S, karsiHat };
+  }
+
   /* ---- çubuk düzeneği (üçgen eşitsizliği) ---- */
   const BAS = rad(85);   // çubukların açık (dik duran) hâli
   /* Taban çubuğu (a) ve uçlarına menteşeli iki çubuk (b solda, cc sağda). Taban her zaman en uzun çubuktur.
@@ -257,14 +295,14 @@ window.KIT = (() => {
   }
 
   /* ---- tepe köşesini gezdirme: iki kaydırıcı + tahtada sürükleme ----
-     o: { x: [min, max], y: [min, max], bas: [x, y], ciz: (P) => …, adim } */
+     o: { x: [min, max], y: [min, max], bas: [x, y], ciz: (P) => …, adim, etiket: [yatay, dikey kaydırıcı adı] } */
   function tepeKontrol(c, svg, o) {
-    const P = o.bas.slice(), adim = o.adim || 5;
+    const P = o.bas.slice(), adim = o.adim || 5, et = o.etiket || ['Tepe köşesi: sola, sağa', 'Tepe köşesi: aşağı, yukarı'];
     const tut = c.S('circle', { cx: P[0], cy: P[1], r: 18, fill: '#fff', 'fill-opacity': 0.08, stroke: RENK.yazi, 'stroke-width': 2, 'stroke-dasharray': '4 5' }, svg);
     tut.style.cursor = 'grab'; tut.style.touchAction = 'none';
     const uygula = () => { tut.setAttribute('cx', P[0]); tut.setAttribute('cy', P[1]); o.ciz(P); };
-    const sx = c.slider({ tag: o.tag || 'Dene', label: 'Tepe köşesi: sola, sağa', min: o.x[0], max: o.x[1], step: adim, value: P[0], fmt: () => '', onInput: (v) => { P[0] = v; uygula(); } });
-    const sy = c.slider({ tag: false, label: 'Tepe köşesi: aşağı, yukarı', min: 0, max: o.y[1] - o.y[0], step: adim, value: o.y[1] - P[1], fmt: () => '', onInput: (v) => { P[1] = o.y[1] - v; uygula(); } });
+    const sx = c.slider({ tag: o.tag || 'Dene', label: et[0], min: o.x[0], max: o.x[1], step: adim, value: P[0], fmt: () => '', onInput: (v) => { P[0] = v; uygula(); } });
+    const sy = c.slider({ tag: false, label: et[1], min: 0, max: o.y[1] - o.y[0], step: adim, value: o.y[1] - P[1], fmt: () => '', onInput: (v) => { P[1] = o.y[1] - v; uygula(); } });
     let aktif = false;
     const yer = (e) => {
       const r = svg.getBoundingClientRect(), vb = svg.viewBox.baseVal, k = Math.min(r.width / vb.width, r.height / vb.height);
@@ -283,7 +321,7 @@ window.KIT = (() => {
   }
 
   return {
-    RENK, KOSE, rad, der, uz, yon, ileri, ara, kisa, aci, acilar, orta,
+    RENK, KOSE, rad, der, uz, yon, ileri, ara, kisa, aci, acilar, orta, tepe, cevapla, mentese,
     yazi, renkli, parcaKoy, cizgi, koy, nokta, kutu, gizle, belir, par, dilimYolu, dilim, ucgen, kenarlar, disAci, ok, isaret, adimlar, tahminAl, tepeKontrol, paralelDuzen, aciTasi, cubuklar, soruKarti,
   };
 })();

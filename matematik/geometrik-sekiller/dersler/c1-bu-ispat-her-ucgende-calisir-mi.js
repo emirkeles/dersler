@@ -161,6 +161,6 @@
       'Bir ispatı <b>uyarlamak</b>: aynı adımları başka türde bir üçgende denemek.',
       'Özel bir üçgenin özelliğine dayanan adım, yalnızca o tür için geçerlidir.',
     ],
-    nextLesson: { href: 'c2-onermeler-is-gorur.html', label: 'Sonraki: Doğrulanmış önermeler iş görür ›' },
+    nextLesson: { href: 'c2-onermeyi-yeni-sekle-uyarla.html', label: 'Sonraki: Önermeyi yeni şekle uyarla ›' },
   });
 })();
