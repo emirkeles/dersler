@@ -42,12 +42,12 @@ window.KATALOG = {
       { id: 'enerji', ad: 'Enerji' },
     ] },
     { id: 'kimya', ad: 'Kimya', simge: 'H₂O', renk: '#c792ff', temalar: [
-      { id: 'etkilesim', ad: 'Etkileşim' },
+      { id: 'etkilesim', ad: 'Etkileşim', yayinda: true },
       { id: 'cesitlilik', ad: 'Çeşitlilik' },
       { id: 'surdurulebilirlik', ad: 'Sürdürülebilirlik' },
     ] },
     { id: 'biyoloji', ad: 'Biyoloji', simge: 'DNA', renk: '#3ddc97', temalar: [
-      { id: 'yasam', ad: 'Yaşam' },
+      { id: 'yasam', ad: 'Yaşam', yayinda: true },
       { id: 'organizasyon', ad: 'Organizasyon' },
     ] },
     { id: 'turk-dili-ve-edebiyati', ad: 'Türk Dili ve Edebiyatı', simge: 'Aa', renk: '#ff8fab', temalar: [
