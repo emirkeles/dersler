@@ -1,0 +1,2 @@
+/* araclar/ses-uret.js tarafından yazılır. Elle düzenleme. */
+Ders.ses['geometrik-sekiller-b1'] = { base: 'ses/geometrik-sekiller-b1/', clips: { '21ef168d': '21ef168d.mp3', '33cbb3cb': '33cbb3cb.mp3', '481dbb79': '481dbb79.mp3', '9447f852': '9447f852.mp3', '97cfd1d2': '97cfd1d2.mp3', 'a39240ea': 'a39240ea.mp3', 'ae8d7c5c': 'ae8d7c5c.mp3', 'bfc8ad1f': 'bfc8ad1f.mp3', 'cca6bb01': 'cca6bb01.mp3', 'e27265ea': 'e27265ea.mp3', 'e424dc99': 'e424dc99.mp3', 'e90882f8': 'e90882f8.mp3', 'e9c14739': 'e9c14739.mp3', 'ff8980b3': 'ff8980b3.mp3' } };

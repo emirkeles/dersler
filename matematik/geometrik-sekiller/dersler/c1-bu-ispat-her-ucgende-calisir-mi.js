@@ -42,7 +42,7 @@
     gizle(kareler, adim.map((a) => a.g));
     await par(c.say('Arkadaşın bir dik üçgen çizdi ve eşini yanına koydu.'), s.cevir());
     await par(c.say('İki eş üçgen bir dikdörtgen etti: dört dik açı.'), (async () => { await belir(c, kareler, 400); await belir(c, adim[0].g, 400); })());
-    await par(c.say('Dört dik açı 360°; iki üçgene bölünce her birine 180°.', { speak: 'Dört dik açı üç yüz altmış derece; iki üçgene bölünce her birine yüz seksen derece.' }),
+    await par(c.say('Dört dik açı 360°; iki üçgene bölünce her birine 180°.', { speak: 'Dört dik açı üç yüz altmış derece; iki üçgene bölünce her birine [short pause] yüz seksen derece.' }),
       (async () => { await belir(c, adim[1].g, 400); await c.wait(700); await belir(c, adim[2].g, 400); })());
     await c.choice({
       tag: 'Tahmin et', q: 'Bu, bütün üçgenler için bir ispat mı?',
@@ -68,7 +68,7 @@
     });
     await par(c.say('İlk adım tutmadı: şekil dikdörtgen değil.'), adim[0].isaretle('no'));
     await par(c.say('“Dört açı 90°” adımının da dayanağı kalmadı.', { speak: 'Dört açı doksan derece adımının da dayanağı kalmadı.' }), adim[1].isaretle('no'));
-    await c.say('Sonuç yanlış değil; ama bu yol yalnızca dik üçgende işliyor.');
+    await c.say('Sonuç yanlış değil; ama bu yol yalnızca dik üçgende işliyor.', { speak: '[thoughtful] Sonuç yanlış değil; ama bu yol yalnızca dik üçgende işliyor.' });
   }
 
   /* ---- 3. İç açılar ispatını uyarla ---- */
@@ -81,17 +81,17 @@
     gizle(s.dg, s.bK.el, s.gK.el, s.bAd, s.gAd, adim.map((a) => a.g));
     const sor = (q, ipucu, dogru) => c.choice({ tag: 'Kontrol et', q, options: ['Geçerli', 'Geçerli değil'], answer: 0, hints: ['', ipucu], right: dogru });
     await c.say('İç açılar ispatını geniş açılı bir üçgene uyarlayalım.');
-    await par(c.say('Birinci adım: A’dan BC’ye paralel doğru.'), (async () => { await belir(c, s.dg, 450); await belir(c, adim[0].g, 350); })());
+    await par(c.say('Birinci adım: A’dan BC’ye paralel doğru.', { speak: 'Birinci adım: A noktasından BC kenarına paralel doğru.' }), (async () => { await belir(c, s.dg, 450); await belir(c, adim[0].g, 350); })());
     await sor('A’dan BC’ye tek paralel çizilir. Bu üçgende de geçerli mi?', 'Bir nokta ve bir doğru var; üçgenin biçimi bunu değiştirmez.', 'Tek paralel, üçgenin türüne bakmaz.');
     await adim[0].isaretle('ok');
-    await par(c.say('İkinci adım: B ve C’deki açıların eşleri A’ya taşınır.'), (async () => {
+    await par(c.say('İkinci adım: B ve C’deki açıların eşleri A’ya taşınır.', { speak: 'İkinci adım: B ve C köşelerindeki açıların eşleri A köşesine taşınır.' }), (async () => {
       await belir(c, adim[1].g, 350);
       s.bK.el.style.opacity = 1; await aciTasi(c, s.bK, B, A, C, A, 48); await belir(c, s.bAd, 250);
       s.gK.el.style.opacity = 1; await aciTasi(c, s.gK, C, A, B, A, 48); await belir(c, s.gAd, 250);
     })());
     await sor('Paralel doğrularda iç ters açılar eşittir. Burada da geçerli mi?', 'd hâlâ BC’ye paralel; AB ve AC hâlâ kesen.', 'Paralel ve kesen var: iç ters açılar eşit.');
     await adim[1].isaretle('ok');
-    await par(c.say('Üçüncü adım: A’daki üç açı yan yana.'), belir(c, adim[2].g, 350));
+    await par(c.say('Üçüncü adım: A’daki üç açı yan yana.', { speak: 'Üçüncü adım: A köşesindeki üç açı yan yana.' }), belir(c, adim[2].g, 350));
     await sor('A’daki üç açı bir doğru açıyı doldurur. Burada da geçerli mi?', 'Üç açı d doğrusunun altını boydan boya kaplıyor.', 'd bir doğru: üç açı 180° eder.');
     await adim[2].isaretle('ok');
     await c.say('Üç adım da tuttu: adımlar üçgenin türünü hiç kullanmıyor.');

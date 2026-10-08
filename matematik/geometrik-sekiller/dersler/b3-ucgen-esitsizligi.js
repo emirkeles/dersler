@@ -18,7 +18,7 @@
     const ust = renkli(c, svg, 500, 90, [''], { size: 36, kalin: 700 });
     const bosluk = c.S('g', {}, svg);
     gizle(ust, bosluk);
-    await c.say('8 metrelik çubuğun uçlarına 3 ve 4 metrelik çubuklar menteşeli.');
+    await c.say('8 metrelik çubuğun uçlarına 3 ve 4 metrelik çubuklar menteşeli.', { speak: 'Sekiz metrelik çubuğun uçlarına üç ve dört metrelik çubuklar menteşeli.' });
     await tahminAl(c, { q: 'Kısa çubukları içe doğru döndürürsek uçları buluşur mu, üçgen kurulur mu?', options: ['Kurulur', 'Kurulmaz'] });
     const s = await par(c.say('Çubukları içe doğru döndürüyoruz.'), d.kapat(2200)).then((r) => r[1]);
     const mx = (s.L[0] + s.Rt[0]) / 2;
@@ -27,7 +27,7 @@
     await par(c.say('Çubuklar tabana yattı; uçları yine buluşmadı.'), belir(c, bosluk, 400));
     karsilastir(c, ust, 8, 3, 4);
     await par(c.say('İki kısa çubuk birlikte bile tabana yetmiyor.'), belir(c, ust, 400));
-    await c.say('Demek ki her üç uzunluk bir üçgen kurmaz.');
+    await c.say('Demek ki her üç uzunluk bir üçgen kurmaz.', { speak: '[thoughtful] Demek ki her üç uzunluk bir üçgen kurmaz.' });
   }
 
   /* ---- 2. Ne zaman kapanır? ---- */
@@ -67,7 +67,7 @@
       isaret(c, g, 900, 178 + i * 84, tur, 17); gizle(g); return g;
     };
     const r = [satir(0, '3 < 4 + 9', 'ok'), satir(1, '4 < 3 + 9', 'ok'), satir(2, '9 < 3 + 4', 'no')];
-    await c.say('Yeni üçlü: 9, 4 ve 3 metre. Her çubuğu sırayla kontrol edelim.');
+    await c.say('Yeni üçlü: 9, 4 ve 3 metre. Her çubuğu sırayla kontrol edelim.', { speak: 'Yeni üçlü: dokuz, dört ve üç metre. Her çubuğu sırayla kontrol edelim.' });
     await par(c.say('İlk iki çubuk, öbür ikisinin toplamından kısa.'), (async () => { await belir(c, r[0], 400); await c.wait(500); await belir(c, r[1], 400); })());
     await c.choice({
       tag: 'Tahmin et', q: 'İki kontrol tuttu. Üçgen kurulur mu?',
@@ -76,7 +76,7 @@
       right: 'Koşul her kenar için tutmalı.',
     });
     await par(c.say('En uzun çubuk tutmadı: 3 + 4, 9’a yetmiyor.', { speak: 'En uzun çubuk tutmadı: üç artı dört, dokuza yetmiyor.' }), (async () => { await belir(c, r[2], 400); await d.kapat(1800); })());
-    await c.say('Kısa yol: yalnızca <b>en uzun</b> kenarı kontrol etmek yeter.');
+    await c.say('Kısa yol: yalnızca <b>en uzun</b> kenarı kontrol etmek yeter.', { speak: 'Kısa yol: [short pause] yalnızca en uzun kenarı kontrol etmek yeter.' });
     await c.say('Çubuk kesmeden, toplamı kontrol ederek karar verdik.');
     c.note('<b>Her kenar, öbür ikisinin toplamından kısadır.</b><br>3 + 4 &lt; 8: kurulmaz', 'Üçgen eşitsizliği', 'gs-ucgen-esitsizligi');
   }

@@ -58,7 +58,7 @@
     yazi(c, aks, 500, 498, 'Aksiyomlar', { size: 28, kalin: 700, renk: RENK.dis });
     gizle(r2, r3, noktalar, aks);
     await c.say('Üstteki önerme üç bilgiye dayanıyor.');
-    await par(c.say('Peki bu üç bilgi neye dayanıyor?'), belir(c, r2, 500));
+    await par(c.say('Peki bu üç bilgi neye dayanıyor?', { speak: '[curious] Peki bu üç bilgi neye dayanıyor?' }), belir(c, r2, 500));
     await par(c.say('Onlar da başka bilgilere dayanıyor; zincir aşağı iniyor.'), (async () => { await belir(c, r3, 500, 0.6); await belir(c, noktalar, 400); })());
     await c.choice({
       tag: 'Tahmin et', q: 'Her bilgiyi başka bir bilgiyle ispatlarsak bu zincir nerede biter?',
@@ -66,7 +66,7 @@
       hints: ['Sonu olmayan bir zincirle hiçbir şey ispatlanamazdı.', '', 'Ölçüm bir ispatın temeli olamaz.'],
       right: 'Zincir, doğru kabul edilen temel bilgilerde durur.',
     });
-    await par(c.say('En altta <b>aksiyomlar</b> durur: ispatsız kabul edilen temel bilgiler.'), belir(c, aks, 600));
+    await par(c.say('En altta <b>aksiyomlar</b> durur: ispatsız kabul edilen temel bilgiler.', { speak: 'En altta aksiyomlar durur: [short pause] ispatsız kabul edilen temel bilgiler.' }), belir(c, aks, 600));
     await par(c.say('Örneğin bu bilgi ispatlanmaz; doğru kabul edilir.'), (async () => {
       await c.tween(500, (e) => ornek.k.setAttribute('stroke-width', lerp(2, 5, e)));
       await c.tween(500, (e) => ornek.k.setAttribute('stroke-width', lerp(5, 3, e)));
@@ -134,7 +134,7 @@
       hints: ['Üstteki taş alttakine oturuyordu. Altı boşalınca ne olur?', ''],
       right: 'Bir ispat, dayandığı bilgi kadar sağlamdır.',
     });
-    await par(c.say('Dayanağı çekilen önerme ayakta kalamaz.'), (async () => {
+    await par(c.say('Dayanağı çekilen önerme ayakta kalamaz.', { speak: '[thoughtful] Dayanağı çekilen önerme ayakta kalamaz.' }), (async () => {
       await c.tween(700, (e) => { taslar[7].tasi(-230 * e, 0); taslar[7].g.style.opacity = 1 - 0.75 * e; }, ease.inOut);
       await c.tween(900, (e) => { taslar[9].tasi(-60 * e, 150 * e * e, -50 * e); taslar[9].g.style.opacity = 1 - e; }, ease.in);
     })());

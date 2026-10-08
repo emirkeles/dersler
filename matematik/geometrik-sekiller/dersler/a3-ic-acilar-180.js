@@ -33,7 +33,7 @@
       }
     })());
     await c.say('Üç köşe yan yana: tam bir <b>düz çizgi</b>.');
-    await c.say('Ama bu tek bir üçgen: yalnızca bir <b>doğrulama</b>.');
+    await c.say('Ama bu tek bir üçgen: yalnızca bir <b>doğrulama</b>.', { speak: '[thoughtful] Ama bu tek bir üçgen: yalnızca bir doğrulama.' });
     await c.say('Bütün üçgenler için ispat gerek. Yardımcımız: paralel doğru.');
   }
 
@@ -53,7 +53,7 @@
       kes.setAttribute('cx', x > 40 && x < 960 ? x : -100); kes.setAttribute('cy', 440);
     };
     cevir(32);
-    await c.say('A’dan geçen bir doğru, BC’yi bir noktada kesiyor.');
+    await c.say('A’dan geçen bir doğru, BC’yi bir noktada kesiyor.', { speak: 'A noktasından geçen bir doğru, BC doğrusunu bir noktada kesiyor.' });
     await par(c.say('Doğruyu döndürdükçe kesişim noktası uzaklaşıyor.'), c.tween(2200, (e) => cevir(lerp(32, 16, e)), ease.inOut));
     await c.choice({
       tag: 'Tahmin et', q: 'A’dan geçip BC’yi hiç kesmeyen kaç doğru çizilebilir?',
@@ -102,7 +102,7 @@
     await c.say('Üç çiftte de açılar birbirine eşittir.');
     await belir(c, h, 400, 0); h.remove();
     await belir(c, s.u.g, 400);
-    await par(c.say('A’dan BC’ye paralel d doğrusunu çizdik.'), belir(c, s.dg, 500));
+    await par(c.say('A’dan BC’ye paralel d doğrusunu çizdik.', { speak: 'A noktasından BC doğrusuna paralel d doğrusunu çizdik.' }), belir(c, s.dg, 500));
     await par(c.say('AB, iki paraleli kesiyor. B’deki açıyı A’ya taşıyalım.'), (async () => {
       await belir(c, zB, 400); s.bK.el.style.opacity = 1;
       await tasi(c, s.bK, B, A, C, A); await belir(c, s.bAd, 300);
@@ -143,7 +143,7 @@
       hints: ['Üçü birlikte d’nin alt yanını boydan boya kaplıyor.', '', 'Yalnızca d’nin altını dolduruyorlar; üstü boş.'],
       right: 'Doğru açı 180°dir.',
     });
-    await par(c.say('Üç açı bir doğru açıyı doldurur: toplam <b>180°</b>.', { speak: 'Üç açı bir doğru açıyı doldurur: toplam yüz seksen derece.' }), belir(c, a3.g, 450));
+    await par(c.say('Üç açı bir doğru açıyı doldurur: toplam <b>180°</b>.', { speak: 'Üç açı bir doğru açıyı doldurur: toplam [short pause] yüz seksen derece.' }), belir(c, a3.g, 450));
     await c.say('A’daki β ve γ, üçgenin kendi açılarının eşi: ispat tamam.', { speak: 'A’daki beta ve gama, üçgenin kendi açılarının eşi: ispat tamam.' });
     c.note('<b>α + β + γ = 180°</b><br>Her üçgende geçerli.', 'İç açılar toplamı', 'gs-ic-acilar');
   }

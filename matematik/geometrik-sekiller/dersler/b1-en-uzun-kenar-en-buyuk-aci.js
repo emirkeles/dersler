@@ -68,7 +68,7 @@
       hints: ['Tahtadaki boya bak: karşı kenar şimdi 9,5.', ''],
       right: 'Kenar uzadı; ama iki katına çıkmadı.',
     });
-    await c.say('Açı büyüyünce karşı kenar uzar; ama aynı oranda değil.');
+    await c.say('Açı büyüyünce karşı kenar uzar; ama aynı oranda değil.', { speak: '[thoughtful] Açı büyüyünce karşı kenar uzar; ama aynı oranda değil.' });
   }
 
   /* ---- 3. Üç türde dene ---- */
@@ -131,7 +131,7 @@
       hints: ['5 en kısa kenar; karşısındaki açı en büyük olamaz.', '7 ortanca kenar; daha uzunu var.', ''],
       right: 'En uzun kenar 9; en büyük açı onun karşısında.',
     });
-    await c.say('En uzun kenarın karşısı en geniş açıdır.');
+    await c.say('En uzun kenarın karşısı en geniş açıdır.', { speak: 'En uzun kenarın karşısı, [short pause] en geniş açıdır.' });
   }
 
   Ders.start({

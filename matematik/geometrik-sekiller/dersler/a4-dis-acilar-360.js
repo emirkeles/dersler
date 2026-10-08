@@ -88,7 +88,8 @@
     });
     await c.cont('Devam ›');
     t.kaldir();
-    await c.say(tahmin === 2 ? 'Tahminin tuttu: dış açılar bir tam tur eder.' : 'Dış açılar hep bir tam tur ediyor: 360°.', { speak: tahmin === 2 ? 'Tahminin tuttu: dış açılar bir tam tur eder.' : 'Dış açılar hep bir tam tur ediyor: üç yüz altmış derece.' });
+    // Okunan metin iki kolda aynıdır (tek klip); "Tahminin tuttu." yalnızca ekranda görünür.
+    await c.say((tahmin === 2 ? 'Tahminin tuttu. ' : '') + 'Dış açılar hep bir tam tur ediyor: 360°.', { speak: 'Dış açılar hep bir tam tur ediyor: üç yüz altmış derece.' });
   }
 
   /* ---- 3. Yol 2: hesapla ---- */
@@ -108,7 +109,7 @@
       hints: ['Fazlalık olan, üç iç açının hepsi.', 'Dış açıları saymak istiyoruz; çıkarılacak olan iç açılar.', ''],
       right: 'İç açıların toplamı 180°: bunu ispatlamıştık.',
     });
-    await par(c.say('Kalan, dış açıların toplamı: <b>360°</b>.', { speak: 'Kalan, dış açıların toplamı: üç yüz altmış derece.' }), (async () => {
+    await par(c.say('Kalan, dış açıların toplamı: <b>360°</b>.', { speak: 'Kalan, dış açıların toplamı: [short pause] üç yüz altmış derece.' }), (async () => {
       await belir(c, s.u.dilimler.map((d) => d.el), 400, 0.25); await belir(c, a3.g, 450);
     })());
     c.note('<b>Dış açılar toplamı = 360°</b><br>3 · 180° − 180° = 360°', 'Dış açılar toplamı', 'gs-dis-acilar');
@@ -138,8 +139,8 @@
       right: 'Doğru açı ve iç açılar toplamı her üçgende geçerli.',
     });
     k2.setAttribute('stroke', RENK.iyi);
-    await par(c.say('Yol 1 gözle <b>doğrular</b>; Yol 2 adım adım <b>ispatlar</b>.'), belir(c, [e1, e2], 450));
-    await c.say('Yol 1 nedenini sezdirir; kesinlik için Yol 2’yi seçeriz.');
+    await par(c.say('Yol 1 gözle <b>doğrular</b>; Yol 2 adım adım <b>ispatlar</b>.', { speak: 'Birinci yol gözle doğrular; ikinci yol adım adım ispatlar.' }), belir(c, [e1, e2], 450));
+    await c.say('Yol 1 nedenini sezdirir; kesinlik için Yol 2’yi seçeriz.', { speak: '[thoughtful] Birinci yol nedenini sezdirir; kesinlik için ikinci yolu seçeriz.' });
   }
 
   /* ---- 5. Sıra sende ---- */

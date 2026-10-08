@@ -66,10 +66,10 @@
     await c.say('Üç köşedeki açılar belli: 50°, 30° ve 25°.', { speak: 'Üç köşedeki açılar belli: elli, otuz ve yirmi beş derece.' });
     tahmin = await tahminAl(c, { q: 'D’deki x açısı sence kaç derece?', options: ['55°', '105°', '255°'] });
     await c.say('Şekil üçgen değil; ama içinde üçgenler saklı.');
-    await par(c.say('BD kenarını AC’ye kadar uzatıyoruz: E noktası.'), (async () => {
+    await par(c.say('BD kenarını AC’ye kadar uzatıyoruz: E noktası.', { speak: 'BD kenarını AC kenarına kadar uzatıyoruz: E noktası.' }), (async () => {
       await c.tween(900, (e) => koy(s.uzanti, D, ara(D, E, e)), ease.inOut); await belir(c, s.harf.E, 300);
     })());
-    await par(c.say('İki üçgen çıktı: ABE ve DEC.'), (async () => { await belir(c, u1, 450); await c.wait(400); await belir(c, u2, 450); })());
+    await par(c.say('İki üçgen çıktı: ABE ve DEC.', { speak: 'İki üçgen çıktı: A B E ve D E C.' }), (async () => { await belir(c, u1, 450); await c.wait(400); await belir(c, u2, 450); })());
     await c.say('Tahminini aklında tut; bu iki üçgenle ispatlayacağız.');
   }
 
@@ -88,7 +88,7 @@
     const a1 = liste.ekle('e = a + b', ''), a2 = liste.ekle('x = e + c', '');
     const a3 = adimlar(c, svg, 640, 220, { size: 30 }).ekle('x = a + b + c', '50° + 30° + 25° = 105°');
 
-    await par(c.say('ABE üçgeninde E köşesinde dışarı bakan bir açı var: e.'), (async () => {
+    await par(c.say('ABE üçgeninde E köşesinde dışarı bakan bir açı var: e.', { speak: 'A B E üçgeninde E köşesinde dışarı bakan bir açı var: e açısı.' }), (async () => {
       await belir(c, u1, 400); await belir(c, [s.dl.e.el, s.et.e], 400); await belir(c, a1.g, 400);
     })());
     await c.choice({
@@ -98,13 +98,13 @@
       right: 'Dış açı, uzaktaki iki iç açının toplamıdır.',
     });
     a1.gerekce('dış açı');
-    await par(c.say('a ve b dilimleri E’deki açıyı tam dolduruyor.'), (async () => {
+    await par(c.say('a ve b dilimleri E’deki açıyı tam dolduruyor.', { speak: 'a ve b dilimleri E köşesindeki açıyı tam dolduruyor.' }), (async () => {
       kA.el.style.opacity = 1;
       await c.tween(1100, (e) => kA.yon(aA, dA, ara(A, E, e), R), ease.inOut);
       kB.el.style.opacity = 1;
       await c.tween(1200, (e) => kB.yon(aB + Math.PI * e, dB, ara(B, E, e), R), ease.inOut);
     })());
-    await par(c.say('Şimdi DEC üçgeni: x, D köşesinde dışarı bakan açı.'), (async () => {
+    await par(c.say('Şimdi DEC üçgeni: x, D köşesinde dışarı bakan açı.', { speak: 'Şimdi D E C üçgeni: x, D köşesinde dışarı bakan açı.' }), (async () => {
       await belir(c, u1, 300, 0); await belir(c, u2, 400); await belir(c, a2.g, 400);
     })());
     await c.choice({
@@ -114,16 +114,17 @@
       right: 'DEC üçgeninde uzaktaki iki açı: e ve c.',
     });
     a2.gerekce('dış açı');
-    await par(c.say('E’deki iki dilim ve c dilimi x’i dolduruyor.'), (async () => {
+    await par(c.say('E’deki iki dilim ve c dilimi x’i dolduruyor.', { speak: 'E köşesindeki iki dilim ve c dilimi x açısını dolduruyor.' }), (async () => {
       await c.tween(1100, (e) => { kA.yon(aA, dA, ara(E, D, e), R); kB.yon(aB + Math.PI, dB, ara(E, D, e), R); }, ease.inOut);
       kC.el.style.opacity = 1;
       await c.tween(1200, (e) => kC.yon(aC + Math.PI * e, dC, ara(C, D, e), R), ease.inOut);
     })());
-    await par(c.say('İki adımı birleştir: e yerine a + b yaz.'), (async () => {
+    await par(c.say('İki adımı birleştir: e yerine a + b yaz.', { speak: 'İki adımı birleştir: e yerine a artı b yaz.' }), (async () => {
       await belir(c, [a1.g, a2.g, u2], 300, 0); await belir(c, a3.g, 450);
     })());
-    await c.say(tahmin === 1 ? 'Tahminin tuttu: x = 105°.' : 'x = 105°: ölçmeden, iki dış açıyla bulduk.',
-      { speak: tahmin === 1 ? 'Tahminin tuttu: x yüz beş derece.' : 'x yüz beş derece: ölçmeden, iki dış açıyla bulduk.' });
+    // Okunan metin iki kolda aynıdır (tek klip); "Tahminin tuttu." yalnızca ekranda görünür.
+    await c.say((tahmin === 1 ? 'Tahminin tuttu. ' : '') + 'x = 105°: ölçmeden, iki dış açıyla bulduk.',
+      { speak: 'x yüz beş derece: ölçmeden, iki dış açıyla bulduk.' });
     c.note('<b>x = a + b + c</b><br>50° + 30° + 25° = 105°', 'İçe dönük köşe', 'gs-ice-donuk');
   }
 
@@ -143,7 +144,7 @@
     const t = tepeKontrol(c, svg, { x: [450, 550], y: [320, 420], bas: D0, ciz, etiket: ['D köşesi: sola, sağa', 'D köşesi: aşağı, yukarı'] });
     await c.cont('Devam ›');
     t.kaldir();
-    await c.say('D nereye giderse gitsin: x = a + b + c.');
+    await c.say('D nereye giderse gitsin: x = a + b + c.', { speak: 'D nereye giderse gitsin: [short pause] x eşittir a artı b artı c.' });
     await belir(c, [s.g, esit], 350, 0); s.g.remove(); esit.remove();
 
     /* taban açıları ve D'nin tabanla yaptığı açılar verilince tam ölçekli yeni şekil */
@@ -202,8 +203,8 @@
       tIc.textContent = '|DB| + |DC| = ' + sayi(t); bIc.setAttribute('width', t * PX);
     };
     ciz(D0); gizle(dis, icYol, panel);
-    await c.say('ABC üçgeninin içinde bir D noktası var.');
-    await par(c.say('D’den B ve C’ye iki yol; A’dan da iki yol.'), (async () => { await belir(c, icYol, 400); await belir(c, dis, 400); })());
+    await c.say('ABC üçgeninin içinde bir D noktası var.', { speak: 'A B C üçgeninin içinde bir D noktası var.' });
+    await par(c.say('D’den B ve C’ye iki yol; A’dan da iki yol.', { speak: 'D noktasından B ve C noktalarına iki yol; A noktasından da iki yol.' }), (async () => { await belir(c, icYol, 400); await belir(c, dis, 400); })());
     await tahminAl(c, { q: 'Hangi iki yolun toplamı daha kısa?', options: ['D’den gidenler: |DB| + |DC|', 'A’dan gidenler: |AB| + |AC|', 'D’nin yerine göre değişir'] });
     await belir(c, panel, 400);
     await c.say('D’yi gezdir: iki toplamı karşılaştır.', { noWait: true });
@@ -212,14 +213,14 @@
     const P0 = t.P().slice();
     t.kaldir();
     await c.say('Denediğin her noktada içteki toplam daha küçük kaldı.');
-    await par(c.say('D’yi A’ya doğru götürüyoruz.'), c.tween(1800, (e) => ciz(ara(P0, A, e)), ease.inOut));
+    await par(c.say('D’yi A’ya doğru götürüyoruz.', { speak: 'D noktasını A noktasına doğru götürüyoruz.' }), c.tween(1800, (e) => ciz(ara(P0, A, e)), ease.inOut));
     await c.choice({
       tag: 'Ne gördün?', q: 'D, A’ya yaklaştıkça iki toplam ne oldu?',
       options: ['Birbirine yaklaştı; D, A’ya gelince eşitlendi', 'Aralarındaki fark büyüdü', 'İçteki toplam dıştakini geçti'], answer: 0,
       hints: ['', 'Sarı çubuk uzadı, mavi çubuğa yaklaştı.', 'Sarı çubuk maviyi hiç geçmedi; en çok ona eşit oldu.'],
       right: 'D, A ile çakışınca iki yol aynı yol olur.',
     });
-    await par(c.say('D içeride kaldıkça içteki yol hep daha kısa.'), c.tween(1400, (e) => ciz(ara(A, D0, e)), ease.inOut));
+    await par(c.say('D içeride kaldıkça içteki yol hep daha kısa.', { speak: '[thoughtful] D içeride kaldıkça içteki yol hep daha kısa.' }), c.tween(1400, (e) => ciz(ara(A, D0, e)), ease.inOut));
     await c.choice({
       tag: 'Değerlendir', q: 'Birçok noktada ölçtük, önerme hep tuttu. Bu çalışma önermeyi ispatladı mı?',
       options: ['Evet, hiç bozulmadı', 'Hayır, denediğimiz noktalar için doğruladı'], answer: 1,

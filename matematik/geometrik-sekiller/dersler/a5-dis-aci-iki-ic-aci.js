@@ -39,7 +39,7 @@
       await c.tween(1200, (e) => kA.yon(a0 + Math.PI * e, ad, ara(A, C, e), R), ease.inOut);
     })());
     await c.say('İkisi birlikte dış açıyı tam dolduruyor.');
-    await c.say('<b>Dış açı</b>, kendisine komşu olmayan iki iç açının toplamı.');
+    await c.say('<b>Dış açı</b>, kendisine komşu olmayan iki iç açının toplamı.', { speak: 'Dış açı, [short pause] kendisine komşu olmayan iki iç açının toplamı.' });
   }
 
   /* ---- 2. İspat ---- */
@@ -93,7 +93,7 @@
     const liste = adimlar(c, svg, 660, 120, { size: 28, aralik: 96 });
     const a1 = liste.ekle('d // AB', 'tek paralel'), a2 = liste.ekle('α eşi', ''), a3 = liste.ekle('β eşi', ''), a4 = liste.ekle('dış = α + β', '');
     await c.say('Aynı önermeyi bu kez başka bir yoldan ispatlayalım.');
-    await par(c.say('C’den AB’ye paralel d doğrusunu çiziyoruz.'), (async () => {
+    await par(c.say('C’den AB’ye paralel d doğrusunu çiziyoruz.', { speak: 'C köşesinden AB kenarına paralel d doğrusunu çiziyoruz.' }), (async () => {
       await c.tween(900, (e) => koy(d, ileri(C, tAB, -100 * e), ileri(C, tAB, 290 * e)), ease.inOut);
       await belir(c, dAd, 300); await belir(c, a1.g, 400);
     })());
@@ -212,7 +212,7 @@
       right: '180° − 120° = 60°.',
     });
     cevapla(s.u.olculer[2], '60°');
-    await c.say('Uzak iki açı toplanır; komşu açı 180°’ye tamamlar.', { speak: 'Uzak iki açı toplanır; komşu açı yüz seksen dereceye tamamlar.' });
+    await c.say('Uzak iki açı toplanır; komşu açı 180°’ye tamamlar.', { speak: '[thoughtful] Uzak iki açı toplanır; komşu açı yüz seksen dereceye tamamlar.' });
   }
 
   Ders.start({

@@ -61,7 +61,7 @@
       hints: ['Her türden birer tane denedik; ama her türde sayısız üçgen var.', ''],
       right: 'Türler çeşitlendi, güven arttı; ama liste bitmedi.',
     });
-    await c.say('Farklı türler güveni artırır, ama denenecek üçgen bitmez.');
+    await c.say('Farklı türler güveni artırır, ama denenecek üçgen bitmez.', { speak: '[thoughtful] Farklı türler güveni artırır, ama denenecek üçgen bitmez.' });
   }
 
   /* ---- 3. Dene ---- */
@@ -112,7 +112,7 @@
       hints: ['Ölçüm kaç olursa olsun, denenmemiş üçgen kalır.', 'En düzgün çizim de tek bir üçgendir.', ''],
       right: 'İspat, tek tek denemeden hepsini kapsar.',
     });
-    await par(c.say('<b>İspat</b> bütün üçgenleri birden kapsar.'), belir(c, sag, 450));
+    await par(c.say('<b>İspat</b> bütün üçgenleri birden kapsar.', { speak: 'İspat, [short pause] bütün üçgenleri birden kapsar.' }), belir(c, sag, 450));
     c.note('<b>Doğrulama:</b> denenen örnekler.<br><b>İspat:</b> bütün üçgenler.', 'Doğrulama ve ispat', 'gs-dogrulama-ispat');
   }
 

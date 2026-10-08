@@ -59,7 +59,7 @@
     const g = c.S('g', {}, svg);
     const u = ucgen(c, g, A, B, C, { r: 44 }), k = kenarlar(c, g, A, B, C);
     k.yaz(['10 m', '6 m', '6 m']);
-    await c.say('Bir çatı makası: kirişler 6 m, 6 m ve 10 m.');
+    await c.say('Bir çatı makası: kirişler 6 m, 6 m ve 10 m.', { speak: 'Bir çatı makası: kirişler altı metre, altı metre ve on metre.' });
     await c.choice({
       tag: 'Mimari', q: 'Makasın en geniş açısı hangi köşede?',
       options: ['B', 'A (tepe)', 'C'], answer: 1,
@@ -67,18 +67,18 @@
       right: 'En uzun kiriş 10 m; karşısındaki köşe tepe.',
     });
     u.dilimler.forEach((d, i) => d.el.setAttribute('fill-opacity', i === 0 ? 0.95 : 0.3)); k.kalin(0, 9);
-    await c.say('En uzun kirişin karşısı en geniş açı: tepe.');
+    await c.say('En uzun kirişin karşısı en geniş açı: tepe.', { speak: 'En uzun kirişin karşısı en geniş açı: [short pause] tepe.' });
     await belir(c, g, 350, 0); g.remove();
     const d = cubuklar(c, svg, 11, 5, 5);
     d.ac(); gizle(d.g);
-    await par(c.say('Usta bu kez 5, 5 ve 11 metrelik kirişleri deniyor.'), belir(c, d.g, 400));
+    await par(c.say('Usta bu kez 5, 5 ve 11 metrelik kirişleri deniyor.', { speak: 'Usta bu kez beş, beş ve on bir metrelik kirişleri deniyor.' }), belir(c, d.g, 400));
     await c.choice({
       tag: 'Mimari', q: '5 m, 5 m ve 11 m’lik kirişlerle makas kurulur mu?',
       options: ['Kurulur', 'Kurulmaz'], answer: 1,
       hints: ['5 + 5 = 10; 11’e yetmiyor.', ''],
       right: '5 + 5 = 10, 11’den küçük.',
     });
-    await par(c.say('İki kiriş birlikte tabana yetmiyor: üçgen eşitsizliği.'), d.kapat(1700));
+    await par(c.say('İki kiriş birlikte tabana yetmiyor: üçgen eşitsizliği.', { speak: '[thoughtful] İki kiriş birlikte tabana yetmiyor: üçgen eşitsizliği.' }), d.kapat(1700));
   }
 
   /* ---- 3. Afiş ---- */
@@ -158,7 +158,7 @@
     const n2 = [ad(g2, 0, 'eşit kenar → eşit açı'), ad(g2, 1, 'iç açılar: 180°'), ad(g2, 2, '65° − 50°')];
     gizle(g2, bd, esit, hD, dD.el, dAlt.el, dUst.el, tD, tAlt, tUst);
     await par(c.say('Yeni şekil: ABC ikizkenar, tepe açısı 50°, taban açıları 65°.', { speak: 'Yeni şekil: A B C ikizkenar, tepe açısı elli, taban açıları altmış beş derece.' }), belir(c, g2, 400));
-    await par(c.say('D noktası AC üstünde; BD ile BC eşit uzunlukta.'), belir(c, [bd, esit, hD], 450));
+    await par(c.say('D noktası AC üstünde; BD ile BC eşit uzunlukta.', { speak: 'D noktası AC kenarı üstünde; BD ile BC eşit uzunlukta.' }), belir(c, [bd, esit, hD], 450));
     await belir(c, [dD.el, tD], 300);
     await c.choice({
       tag: 'Adım 1 / 3', q: 'BD ile BC eşit. BDC açısı kaç derece?',
@@ -223,7 +223,7 @@
       await goster('α + β + γ = 180°');
     })());
     await par(c.say('Dış açı, uzaktaki iki iç açının toplamıdır.'), (async () => { await belir(c, dis[0].g, 400); await goster('dış = α + β'); })());
-    await par(c.say('Üç dış açı birlikte bir tam tur eder.'), (async () => { await belir(c, [dis[1].g, dis[2].g], 400); await goster('dış açılar toplamı = 360°'); })());
+    await par(c.say('Üç dış açı birlikte bir tam tur eder.', { speak: 'Üç dış açı birlikte [short pause] bir tam tur eder.' }), (async () => { await belir(c, [dis[1].g, dis[2].g], 400); await goster('dış açılar toplamı = 360°'); })());
     await par(c.say('Kenarların sırası, karşılarındaki açıların sırasıdır.'), (async () => {
       await belir(c, dis.map((d) => d.g), 300, 0); await belir(c, k.g, 400); await goster('a > b > c ise α > β > γ');
     })());

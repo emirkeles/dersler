@@ -294,6 +294,27 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [ ] Kullanıcı filmi izler (7–12. kareler ve seslendirme işlemeden önce onaylanmamıştı); altyazı dosyası yok
 - [ ] D6 ve E1 seslendirilmedi (biyoloji seslendirmesiyle birlikte)
 
+## Seslendirme: Geometrik Şekiller (8 Ekim 2026)
+
+`plan/SESLENDIRME.md` adımları. Metin denetimi Sonnet 5.5, üretim ve doğrulama Haiku 5.5 alt ajanlarıyla. Ayrıntı: `plan/matematik/geometrik-sekiller/DURUM.md` "Seslendirme".
+
+- [x] 0 İncele: temada ses yok (`ses/` klasörü ve sayfalarda dizin satırı yok)
+- [x] 1 Döküm: 12 ders, 222 satır, 11.048 karakter; uyarı yok
+- [x] 2 Metin denetimi ve yönergeler: A1–A5, B1–B4, C1–C3 (üç Sonnet ajanı); 52 `speak` eklendi ya da düzeltildi, 28 yönerge
+- [x] 2 sonu: son döküm 222 satır, 11.675 karakter; rakam/simge yok; karşılaştırmada yalnızca `speak` değişmiş; 12 derste `olc.js` temiz (ajanlar)
+- [x] 4 Üretim B1–B4, C1–C3: 128 klip, hatasız (iki Haiku ajanı)
+- [x] 3 Pilot A1: 10 klip, 39,8 sn (Haiku ajanı); sayfaya dizin satırı, `olc.js` ve `denetle.js` temiz
+- [x] 3 Kullanıcı pilotu dinledi ve onayladı ("onaylıyorum uygula")
+- [x] 4 Üretim A2–A5: 84 klip, hatasız (Haiku ajanı); tema toplamı 222 klip, 15,7 dk, 7,64 MB
+- [x] 5 Sayfalara `ses/<ders-id>.js` satırı: B ve C (yedi sayfa)
+- [x] 5 A sayfaları (beş sayfa); 12 sayfanın hepsinde dizin satırı
+- [x] 6 Doğrulama B ve C: dizin ile dosyalar birebir, 7 uzun aykırı, 0 kısa; `olc.js` yedi derste, `denetle.js` temada temiz (Haiku ajanı)
+- [x] 6 Doğrulama, tüm tema: 12 derste dizin ile dosyalar birebir; A'da süre aykırısı yok; `olc.js` ve `denetle.js` temiz (Haiku ajanı)
+- [x] 7 Kayıt: `DURUM.md`, `plan/SESLENDIRME.md`, `TEMALAR.md`, `sure.js` (tema 59:30); rapor
+- [x] `sure.js` yeniden (tema 60:45); `DURUM.md`, `plan/SESLENDIRME.md`, `TEMALAR.md` güncel
+- [x] A4 S2 ve C2 S2: okunan metin iki tahmin kolunda aynı, "Tahminin tuttu." yalnızca ekranda; yeni klip yok, `olc.js` ve `denetle.js` temiz
+- [ ] Kullanıcı: her konudan en az bir dersi sesli izler; 7 aykırı klip ve harf okunuşları (`DURUM.md`)
+
 ## Üretilmiş hikâyeleri siteye ekle (8 Ekim 2026)
 
 Teması yayında olmayan hikâye temanın `ortak/katalog.js` satırına yazılır; tema yazılınca `tema.js` dosyasına taşınır.

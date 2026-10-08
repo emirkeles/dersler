@@ -129,11 +129,11 @@
     });
     await par(c.say('Fark tarafı buradan gelir: a, 4’ten büyük.', { speak: 'Fark tarafı buradan gelir: a, dörtten büyük.' }), belir(c, [s2.okG, s2.son], 400));
     await kapat(s2);
-    await par(c.say('7’lik kenarın eşitsizliği her zaman doğru; yeni bilgi vermez.', { speak: 'Yedilik kenarın eşitsizliği her zaman doğru; yeni bilgi vermez.' }), belir(c, [s3.ifade, s3.okG, s3.son], 400));
+    await par(c.say('7’lik kenarın eşitsizliği her zaman doğru; yeni bilgi vermez.', { speak: '[thoughtful] Yedilik kenarın eşitsizliği her zaman doğru; yeni bilgi vermez.' }), belir(c, [s3.ifade, s3.okG, s3.son], 400));
     await belir(c, s3.g, 300, 0);
     await par(c.say('İkisini birleştir: a, 4 ile 18 arasında.', { speak: 'İkisini birleştir: a, dört ile on sekiz arasında.' }), (async () => { await belir(c, [s1.son, s2.son], 300, 0); await belir(c, sonuc, 400); })());
     k.yaz(['a', 'b', 'c']);
-    await par(c.say('Genel hâli: üçüncü kenar farktan büyük, toplamdan küçük.'), belir(c, genel, 450));
+    await par(c.say('Genel hâli: üçüncü kenar farktan büyük, toplamdan küçük.', { speak: 'Genel hâli: [short pause] üçüncü kenar farktan büyük, toplamdan küçük.' }), belir(c, genel, 450));
     await c.say('Hangisi büyük bilinmiyorsa farkı <b>mutlak değerle</b> yazarız.');
     await c.choice({
       tag: 'Sıra sende', q: 'Bir üçgenin iki kenarı 5 ve 12. Üçüncü kenar a hangi aralıkta?',
@@ -182,7 +182,7 @@
       hints: ['17 − 5 = 12 aradaki adım sayısı; iki uç da sayılır.', '', '4 ve 18 sayılmaz; 5’ten 17’ye say.'],
       right: '5’ten 17’ye: 17 − 5 + 1 = 13.',
     });
-    await c.say('Uçlar dahil değil: sayarken 4 ile 18’i atla.', { speak: 'Uçlar dahil değil: sayarken dört ile on sekizi atla.' });
+    await c.say('Uçlar dahil değil: sayarken 4 ile 18’i atla.', { speak: '[thoughtful] Uçlar dahil değil: sayarken dört ile on sekizi atla.' });
   }
 
   /* ---- 5. Ortak kenar ---- */
@@ -206,7 +206,7 @@
       sd.aralik(lo, hi, renk); gizle(sd.g); return sd.g;
     };
     const d1 = dogru(150, 'ABC', 2, 14, RENK.B), d2 = dogru(280, 'ACD', 5, 21, RENK.C), d3 = dogru(410, 'ortak', 5, 14, RENK.A);
-    await c.say('İki üçgen aynı kenarı paylaşıyor: AC’nin boyu x.');
+    await c.say('İki üçgen aynı kenarı paylaşıyor: AC’nin boyu x.', { speak: 'İki üçgen aynı kenarı paylaşıyor: AC kenarının boyu x.' });
     await c.choice({
       tag: 'Soru 1 / 3', q: 'ABC üçgeninde öbür kenarlar 6 ve 8. x hangi aralıkta?',
       options: ['2 &lt; x &lt; 14', '6 &lt; x &lt; 8', '0 &lt; x &lt; 14'], answer: 0,

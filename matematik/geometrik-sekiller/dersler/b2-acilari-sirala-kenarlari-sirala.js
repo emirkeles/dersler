@@ -80,8 +80,8 @@
       hints: ['Tepeyi sola, sonra sağa çek: iki satır birlikte değişiyor.', ''],
       right: 'Bir kenar öne geçince karşısındaki açı da öne geçti.',
     });
-    await c.say('Kenarların sırası, karşılarındaki açıların sırasıdır.');
-    await c.say('Tersi de doğru: açıların sırası bilinirse kenarlarınki de bilinir.');
+    await c.say('Kenarların sırası, karşılarındaki açıların sırasıdır.', { speak: 'Kenarların sırası, [short pause] karşılarındaki açıların sırasıdır.' });
+    await c.say('Tersi de doğru: açıların sırası bilinirse kenarlarınki de bilinir.', { speak: '[thoughtful] Tersi de doğru: açıların sırası bilinirse kenarlarınki de bilinir.' });
     await c.say('Farklı üçgenlerde ölçtük: önermeyi <b>doğruladık</b>.');
     c.note('<b>a &gt; b &gt; c ise A &gt; B &gt; C</b><br>Tersi de doğru.', 'Kenar sırası, açı sırası', 'gs-kenar-aci-sirasi');
   }
@@ -113,7 +113,7 @@
       hints: ['3 · 45° = 135°; toplam 180° olmalı.', '', '3 · 90° = 270°; toplam 180° olmalı.'],
       right: '180° : 3 = 60°.',
     });
-    await par(c.say('Üç kenarı eşit üçgen <b>eşkenar</b>: her açısı 60°.', { speak: 'Üç kenarı eşit üçgen eşkenar: her açısı altmış derece.' }), belir(c, u.olculer, 350));
+    await par(c.say('Üç kenarı eşit üçgen <b>eşkenar</b>: her açısı 60°.', { speak: 'Üç kenarı eşit üçgen eşkenar: her açısı [short pause] altmış derece.' }), belir(c, u.olculer, 350));
     c.note('<b>Eşit kenarların karşısındaki açılar eşittir.</b><br>İkizkenar: 40°, 70°, 70°', 'Eşit kenar, eşit açı', 'gs-esit-kenar');
   }
 
@@ -208,7 +208,7 @@
       hints: ['BC, üstteki üçgenin en uzun kenarı. Alttaki üçgende B’deki açıyı bul: 68°.', '', 'BD’nin karşısındaki açı 46°: alttaki üçgenin en küçük açısı.'],
       right: 'Altta en büyük açı B’de, 68°: karşısındaki CD en uzun.',
     });
-    await c.say('Kenarların sırası, karşılarındaki açıların sırasıdır.');
+    await c.say('Kenarların sırası, karşılarındaki açıların sırasıdır.', { speak: 'Kenarların sırası, [short pause] karşılarındaki açıların sırasıdır.' });
   }
 
   Ders.start({
