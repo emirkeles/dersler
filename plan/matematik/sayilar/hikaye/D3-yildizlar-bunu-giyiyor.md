@@ -108,7 +108,7 @@ Metin `matematik/sayilar/hikaye/d3-yildizlar-bunu-giyiyor/SCRIPT.md` dosyasına 
 | 5 | Ses | `assets/ses/01–11.mp3` (778 karakter), düzey eşitleme | bitti; Gamze Özdemir (`eleven_v4`), 11 klip, 62,8 sn konuşma; Haiku alt ajanıyla, hatasız, tek seferde. Düzeyi eşitlenmiş kopyalar `assets/ses-esit/` (ortalama −22,4 dB, tepe −2,9 ile −6,7 dB, `olcum.json`); eşitleme betiği depoda değil, `ffmpeg` ile yapıldı |
 | 6 | Zamanlama | `T` tablosu gerçek klip sürelerine çekilir | bitti; kare başlangıçları ve işaret anları klip sürelerinden ve sözcük dökümünden (Whisper `small`); film 74,5 sn (hedef 45–75 sn aralığının üst ucu) |
 | 7 | Doğrulama | `check`, kare görüntüleri | bitti; `hyperframes check` geçti (tek uyarı: dosya uzunluğu, 854 satır); on bir karenin görüntüsüne ve işlenmiş videodan altı kareye bakıldı |
-| 8 | Son önizleme ve işleme | `renders/d3-yildizlar-bunu-giyiyor.mp4`, `kapak.jpg` | bitti; 1920×1080, 30 kare/sn, 74,5 sn, 14,0 MB, `--crf 23`, ses ortalaması −23,2 dB; kapak 480×270, 14,5. saniyeden. Altyazı dosyası (`.vtt`) yapılmadı |
+| 8 | Son önizleme ve işleme | `renders/d3-yildizlar-bunu-giyiyor.mp4`, `kapak.jpg` | bitti; 1920×1080, 60 kare/sn, 74,5 sn, 15,7 MB, `--crf 23 --fps 60`, ses ortalaması −23,2 dB; kapak 480×270, 14,5. saniyeden. Altyazı dosyası (`.vtt`) yapılmadı |
 | 9 | Derse bağlama | D3'ün 5. sahnesi, `tema.js` `hikayeler` satırı; `sure.js`, `olc.js`, `denetle.js` | bitti; 5. sahne video sahnesi, `tema.js` içinde sahne sayısı 4 → 5 ve `hikayeler` satırı. `sure.js`: D3 3:35 → 4:51 (215 → 291 sn), öteki dersler değişmedi. `olc.js sayilar/d3`: taşma, üst üste yazı ve konsol temiz, punto en küçük 18; yalnızca 4 etkileşimli sahneyi ölçer, video sahnesi dışında. `denetle.js`: sorun yok |
 
 ## 4. Riskler
