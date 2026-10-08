@@ -6,28 +6,18 @@
 
    Denetlenenler:
      katalog   tema ortak/katalog.js içinde kayıtlı mı · listelenen her dosya var mı · klasörde listede olmayan ders var mı
-     ders      açılıyor mu · kimliği <tema>-<kod> mu · sahne sayısı tema.js ile aynı mı · konsol hatası, yüklenemeyen dosya
+     ders      açılıyor mu · kimliği <tema>-<kod> mu · sahne sayısı tema.js ile aynı mı · süresi ölçülmüş mü (sure.js) · konsol hatası, yüklenemeyen dosya
      sayfa     tema sayfası her kısa dersi gösteriyor mu · kırık bağlantı var mı
    Sorun varsa çıkış kodu 1'dir. */
 const fs = require('fs'), path = require('path');
 const puppeteer = require('puppeteer-core');
-const { KOK, CHROME, sleep, temaKlasorleri } = require('./tarayici');
+const { KOK, CHROME, sleep, temaKlasorleri, katalogOku } = require('./tarayici');
 
 const hedef = process.argv.slice(2).find((a) => !a.startsWith('--'));
 const klasorler = temaKlasorleri()
   .filter((k) => fs.existsSync(path.join(k, 'tema.js')))
   .filter((k) => !hedef || path.relative(KOK, k).split(path.sep).join('/') === hedef.replace(/\/$/, ''));
 if (!klasorler.length) { console.error(hedef ? 'tema.js bulunamadı: ' + hedef : 'tema.js dosyası olan tema yok.'); process.exit(1); }
-
-/* katalog.js ve tema.js tarayıcı betikleridir; burada sahte bir window ile okunur. */
-function katalogOku(klasor) {
-  const window = {};
-  new Function('window', fs.readFileSync(path.join(KOK, 'ortak', 'katalog.js'), 'utf8'))(window);
-  new Function('KATALOG', fs.readFileSync(path.join(klasor, 'tema.js'), 'utf8'))(window.KATALOG);
-  const [dersId, temaId] = path.relative(KOK, klasor).split(path.sep);
-  const ders = window.KATALOG.dersler.find((d) => d.id === dersId);
-  return { ders, tema: ders && ders.temalar.find((u) => u.id === temaId), temaId };
-}
 
 (async () => {
   if (!CHROME) throw new Error('Chrome bulunamadı. CHROME_PATH ortam değişkeniyle yolunu ver.');
@@ -46,7 +36,7 @@ function katalogOku(klasor) {
     let bilgi;
     try { bilgi = katalogOku(klasor); } catch (e) { hatalar.push('tema.js okunamadı: ' + e.message); }
     const tema = bilgi && bilgi.tema;
-    const dersler = tema && tema.konular ? tema.konular.flatMap((k) => k.dersler.map((d) => ({ konu: k.harf, dosya: d[0], baslik: d[1], sahne: d[3] }))) : [];
+    const dersler = tema && tema.konular ? tema.konular.flatMap((k) => k.dersler.map((d) => ({ konu: k.harf, dosya: d[0], baslik: d[1], sahne: d[3], sure: d[4] }))) : [];
     if (bilgi && !tema) hatalar.push('tema ortak/katalog.js içinde yok');
     if (tema && !dersler.length) hatalar.push('tema.js içinde kısa ders yok');
 
@@ -79,6 +69,8 @@ function katalogOku(klasor) {
       for (const h of new Set(s.baglanti)) if (h.startsWith('file://') && !fs.existsSync(decodeURIComponent(h.slice(7)))) hatalar.push('kırık bağlantı: ' + decodeURIComponent(h.slice(7)).replace(KOK + '/', ''));
     }
     hatalar.push(...new Set(konsol));
+    const suresiz = dersler.filter((d) => !(d.sure > 0)).map((d) => d.dosya.split('-')[0].toUpperCase());
+    if (suresiz.length) hatalar.push(`süresi ölçülmemiş ${suresiz.length} kısa ders (${suresiz.join(', ')}): node araclar/sure.js ${ad}`);
 
     const yayinda = tema && tema.yayinda ? 'yayında' : 'yayında değil';
     console.log(`${ad}: ${dersler.length} kısa ders, ${yayinda}. ${hatalar.length ? hatalar.length + ' sorun:' : 'Sorun yok.'}`);

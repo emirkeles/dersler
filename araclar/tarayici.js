@@ -77,4 +77,14 @@ async function sahneyiOynat(page, i, { hiz = 3, sureSiniri = 80000, herAdim } = 
   return false;
 }
 
-module.exports = { KOK, CHROME, sleep, temaKlasorleri, dersDosyasi, dersiAc, sahneyiOynat };
+/* katalog.js ve tema.js tarayıcı betikleridir; burada sahte bir window ile okunur. */
+function katalogOku(klasor) {
+  const window = {};
+  new Function('window', fs.readFileSync(path.join(KOK, 'ortak', 'katalog.js'), 'utf8'))(window);
+  new Function('KATALOG', fs.readFileSync(path.join(klasor, 'tema.js'), 'utf8'))(window.KATALOG);
+  const [dersId, temaId] = path.relative(KOK, klasor).split(path.sep);
+  const ders = window.KATALOG.dersler.find((d) => d.id === dersId);
+  return { ders, tema: ders && ders.temalar.find((u) => u.id === temaId), temaId };
+}
+
+module.exports = { KOK, CHROME, sleep, temaKlasorleri, dersDosyasi, dersiAc, sahneyiOynat, katalogOku };

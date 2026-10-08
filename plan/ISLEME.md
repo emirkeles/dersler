@@ -94,10 +94,11 @@ Tema 12 kısa dersten büyükse ilk konuyu kendin yaz (kit ve üslup otursun), s
 
 ## 7. Tema denetimi
 
-1. `node araclar/denetle.js <ders>/<tema>` temiz çıkmalı.
-2. Tema sayfasını aç, ekran görüntüsüne bak: her konu ve kısa ders listede mi.
-3. `PLAN.md` denetim tablosuna sahne numaralarını işle. Programın her isteğinin bir sahnesi, her sahnenin bir dayanağı olmalı; yoksa ders düzeltilir.
-4. `plan/<ders>/TEMALAR.md` içinde temanın konu ve kısa ders sayısını, durumunu güncelle.
+1. `node araclar/sure.js <ders>/<tema>` çalıştır: her kısa dersin yaklaşık süresini içerikten hesaplar ve `tema.js` satırına yazar (beşinci öğe, saniye). Uyarı vermemeli. Sonradan bir dersin anlatımı, sahnesi ya da seslendirmesi değişirse yeniden çalıştırılır; `tema.js` dosyasını yazdığı için alt ajan değil, işi yürüten oturum çalıştırır.
+2. `node araclar/denetle.js <ders>/<tema>` temiz çıkmalı.
+3. Tema sayfasını aç, ekran görüntüsüne bak: her konu ve kısa ders listede mi.
+4. `PLAN.md` denetim tablosuna sahne numaralarını işle. Programın her isteğinin bir sahnesi, her sahnenin bir dayanağı olmalı; yoksa ders düzeltilir.
+5. `plan/<ders>/TEMALAR.md` içinde temanın konu ve kısa ders sayısını, durumunu güncelle.
 
 ## 8. Rapor
 

@@ -9,7 +9,7 @@ index.html                    ana sayfa
 <ders>/<tema>/               bir temanın içeriği: index.html, tema.js, a1-….html, dersler/, ses/, hikaye/
 ortak/                        ders motoru (ders.js, ders.css), katalog.js, site.js, site.css, API.md
 ortak/sablon/                 yeni tema için çalışan şablon (tema sayfası, tema.js, kit.js, örnek kısa ders)
-araclar/                      olc.js, denetle.js, ses-uret.js, hikaye-ses.js (yalnızca geliştirme)
+araclar/                      olc.js, sure.js, denetle.js, ses-uret.js, hikaye-ses.js (yalnızca geliştirme)
 plan/KURALLAR.md              bütün temalar için bağlayıcı kurallar
 plan/ISLEME.md                bir temayı baştan sona işleme alma adımları
 plan/<ders>/TEMALAR.md       dersin temaları ve durumları
@@ -41,10 +41,11 @@ Kullanıcı bir temayı işleme almanı isterse (örnek: "geometrik-sekiller tem
 ```
 cd araclar && npm install                      # ilk kullanımda
 node araclar/olc.js <tema>/<kod>              # bir kısa ders: taşma, üst üste yazı, yazı bütçesi
+node araclar/sure.js <ders>/<tema>            # tema: kısa derslerin yaklaşık süresini ölçer, tema.js satırına yazar
 node araclar/denetle.js <ders>/<tema>         # tema: katalog, kimlikler, sahne sayıları, kırık bağlantı
 ```
 
-Komutlar proje kökünden çalıştırılır. Chrome kendiliğinden bulunur (kurulu Chrome ya da HyperFrames'in başsız Chrome'u); başka bir yol `CHROME_PATH` ile verilir. İş bitti demeden önce ikisi de temiz olmalı.
+Komutlar proje kökünden çalıştırılır. Chrome kendiliğinden bulunur (kurulu Chrome ya da HyperFrames'in başsız Chrome'u); başka bir yol `CHROME_PATH` ile verilir. İş bitti demeden önce `olc.js` ve `denetle.js` temiz olmalı; anlatımı, sahnesi ya da seslendirmesi değişen temada önce `sure.js` yeniden çalıştırılır.
 
 ## Working Style
 

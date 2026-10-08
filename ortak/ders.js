@@ -389,14 +389,32 @@
       if (i < scenes.length - 1) el.next.classList.add('ready');
     }
 
+    /* Dersin yaklaşık süresi (saniye): temanın tema.js dosyasındaki satırın beşinci öğesi; araclar/sure.js yazar.
+       Ders sayfası kataloğu yüklemez; tema.js burada yalnızca bu sayı için, yerine geçen bir KATALOG ile okunur. */
+    function dersSuresi(goster) {
+      if (global.KATALOG) return;
+      let veri = null;
+      global.KATALOG = { tema: (dersId, temaId, v) => { veri = v; } };
+      const kod = cfg.id.slice(cfg.id.lastIndexOf('-') + 1);
+      const sc = h('script', { src: 'tema.js' });
+      sc.onerror = () => {};
+      sc.onload = () => {
+        const satir = ((veri && veri.konular) || []).flatMap((k) => k.dersler).find((d) => d[0].split('-')[0] === kod);
+        if (satir && Number(satir[4])) goster(Number(satir[4]));
+      };
+      document.head.appendChild(sc);
+    }
+
     /* ---- giriş ekranı ---- */
     function showIntro() {
       const it = cfg.intro || {};
       el.head.innerHTML = '';
       el.stage.innerHTML = '';
       el.stage.classList.add('enter');
+      const ust = h('div', { class: 'k' }, (cfg.kicker ? cfg.kicker + ' · ' : '') + cfg.title);
+      dersSuresi((sn) => ust.append(' · yaklaşık ' + Math.max(1, Math.round(sn / 60)) + ' dk'));
       const box = h('div', { class: 'intro' },
-        h('div', { class: 'k' }, (cfg.kicker ? cfg.kicker + ' · ' : '') + cfg.title),
+        ust,
         h('h2', {}, it.title || cfg.title),
         it.hook ? h('p', { html: it.hook }) : null,
         h('button', { class: 'btn', onclick: () => go(0) }, it.button || 'Derse başla ›'),
