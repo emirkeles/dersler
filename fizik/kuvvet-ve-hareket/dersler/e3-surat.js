@@ -508,6 +508,7 @@
       { title: 'Ortalama sürat, süratlerin ortalaması değildir', goal: 'İki hesabın ne zaman ayrıldığını dene.', run: ortalamaDegil },
       { title: 'Anlık sürat', goal: 'Göstergenin tek bir anı gösterdiğini gör.', run: anlik },
       { title: 'Anı mı, bütün yolu mu?', goal: 'Ortalama sürat ile anlık sürati ayır.', run: aniMi },
+      { title: 'Hikâye: İki kamera arası', goal: 'Ortalama süratin trafikteki yerini gör.', video: 'hikaye/e3-iki-kamera/renders/e3-iki-kamera.mp4' },
     ], quizTitle: 'Çıkış soruları',
     quiz: [
       { q: 'Bir otobüs 150 km’lik yolu 2 saatte alıyor. Ortalama sürati kaç km/h?', options: ['300 km/h', '75 km/h', '152 km/h'], answer: 1,

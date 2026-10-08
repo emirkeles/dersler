@@ -50,7 +50,7 @@ Kullanıcıya açık kalan notlar `PLAN.md` bölüm 8'de (uranyum kartı, s. 88 
 | D2 | bitti | bitti | temiz | |
 | E1 | bitti | bitti | temiz | |
 | E2 | bitti | bitti | temiz | |
-| E3 | bitti | bitti | temiz | Hikâye "İki kamera arası" hazır; derse bağlama ayrı iş |
+| E3 | bitti | bitti | temiz | Hikâye "İki kamera arası" işlendi ve 9. sahne olarak bağlandı (8 Ekim 2026) |
 | E4 | bitti | bitti | temiz | |
 | E5 | bitti | bitti | temiz | |
 | E6 | bitti | bitti | temiz | |
@@ -158,3 +158,9 @@ Doğrulama: her derste dizin, klip dosyaları ve döküm birbirini tutuyor; `--l
 Kulakla doğrulanmamış okunuşlar (bütün derslerde aynı yazımla üretildi): SI "se i"; °C "derece selsiyus"; joule "jul"; pascal "paskal"; vektör ve nokta adları küçük harfle ("a vektörü", "be noktası", "ke aracı"); v "ve", x "iks", Δx "delta iks"; a (ivme sembolü) "a". Yanlış çıkan satır: `speak` metni düzeltilir, o klip yeniden üretilir.
 
 Kötü çıkan klibi yenilemek: `ses/kuvvet-ve-hareket-<kod>/<klip>.mp3` silinir, `node araclar/ses-uret.js kuvvet-ve-hareket/<kod>` yeniden çalıştırılır.
+
+## Hikâye bağlantısı ve süreler (8 Ekim 2026)
+
+- "İki kamera arası" filmi işlendi (`hikaye/e3-iki-kamera/renders/e3-iki-kamera.mp4`, 71 sn, 17,6 MB) ve E3'ün 9. sahnesi olarak bağlandı; `tema.js` içine `hikayeler` satırı eklendi (tema sayfasında "Hikâyeler" kartı). `tema.js` E3 sahne sayısı 8 → 9. `olc.js kuvvet-ve-hareket/e3` ve `denetle.js` temiz.
+- `sure.js` yeniden çalıştırıldı: 15 satır değişti. E3 dışındaki 14 dersin (B1, B2, C1–C9, E5–E7) süresi, klipleri üretilmeden önce ölçülmüş değerde kalmıştı; tema toplamı yaklaşık 4 sa 35 dk'dan 4 sa 53 dk'ya çıktı.
+- Kullanıcı filmin 7–12. karelerini ve seslendirmesini işlemeden önce onaylamadı; izleyince değişiklik isterse film yeniden işlenir (dosya adı aynı kalır).

@@ -36,10 +36,10 @@ Plan: `kuvvet-ve-hareket/hikaye/E3-iki-kamera-arasi.md`
 - [ ] Kullanıcı kararı: eskiz sayfası (`storyboard.html`) çizilsin mi
 - [ ] Kullanıcı onayı: çizim dili; sonra `frame.md`
 - [ ] Eskiz sayfası ve yerleşim onayı
-- [ ] Ses (ücretli; kullanıcı ister; 646 karakter)
-- [ ] Kompozisyon; `T` tablosunu gerçek klip sürelerine çek
-- [ ] `npm run check`, kare görüntüleri, son önizleme, işleme, kapak, altyazı
-- [ ] Derse bağlama (tema işlenince)
+- [x] Ses, kompozisyon ve `T` tablosu (yukarıdaki "Seslendirme" maddesiyle kapandı)
+- [x] `check` geçti; işleme: `renders/e3-iki-kamera.mp4` (8 Ekim 2026, kullanıcı isteğiyle; 71 sn, 17,6 MB); kapak `renders/kapak.jpg`
+- [ ] Altyazı dosyası (`.vtt`) yapılmadı
+- [x] Derse bağlama: E3'ün 9. sahnesi ve `tema.js` `hikayeler` satırı (8 Ekim 2026); canlı sitede
 
 ## Hikâye: A1 Çantanın askısı
 
@@ -82,6 +82,6 @@ Plan: `akiskanlar/hikaye/A1-cantanin-askisi.md`
   - [x] Seslendirme: 24 ders, 1.472 klip, 115,7 dk, 57 MB (8 Ekim 2026)
   - [ ] Kullanıcı sesli izler: 14 uzun klip ve kulakla doğrulanmamış okunuşlar (`kuvvet-ve-hareket/DURUM.md`)
   - [x] Yayın: `ortak/katalog.js` içinde `yayinda: true` (8 Ekim 2026)
-  - [ ] E3 hikâyesinin derse bağlanması (kullanıcı ister; film henüz işlenmedi)
+  - [x] E3 hikâyesi işlendi ve derse bağlandı (8 Ekim 2026)
 - [ ] Akışkanlar: işleme al
 - [ ] Enerji: işleme al

@@ -119,8 +119,8 @@ Karelerin hareket kuralları `STORYBOARD.md` içinde her karenin `rules` satır�
 | 5 | Ses | `assets/ses/01–12.mp3` (`node araclar/hikaye-ses.js e3-iki-kamera`), düzeyi eşitlenmiş kopyalar `assets/ses-esit/` | bitti (794 karakter); kullanıcı dinleyecek |
 | 6 | Kompozisyon | `index.html`; kareler `animated`; `T` gerçek sürelere çekilir | — |
 | 7 | Doğrulama | `npm run check`, kare görüntüleri | — |
-| 8 | Son önizleme ve işleme | `renders/e3-iki-kamera.mp4`, `kapak.jpg`, altyazı dosyası | kullanıcı: işle ya da değiştir |
-| 9 | Derse bağlama | E3'ün son sahnesi; `tema.js` içine `hikayeler` satırı | tema işlenince |
+| 8 | Son önizleme ve işleme | `renders/e3-iki-kamera.mp4`, `kapak.jpg`, altyazı dosyası | işlendi (8 Ekim 2026, kullanıcı isteğiyle: 1920×1080, 71 sn, 17,6 MB, `--crf 23`); kapak 22. saniyeden (480×270); altyazı dosyası yapılmadı |
+| 9 | Derse bağlama | E3'ün son sahnesi; `tema.js` içine `hikayeler` satırı | bitti (8 Ekim 2026): E3'ün 9. sahnesi video sahnesi, tema sayfasında "Hikâyeler" kartı; `olc.js` ve `denetle.js` temiz |
 
 ## 6. Bağımlılıklar ve riskler
 

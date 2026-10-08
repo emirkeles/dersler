@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "npx --yes hyperframes@0.8.140 preview",
     "check": "npx --yes hyperframes@0.8.140 check",
-    "render": "npx --yes hyperframes@0.8.140 render",
+    "render": "npx --yes hyperframes@0.8.140 render --crf 23 -o renders/e3-iki-kamera.mp4",
     "publish": "npx --yes hyperframes@0.8.140 publish"
   }
 }
