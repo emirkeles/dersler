@@ -546,7 +546,7 @@ Tema 3 · Geometrik Şekiller B ve C (görev tanımı: `plan/matematik/geometrik
 - [x] 2b.2 Konu C (3 ders, 6 soru + `c4-tekrar`: altı kural, sekiz soru): bir Sonnet ajanı; `olc.js` temiz, iki görüntüye bakıldı
 - [x] 2b.3 Ölçüm: `olc.js` B1–B5 ve C1–C4'te bütün sayaçlar 0, konsol temiz (Haiku); `sure.js` tema 90:39; `denetle.js` "15 kısa ders, yayında. Sorun yok."; `tema.js` satırları (B5, C4) ve süreler
 - [x] 2b.4 İçerik denetimi: 14 ek soru ve 16 tekrar sorusu elle doğrulandı; C3'te yinelenen sayılar (6 ve 10) değiştirildi, "iletki" → "açıölçer", C4'te iki yazım düzeltmesi; doğru şıkkın yeri dengeli
-- [ ] 2b.5 Commit yapıldı (`feat: Geometrik Şekiller B ve C'ye ek çıkış soruları ve iki konu tekrarı dersi`; yalnızca bu temanın dosyaları ve kayıtlar; bu satır da commit'te). **Push yapılmadı, kullanıcıyı bekliyor:** yerel `main`'de gönderilmemiş `ef5629e` (Kimya Çeşitlilik, seslendirilmemiş 44 ders) var; push onu da canlı siteye çıkarır
-- [x] İş panosu (sürüm 8: 167 kısa ders, 10 konu tekrarı, 2b 7 temadan 3'ü, "Push kararı" kartı)
+- [x] 2b.5 Commit `990d78c`, `origin/main`e gönderildi (8 Ekim 2026; kullanıcı "push yap" dedi). Aynı push ile yerelde bekleyen `ef5629e` (Kimya Çeşitlilik, seslendirilmemiş, katalogda kapalı) da gitti. Canlı sitede doğrulanmadı
+- [x] İş panosu (sürüm 9: 167 kısa ders, 10 konu tekrarı, 2b 7 temadan 3'ü)
 
 Sıradaki temalar: Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).

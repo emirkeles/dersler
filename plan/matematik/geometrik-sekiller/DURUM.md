@@ -163,7 +163,7 @@ Notlar:
 
 ## Sıradaki
 
-- Bu temada 2b'nin yazımı ve denetimi bitti, yerel `main`'e commit edildi. **Push yapılmadı:** yerel `main`'de gönderilmemiş `ef5629e` (Kimya Çeşitlilik, seslendirilmemiş 44 ders; katalogda kapalı ama adresle açılır) duruyor ve push onu da canlı siteye çıkarır; kullanıcı karar verir. Sonraki oturum önce `git status -sb` ile buna bakar; kullanıcı izin vermediyse push yapmadan sürer.
+- Bu temada 2b bitti ve yayında (`990d78c`, 8 Ekim 2026). Aynı push ile `ef5629e` (Kimya Çeşitlilik; seslendirilmemiş, katalogda kapalı) da `origin/main`e gitti. Açık iş yok.
 - Yürütme sırası: `plan/YURUTME.md` 2b, sıradaki tema Biyoloji Yaşam (`biyoloji/yasam/`, 8 konu: A–H). Önce derslerin dosya düzenine, şık sayısına ve kit olup olmadığına bakılır (`ls biyoloji/yasam biyoloji/yasam/dersler`, bir dersin `quiz` dizisi); görev tanımı bu temanınkinden (`plan/matematik/geometrik-sekiller/gorev/ek-soru-gorevi.md`: ders başına dosya ve kit düzeni) ya da Sayılar'ınkinden (bölüm dosyası düzeni) kopyalanıp `plan/biyoloji/yasam/gorev/` altına uyarlanır.
 - 2b.1: A konusu ana oturumda (örnek); 2b.2: B–H konuları, konu başına bir Sonnet ajanı (aynı anda en çok dört); ajanlar bittikten sonra `olc.js` Haiku ajanıyla sırayla (ajanlar çalışırken toplu ölçüm boş dönüyor), sonra `sure.js` ve `denetle.js` ana oturumda.
 - Sözel temada da geçerli iki kural: şıkta ve geri bildirimde sonraki dersin terimi geçmez (`grep -ln` ile doğrula); bir konuda eklenen soruların doğru şıkkı aynı yerde toplanmaz. Ajan çıktısında var olan sorularla ya da başka dersin örneğiyle aynı sayı ve bağlam aranır.
