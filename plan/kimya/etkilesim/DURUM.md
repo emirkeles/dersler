@@ -134,7 +134,7 @@ Kullanıcı yayındaki dersleri izleyip anlatımı geri çevirdi (tek cümleyle 
 | Senaryolar A–H | bitti; 18 ders, 121 sahne, 1.126 anlatım cümlesi (eski: 80 sahne, 270 cümle); `senaryo-denetle.cjs` temiz |
 | Kullanıcı onayı | A1'i sitede izleyip onayladı: "a1 güzel. bundan sonrakiler de böyle olsun." (7 Ekim 2026). Bölünme adayları tek ders kaldı; öteki kararlar senaryodaki hâliyle uygulandı |
 | Derslerin yeniden yazımı (18 ders) | bitti; A1 ana oturum, öteki 17 ders yedi alt ajan. Sonuç aşağıda |
-| Bölüm 4 denetim tablosunda sahne numaraları | dersler yazılınca |
+| Bölüm 4 denetim tablosunda sahne numaraları | bitti (8 Ekim 2026): 82 satır yeni derslere göre eşlendi; sınır dışı numara yok, 121 sahnenin hepsi en az bir satırda |
 | Seslendirme | üretildi (7–8 Ekim 2026); ayrıntı aşağıda "Seslendirme, yeni anlatım" |
 
 Yayındaki 18 dersin hepsi yeni anlatımla.
@@ -171,7 +171,6 @@ Bütünleştirmede yapılanlar: `tema.js` sahne sayıları ve açılış sorular
 
 Açık kalanlar:
 
-- `PLAN.md` bölüm 4 müfredat denetim tablosundaki sahne numaraları eski derslere göre; yeni sahnelerle eşlenmedi. Eşleme her senaryonun "Sayım ve kapsam" bölümünde duruyor.
 - Yalnızca 1366×657 ölçüldü; dar ekran ve telefon denenmedi. Yanlış şık yollarının hepsi ekranda görülmedi.
 - Yukarıdaki "Seslendirme" bölümü (270 satır, A1 pilotu) eski anlatıma aittir. `ses/etkilesim-a1/` altındaki 8 klip artık hiçbir satırla eşleşmiyor; bir sonraki üretimde araç siler.
 - Okunuşlar dinlenmedi: "se/pe/de/fe" orbital adları ("de" bağlaçla karışabilir), "i e bir", "Tamsın", "Raterford", "Haysenbörg", "ka be re ne".

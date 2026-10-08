@@ -116,7 +116,7 @@ C ölçüm sonuçları (1366×657): C2–C5 temiz; tüm derslerde konsol ve yaz�
 - [ ] Sayılar B derslerini sesli izle; B1 "Üç, A’nın elemanıdır" ve B6 sahne 1 klipleri hızlı okunuyor
 - [x] Sayılar C seslendirildi (80 klip, 5,5 dk, 2,69 MB, 6 yönerge)
 - [ ] Sayılar C derslerini sesli izle; C1 sahne 2 `405322c8.mp3` klibi %38,8 yavaş; C1 yerleşim bulgularına bak
-- [ ] Sayılar D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`)
+- [x] Sayılar D ve öteki temaların seslendirmesi (`plan/SESLENDIRME.md`): yazılmış yedi temanın hepsi seslendirildi (8 Ekim 2026)
 - [ ] Tema sayfasından dersleri izle; `DURUM.md` “Kalanlar” bölümündeki sahnelere elle bak
 - [ ] Yerel araçları `dersler/kit.js` içine topla (ayrı temizlik işi)
 - [ ] Yayına al (`ortak/katalog.js`), seslendirme, hikâye videoları
@@ -137,10 +137,10 @@ Adımlar `plan/SESLENDIRME.md`. Alt ajanlar yalnızca adım 1–2'yi yapar (API 
 - [x] Metin düzeltmesi: kimya B2 (iki dil bilgisi hatası), biyoloji E5 (kükürdün, iyodun); `olc.js` temiz
 - [x] `DURUM.md` "Seslendirme" tabloları (iki tema), `plan/SESLENDIRME.md` "Durum" satırları ve pehaş kuralı, `plan/kimya/TEMALAR.md`, `plan/biyoloji/TEMALAR.md` durum satırları
 - [x] Adım 3 pilot: kimya A1 (8 klip, 33,5 sn) ve biyoloji A1 (24 klip, 114,4 sn) üretildi, sayfalara `ses/<ders-id>.js` eklendi; süre aykırısı yok, `olc.js` ve `denetle.js` temiz
-- [ ] Kullanıcı pilotları dinler ve onaylar (adım 4 üretim buna bağlı)
-- [ ] Adım 4–7: kalan 53 ders (kimya 17, biyoloji 36; yaklaşık 58.600 karakter), sayfa bağlantıları, süre denetimi, rapor
+- [x] Kullanıcı pilotları dinler ve onaylar: iki temanın anlatımı yeniden yazıldı, pilotlar yeni metinle üretildi (kimya: aşağıdaki bölüm; biyoloji A1 onayı: "Seslendirme: Biyoloji Yaşam")
+- [x] Adım 4–7: yeni metinle yapıldı (kimya 1.126 klip, biyoloji 940 klip; ilgili bölümler aşağıda)
 - [ ] İçerik bulguları için karar: `DURUM.md` "Açık bulgular" (iki tema)
-- [ ] Biyoloji D6 ve E1: kaynak gelip metin kesinleşmeden üretilmez
+- [x] Biyoloji D6 ve E1: metin 8 Ekim 2026'da tamamlandı, öteki derslerle birlikte seslendirildi
 
 ## Kimya Etkileşim: anlatımı yeniden planla (7 Ekim 2026)
 
@@ -151,7 +151,7 @@ Kullanıcı geri bildirimi: dersler tek cümleyle soruya geçiyor, "kitapta veri
 - [x] Konu A senaryosu (örnek): A1 6 sahne 54 cümle, A2 7 sahne 55 cümle
 - [x] Konu B, C, D, E, F, G, H senaryoları (alt ajanlar: B, C, D+G, E, F, H)
 - [x] Alt ajan çıktısını denetle: denetleyici 18 derste temiz (121 sahne, 1.126 cümle), terim taraması temiz, örnek sahneler okundu
-- [ ] Kapsam: `PLAN.md` bölüm 4 denetim tablosunu yeni sahne numaralarıyla eşle
+- [x] Kapsam: `PLAN.md` bölüm 4 denetim tablosu yeni sahne numaralarıyla eşlendi (8 Ekim 2026; 82 satır, 121 sahnenin hepsi tabloda geçiyor)
 - [x] `DURUM.md`, `PLAN.md` bölüm 12 sonuç ve bulgular, rapor
 - [x] Kullanıcı A1'i sitede izleyip onayladı ("a1 güzel, bundan sonrakiler de böyle olsun"); bölünme adayları şimdilik tek ders, öteki kararlar senaryodaki hâliyle
 - [x] A1 örnek olarak yeni senaryoya göre yeniden yazıldı (6 sahne, 55 altyazı; `olc.js` ve `denetle.js` temiz, görüntüler incelendi); kullanıcı sitede bakacak
@@ -211,7 +211,7 @@ Kullanıcı: ortak cümle eşiği yok; gereksiz uzatma yok; bilgi sorudan önce.
 - [x] Alt ajan çıktısını denetle: `tema.js` (4 sahne sayısı, 13 giriş sorusu, tanıtım), tema sayfası dipnotu, 15 "Sonraki" etiketi; 20 ders Sonnet alt ajanıyla ölçüldü (hepsi temiz), `sure.js` süreleri yazdı, altı dersten görüntü incelendi, çekince taraması boş
 - [ ] Kullanıcı yeni biyoloji derslerini sitede izler; kitapta açık yazmayan çıkarımlar için karar (`PLAN.md` bölüm 12 sonu)
 - [ ] Hafif (F, 11 ders) ve düzenleme (D3–D6, E1, E3) grupları: kullanıcı şimdilik istemedi
-- [ ] Biyoloji seslendirmesi: metin kesinleşince; A1 pilotu yeniden
+- [x] Biyoloji seslendirmesi: yapıldı (8 Ekim 2026; "Seslendirme: Biyoloji Yaşam")
 - [ ] Kimya: en uzun dersleri (B2, F1, H1, G1) aynı ölçütle kısaltma kararı kullanıcıda
 
 
@@ -253,8 +253,8 @@ Yayındaki derslerde, öğrencinin gördüğü eksikler:
 
 - [x] Biyoloji D6 sahne 3: "Virüsün yapı ve çoğalma bölümü bu derste henüz eksiktir." yer tutucu cümlesi yayında (8 Ekim 2026: D6 baştan yazıldı, aşağıdaki bölüm)
 - [x] Biyoloji E1: su ve minerallerin karşılaştırması kısmî (8 Ekim 2026: altı özellik tablosu yazıldı, aşağıdaki bölüm)
-- [ ] Biyoloji: 37 dersin hepsi sessiz (üretilecek 945 klip, 59.180 karakter; 8 Ekim dökümü); A1'in 24 pilot klibi eski metne ait, yeni derste çalmıyor. Klipler ve `ses/yasam-a1.js` depoda boşta duruyor
-- [ ] Biyoloji: 17 ders eski anlatımla (D3–D6, E1, E3, F1–F8, F10–F12); F12'de "… sınıfta yapılır." cümlesi `KURALLAR.md` 2.1'e aykırı; F3 ve F6'daki metin pürüzleri (`plan/biyoloji/yasam/DURUM.md` "Açık bulgular")
+- [x] Biyoloji: 37 ders seslendirildi (940 klip, 72,5 dk; 8 Ekim 2026); A1'in eski 24 klibi silindi
+- [ ] Biyoloji: 16 ders eski anlatımla: on beşi bütünüyle (D3–D5, E3, F1–F8, F10–F12), E1 ilk iki sahnesiyle (D6 ve E1'in 3–4. sahneleri 8 Ekim'de yazıldı). Yeniden yazılırlarsa klipleri de yeniden üretilir; karar kullanıcıda. F12, F3 ve F6'daki metin pürüzleri 8 Ekim'de düzeltildi
 - [ ] Kimya: `noWait` ile gösterildiği için seslendirilmeyen açıklama cümleleri ve H derslerindeki uzun sessiz sahneler (`plan/kimya/etkilesim/DURUM.md` "Açık bulgular"; yeniden yazımdan sonra yeniden bakılmadı)
 - [ ] Fizik Bilimi ve Kariyer Keşfi B1: kutup ışıkları ve kristal görselleri yerinde vektör çizim duruyor
 - [ ] Hiçbir temanın seslendirmesi kullanıcı tarafından baştan sona dinlenmedi; uzun yönde aykırı klipler: kimya 14, Kuvvet ve Hareket 14, Nicelikler 8
@@ -262,7 +262,7 @@ Yayındaki derslerde, öğrencinin gördüğü eksikler:
 Yazılmış ama yayında olmayan:
 
 - [x] Geometrik Şekiller: yayına alındı (8 Ekim 2026; `ortak/katalog.js` içinde `yayinda: true`, `denetle.js` temiz, ana sayfa görüntüsüne bakıldı)
-- [ ] Geometrik Şekiller seslendirilmedi (222 satır, 11.048 karakter); kullanıcı temayı henüz izlemedi
+- [ ] Geometrik Şekiller: seslendirildi (222 klip, 8 Ekim 2026); kullanıcı A1 dışındaki dersleri henüz izlemedi
 - [x] Hikâye E3 İki kamera arası: işlendi ve derse bağlandı (8 Ekim 2026)
 - [ ] Hikâye A1 Çantanın askısı işlendi ama teması (Akışkanlar) yazılmadı
 
@@ -273,9 +273,9 @@ Yazılmamış temalar (hepsinde yalnızca müfredat ve plan taslağı):
 
 Depo:
 
-- [ ] `origin` adresi eski (`emirkeles/matematik-sayilar`); depo `emirkeles/dersler` adına taşınmış, push yönlendirmeyle geçiyor
+- [x] `origin` adresi `https://github.com/emirkeles/dersler.git` (8 Ekim 2026'da `git remote -v` ile bakıldı)
 - [ ] Altı uzak dal `main`'e girmiş durumda, silinebilir (`docs/claude-md-calisma-bicimi`, `hikaye-a8-tarla-cit`, `plan/yeni-dersler`, `tema/geometrik-sekiller`, `tema/nicelikler-ve-degisimler`, `yapi/ders-unite-klasorleri`)
-- [ ] Kimya `PLAN.md` bölüm 4 denetim tablosu yeni sahne numaralarıyla eşlenmedi
+- [x] Kimya `PLAN.md` bölüm 4 denetim tablosu yeni sahne numaralarıyla eşlendi (8 Ekim 2026)
 
 ## Biyoloji D6 ve E1'i tamamla, E3 hikâyesini siteye bağla (8 Ekim 2026)
 
@@ -292,7 +292,7 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [x] Commit ve push
 - [ ] Kullanıcı D6 ve E1'i sitede izler; E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulmasına karar (`PLAN.md` bölüm 13)
 - [ ] Kullanıcı filmi izler (7–12. kareler ve seslendirme işlemeden önce onaylanmamıştı); altyazı dosyası yok
-- [ ] D6 ve E1 seslendirilmedi (biyoloji seslendirmesiyle birlikte)
+- [x] D6 ve E1 seslendirildi (biyoloji seslendirmesiyle birlikte, 8 Ekim 2026)
 
 ## Seslendirme: Biyoloji Yaşam (8 Ekim 2026)
 
@@ -310,6 +310,17 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [x] 7 Kayıt (Sonnet): `plan/biyoloji/yasam/DURUM.md`, `plan/SESLENDIRME.md` durum satırı, `plan/biyoloji/TEMALAR.md`; rapor
 - [ ] Kullanıcı: A1 dinlendi; öteki konulardan en az bir dersi sesli izler (kulak verilecekler ve 12 uzun aykırı klip `plan/biyoloji/yasam/DURUM.md` içinde)
 - [x] Commit ve push (8 Ekim 2026, `main`; 940 klip depoda)
+
+## Anasayfa: ders kartları, ders sayfası, hikâyeler (8 Ekim 2026)
+
+Tasarım: https://claude.ai/artifact/X8tDGhrVjbA6PrLYUk5QN4. Yalnızca `ortak/site.js`, `ortak/site.css`, `ortak/API.md` değişir; tema klasörlerine dokunulmaz.
+
+- [x] `site.js`: anasayfa ders kartları, `index.html#<ders>` ders sayfası, `index.html#hikayeler` hikâyeler, üst çubukta gezinme
+- [x] `site.css`: yeni düzenin stilleri, eski iki bölmeli düzenin stillerini kaldır
+- [x] `ortak/API.md` satırlarını güncelle
+- [x] Tarayıcıda dene (masaüstü ve telefon genişliği), `denetle.js` yayındaki temalarda temiz
+- [ ] Kullanıcı: tarayıcıda bak (commit `42c4943` ile `main`'e girdi)
+
 
 ## Seslendirme: Geometrik Şekiller (8 Ekim 2026)
 
@@ -363,3 +374,39 @@ Teması yayında olmayan hikâye temanın `ortak/katalog.js` satırına yazılı
 - [x] Sayılar A7 "3 nanometre": işlendi ve `matematik/sayilar/tema.js` içine eklendi (8 Ekim 2026)
 - [ ] Çadır hikâyesini B3 dersinin son sahnesine bağlamak (istenirse)
 - [ ] Akışkanlar ve Enerji yazılınca katalogdaki `hikayeler` listelerini `tema.js` dosyalarına taşı
+
+## Hikâye: D3 Yıldızlar bunu giyiyor, senaryo (8 Ekim 2026)
+
+Plan: `plan/matematik/sayilar/hikaye/D3-yildizlar-bunu-giyiyor.md`. Eski adı "Şampiyonlar bunu giyiyor"; sahne K-pop'a taşındı (Azra, BLACKPINK).
+
+- [x] Senaryo taslağı: 11 satır, 113 kelime
+- [x] `HIKAYE-ANIMASYONLARI.md` (liste, durum, doğruluk notu) ve `senaryolar/D-islem-ozellikleri-ve-cebir.md` güncellendi
+- [ ] Kullanıcı: grup BLACKPINK mi kalsın (görüntüde ad yok; yalnızca 1. ve 8. satır)
+
+## Hikâye: D3 Yıldızlar bunu giyiyor, proje (8 Ekim 2026)
+
+Proje: `matematik/sayilar/hikaye/d3-yildizlar-bunu-giyiyor/`. Adımlar: plan dosyası bölüm 3 "Adımlar".
+
+- [x] Proje iskeleti (`hyperframes init` 0.8.140), `BRIEF.md`
+- [x] `SCRIPT.md` (11 satır, 113 kelime, 778 karakter; `hikaye-ses.js --liste` okuyor)
+- [x] Kare planı: `STORYBOARD.md` (11 kare; omurga tek defter sayfası, kahraman nesne ok-yol)
+- [x] Görsel kimlik: `frame.md` (çıkartma defteri; siyah, pembe, vurgu sarı)
+- [x] 1. ve 2. kare kuruldu (`index.html`, 14,8 sn, sessiz); `check` geçti (tek uyarı: dosya uzunluğu); görüntüler `kareler/`
+- [x] Kullanıcı isteği: grup tanınır biçimde çizildi (dört üye, şematik vektör, yüzsüz) ve logo eklendi (defterde çıkartma, panoda); `check` geçti; plan, `BRIEF.md`, `frame.md`, `STORYBOARD.md` güncel
+- [x] Kullanıcı: ilk iki kare (üyeler ve logo dâhil), çizim dili, kare planı ve anlatıcı (Gamze) onayı: kullanıcı "bu hikâyeyi tamamla" dedi, bu sözle geçerli sayıldı; tek tek onay alınmadı. Reklamın cümlesi panoya yazılmadı (üç kalem çizgisi)
+- [x] 3–11. kareler: on bir kare kurulu (`STORYBOARD.md` içinde hepsi `animated`); `hyperframes check` geçti (tek uyarı: dosya uzunluğu, 854 satır); on bir karenin görüntüsüne bakıldı
+- [x] Ses: Gamze Özdemir (`eleven_v4`), 11 klip, 778 karakter, 62,8 sn konuşma (Haiku alt ajanı, hatasız, tek seferde); düzey eşitleme `assets/ses-esit/` (ortalama −22,4 dB, tepe −2,9 ile −6,7 dB, `olcum.json`); zamanlama kliplerden ve Whisper `small` dökümünden, film 74,5 sn
+- [x] İşleme ve kapak: `renders/d3-yildizlar-bunu-giyiyor.mp4` (1920×1080, 30 kare/sn, 74,5 sn, 14,0 MB, `--crf 23`, ses ortalaması −23,2 dB), `renders/kapak.jpg` (480×270, 14,5. saniyeden); işlenmiş videodan altı kareye bakıldı
+- [x] Derse bağlama: D3'ün 5. sahnesi (video), `tema.js` içinde sahne sayısı 4 → 5 ve `hikayeler` satırı. `sure.js`: D3 3:35 → 4:51, öteki dersler değişmedi. `olc.js sayilar/d3`: taşma, üst üste yazı ve konsol temiz (video sahnesini ölçmez). `denetle.js matematik/sayilar`: sorun yok
+- [ ] Kullanıcı: filmi derste sesli izler; 6. klibin ilk sözcüğü (döküm "Reknam" yazdı, "Reklam" olmalı) ve "BLACKPINK" okunuşu kulakla denetlenmedi
+- [ ] Kullanıcı: gerçek grubun logosu ve üyelerinin kurgu bir reklamda yayınlanması (izin alınmadı; plan dosyası bölüm 4); karar kullanıcıda
+- [ ] Altyazı dosyası (`.vtt`) yapılmadı
+- [ ] Commit ve push (kullanıcı ayrıca ister)
+- [ ] `plan/SESLENDIRME.md` durum tablosuna hikâye satırı (ortak dosya; eklenmedi)
+
+## Proje incelemesi: bulguları düzelt (8 Ekim 2026)
+
+- [x] `TASKS.md`: eskimiş 13 satır güncellendi (seslendirme, `origin`, anasayfa commit'i, biyoloji ders sayısı)
+- [x] Biyoloji eski anlatım sayısı: 16 (15 ders bütünüyle + E1'in ilk iki sahnesi); `DURUM.md` ve `TEMALAR.md` zaten 16 diyor, `TASKS.md` düzeltildi
+- [x] Kimya `PLAN.md` bölüm 4: 82 satırın sahne sütunu yeni derslere göre yazıldı; betikle denetlendi (sınır dışı numara yok, 121 sahnenin hepsi en az bir satırda); `DURUM.md` iki satır
+- [ ] Commit edilmemiş iş (D3 hikâye klasörü ve plan dosyaları, bu düzeltmeler): kullanıcı ayrıca ister; D3'te gerçek grubun logosu ve üyeleri var, yayın kararı açık

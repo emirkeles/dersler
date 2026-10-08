@@ -321,93 +321,93 @@ Ders sırası: A1 → A2 → B1 → B2 → C1 → C2 → D1 → E1 → E2 → E3
 
 ## 4. Müfredat denetimi
 
-Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir kez geçer.
+Programın her isteği bir satır. Bu dosyadaki her kısa ders tabloda en az bir kez geçer. Sahne numaraları 7 Ekim 2026'da yeniden yazılan derslere göredir (121 sahne; kaynak: her senaryonun "Sayım ve kapsam" bölümü); 8 Ekim 2026'da eşlendi.
 
 | Programın istediği | Hangi kısa ders | Karşılama | Sahne |
 |---|---|---|---|
-| Tema amacı: kimya biliminin günlük hayata katkısına ilişkin çıkarım; kimyasal maddelerin kullanımından kaynaklanan problemleri çözme | A1, A2; B1, B2 | ders | A1.1–5; A2.1–5; B1.1–4; B2.1–5 |
-| Tema amacı: atomun yapısı hakkında çıkarım; elektron dizilimiyle ilgili tahmin; periyodik tabloda yer bulma; periyodik özelliklerin değişimini çözümleme | C1, C2; D1, E1–E3; F1–F3; H1–H4 | benzetim | C1.1–5; C2.1–5; D1.1–5; E1–E3.1–4; F1–F3.1–4; G1.1–5; H1.1–5; H2.1–5; H3.1–3; H4.1–4 |
-| KİM.9.1.1 a) evde kullanılan ürünlerin niteliklerini gözleme ortamı; niteliklerdeki farklılıklar | A1 | site dışı (sınıfta yapılır) | Site dışı; A1.1 kaynaklı kart desteği |
-| KİM.9.1.1 b) farklılıkları kimya bilimiyle ilişkilendirmek üzere veri kaydetme | A1 | site dışı (sınıfta yapılır) | Site dışı; A1.2 hazır kayıt desteği |
-| KİM.9.1.1 c) veriyi yorumlayarak kimya biliminin günlük hayata katkısını değerlendirme | A1 | benzetim | A1.3–5 |
-| Ürün türleri (temizlik malzemeleri, mutfak gereç ve malzemeleri, öz bakım ürünleri, hazır gıdalar); ürün özelliği, materyalin kimyasal özelliği ve kullanım biçimi ilişkisi | A1 | ders | A1.1–4 |
-| Ürünlerin kimya bilimiyle ilişkisi ve insan sağlığına etkisi için veri; verinin sağlık ve ekoloji açısından yorumu | A1 | ders | A1.2–5 (hazır veri yorumu); gerçek toplama site dışı |
-| Doğru ve güvenilir bilgiyi ayırt etme, güvenilir bilgiye ulaşma yolları | A1 | benzetim | A1.5 |
+| Tema amacı: kimya biliminin günlük hayata katkısına ilişkin çıkarım; kimyasal maddelerin kullanımından kaynaklanan problemleri çözme | A1, A2; B1, B2 | ders | A1.1–6; A2.1–7; B1.1–7; B2.1–8 |
+| Tema amacı: atomun yapısı hakkında çıkarım; elektron dizilimiyle ilgili tahmin; periyodik tabloda yer bulma; periyodik özelliklerin değişimini çözümleme | C1, C2; D1, E1–E3; F1–F3; G1; H1–H4 | benzetim | C1.1–7; C2.1–7; D1.1–6; E1–E3.1–7; F1.1–8; F2.1–6; F3.1–7; G1.1–7; H1.1–6; H2.1–6; H3.1–6; H4.1–6 |
+| KİM.9.1.1 a) evde kullanılan ürünlerin niteliklerini gözleme ortamı; niteliklerdeki farklılıklar | A1 | site dışı (sınıfta yapılır) | Site dışı; A1.1–2 ürün grupları ve nitelik örnekleriyle destek |
+| KİM.9.1.1 b) farklılıkları kimya bilimiyle ilişkilendirmek üzere veri kaydetme | A1 | site dışı (sınıfta yapılır) | Site dışı; A1.3–5 hazır ölçüm tablolarıyla destek |
+| KİM.9.1.1 c) veriyi yorumlayarak kimya biliminin günlük hayata katkısını değerlendirme | A1 | benzetim | A1.4–6 |
+| Ürün türleri (temizlik malzemeleri, mutfak gereç ve malzemeleri, öz bakım ürünleri, hazır gıdalar); ürün özelliği, materyalin kimyasal özelliği ve kullanım biçimi ilişkisi | A1 | ders | A1.1–2 |
+| Ürünlerin kimya bilimiyle ilişkisi ve insan sağlığına etkisi için veri; verinin sağlık ve ekoloji açısından yorumu | A1 | ders | A1.3–6 (hazır veri yorumu); gerçek toplama site dışı |
+| Doğru ve güvenilir bilgiyi ayırt etme, güvenilir bilgiye ulaşma yolları | A1 | benzetim | A1.6 |
 | Kimya biliminin tanımı | A2 | ders | A2.1 |
-| Kimya biliminin alt disiplinleri (örneklerle ilişkilendirilerek, kısaca) | A2 | ders | A2.2 |
-| Kimya biliminin gelişen teknolojilerle bağlantısı; kariyer bilinci; Aziz Sancar ve Oktay Sinanoğlu'nun çalışmaları | A2 | ders | A2.3–4 |
-| İstanbul Kimya Teknoloji Merkezi (KTM): günlük hayata ve Türkiye ekonomisine katkı | A2 | ders | A2.5 |
+| Kimya biliminin alt disiplinleri (örneklerle ilişkilendirilerek, kısaca) | A2 | ders | A2.1–5 |
+| Kimya biliminin gelişen teknolojilerle bağlantısı; kariyer bilinci; Aziz Sancar ve Oktay Sinanoğlu'nun çalışmaları | A2 | ders | A2.6–7 |
+| İstanbul Kimya Teknoloji Merkezi (KTM): günlük hayata ve Türkiye ekonomisine katkı | A2 | ders | A2.7 |
 | Türk-İslam âlimlerinin ve kimya bilimine katkı sağlayan bilim insanlarının çalışmalarına ilişkin okuma parçası ("sağlanabilir") | Ayrı ders yok; site dışı | site dışı (sınıfta yapılır) | — (isteğe bağlı sınıf okuması; yeni ad eklenmedi) |
-| KİM.9.1.2 a) problemleri yapılandırma | B1 | ders | B1.1–3 |
-| KİM.9.1.2 b) yapılandırılan problemleri özetleme (karşılaştırma, genelleme) | B1 | benzetim | B1.4 |
+| KİM.9.1.2 a) problemleri yapılandırma | B1 | ders | B1.1–6 |
+| KİM.9.1.2 b) yapılandırılan problemleri özetleme (karşılaştırma, genelleme) | B1 | benzetim | B1.7 |
 | KİM.9.1.2 c) problemin çözümünü gözleme, mevcut bilgiye, veriye dayalı tahmin etme | B2 | benzetim | B2.1 |
-| KİM.9.1.2 ç) kimyasal maddelerin kullanımı ve güvenlik temelinde akıl yürütme | B2 | ders | B2.3–4 |
-| KİM.9.1.2 d) çözüme ilişkin değerlendirme | B2 | benzetim | B2.4 |
-| Hatalı kullanım sonucu farklı ortamlardaki kazalara ilişkin gerçek ya da kurgu örnek olay; olası problemler; oluşma nedenleri | B1 | ders | B1.1–4 |
-| Probleme neden olan kimyasal maddeler ve problemlere neden olabilecek tepkimeleri | B1 | ders | B1.2–4 |
-| Kazaların önlenmesi için öneri | B2 | ders | B2.1,3–4 |
-| Laboratuvarda çalışma kuralları ve piktogramlar temelinde değerlendirme; piktogramların adları; güvenlik kurallarına uyulmayan durumu bulma | B2 | benzetim | B2.2–4 |
-| Kimyasal maddelerin zararlı etkilerine (sağlık, çevre) karşı önlem | B2 (A1'de sağlık yorumu) | ders | B2.3–5; A1.5 |
-| Çevre, Şehircilik ve İklim Değişikliği Bakanlığının düzenlemeleri; KBRN Tespit ve Teşhis Sistemi Projesi | B2 (yalnızca anılır) | ders | B2.5 |
-| KİM.9.1.3 a) atom teorilerinin gelişiminde atomun yapısına ilişkin niteliklerin farkı | C1 | ders | C1.1–2 |
-| KİM.9.1.3 b) elektron, proton, nötronun yükü, kütlesi, keşif tarihi: hazır veri seti | C1 | ders | C1.3 |
-| KİM.9.1.3 c) bilimsel bilginin değişebilirliğini değerlendirme | C1 | benzetim | C1.4–5 |
-| Atom teorilerini kronolojik sıralama, varsayımlarını listeleme; zaman şeridi | C1 | benzetim | C1.1–2 |
-| Dalton, Thomson, Rutherford atom modellerini içeren elektronik içerik; atomun temel tanecikleri | C1 | ders | C1.1–3 |
-| Parçacıkların keşfi ile atom teorilerinin ilişkilendirilmesi; keşif süreçlerinin animasyonla sunumu ("sunulabilir") | C1 | ders | C1.3–4 (keşif deneyi ayrıntısı yok) |
-| Yeni bir atom modelinin gerekliliği; modern atom teorisine geçiş | C1 (son sahne), C2 | ders | C1.5; C2.3–5 |
-| Bohr atom teorisi ve eksiklikleri; modern atom teorisiyle ilişkilendirme | C2 | ders | C2.1–3,5 |
+| KİM.9.1.2 ç) kimyasal maddelerin kullanımı ve güvenlik temelinde akıl yürütme | B2 | ders | B2.2–3,5,7 |
+| KİM.9.1.2 d) çözüme ilişkin değerlendirme | B2 | benzetim | B2.7 |
+| Hatalı kullanım sonucu farklı ortamlardaki kazalara ilişkin gerçek ya da kurgu örnek olay; olası problemler; oluşma nedenleri | B1 | ders | B1.1–6 |
+| Probleme neden olan kimyasal maddeler ve problemlere neden olabilecek tepkimeleri | B1 | ders | B1.2–6 |
+| Kazaların önlenmesi için öneri | B2 | ders | B2.1,7 |
+| Laboratuvarda çalışma kuralları ve piktogramlar temelinde değerlendirme; piktogramların adları; güvenlik kurallarına uyulmayan durumu bulma | B2 | benzetim | B2.2–7 |
+| Kimyasal maddelerin zararlı etkilerine (sağlık, çevre) karşı önlem | B2 (A1'de sağlık yorumu) | ders | B2.3,8; A1.6 |
+| Çevre, Şehircilik ve İklim Değişikliği Bakanlığının düzenlemeleri; KBRN Tespit ve Teşhis Sistemi Projesi | B2 (yalnızca anılır) | ders | B2.8 |
+| KİM.9.1.3 a) atom teorilerinin gelişiminde atomun yapısına ilişkin niteliklerin farkı | C1 | ders | C1.2–3 |
+| KİM.9.1.3 b) elektron, proton, nötronun yükü, kütlesi, keşif tarihi: hazır veri seti | C1 | ders | C1.4–6 |
+| KİM.9.1.3 c) bilimsel bilginin değişebilirliğini değerlendirme | C1 | benzetim | C1.7 |
+| Atom teorilerini kronolojik sıralama, varsayımlarını listeleme; zaman şeridi | C1 | benzetim | C1.2–3 |
+| Dalton, Thomson, Rutherford atom modellerini içeren elektronik içerik; atomun temel tanecikleri | C1 | ders | C1.2–4 |
+| Parçacıkların keşfi ile atom teorilerinin ilişkilendirilmesi; keşif süreçlerinin animasyonla sunumu ("sunulabilir") | C1 | ders | C1.5–6 (keşif deneyi ayrıntısı yok) |
+| Yeni bir atom modelinin gerekliliği; modern atom teorisine geçiş | C1 (son sahne), C2 | ders | C1.7; C2.4–5 |
+| Bohr atom teorisi ve eksiklikleri; modern atom teorisiyle ilişkilendirme | C2 | ders | C2.1–4,6 |
 | Modern atom teorisi: Heisenberg belirsizlik ilkesi ve orbital kavramı | C2 | ders | C2.4–5 |
-| TENMAK'ın hızlandırıcı teknolojileriyle yürüttüğü atom ve atom altı düzeydeki projeler | C2 (açılışta ya da kapanışta yalnızca anılır) | ders | C2.5 |
-| KİM.9.1.4 a) bağıl enerjilere ilişkin veriye dayalı önerme oluşturma | D1 | benzetim | D1.2 |
-| KİM.9.1.4 b) veriye dayalı olan ve olmayan önermeleri karşılaştırma | D1 | benzetim | D1.3 |
-| KİM.9.1.4 c) bağıl enerji diyagramından geçersiz çıkarımları ayıklama | D1 | benzetim | D1.4 |
-| KİM.9.1.4 ç) geçerli tahminler temelinde yargıya varma | D1 | benzetim | D1.5 |
-| Orbital türleri bilgisi; orbital türlerini bağıl enerjilerine göre sıralama | D1 | benzetim | D1.1,4–5 |
-| KİM.9.1.5 a) elektronların orbitallere yerleşimine ilişkin örüntü | E1, E2 | benzetim | E1.1–2; E2.1–2 |
-| KİM.9.1.5 b) örüntülerden genellemeyle bilimsel ilkelere ulaşma | E1, E2 | benzetim | E1.3; E2.1–3 |
-| Farklı atomların elektron dizilimleri orbital şemalarıyla | E1, E2 | ders | E1.1–4; E2.1–3 |
-| Aufbau ilkesi | E1 | ders | E1.2–4 |
-| Pauli dışlama ilkesi, Hund kuralı | E2 | ders | E2.1–4 |
-| Dizilimleri üç ilkeye göre yazma | E1, E2 | ders | E1.4; E2.3–4 |
-| Valans elektron kavramı | E3 | ders | E3.1,4 |
-| Küresel simetri gösteren atomların dizilimi ile kararlılık ilişkisi; yerleşim ile kararlılık | E3 | ders | E3.2–4 |
-| Orbitallerin ve dizilimin günlük hayatla bütünleşmesine örnekler (renklerin algılanması, elektronik cihazlar, ilaç geliştirme, yenilenebilir enerji) ("verilebilir") | E1 açılış sorusu | ders | E1.1 (teknoloji anması) |
-| KİM.9.1.6 a) dizilim ile yer arasındaki örüntüyü yeni örneklerde deneme | F1 (A grubu), F2 (A ve B grubu) | benzetim | F1.2–4; F2.1–4 |
-| KİM.9.1.6 b) yer belirleme kurallarına ilişkin genelleme | F2 | benzetim | F2.2–3 |
-| Grupların harf ve sayıyla (1A, 2B) ya da IUPAC numarasıyla (1. grup, 18. grup) adlandırılması | F1 | ders | F1.1 |
-| Katman elektron dağılımının ilk 36 element için uygulanabilirliği | F1 | ders | F1.2,4 (Se örneği ve katman sınırı) |
-| Bilimsel kuralların verilmesi; genellemenin kurallarla karşılaştırılması | F2 | benzetim | F2.3 |
-| Atomların periyodik tablo bilgilerini belirleme (yapılandırılmış grid) | F2 | benzetim | F2.4 |
-| Elektron diziliminin blok ile ilişkilendirilmesi; d ve f blokları (lantanit ve aktinit) | F3 | ders | F3.1–2 |
-| 1A, 2A, 3A, 7A ve 8A gruplarının özel adları ve genel özellikleri | F3 | ders | F3.3–4 |
-| KİM.9.1.7 a) atom ve iyon dizilimleri arasında örüntü | G1 | benzetim | G1.1–2 |
-| KİM.9.1.7 b) iyon oluşumuna ilişkin genelleme | G1 | benzetim | G1.3 |
-| Katyon ve anyon oluşumunda son katmandaki elektronların etkisi; ilk 20 element için hazır veri seti | G1 | ders | G1.1–2 |
-| İyon oluşurken elektronun hangi orbitalden verildiği, hangisine alındığı | G1 | ders | G1.4 |
-| İzoelektronik kavramının örneklerden tanımlanması | G1 | ders | G1.5 |
-| KİM.9.1.8 a) periyodik özellikleri etkileyen etmenler | H1, H2, H3, H4 | ders | H1.2–3,5; H2.2–5; H3.1–3; H4.3 |
-| KİM.9.1.8 b) etmenler ile tablodaki değişimler arasındaki ilişki | H1, H2, H4 | ders | H1.2–5; H2.2–5; H4.3–4 |
-| Atom yarıçapının tanımı; değişken olduğu ve net ölçülemediği | H1 | ders | H1.1 |
+| TENMAK'ın hızlandırıcı teknolojileriyle yürüttüğü atom ve atom altı düzeydeki projeler | C2 (son sahnede yalnızca anılır) | ders | C2.7 |
+| KİM.9.1.4 a) bağıl enerjilere ilişkin veriye dayalı önerme oluşturma | D1 | benzetim | D1.3 |
+| KİM.9.1.4 b) veriye dayalı olan ve olmayan önermeleri karşılaştırma | D1 | benzetim | D1.4 |
+| KİM.9.1.4 c) bağıl enerji diyagramından geçersiz çıkarımları ayıklama | D1 | benzetim | D1.5 |
+| KİM.9.1.4 ç) geçerli tahminler temelinde yargıya varma | D1 | benzetim | D1.6 |
+| Orbital türleri bilgisi; orbital türlerini bağıl enerjilerine göre sıralama | D1 | benzetim | D1.1–2,5–6 |
+| KİM.9.1.5 a) elektronların orbitallere yerleşimine ilişkin örüntü | E1, E2 | benzetim | E1.3–4; E2.2–5 |
+| KİM.9.1.5 b) örüntülerden genellemeyle bilimsel ilkelere ulaşma | E1, E2 | benzetim | E1.4; E2.2–5 |
+| Farklı atomların elektron dizilimleri orbital şemalarıyla | E1, E2 | ders | E1.2–5; E2.1–5 |
+| Aufbau ilkesi | E1 | ders | E1.4–7 |
+| Pauli dışlama ilkesi, Hund kuralı | E2 | ders | E2.2–7 |
+| Dizilimleri üç ilkeye göre yazma | E1, E2 | ders | E1.5–7; E2.6–7 |
+| Valans elektron kavramı | E3 | ders | E3.1–3 |
+| Küresel simetri gösteren atomların dizilimi ile kararlılık ilişkisi; yerleşim ile kararlılık | E3 | ders | E3.4–7 |
+| Orbitallerin ve dizilimin günlük hayatla bütünleşmesine örnekler (renklerin algılanması, elektronik cihazlar, ilaç geliştirme, yenilenebilir enerji) ("verilebilir") | E1 açılış sorusu | ders | E1.1 (transistör ve pigment anması) |
+| KİM.9.1.6 a) dizilim ile yer arasındaki örüntüyü yeni örneklerde deneme | F1 (A grubu), F2 (A ve B grubu) | benzetim | F1.4–8; F2.2–4,6 |
+| KİM.9.1.6 b) yer belirleme kurallarına ilişkin genelleme | F2 | benzetim | F2.2–4 |
+| Grupların harf ve sayıyla (1A, 2B) ya da IUPAC numarasıyla (1. grup, 18. grup) adlandırılması | F1 | ders | F1.2 |
+| Katman elektron dağılımının ilk 36 element için uygulanabilirliği | F1 (B grubundaki sınır F2'de) | ders | F1.3,6 (selenyum ve katman sınırı); F2.1 (B grubundaki sınır) |
+| Bilimsel kuralların verilmesi; genellemenin kurallarla karşılaştırılması | F2 | benzetim | F2.5 |
+| Atomların periyodik tablo bilgilerini belirleme (yapılandırılmış grid) | F2 | benzetim | F2.6 |
+| Elektron diziliminin blok ile ilişkilendirilmesi; d ve f blokları (lantanit ve aktinit) | F3 | ders | F3.1–3,7 |
+| 1A, 2A, 3A, 7A ve 8A gruplarının özel adları ve genel özellikleri | F3 | ders | F3.4–6 |
+| KİM.9.1.7 a) atom ve iyon dizilimleri arasında örüntü | G1 | benzetim | G1.3–4 |
+| KİM.9.1.7 b) iyon oluşumuna ilişkin genelleme | G1 | benzetim | G1.5 |
+| Katyon ve anyon oluşumunda son katmandaki elektronların etkisi; ilk 20 element için hazır veri seti | G1 | ders | G1.2–4 |
+| İyon oluşurken elektronun hangi orbitalden verildiği, hangisine alındığı | G1 | ders | G1.3–4,6 |
+| İzoelektronik kavramının örneklerden tanımlanması | G1 | ders | G1.7 |
+| KİM.9.1.8 a) periyodik özellikleri etkileyen etmenler | H1, H2, H3, H4 | ders | H1.2–3,5–6; H2.2–5; H3.2,4; H4.4–5 |
+| KİM.9.1.8 b) etmenler ile tablodaki değişimler arasındaki ilişki | H1, H2, H4 | ders | H1.2–6; H2.2–6; H4.4–6 |
+| Atom yarıçapının tanımı; değişken olduğu ve net ölçülemediği | H1 | ders | H1.1,5 |
 | A grubu yarıçap verisinden grup ve periyot (2 veya 3. periyot) eğilimi; enerji seviyeleri; proton ve elektron sayısı | H1 | ders | H1.2–4 |
-| İzoelektronik taneciklerin yarıçap farkı: çekirdek yükü ve elektron–elektron itme | H1 | ders | H1.5 |
-| İyonlaşma enerjisinin tanımı; 1. iyonlaşma enerjisinin grup ve periyot (2 veya 3. periyot) eğilimi ve etmenleri | H2 | ders | H2.1–3 |
-| Yarıçap ile iyonlaşma enerjisi ilişkisinin geçerliliğini sorgulama | H2 | benzetim | H2.3–5 |
-| İyonlaşma enerjisindeki düzensizliğin küresel simetriyle ilişkilendirilmesi | H2 | ders | H2.4 |
-| Ardışık iyonlaşma enerjileri; kararlı iyon oluşumu ve valans elektron sayısı | H3 | ders | H3.1–3 |
-| Elektronegatifliğin tanımı, göreceli oluşu; polarlık ve apolarlık için önemi | H4 | ders | H4.1,4 |
-| İlk 20 elementin Pauling ölçeğindeki değerleri; periyot ve grup eğilimi, etmenler; yarıçapla ilişki | H4 | ders | H4.2–4 |
-| Yarıçap, iyonlaşma enerjisi, elektronegatiflik için konuma göre sıralama | H1, H2, H4 | benzetim | H1.4; H2.5; H4.4 |
-| Anahtar kavramlar: kimya bilimi, kimyasal madde | A1, A2, B1 | ders | A1.1; A2.1; B1.1–2 |
+| İzoelektronik taneciklerin yarıçap farkı: çekirdek yükü ve elektron–elektron itme | H1 | ders | H1.5–6 |
+| İyonlaşma enerjisinin tanımı; 1. iyonlaşma enerjisinin grup ve periyot (2 veya 3. periyot) eğilimi ve etmenleri | H2 | ders | H2.1–4 |
+| Yarıçap ile iyonlaşma enerjisi ilişkisinin geçerliliğini sorgulama | H2 | benzetim | H2.6 |
+| İyonlaşma enerjisindeki düzensizliğin küresel simetriyle ilişkilendirilmesi | H2 | ders | H2.4–5 |
+| Ardışık iyonlaşma enerjileri; kararlı iyon oluşumu ve valans elektron sayısı | H3 | ders | H3.1–6 |
+| Elektronegatifliğin tanımı, göreceli oluşu; polarlık ve apolarlık için önemi | H4 | ders | H4.1–2,6 |
+| İlk 20 elementin Pauling ölçeğindeki değerleri; periyot ve grup eğilimi, etmenler; yarıçapla ilişki | H4 | ders | H4.3–5 |
+| Yarıçap, iyonlaşma enerjisi, elektronegatiflik için konuma göre sıralama | H1, H2, H4 | benzetim | H1.4; H2.6; H4.6 |
+| Anahtar kavramlar: kimya bilimi, kimyasal madde | A1, A2, B1 | ders | A1.1; A2.1; B1.1 |
 | Anahtar kavramlar: absorbsiyon, emisyon | C2 (bölüm 6, soru 6) | ders | C2.2 |
-| Anahtar kavram: orbital | C2, D1 | ders | C2.5; D1.1 |
-| Anahtar kavramlar: Aufbau ilkesi, Pauli dışlama ilkesi, Hund kuralı | E1, E2 | ders | E1.3; E2.1–4 |
-| Anahtar kavramlar: valans elektron, küresel simetri | E3, H2, H3 | ders | E3.1–4; H2.4; H3.3 |
-| Anahtar kavram: izoelektronik | G1, H1 | ders | G1.5; H1.5 |
+| Anahtar kavram: orbital | C2, D1 | ders | C2.5; D1.1–2 |
+| Anahtar kavramlar: Aufbau ilkesi, Pauli dışlama ilkesi, Hund kuralı | E1, E2 | ders | E1.4; E2.2,4 |
+| Anahtar kavramlar: valans elektron, küresel simetri | E3, H2, H3 | ders | E3.1–7; H2.5; H3.4–5 |
+| Anahtar kavram: izoelektronik | G1, H1 | ders | G1.7; H1.6 |
 | Anahtar kavramlar: atom yarıçapı, iyonlaşma enerjisi, elektronegatiflik | H1, H2, H4 | ders | H1.1; H2.1; H4.1 |
-| İçerik çerçevesi: Günlük Hayatta Kimya; Kimyasal Maddelerin Kullanımı ve Güvenlik; Kimyanın Alt Disiplinleri; Kimya Alanında Kariyer Olanakları | A1; B1, B2; A2; A2 | ders | A1.1–5; B1.1–4; B2.1–5; A2.1–5 |
-| İçerik çerçevesi: Atom Teorileri ve Atomun Yapısı; Atom Orbitalleri ve Elektron Dizilimi; Periyodik Tabloda Yer Bulma; Periyodik Özellikler | C1, C2; D1, E1–E3; F1–F3; H1–H4 | ders | C1.1–5; C2.1–5; D1.1–5; E1–E3.1–4; F1–F3.1–4; H1.1–5; H2.1–5; H3.1–3; H4.1–4 |
-| Temel kabuller (madde ve günlük hayat, temel güvenlik uyarı işaretleri, modern atom teorisi dışındaki teoriler, atom ve kütle numarası, katman elektron dağılımıyla yer bulma, metal ve ametal konumları, iyon kavramı, yükler arası itme ve çekme, kinetik ve potansiyel enerji) | Ayrı ders yok; C1, C2, F1, G1'de kısa hatırlatma | ders (ön bilgi hatırlatma) | C1.1–2; C2.1; F1.2; G1.1 (ön bilgi hatırlatma) |
+| İçerik çerçevesi: Günlük Hayatta Kimya; Kimyasal Maddelerin Kullanımı ve Güvenlik; Kimyanın Alt Disiplinleri; Kimya Alanında Kariyer Olanakları | A1; B1, B2; A2; A2 | ders | A1.1–6; B1.1–7; B2.1–8; A2.1–7 |
+| İçerik çerçevesi: Atom Teorileri ve Atomun Yapısı; Atom Orbitalleri ve Elektron Dizilimi; Periyodik Tabloda Yer Bulma; Periyodik Özellikler | C1, C2; D1, E1–E3; F1–F3; H1–H4 | ders | C1.1–7; C2.1–7; D1.1–6; E1–E3.1–7; F1.1–8; F2.1–6; F3.1–7; H1.1–6; H2.1–6; H3.1–6; H4.1–6 |
+| Temel kabuller (madde ve günlük hayat, temel güvenlik uyarı işaretleri, modern atom teorisi dışındaki teoriler, atom ve kütle numarası, katman elektron dağılımıyla yer bulma, metal ve ametal konumları, iyon kavramı, yükler arası itme ve çekme, kinetik ve potansiyel enerji) | Ayrı ders yok; ilgili sahnede kısa hatırlatma | ders (ön bilgi hatırlatma) | C1.1–3,6; C2.3; F1.1,3,7; G1.1 (senaryoda "(ön bilgi)" işaretli cümleler; ayrıca A1.2, B1.4, E1.3, E2.4, F3.5, H1.2–3,5, H2.1, H4.1,3) |
 | Sınıf içi tartışma, grup çalışması, öz değerlendirme, kimya dersine yönelik duygu ve düşünceler, performans görevi (haber yazısı, kamu spotu), dereceli puanlama anahtarı, ürün dosyası | Derslerde yok (bölüm 5) | site dışı (sınıfta yapılır) | — (sınıfta yapılır) |
 
 ## 5. Bilerek alınmayanlar
