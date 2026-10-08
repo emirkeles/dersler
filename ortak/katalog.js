@@ -12,6 +12,7 @@
 
    tema.js biçimi:
      KATALOG.tema('<ders kimliği>', '<tema kimliği>', {
+       kural: 2,   // isteğe bağlı: 8 Ekim 2026 anlatım kuralları (plan/KURALLAR.md 3.4); araçlar buna göre denetler. Eski temalarda yoktur
        tanitim: 'tema sayfasının başındaki bir iki cümle',
        konular: [ { harf: 'A', ad: 'Konu adı', renk: '#f5b04c', dersler: [
          ['a1-dosya-adi.html', 'Başlık', 'Açılış sorusu', sahneSayisi, sureSaniye], … ] }, … ],

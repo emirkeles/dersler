@@ -1,12 +1,12 @@
 # Ortak kurallar
 
-Bütün dersler ve temalar için bağlayıcıdır. Sayılar teması yazılırken alınan kararlardan derlendi (`plan/matematik/sayilar/PLAN.md`); 7 Ekim 2026'da fen ve sosyal dersler eklenince genişletildi (içerik kaynağı, deney ve ürün isteyen çıktılar, formülsüz dersler, görseller, veri); aynı gün bölüm 3 değişti (kısa dersin uzunluğu, önce bilgi sonra soru). Bir temaya özgü kararlar o temanın `PLAN.md` dosyasında durur.
+Bütün dersler ve temalar için bağlayıcıdır. Sayılar teması yazılırken alınan kararlardan derlendi (`plan/matematik/sayilar/PLAN.md`); 7 Ekim 2026'da fen ve sosyal dersler eklenince genişletildi (içerik kaynağı, deney ve ürün isteyen çıktılar, formülsüz dersler, görseller, veri); aynı gün bölüm 3 değişti (kısa dersin uzunluğu, önce bilgi sonra soru); 8 Ekim 2026'da bölüm 1, 3, 4 ve 5 yeniden değişti (dersler kısa tutulmaz, doğrudan soruyla açılmaz; ayrıntılı anlatım, örnek, görselleştirme; hatırlatma soruları, yarısı çözülmüş örnek, konu tekrarı). Bir temaya özgü kararlar o temanın `PLAN.md` dosyasında durur.
 
 Adlar bütün derslerde aynıdır: Ders → Tema → Konu → Kısa ders. MEB bazı derslerde (fizik, tarih, coğrafya) "ünite" der; sitede ve plan dosyalarında hepsi "tema"dır, MEB'in adı `MUFREDAT.md` kaynak satırında belirtilir.
 
 ## 1. Kime, nerede
 
-Lise öğrencisi, dizüstü bilgisayarda, 5 dakikalık parçalarla. Tasarım 1366×768 dizüstünün tarayıcı penceresine (≈1366×657) göre yapılır; telefonda yalnızca bozulmaması yeter.
+Lise öğrencisi, dizüstü bilgisayarda; konuyu bu siteden, başka bir kaynağa bakmadan öğrenir. Tasarım 1366×768 dizüstünün tarayıcı penceresine (≈1366×657) göre yapılır; telefonda yalnızca bozulmaması yeter.
 
 ## 2. Müfredat bağlayıcıdır
 
@@ -14,7 +14,7 @@ Lise öğrencisi, dizüstü bilgisayarda, 5 dakikalık parçalarla. Tasarım 136
 - Programdaki sınırlamalara ("değinilmez", "girilmez", "ile sınırlı tutulur") uyulur.
 - Ön bilgi sayılanlar yeniden anlatılmaz; zenginleştirme etkinlikleri derslere girmez.
 - Kafa karıştıran, "merak" türü yan konu olmaz.
-- Her temanın `PLAN.md` dosyasında müfredat denetimi tablosu vardır: programın her isteği bir kısa derse bağlanır, tabloda yeri olmayan kısa ders olmaz. Ders yazılınca sahne numaraları tabloya işlenir.
+- Her temanın `PLAN.md` dosyasında müfredat denetimi tablosu vardır: programın her isteği bir kısa derse bağlanır, tabloda yeri olmayan kısa ders olmaz (konu tekrarı dersleri dışında, 3.4). Ders yazılınca sahne numaraları tabloya işlenir.
 
 ### 2.1 İçerik kaynağı
 
@@ -45,37 +45,64 @@ Gerçek veri (ölçüm tablosu, nüfus, biyoçeşitlilik sayısı, tarih, harita
 
 ## 3. Kısa ders
 
-Bir kısa ders = bir fikir, sonunda 2 çıkış sorusu. Çoğu ders 4–6 dakika ve 3–5 sahne tutar; bu bir tavan değildir. Uzunluğu içerik belirler: fikrin gerektirdiği bilgi sığmıyorsa sahne ya da adım eklenir, bilgi atılmaz, anlatım kısaltılmaz. Yazı bütçesi (bölüm 4) uzun derste de aynıdır; uzayan şey sahne ve adım sayısıdır. Bir derste iki fikir varsa ders uzatılmaz, ayrılır.
+Bir kısa ders = bir fikir, sonunda 4–5 çıkış sorusu. Adındaki "kısa" bir süre sınırı değildir: dersler kısa tutulmaz. Süre ve sahne sayısı için hedef ya da tavan yoktur; uzunluğu, öğrencinin konuyu programın istediği düzeyde anlaması için gereken anlatım belirler. Konu ayrıntısıyla açıklanır, örneklerle gösterilir, anlaşılması güç yerler görselleştirilir (3.1–3.3). Bilgi sığmıyorsa sahne ya da adım eklenir; bilgi atılmaz, anlatım ve örnek kısaltılmaz. Yazı bütçesi (bölüm 4) uzun derste de aynıdır; uzayan şey sahne ve adım sayısıdır. Bir derste iki fikir varsa ders ayrılır. Tavan yoktur, ama `sure.js` ölçümü 15 dakikayı geçen ders bir kez daha okunur: iki fikir taşıyorsa ayrılır, tek fikirse olduğu gibi kalır; sonuç temanın `DURUM.md` dosyasına yazılır. Öğrenci dersi sahne sahne, kendi hızında izler; uzun anlatım sahnelere bölünür, tek sahnede yığılmaz. (Kullanıcı kararı, 8 Ekim 2026: "dersleri çok kısa tutmayacağız". Önceki "çoğu ders 4–6 dakika ve 3–5 sahne tutar" ölçüsü kalktı.)
 
-### 3.1 Önce bilgi, sonra soru
+### 3.1 Önce anlat, sonra sor
 
-Öğrenciye, cevaplayabilmesi için gereken bilgi verilmeden soru sorulmaz. Bu, dersin her sorusu için geçerlidir (tahmin, dene, çıkış soruları), yalnızca ilki için değil. Her sorudan önce bakılır: öğrenci bunu ön bilgisiyle ya da sezgisiyle cevaplayabilir mi?
+Ders yeni bir soruyla açılmaz ve hiçbir soruya anlatmadan geçilmez. Bu, dersin her sorusu için geçerlidir (birlikte çöz, sor, dene, çıkış soruları), yalnızca ilki için değil. Önce olay ya da bağlam tanıtılır, kavramlar adlandırılır ve tahtada gösterilir, en az bir örnekle açıklanır. Soru, anlatılanı yeni bir duruma uygulatır; cevabı önceden söylenmez, ama cevaplamak için gereken her şey anlatılmıştır.
 
-- **Cevaplayabilir** (bir büyüklüğü kestirmek, iki şekli karşılaştırmak, bir örüntüyü sürdürmek gibi): soru doğrudan sorulur; ders kancayla açılabilir.
-- **Cevaplayamaz** (soru bir ada, tanıma, sınıflandırmaya, olaya, kişiye, birime ya da formüle dayanıyor): önce o bilgi öğretilir, soru sonra gelir. Sorunun cevabı söylenmez; verilen şey, tahmini kör atış olmaktan çıkaran bilgidir.
+İki soru türü bu kuralla çelişmez:
 
-Tek cümle söyleyip soruya geçmek öğretmek sayılmaz. Sorunun gerektirdiği bilgi sorudan **önce** anlatılır; sorudan sonra yalnızca cevabın nedeni söylenir. Ne kadar anlatılacağını konu belirler: sayı eşiği yoktur, uzatmak için cümle yazılmaz, her cümle bir iş görür. (Kullanıcı kararı, 8 Ekim 2026. Kimya Etkileşim 7 Ekim'de cümle eşikleriyle yazılmıştı; o eşikler kural değildir.)
+- **Hatırlatma soruları** (3.4) önceki derslerde öğretilmiş bilgiyi sorar; dersin başında durur.
+- **Tahmin:** durum tanıtıldıktan sonra, öğrencinin gündelik sezgisiyle ya da o ana kadar anlatılanla yapabileceği bir tahmin, açıklamanın tamamından önce sorulabilir (bir büyüklüğü kestirmek, iki şekli karşılaştırmak, bir örüntüyü sürdürmek). Tahmin dersin ilk işi olmaz; bir ada, tanıma, sınıflandırmaya, olaya, kişiye, birime ya da formüle dayanmaz; yanlış tahminin geri bildirimi nedenini söyler.
+
+Tek cümle söyleyip soruya geçmek öğretmek sayılmaz. Sorunun gerektirdiği bilgi sorudan **önce** anlatılır; sorudan sonra yalnızca cevabın nedeni söylenir. Ne kadar anlatılacağını konu belirler: sayı eşiği yoktur. Ayrıntı ve örnek uzatma sayılmaz; aynı şeyi yineleyen, iş görmeyen cümle yazılmaz. (Kullanıcı kararları, 8 Ekim 2026: "gereksiz, uzatmış olmak için uzatmayalım"; "direkt soru sormaya geçmek gibi bir şey yapmayacağız". 7 Ekim'deki "soru sezgiyle cevaplanabiliyorsa ders kancayla, doğrudan soruyla açılabilir" seçeneği kalktı; yerine yukarıdaki dar tahmin kuralı geldi (kullanıcı onayı, 8 Ekim 2026). Kimya Etkileşim 7 Ekim'de cümle eşikleriyle yazılmıştı; o eşikler kural değildir.)
 
 Yazarın çekinceleri öğrenciye söylenmez: "bu çizim gerçek ölçüm vermez", "bu derste deney yapmıyoruz", "kayıt kanıtlamaz" gibi uyarılar ve derse ilişkin üst dil ("bu sahnede … seçeceğiz") altyazıya yazılmaz; `PLAN.md` içinde kalır. Bir deney anlatılıyorsa sonucu da söylenir (kitabın verdiği kadar).
 
-Hangi açılışın seçildiği dersten derse değişir; ders ya da tema düzeyinde tek bir kalıp dayatılmaz. Seçim senaryoda her kısa ders için yazılır.
+Anlatımın nasıl kurulacağı (hangi durum, hangi örnek, hangi görsel) dersten derse değişir; ders ya da tema düzeyinde tek bir kalıp dayatılmaz. Seçim senaryoda her kısa ders için yazılır.
 
 ### 3.2 İskelet
 
-Sıra her derste aynıdır, öğrenci ritmi öğrenir; değişen yalnızca açılıştır:
+Sıra her derste aynıdır, öğrenci ritmi öğrenir:
 
-1. **Açılış**, iki biçimden biri:
-   - **Kanca** (≤ 15 sn): hayattan tek soru, tek görsel. Soru sezgiyle cevaplanabiliyorsa.
-   - **Öğret:** olay ya da bağlam tanıtılır, sorunun dayandığı kavramlar adlandırılır ve tahtada gösterilir. En az 2–3 altyazı; bilgi çoksa ayrı bir sahne olur. Soru bilgi gerektiriyorsa.
-2. **Tahmin et:** öğrenci gösterimden önce tahmin eder (`c.choice`).
-3. **Gör:** animasyon cevabı gösterir; bu sırada altyazı en çok bir satır.
-4. **Adlandır:** kural tek cümle olarak gelir, deftere düşer. Formülü olan derste tek formül eşlik eder; formülü olmayan derste (kavram, sınıflandırma, olay, metin) cümlenin yanında tek örnek, en çok dört satırlık bir tablo ya da etiketli bir şema olur.
-5. **Dene:** bir kaydırıcı ya da sürükle-bırak. Sayısı olmayan derslerde sınıflandırma (kartı doğru kutuya), sıralama (zaman şeridi, basamaklar), eşleştirme ya da haritada/şemada yer gösterme. Yalnızca derste öğretilmiş olan sorulur.
-6. **Çıkış soruları:** 2 soru; ikisi de derste öğretilenle cevaplanabilir.
+1. **Hatırla:** önceki derslerden 1–2 soru (3.4). Temanın ilk dersinde yoktur.
+2. **Anlat:** olay ya da bağlam tanıtılır; kavramlar adlandırılır ve tahtada adım adım gösterilir. Bilgi çoksa birden çok sahne olur.
+3. **Örnekle göster:** anlatılan şey baştan sona çözülmüş en az bir örnek üzerinde, adım adım gösterilir (3.3).
+4. **Birlikte çöz:** yarısı çözülmüş bir örnek. Adımların bir kısmı tahtada verilir, eksik adımı öğrenci tamamlar (`c.choice` ya da sürükle-bırak). İşlem içermeyen derste yarısı doldurulmuş bir tablo, şema ya da sınıflandırma olur.
+5. **Sor:** öğrenci anlatılanı yeni bir duruma tek başına uygular (`c.choice`).
+6. **Gör:** animasyon cevabı gösterir; bu sırada altyazı en çok bir satır. Ardından cevabın nedeni söylenir.
+7. **Adlandır:** kural tek cümle olarak gelir, deftere düşer. Formülü olan derste tek formül eşlik eder; formülü olmayan derste (kavram, sınıflandırma, olay, metin) cümlenin yanında tek örnek, en çok dört satırlık bir tablo ya da etiketli bir şema olur.
+8. **Dene:** bir kaydırıcı ya da sürükle-bırak. Sayısı olmayan derslerde sınıflandırma (kartı doğru kutuya), sıralama (zaman şeridi, basamaklar), eşleştirme ya da haritada/şemada yer gösterme. Yalnızca derste öğretilmiş olan sorulur.
+9. **Çıkış soruları:** 4–5 soru (3.4).
+
+Fikir birkaç parçadan oluşuyorsa 2–6. adımlar her parça için yinelenir. Giriş ekranındaki açılış sorusu merak uyandırmak içindir: öğrenciden cevap istenmez, cevabını ders verir.
 
 Her ders bir akılda kalıcı cümleyle biter.
 
+### 3.3 Ayrıntı, örnek, görselleştirme
+
+- **Ayrıntı.** Programın anlaşılmasını istediği konu, istediği düzeyde ayrıntısıyla açıklanır: ne olduğu, neden öyle olduğu, nerede geçerli olduğu. Derinleşen şey programın istediği konudur; ayrıntı kapsamı aşmaz, yeni konu eklenmez (bölüm 2).
+- **Örnek.** Her yeni kavram, kural ya da işlem en az bir örnekle gösterilir; güç olanlarda birden çok örnek, kolaydan zora verilir. Destek adım adım çekilir: önce baştan sona çözülmüş örnek, sonra yarısı çözülmüş örnek, sonra öğrencinin tek başına çözdüğü soru (3.2, adım 3–5). Yerindeyse bir karşı örnek ya da sık yapılan yanlış da gösterilir. Gerçek veri, olay ve ad içeren örnekler içerik kaynağı kuralına uyar (2.1, 2.3).
+- **Görselleştirme.** Anlaşılması güç, soyut ya da gözle görülmeyen her kavram (bir ilişki, bir süreç, bir yapı, bir ölçek) tahtada görselleştirilir: çizim, şema, grafik, animasyon ya da benzetimle. Sıra somuttan soyuta gider: önce tanıdık, somut bir durum; sonra onun şeması; en son simge, formül ya da genel kural. Görsel anlatımla birlikte adım adım kurulur ve programın istediğini gösterir; süs olmaz. Hangi kavramın güç olduğu ve nasıl gösterileceği senaryoda yazılır. Çizim ve resim kuralları bölüm 5'tedir.
+
+(Kullanıcı kararı, 8 Ekim 2026: "müfredata göre anlaşılması gereken konuyu biraz daha detaylı olarak öğrenciye açıklayarak, örneklerle anlamasını sağlayacağız; anlaşılması güç konuları gözünde görselleştireceğiz.")
+
+### 3.4 Hatırlatma ve tekrar
+
+Öğrenilen bilgi, yeniden okunarak değil hatırlanarak kalıcı olur; aralıklı sorulan soru bunu güçlendirir. Bu yüzden her bilgi üç yerde yeniden sorulur:
+
+- **Çıkış soruları (4–5).** Hepsi derste öğretilenle cevaplanır. En az ikisi bilgiyi derste görülmemiş bir duruma uygulatır; en az biri dersin hedeflediği yanılgıyı sınar. Geri bildirim, şıkkın neden doğru ya da yanlış olduğunu söyler.
+- **Hatırla (dersin ilk sahnesi, 1–2 soru).** Temanın ilk dersi dışındaki her ders böyle açılır. Sorular önceki derslerdendir: biri bir önceki dersten, biri daha eski bir dersten; seçilebiliyorsa bu dersin dayanacağı bilgi sorulur. Yeni bilgi sorulmaz. Yanlış cevapta kural bir cümleyle hatırlatılır. Sahne `c.choice` ile yazılır.
+- **Konu tekrarı (her konunun son dersi).** Yeni bilgi içermez. Tek sahnede konunun kuralları tahtada ve defterde toplanır; ardından 6–10 soru gelir (`quiz`). Sorular derslerin sırasıyla değil karışık dizilir ve çoğu, bilgiyi yeni bir duruma uygulatır. Tekrar dersi denetim tablosunda "tekrar" diye geçer; ders saati oranına ve en az üç sahne kuralına girmez (`ISLEME.md` 3).
+
+Araçların bunları denetleyebilmesi için dört adlandırma sabittir: temanın `tema.js` dosyasında `kural: 2` yazar (şablonda vardır); hatırla sahnesinin başlığı "Hatırla" olur; yarısı çözülmüş örneğin sorusu `tag: 'Birlikte çöz'` etiketini taşır; konu tekrarı dersinin dosya adı `<kod>-tekrar.html` olur (örnek: `a9-tekrar.html`). `denetle.js` çıkış sorusu sayısına, hatırla sahnesine ve konu tekrarına bakar; `sure.js` 15 dakikayı geçen ve ilk sorusunu en çok bir altyazıdan sonra soran dersleri not olarak yazar. 8 Ekim 2026'dan önce yazılan temalarda `kural` alanı yoktur ve bu denetimler yapılmaz.
+
+(Kullanıcı onayı, 8 Ekim 2026. Önceki "2 çıkış sorusu" ölçüsü kalktı.)
+
 ## 4. Yazı bütçesi
+
+Bu sınırlar ekranda aynı anda okunacak yazı içindir; dersin ne kadar anlattığını sınırlamaz. Anlatım uzadıkça altyazı, adım ve sahne sayısı artar; tek altyazı ya da tek tahta kalabalıklaşmaz.
 
 | Öğe | Sınır |
 |---|---|
@@ -95,6 +122,8 @@ Rakam ve sembol cümleden iyidir. Bir altyazıda tek yeni fikir olur. Aynı bilg
 ## 5. Görsel dil
 
 Tahta ekrandaki tek renkli yüzeydir; çevresi düz ve sessizdir. Degrade, parlama, sürekli titreşen düğme, emoji ve büyük harfli etiket hapı kullanılmaz. Yazı tipi IBM Plex Sans. Bir kavrama bir renk verilir ve ders boyunca aynı kalır. Ayrıntı: `ortak/API.md`.
+
+Anlaşılması güç kavram yalnızca sözle geçilmez, tahtada gösterilir (3.3).
 
 ### 5.1 Çizim mi, resim mi
 

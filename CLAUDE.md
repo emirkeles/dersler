@@ -12,6 +12,7 @@ ortak/sablon/                 yeni tema için çalışan şablon (tema sayfası,
 araclar/                      olc.js, sure.js, denetle.js, ses-uret.js, hikaye-ses.js (yalnızca geliştirme)
 plan/KURALLAR.md              bütün temalar için bağlayıcı kurallar
 plan/ISLEME.md                bir temayı baştan sona işleme alma adımları
+plan/YOL-HARITASI.md          sıradaki işler ve sıraları
 plan/<ders>/TEMALAR.md       dersin temaları ve durumları
 plan/<ders>/<tema>/          MUFREDAT.md, PLAN.md, senaryolar/
 ```
@@ -28,6 +29,7 @@ Kullanıcı bir temayı işleme almanı isterse (örnek: "geometrik-sekiller tem
 - `plan/ISLEME.md`: yazım adımları ve her adımın bitiş ölçütü.
 - `ortak/API.md`: ders motorunun API'si, ders ve tema iskeleti, araçlar.
 - Üzerinde çalıştığın temanın `plan/<ders>/<tema>/MUFREDAT.md` ve `PLAN.md` dosyaları.
+- `plan/YOL-HARITASI.md`: sıradaki işler ve hangi sırayla yapılacakları.
 
 ## Bir tema üzerinde çalışırken
 
@@ -42,7 +44,8 @@ Kullanıcı bir temayı işleme almanı isterse (örnek: "geometrik-sekiller tem
 cd araclar && npm install                      # ilk kullanımda
 node araclar/olc.js <tema>/<kod>              # bir kısa ders: taşma, üst üste yazı, yazı bütçesi
 node araclar/sure.js <ders>/<tema>            # tema: kısa derslerin yaklaşık süresini ölçer, tema.js satırına yazar
-node araclar/denetle.js <ders>/<tema>         # tema: katalog, kimlikler, sahne sayıları, kırık bağlantı
+node araclar/denetle.js <ders>/<tema>         # tema: katalog, kimlikler, sahne sayıları, kırık bağlantı; `kural: 2` temada çıkış sorusu, hatırla, konu tekrarı
+node araclar/sure.js <ders>/<tema> --yazma --kural   # yazmadan: anlatım kuralları sayımı (eski temalar için de)
 ```
 
 Komutlar proje kökünden çalıştırılır. Chrome kendiliğinden bulunur (kurulu Chrome ya da HyperFrames'in başsız Chrome'u); başka bir yol `CHROME_PATH` ile verilir. İş bitti demeden önce `olc.js` ve `denetle.js` temiz olmalı; anlatımı, sahnesi ya da seslendirmesi değişen temada önce `sure.js` yeniden çalıştırılır.

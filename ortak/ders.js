@@ -515,7 +515,7 @@
       card.appendChild(h('a', { class: 'btn ghost', style: { textDecoration: 'none', alignSelf: 'flex-start' }, href: cfg.back || 'index.html' }, 'Temaya dön'));
     }
 
-    const api = { id: cfg.id, go, state, scenes };
+    const api = { id: cfg.id, go, state, scenes, soru: (cfg.quiz || []).length };   // soru: çıkış sorusu sayısı (araclar/denetle.js okur)
     global.Ders.current = api;
     return api;
   }

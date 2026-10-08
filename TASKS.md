@@ -1,5 +1,7 @@
 # TASKS
 
+Sıradaki işler ve sıraları: `plan/YOL-HARITASI.md`.
+
 ## Geometrik Şekiller temasını işleme al (dal: `tema/geometrik-sekiller`)
 
 Ayrıntılı ilerleme: `plan/matematik/geometrik-sekiller/DURUM.md`.
@@ -410,3 +412,51 @@ Proje: `matematik/sayilar/hikaye/d3-yildizlar-bunu-giyiyor/`. Adımlar: plan dos
 - [x] Biyoloji eski anlatım sayısı: 16 (15 ders bütünüyle + E1'in ilk iki sahnesi); `DURUM.md` ve `TEMALAR.md` zaten 16 diyor, `TASKS.md` düzeltildi
 - [x] Kimya `PLAN.md` bölüm 4: 82 satırın sahne sütunu yeni derslere göre yazıldı; betikle denetlendi (sınır dışı numara yok, 121 sahnenin hepsi en az bir satırda); `DURUM.md` iki satır
 - [ ] Commit edilmemiş iş (D3 hikâye klasörü ve plan dosyaları, bu düzeltmeler): kullanıcı ayrıca ister; D3'te gerçek grubun logosu ve üyeleri var, yayın kararı açık
+
+## Kurallar: dersler kısa tutulmaz, önce anlat (8 Ekim 2026)
+
+Kullanıcı: kısa ders kuralları kalksın; doğrudan soruya geçilmesin; konu ayrıntılı ve örneklerle anlatılsın; anlaşılması güç konular görselleştirilsin.
+
+- [x] `plan/KURALLAR.md`: bölüm 1 ("5 dakikalık parçalar" kalktı), 3 (süre ve sahne ölçüsü kalktı), 3.1 (kanca açılışı kalktı; her derste önce anlatım), 3.2 (iskelet: anlat, örnekle göster, sor, gör, adlandır, dene, çıkış), 3.3 yeni (ayrıntı, örnek, görselleştirme), 4 ve 5'e birer cümle
+- [x] `plan/ISLEME.md`: plan ve senaryo içeriği (örnekler, görselleştirilecek kavramlar), karar kuralı 5 ve 7, ders yazımı ve görüntü denetimi
+- [x] `ortak/sablon/dersler/a1-ornek.js`: örnek ders anlat → örnek → sor sırasına çevrildi; ölçüm temiz (5 + 1 altyazı, bütçe ve yerleşim sıfır), son görüntüye bakıldı
+- [ ] Kullanıcı: "kısa ders" adı sitede ve dosyalarda duruyor; ad değişsin mi (öneri aşağıdaki raporda)
+- [ ] Kullanıcı: altyazı 12 kelime ve tahta 25 kelime sınırı korundu (ekran okunurluğu); gevşetilsin mi
+- [ ] Commit: kullanıcı ayrıca ister
+
+## Kurallar: eğitim tavsiyeleri (8 Ekim 2026)
+
+Kullanıcı tavsiyeleri onayladı ("önerilerin mantıklı bunları uygula"). Yalnızca yeni yazılacak temalara uygulanır; yazılmış temalara dokunulmadı.
+
+- [x] `plan/KURALLAR.md` 3.4 (yeni): 4–5 çıkış sorusu, dersin başında 1–2 hatırla sorusu, her konunun sonunda konu tekrarı dersi
+- [x] `plan/KURALLAR.md` 3.2 ve 3.3: iskelete "Hatırla" ve "Birlikte çöz" (yarısı çözülmüş örnek) adımları; görselde somut → şema → simge sırası
+- [x] `plan/KURALLAR.md` 3 ve 3.1: 15 dakikayı geçen ders yeniden okunur (tavan değil); sezgiyle yapılabilen tahmin, durum tanıtıldıktan sonra sorulabilir
+- [x] `plan/ISLEME.md`: plan, karar kuralı 5–6, senaryo içeriği, ders görüntü denetimi, tema denetiminde 15 dakika bakışı
+- [x] `ortak/sablon/dersler/a1-ornek.js`: "Birlikte çöz" adımı ve dört çıkış sorusu; ölçüm temiz (7 altyazı, bütçe ve yerleşim sıfır), görüntülere bakıldı
+- [ ] Gerçek öğrenciyle deneme: iki üç 9. sınıf öğrencisi birer ders izlesin (kullanıcı)
+- [x] `araclar/denetle.js` yeni kuralları denetliyor (aşağıdaki bölüm)
+- [ ] Commit: kullanıcı ayrıca ister
+
+## Araçlar: yeni anlatım kuralları ve eski temaların sayımı (8 Ekim 2026)
+
+- [x] `araclar/denetle.js`: `kural: 2` temada 4–5 çıkış sorusu, ilk sahne "Hatırla", konu sonu `<kod>-tekrar.html` (6–10 soru) sorun sayılır; "Birlikte çöz" bulunamayan ders not olur; `--kural` eski temaya özet verir
+- [x] `araclar/sure.js`: altyazı ve soru sırasını kaydeder; `--kural` sütunları ve tema özeti; 15 dakikayı geçen ve ilk sorusunu en çok bir altyazıdan sonra soran dersler not (çıkış kodunu etkilemez)
+- [x] `ortak/ders.js`: `Ders.current.soru` (çıkış sorusu sayısı; davranış değişmedi)
+- [x] `ortak/sablon/tema.js` `kural: 2`; adlandırmalar `plan/KURALLAR.md` 3.4, `plan/ISLEME.md`, `ortak/API.md`, `ortak/katalog.js` başlığı, `CLAUDE.md`
+- [x] Doğrulama: yedi temada `denetle.js` temiz; `sure.js --yazma` süreleri değiştirmedi; `kural: 2` yolu geometri temasında geçici işaretle denendi (26 sorun, 12 not, çıkış kodu 1), dosya geri yazıldı
+- [x] Eski temaların sayımı (`sure.js --yazma --kural`): soruyla açılan sahne Geometri %47, Nicelikler %43, Sayılar %29, Biyoloji %8, Fizik 1 %8, Kimya %0, Kuvvet ve Hareket %0
+- [x] Kullanıcı kararı (8 Ekim 2026, "dediğin gibi yapalım"): önce pilot, sonra `plan/YOL-HARITASI.md` sırası
+- [ ] Kuvvet ve Hareket D1, E6, F1 15 dakikayı geçiyor: iki fikir mi taşıyor diye okunmadı
+
+
+## Telefonda yatay kullanım (8 Ekim 2026)
+
+Kullanıcı: tasarım mobile uygun olsun; seçilen yol telefonda yatay kullanım (derslere dokunmadan, yalnızca `ortak/`).
+
+- [ ] `ortak/ders.css`: yatay telefon düzeni (kısa ekran): tahta yüksekliği doldurur, altında iki satır altyazı, sağda dar sütun
+- [ ] `ortak/ders.js`: araçlar düğmesi (yatayda açılır menü), dikeyde "telefonu yan çevir" ipucu
+- [ ] Dikey: sınav, özet ve giriş tahtası içeriğe göre uzar; dokunmatikte ilerleme ipucu yapışmaz
+- [ ] Ölçüm: telefon boyutlarında (750×340, 844×390, 915×356, 667×320, 390×844) örnek dersler, görüntülere bak
+- [ ] Dizüstü ölçümü değişmedi mi (1366×657)
+- [ ] `ortak/API.md`: yerleşim paragrafı
+- [ ] Rapor

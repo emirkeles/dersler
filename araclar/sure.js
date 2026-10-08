@@ -7,6 +7,9 @@
    node sure.js                          tema.js dosyası olan bütün temalar.
    node sure.js … --yazma                Yalnızca göster, tema.js dosyasına yazma.
    node sure.js … --ayrinti              Her dersin sahne sahne dökümü.
+   node sure.js … --kural                Anlatım kuralları sayımı (plan/KURALLAR.md 3, 3.1, 3.4): çıkış sorusu sayısı,
+                                         ilk sorudan önceki altyazı, soruyla açılan sahne. Notlar çıkış kodunu etkilemez;
+                                         tema.js içinde `kural: 2` olan temada bayraksız da yazılır.
 
    Süre = anlatım + etkileşim.
      anlatım    Ders sanal bir saatle (saniyede 60 kare, 1× hız) baştan sona oynatılır; altyazıların okuma
@@ -37,7 +40,7 @@ const INSAN = {
 const KLIP_ARASI = 300;   // motor klipten sonra bu kadar bekler (ortak/ders.js, say)
 
 const args = process.argv.slice(2);
-const yazma = args.includes('--yazma'), ayrinti = args.includes('--ayrinti');
+const yazma = args.includes('--yazma'), ayrinti = args.includes('--ayrinti'), kuralGoster = args.includes('--kural');
 const hedef = args.find((a) => !a.startsWith('--'));
 
 /* ---------- ses ve video süresi ---------- */
@@ -115,7 +118,7 @@ async function oynat() {
       const say = c.say;
       c.say = async (html, o = {}) => {
         const k = { anahtar: Ders.sesKey(o.speak || duz(html)), bekleme: 0, beklemesiz: !!o.noWait }, t0 = window.__t;
-        if (aktif && aktif.i === i) aktif.altyazi.push(k);
+        if (aktif && aktif.i === i) { aktif.altyazi.push(k); aktif.sira.push('a'); }
         await say(html, o);
         k.bekleme = window.__t - t0;
       };
@@ -134,6 +137,7 @@ async function oynat() {
         const alan = [...act.querySelectorAll('.panel')].find((p) => !denenen.has(p) && p.querySelector('input, select, button, [draggable]'));
         if (alan) denenen.add(alan);
         aktif.olay.push({ tur: alan ? 'kesif' : 'devam' });
+        if (alan) aktif.sira.push('k');
       }
       btn.click(); return true;
     }
@@ -143,7 +147,7 @@ async function oynat() {
     if (opts.length && !document.querySelector('.opt.right')) {
       const kutu = opts[0].closest('.card, .panel') || opts[0].parentElement, soru = !!opts[0].closest('.scroll');
       let o = kutular.get(kutu);
-      if (!o) { o = { tur: soru ? 'soru' : 'secim', metin: uzunluk(kutu), siklar: [...kutu.querySelectorAll('.opt')].map((x) => x.textContent.trim()).join('|'), ipucu: [], geri: 0 }; kutular.set(kutu, o); aktif.olay.push(o); }
+      if (!o) { o = { tur: soru ? 'soru' : 'secim', metin: uzunluk(kutu), siklar: [...kutu.querySelectorAll('.opt')].map((x) => x.textContent.trim()).join('|'), ipucu: [], geri: 0 }; kutular.set(kutu, o); aktif.olay.push(o); if (!soru) aktif.sira.push('s'); }
       opts[0].click();
       const n = uzunluk(kutu.querySelector('.fb'));
       if (soru || kutu.querySelector('.opt.right')) o.geri = n; else o.ipucu.push(n);
@@ -153,7 +157,7 @@ async function oynat() {
   }
 
   for (let i = 0; i < sc.length; i++) {
-    const k = { i, baslik: sc[i].title, ic: !!sc[i].internal, video: sc[i].video || null, sure: 0, altyazi: [], olay: [], bitti: true, metin: 0 };
+    const k = { i, baslik: sc[i].title, ic: !!sc[i].internal, video: sc[i].video || null, sure: 0, altyazi: [], olay: [], sira: [], bitti: true, metin: 0 };   // sira: altyazı (a), tahmin sorusu (s), keşif (k) oluş sırasıyla
     sonuc.sahneler.push(k);
     if (k.video) continue;
     aktif = k;
@@ -222,7 +226,24 @@ function hesapla(r, klasor) {
     return { ...s, anlatim: a, etkilesim: e };
   });
   etkilesim += INSAN.gecis * Math.max(0, r.sahneler.length - 1);
-  return { id: r.id, saniye: Math.round((anlatim + etkilesim) / 1000), anlatim, etkilesim, altyazi, sesli, sahneler, tamamlanmayan: sahneler.filter((s) => !s.bitti).map((s) => s.i + 1) };
+  return { id: r.id, saniye: Math.round((anlatim + etkilesim) / 1000), anlatim, etkilesim, altyazi, sesli, sahneler, kural: kuralOzeti(r.sahneler), tamamlanmayan: sahneler.filter((s) => !s.bitti).map((s) => s.i + 1) };
+}
+
+/* Anlatım kuralları için sayım (plan/KURALLAR.md 3.1, 3.4). "Hatırla" sahnesi önceki dersleri sorduğu için sayılmaz.
+     cikis   çıkış sorusu sayısı
+     ilk     dersin ilk sorusundan önce gösterilen altyazı sayısı (sahne içi sorusu yoksa null)
+     acan    en çok bir altyazıdan sonra soru soran sahne sayısı · sahne: dersin kendi sahneleri */
+function kuralOzeti(sahneler) {
+  const hatirla = (s) => /^Hatırla/.test(s.baslik || '');
+  const kendi = sahneler.filter((s) => !s.ic && !s.video && !hatirla(s));
+  let ilk = null, once = 0, acan = 0;
+  for (const s of kendi) {
+    const yer = s.sira.indexOf('s'), n = yer < 0 ? -1 : s.sira.slice(0, yer).filter((x) => x === 'a').length;
+    if (n >= 0 && n <= 1) acan++;
+    if (ilk == null) { if (n >= 0) ilk = once + n; else once += s.sira.filter((x) => x === 'a').length; }
+  }
+  const cikis = sahneler.filter((s) => s.ic).reduce((a, s) => a + s.olay.filter((o) => o.tur === 'soru').length, 0);
+  return { cikis, ilk, acan, sahne: kendi.length };
 }
 
 /* ---------- tema.js ---------- */
@@ -285,14 +306,15 @@ const dk = (ms) => { const sn = Math.round(ms / 1000); return Math.floor(sn / 60
     }));
 
     console.log(`\n${yol(klasor)}`);
-    console.log('  ders   süre   anlatım  etkileşim  altyazı (sesli)');
+    const kuralli = kuralGoster || tema.kural >= 2;
+    console.log('  ders   süre   anlatım  etkileşim  altyazı (sesli)' + (kuralGoster ? '   çıkış sorusu · ilk sorudan önce altyazı · soruyla açılan sahne' : ''));
     let kaynak = fs.readFileSync(path.join(klasor, 'tema.js'), 'utf8'), degisen = 0;
     const konuToplam = new Map();
     dersler.forEach((d, n) => {
       const r = sonuc[n], kod = d.dosya.split('-')[0].toUpperCase();
       if (r.hata) { console.log(`  ${kod.padEnd(5)} ölçülemedi: ${r.hata}`); uyari++; return; }
       konuToplam.set(d.konu, (konuToplam.get(d.konu) || 0) + r.saniye);
-      console.log(`  ${kod.padEnd(5)} ${dk(r.saniye * 1000).padStart(5)}  ${dk(r.anlatim).padStart(7)}  ${dk(r.etkilesim).padStart(9)}  ${String(r.altyazi).padStart(4)} (${r.sesli})${d.eski && d.eski !== r.saniye ? `   önceki ${dk(d.eski * 1000)}` : ''}${r.tamamlanmayan.length ? `   UYARI: araç ${r.tamamlanmayan.join(', ')}. sahneyi geçemedi, ${INSAN.elle / 1000} sn sayıldı` : ''}`);
+      console.log(`  ${kod.padEnd(5)} ${dk(r.saniye * 1000).padStart(5)}  ${dk(r.anlatim).padStart(7)}  ${dk(r.etkilesim).padStart(9)}  ${String(r.altyazi).padStart(4)} (${r.sesli})${kuralGoster ? `   ${String(r.kural.cikis).padStart(2)} · ${String(r.kural.ilk == null ? '–' : r.kural.ilk).padStart(2)} · ${r.kural.acan}/${r.kural.sahne}` : ''}${d.eski && d.eski !== r.saniye ? `   önceki ${dk(d.eski * 1000)}` : ''}${r.tamamlanmayan.length ? `   UYARI: araç ${r.tamamlanmayan.join(', ')}. sahneyi geçemedi, ${INSAN.elle / 1000} sn sayıldı` : ''}`);
       if (r.tamamlanmayan.length) uyari++;
       if (ayrinti) r.sahneler.forEach((s) => console.log(`           ${String(s.i + 1).padStart(2)}  ${dk(s.anlatim).padStart(5)} + ${dk(s.etkilesim).padStart(5)}  ${s.baslik}${s.video ? ' (video)' : ''}`));
       if (d.eski !== r.saniye) {
@@ -300,6 +322,16 @@ const dk = (ms) => { const sn = Math.round(ms / 1000); return Math.floor(sn / 60
         if (yeni) { kaynak = yeni; degisen++; } else { console.log(`  ${kod.padEnd(5)} tema.js satırı bulunamadı`); uyari++; }
       }
     });
+    if (kuralli) {
+      const olculen = dersler.map((d, n) => ({ kod: d.dosya.split('-')[0].toUpperCase(), tekrar: /-tekrar\.html$/.test(d.dosya), r: sonuc[n] })).filter((x) => !x.r.hata);
+      const uzun = olculen.filter((x) => x.r.saniye > 900), erken = olculen.filter((x) => !x.tekrar && x.r.kural.ilk != null && x.r.kural.ilk <= 1);
+      if (uzun.length) console.log(`  not: 15 dakikayı geçen ${uzun.length} ders, iki fikir mi taşıyor diye yeniden oku: ${uzun.map((x) => `${x.kod} ${dk(x.r.saniye * 1000)}`).join(', ')}`);
+      if (erken.length) console.log(`  not: ilk sorudan önce en çok bir altyazı olan ${erken.length} ders (önce anlat, KURALLAR 3.1): ${erken.map((x) => x.kod).join(', ')}`);
+      if (kuralGoster && olculen.length) {
+        const t = (f) => olculen.reduce((a, x) => a + f(x.r.kural), 0);
+        console.log(`  Kural özeti: çıkış sorusu ortalama ${(t((k) => k.cikis) / olculen.length).toFixed(1)} · ilk sorudan önce en çok bir altyazı ${erken.length}/${olculen.length} ders · soruyla açılan sahne ${t((k) => k.acan)}/${t((k) => k.sahne)} · 15 dakikayı geçen ${uzun.length} ders`);
+      }
+    }
     if (!tekDers) {
       for (const [k, sn] of konuToplam) console.log(`  Konu ${k.harf}: ${dk(sn * 1000)}`);
       console.log(`  Tema: ${dk([...konuToplam.values()].reduce((a, b) => a + b, 0) * 1000)} (${dersler.length} kısa ders)`);

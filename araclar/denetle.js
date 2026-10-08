@@ -8,12 +8,17 @@
      katalog   tema ortak/katalog.js içinde kayıtlı mı · listelenen her dosya var mı · klasörde listede olmayan ders var mı
      ders      açılıyor mu · kimliği <tema>-<kod> mu · sahne sayısı tema.js ile aynı mı · süresi ölçülmüş mü (sure.js) · konsol hatası, yüklenemeyen dosya
      sayfa     tema sayfası her kısa dersi gösteriyor mu · kırık bağlantı var mı
+     kural     tema.js içinde `kural: 2` olan temada (plan/KURALLAR.md 3.2, 3.4): 4–5 çıkış sorusu · temanın ilk dersi
+               dışında ilk sahne "Hatırla" · her konunun son dersi konu tekrarı (<kod>-tekrar.html, 6–10 soru).
+               "Birlikte çöz" adımı bulunamayan ders not olarak yazılır (çıkış kodunu etkilemez).
+               Eski temada bu denetim yapılmaz; `--kural` ile kaç dersin eksik kaldığı özetlenir.
    Sorun varsa çıkış kodu 1'dir. */
 const fs = require('fs'), path = require('path');
 const puppeteer = require('puppeteer-core');
 const { KOK, CHROME, sleep, temaKlasorleri, katalogOku } = require('./tarayici');
 
 const hedef = process.argv.slice(2).find((a) => !a.startsWith('--'));
+const kuralGoster = process.argv.includes('--kural');
 const klasorler = temaKlasorleri()
   .filter((k) => fs.existsSync(path.join(k, 'tema.js')))
   .filter((k) => !hedef || path.relative(KOK, k).split(path.sep).join('/') === hedef.replace(/\/$/, ''));
@@ -32,7 +37,7 @@ if (!klasorler.length) { console.error(hedef ? 'tema.js bulunamadı: ' + hedef :
   let sorun = 0;
   for (const klasor of klasorler) {
     const ad = path.relative(KOK, klasor).split(path.sep).join('/');
-    const hatalar = []; konsol.length = 0;
+    const hatalar = [], notlar = []; konsol.length = 0;
     let bilgi;
     try { bilgi = katalogOku(klasor); } catch (e) { hatalar.push('tema.js okunamadı: ' + e.message); }
     const tema = bilgi && bilgi.tema;
@@ -50,12 +55,18 @@ if (!klasorler.length) { console.error(hedef ? 'tema.js bulunamadı: ' + hedef :
       if (!fs.existsSync(dosya)) { hatalar.push(d.dosya + ': dosya yok'); continue; }
       if (d.dosya[0] !== d.konu.toLowerCase()) hatalar.push(`${d.dosya}: ${d.konu} konusunda ama dosya adı "${d.dosya[0]}" ile başlıyor`);
       await page.goto('file://' + dosya); await sleep(250);
-      const g = await page.evaluate(() => (window.Ders && Ders.current ? { id: Ders.current.id, sahne: Ders.current.scenes.filter((s) => !s.internal).length } : null));
+      const g = await page.evaluate(() => (window.Ders && Ders.current ? {
+        id: Ders.current.id, sahne: Ders.current.scenes.filter((s) => !s.internal).length, soru: Ders.current.soru,
+        ilk: (Ders.current.scenes.find((s) => !s.internal) || {}).title || '',
+        betik: [...document.scripts].map((x) => x.src).filter((x) => /\/dersler\//.test(x)),
+      } : null));
       const beklenen = bilgi.temaId + '-' + d.dosya.split('-')[0];
       if (!g) hatalar.push(d.dosya + ': ders başlamadı (Ders.start çağrılmadı ya da hata verdi)');
       else {
         if (g.id !== beklenen) hatalar.push(`${d.dosya}: dersin id alanı "${g.id}", "${beklenen}" olmalı`);
         if (g.sahne !== d.sahne) hatalar.push(`${d.dosya}: derste ${g.sahne} sahne var, tema.js ${d.sahne} diyor`);
+        d.soru = g.soru; d.ilk = g.ilk;
+        d.birlikte = g.betik.some((u) => { try { return fs.readFileSync(decodeURIComponent(u.replace('file://', '')), 'utf8').includes('Birlikte çöz'); } catch (e) { return false; } });
       }
     }
 
@@ -72,9 +83,32 @@ if (!klasorler.length) { console.error(hedef ? 'tema.js bulunamadı: ' + hedef :
     const suresiz = dersler.filter((d) => !(d.sure > 0)).map((d) => d.dosya.split('-')[0].toUpperCase());
     if (suresiz.length) hatalar.push(`süresi ölçülmemiş ${suresiz.length} kısa ders (${suresiz.join(', ')}): node araclar/sure.js ${ad}`);
 
+    /* Anlatım kuralları (plan/KURALLAR.md 3.2, 3.4). */
+    let kuralOzeti = '';
+    if (tema && tema.konular && (tema.kural >= 2 || kuralGoster)) {
+      const tekrar = (dosya) => /-tekrar\.html$/.test(dosya), kod = (d) => d.dosya.split('-')[0].toUpperCase();
+      const eksik = [];
+      const tekrarsiz = tema.konular.filter((k) => k.dersler.length && !tekrar(k.dersler[k.dersler.length - 1][0]));
+      tekrarsiz.forEach((k) => eksik.push(`Konu ${k.harf}: son ders konu tekrarı değil (dosya adı <kod>-tekrar.html olmalı)`));
+      const olculen = dersler.filter((d) => d.soru != null);
+      const soruYanlis = olculen.filter((d) => (tekrar(d.dosya) ? d.soru < 6 || d.soru > 10 : d.soru < 4 || d.soru > 5));
+      soruYanlis.forEach((d) => eksik.push(tekrar(d.dosya) ? `${d.dosya}: konu tekrarında ${d.soru} soru var, 6–10 olmalı` : `${d.dosya}: ${d.soru} çıkış sorusu var, 4–5 olmalı`));
+      const hatirlasiz = olculen.filter((d, n) => d !== dersler[0] && !tekrar(d.dosya) && !/^Hatırla/.test(d.ilk));
+      hatirlasiz.forEach((d) => eksik.push(`${d.dosya}: ilk sahne "Hatırla" değil (ilk sahne: ${d.ilk || '?'})`));
+      const birliktesiz = olculen.filter((d) => !tekrar(d.dosya) && !d.birlikte);
+      if (tema.kural >= 2) {
+        hatalar.push(...eksik);
+        birliktesiz.forEach((d) => notlar.push(`${d.dosya}: "Birlikte çöz" adımı bulunamadı; yarısı çözülmüş örnek var mı diye bak`));
+      } else {
+        kuralOzeti = `  Yeni kurallara göre (eski tema, sorun sayılmaz): çıkış sorusu 4–5 değil ${soruYanlis.length}/${olculen.length} ders · "Hatırla" sahnesi yok ${hatirlasiz.length} ders · "Birlikte çöz" yok ${birliktesiz.length} ders · konu tekrarı yok ${tekrarsiz.length}/${tema.konular.length} konu`;
+      }
+    }
+
     const yayinda = tema && tema.yayinda ? 'yayında' : 'yayında değil';
     console.log(`${ad}: ${dersler.length} kısa ders, ${yayinda}. ${hatalar.length ? hatalar.length + ' sorun:' : 'Sorun yok.'}`);
     hatalar.forEach((h) => console.log('  - ' + h));
+    notlar.forEach((n) => console.log('  · not: ' + n));
+    if (kuralOzeti) console.log(kuralOzeti);
     sorun += hatalar.length;
   }
   await browser.close();
