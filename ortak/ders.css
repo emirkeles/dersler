@@ -260,9 +260,10 @@ kbd{font-family:inherit;background:var(--surface);border:1px solid var(--line);b
   .score{font-size:2rem}
 }
 /* Yatay telefon, dokunmatik: tarayıcının adres ve sekme çubuğu yüksekliğin üçte birini alabilir (iPhone Safari: 402 → 292 px).
-   Sayfa çubuklar kadar kaydırılabilir bırakılır; öğrenci yukarı kaydırınca çubuklar toplanır, düzen (sabit, 100dvh) büyür. */
+   Sayfa çubuklar kadar kaydırılabilir bırakılır; öğrenci yukarı kaydırınca çubuklar toplanır, düzen (sabit, 100dvh) büyür.
+   overscroll-behavior: Android Chrome'da çubuk açıkken aşağı çekmek sayfayı yenileyip dersi başa döndürmesin. */
 @media (orientation:landscape) and (max-height:539.98px) and (hover:none) and (pointer:coarse){
-  html,body{height:auto;overflow:visible}
+  html,body{height:auto;overflow:visible;overscroll-behavior-y:contain}
   body{min-height:calc(100lvh + 1px)}
   .ders{position:fixed;top:0;left:0;right:0}
 }

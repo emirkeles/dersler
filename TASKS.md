@@ -465,7 +465,7 @@ Kullanıcı: tasarım mobile uygun olsun; seçilen yol telefonda yatay kullanım
 - [x] Simülatörde bulunan: üst kenara dokununca Safari çubuğu sayfanın üstünü örtüyordu; sayfa dokunmatikte kaydırılabilir yapıldı, düzen sabitlendi
 - [x] Simülatörde bulunan: doğru cevaptan sonra geri bildirim ve "Devam" sütunun altında gizli kalıyordu; kendiliğinden görünen yere kayıyor
 - [x] Android Chrome'da deneme (argent, Medium_Phone_API_36.1 emülatörü, Chrome 134, 411×914 dp): dikey, yatay, adres çubuğu (tahta 441 → 540 px), araçlar menüsü, soru, sınav, yeniden dikey, ses; sekiz madde geçti
-- [ ] Android'de bulunan: yatayda adres çubuğu açıkken aşağı çekince Chrome sayfayı yeniliyor, ders girişe dönüyor. Öneri: dokunmatik yatay bloğuna `html,body{overscroll-behavior-y:contain}` (emülatörde geçici olarak denendi, yenileme durdu, çubuk yine toplanıyor); kullanıcı onayı bekliyor
+- [x] Android'de bulunan: yatayda adres çubuğu açıkken aşağı çekince Chrome sayfayı yeniliyor, ders girişe dönüyordu. Dokunmatik yatay bloğuna `html,body{overscroll-behavior-y:contain}` eklendi; Android Chrome 134'te beş aşağı çekişte yenileme olmadı, çubuk yine toplanıyor (tahta 441 ↔ 540 px); iPhone 17 Safari'de çubuk yine toplanıp geri geliyor (tahta 495 ↔ 518 px); dizüstü ölçümü ve `denetle.js` temiz
 - [x] Commit ve push
 
 ## Pilot: Geometrik Şekiller A konusu yeni kurallarla (8 Ekim 2026)
