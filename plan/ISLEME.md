@@ -90,7 +90,7 @@ Her kısa ders için:
 
 Ölçüm temiz çıkmadan sonraki derse geçilmez. Bir dersin sorunu çözülemiyorsa `DURUM.md` notuna yazılır ve sürülür; ders yarım bırakılıp "bitti" denmez.
 
-Tema 12 kısa dersten büyükse ilk konuyu kendin yaz (kit ve üslup otursun), sonraki konuları konu başına bir alt ajana ver. `kit.js`, `tema.css` ve `tema.js` dosyalarını yalnızca işi yürüten oturum yazar; alt ajanlar birer konunun kısa derslerini yazar, ölçer ve `tema.js` satırlarını rapor olarak döndürür. Kite eklenmesi gereken bir araç varsa onu da rapor ederler.
+Tema 12 kısa dersten büyükse ilk konuyu kendin yaz (kit ve üslup otursun), sonraki dersleri ders başına bir alt ajana ver: bir ajan bir kısa ders yazar, okuma listesi kapalıdır, işi yürüten oturum belirli adımlarda biter ve `DURUM.md` dosyasından sürer (`YURUTME.md` "Bağlam bütçesi"; görev şablonu `plan/gorev/ders-gorevi.md`). `kit.js`, `tema.css` ve `tema.js` dosyalarını yalnızca işi yürüten oturum yazar; alt ajanlar birer kısa ders yazar, ölçer ve `tema.js` satırını rapor olarak döndürür. Kite eklenmesi gereken bir araç varsa onu da rapor ederler.
 
 ## 7. Tema denetimi
 

@@ -24,19 +24,45 @@ Alt ajanlar Agent aracıyla, `model` alanı verilerek açılır. Ana oturum alt 
 | Klip üretimi, dizin ve süre doğrulaması, `olc.js` / `denetle.js` / `sure.js` çalıştırıp raporlama, sayfaya ses satırı | `model: "haiku"` | Komut çalıştırma ve sayma; karar yok |
 | Alt ajan çıktısının denetimi, `tema.js`, `kit.js`, kayıt, commit | ana oturum | Ortak dosyalar ve son söz |
 
-Sonnet'in yeni kurallarla ders yazımı henüz denenmedi (pilotu ana modelle açılan ajanlar yazdı). Bu yüzden 2. adımda bir denetim noktası var: Sonnet'in yazdığı ilk konu, pilot derslerle yan yana konup karşılaştırılır; yeterli değilse ders kodu ana modelin ajanlarına verilir ve bu tabloya not düşülür.
+Denetim noktası (8 Ekim 2026): Sonnet'in yeni kurallarla yazdığı ilk dersler (Kimya Çeşitlilik A2 ve A3) pilot derslerle yan yana konup karşılaştırıldı; yeterli bulundu, ders kodu Sonnet'te kalır. Alt ajan raporundaki "senaryodan sapmalar" yine de her derste okunur.
 
 ### Alt ajan görevinin kalıbı
 
-Her görev tek dosyalık ve kendi başına anlaşılır olur. Pilotta işe yarayan kalıp:
+Her görev tek derslik ve kendi başına anlaşılır olur; okuma, çıktı ve görüntü sınırları "Bağlam bütçesi" bölümündedir. Temanın ortak görev tanımı `plan/<ders>/<tema>/gorev/` altında durur (oturuma özgü geçici klasörde değil: sonraki oturum da kullanır) ve `plan/gorev/ders-gorevi.md` şablonundan kopyalanıp temaya uyarlanır; görev iletisi yalnızca o derse özgü olanı söyler. Pilotta işe yarayan kalıp:
 
 1. Ne yazılacağı: dosya yolu, ders kimliği, dersin fikri.
-2. Önce okunacaklar, sırayla: `KURALLAR.md` 3–3.4 ve 4; senaryodaki ilgili bölüm; örnek ders (`matematik/geometrik-sekiller/dersler/a1-olcmek-ispat-degildir.js` ya da temanın kendi ilk dersi); temanın `kit.js` dosyası; `ortak/API.md`.
+2. Önce okunacaklar, sırayla: senaryoda baştaki okuma kılavuzu ile yalnızca o dersin bölümü (satır aralığı görev iletisinde verilir); tek örnek ders (temanın kendi ilk dersi, yoksa `matematik/geometrik-sekiller/dersler/a1-olcmek-ispat-degildir.js`); temanın `kit.js` dosyası ve konunun araç dosyası; `ortak/API.md`. `KURALLAR.md` 3–3.4 ve 4'ün gereken maddeleri görev tanımına yazılır, ajan o dosyayı okumaz.
 3. Derste bulunması gerekenler: "Hatırla" sahnesi (başlığı tam böyle), `tag: 'Birlikte çöz'`, 4–5 çıkış sorusu ve her şık için `why`, akılda kalıcı cümle.
 4. Sınırlar: altyazı tek cümle ve en çok 12 kelime; tahtada en çok 25 kelime ve 12 öğe; rakam ve simge içeren altyazıda `speak`; yönerge yalnızca `[curious]`, `[thoughtful]`, `[short pause]`; öğrenciye kitap, sayfa, sınıf denmez.
 5. Kapsam: yalnızca kendi dosyası. `tema.js`, `kit.js`, sayfalar, `plan/`, `ortak/`, `araclar/` ve git yasak. Eksik araç yerelde yazılır ve raporlanır.
-6. Doğrulama: `node araclar/olc.js <tema>/<kod> --goruntu <geçici klasör>`; "yerleşim" ve "bütçe" satırlarındaki bütün sayaçlar 0, "konsol temiz"; her sahnenin son görüntüsüne bakılır.
-7. Rapor: sahne adları ve sayısı, son `olc` satırları, temiz olmayan her şey, senaryodan her sapma, içerikle ilgili her kuşku.
+6. Doğrulama: `node araclar/olc.js <tema>/<kod> --goruntu <geçici klasör>`; "yerleşim" ve "bütçe" satırlarındaki bütün sayaçlar 0, "konsol temiz"; her sahnenin son görüntüsüne bakılır. En çok üç ölç-düzelt turu.
+7. Rapor: sahne adları ve sayısı, son `olc` satırları, temiz olmayan her şey, senaryodan her sapma, içerikle ilgili her kuşku, görev tanımında cevabını bulamayıp kaynakta aradığı her şey.
+
+## Bağlam bütçesi
+
+Her istek o andaki bağlamın tamamını yeniden okur; maliyet bağlamın boyuyla büyür. 8 Ekim 2026 ölçümü (Kimya Çeşitlilik): konu başına açılan ders ajanları (3–5 ders) 340–450 bin token'a, ana oturum 864 bin token'a çıktı; ajanlar ilk satırı yazmadan önce okumayla 150 bine ulaştı. Aşağıdaki kurallar bunun içindir; hedef ajan başına en çok 150–200 bin, ana oturumda en çok 300 bin token.
+
+### Alt ajan
+
+- **Bir ajan, bir kısa ders** (sayfası ve ders dosyası). Konu tekrarı dersi ayrı ajandır. Konunun araç dosyasını (`<harf>-araclar.js`) konunun ilk dersini yazan ajan açar; o bitince konunun kalan dersleri paralel yazılır. Kalan ajanlar araç dosyasını okur, değiştirmez; eksik aracı kendi ders dosyasında yazar ve raporlar.
+- **Okuma listesi kapalıdır:** kalıbın 2. maddesindekiler. `KURALLAR.md`, `ISLEME.md`, `ortak/ders.js`, `ortak/ders.css`, `araclar/` ve öteki konuların ders dosyaları okunmaz. Görev tanımında cevabı olmayan bir şey için `grep -n` ile tek işleve bakılır ve eksik raporlanır.
+- **Görev tanımı büyür, ajan aramaz:** ajanların kaynakta aradığı her şeyi (ölçüm aracı sahneyi nasıl geçer, kaydırıcı ve düğme nasıl kurulur, sık yapılan hata) ana oturum görev tanımına ekler.
+- **Komut çıktısı kısaltılır:** `| tail -20`, `grep -n`, `sed -n a,bp`. Dosya `cat` ile dökülmez; yüz satırı aşan çıktı alınmaz.
+- **Görüntü:** her sahnenin son karesi (`sNN-son.png`) ve soru sahnelerinde bir ara kare. Aynı kareye iki kez bakılmaz; düzeltmeden sonra yalnızca değişen sahne yeniden görülür.
+- **Dur kuralı:** en çok üç ölç-düzelt turu. Üçüncüden sonra temiz değilse ajan kalanı raporlar ve durur.
+- **Geri dönüş:** ana oturum bir ajana `SendMessage` ile en çok bir kez döner. Sonraki düzeltme, dosya yolunu ve düzeltme listesini alan yeni bir ajanla yapılır.
+
+### Ana oturum
+
+- **Oturum sınırları.** Şu noktalarda kayıt yazılır ve oturum biter; iş temiz oturumda "yürütme planını uygula" ile sürer:
+  - temanın planı, ilk senaryosu ve ilk dersi bitince (2a.2);
+  - senaryolar bitince (2a.4);
+  - ders yazımında her sekiz ders ajanından sonra (2a.5);
+  - tema denetiminden önce (2a.7);
+  - 2b'de her temadan sonra.
+- **Devir.** Oturum biterken temanın `DURUM.md` dosyasına "Sıradaki" bölümü yazılır: biten dersler, sıradaki ajanlar ve görev iletileri için gereken bilgi, görev tanımının yolu, açık sorunlar. Yeni oturum bu dosya, `YURUTME.md` ve görev tanımıyla sürdürebilmelidir; `TASKS.md` baştan sona okunmaz.
+- **Ana oturum ders dosyasını baştan sona okumaz.** Denetim ajan raporu, görüntüler ve `grep` ile yapılır; ölçüm çıktısı Haiku ajanından özet olarak gelir.
+- Oturumun son iletisi kullanıcıya şunu söyler: `/clear`, sonra "yürütme planını uygula".
 
 ## Adımlar
 
@@ -72,7 +98,7 @@ Sonra kullanıcıya: kaç klip, kaç dakika, harcanan karakter, dinlenmesi gerek
 | 2a.2 | Konu A'nın senaryosu, iskelet, `kit.js`, A konusunun ilk dersi | ana oturum |
 | 2a.3 | **Denetim noktası:** A konusunun kalan dersleri ve konu tekrarı Sonnet ajanlarıyla yazılır; ana oturum görüntüleri pilotla karşılaştırır. Yeterliyse sürer; değilse ders kodu ana modelin ajanlarına geçer | Sonnet, sonra ana oturum |
 | 2a.4 | B–M konularının senaryoları (konu başına bir ajan, A senaryosu örnek) | Sonnet; her senaryoyu ana oturum program metniyle karşılaştırır |
-| 2a.5 | B–M dersleri ve konu tekrarları (konu başına bir ajan; aynı anda en çok dört) | Sonnet |
+| 2a.5 | B–M dersleri ve konu tekrarları (ders başına bir ajan; aynı anda en çok dört; her konuda ilk ders araç dosyasıyla önce yazılır; sekiz ajanda bir oturum sınırı) | Sonnet |
 | 2a.6 | Her konudan sonra: `olc.js` bütün derslerde, raporların denetimi, `tema.js` satırları, kite taşınacak araçlar | Haiku ölçer; ana oturum denetler ve yazar |
 | 2a.7 | Tema denetimi (`ISLEME.md` 7): `sure.js`, `denetle.js`, denetim tablosuna sahne numaraları, `TEMALAR.md` | ana oturum; sayım Haiku |
 | 2a.8 | Rapor; kullanıcı izler. Seslendirme ve yayın ayrıca istenir | kullanıcı |
@@ -105,7 +131,7 @@ Pilotla aynı düzen (senaryoya "Pilot" bölümü, sonra dersler). Ücretli sesl
 
 ## Her oturumun sonunda
 
-- `TASKS.md` ve ilgili `DURUM.md` güncel; bu dosyada biten adımın satırına tarih düşülür.
+- `TASKS.md` ve ilgili `DURUM.md` güncel (`DURUM.md` içinde "Sıradaki" bölümü, bkz. "Bağlam bütçesi"); bu dosyada biten adımın satırına tarih düşülür.
 - İş panosu güncellenir: <https://claude.ai/artifact/6Kvyof62n92HwsuFyuvfTd> (veriler sayfanın içindeki `ISLER` ve `TEMALAR` dizilerindedir; kaynağın kopyası `plan/is-panosu.html`. Dosya düzenlenir ve Artifact aracıyla bu adres `url` olarak verilerek yeniden yayınlanır; önce `read` ile canlı sürüm alınır).
 - Rapor üç başlıkla biter: **Blocked on me**, **Changed**, **Found**.
 
