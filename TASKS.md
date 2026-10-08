@@ -538,6 +538,6 @@ Tema 2 · Sayılar (görev tanımı: `plan/matematik/sayilar/gorev/ek-soru-gorev
 - [x] 2b.2 Konu B (7 ders, 14 soru + `b8-tekrar`: yedi kural, on soru), Konu C (5 ders, 10 soru + `c6-tekrar`: yedi kural, on soru), Konu D (8 ders, 16 soru + `d9-tekrar`: sekiz kural, on soru): birer Sonnet ajanı
 - [x] 2b.3 Ölçüm: `olc.js` 32 derste (ana oturum, toplu komut): sayfa kayması, panel taşması, konsol hatası yok; dört tekrar dersinde bütün sayaçlar 0. `sure.js` tema 173:52; `denetle.js` "32 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/32, konu tekrarı yok 0/4
 - [x] 2b.4 İçerik denetimi: 56 ek soru ve 40 tekrar sorusu elle doğrulandı; C2'de sonraki dersin terimi ("irrasyonel") şıktan çıkarıldı, B2 ve B4'te doğru şıkkın yeri değiştirildi (B'de dördüncü sorunun cevabı hep son şıktı); dört tekrar dersinden görüntülere bakıldı
-- [ ] 2b.5 Commit ve push
+- [x] 2b.5 Commit `fbfaf43`, `origin/main`e gönderildi (yalnızca bu temanın dosyaları ve kayıtlar; Kimya Çeşitlilik commit dışında). Canlı sitede doğrulanmadı; bu satırın kendisi commit edilmedi
 
 Sıradaki temalar: Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
