@@ -123,3 +123,123 @@ C ölçüm sonuçları (1366×657): C2–C5 temiz; tüm derslerde konsol ve yaz�
 - [ ] Fizik Bilimi ve Kariyer Keşfi: dersleri izle; B1'in kutup ışıkları ve kristal görselleri için resim üret (`plan/fizik/fizik-bilimi-ve-kariyer-kesfi/GORSELLER.md`)
 - [ ] `kit.js` içindeki `sec`, `sirayla`, `kart`, `etiket`, `sar` araçlarını `ortak/` altına taşımayı değerlendir (sözel temalar için)
 - [ ] Commit ve push
+
+## Kimya Etkileşim ve Biyoloji Yaşam: yayın ve seslendirme (7 Ekim 2026)
+
+Adımlar `plan/SESLENDIRME.md`. Alt ajanlar yalnızca adım 1–2'yi yapar (API çağrısı yok); `DURUM.md` tablolarını ana oturum yazar.
+
+- [x] Yayına al: `ortak/katalog.js` içinde `etkilesim` ve `yasam` için `yayinda: true`; `denetle.js` ikisinde temiz
+- [x] Ana sayfa görüntüsüne bak (iki tema konu bağlantılarıyla listede, konsol hatası yok)
+- [x] Kimya adım 1–2: A–E (10 ders), F–H (8 ders): 270 satır, 16.316 karakter, 30 yönerge
+- [x] Biyoloji adım 1–2: A–C (8 ders), D–E (11 ders), F1–F12 (12 ders), G–H (6 ders)
+- [x] pH okunuşu "pehaş" (kullanıcı kararı): iki temada `pe he` araması boş; kimya 1 satır, biyoloji 9 satır
+- [x] Alt ajan çıktısını denetle: 55 dersin son dökümü betikle tarandı (rakam, simge, kısaltma yok); HEAD ile karşılaştırmada altyazı metni değişmemiş; okunuşlar iki kimya grubunda aynı
+- [x] Metin düzeltmesi: kimya B2 (iki dil bilgisi hatası), biyoloji E5 (kükürdün, iyodun); `olc.js` temiz
+- [x] `DURUM.md` "Seslendirme" tabloları (iki tema), `plan/SESLENDIRME.md` "Durum" satırları ve pehaş kuralı, `plan/kimya/TEMALAR.md`, `plan/biyoloji/TEMALAR.md` durum satırları
+- [x] Adım 3 pilot: kimya A1 (8 klip, 33,5 sn) ve biyoloji A1 (24 klip, 114,4 sn) üretildi, sayfalara `ses/<ders-id>.js` eklendi; süre aykırısı yok, `olc.js` ve `denetle.js` temiz
+- [ ] Kullanıcı pilotları dinler ve onaylar (adım 4 üretim buna bağlı)
+- [ ] Adım 4–7: kalan 53 ders (kimya 17, biyoloji 36; yaklaşık 58.600 karakter), sayfa bağlantıları, süre denetimi, rapor
+- [ ] İçerik bulguları için karar: `DURUM.md` "Açık bulgular" (iki tema)
+- [ ] Biyoloji D6 ve E1: kaynak gelip metin kesinleşmeden üretilmez
+
+## Kimya Etkileşim: anlatımı yeniden planla (7 Ekim 2026)
+
+Kullanıcı geri bildirimi: dersler tek cümleyle soruya geçiyor, "kitapta verilmiştir" diyor; bilgi kitaptan bağımsız öğretilsin, sonra sorulsun. Kurallar: `plan/kimya/etkilesim/PLAN.md` bölüm 12.
+
+- [x] Kuralları yaz: `PLAN.md` bölüm 12, `plan/KURALLAR.md` 2.1 ve 3.1, bellek
+- [x] Senaryo biçim denetleyicisi: `plan/kimya/etkilesim/senaryo-denetle.cjs`
+- [x] Konu A senaryosu (örnek): A1 6 sahne 54 cümle, A2 7 sahne 55 cümle
+- [x] Konu B, C, D, E, F, G, H senaryoları (alt ajanlar: B, C, D+G, E, F, H)
+- [x] Alt ajan çıktısını denetle: denetleyici 18 derste temiz (121 sahne, 1.126 cümle), terim taraması temiz, örnek sahneler okundu
+- [ ] Kapsam: `PLAN.md` bölüm 4 denetim tablosunu yeni sahne numaralarıyla eşle
+- [x] `DURUM.md`, `PLAN.md` bölüm 12 sonuç ve bulgular, rapor
+- [x] Kullanıcı A1'i sitede izleyip onayladı ("a1 güzel, bundan sonrakiler de böyle olsun"); bölünme adayları şimdilik tek ders, öteki kararlar senaryodaki hâliyle
+- [x] A1 örnek olarak yeni senaryoya göre yeniden yazıldı (6 sahne, 55 altyazı; `olc.js` ve `denetle.js` temiz, görüntüler incelendi); kullanıcı sitede bakacak
+- [x] Kalan 17 dersi yeni senaryolara göre yeniden yaz (alt ajanlar: A2+B, C, D+G, E, F, H1+H2, H3+H4), her biri `olc.js` temiz
+- [x] Alt ajan çıktısını denetle: `tema.js` sahne sayıları ve açılış soruları, tanıtım ve dipnot, "Sonraki" etiketleri; 18 ders ana oturumda yeniden ölçüldü (hepsi temiz; D1 sahne 6 düzeltildi), `denetle.js` temiz, sekiz dersten görüntü incelendi, gönderme taraması boş
+- [ ] Kullanıcı kalan dersleri sitede izler
+- [x] Kimya seslendirmesi yeni metinle: A1 pilotu, ardından 17 ders (kullanıcı: "pilotu yeniden üret, sıkıntı yoksa geri kalanları üret"); 1.126 klip, 93,1 dk, 43,2 MB; 18 sayfada ses bağlantısı; dizin ve dosyalar eşleşiyor, `denetle.js` temiz
+- [ ] Kullanıcı kimya derslerini sesli izler; 14 uzun aykırı klip ve riskli okunuşlar (`DURUM.md` "Seslendirme, yeni anlatım") dinlenir, kötü çıkanlar yeniden üretilir
+
+## Ana sayfa: ders seçimli yeni tasarım (7 Ekim 2026)
+
+- [x] Şimdiki ana sayfayı incele (`index.html`, `ortak/site.js`, `ortak/site.css`)
+- [x] Üç taslak hazırla (gerçek katalog verisiyle, proje dışında tek dosya), ekran görüntüsüyle denetle: 1 Karolar, 2 İki bölme, 3 Tahtalar
+- [x] Kullanıcı birini seçer: 2 İki bölme
+- [x] Seçileni `ortak/site.js`, `ortak/site.css`, `ortak/katalog.js` (ders başına `renk`) içine uygula; beş yayındaki temada `denetle.js` temiz
+- [ ] Kullanıcı tarayıcıda bakar; isterse commit
+
+## Fizik: Kuvvet ve Hareket planı (7 Ekim 2026)
+
+Ayrıntı: `plan/fizik/TASKS.md` ("Temalar") ve `plan/fizik/kuvvet-ve-hareket/DURUM.md`.
+
+- [x] Önceki işleri dök: plan taslağı, müfredat, E3 hikâyesi
+- [x] Ders kitabı 2. üniteyi oku (s. 50–129)
+- [x] `PLAN.md` yeniden yaz: 24 kısa ders, örnekler, yanılgılar, anlama denetimi, kararlar
+- [x] `DURUM.md`, `plan/fizik/TEMALAR.md`, `plan/fizik/TASKS.md`
+- [x] Kullanıcı onayı: karar 1, 10, 22
+- [x] Senaryolar: altı dosya, 24 ders; biçim denetimi temiz
+- [x] İskelet ve 24 kısa ders; `olc.js` ve `denetle.js` temiz
+- [x] Tablolu sahnelerde 25 kelime istisnası; `plan/KURALLAR.md` bölüm 4'e bir satır
+- [x] Seslendirme: 24 ders, 1.472 klip (metin hazırlığı Sonnet 5.5 alt ajanlarıyla)
+- [ ] Kullanıcı temayı sesli izler; yayın ayrıca istenir
+
+## Seslendirme: Nicelikler ve Değişimler (8 Ekim 2026)
+
+`plan/SESLENDIRME.md` adımları. Metin denetimi Sonnet 5.5, üretim ve doğrulama Haiku 5.5 alt ajanlarıyla.
+
+- [x] 1 Döküm: 32 ders, 526 satır
+- [x] `dersler/kit.js` içindeki `oku`: rakam (ekleriyle), sıra sayısı, ondalık, birim, kesir, `f(x)`; `soyle` için `ton` ve `dur`
+- [x] 2 Metin denetimi ve yönergeler: A1–A8, A9–A16, B1–B6 + C1–C2, C3–C10 (dört ajan); 526 satır, 26.807 karakter, 83 yönerge
+- [x] 2 sonu: ajan raporlarını denetle, `kit.js` düzeltmeleri (`cm`, cümle başı büyük harf), 32 derste `olc.js` temiz, metnin tamamı okundu
+- [x] 4 Üretim: 32 ders, 526 klip, 36,1 dk, 16,83 MB (üç Haiku ajanı; hata yok)
+- [x] 5 Sayfalara `ses/<ders-id>.js` satırı
+- [x] 6 Doğrulama: dizin ile dosyalar, süre aykırıları (8 uzun, 0 kısa), `olc.js`, `denetle.js`
+- [x] 7 Kayıt: `DURUM.md`, `plan/SESLENDIRME.md`, `TEMALAR.md`; rapor
+- [ ] Kullanıcı: pilot atlandı; her konudan en az bir dersi sesli izle
+
+## Biyoloji Yaşam: anlatımı gözden geçir (8 Ekim 2026)
+
+Kullanıcı: ortak cümle eşiği yok; gereksiz uzatma yok; bilgi sorudan önce. Karar ve ölçüt: `plan/biyoloji/yasam/PLAN.md` bölüm 12.
+
+- [x] 37 dersin anlatım ve soru sırasını ölç; 19 dersi oku; konu konu karar
+- [x] `plan/KURALLAR.md` 3.1: sayı eşikleri kaldırıldı; yazarın çekinceleri öğrenciye söylenmez
+- [x] Örnek dersler: F9 (hafif düzenleme), D2 (düzenleme), B1 (baştan); `olc.js` ve `denetle.js` temiz, görüntüler incelendi
+- [x] Kullanıcı üç örneği gördü: "sadece baştan olanları düzelt" (8 Ekim 2026)
+- [x] Baştan grubu, 17 ders (alt ajanlar): A1–A3; B2, B3, C1, C2; D1, E2, E4, E5; G1–G3; H1–H3 (359 → 505 cümle)
+- [x] Alt ajan çıktısını denetle: `tema.js` (4 sahne sayısı, 13 giriş sorusu, tanıtım), tema sayfası dipnotu, 15 "Sonraki" etiketi; 20 ders Sonnet alt ajanıyla ölçüldü (hepsi temiz), `sure.js` süreleri yazdı, altı dersten görüntü incelendi, çekince taraması boş
+- [ ] Kullanıcı yeni biyoloji derslerini sitede izler; kitapta açık yazmayan çıkarımlar için karar (`PLAN.md` bölüm 12 sonu)
+- [ ] Hafif (F, 11 ders) ve düzenleme (D3–D6, E1, E3) grupları: kullanıcı şimdilik istemedi
+- [ ] Biyoloji seslendirmesi: metin kesinleşince; A1 pilotu yeniden
+- [ ] Kimya: en uzun dersleri (B2, F1, H1, G1) aynı ölçütle kısaltma kararı kullanıcıda
+
+
+## Geometrik Şekiller: analiz ve genişletme (8 Ekim 2026)
+
+Ayrıntı ve gerekçe: `plan/matematik/geometrik-sekiller/ANALIZ.md`.
+
+- [x] Dokuz dersi oku, müfredatla karşılaştır
+- [x] Ders kitabını al (Matematik 9, 1. Kitap, s. 170–195), derslerle karşılaştır
+- [x] Genişletme planını yaz (`ANALIZ.md`)
+- [x] Kullanıcı onayı: 12 ders mi 10 ders mi; karar 2, 4, 5'in değişmesi; A2'de kitaptan tarih ve terimler (8 Ekim: "onaylıyorum, uygula"; 12 ders)
+- [x] `PLAN.md`: ders listesi, denetim tablosu, kararlar, kitap sayfa numaraları
+- [x] Senaryolar: B2, B4, C2 yeni; A2, A3, A4, A5, B1, C3 ekleri
+- [x] `kit.js`: menteşe düzeneği (`mentese`), `tepe`, `cevapla`, `tepeKontrol` etiket seçeneği; sıralama satırı B2'de, sayı doğrusu B4'te yerel
+- [x] Yeni dersler: B2 Açıları sırala, kenarları sırala · B4 Üçüncü kenar hangi aralıkta? · C2 Önermeyi yeni şekle uyarla
+- [x] Yeniden adlandırma: eski B2 → B3, eski C2 → C3 (dosya, kimlik, `tema.js`, bağlantılar)
+- [x] Ek sahneler: A2 (tarih, terim eşleştirme), A3 (açı adları, sıra sende), A4 (sıra sende), A5 (ikinci ispat), B1 (orantı yanılgısı), C3 (çok adımlı, tema özeti)
+- [x] `olc.js` her derste, `sure.js` ve `denetle.js` temada temiz (57 sahne, 243 altyazı, 57 dk); `DURUM.md`, `TEMALAR.md` güncel
+
+## Yaklaşık süreler: tema ve kısa ders (8 Ekim 2026)
+
+Kullanıcı: temaların ve derslerin içeriğine göre yaklaşık ne kadar süreceği görünsün.
+
+- [x] `araclar/sure.js`: dersi sanal saatle oynat, anlatım + etkileşim süresini hesapla, `tema.js` satırına saniye olarak yaz
+- [x] Bütün temaları ölç (7 tema, 154 kısa ders; 15 sn)
+- [x] `ortak/site.js` + `site.css`: ana sayfa ve tema sayfasında süre (ders, konu, tema, kalan)
+- [x] `ortak/ders.js`: giriş ekranında dersin süresi
+- [x] `denetle.js`: süresi ölçülmemiş ders uyarısı
+- [x] Belgeler: `ortak/API.md`, `ortak/katalog.js` başlığı, `plan/ISLEME.md`, `CLAUDE.md`
+- [x] Doğrulama: `denetle.js` bütün temalarda, görüntüler
+- [ ] Kullanıcı: `INSAN` değerleri (düşünme payı, okuma hızı) kabul; gerçek öğrenciyle ölçülmedi
+- [ ] Bulundu, başka oturumların işi: `denetle.js` biyoloji/yasam B2 sahne sayısı (5, `tema.js` 4); geometrik-sekiller B2→B3, C2→C3 adlandırması yarım (`tema.js` eski adlarda, yeni dosyaların süresi yok)
