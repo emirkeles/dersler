@@ -37,7 +37,7 @@ window.KATALOG = {
     ] },
     { id: 'fizik', ad: 'Fizik', simge: 'Δv', renk: '#ff8a5b', temalar: [
       { id: 'fizik-bilimi-ve-kariyer-kesfi', ad: 'Fizik Bilimi ve Kariyer Keşfi', yayinda: true },
-      { id: 'kuvvet-ve-hareket', ad: 'Kuvvet ve Hareket' },
+      { id: 'kuvvet-ve-hareket', ad: 'Kuvvet ve Hareket', yayinda: true },
       { id: 'akiskanlar', ad: 'Akışkanlar' },
       { id: 'enerji', ad: 'Enerji' },
     ] },

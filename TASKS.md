@@ -182,7 +182,8 @@ Ayrıntı: `plan/fizik/TASKS.md` ("Temalar") ve `plan/fizik/kuvvet-ve-hareket/DU
 - [x] İskelet ve 24 kısa ders; `olc.js` ve `denetle.js` temiz
 - [x] Tablolu sahnelerde 25 kelime istisnası; `plan/KURALLAR.md` bölüm 4'e bir satır
 - [x] Seslendirme: 24 ders, 1.472 klip (metin hazırlığı Sonnet 5.5 alt ajanlarıyla)
-- [ ] Kullanıcı temayı sesli izler; yayın ayrıca istenir
+- [x] Yayına al: `ortak/katalog.js` içinde `yayinda: true` (8 Ekim 2026); `denetle.js` temiz
+- [ ] Kullanıcı temayı sesli izler
 
 ## Seslendirme: Nicelikler ve Değişimler (8 Ekim 2026)
 

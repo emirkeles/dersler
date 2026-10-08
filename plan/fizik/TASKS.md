@@ -81,6 +81,7 @@ Plan: `akiskanlar/hikaye/A1-cantanin-askisi.md`
   - [x] Tablolu sahnelerde 25 kelime istisnası (karar 23; `KURALLAR.md` bölüm 4)
   - [x] Seslendirme: 24 ders, 1.472 klip, 115,7 dk, 57 MB (8 Ekim 2026)
   - [ ] Kullanıcı sesli izler: 14 uzun klip ve kulakla doğrulanmamış okunuşlar (`kuvvet-ve-hareket/DURUM.md`)
-  - [ ] Yayın, E3 hikâyesinin derse bağlanması (kullanıcı ister)
+  - [x] Yayın: `ortak/katalog.js` içinde `yayinda: true` (8 Ekim 2026)
+  - [ ] E3 hikâyesinin derse bağlanması (kullanıcı ister; film henüz işlenmedi)
 - [ ] Akışkanlar: işleme al
 - [ ] Enerji: işleme al

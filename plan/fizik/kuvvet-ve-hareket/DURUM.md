@@ -1,6 +1,6 @@
 # Durum — Kuvvet ve Hareket
 
-Son güncelleme: 8 Ekim 2026. 24 kısa dersin hepsi yazıldı ve ölçüldü (154 sahne); `denetle.js` temiz. Tablolu on sahnede 25 kelime sınırı kullanıcı kararıyla gevşetildi. Tema yayında değil; 24 ders seslendirildi (8 Ekim 2026). Sıradaki adım: kullanıcı temayı sesli izler.
+Son güncelleme: 8 Ekim 2026. 24 kısa dersin hepsi yazıldı ve ölçüldü (154 sahne); `denetle.js` temiz. Tablolu on sahnede 25 kelime sınırı kullanıcı kararıyla gevşetildi. 24 ders seslendirildi ve tema yayına alındı (8 Ekim 2026, kullanıcı isteğiyle; izleme yayından sonraya kaldı). Sıradaki adım: kullanıcı temayı sesli izler.
 
 | Adım | Durum |
 |---|---|
