@@ -24,6 +24,7 @@ Program **kapsamı** belirler: hangi konu anlatılır, nerede durulur. Fen ve so
 - Kitapta olup programın anmadığı konu yine girmez. Kapsam soruları kitaba göre değil programa göre kapanır.
 - Kitaptan alınan her bilgi `PLAN.md` içinde kaynağıyla yazılır ("Ders kitabı, s. 84"). Hafızadan tanım, formül, sayı, tarih ya da ad yazılmaz.
 - Kitap alınamıyorsa ya da bilgi kitapta da yoksa konu program metninde yazdığı kadarıyla anılır ve `PLAN.md` açık sorularına yazılır.
+- Kitap **yazarın** kaynağıdır, öğrencinin değil. Siteye giren kişi ders kitabını izlemek zorunda değildir; ders kendi başına yeter. Altyazıda, tahtada, soruda, geri bildirimde ve defterde kitaba, sayfaya, "hazır veri"ye ya da sınıfa gönderme olmaz ("kitapta verilmiştir", "kitabın tablosu", "sınıfta yapılır" yazılmaz). Veri bir durumun içinde sunulur: kim ölçtü, neyi, neden. Sayfa numarası yalnızca `PLAN.md` ve senaryoda durur. (Kullanıcı kararı, 7 Ekim 2026; kimya Etkileşim temasını izledikten sonra.)
 
 ### 2.2 Deney, gözlem ve ürün isteyen çıktılar
 
@@ -51,6 +52,10 @@ Bir kısa ders = bir fikir, sonunda 2 çıkış sorusu. Çoğu ders 4–6 dakika
 
 - **Cevaplayabilir** (bir büyüklüğü kestirmek, iki şekli karşılaştırmak, bir örüntüyü sürdürmek gibi): soru doğrudan sorulur; ders kancayla açılabilir.
 - **Cevaplayamaz** (soru bir ada, tanıma, sınıflandırmaya, olaya, kişiye, birime ya da formüle dayanıyor): önce o bilgi öğretilir, soru sonra gelir. Sorunun cevabı söylenmez; verilen şey, tahmini kör atış olmaktan çıkaran bilgidir.
+
+Tek cümle söyleyip soruya geçmek öğretmek sayılmaz. Sorunun gerektirdiği bilgi sorudan **önce** anlatılır; sorudan sonra yalnızca cevabın nedeni söylenir. Ne kadar anlatılacağını konu belirler: sayı eşiği yoktur, uzatmak için cümle yazılmaz, her cümle bir iş görür. (Kullanıcı kararı, 8 Ekim 2026. Kimya Etkileşim 7 Ekim'de cümle eşikleriyle yazılmıştı; o eşikler kural değildir.)
+
+Yazarın çekinceleri öğrenciye söylenmez: "bu çizim gerçek ölçüm vermez", "bu derste deney yapmıyoruz", "kayıt kanıtlamaz" gibi uyarılar ve derse ilişkin üst dil ("bu sahnede … seçeceğiz") altyazıya yazılmaz; `PLAN.md` içinde kalır. Bir deney anlatılıyorsa sonucu da söylenir (kitabın verdiği kadar).
 
 Hangi açılışın seçildiği dersten derse değişir; ders ya da tema düzeyinde tek bir kalıp dayatılmaz. Seçim senaryoda her kısa ders için yazılır.
 
@@ -81,6 +86,8 @@ Her ders bir akılda kalıcı cümleyle biter.
 | Çıkış sorusu geri bildirimi | en çok 2 cümle |
 
 Metin ağırlıklı konularda (örnek olay, kaynak inceleme, edebî metin, tarihî belge) bütçe gevşemez: metin kartlara bölünür, her adımda tek kart görünür, okunan kart soluklaşır. Program bir metnin okunmasını istiyorsa (şiir, hikâye, belge) metnin kendisi tahtada parça parça gösterilir; bu parça 25 kelime sınırının dışındadır ama bir seferde en çok dört dize ya da iki cümle görünür.
+
+Satırları yan yana görmek için kurulan, sayı ve kısa etiketten oluşan tablolarda 25 kelime sınırı aşılabilir: tablo bütün satırlarıyla birlikte görünür, öteki sınırlar (punto, üst üste yazı, taşma) geçerlidir ve aşan sahneler temanın `DURUM.md` dosyasına yazılır. (Kullanıcı kararı, 8 Ekim 2026; ilk uygulama fizik Kuvvet ve Hareket.)
 
 Rakam ve sembol cümleden iyidir. Bir altyazıda tek yeni fikir olur. Aynı bilgi iki kanalda tekrar edilmez: sahnede yazıyorsa altyazıda yazmaz. Önce hareket, sonra cümle.
 
