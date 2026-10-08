@@ -10,7 +10,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
-| 1 | Yaşam | `yasam` | <https://tymm.meb.gov.tr/biyoloji-dersi/unite/2> | 44 | 8 | 37 | plan taslağı; işleme alınmayı bekliyor |
+| 1 | Yaşam | `yasam` | <https://tymm.meb.gov.tr/biyoloji-dersi/unite/2> | 44 | 8 | 37 | yazıldı, yayında (7 Ekim 2026); D6 ve E1 kısmî (kaynak bekliyor); 8 Ekim'de 20 dersin anlatımı yeniden yazıldı, 17 ders eski hâliyle; seslendirme bekliyor |
 | 2 | Organizasyon | `organizasyon` | <https://tymm.meb.gov.tr/biyoloji-dersi/unite/3> | 24 | 6 | 20 | plan taslağı; işleme alınmayı bekliyor |
 | | **Toplam** | | | **68** | **14** | **57** | |
 
@@ -18,7 +18,7 @@ Planların hepsi taslaktır; konu ve kısa ders sayıları işleme alınırken d
 
 Ders kitabı (içerik için ikinci dayanak, `../KURALLAR.md` 2.1): <https://tymm.meb.gov.tr/kitap/36/biyoloji-dersi-9sinif-ders-kitabi>. Kitap proje klasörüne konmaz; tema işleme alınırken alınır (`../ISLEME.md` 2b).
 
-Ders ve temaları `ortak/katalog.js` içindedir; hiçbiri yayında değildir.
+Ders ve temaları `ortak/katalog.js` içindedir; yayında olan yalnızca 1. temadır.
 
 Bu planlar 7 Ekim 2026'da, ortak kurallar genişletilmeden önce yazıldı: denetim tablolarında `ders / benzetim / site dışı` sütunu ve "Ders kitabı:", "Görsel:" işaretleri yoktur. Tema işleme alınırken 3. adımda eklenir.
 

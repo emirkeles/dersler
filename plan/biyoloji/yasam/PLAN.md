@@ -836,3 +836,95 @@ Kitap içerik kaynağıdır; öğrenci yanında kitap açıkmış gibi anlatılm
 | H3 | pH ve enzim | 4 | [ders](../../../biyoloji/yasam/h3-ph-ve-enzim.html) |
 
 Ek kaynak kontrolü: s. 161 cevap anahtarı (`resourceId=95048d59574b5f9593cf0a1553cbba9a`) ve görsel/genel ağ/e-içerik kaynakçası (`resourceId=f40a7dbf54f6a107794f5182f9d08efe`) PDF bağlantıları 7 Ekim 2026’da curl ile kontrol edildi; ikisi de EBA giriş ekranına yönlendi. E1 cevapları ve görsellerin ayrı yayın lisansları bu kaynaklardan doğrulanamadı.
+
+## 12. Anlatımın gözden geçirilmesi — 8 Ekim 2026
+
+Kullanıcı kimya Etkileşim'in anlatımını geri çevirdikten sonra (tek cümleyle soruya geçme, kitaba gönderme) biyolojinin de denetlenmesini istedi; ortak bir cümle eşiği istemedi: "gereksiz, uzatmış olmak için uzatmayalım… bilgi sorudan sonra veriliyor kısmı saçma olmuş… dersler birbirinden farklı olduğu için her derse ortak bir kural mantıklı olmayabilir."
+
+### Ölçüm ve okuma
+
+37 ders başsız tarayıcıda oynatılıp anlatım (S) ve soru (Q) sırası çıkarıldı; 19 ders baştan sona okundu, kalanı akış ve sayımla değerlendirildi. 770 anlatım cümlesi, 174 soru. Hiçbir derste ilk sorudan önce 3'ten fazla cümle yok; 78 soru bir–iki cümleden sonra geliyor. Asıl sorun sayı değil yazım biçimi:
+
+- **Öğrenciye söylenen çekinceler:** "Kutular bir planı gösterir; ölçüm sonuçları içermez.", "Bu benzetim, gerçek ıslanma sonucu üretmez." türünden 59 cümle. Bunlar bölüm 7 kararlarının (veri uydurma, gerçek deney site dışı) altyazıya sızmış hâlidir.
+- **Biyoloji yerine yöntem:** "Bir bileşenin önemi, hücrede üstlendiği işlerle değerlendirilir." gibi cümleler ve "Canlılık karşılaştırmasında hangi yaklaşım uygundur?" gibi sorular; asıl bilgi sorudan sonra geliyor (D ve E'de tipik sahne `SSQSSSSSS`).
+- **Sonucu söylenmeyen deney:** E2, G ve H'de düzenek anlatılıyor, ne olduğu söylenmiyor.
+- **Tekrar:** E4 ve E5'te bir cümle 11 kez; A1 ve A2'de üçer kez.
+
+"Ön bilgi sayılanlar yeniden anlatılmaz" kuralı fazla dar uygulanmış: araştırma basamakları, hipotez, beslenme çeşitleri gibi kavramlar hiç anlatılmadan soruluyor. Bundan sonra: ön bilgi olan kavram bir cümleyle hatırlatılır; kitabın verdiği tanım kullanılır.
+
+### Konu konu karar
+
+| Konu | Ders | Durum | Yapılacak |
+|---|---|---|---|
+| F | F1–F12 | İyi; birkaç terim tanımlanmadan soruluyor | Hafif düzenleme |
+| D, E | D2–D6, E1, E3 | İçerik var; yöntem sorusunun arkasında, çekincelerle karışık | Bilgi sorunun önüne, çekinceler çıkar |
+| A | A1–A3 | Tek cümlelik liste; terimler açıklanmıyor | Baştan |
+| B | B1–B3 | Örnekler iyi; kavramlar öğretilmeden soruluyor | Baştan, aynı örneklerle |
+| C | C1–C2 | Vaka anlatılmadan soruluyor | Baştan |
+| D, E | D1, E2, E4, E5 | Neredeyse tamamı çekince; deney sonucu yok; tekrarlı kalıp | Baştan |
+| G, H | G1–G3, H1–H3 | Plan var, sonuç yok | Baştan |
+
+### Yazım ölçütü (sayı eşiği yok)
+
+1. Her soru için: öğrenci bunu o ana kadar anlatılanla cevaplayabilir mi? Eksikse yalnızca eksik bilgi eklenir.
+2. Sorudan sonra yeni bilgi gelmez; yalnızca cevabın nedeni (bir–iki cümle).
+3. Her cümle bir iş görür; çekince, üst dil ve yöntem lafı yazılmaz. Sınıfa ve kitaba gönderme yok.
+4. Deney anlatılıyorsa sonucu da söylenir (kitabın verdiği kadar; sayı uydurulmaz, "hipotez doğruysa beklenen" gibi koşullu anlatılabilir).
+
+### Örnek dersler (8 Ekim 2026, kullanıcı sitede bakacak)
+
+| Ders | Tür | Önce | Sonra | Değişen |
+|---|---|---|---|---|
+| F9 | hafif düzenleme | 3 sahne, 14 cümle | 3 sahne, 17 cümle | İndüklenmiş uyum sorudan önce tanımlanıyor; anahtar-kilit modeli ve sükraz örneği (s. 65–66) eklendi; sorular yeni duruma uygulama |
+| D2 | düzenleme | 4 sahne, 29 cümle | 4 sahne, 21 cümle | Tanımlar (s. 35, 37) sorudan önce; 8 çekince ve yöntem cümlesi çıktı; giriş sorusu "Tavşan ot yer; peki bitki nasıl beslenir?" |
+| B1 | baştan | 4 sahne, 11 cümle | 4 sahne, 26 cümle | Gözlem, problem, araştırılabilir soru, hipotez tanımları (s. 25–26) güve örneğiyle öğretiliyor; son sahne hipotezden beklenen sonucu soruyor |
+
+Üçünde de `olc.js` temiz, sahne sayısı ve ders kodu aynı. Bölüm 10–11'deki anlatım seçimleri bu üç ders için geçersizdir. Kalan 34 ders kullanıcı onayından sonra.
+
+### Baştan grubu: sonuç (8 Ekim 2026)
+
+Kullanıcı üç örneği gördükten sonra "sadece baştan olanları düzelt" dedi. 17 ders beş alt ajanla yeniden yazıldı; son ölçümü ana oturum adına bir alt ajan yaptı (1366×657): 20 derste (17 + üç örnek) yerleşim ve bütçe sayaçlarının hepsi 0, konsol temiz; `denetle.js`: 37 kısa ders, sorun yok. Çekince, üst dil ve gönderme taraması boş (A2'deki "sayfa" sözcüğü web sayfası anlamında). Aynı cümleyi yineleyen çağrı yok.
+
+| Ders | Sahne | Cümle (önce → sonra) | Süre | Not |
+|---|---|---|---|---|
+| A1 | 5 | 26 → 42 | 7:08 | küflü kap öyküsü; programın dokuz örneği |
+| A2 | 4 | 16 → 25 | 5:07 | çelişen iki kaynak; üç soru: kim denetledi, nerede, ne zaman |
+| A3 | 3 → 4 | 18 → 20 | 5:13 | Fleming, Florey ve Chain üzerinden çıkarım |
+| B2 | 4 → 5 | 18 → 39 | 7:03 | yedi basamak güve örneğinde öğretilir, söğütte uygulanır |
+| B3 | 4 → 5 | 14 → 38 | 8:11 | yedi özellik önce öğretilir (DNA'nın keşfi) |
+| C1 | 4 → 5 | 17 → 36 | 7:49 | vaka anlatılır, kural öğretilir, bulguya uygulanır |
+| C2 | 4 | 15 → 23 | 5:24 | vaka baştan kurulur; araç, bilgi, doğrulama, kayıt |
+| D1 | 4 | 29 → 33 | 5:23 | üç günlük gözlem öyküsü (kurgu), gözlem tablosu |
+| E2 | 4 | 28 → 26 | 4:29 | dolu bardak deneyinin sonucu söylenir; karabiber çıktı |
+| E4 | 4 | 39 → 27 | 4:45 | on bir mineral dört grupta, tabloyla |
+| E5 | 4 | 41 → 26 | 4:54 | eksiklikler üç tabloda; iki uygulama sorusu |
+| G1 | 4 | 22 → 24 | 4:31 | dört ayraç, tüpte renk değişimi |
+| G2 | 4 | 13 → 27 | 5:04 | plan satırı, kontrol tüpü |
+| G3 | 4 | 14 → 26 | 4:53 | sonuç tablosu, renk çıkmayınca tekrar |
+| H1 | 4 | 19 → 36 | 6:43 | hamur örneği; değişkenler |
+| H2 | 4 | 16 → 30 | 5:53 | üç tüp, üç sıcaklık; eğri |
+| H3 | 4 | 14 → 27 | 5:38 | pepsin ve tripsin; üç tüp, üç pH |
+| **Toplam** | | **359 → 505** | | |
+
+Süreler `araclar/sure.js` ölçümüdür (ses yokken okuma süresiyle). Beş ders 6 dakikayı aşıyor: B3, C1, A1, B2, H1.
+
+Bu derslerle geçersiz kalan önceki kararlar:
+
+- Bölüm 5 ve 7: "B2 ve B3 basamak ve özellik listesini yeniden öğretmez" → artık öğretiyor (kitap s. 23–26).
+- Bölüm 7 karar 2: "Akşemseddin yalnızca adıyla anılır" → kitabın tek cümlesiyle anlatılıyor.
+- Bölüm 7 karar 9: "katalaz optimumu üretilemez; gerçek ölçüm site dışıdır" → H2 ve H3 üç tüpün sonucunu "Beklenen sonuç" başlığıyla nitel gösteriyor; sayı yok.
+- Bölüm 3'teki açılış soruları ve bazı akılda kalıcı cümleler (B3, C2, E4) derslerle uyuşmuyor; güncel olan ders dosyası ve `tema.js`.
+- Senaryo dosyalarının giriş ve "müfredat kontrolü" paragrafları (B, C, D, E, H) eski yaklaşımı anlatıyor; ders bölümleri günceldir.
+
+Kitapta açıkça yazmayan, kitaptaki iki bilginin birleştirilmesiyle ya da ilkeden çıkarılarak gösterilenler (kullanıcıya bildirildi):
+
+- G: besin–ayraç sonuçları. Kitabın sonuç tabloları boş (s. 76–77); "mısır tohumu nişasta içerir" (s. 60) ile "Lugol nişastayla mavi-mor verir" (s. 75) birleştirildi. Kitabın içeriğini yazmadığı besinlere sonuç atanmadı. Su + ayraç renksiz ve kontrol tüpü kitapta yok.
+- H: sekiz tüplü deneyin sonuçları kitapta yok (s. 83 "beklenen sonuçlardan yola çıkarak" soruyor); 37 °C ve pH 7'de en çok, uçlarda az sonucu s. 67 ve 79'daki ilkelerden çıkarıldı. Pepsin ve tripsinin tepe değerleri Grafik 1.3'ten okundu.
+- C: kitabın 1.3 bölümünde bilim etiği, gönüllü onam, adalet ilkesi tanımı yok; kurallar s. 32'deki doğru-yanlış ifadelerinden ve s. 87'den çıkarıldı, cevap anahtarı görülemedi.
+- A2: "hakem" ve ".edu / .gov" açıklamaları kitapta tanımlı değil. A1: penisilinin virüse etkisizliği kitapta açık yazmıyor.
+- E5: "yeterli" ve "dengeli" beslenme tanımları s. 55'teki ifadelerden türetildi; hastalık adları tanımsız.
+- D1, B2, A2, G3: öykü ve soru senaryoları kurgu (ölçüm ya da sayı içermez).
+- Kitapta olası hata: s. 84 Fleming, Florey ve Chain için "Nobel Barış Ödülü" yazıyor; derslerde kullanılmadı.
+
+Dokunulmayanlar: F1–F8, F10–F12 (hafif düzenleme) ve D3–D6, E1, E3 (düzenleme). D6'daki "bu derste henüz eksiktir" cümlesi ve tema sayfasındaki notu duruyor.
+

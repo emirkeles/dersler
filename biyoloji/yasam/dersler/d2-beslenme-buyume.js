@@ -1,25 +1,115 @@
-/* MEB Biyoloji 9 s.35,37,40. Beslenme çeşitleri, boşaltım, büyüme/gelişme. */
-(() => {'use strict';const K=KIT,R=K.renkler.D;
- async function beslen(c){const s=c.svg(1000,562);K.resim(c,s,'menekse.webp',70,70,350,320);K.resim(c,s,'tavsan.webp',580,70,350,320);K.yazi(c,s,245,445,'Bitki');K.yazi(c,s,755,445,'Hayvan');
-  await c.say('Beslenme, farklı canlılarda aynı biçimde gerçekleşmez.');await c.say('Bir canlının fotoğrafı, beslenme sürecini bütünüyle göstermez.');await c.say('Karşılaştırmada besinin nereden sağlandığına ilişkin bilgiyi kullanacağız.');
-  await K.soru(c,'Bitki ve hayvanın beslenmesini hangi bilgiyle karşılaştırırsın?',['Besini üretmesi veya hazır alması','Fotoğrafın açık veya koyu olması','Canlının bize yakın görünmesi'],0,'Besinin kaynağı, beslenme yollarını ayırır.');
-  K.yazi(c,s,245,490,'Üretici · ototrof',{size:28,renk:R});K.yazi(c,s,755,490,'Tüketici · heterotrof',{size:28,renk:'var(--c2)'});
-  await c.say('Bitkiler, ihtiyaç duydukları besinleri kendileri üretebilir.');await c.say('Hayvanlar ve mantarlar, besinlerini dışarıdan hazır alır.');await c.say('Hazır besin almayan bir bitki de beslenir.');await c.say('Ortak özellik, beslenmedir; farklı olan beslenme yoludur.');await c.say('Fotoğraf üzerindeki sınıflandırma, yalnız görünüşe dayanmaz.');c.note('Özellik ortak, gerçekleşme yolu farklıdır.','Karşılaştırma');
- }
- async function iki(c){const s=c.svg(1000,562);const g=c.S('g',{},s);c.S('ellipse',{cx:310,cy:260,rx:90,ry:145,fill:'#244d3e',stroke:R,'stroke-width':4},g);c.S('path',{d:'M 355 125 Q 485 40 490 160',fill:'none',stroke:R,'stroke-width':4},g);K.yazi(c,s,310,465,'Öglena');K.kart(c,s,530,140,380,230,'Işık var',['Besin üretimi'],{renk:R});
-  await c.say('Bazı tek hücreli canlılar iki beslenme yolunu kullanabilir.');await c.say('Öglena, ışık varlığında fotosentezle kendi besinini üretir.');await c.say('Bu çizim, beslenme yollarını karşılaştıran temsili bir modeldir.');
-  await K.soru(c,'Işık olmadığında öglena için hangi yol bildirilir?',['Dış ortamdan hazır besin alma','Beslenmenin tamamen sona ermesi','Her koşulda yalnız üretici olma'],0,'Öglena ışık olmadığında dış ortamdan hazır besin alabilir.');
-  K.temiz(s);K.kart(c,s,120,145,320,220,'Işık var',['Üretici'],{renk:R});K.kart(c,s,560,145,320,220,'Işık yok',['Tüketici'],{renk:'var(--c2)'});K.cizgi(c,s,450,255,550,255,R);K.yazi(c,s,500,440,'İki yol · aynı canlı',{renk:R});
-  await c.say('Koşullar değişince öglenanın kullandığı yol da değişebilir.');await c.say('Üretici, tüketici veya iki yolu kullanma bilgileri birlikte değerlendirilir.');await c.say('Canlıları yalnız bitki veya hayvan benzetmesiyle sınıflandırmak yetmez.');await c.say('Kayda beslenme biçimi, onu destekleyen bilgiyle birlikte yazılır.');
- }
- async function atik(c){const s=c.svg(1000,562);K.yazi(c,s,500,70,'Atıkların uzaklaştırılması',{renk:R});const leaf=c.S('path',{d:'M 230 200 Q 310 120 370 205 Q 315 300 230 200',fill:'#477d47',stroke:R,'stroke-width':3},s);K.cizgi(c,s,300,185,300,330,R);K.kart(c,s,550,150,340,190,'İnsan',['Terleme'],{renk:R});K.yazi(c,s,300,425,'Yaprak dökümü');
-  await c.say('Bitkilerde bazı atıklar yaprak dökümüyle uzaklaştırılabilir.');await c.tween(700,e=>leaf.setAttribute('transform',`translate(${e*30} ${e*110}) rotate(${e*20} 300 220)`));await c.say('İnsanlarda terleme, su ve bazı atıkları uzaklaştırır.');
-  await K.soru(c,'Bu iki örnek hangi ortak özellikte buluşur?',['Boşaltım','Yalnız büyüme','Yalnız üreme'],0,'Farklı yollarla atık uzaklaştırma, boşaltımla ilişkilidir.');
-  await c.say('Boşaltımı yalnız idrar oluşumu olarak düşünmek eksik kalır.');await c.say('İnsanlarda karbondioksit ve su buharı da akciğerlerden atılır.');await c.say('Bitkilerde terleme ve damlama da boşaltımla ilişkilendirilir.');await c.say('Atıkların uzaklaştırılması, iç dengenin korunmasına katkı sağlar.');await c.say('Tek bir fotoğraf, atığın ne olduğunu kendiliğinden kanıtlamaz.');
- }
- async function buyu(c){const s=c.svg(1000,562);K.kart(c,s,100,100,340,220,'Bebek',['Kilo alma'],{renk:R});K.kart(c,s,560,100,340,220,'Bebek',['Emeklemeye başlama'],{renk:R});K.yazi(c,s,500,425,'İki farklı kayıt',{renk:R});
-  await c.say('Zaman içindeki iki değişim kaydı aynı anlamı taşımayabilir.');await K.soru(c,'Kilo alma ve emekleme kayıtlarını nasıl sınıflandırırsın?',['İkisi de yalnız üreme','Kilo alma: büyüme; emekleme: gelişme','Kilo alma: gelişme; emekleme: büyüme'],1,'Kütle artışı büyüme, görev yapma olgunluğu gelişme örneğidir.');
-  K.yazi(c,s,270,375,'Büyüme',{renk:R});K.yazi(c,s,730,375,'Gelişme',{renk:'var(--c2)'});await c.say('Büyüme kaydı, hacim veya kütle artışıyla ilişkilendirilebilir.');await c.say('Gelişme kaydı, yapıların görev yapma olgunluğuyla ilişkilendirilir.');await c.say('Hayvanlarda büyüme sınırlıyken bitkiler yaşamları boyunca büyüyebilir.');await c.say('Bu örneklerde sayısal ölçüm sonucu verilmedi.');await c.say('Kendi gözleminde değişimi kaydederken süreyi ve aracı da belirtirsin.');await c.say('Özellik ortak, gerçekleşme yolu farklıdır.');
- }
- Ders.start({id:'yasam-d2',kicker:'Konu D · Canlıların ortak özellikleri',title:'Özellik ortak, yolu farklı',accent:R,back:'index.html',intro:{title:'Özellik ortak, yolu farklı',hook:'Hayvan besin alıyor; bitkinin kaydı nasıl değerlendirilir?',button:'Derse başla ›'},goals:[],scenes:[{title:'Besin nereden gelir?',goal:'Beslenme yollarını karşılaştır.',run:beslen},{title:'Bir canlı, iki yol',goal:'Öglenanın beslenmesini sınıflandır.',run:iki},{title:'Atık uzaklaştırma',goal:'Boşaltım örneklerini ilişkilendir.',run:atik},{title:'Büyüme mi gelişme mi?',goal:'İki değişimi ayır.',run:buyu}],quizTitle:'Çıkış soruları',quiz:[{q:'Öglenanın beslenmesi nasıl açıklanır?',options:['Yalnız tüketici','Yalnız üretici','Üretici ve tüketici yollarını kullanabilir'],answer:2,why:['Işık varlığında besin de üretebilir.','Işık yokluğunda hazır besin alabilir.','Koşula göre iki yol da kullanılabilir.'],scene:1},{q:'Bebeğin emeklemeye başlaması hangi kayda örnektir?',options:['Büyüme','Gelişme','Beslenme'],answer:1,why:['Yalnız hacim veya kütle artışı değildir.','Belirli görevi yapma olgunluğunu gösterir.','Besin elde etme kaydı değildir.'],scene:3}],summary:['Özellik ortak, gerçekleşme yolu farklıdır.'],nextLesson:{href:'d3-tepki-ureme-uyum.html',label:'Sonraki: Tepki ve kalıtsal uyum ›'}});
+/* D2 · BİY.9.1.4 · Yazar notu: içerik MEB Biyoloji 9 s. 35 (beslenme, ototrof, heterotrof, öglena) ve s. 37 (boşaltım,
+   büyüme ve gelişme). Anlatım 8 Ekim 2026'da yeniden düzenlendi (plan/biyoloji/yasam/PLAN.md "Anlatımın gözden
+   geçirilmesi"): bilgi sorudan önce verilir; öğrenciye "fotoğraf kanıtlamaz", "ölçüm verilmedi" gibi uyarılar söylenmez. */
+(() => {
+  'use strict';
+  const K = KIT, R = K.renkler.D, IKINCI = 'var(--c2)';
+
+  /* ---- Sahne 1 · Besin nereden gelir? ---- */
+  async function beslen(c) {
+    const s = c.svg(1000, 562);
+    K.resim(c, s, 'menekse.webp', 70, 60, 350, 320); K.resim(c, s, 'tavsan.webp', 580, 60, 350, 320);
+    K.yazi(c, s, 245, 430, 'Bitki'); K.yazi(c, s, 755, 430, 'Hayvan');
+    await c.say('Canlılar yapılarını oluşturmak ve enerji elde etmek için beslenmek zorundadır.');
+    await c.say('Ama her canlı aynı yolla beslenmez.');
+    await K.belir(c, K.yazi(c, s, 245, 478, 'Üretici · ototrof', { size: 28, renk: R }), 350);
+    await c.say('Bitkiler ihtiyaç duydukları besini kendileri üretir; bunlara üretici, yani ototrof denir.');
+    await K.belir(c, K.yazi(c, s, 755, 478, 'Tüketici · heterotrof', { size: 28, renk: IKINCI }), 350);
+    await c.say('Hayvanlar besinlerini dışarıdan hazır alır; bunlar tüketici, yani heterotroftur.');
+    await c.choice({ tag: 'Uygula', q: 'Mantarlar besinlerini bulundukları ortamdan hazır alır. Mantarlar hangi gruptadır?',
+      options: ['Üretici (ototrof)', 'Tüketici (heterotrof)', 'İkisi de değil'], answer: 1,
+      hints: ['Üreticiler besinini kendisi üretir; mantar hazır alıyor.', '', 'Besinini hazır alan canlılar bir gruba giriyordu.'],
+      right: 'Besinini dışarıdan hazır alan canlı tüketicidir.' });
+    await c.say('Bitki de tavşan da beslenir; farklı olan, besini elde etme yoludur.');
+    c.note('<b>Özellik ortak, yolu farklı.</b><br>Bitki besinini üretir, hayvan hazır alır.', 'Beslenme');
+  }
+
+  /* ---- Sahne 2 · Bir canlı, iki yol ---- */
+  async function iki(c) {
+    const s = c.svg(1000, 562), g = c.S('g', {}, s);
+    c.S('ellipse', { cx: 250, cy: 250, rx: 80, ry: 135, fill: '#244d3e', stroke: R, 'stroke-width': 4 }, g);
+    c.S('path', { d: 'M 290 125 Q 410 45 415 160', fill: 'none', stroke: R, 'stroke-width': 4 }, g);
+    K.yazi(c, g, 250, 445, 'Öglena');
+    await K.belir(c, g);
+    await c.say('Bazı tek hücreli canlılar iki yolu da kullanabilir.');
+    await K.belir(c, K.kart(c, s, 470, 90, 450, 150, 'Işık var', ['Fotosentezle besin üretir'], { renk: R }));
+    await c.say('Öglena, ışık varken fotosentez yaparak kendi besinini üretir.');
+    const bos = K.kart(c, s, 470, 280, 450, 150, 'Işık yok', ['?'], { renk: IKINCI });
+    await K.belir(c, bos);
+    await c.choice({ q: 'Işık olmadığında öglena ne yapar?',
+      options: ['Beslenmeyi tamamen bırakır.', 'Yine fotosentez yapar.', 'Besinini dış ortamdan hazır alır.'], answer: 2,
+      hints: ['Beslenme canlı için zorunludur; bırakılamaz.', 'Fotosentez için ışık gerekir.', ''],
+      right: 'Öglena ikinci yolu kullanır: besinini hazır alır.' });
+    bos.remove();
+    K.kart(c, s, 470, 280, 450, 150, 'Işık yok', ['Besinini hazır alır'], { renk: IKINCI });
+    await c.say('Işık yokken öglena besinini dış ortamdan hazır alır.');
+    await c.say('Yani aynı canlı, koşula göre üretici de tüketici de olabilir.');
+  }
+
+  /* ---- Sahne 3 · Atıkların uzaklaştırılması ---- */
+  async function atik(c) {
+    const s = c.svg(1000, 562), g = c.S('g', {}, s);
+    await K.belir(c, K.yazi(c, g, 500, 70, 'Boşaltım: atıkların uzaklaştırılması', { size: 30, renk: R }), 350);
+    await c.say('Yaşamsal faaliyetler sonucunda canlıda atık maddeler oluşur.');
+    await c.say('Bu atıkların vücuttan uzaklaştırılmasına boşaltım denir.', { speak: 'Bu atıkların vücuttan uzaklaştırılmasına [short pause] boşaltım denir.' });
+    await c.say('Boşaltım, canlının iç dengesinin korunmasını sağlar.');
+    const insan = K.kart(c, g, 90, 130, 380, 250, 'İnsan', ['Böbrek: idrar', 'Akciğer: CO₂, su buharı'], { renk: R });
+    await K.belir(c, insan);
+    await c.say('İnsanda böbrekler idrar oluşturur; akciğerler karbondioksit ve su buharı atar.');
+    await K.belir(c, K.yazi(c, insan, 280, 308, 'Deri: ter', { size: 28 }), 350);
+    await c.say('Terleme de su ve bazı atıkları uzaklaştırır.');
+    const bitki = K.kart(c, g, 530, 130, 380, 250, 'Bitki', ['?'], { renk: IKINCI });
+    await K.belir(c, bitki);
+    await c.choice({ q: 'Bitkilerin böbreği ya da akciğeri yoktur. Hangisi bitkide boşaltım olabilir?',
+      options: ['Yaprak dökümü', 'Çiçek açma', 'Kök salma'], answer: 0,
+      hints: ['', 'Çiçek açmak bir atığı uzaklaştırmaz.', 'Kök salmak bir atığı uzaklaştırmaz.'],
+      right: 'Dökülen yaprakla birlikte bazı atıklar da bitkiden uzaklaşır.' });
+    bitki.remove();
+    K.kart(c, g, 530, 130, 380, 250, 'Bitki', ['Terleme', 'Damlama', 'Yaprak dökümü'], { renk: IKINCI });
+    await c.say('Bitkilerde boşaltım terleme, damlama ve yaprak dökümüyle gerçekleşir.');
+    await K.belir(c, K.yazi(c, g, 500, 450, 'Tek hücreli: atık hücre zarından atılır', { size: 28 }), 350);
+    await c.say('Tek hücreli canlılar atıklarını doğrudan hücre zarından atar.');
+    c.note('<b>Boşaltım: atıkların canlıdan uzaklaştırılması.</b><br>İnsanda idrar ve ter, bitkide yaprak dökümü.', 'Boşaltım');
+  }
+
+  /* ---- Sahne 4 · Büyüme mi, gelişme mi? ---- */
+  async function buyu(c) {
+    const s = c.svg(1000, 562);
+    await K.belir(c, K.kart(c, s, 80, 90, 380, 170, 'Büyüme', ['Hacim ve kütle artışı'], { renk: R }));
+    await c.say('Büyüme, canlının hacminin ve kütlesinin artmasıdır.');
+    await K.belir(c, K.kart(c, s, 540, 90, 380, 170, 'Gelişme', ['Görev yapma olgunluğu'], { renk: IKINCI }));
+    await c.say('Gelişme, yapıların zamanla belirli bir görevi yapacak olgunluğa erişmesidir.');
+    const bebek = K.yazi(c, s, 500, 340, 'Bebek: kilo alıyor · emeklemeye başlıyor', { size: 28 });
+    await K.belir(c, bebek, 350);
+    await c.choice({ tag: 'Uygula', q: 'Bir bebeğin kilo alması ve emeklemeye başlaması nasıl sınıflandırılır?',
+      options: ['İkisi de büyüme', 'Kilo alma: gelişme; emekleme: büyüme', 'Kilo alma: büyüme; emekleme: gelişme'], answer: 2,
+      hints: ['Emeklemek bir kütle artışı değildir.', 'Kilo almak kütlenin artmasıdır.', ''],
+      right: 'Kütle artışı büyüme, yeni bir görevi yapabilmek gelişmedir.' });
+    bebek.remove();
+    K.yazi(c, s, 270, 320, 'Kilo alma', { size: 28, renk: R }); K.yazi(c, s, 730, 320, 'Emekleme', { size: 28, renk: IKINCI });
+    await c.say('Kilo almak kütle artışıdır; emeklemek yeni bir görevi yapabilmektir.');
+    await K.belir(c, K.yazi(c, s, 500, 420, 'Hayvan: büyüme sınırlı · Bitki: yaşam boyu', { size: 28 }), 350);
+    await c.say('Hayvanlarda büyüme sınırlıdır; bitkiler yaşamları boyunca büyür.');
+    await c.say('Beslenme, boşaltım, büyüme ve gelişme bütün canlılarda ortaktır; yolları farklıdır.',
+      { speak: 'Beslenme, boşaltım, büyüme ve gelişme bütün canlılarda ortaktır; [short pause] yolları farklıdır.' });
+  }
+
+  Ders.start({
+    id: 'yasam-d2', kicker: 'Konu D · Canlıların ortak özellikleri', title: 'Özellik ortak, yolu farklı', accent: R, back: 'index.html',
+    intro: { title: 'Özellik ortak, yolu farklı', hook: 'Tavşan ot yer; peki bitki nasıl beslenir?', button: 'Derse başla ›' },
+    goals: [],
+    scenes: [
+      { title: 'Besin nereden gelir?', goal: 'Üretici ile tüketiciyi ayır.', run: beslen },
+      { title: 'Bir canlı, iki yol', goal: 'Öglenanın iki beslenme yolunu gör.', run: iki },
+      { title: 'Atıkların uzaklaştırılması', goal: 'Boşaltımı farklı canlılarda tanı.', run: atik },
+      { title: 'Büyüme mi, gelişme mi?', goal: 'İki değişimi ayır.', run: buyu },
+    ], quizTitle: 'Çıkış soruları',
+    quiz: [
+      { q: 'Öglenanın beslenmesi nasıl açıklanır?', options: ['Yalnız tüketicidir.', 'Yalnız üreticidir.', 'Koşula göre üretici de tüketici de olabilir.'], answer: 2,
+        why: ['Işık varken kendi besinini de üretir.', 'Işık yokken besinini hazır alır.', 'Işık varken üretir, ışık yokken hazır alır.'], scene: 1 },
+      { q: 'Bebeğin emeklemeye başlaması neye örnektir?', options: ['Büyüme', 'Gelişme', 'Boşaltım'], answer: 1,
+        why: ['Büyüme hacim ve kütle artışıdır.', 'Yeni bir görevi yapacak olgunluğa erişmektir.', 'Boşaltım atıkların uzaklaştırılmasıdır.'], scene: 3 },
+    ], summary: ['<b>Özellik ortak, yolu farklı.</b>', 'Beslenme, boşaltım, büyüme ve gelişme her canlıda vardır; biçimi değişir.'],
+    nextLesson: { href: 'd3-tepki-ureme-uyum.html', label: 'Sonraki: Tepki ve kalıtsal uyum ›' },
+  });
 })();

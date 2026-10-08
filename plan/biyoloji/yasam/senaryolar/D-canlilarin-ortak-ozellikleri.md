@@ -4,17 +4,72 @@ Dayanak: BİY.9.1.4 a–c, içerik çerçevesi ve uygulama a–b/c. Kitap s. 33�
 
 ## D1 · İki canlı, üç gün: gözlem düzeni
 
-- Fikir: Düzenli gözlemde görülen ve yorum ayrı kaydedilir.
+Baştan yazıldı: 8 Ekim 2026 (PLAN bölüm 12). 4 sahne, 33 anlatım cümlesi, 5 soru + 2 çıkış sorusu.
+
+- Fikir: Bilimsel gözlem düzenli aralıklarla yapılır, görülen hemen tabloya işlenir; gözlem yorumdan ayrılır; görülmeyen özellik “gözlemlenemedi” diye kaydedilir.
+- Kaynak: kitap s. 40 (3. Etkinlik: bir hayvan ve bir bitki, üç gün, gözlem tablosunun dört satırı, gözlemlenen (+) / gözlemlenemeyen (−)), s. 33 (menekşe ve tavşan görselleri). Elif'in üç günlük gözlemi kurgu öyküdür; tabloya sayı ya da ölçüm yazılmaz.
 - Açılış: İki canlıyı üç gün gözlerken deftere ne yazarsın?
-- Ana görsel: menekşe/tavşan karşılaştırması, üç günlük boş gözlem planı, tek örnek kayıt.
-- 1. sahne: Fotoğraflarda bir hayvan ve bir bitki seçilir; seçim gerçek gözlemi başlatmaz. Resim: menekşe.webp ve tavsan.webp, canlı seçimi; etiketleri bitki/hayvan.
-- 2. sahne: Üç boş gün kutusu sırayla belirir; öğrenci düzenli aralıklı planı seçer. Kutular gerçek ölçüm içermeyen plan olarak adlandırılır.
-- 3. sahne: “Tavşan besin aldı” örnek kaydı, “açtı” yorumundan ayrılır. Bir kaydın canlı ve olay bileşenleri görselleştirilir.
-- 4. sahne: Üreme kaydı gözlenemeyen olarak işaretlenir; yokluk çıkarımı reddedilir. Gerçek üç günlük gözlem ve paylaşımın sınıfta yapılacağı belirtilir.
-- Yanılgı: Hazır kayıt üç günlük gözlemdir; gözlenmeyen özellik yoktur.
-- Cümle: Gözlem düzenli yapılır, görülen kaydedilir.
-- Çıkış 1: Düzensiz bakma / düzenli üç gün / yalnız son gün seçeneklerinde düzenli üç gün.
-- Çıkış 2: Üreme gözlenmediyse özellik yoktur / gözlenmedi yazılır / canlı değildir seçeneklerinde kayıt sınırı.
+- Görseller: `tavsan.webp`, `menekse.webp` (1. sahne). Gözlem tablosu SVG; artı ve eksi çizgiyle çizilir.
+
+### 1. sahne · İki canlı, üç gün
+Tahta: iki fotoğraf ve adları; gözlem tanımı; üç gün kutusu, altlarında “sabah, akşam”.
+1. Elif, canlıların ortak özelliklerini kendi gözleriyle görmek istiyor.
+2. Gözlemek için tavşanını ve saksıdaki menekşeyi seçiyor.
+3. Biri hayvan, biri bitki; ikisinde de görülen özellik ortaktır.
+4. Gözlem, duyularla ya da basit araçlarla dikkatli bilgi toplamaktır.
+5. Elif iki canlıyı üç gün boyunca gözleyecek.
+6. Gözlem düzenli aralıklarla yapılır: her sabah ve her akşam bakacak.
+7. Aralıklar düzenli olunca günlerin kayıtları birbiriyle karşılaştırılabilir.
+- Soru (Uygula): Arda da iki canlı gözleyecek. Hangi plan düzenli bir gözlemdir? İlk gün beş kez, sonra hiç / aklına geldikçe / **üç gün boyunca her gün aynı saatlerde**.
+- Defter: Gözlem düzenli aralıklarla yapılır. Üç gün, her sabah ve her akşam.
+
+### 2. sahne · Gözlem tablosu
+Tahta: dört satırlı (beslenme, üreme, büyüme ve gelişme, uyarılara tepki), iki canlı için üçer gün sütunlu tablo; işaretler cümleyle birlikte konur.
+1. Elif gördüklerini bir gözlem tablosuna işleyecek.
+2. Satırlara, bakacağı dört canlılık özelliğini yazdı.
+3. Sütunlar günleri gösteriyor: her canlı için üç gün.
+4. Özelliği gördüğü güne artı, göremediği güne eksi koyacak.
+5. Birinci gün tavşan önüne konan otu yedi: beslenme satırına artı.
+6. Elif gördüğünü hemen işliyor; sonraya bırakırsa ayrıntıyı unutabilir.
+7. Elif el çırpınca tavşan kulaklarını dikti: uyarılara tepki satırına artı.
+8. İkinci gün saksıyı çevirdi; üçüncü gün yapraklar yine ışığa dönmüştü.
+- Soru (Sıra sende): Üçüncü gün menekşede yeni bir yaprak çıkmıştı. Artı hangi satıra konur? Beslenme / **büyüme ve gelişme** / uyarılara tepki.
+9. Yeni yaprak büyümenin işaretidir: artı, büyüme ve gelişme satırına.
+10. Tavşan öteki günlerde de ot yedi ve sese tepki verdi.
+11. Uyarılara tepki iki canlıda da görüldü: bu, ortak bir özellik.
+- Defter: Görülen, görüldüğü gün tabloya işlenir.
+
+### 3. sahne · Gözlem mi, yorum mu?
+Tahta: Elif'in ve Arda'nın notu yan yana; altlarında “Gözlem: görülen”, “Yorum: görülenden çıkarılan”. Sorularda iki kutu; doğru cümle kutusuna yerleşir.
+1. Elif defterine şunu yazmıştı: “Tavşan otu yedi.”
+2. Bunu kendi gözüyle gördü: bu bir gözlemdir.
+3. Arda aynı olayı şöyle yazdı: “Tavşan çok acıkmıştı.”
+4. Açlık gözle görülmez; Arda gördüğünden bir sonuç çıkardı.
+5. Görülenden çıkarılan açıklamaya yorum denir.
+6. Gözlem tablosuna görülen yazılır; yorum gözlemin yerine geçmez.
+- Soru (Uygula): Menekşe için hangisi gözlemdir? Işığı seviyor / pencere kenarında mutlu / **yaprakları pencereye dönük**.
+- Soru (Uygula): Tavşan için hangisi yorumdur? **Sesten korktu** / kulaklarını dikti / kafesin köşesine gitti.
+7. Gözlemi başkası da görüp doğrulayabilir; yorum kişiden kişiye değişebilir.
+- Defter: Gözlem görüleni yazar; yorum görülenden çıkarılır.
+
+### 4. sahne · Görülmeyen özellik
+Tahta: üç günün dolu tablosu; üreme satırı vurgulanır (altı eksi).
+1. Üç gün bitti; Elif göremediği her güne eksi koymuştu.
+2. Üreme satırında tek bir artı yok.
+3. Tavşan da menekşe de bu üç günde üremedi.
+4. Üreme her gün görülen bir olay değildir; üç gün bunun için kısadır.
+- Soru (Uygula): Üreme satırındaki eksilerden hangi sonuç çıkar? Tavşan ve menekşe üremez / **üreme bu üç günde gözlemlenemedi** / Elif bakmayı unuttu.
+5. Eksi “yok” demek değildir: özellik bu sürede görülmemiştir.
+6. Elif iki canlının da ürediğini güvenilir bir kaynaktan doğruluyor.
+7. Tablodaki öteki eksiler de böyle okunur: görülmedi, ama yok sayılmaz.
+8. Gözlem düzenli yapılır, hemen yazılır; görülmeyen de kaydedilir.
+- Defter: Eksi “yok” demek değildir.
+
+- Yanılgı: Gözlenmeyen özellik yoktur; yorum da gözlemdir.
+- Cümle: Gözlem düzenli yapılır, hemen yazılır.
+- Çıkış 1: Hangi cümle gözlemdir? Havucu çok seviyor / **havucu yedi** / havucu görünce sevindi.
+- Çıkış 2: Deniz kaplumbağayı üç gün gözledi, ürediğini görmedi; ne yazmalı? **Bu sürede gözlemlenemedi** / üremez / satırı silmeli.
+- Alınmayanlar: tablonun “canlılar arasındaki farklılıklar” sütunu (ototrof/heterotrof, eşeyli/eşeysiz, sınırlı/sınırsız) D2–D3'tedir; dolaylı gözlemlenen özelliklere ilişkin tahmin tablosu (s. 41) D4–D5'tedir.
 
 ## D2 · Özellik ortak, yolu farklı
 
