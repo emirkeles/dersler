@@ -138,8 +138,12 @@
       h('header', { class: 'top' },
         h('a', { class: 'back', href: cfg.back || 'index.html', title: 'Temaya dön' }, '‹ ' + cfg.title),
         (el.head = h('div', { class: 'scenehead' })),
-        (el.tools = h('div', { class: 'tools' }))),
+        (el.tools = h('div', { class: 'tools' })),
+        (el.toolsBtn = h('button', { class: 'tool toolsbtn', title: 'Araçlar', 'aria-label': 'Araçlar', 'aria-expanded': 'false', onclick: () => setTools(!el.tools.classList.contains('open')) }, '⋯'))),
       (el.prog = h('nav', { class: 'prog', 'aria-label': 'Sahneler' })),
+      (el.cevir = h('div', { class: 'cevir', hidden: prefs.cevir === false },
+        h('span', {}, 'Telefonu yan çevirirsen tahta büyür.'),
+        h('button', { onclick: () => { el.cevir.hidden = true; store.set('ders:tercih', { ...(store.get('ders:tercih') || {}), cevir: false }); } }, 'Tamam'))),
       h('div', { class: 'layout' },
         (el.main = h('main', { class: 'main' },
           h('div', { class: 'stagewrap' }, (el.stage = h('div', { class: 'stage' }))),
@@ -163,6 +167,9 @@
     const paintVoice = () => { el.voiceBtn.textContent = state.voice ? 'Ses açık' : 'Ses kapalı'; el.voiceBtn.classList.toggle('on', state.voice); };
     paintVoice();
     el.tools.append(el.voiceBtn, el.speedSel, el.replayBtn, el.pauseBtn);
+    /* Yatay telefonda araçlar tek düğmenin arkasında açılır (ders.css); dışına dokununca kapanır. */
+    function setTools(acik) { el.tools.classList.toggle('open', acik); el.toolsBtn.setAttribute('aria-expanded', String(acik)); }
+    document.addEventListener('click', (e) => { if (e.target !== el.toolsBtn && !el.tools.contains(e.target)) setTools(false); });
 
     /* Defter: varsayılan olarak yalnızca son kural görünür; tamamı istenince açılır. Kurallar kalıcıdır. */
     const noteKey = 'ders:' + cfg.id + ':defter';
@@ -191,6 +198,7 @@
       state.paused = !state.paused;
       el.pauseBtn.textContent = state.paused ? 'Devam et' : 'Duraklat';
       el.pauseBtn.classList.toggle('on', state.paused);
+      el.toolsBtn.classList.toggle('on', state.paused);
     }
     function toggleVoice() {
       state.voice = !state.voice;
@@ -244,6 +252,14 @@
       });
     }
 
+    /* Yeni çıkan geri bildirim ya da düğme, kaydırılan kutunun (yatay telefonda sağ sütun; sınav) görünen yerine gelir. */
+    function goster(n) {
+      const kutu = n.closest('.act, .scroll');
+      if (!kutu || kutu.scrollHeight <= kutu.clientHeight + 1) return;
+      const a = n.getBoundingClientRect(), b = kutu.getBoundingClientRect();
+      if (a.bottom > b.bottom - 4) kutu.scrollBy({ top: a.bottom - b.bottom + 8, behavior: 'smooth' });
+    }
+
     /* ---- sahne bağlamı ---- */
     function makeCtx(tok, idx) {
       const alive = () => tok === state.token;
@@ -285,6 +301,7 @@
           guard();
           const b = h('button', { class: 'btn pulse', onclick: () => { b.remove(); res(); } }, label);
           el.act.appendChild(b);
+          goster(b);
         }),
         /* Çoktan seçmeli / tahmin: doğru şık seçilene kadar sürer; yanlışta ipucu verir. */
         choice: (o) => new Promise((res) => {
@@ -306,10 +323,12 @@
                 fb.className = 'fb ok'; fb.innerHTML = o.right || 'Doğru!';
                 const nb = h('button', { class: 'btn pulse', style: { marginTop: '10px' }, onclick: () => { panel.remove(); res({ tries, picked: i }); } }, o.next || 'Devam ›');
                 panel.appendChild(nb);
+                goster(nb);
               } else {
                 b.classList.add('wrong'); b.disabled = true;
                 const hint = Array.isArray(o.hints) ? o.hints[i] : o.hints;
                 fb.className = 'fb no'; fb.innerHTML = hint || 'Tam değil. Bir daha düşün.';
+                goster(fb);
               }
             });
             opts.appendChild(b);
@@ -480,7 +499,7 @@
               const why = (q.why && (q.why[i] || '')) || '';
               fb.className = 'fb ' + (ok ? 'ok' : 'no');
               fb.innerHTML = (ok ? '<b>Doğru.</b> ' : '<b>Olmadı.</b> ') + why + (!ok && q.why && q.why[q.answer] ? ` <br><br><b>Doğrusu:</b> ${q.why[q.answer]}` : '');
-              card.appendChild(h('button', { class: 'btn pulse', style: { marginTop: '8px' }, onclick: res }, k === quiz.length - 1 ? 'Sonucu gör ›' : 'Sonraki soru ›'));
+              goster(card.appendChild(h('button', { class: 'btn pulse', style: { marginTop: '8px' }, onclick: res }, k === quiz.length - 1 ? 'Sonucu gör ›' : 'Sonraki soru ›')));
             });
             opts.appendChild(b);
           });

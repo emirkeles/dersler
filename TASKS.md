@@ -464,8 +464,8 @@ Kullanıcı: tasarım mobile uygun olsun; seçilen yol telefonda yatay kullanım
 - [x] iOS simülatöründe deneme (argent, iPhone 17, iOS 26.5 Safari): dikey, yatay, araçlar menüsü, soru, sınav, yeniden dikey
 - [x] Simülatörde bulunan: üst kenara dokununca Safari çubuğu sayfanın üstünü örtüyordu; sayfa dokunmatikte kaydırılabilir yapıldı, düzen sabitlendi
 - [x] Simülatörde bulunan: doğru cevaptan sonra geri bildirim ve "Devam" sütunun altında gizli kalıyordu; kendiliğinden görünen yere kayıyor
-- [ ] Android Chrome'da deneme yapılmadı
-- [ ] Commit: kullanıcı ayrıca ister
+- [ ] Android Chrome'da deneme: başka bilgisayarda ayrı ajan yürütecek (bu makinede telefon AVD'leri bozuk; yalnızca Chrome karşılama ekranı geçildi)
+- [x] Commit ve push
 
 ## Pilot: Geometrik Şekiller A konusu yeni kurallarla (8 Ekim 2026)
 
