@@ -265,6 +265,12 @@
       { q: 'Bir makalede, çalışmaya hiç katılmamış birinin adı da yazar olarak geçiyor. Hangi kurala aykırıdır?',
         options: ['Kaynak gösterme', 'Yalnızca katkısı olanın adını yazma', 'Gönüllü onam'], answer: 1,
         why: ['Kaynak gösterme, alınan bilginin nereden geldiğiyle ilgilidir.', 'Rapora ya da makaleye yalnızca katkısı olanların adı yazılır.', 'Gönüllü onam, araştırmaya katılan kişinin onayıyla ilgilidir.'], scene: 1 },
+      { q: 'Bir öğrenci, fide deneyi raporunda bir üniversitenin yayımladığı yağış tablosunu da kullanmak istiyor. Bilim etiğine uygun yol hangisidir?',
+        options: ['Tabloyu kendi ölçümüymüş gibi rapora koymak', 'Tablodaki değerleri deneyine uyacak biçimde değiştirmek', 'Tabloyu kullanıp nereden aldığını raporda göstermek'], answer: 2,
+        why: ['Başkasının verisi kendi verin gibi sunulmaz; kaynağı gösterilir.', 'Veri istenen sonuca göre değiştirilemez.', 'Başkasının verisi ancak kaynağı gösterilerek kullanılabilir.'], scene: 2 },
+      { q: 'Bir öğrenci “Ödev yarışmasında birinci olduk; o hâlde araştırmamız bilim etiğine uygundur.” diyor. Hangisi doğrudur?',
+        options: ['Haklı; başarılı olan araştırma etiğe de uymuştur.', 'Haksız; araştırma, nasıl yapıldığıyla da değerlendirilir.', 'Haksız; ödevlerde bilim etiği kuralları geçerli değildir.'], answer: 1,
+        why: ['Birinci olmak yöntemin etik olduğunu göstermez; sonuç kadar yol da sorgulanır.', 'Sonuç iyi olsa da yöntem ayrıca sorgulanır.', 'Kurallar ödevde de geçerlidir; eksik olan, yolun sorgulanmasıdır.'], scene: 3 },
     ], summary: ['<b>Sonuç kadar yol da sorgulanır.</b>', 'Veri değiştirilmez, kaynak gösterilir, katkısı olan yazılır, onay gönüllü verilir.'],
     nextLesson: { href: 'c2-etik-iddiasini-dogrula.html', label: 'Sonraki: Etik iddiasını doğrula, kaydet ›' },
   });

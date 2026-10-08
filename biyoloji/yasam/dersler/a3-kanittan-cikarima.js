@@ -169,7 +169,13 @@
       { q: 'Bilgi: “CRISPR-Cas, bitki ve hayvanlarda genetik iyileştirme sağladı.” Hangi çıkarım bu bilgiyi aşar?',
         options: ['CRISPR-Cas gıda üretimine katkı sağlayabilir.', 'CRISPR-Cas dünyadaki açlığı bitirdi.', 'CRISPR-Cas tarımla ilgili çalışmalarda kullanılabilir.'], answer: 1,
         why: ['Bitki ve hayvanların iyileştirilmesi gıda üretimiyle ilgilidir; bilgiye dayanır.', 'Bilgi “iyileştirme sağladı” diyor; açlığın bittiğini söylemiyor.', 'Bitkilerde iyileştirme tarımla ilgilidir; bilgiye dayanır.'], scene: 2 },
+      { q: 'Bilgi: “Aynı bitkiden iki saksının biri pencere önünde, öteki kapalı dolapta bir hafta kaldı; dolaptakinin yaprakları sarardı.” Hangisi bu bilgiye dayanan sağlam bir çıkarımdır?',
+        options: ['Bu bitkinin yeşil kalması ışıkla ilgili olabilir.', 'Bütün bitkiler karanlıkta bir haftada ölür.', 'Dolaptaki bitkinin yaprakları sarardı.'], answer: 0,
+        why: ['İki saksının farkı ışık; “olabilir” diyerek bilgiden fazlasını söylemiyor.', 'Bilgi tek bir bitkiden ve sararmadan söz ediyor; “bütün” ve “ölür” bilgiyi aşar.', 'Bu bir çıkarım değil, bilginin kendisidir.'], scene: 2 },
+      { q: 'Deniz, “Çıkarım benim yorumum; bilgilere dayanması gerekmez.” diyor. Hangisi doğrudur?',
+        options: ['Deniz haklı; çıkarım kişisel görüştür.', 'Çıkarım yorumdur, ama eldeki bilgilere dayanır ve onları aşmaz.', 'Çıkarım yapılmaz; yalnızca kaynakta yazan aktarılır.'], answer: 1,
+        why: ['Bilgiye dayanmayan bir yorum sağlam çıkarım olmaz.', 'Çıkarım bilgiye dayanır; bilgiden fazlasını söylemez.', 'Çıkarımı kaynak yazmaz; bilgileri yorumlayarak sen yaparsın.'], scene: 1 },
     ], summary: ['<b>Çıkarım bilgiye dayanır; bilgiden fazlasını söylemez.</b>', 'Bilgi kaynakta yazar; çıkarımı, bilgileri yorumlayarak sen yaparsın.'],
-    nextLesson: { href: 'b1-arastirilabilir-soru.html', label: 'Sonraki: Meraktan araştırılabilir soruya ›' },
+    nextLesson: { href: 'a4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

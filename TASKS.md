@@ -549,4 +549,14 @@ Tema 3 · Geometrik Şekiller B ve C (görev tanımı: `plan/matematik/geometrik
 - [x] 2b.5 Commit `990d78c`, `origin/main`e gönderildi (8 Ekim 2026; kullanıcı "push yap" dedi). Aynı push ile yerelde bekleyen `ef5629e` (Kimya Çeşitlilik, seslendirilmemiş, katalogda kapalı) da gitti. Canlı sitede doğrulanmadı
 - [x] İş panosu (sürüm 9: 167 kısa ders, 10 konu tekrarı, 2b 7 temadan 3'ü)
 
-Sıradaki temalar: Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
+
+Tema 4 · Biyoloji Yaşam (görev tanımı: `plan/biyoloji/yasam/gorev/ek-soru-gorevi.md`; ilerleme `plan/biyoloji/yasam/DURUM.md` "2b" bölümü)
+
+- [x] 2b.1 Konu A (ana oturum, örnek): 3 derse ikişer çıkış sorusu (üç şıklı; biri yeni durum, biri yanılgı), `a4-tekrar` (yedi kural, sekiz soru; `olc.js` temiz, dört görüntüye bakıldı), A3 → A4 → B1 bağlantısı; görev tanımı ve iki yardımcı araç (`ders-ozeti.cjs`, `soru-ekle.cjs`); sekiz konuda son ders → tekrar bağlantısı ve `tema.js` satırları
+- [x] 2b.2 Konu B–H (34 derse 68 soru + yedi tekrar dersi: `b4`, `c3`, `d7`, `e6`, `f13`, `g4`, `h4`): dokuz Sonnet ajanı (B, C, D, E, G, H birer; F'de soru ekleme iki ajan, tekrar dersi üçüncü ajan), aynı anda en çok dört
+- [x] 2b.3 Ölçüm: `olc.js` 45 derste bütün sayaçlar 0, konsol temiz (Haiku, sırayla); `sure.js` tema 268:53; `denetle.js` "45 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/45, konu tekrarı yok 0/8; `tema.js` satırları ve süreler
+- [x] 2b.4 İçerik denetimi: 74 ek soru ve 70 tekrar sorusu okundu; ele veren şık biçimi beş soruda, doğru şıkkın yeri dört derste, uzun doğru şık dokuz soruda düzeltildi; iki tekrar dersinde boş biten tahta, dört yazım ve içerik düzeltmesi (ayrıntı `DURUM.md`); 37 ders dosyasında değişikliğin yalnızca `quiz` eklemesi ve `nextLesson` olduğu karşılaştırmayla doğrulandı; sekiz tekrar dersinden 19 görüntüye bakıldı
+- [ ] 2b.5 Commit ve push (yalnızca bu temanın dosyaları ve kayıtlar)
+- [ ] İş panosu
+
+Sıradaki temalar: Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).

@@ -255,6 +255,12 @@
         why: ['pH, araştırmacının değiştirdiği bağımsız değişkendir.', 'Sıcaklık bu deneyde sabit tutulan bir kontrol değişkenidir.', 'Ölçülen ve pH değerine bağlı olarak değişen, kabarcık sayısıdır.'], scene: 2 },
       { q: 'Hangi karşılaştırma yalnızca sıcaklığın etkisini gösterir?', options: ['Soğuk tüpe daha az maya konur.', 'İki tüpte yalnızca suyun sıcaklığı farklıdır.', 'Soğuk tüp üç, ılık tüp beş dakika sayılır.'], answer: 1,
         why: ['Maya miktarı da değişirse fark sıcaklığa bağlanamaz.', 'Öteki koşullar eşitken fark yalnızca sıcaklıktan kaynaklanır.', 'Süre farklıysa kabarcık sayıları karşılaştırılamaz.'], scene: 2 },
+      { q: 'Bir öğrenci, çamaşır deterjanındaki enzimin lekeyi açma hızının sıcaklığa bağlı olup olmadığını araştırıyor. Üç kaba farklı sıcaklıkta su koyuyor, aynı lekeli kumaşı batırıyor ve aynı süre sonra lekenin ne kadar açıldığına bakıyor. Hangisi üç kapta da aynı tutulmalıdır?',
+        options: ['Suyun sıcaklığı', 'Lekenin açılma derecesi', 'Kullanılan deterjan miktarı'], answer: 2,
+        why: ['Sıcaklık araştırmacının değiştirdiği bağımsız değişkendir; kaplarda farklı olur.', 'Açılma derecesi ölçülen bağımlı değişkendir; kaplarda farklı çıkması beklenir.', 'Deterjan miktarı kontrol değişkenidir; eşit olmazsa fark yalnızca sıcaklığa bağlanamaz.'], scene: 2 },
+      { q: 'Bir öğrenci “Bir tüpte daha çok kabarcık çıktı; demek ki o tüpte daha çok enzim var.” diyor. İki tüpe de eşit miktarda maya konmuştu. Bu söz için ne söylenir?',
+        options: ['Hatalı; enzim miktarı eşit, çok kabarcık enzimin daha hızlı çalıştığını gösterir.', 'Doğru; çok ürün ancak çok enzimden oluşur.', 'Hatalı; kabarcık sayısı enzim hakkında bir şey göstermez.'], answer: 0,
+        why: ['Miktar eşitken aynı sürede daha çok kabarcık, daha yüksek enzim aktivitesi demektir.', 'Aynı miktardaki enzim hızlı çalışırsa da çok ürün oluşur; enzim miktarı değişmemiştir.', 'Kabarcık sayısı oluşan oksijeni, yani enzim aktivitesini gösterir.'], scene: 1 },
     ], summary: ['<b>Birini değiştir, birini ölç, gerisini sabit tut.</b>', 'Sıcaklık ya da pH değişir, kabarcık sayılır; miktarlar ve süre eşit kalır.'],
     nextLesson: { href: 'h2-sicaklik-ve-enzim.html', label: 'Sonraki: Sıcaklık ve enzim ›' },
   });

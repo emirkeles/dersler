@@ -207,7 +207,13 @@
         why: ['Virüs, genetik madde ile onu saran protein kılıftan oluşur.', 'Ribozom ve sitoplazma hücrede bulunur, virüste yoktur.', 'Virüs kendi enerjisini üretemez.'], scene: 1 },
       { q: 'Virüsler neden canlı olarak sınıflandırılamaz?', options: ['Genetik maddeleri olmadığı için', 'Hücre dışında hiçbir yaşamsal faaliyet göstermedikleri için', 'Çok küçük oldukları için'], answer: 1,
         why: ['Virüslerin genetik maddesi vardır: DNA ya da RNA.', 'Hücresi ve metabolizması yoktur; tek başına çoğalamaz.', 'Boyut canlılığın ölçütü değildir.'], scene: 4 },
+      { q: 'Bir biyolog, saf bir virüs örneğini hiç hücre içermeyen besleyici bir sıvıya koyuyor. Bir hafta sonra virüs sayısı için ne söylenir?',
+        options: ['Besin bol olduğu için virüsler hızla çoğalır.', 'Önce çoğalır, sonra besin bitince azalır.', 'Çoğalmaz; virüs yalnızca canlı hücrede çoğalır.'], answer: 2,
+        why: ['Virüs beslenmez; dışarıdan madde almaz, bu yüzden besin çoğalmasını sağlamaz.', 'Hücre yoksa çoğalma hiç başlamaz; virüsün üretimi yapacak yapısı yoktur.', 'Virüsün ribozomu ve enerji üreten yapısı yoktur; üretimi canlı hücre yapar.'], scene: 2 },
+      { q: 'Kaan, “Virüs hücrede çoğalırken hücre hiç zarar görmez; hastalık başka bir nedenden çıkar.” diyor. Hangisi doğrudur?',
+        options: ['Kaan haksız; çoğalan virüsler hücrelere zarar verdiği için hastalığa yol açar.', 'Kaan haklı; hastalığı virüs hücre dışında beslenerek yapar.', 'Kaan haksız; virüs hücre dışında çoğalıp hastalık yapar.'], answer: 0,
+        why: ['Yeni virüsler çıkarken hücre çoğu zaman zarar görür ya da parçalanır; hastalığın nedeni budur.', 'Virüs beslenmez; hastalık, hücre içindeki çoğalmanın hücreye zarar vermesinden gelir.', 'Virüs hücre dışında çoğalamaz; çoğalma yalnızca canlı hücrede olur.'], scene: 3 },
     ], summary: ['<b>Virüs = genetik madde + protein kılıf.</b>', 'Yalnızca canlı hücrede çoğalır; canlı ile cansız arasında yer alır.'],
-    nextLesson: { href: 'e1-inorganik-ozellikler.html', label: 'Sonraki: Su ve minerallerin yaşamsal görevleri ›' },
+    nextLesson: { href: 'd7-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

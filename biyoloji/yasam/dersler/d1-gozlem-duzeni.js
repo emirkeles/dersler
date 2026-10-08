@@ -179,6 +179,12 @@
         why: ['Sevmek görülmez; yenen havuçtan çıkarılmış bir yorumdur.', 'Yeme olayı gözle görülür.', 'Sevinç görülmez; bu bir yorumdur.'], scene: 2 },
       { q: 'Deniz bir kaplumbağayı üç gün gözledi; ürediğini görmedi. Tabloya ne yazmalı?', options: ['Üreme bu sürede gözlemlenemedi.', 'Kaplumbağa üremez.', 'Hiçbir şey; üreme satırını silmeli.'], answer: 0,
         why: ['Eksi, özelliğin bu sürede görülmediğini gösterir.', 'Görmemek, özelliğin olmadığını göstermez.', 'Bakılan ama görülmeyen özellik de kaydedilir.'], scene: 3 },
+      { q: 'Zeynep akvaryumdaki balığı gözlüyor. Camı hafifçe tıklatınca balık hemen dibe indi. Artı hangi satıra konur?',
+        options: ['Beslenme', 'Büyüme ve gelişme', 'Uyarılara tepki'], answer: 2,
+        why: ['Balığın bir şey yediği görülmedi; görülen, bir uyarıya verilen karşılık.', 'Balığın büyüdüğüne dair bir işaret yok; dibe inmek bir karşılıktır.', 'Camın tıklatılması bir uyarı, balığın dibe inmesi ona verilen tepkidir.'], scene: 1 },
+      { q: 'Defne, “Gözlerken not almam; akşam aklımda kalanları tabloya yazarım.” diyor. Hangisi doğrudur?',
+        options: ['Defne haksız; görülen hemen yazılmazsa ayrıntı unutulabilir.', 'Defne haklı; gün sonunda yazmak kaydı daha düzenli yapar.', 'Defne haksız; unuttuğu ayrıntıyı sonradan eksi koyarak kapatmalıdır.'], answer: 0,
+        why: ['Görülen, görüldüğü gün hemen tabloya işlenir; sonraya kalan ayrıntı unutulur.', 'Düzen gözlem aralıklarında aranır; kaydı sonraya bırakmak ayrıntıyı unutturur.', 'Eksi, baktığın hâlde göremediğini gösterir; unutulanı eksiyle kapatmak kaydı yanlış yapar.'], scene: 1 },
     ], summary: ['<b>Gözlem düzenli yapılır, hemen yazılır.</b>', 'Tabloya görülen işlenir; görülmeyen özellik “gözlemlenemedi” diye kaydedilir.'],
     nextLesson: { href: 'd2-beslenme-buyume.html', label: 'Sonraki: Özellik ortak, yolu farklı ›' },
   });

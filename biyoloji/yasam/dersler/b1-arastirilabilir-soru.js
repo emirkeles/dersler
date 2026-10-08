@@ -138,6 +138,12 @@
         why: ['Güzellik kişiye göre değişir; gözlem ya da deneyle cevaplanamaz.', 'Kalan güveler sayılıp karşılaştırılabilir.', 'Kişisel tercih, desenin etkisini açıklamaz.'], scene: 1 },
       { q: 'Hangisi bir hipotezdir?', options: ['Göz desenleri avcıları uzaklaştırır.', 'Göz desenleri var mı?', 'Göz desenleri çok güzeldir.'], answer: 0,
         why: ['Sınanabilir bir açıklama önerir.', 'Bu bir sorudur; açıklama önermez.', 'Güzellik yargısı sınanamaz.'], scene: 2 },
+      { q: 'Bir öğrenci yağmurdan sonra bahçede daha çok salyangoz gördü ve “Nem, salyangozları dışarı çıkarır.” hipotezini kurdu. Hipotez doğruysa hangi sonuç beklenir?',
+        options: ['Nemli ve kuru ortamda aynı sayıda salyangoz dışarı çıkar.', 'Kuru ortamda salyangozlar daha çok dışarı çıkar.', 'Nemli ortamda salyangozlar daha çok dışarı çıkar.'], answer: 2,
+        why: ['Eşit sonuç, nemin etkisi olmadığını gösterirdi.', 'Hipotez nemin salyangozları dışarı çıkardığını söylüyor; kuru ortamda daha çok çıkmazlar.', 'Nem salyangozları dışarı çıkarıyorsa nemli ortamda daha çok salyangoz görülmelidir.'], scene: 3 },
+      { q: 'Bir öğrenci “Hipotez, doğruluğu kanıtlanmış bir bilgidir.” diyor. Bu söz için hangisi doğrudur?',
+        options: ['Doğru; hipotez deneyden önce de kesin bilgi sayılır.', 'Yanlış; hipotez henüz doğrulanmamıştır, sınanması gerekir.', 'Yanlış; hipotez gözlem ya da deneyle sınanamayan bir öneridir.'], answer: 1,
+        why: ['Hipotez, sınanmadan doğrulanmış sayılmaz; önerilen bir açıklamadır.', 'Hipotez bir açıklama önerisidir; gözlem ya da deneyle sınanır.', 'Hipotez tam tersine, gözlem ya da deneyle sınanabilir olmalıdır.'], scene: 2 },
     ], summary: ['<b>Sınanabilen soru, araştırmanın başıdır.</b>', 'Gözlem → problem → araştırılabilir soru → hipotez → sınama.'],
     nextLesson: { href: 'b2-arastirma-basamaklari.html', label: 'Sonraki: Bir araştırmanın basamakları ›' },
   });

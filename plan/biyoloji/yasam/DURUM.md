@@ -238,3 +238,45 @@ Kullanıcı kararı ve içerik dökümü: `PLAN.md` bölüm 13. Kural: `plan/KUR
 Kullanıcının bakması istenenler: E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulması (`PLAN.md` bölüm 13); D6 3. sahnedeki çoğalma canlandırması.
 
 Yayındaki 37 dersin 21'i yeni anlatımla (D6 eklendi); E1'in ilk iki sahnesi eski anlatımda.
+
+## Yürütme planı 2b: sese dokunmayan ekler (8–9 Ekim 2026)
+
+`plan/YURUTME.md` 2b. Anlatım, altyazı, sahne ve `speak` değişmedi; klip yeniden üretilmedi. Her derse iki çıkış sorusu (2'den 4'e; üç şıklı; biri yeni durum, biri yanılgı), her konunun sonuna konu tekrarı dersi (seslendirilmedi; sayfalarda `ses/…` satırı yok). Görev tanımı ve üç yardımcı araç `plan/biyoloji/yasam/gorev/` altında: `ek-soru-gorevi.md`, `ders-ozeti.cjs` (bir dersin dökümü ve konunun bütün soruları; ders dosyaları üç ayrı biçimde yazıldığı için ajanlar dosyayı okumaz), `soru-ekle.cjs` (soruları `quiz` dizisinin sonuna ekler ve doğrular; `--sonraki` ile `nextLesson` yazar), `sik-sirala.cjs` (eklenmiş bir sorunun şıklarını yeniden sıralar).
+
+| Konu | Ek sorular | Konu tekrarı | Kim | Durum |
+|---|---|---|---|---|
+| A Biyolojinin dönüm noktaları | A1–A3, 6 soru | `a4-tekrar` (yedi kural, sekiz soru) | ana oturum (örnek) | bitti |
+| B Bilimsel araştırma ve bilimin doğası | B1–B3, 6 soru | `b4-tekrar` (yedi kural, sekiz soru) | Sonnet | bitti |
+| C Bilim etiği | C1–C2, 4 soru | `c3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+| D Canlıların ortak özellikleri | D1–D6, 12 soru | `d7-tekrar` (sekiz kural, on soru) | Sonnet | bitti |
+| E İnorganik moleküller | E1–E5, 10 soru | `e6-tekrar` (yedi kural, on soru) | Sonnet | bitti |
+| F Organik moleküller | F1–F12, 24 soru (iki ajan: F1–F6, F7–F12) | `f13-tekrar` (sekiz kural, on soru; ayrı ajan) | Sonnet | bitti |
+| G Besinlerde organik molekül arama | G1–G3, 6 soru | `g4-tekrar` (yedi kural, sekiz soru; ayraç renkleri dairelerle) | Sonnet | bitti |
+| H Enzim deneyi | H1–H3, 6 soru | `h4-tekrar` (yedi kural, sekiz soru; optimum sıcaklık grafiği) | Sonnet | bitti |
+
+Toplam: 37 derse 74 ek soru, sekiz tekrar dersinde 70 soru; tema 45 kısa ders.
+
+Denetim (9 Ekim 2026): `olc.js` 45 derste (Haiku ajanı, sırayla; ajanlar bittikten sonra) bütün yerleşim ve bütçe sayaçları 0, konsol temiz; `f13` son düzeltmeden sonra yeniden ölçüldü, temiz. `sure.js` tema 268:53 (A 26:10, B 29:03, C 21:14, D 41:28, E 36:25, F 62:36, G 23:46, H 28:11; tekrar dersleri 5:21–7:43). `denetle.js`: "45 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/45, konu tekrarı yok 0/8. Karşılaştırmada 37 ders dosyasının hepsinde değişiklik yalnızca `quiz` dizisine ekleme ve sekiz konunun son dersinde `nextLesson` satırı (H3'te alan yoktu, eklendi). Sekiz tekrar dersinden 19 görüntüye bakıldı.
+
+Ana oturumun düzeltmeleri (ajan çıktısı):
+
+- Şık biçimi doğru cevabı ele veriyordu ("Haklı; … / Haksız; … / Haklı; …" dizilişinde tek kalan şık): C1, C2, D1, E4 ve `d7-tekrar` soru 9'da bir şık öteki yargıyla yeniden yazıldı.
+- Doğru şıkkın yeri: B, E ve H'de eklenen üçüncü sorunun cevabı hep son şıktı; B2, E2, E4 ve H2'de şıklar yeniden sıralandı. Konu toplamları (0/1/2): A 4/4/4, B 4/4/4, C 3/3/2, D 9/8/7, E 8/7/5, F 17/18/13, G 4/4/4, H 4/4/4.
+- Doğru şık ötekilerden uzundu: E1, E4, E5, F3, F5, F11, F12, G3 ve `g4-tekrar` soru 7 kısaltıldı.
+- `b4-tekrar` ve `d7-tekrar` boş tahtayla bitiyordu (son kural da siliniyordu); son `sil` kaldırıldı.
+- H3'ün yeni durum sorusunda "ince bağırsak gibi bazik ortam" (pH 10 için) → "pH değeri 7’den çok büyük, bazik bir ortam"; `d7-tekrar` soru 4'te "virüs kendine uygun hücreyi arar" → "yalnızca uygun hücreye tutunur"; F7'de "karbonhidrat" → "karbohidrat"; `f13-tekrar` tahtasında "süreçlerde aracı" → "protein sentezinde aracı".
+
+Notlar:
+
+- Yazım tutarsızlığı (önceden var, dokunulmadı): E1 "karbonhidrat" yazıyor (iki altyazı; seslendirilmiş), F ve G dersleri "karbohidrat". E1'e eklenen soru ve `e6-tekrar` E1'in yazımını izler.
+- Kullanıcının bakabileceği sorular: `b4-tekrar` soru 5 (kanun ve teori ayrımı fizik örneğiyle: "Isıtılan gaz genleşir."), `f13-tekrar` soru 4 (adenin yüzde 30 ise timin: eşleşmeden oran çıkarımı derste açıkça yok) ve soru 1 (aktivasyon enerjisi sayılarla), C2 soru 3 ile `c3-tekrar` soru 2 ("deney defteri", "laboratuvarın giriş çıkış kayıt defteri" farklı kaynak örneği olarak derste geçmiyor), D4 soru 3 (ekmek mayası derste geçmiyor; gereken bilgi soruda verildi).
+- Tekrar derslerinde F12 için ayrı kural ve soru yok (`f13-tekrar`: on soru on ayrı dersten; F2 ve F12 dışarıda); `b4-tekrar` kurallarında "tek bir bilimsel yöntem yoktur" yok.
+- Sekiz tekrar dersi seslendirilmedi. Rakam ve kısaltma içeren altyazılarda `speak` hazır (A4 3, D7 1, F13 6, H4 3).
+- Ajan başına bağlam: soru + tekrar ajanları 124–173 bin token (B 147, C 132, D 173, E 162, G 126, H 124), yalnızca soru ekleyen iki F ajanı 99 ve 108 bin, F tekrar ajanı 181 bin, ölçüm (Haiku) 55 bin.
+
+## Sıradaki
+
+- Bu temada 2b bitti. Açık iş yok.
+- Yürütme sırası: `plan/YURUTME.md` 2b, sıradaki tema Fizik Bilimi ve Kariyer Keşfi (`fizik/fizik-bilimi-ve-kariyer-kesfi/`, 4 konu). Önce derslerin dosya düzenine, şık sayısına ve kit olup olmadığına bakılır. Dosyalar tek biçimde değilse bu temanın üç aracı (`plan/biyoloji/yasam/gorev/*.cjs`; içlerindeki klasör yolu değiştirilerek) ve görev tanımı kopyalanıp `plan/fizik/fizik-bilimi-ve-kariyer-kesfi/gorev/` altına uyarlanır.
+- 2b.1: A konusu ana oturumda (örnek); 2b.2: kalan konular, konu başına bir Sonnet ajanı (aynı anda en çok dört; on iki dersi aşan konuda soru ekleme iki ajana, tekrar dersi üçüncü ajana bölünür); ajanlar bittikten sonra `olc.js` Haiku ajanıyla sırayla (45 ders 36 dakika sürdü), sonra `sure.js` ve `denetle.js` ana oturumda.
+- Görev iletisinde cevap yerleri verilirken: bir derste eklenen iki soru aynı yerde olamayacağı için bir yerin sayısı ders sayısını aşamaz; "cevabı 2 olan soru her derste aynı sırada olmasın" açıkça yazılır.

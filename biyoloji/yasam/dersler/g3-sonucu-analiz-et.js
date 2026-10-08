@@ -184,7 +184,13 @@
       { q: 'Kayıtta yalnızca “Bal · Benedict · kiremit kırmızısı” satırı var. Hangisi söylenebilir?',
         options: ['Balda glikoz ya da fruktoz var.', 'Balda protein yok.', 'Balda yalnızca şeker var.'], answer: 0,
         why: ['Benedict bu şekerleri arar; renk oluştuğuna göre bulmuştur.', 'Bala Biüret damlatılmadı; protein hakkında bilgi yok.', 'Öteki moleküller aranmadı; “yalnızca” denemez.'], scene: 1 },
+      { q: 'Pirinç tüpü de kontrol tüpü de Lugol damlatılınca mavi-mor oldu. Ne yapılır?',
+        options: ['Pirinçte nişasta olduğu yazılır; iki tüpte de renk oluştuğu için sonuç kesindir.', 'Deneyden kuşkulanılır; adımlar gözden geçirilip deney tekrarlanır.', 'Pirinçte nişasta olmadığı yazılır; kontrol tüpüyle aynı renk çıkmıştır.'], answer: 1,
+        why: ['Kontrol tüpünde renk oluşmaması gerekir; renk oluştuysa sonuca güvenilemez.', 'Kontrol tüpü yalnızca su içerir; renk çıkması deneyde bir hata olduğunu gösterir.', 'Aynı rengin çıkması nişasta olmadığını göstermez; önce deneyin hatası aranır.'], scene: 2 },
+      { q: 'Bir öğrenci tavuk tüpüne Biüret damlattı, tüp mor oldu. Gözlem satırına “Tavukta protein var.” yazdı. Bu satır için ne söylenir?',
+        options: ['Doğru; gözlem satırına molekülün adı yazılır.', 'Yanlış; gözlem satırına yalnızca ayracın adı yazılır.', 'Yanlış; gözlem satırına görülen renk yazılır, “protein var” sonuç satırına gider.'], answer: 2,
+        why: ['“Protein var” gözlemin ne anlama geldiğidir, yani sonuçtur.', 'Ayraç ayrı bir satırda yazılır; gözlem satırı görülen renk değişimini anlatır.', 'Gözlem gördüğündür; sonuç, gözlemden çıkardığındır.'], scene: 0 },
     ], summary: ['<b>Beklenmeyen sonuç, önce deneyi sorgulatır.</b>', 'Gözlemi yaz, sonucu çıkar; renk oluşmadıysa deneyi kontrol et ve tekrarla.'],
-    nextLesson: { href: 'h1-deneyi-tasarla.html', label: 'Sonraki: Enzim deneyini tasarla ›' },
+    nextLesson: { href: 'g4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

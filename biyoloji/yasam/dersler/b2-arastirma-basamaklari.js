@@ -297,6 +297,12 @@
       { q: 'Deney verileri hipotezle çelişiyor. Araştırmacı ne yapar?',
         options: ['Verileri hipoteze uyacak biçimde değiştirir.', 'Hipotezi desteklenmiş sayıp duyurur.', 'Hipotezi gözden geçirir, gerekirse değiştirir.'], answer: 2,
         why: ['Veri olduğu gibi kalır; değişen hipotez olur.', 'Çelişen veri hipotezi desteklemez.', 'Çelişen veri, hipotezin yeniden düşünülmesini gerektirir.'], scene: 3 },
+      { q: 'Bir araştırmacı, bir bitki özütünün karıncaları uzaklaştırıp uzaklaştırmadığını sınıyor. Bir karınca grubunun yoluna özütle, ötekinin yoluna yalnızca suyla ıslatılmış kâğıt koyuyor. Kontrol grubu hangisidir?',
+        options: ['Suyla ıslatılmış kâğıt konan karıncalar', 'Özütlü kâğıt konan karıncalar', 'Kâğıttan uzak duran karınca sayısı'], answer: 0,
+        why: ['Özüt almayan, yalnızca suyla ıslatılan grup kontrol grubudur; söğüt deneyindeki normal suyla sulanan grup gibi.', 'Özüt verilen bu grup, deney grubudur.', 'Bu sayı ölçülen bağımlı değişkendir; bir grup değildir.'], scene: 4 },
+      { q: 'Bir öğrenci “Tahmin, deney bittikten sonra verilerden çıkan sonuçtur.” diyor. Hangisi bu söze doğru karşılıktır?',
+        options: ['Doğru; tahmin, verilerin yorumlanmasıdır.', 'Yanlış; tahmin ile hipotez aynı basamaktır.', 'Yanlış; tahmin, deneyden önce hipotezden çıkarılır.'], answer: 2,
+        why: ['Verilerin yorumu çıkarımdır; tahmin deneyden önce çıkarılır.', 'Hipotez dördüncü, tahmin beşinci basamaktır; ikisi ayrıdır.', 'Tahmin, sınamada neye bakılacağını önceden belirler.'], scene: 1 },
     ], summary: ['<b>Yol değişir, basamaklar tanınır.</b>', 'Gözlem → problem → veri → hipotez → tahmin → deney → analiz ve sonuç.'],
     nextLesson: { href: 'b3-bilimin-dogasi.html', label: 'Sonraki: Araştırmada bilimin doğasını bulmak ›' },
   });

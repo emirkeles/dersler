@@ -165,6 +165,12 @@
       { q: 'Süte Biüret damlatılınca mor renk oluştu. Bu sonuç ne söyler?',
         options: ['Sütte kaç gram protein olduğunu', 'Sütte protein olduğunu', 'Sütte nişasta olduğunu'], answer: 1,
         why: ['Renk yalnızca var ya da yok der; miktar etikette yazar.', 'Biüret proteini arar; mor renk proteinin bulunduğunu gösterir.', 'Nişastayı Lugol arar; Biüret proteini gösterir.'], scene: 3 },
+      { q: 'Fındıkta protein ve yağ aranacak. Hangi iki ayraç kullanılır?',
+        options: ['Lugol ve Benedict', 'Biüret ve Benedict', 'Biüret ve Sudan III/IV'], answer: 2,
+        why: ['Lugol nişastayı, Benedict şekeri arar; ikisi de protein ve yağı göstermez.', 'Biüret proteini bulur ama Benedict yağı göstermez; yağ için Sudan gerekir.', 'Proteini Biüret, yağı Sudan III/IV arar.'], scene: 3 },
+      { q: 'Bir öğrenci, içinde glikoz olduğunu bildiği şuruba Lugol damlattı; renk oluşmadı. “Şurupta karbohidrat yok.” yazdı. Bu cümle için ne söylenir?',
+        options: ['Yanlış; Lugol nişastayı arar, glikoz gibi şekerleri göstermez.', 'Yanlış; karbohidrat aramak için Biüret kullanılır.', 'Doğru; Lugol bütün karbohidratları arar.'], answer: 0,
+        why: ['Glikoz da karbohidrattır ama nişasta değildir; onu Benedict arar.', 'Biüret proteini arar; karbohidrat için ayraç, aranan şekere göre seçilir.', 'Karbohidratların hepsi nişasta değildir; Lugol yalnızca nişastayı gösterir.'], scene: 1 },
     ], summary: ['<b>Doğru ayraç, aranan molekülü gösterir.</b>', 'Lugol nişastayı, Benedict glikoz ve fruktozu, Biüret proteini, Sudan yağı arar.'],
     nextLesson: { href: 'g2-deneyi-tasarla.html', label: 'Sonraki: Deneyi tasarla: hangi besin, hangi ayraç ›' },
   });

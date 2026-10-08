@@ -294,7 +294,13 @@
       { q: '“Bilimsel bilgi gözlemlere ve çıkarımlara dayanır.” Hangi cümle aynı anlamı taşır?',
         options: ['Bilimsel bilgi yalnızca tahminlerden oluşur.', 'Bilim insanları veri toplar ve onu yorumlayarak bilgiye ulaşır.', 'Gözlem yapılırsa yoruma gerek kalmaz.'], answer: 1,
         why: ['Cümle tahminden değil, gözlem ve çıkarımdan söz ediyor.', 'Gözlem veriyi verir, çıkarım o veriyi yorumlar.', 'Cümle ikisini birlikte sayıyor; çıkarım çıkarılamaz.'], scene: 4 },
+      { q: 'Kıyıda yaşayan bir toplumun balıkçılığa dayalı yaşam tarzı, o bölgede deniz canlıları üzerine daha çok araştırma yapılmasına yol açıyor. Bu durum bilimin doğasının hangi özelliğini gösterir?',
+        options: ['Teori zamanla kanuna dönüşür.', 'Tek bir bilimsel yöntem vardır.', 'Bilim toplumdan bağımsız değildir.'], answer: 2,
+        why: ['Teori ve kanun birbirine dönüşmez; bu olayda zaten kanun ya da teori yok.', 'Burada araştırma yöntemi değil, toplumun etkisi anlatılıyor.', 'Toplumun yaşam tarzı, bilimsel bilginin üretilmesinde etkili olabilir.'], scene: 2 },
+      { q: 'Bir öğrenci “Bilim insanları bilgiyi sürekli güncelledikleri için bilimsel bilgiye güvenilmez.” diyor. Bu söz için hangisi doğrudur?',
+        options: ['Doğru; sonradan değişen bir bilgi baştan beri yanlış demektir.', 'Yanlış; yeni kanıtla güncellenmesi bilgiyi güvenilmez yapmaz.', 'Yanlış; bilimsel bilgi kesindir ve hiçbir zaman değişmez.'], answer: 1,
+        why: ['Eski bilgi o günün verilerine dayanıyordu; yeni veri sonradan geldi.', 'Güncellenen bilgi daha çok veriye dayanır; değişebilirlik bilimin bir özelliğidir.', 'Bilimsel bilgi kesin ve değişmez değildir; yeni bulgularla değişebilir.'], scene: 0 },
     ], summary: ['<b>Bilimsel bilgi kanıta dayanır, yeni kanıtla değişebilir.</b>', 'Kendi cümlenle anlatırken anlamı koru.'],
-    nextLesson: { href: 'c1-etige-uygun-mu.html', label: 'Sonraki: Bu araştırma etiğe uygun mu? ›' },
+    nextLesson: { href: 'b4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

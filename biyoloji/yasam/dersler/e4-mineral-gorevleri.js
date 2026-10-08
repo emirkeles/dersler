@@ -159,6 +159,12 @@
         why: ['Demir kanda oksijenin taşınmasında görev alır.', 'İyot tiroksin üretimi için gereklidir; deniz ürünlerinde bulunur.', 'Klor sıvı dengesinde ve sindirimde görev alır.'], scene: 2 },
       { q: 'Bir avuç fındık yiyen biri hangi iki minerali birlikte alır?', options: ['Kalsiyum ve magnezyum', 'Flor ve klor', 'İyot ve sodyum'], answer: 0,
         why: ['Fındık hem kalsiyum hem magnezyum kaynağıdır.', 'Flor çayda, balıkta ve içme suyunda; klor sofra tuzunda bulunur.', 'İyot deniz ürünlerinde, sodyum tuzda ve ekmekte bulunur.'], scene: 3 },
+      { q: 'Sibel, kanında oksijenin taşınmasında görev alan minerali almak istiyor. Tabağına hangisini eklemelidir?',
+        options: ['Bir yumurta sarısı', 'Bir bardak çay', 'Bir dilim peynir'], answer: 0,
+        why: ['Yumurta sarısı demir içerir; demir kanda oksijenin taşınmasında görev alır.', 'Çay flor kaynağıdır; flor kemik ve diş yapısını korur.', 'Süt ürünleri kalsiyum sağlar; oksijeni taşıyan mineral demirdir.'], scene: 2 },
+      { q: 'Duru: “Mineraller aynı işi yapar; kalsiyum alırsam kanım oksijeni de taşır.” Bu cümle için hangisi doğrudur?',
+        options: ['Doğru; kalsiyum kemiklerin yanında kanda oksijenin taşınmasında da görev alır.', 'Yanlış; kanda oksijeni kalsiyum değil, flor taşır.', 'Yanlış; her mineralin görevi ayrıdır, oksijen taşınmasında demir görev alır.'], answer: 2,
+        why: ['Kalsiyum kemik ve kas işlerinde görev alır; oksijen taşınmasında görevi yoktur.', 'Flor kemik ve diş yapısını korur; oksijen taşınmasında demir görev alır.', 'Kalsiyum kemik gelişiminde ve kas kasılmasında görev alır; oksijeni demir taşır.'], scene: 2 },
     ], summary: ['<b>Mineraller üretilmez, besinle alınır; her birinin kendi görevi vardır.</b>', 'Kalsiyum kemikte, demir kanda, iyot tiroksinde, sodyum ve potasyum sinirde görev alır.'],
     nextLesson: { href: 'e5-dengeli-beslenme.html', label: 'Sonraki: Yeterli ve dengeli beslenme ›' },
   });

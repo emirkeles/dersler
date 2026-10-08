@@ -176,7 +176,13 @@
       { q: 'Bir raporda “Herkes eşit çalıştı.” yazıyor. Bu bilgi nasıl doğrulanır?',
         options: ['Raporu bir kez daha okuyarak', 'Raporun uzunluğuna bakarak', 'Grup üyelerine ayrı ayrı sorarak'], answer: 2,
         why: ['Aynı kaynak aynı şeyi söyler; farklı bir kaynak gerekir.', 'Uzunluk kimin çalıştığını göstermez.', 'Farklı bir kaynak, rapordaki bilgiyi sınar.'], scene: 2 },
+      { q: 'Bir grubun raporunda “Fideler gölgede daha hızlı büyüdü.” yazıyor. Bu bilgiyi doğrulamak için hangisi uygundur?',
+        options: ['Raporu bir arkadaşa yüksek sesle okutmak', 'Fidelerin boyunu her gün ölçen ayrı bir deney defterine bakmak', 'Cümlenin raporda kalın yazılmış olmasına bakmak'], answer: 1,
+        why: ['Okuyan değişse de kaynak aynı rapordur; farklı bir kaynak gerekir.', 'Rapordan ayrı ve güvenilir bir kayıt, bilgiyi sınar.', 'Yazı biçimi bilginin doğru olduğunu göstermez.'], scene: 2 },
+      { q: 'Bir öğrenci “Rapor çok ayrıntılı ve düzenli yazılmış; öyleyse içindeki her bilgi doğrudur.” diyor. Hangisi doğrudur?',
+        options: ['Haksız; bilgiyi raporun dışındaki güvenilir bir kaynakla karşılaştırmak gerekir.', 'Haklı; ayrıntılı yazılmış rapor kendi bilgisini doğrulamış olur.', 'Haksız; ayrıntılı yazılmış rapor her zaman yanlış bilgi taşır.'], answer: 0,
+        why: ['Rapor tek başına yanıltabilir; doğrulama farklı ve güvenilir bir kaynakla yapılır.', 'Rapor kendi kendini doğrulayamaz; aynı kaynak aynı şeyi söyler.', 'Ayrıntılı rapor yanlış olmak zorunda değildir; bilgi farklı bir kaynakla sınanır.'], scene: 2 },
     ], summary: ['<b>Önce doğrula, sonra kaydet.</b>', 'Araç seç, bilgiye ulaş, farklı kaynakla doğrula, kaynağıyla yaz.'],
-    nextLesson: { href: 'd1-gozlem-duzeni.html', label: 'Sonraki: İki canlı, üç gün: gözlem düzeni ›' },
+    nextLesson: { href: 'c3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

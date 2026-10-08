@@ -110,6 +110,12 @@
         why: ['Enzim, substratla etkileşirken biçimini değiştirir.', 'İndüklenmiş uyum bir biçim değişimidir.', 'Substrat ürüne dönüşür; enzim değişmeden kalır.'], scene: 1 },
       { q: 'Çalışması için yardımcı bileşen gerektiren enzim hangisidir?', options: ['Basit enzim', 'Bileşik enzim', 'Her enzim'], answer: 1,
         why: ['Basit enzim ilave bileşene ihtiyaç duymaz.', 'Bileşik enzim yardımcı bileşen olmadan çalışamaz.', 'Basit enzimler yardımcı bileşen olmadan çalışır.'], scene: 2 },
+      { q: 'Bir araştırmacı bir enzimi yalnızca substratıyla karıştırıyor; çinko, vitamin ya da başka bir yardımcı bileşen eklemiyor ve tepkime gerçekleşiyor. Bu enzim nasıl sınıflandırılır?',
+        options: ['Bileşik enzim', 'Enzim sayılmaz; çünkü enzimler yardımcı bileşensiz çalışamaz', 'Basit enzim'], answer: 2,
+        why: ['Bileşik enzim yardımcı bileşen olmadan çalışamaz; burada tepkime bileşensiz gerçekleşiyor.', 'Basit enzimler ilave bileşene ihtiyaç duymadan çalışır; bu da enzim sayılmasına engel değildir.', 'Çalışmak için ilave bileşene ihtiyaç duymayan enzimlere basit enzim denir.'], scene: 2 },
+      { q: 'Bir öğrenci “Bileşik enzimlerin yardımcı bileşeni her zaman bir metaldir” diyor. Bu yargıyı hangisi düzeltir?',
+        options: ['Yardımcı bileşen, enzimin ürüne dönüştürdüğü maddedir.', 'Yardımcı bileşen çinko gibi bir metal olabileceği gibi organik bir molekül de olabilir.', 'Bileşik enzimler yardımcı bileşen kullanmaz; bu yalnız basit enzimlerin özelliğidir.'], answer: 1,
+        why: ['Enzimin ürüne dönüştürdüğü madde substrattır; yardımcı bileşen substrat değildir.', 'Yardımcı bileşen metal ya da organik molekül olabilir; vitaminler bazı enzimlerin organik yardımcı bileşenidir.', 'Yardımcı bileşen gerektirmek bileşik enzimin tanımıdır; basit enzim ilave bileşen istemez.'], scene: 2 },
     ], summary: ['<b>Enzim substratını tanır, ona göre biçim alır.</b>', 'Bileşik enzim yardımcı bir bileşenle çalışır; basit enzim tek başına.'],
     nextLesson: { href: 'f10-dna-ve-rna.html', label: 'Sonraki: Nükleik asitler: DNA ve RNA ›' },
   });

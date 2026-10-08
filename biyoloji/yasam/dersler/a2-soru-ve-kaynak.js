@@ -185,6 +185,12 @@
       { q: 'İki kaynak çelişiyor: biri hakem denetiminden geçmiş bir bilimsel makale, öteki yazarı ve tarihi belli olmayan bir blog yazısı. Hangisine güvenirsin?',
         options: ['Makaleye; denetleyeni ve yayımlandığı yer belli.', 'Blog yazısına; okuması daha kolay.', 'Hangisi daha çok paylaşıldıysa ona.'], answer: 0,
         why: ['Makale “kim denetledi” ve “nerede yayımlandı” sorularını karşılıyor.', 'Kolay okunması, bilginin doğru olduğunu göstermez.', 'Paylaşım sayısı bir güvenilirlik ölçütü değildir.'], scene: 2 },
+      { q: 'İki kaynak da uzman denetiminden geçmiş ve .edu uzantılı. Biri 2009’da yayımlanmış, öteki geçen yıl güncellenmiş. Gen düzenleme gibi hızla gelişen bir konuda hangisini seçersin?',
+        options: ['2009 tarihliyi; eski kaynak daha güvenilirdir.', 'Geçen yıl güncelleneni; son gelişmeleri yansıtır.', 'Fark etmez; ikisi de .edu uzantılı.'], answer: 1,
+        why: ['Kaynağın eski olması onu daha güvenilir yapmaz.', 'Güvenilir kaynak, alanındaki son gelişmeleri de yansıtır.', 'Uzantı “nerede” sorusunu karşılar; “ne zaman” sorusu ayrıca sorulur.'], scene: 2 },
+      { q: 'Aramada en üstte çıkan sayfanın yazarı belli değil; sayfa iki milyon kez görüntülenmiş. Bu sayfa için hangisi doğrudur?',
+        options: ['Güvenilirdir; en üstte çıkan kaynak en doğru olandır.', 'Güvenilirdir; iki milyon kişi yanılmış olamaz.', 'Henüz bilinmez; denetleyeni, yayımlandığı yer ve tarihi sınanmalıdır.'], answer: 2,
+        why: ['Aramadaki sıra bir güvenilirlik ölçütü değildir.', 'Görüntülenme sayısı da beğeni gibi bir ölçüt değildir.', 'Kaynak üç soruyu karşılamadan ona güvenilmez.'], scene: 3 },
     ], summary: ['<b>Önce soru, sonra kaynak, en son cevap.</b>', 'Kaynağı sına: kim denetledi, nerede yayımlandı, ne zaman?'],
     nextLesson: { href: 'a3-kanittan-cikarima.html', label: 'Sonraki: Bilgiden çıkarıma ›' },
   });

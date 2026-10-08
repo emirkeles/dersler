@@ -238,6 +238,13 @@
         why: ['pH 8 tripsinin optimumuna yakındır; pepsinin optimumu asidik bölgededir.', 'Pepsin yalnızca asidik ortamda çalışır.', 'Ortamın pH değeri bir enzimi başka bir enzime dönüştürmez.'], scene: 1 },
       { q: 'Bir enzimin optimum pH değeri 7 bulundu. Bundan hangi sonuç çıkar?', options: ['Bu enzim pH 7’de en hızlı çalışır; başka enzimlerin optimumu farklı olabilir.', 'Bütün enzimlerin optimum pH değeri 7’dir.', 'Bu enzim pH 7 dışında hiç çalışmaz.'], answer: 0,
         why: ['Her enzimin kendi optimum pH değeri vardır.', 'Pepsinin optimumu asidik, tripsininki bazik bölgededir.', 'Optimumdan uzaklaştıkça aktivite düşer; hemen sıfıra inmez.'], scene: 3 },
+      { q: 'Yeni bulunan bir enzim pH 10’da en hızlı çalışıyor. Bu enzim hangi ortamda en hızlı çalışır?',
+        options: ['Mide gibi asidik bir ortam', 'Hücre içi gibi pH 6–8 arasındaki bir ortam', 'pH değeri 7’den çok büyük, bazik bir ortam'], answer: 2,
+        why: ['Asidik ortamın pH değeri 7’den küçüktür; bu enzimin optimumu ise 7’den büyüktür.', 'Hücre içindeki birçok enzimin optimumu 6–8 arasındadır; pH 10 bu aralığın dışındadır.', 'pH 7’den büyük değerler baziktir; tripsin gibi bu enzimin de optimumu bazik bölgededir.'], scene: 1 },
+      { q: 'Bir öğrenci “Bir enzimi çok bazik bir ortamda bekletsem de ortamı optimum pH değerine getirince eski hızında çalışır.” diyor. Bu söz için ne söylenir?',
+        options: ['Doğru; aktif bölgenin yapısı pH değerinden etkilenmez.', 'Yanlış; uç pH değerleri enzimin yapısını kalıcı olarak bozar.', 'Yanlış; enzimin optimum pH değeri ortama göre değişir.'], answer: 1,
+        why: ['Aktif bölgenin yapısı ortamın pH değerine göre değişir.', 'Yapısı bozulan enzim optimum pH değerine dönülse de eski hızına ulaşamaz.', 'Optimum pH enzimin kendine özgü değeridir; ortam değiştiği için değişmez.'], scene: 0 },
     ], summary: ['<b>Her enzimin kendi optimum pH değeri vardır.</b>', 'Pepsin asidik midede, tripsin bazik ince bağırsakta, hücre içindeki birçok enzim pH 6–8 arasında çalışır.'],
+    nextLesson: { href: 'h4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

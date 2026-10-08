@@ -298,6 +298,12 @@
         why: ['PZR belirli bir DNA dizisini çoğaltır; aktarma rekombinant DNA teknolojisinin işidir.', 'Diziyi ortaya çıkaran İnsan Genom Projesi’dir; CRISPR-Cas gen bölgesini düzenler.', 'Dolly adlı koyun böyle klonlandı.'], scene: 3 },
       { q: 'CRISPR-Cas’a gıda açısından bakan biri hangi katkıyı öne çıkarır?', options: ['Bitki ve hayvanlarda genetik iyileştirme', 'Genetik hastalıkların düzeltilmesi', 'Ameliyatların daha güvenli olması'], answer: 0,
         why: ['Gıda üretimi bitki ve hayvanlara dayanır.', 'Bu, aynı buluşun sağlık açısından katkısıdır.', 'Bu katkı penisilinindir.'], scene: 4 },
+      { q: 'Bir laboratuvar, bir ilacın yapımını sağlayan geni çoğaltıp bir bakteriye yerleştirmek istiyor. Bu, hangi tekniğin işidir?',
+        options: ['PZR', 'Rekombinant DNA teknolojisi', 'Klonlama'], answer: 1,
+        why: ['PZR diziyi çoğaltır; başka bir canlıya yerleştirmez.', 'Bu teknoloji genetik materyali çoğaltıp başka bir canlıya aktarır.', 'Klonlama bir geni değil, canlının bütününü kopyalar.'], scene: 3 },
+      { q: 'Bir arkadaşın “İnsan Genom Projesi hiçbir hastalığı tedavi etmedi; öyleyse dönüm noktası değildir.” diyor. Hangisi doğrudur?',
+        options: ['Dönüm noktasıdır; insan DNA’sının dizisini ortaya çıkarıp araştırmaların önünü açtı.', 'Arkadaşın haklı; dönüm noktası bir hastalığı tedavi eden buluştur.', 'Dönüm noktasıdır; çünkü DNA’da istenen gen bölgesini düzenler.'], answer: 0,
+        why: ['Sonraki araştırmalara yön veren buluş da dönüm noktasıdır.', 'Dönüm noktası yalnızca tedavi demek değildir; yeni bir yol açması yeter.', 'Gen bölgesini düzenleyen CRISPR-Cas’tır; proje diziyi ortaya çıkardı.'], scene: 4 },
     ], summary: ['<b>Her dönüm noktası ya bir sorunu çözer ya yeni bir yol açar.</b>', 'Antibiyotik ve aşı sağlığı korudu; DNA’nın yapısı genetikte yeni bir çağ başlattı.'],
     nextLesson: { href: 'a2-soru-ve-kaynak.html', label: 'Sonraki: Soru sor, kaynağını sına ›' },
   });

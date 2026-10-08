@@ -210,6 +210,12 @@
         why: ['Kohezyon su moleküllerinin birbirini çekmesidir; cam su değildir.', 'Su ile cam farklı maddelerdir; aralarındaki çekim adezyondur.', 'Yüzey gerilimi suyun kendi yüzeyiyle ilgilidir.'], scene: 0 },
       { q: 'Küçük bir böcek su yüzeyinde neden batmadan yürüyebilir?', options: ['Kohezyon, ayak ile su arasındaki adezyondan büyüktür.', 'Suyun yüzeyi katılaşmıştır.', 'Böcek ile su arasında hiç çekim yoktur.'], answer: 0,
         why: ['Su molekülleri birbirini daha güçlü çektiği için yüzey böceği taşır.', 'Yüzey sıvıdır; yalnızca bir film varmış gibi davranır.', 'Ayak ile su arasında adezyon vardır; yalnızca kohezyondan küçüktür.'], scene: 2 },
+      { q: 'Yüzmeden çıkan bir çocuğun kolunda su damlaları asılı kalıyor ve damlalar dağılıp akmıyor. Bu iki durum hangi çekimlerle açıklanır?',
+        options: ['Cilde tutunmayı kohezyon, dağılmamayı adezyon sağlar.', 'Cilde tutunmayı adezyon, dağılmamayı kohezyon sağlar.', 'Cilde tutunmayı da dağılmamayı da kohezyon sağlar.'], answer: 1,
+        why: ['Roller ters: kohezyon su moleküllerinin birbirini, adezyon suyun başka maddeyi çekmesidir.', 'Su ile cilt arasındaki çekim adezyon, su molekülleri arasındaki çekim kohezyondur.', 'Cilt su değildir; suyla cilt arasındaki çekim kohezyon olamaz.'], scene: 0 },
+      { q: 'Sude: “Bitkide su yukarı yalnızca adezyonla çıkar; kohezyonun burada işi yoktur.” Bu cümle için hangisi doğrudur?',
+        options: ['Doğru; kohezyon yalnızca su yüzeyinde görünmez bir film oluşturur.', 'Yanlış; bitkide su yalnızca kohezyonla çıkar, adezyonun işi yoktur.', 'Yanlış; su hem çepere tutunur hem de su molekülleri birbirini çeker.'], answer: 2,
+        why: ['Kohezyon bitkide de görevlidir: su moleküllerini borunun içinde birbirine bağlar.', 'Çeper su değildir; suyun çepere tutunması adezyondur ve yükselmeye katılır.', 'Adezyon suyu çepere tutar, kohezyon su moleküllerini birbirine bağlar; su iki çekimle yükselir.'], scene: 3 },
     ], summary: ['<b>Su suya da tutunur, yüzeye de.</b>', 'Kohezyon damlayı ve su yüzeyini bir arada tutar; adezyon suyu başka yüzeylere bağlar.'],
     nextLesson: { href: 'e3-su-tasir-dengeler.html', label: 'Sonraki: Su taşır ve dengeler ›' },
   });

@@ -160,7 +160,13 @@
         why: ['Oksijen taşıyan mineral eksik olunca kansızlık görülür.', 'Diş çürüğü flor eksikliğinde görülür.', 'Basit guatr iyot eksikliğinde görülür.'], scene: 0 },
       { q: 'Mineral eksikliğinden doğan sorunları en aza indirmenin yolu hangisidir?', options: ['Her gün aynı tek besini yemek', 'Farklı besinleri yeterli ve dengeli tüketmek', 'Yalnızca sofra tuzunu artırmak'], answer: 1,
         why: ['Tek besin, öteki besinlerdeki mineralleri sağlayamaz.', 'Mineraller farklı besinlere dağılmıştır; çeşitlilik eksiklik riskini azaltır.', 'Sofra tuzu sodyum ve klor sağlar; öteki mineraller başka besinlerdedir.'], scene: 3 },
+      { q: 'Deniz, saçlarının, cildinin ve tırnaklarının sağlıksız olduğunu fark ediyor. Hangi mineralin yetersiz alındığı düşünülür?',
+        options: ['Flor', 'Demir', 'Kükürt'], answer: 2,
+        why: ['Flor eksikliğinde diş çürüğü görülür.', 'Demir eksikliğinde kansızlık ve çabuk yorulma görülür.', 'Kükürt eksikliğinde saç, cilt ve tırnaklar sağlıksız olur.'], scene: 2 },
+      { q: 'Zeynep: “Yeterli ve dengeli beslenmek, sevdiğim tek besinden bol bol yemektir.” Bu cümle için hangisi doğrudur?',
+        options: ['Doğru; tek besinden ne kadar çok yenirse bütün mineraller o kadar yeterli olur.', 'Yanlış; “yeterli” ihtiyaç kadar, “dengeli” farklı besinleri uygun oranlarda almaktır.', 'Yanlış; mineraller yalnızca süt ürünlerinde olduğu için süt ürünü yeter.'], answer: 1,
+        why: ['Tek tür besin, öteki besinlerdeki mineralleri sağlayamaz; miktar bunu değiştirmez.', 'Yeterli beslenme ihtiyaç kadar almak, dengeli beslenme farklı besinleri uygun oranlarda almaktır.', 'Mineraller süt ürünlerine değil, farklı besinlere dağılmıştır.'], scene: 3 },
     ], summary: ['<b>Çeşitli beslenme, eksiklik riskini azaltır.</b>', 'Bir mineral eksik kalırsa onun görevi aksar; mineraller farklı besinlere dağılmıştır.'],
-    nextLesson: { href: 'f1-kur-ve-sok.html', label: 'Sonraki: Büyük molekülü kur, sök ›' },
+    nextLesson: { href: 'e6-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

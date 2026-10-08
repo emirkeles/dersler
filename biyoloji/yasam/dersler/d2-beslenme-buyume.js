@@ -109,6 +109,12 @@
         why: ['Işık varken kendi besinini de üretir.', 'Işık yokken besinini hazır alır.', 'Işık varken üretir, ışık yokken hazır alır.'], scene: 1 },
       { q: 'Bebeğin emeklemeye başlaması neye örnektir?', options: ['Büyüme', 'Gelişme', 'Boşaltım'], answer: 1,
         why: ['Büyüme hacim ve kütle artışıdır.', 'Yeni bir görevi yapacak olgunluğa erişmektir.', 'Boşaltım atıkların uzaklaştırılmasıdır.'], scene: 3 },
+      { q: 'Selin, “Bitki ağzıyla bir şey yemediği için beslenmez; beslenme yalnız hayvanlarda vardır.” diyor. Hangisi doğrudur?',
+        options: ['Bitki de beslenir; ama besinini hazır almaz, kendisi üretir.', 'Selin haklı; besinini kendisi üreten canlı beslenmiş sayılmaz.', 'Selin haksız; bitki de hayvan gibi besinini dışarıdan hazır alır.'], answer: 0,
+        why: ['Beslenme bütün canlılarda ortaktır; bitki besinini üretir, yani üreticidir.', 'Besinini kendisi üretmek de bir beslenme yoludur; bu canlıya üretici denir.', 'Besinini hazır alan hayvandır; bitki besinini kendisi üretir.'], scene: 0 },
+      { q: 'Bir meşe fidanı beş yılda 20 cm’den 2 metreye çıktı. Bu değişim neye örnektir?',
+        options: ['Gelişme', 'Boşaltım', 'Büyüme'], answer: 2,
+        why: ['Gelişme, yapıların bir görevi yapacak olgunluğa erişmesidir; boy uzaması bir görev değildir.', 'Boşaltım atıkların uzaklaştırılmasıdır; boy uzamasıyla ilgisi yoktur.', 'Boyun ve kütlenin artması büyümedir; bitkiler yaşamları boyunca büyür.'], scene: 3 },
     ], summary: ['<b>Özellik ortak, yolu farklı.</b>', 'Beslenme, boşaltım, büyüme ve gelişme her canlıda vardır; biçimi değişir.'],
     nextLesson: { href: 'd3-tepki-ureme-uyum.html', label: 'Sonraki: Tepki ve kalıtsal uyum ›' },
   });

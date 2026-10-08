@@ -188,6 +188,12 @@
       { q: 'Sütte protein aranıyor. Kontrol tüpüne ne konur?',
         options: ['Süt; ayraç damlatılmaz', 'Su ve Biüret', 'Süt ve Lugol'], answer: 1,
         why: ['Kontrol tüpünde besin olmaz; ayraç ise iki tüpe de damlatılır.', 'Kontrol tüpünde besin yerine su, deney tüpündeki ayracın aynısı bulunur.', 'Kontrol tüpüne besin konmaz; ayraç da deney tüpündekiyle aynı olmalı.'], scene: 2 },
+      { q: 'Peynir için iki tahmin yapıldı: protein ve yağ. Deney tüpleri nasıl hazırlanır?',
+        options: ['İki ayrı tüp: birine Biüret, ötekine Sudan III/IV damlatılır.', 'Tek tüp: Biüret ve Sudan III/IV birlikte damlatılır.', 'İki ayrı tüp: ikisine de Biüret damlatılır, çünkü besin aynıdır.'], answer: 0,
+        why: ['Aranan her molekül için ayrı tüp hazırlanır; proteini Biüret, yağı Sudan III/IV arar.', 'Aynı tüpte iki ayracın rengi birbirine karışır.', 'Ayracı besinin adı değil, aranan molekül belirler; yağ için Sudan gerekir.'], scene: 3 },
+      { q: 'Bir ekip ekmekte nişasta aradı: ekmek tüpü mavi-mor oldu, kontrol tüpünde renk oluşmadı. Bir öğrenci “Kontrol tüpü de renk vermedi, deney bozuk.” dedi. Bu söz için ne söylenir?',
+        options: ['Deney bozuk değil; kontrol tüpüne ayraç damlatılmaz, bu yüzden renk oluşmaz.', 'Deney bozuk değil; kontrol tüpünde besin yoktur, renk oluşmaması beklenir.', 'Deney bozuk; kontrol tüpü de deney tüpü gibi mavi-mor olmalıydı.'], answer: 1,
+        why: ['Kontrol tüpüne de aynı ayraç aynı miktarda damlatılır; renk, besin olmadığı için oluşmaz.', 'Kontrol tüpünde yalnızca su ve ayraç vardır; suda nişasta yoktur, renk beklenmez.', 'Kontrol tüpünde de renk oluşsaydı iki tüp arasındaki tek fark besin olmaktan çıkardı.'], scene: 2 },
     ], summary: ['<b>Önce plan, sonra damla.</b>', 'Tahmin → aranan molekül → ayraç → beklenen renk; yanında kontrol tüpü.'],
     nextLesson: { href: 'g3-sonucu-analiz-et.html', label: 'Sonraki: Deneyi yap, sonucu analiz et ›' },
   });

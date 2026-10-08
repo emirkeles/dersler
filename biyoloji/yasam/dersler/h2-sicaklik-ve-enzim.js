@@ -251,6 +251,12 @@
         why: ['Yapıyı bozan yüksek sıcaklıktır; soğuk yalnızca yavaşlatır.', 'Moleküller yavaşlar; enzimle substrat seyrek karşılaşır.', 'Soğukta moleküller yavaşlar; tepkime hızı düşer.'], scene: 0 },
       { q: 'Sıcaklık ve tepkime hızı grafiğinde eğrinin tepe noktası neyi gösterir?', options: ['Optimum sıcaklığı', 'Enzimin tümüyle denatüre olduğu sıcaklığı', 'Tepkimenin başladığı sıcaklığı'], answer: 0,
         why: ['Tepe, tepkime hızının en yüksek olduğu sıcaklıktır.', 'Tam denatürasyonda hız sıfıra iner; bu, eğrinin sağ ucudur.', 'Tepkime, tepeden düşük sıcaklıklarda da yavaşça ilerler.'], scene: 3 },
+      { q: 'Sıcak su kaynağında yaşayan bir bakterinin enziminin optimum sıcaklığı 60 °C bulundu. Bu enzim 20 °C’de çalıştırılırsa ne beklenir?',
+        options: ['Optimumun altında olduğu için yavaş çalışır; yapısı bozulmaz.', 'Yapısı bozulur ve enzim kalıcı olarak çalışamaz hâle gelir.', 'Bütün enzimler gibi vücut sıcaklığında en hızlı çalışır.'], answer: 0,
+        why: ['Optimumun altında hız düşüktür; sıcaklık arttıkça hız yükselir ve yapı bozulmaz.', 'Yapıyı bozan yüksek sıcaklıktır; optimumun altında enzim yalnızca yavaşlar.', 'Her enzimin kendi optimum sıcaklığı vardır; bu enzimin optimumu 60 °C’dir.'], scene: 3 },
+      { q: 'Bir öğrenci “Optimum sıcaklığın üstünde hızın düşmesinin nedeni, moleküllerin yavaşlamasıdır.” diyor. Bu söz için ne söylenir?',
+        options: ['Doğru; sıcaklık optimumu aşınca moleküller yavaşlar.', 'Hatalı; optimumun üstünde de hız artmaya devam eder.', 'Hatalı; sıcaklıkla moleküller hızlanır, hızı düşüren enzimin denatüre olmasıdır.'], answer: 2,
+        why: ['Sıcaklık arttıkça moleküller hızlanır; düşüşün nedeni bu değildir.', 'Optimumdan sonra denatürasyon başlar ve hız düşer.', 'Optimumun üstünde enzimin yapısı bozulur; biçimi bozulan enzim substratı dönüştüremez.'], scene: 3 },
     ], summary: ['<b>Her enzimin bir optimum sıcaklığı vardır.</b>', 'Soğuk enzimi yavaşlatır; optimumun üstündeki sıcaklık yapısını bozar.'],
     nextLesson: { href: 'h3-ph-ve-enzim.html', label: 'Sonraki: pH ve enzim ›' },
   });
