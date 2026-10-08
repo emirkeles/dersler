@@ -3,11 +3,12 @@ KATALOG.tema('matematik', 'geometrik-sekiller', {
   tanitim: 'Üçgende bildiğin kurallar neden her üçgende doğru? Bu temada ölçmekle yetinmiyoruz: açı ve kenar özelliklerini önce doğruluyor, sonra ispatlıyoruz.',
   konular: [
     { harf: 'A', ad: 'Açılar ve ispat', renk: '#6ea8ff', dersler: [
-      ['a1-olcmek-ispat-degildir.html', 'Ölçmek ispat değildir', 'Üç üçgende 180° çıktı. Bütün üçgenler için emin olabilir miyiz?', 4, 195],
-      ['a2-ispat-neye-dayanir.html', 'İspat doğru bilgilerin üstüne kurulur', 'Bir mimar “bu çizim doğru” derken hangi bilgilere güvenir?', 5, 317],
-      ['a3-ic-acilar-180.html', 'İç açıların toplamı 180°dir', 'Üç köşedeki açıların toplamını çizmeden bilebilir misin?', 6, 337],
-      ['a4-dis-acilar-360.html', 'Dış açıların toplamı 360°dir', 'Üçgen bir parkın çevresini dolaşınca toplam kaç derece dönersin?', 5, 288],
-      ['a5-dis-aci-iki-ic-aci.html', 'Dış açı, uzaktaki iki iç açının toplamıdır', 'Dışarı bakan bir açı, içerideki hangi açılarla ilgilidir?', 5, 333],
+      ['a1-olcmek-ispat-degildir.html', 'Ölçmek ispat değildir', 'Üç üçgende 180° çıktı. Bütün üçgenler için emin olabilir miyiz?', 4, 310],
+      ['a2-ispat-neye-dayanir.html', 'İspat doğru bilgilerin üstüne kurulur', 'Bir mimar “bu çizim doğru” derken hangi bilgilere güvenir?', 6, 439],
+      ['a3-ic-acilar-180.html', 'İç açıların toplamı 180°dir', 'Üç köşedeki açıların toplamını çizmeden bilebilir misin?', 7, 545],
+      ['a4-dis-acilar-360.html', 'Dış açıların toplamı 360°dir', 'Üçgen bir parkın çevresini dolaşınca toplam kaç derece dönersin?', 6, 447],
+      ['a5-dis-aci-iki-ic-aci.html', 'Dış açı, uzaktaki iki iç açının toplamıdır', 'Dışarı bakan bir açı, içerideki hangi açılarla ilgilidir?', 6, 474],
+      ['a6-tekrar.html', 'Konu tekrarı: Açılar ve ispat', 'Beş dersin kuralları aklında mı?', 1, 206],
     ] },
     { harf: 'B', ad: 'Kenarlar ve açılar', renk: '#ff8a5b', dersler: [
       ['b1-en-uzun-kenar-en-buyuk-aci.html', 'En uzun kenarın karşısı en büyük açıdır', 'En uzun çubuğun karşısındaki köşe en dar mı, en geniş mi?', 4, 263],

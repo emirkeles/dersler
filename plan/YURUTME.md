@@ -40,7 +40,7 @@ Her görev tek dosyalık ve kendi başına anlaşılır olur. Pilotta işe yaray
 
 ## Adımlar
 
-### 1. Pilotu kapat: Geometrik Şekiller A konusu
+### 1. Pilotu kapat: Geometrik Şekiller A konusu (bitti: 8 Ekim 2026)
 
 **İzin:** kullanıcı 8 Ekim 2026'da verdi: "seslendirme, commit ve yayına geçebilirsin." Bu adımda başka onay beklenmez.
 

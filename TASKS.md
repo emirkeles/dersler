@@ -480,7 +480,7 @@ Ayrıntı: `plan/matematik/geometrik-sekiller/DURUM.md` "Pilot" bölümü. Sonra
 - [x] `tema.js` sahne sayıları (A2 6, A3 7, A4 6, A5 6), `sure.js` (A konusu 37:21), `denetle.js` temiz; `kural: 2` geçici işaretle A derslerinde sorun yok
 - [x] Kullanıcı A konusunu izledi ve onayladı (8 Ekim 2026: "bunları beğendim")
 - [x] "Hatırla" sahnelerinin açılış cümlesi eşitlendi; `olc.js`, `sure.js`, `denetle.js` yeniden temiz
-- [ ] A konusunun seslendirilmesi (ücretli; kullanıcı ayrıca ister). `ses-uret.js --liste` A5'te takılıyor, üretimden önce bakılacak
+- [x] A konusunun seslendirilmesi: 199 klip (131 yeni), 14,0 dk; ayrıntı `DURUM.md` "Pilotun seslendirilmesi ve yayını"
 - [ ] Pilotun commit'i ve yayını (seslendirmeden sonra; önce yapılırsa canlıda A1–A5 sessiz kalır)
 - [ ] `plan/YOL-HARITASI.md` 2. adım: Kimya Çeşitlilik ve yedi temaya sese dokunmayan ekler
 
@@ -492,5 +492,31 @@ Kullanıcı: "seslendirme, commit ve yayına geçebilirsin. bu context'i clear y
 - [x] `plan/YOL-HARITASI.md` ve `CLAUDE.md` bu dosyayı gösteriyor ("yürütme planını uygula")
 - [x] İş panosu güncellendi (pilot onayı, yeni sıra)
 - [x] Plan dosyaları commit edildi; pilot dersleri seslendirilene kadar commit edilmedi
-- [ ] Temiz oturumda `plan/YURUTME.md` 1. adım: A konusu seslendirme (131 klip, yaklaşık 7.000 karakter), commit, yayın
+- [x] Temiz oturumda `plan/YURUTME.md` 1. adım: A konusu seslendirme (131 klip, 7.027 karakter), commit, yayın
 
+
+## Yürütme planı 1. adım: A konusu seslendirme, commit, yayın (8 Ekim 2026, temiz oturum)
+
+`plan/YURUTME.md` adım 1. A5 dökümü bu oturumda takılmadı (46 sn, 41 satır, uyarı yok).
+
+- [x] 1.1 Metin dökümü ve `speak` denetimi: iki Sonnet ajanı (A1–A3: 4 `speak`; A4–A6: 6 `speak`); altı derste `olc.js` temiz
+- [x] 1.2 Ana oturum taraması: yalnızca üç izinli yönerge; rakam ve simge yok; kopyayla karşılaştırmada yalnızca `speak` değişmiş; yönerge fazlası klibi olmayan dört satırdan alındı (A1 1, A2 2, A4 1); A3'te "A B kenarı" → "AB kenarı"
+- [x] 1.3 Üretim: altı ders, iki Haiku ajanı; 131 yeni klip, 7.027 karakter; hata yok
+- [x] 1.4 Altı sayfaya `ses/<ders-id>.js` satırı
+- [x] 1.5 Doğrulama: dizin, dosyalar ve döküm birebir; 1 süre aykırısı (A3); `olc.js` temiz; `sure.js` A konusu 40:21; `denetle.js` "Sorun yok"
+- [x] 1.6 Kayıt: `DURUM.md`, `SESLENDIRME.md`, `TEMALAR.md`, `YURUTME.md` tarih
+- [ ] 1.7 Commit ve push (yalnızca pilot dosyaları, klipler, plan dosyaları; `ortak/` hariç)
+- [ ] İş panosu
+
+## Yürütme planı 2a: Kimya · Çeşitlilik (8 Ekim 2026)
+
+Ayrıntı: `plan/kimya/cesitlilik/DURUM.md`.
+
+- [x] 2a.1 Müfredat (vardı), ders kitabı (s. 104–211 okundu), açık sorular kapatıldı (`PLAN.md` bölüm 7), kitaptan alınanlar (bölüm 8), denetim tablosuna durum sütunu
+- [x] 2a.2 Konu A senaryosu (`senaryolar/A-metalik-bag.md`), iskelet, `kit.js`, A1 (`olc.js` temiz, görüntülere bakıldı)
+- [ ] 2a.3 Denetim noktası: A2 ve A3 (tekrar) Sonnet ile; pilotla karşılaştırma
+- [ ] 2a.4 B–M senaryoları (Sonnet; ana oturum program metniyle karşılaştırır)
+- [ ] 2a.5 B–M dersleri ve konu tekrarları
+- [ ] 2a.6 Konu başına ölçüm, `tema.js` satırları
+- [ ] 2a.7 Tema denetimi
+- [ ] 2a.8 Rapor

@@ -2,10 +2,11 @@
    Her ispat doğruluğundan emin olunan bilgilere dayanır; en altta aksiyomlar durur (Öklid geometrisi).
    Tarih şeridi ve Geometri kitabının terimleri ders kitabının yazdığı kadardır (Matematik 9, 1. Kitap, s. 183, 192);
    dört bilim insanı yalnızca adlarıyla anılır.
-   Senaryo: plan/matematik/geometrik-sekiller/senaryolar/A-acilar-ve-ispat.md */
+   Senaryo: plan/matematik/geometrik-sekiller/senaryolar/A-acilar-ve-ispat.md ("Pilot" bölümü).
+   Sıra plan/KURALLAR.md 3.2'ye göredir: hatırla, önce anlat, örnekle göster, birlikte çöz, sonra sor. */
 (() => {
   'use strict';
-  const { RENK, yazi, kutu, cizgi, nokta, gizle, belir, par, ok, cevapla } = window.KIT;
+  const { RENK, yazi, kutu, cizgi, nokta, dilim, gizle, belir, par, ok, cevapla } = window.KIT;
   const { lerp, ease } = Ders;
 
   /* Taş: içinde yazı olan (ya da boş) kutu. tasi(dx, dy, açı) taşı yerinden oynatır. */
@@ -18,38 +19,107 @@
   }
   const boya = (t, renk) => t.k.setAttribute('stroke', renk);
 
+  /* Küçük üçgen (A1'deki gibi): Hatırla sahnesinde ölçülen üçgenleri gösterir. */
+  const BICIM = [[[0, 0], [-10, 20], [12, 20]], [[-10, 0], [-10, 20], [12, 20]], [[14, 4], [-12, 20], [6, 20]], [[0, -4], [-8, 20], [8, 20]], [[-4, 2], [-12, 20], [14, 20]], [[6, 0], [-12, 20], [10, 20]]];
+  const kucuk = (c, p, x, y, k, renk) => c.S('polygon', {
+    points: k.map((q) => (x + q[0]) + ',' + (y + q[1])).join(' '), fill: 'none', stroke: renk, 'stroke-width': 2, 'stroke-linejoin': 'round',
+  }, p);
+
+  /* Bir taşın altına, taşın söylediği bilginin yazısız küçük çizimi (0: doğru açı, 1: iç ters açılar, 2: tek paralel). */
+  function bilgiCizimi(c, g, i) {
+    if (i === 0) {
+      cizgi(c, g, [80, 500], [260, 500], RENK.cizgi, 3);
+      dilim(c, g, [170, 500], [260, 500], [80, 500], RENK.cizgi, 42).yon(0, -Math.PI);
+      nokta(c, g, [170, 500], RENK.yazi, 5);
+    } else if (i === 1) {
+      const V1 = [460, 510], V2 = [540, 430];
+      dilim(c, g, V1, [590, 510], V2, RENK.B, 32); dilim(c, g, V2, [410, 430], V1, RENK.B, 32);
+      cizgi(c, g, [410, 430], [590, 430], RENK.paralel, 3); cizgi(c, g, [410, 510], [590, 510], RENK.paralel, 3);
+      cizgi(c, g, [435, 535], [565, 405], RENK.cizgi, 3);
+    } else {
+      cizgi(c, g, [740, 510], [920, 510], RENK.cizgi, 3);
+      cizgi(c, g, [740, 440], [920, 440], RENK.paralel, 3);
+      nokta(c, g, [830, 440], RENK.yazi, 6);
+    }
+  }
+
+  /* ---- 0. Hatırla: A1'den doğrulama ve ispat ---- */
+  async function hatirla(c) {
+    const svg = c.svg(1000, 562);
+    const sol = c.S('g', {}, svg), sag = c.S('g', {}, svg);
+    kutu(c, sol, 70, 110, 400, 350); kutu(c, sag, 530, 110, 400, 350);
+    yazi(c, sol, 270, 162, 'Elif’in ölçümü', { size: 28, kalin: 700 });
+    for (let i = 0; i < 40; i++) kucuk(c, sol, 117 + (i % 10) * 34, 200 + Math.floor(i / 10) * 38, BICIM[(i * 5 + Math.floor(i / 10)) % 6], RENK.cizgi);
+    yazi(c, sol, 270, 384, '40 üçgen, hepsinde 180°', { size: 24, kalin: 600, renk: RENK.soluk });
+    const solAd = yazi(c, sol, 270, 436, '?', { size: 30, kalin: 700, renk: RENK.dis });
+    yazi(c, sag, 730, 162, 'Genelleme', { size: 28, kalin: 700 });
+    yazi(c, sag, 730, 262, '“Her üçgende', { size: 28, kalin: 600 });
+    yazi(c, sag, 730, 304, 'toplam 180°dir.”', { size: 28, kalin: 600 });
+    yazi(c, sag, 730, 384, 'bütün üçgenlerde doğru mu?', { size: 24, kalin: 600, renk: RENK.soluk });
+    const sagAd = yazi(c, sag, 730, 436, '?', { size: 30, kalin: 700, renk: RENK.dis });
+    gizle(sol, sag);
+
+    await par(c.say('Başlamadan önce iki şeyi hatırlayalım.'), belir(c, sol, 450));
+    await c.choice({
+      tag: 'Hatırla', q: 'Elif 40 üçgende ölçtü, hep 180° buldu. Bu nedir?',
+      options: ['İspat', 'Doğrulama', 'Genelleme'], answer: 1,
+      hints: ['İspat ölçmez; her üçgende geçerli adımlarla gösterir.', '', 'Genelleme bütün üçgenlerden söz eder; Elif yalnızca 40 üçgeni ölçtü.'],
+      right: 'Evet. Ölçmek yalnızca ölçülen üçgenleri doğrular.',
+    });
+    cevapla(solAd, 'doğrulama');
+    await par(c.say('Bir genelleme ise bütün üçgenlerden söz eder.'), belir(c, sag, 450));
+    await c.choice({
+      tag: 'Hatırla', q: 'Bir genellemenin bütün üçgenlerde doğru olduğunu ne gösterir?',
+      options: ['Daha çok ölçüm', 'Daha düzgün çizim', 'İspat'], answer: 2,
+      hints: ['Ölçüm kaç olursa olsun, denenmemiş üçgen kalır.', 'En düzgün çizim de tek bir üçgeni gösterir.', ''],
+      right: 'Evet. İspat, tek tek denemeden bütün üçgenleri kapsar.',
+    });
+    cevapla(sagAd, 'ispat');
+    await c.say('Peki bir ispat neye dayanır?', { speak: 'Peki bir ispat neye dayanır?' });
+  }
+
   /* ---- 1. Havada duran taş ---- */
   async function havadaTas(c) {
     const svg = c.svg(1000, 562);
     const ust = tas(c, svg, 290, 212, 420, 80, 'İç açılar toplamı 180°', { size: 26 });
     ust.k.setAttribute('stroke-dasharray', '8 7'); ust.tasi(0, -140);
     const soru = yazi(c, svg, 500, 300, '?', { size: 64, kalin: 700, renk: RENK.soluk });
-    const alt = ['Doğru açı 180°dir', 'İç ters açılar eşittir', 'Bir noktadan tek paralel'].map((m, i) => tas(c, svg, 20 + i * 330, 300, 300, 80, m, { size: 21 }));
-    gizle(ust.g, soru, alt.map((a) => a.g));
-    await par(c.say('Bu önermeyi ispatlamak istiyoruz; ama altı boş.'), (async () => { await belir(c, ust.g, 400); await belir(c, soru, 300); })());
-    await c.choice({
-      tag: 'Tahmin et', q: 'Bu önermeyi ispatlarken neye dayanmalıyız?',
-      options: ['Daha çok ölçüme', 'Çoğunluğun görüşüne', 'Doğruluğundan emin olduğumuz bilgilere'], answer: 2,
-      hints: ['Ölçüm örnek verir; ispat etmez.', 'Kalabalık da yanılabilir; ispat oy sayısına bakmaz.', ''],
-      right: 'İspatın her adımı sağlam bir bilgiye basar.',
+    const alt = ['Doğru açı 180°dir', 'İç ters açılar eşittir', 'Bir noktadan tek paralel'].map((m, i) => {
+      const t = tas(c, svg, 20 + i * 330, 300, 300, 80, m, { size: 21 });
+      bilgiCizimi(c, t.g, i); return t;
     });
-    await par(c.say('Doğruluğundan emin olduğumuz üç bilgi geliyor.'), (async () => {
-      await belir(c, soru, 250, 0);
-      for (const a of alt) { await belir(c, a.g, 350); await c.wait(250); }
-    })());
+    gizle(ust.g, soru, alt.map((a) => a.g));
+
+    // Anlat: taş havada; ispat başka bilgilere dayanır. Üç bilgi birer birer gelir, her biri bir cümleyle söylenir.
+    await par(c.say('Bu önermeyi ispatlamak istiyoruz; ama altı boş.'), (async () => { await belir(c, ust.g, 400); await belir(c, soru, 300); })());
+    await c.say('Bir ispat havada durmaz: başka bilgilere dayanır.');
+    await belir(c, soru, 250, 0);
+    await par(c.say('Birincisi: bir doğru açının ölçüsü 180°dir.', { speak: 'Birincisi: bir doğru açının ölçüsü yüz seksen derecedir.' }), belir(c, alt[0].g, 400));
+    await par(c.say('İkincisi: paralel doğrularda iç ters açılar eşittir.'), belir(c, alt[1].g, 400));
+    await par(c.say('Üçüncüsü: bir doğruya dışındaki noktadan tek paralel çizilir.'), belir(c, alt[2].g, 400));
+    await c.say('Üçü de doğruluğundan emin olduğumuz bilgiler.');
     await par(c.say('Önerme artık havada değil: üç bilgiye oturuyor.'), (async () => {
       await c.tween(800, (e) => ust.tasi(0, lerp(-140, 0, e)), ease.inOut);
       ust.k.removeAttribute('stroke-dasharray'); boya(ust, RENK.iyi);
     })());
+
+    // Sor: anlatılan, başka bir önermeye uygulanır.
+    await c.choice({
+      tag: 'Sıra sende', q: 'Başka bir önermeyi ispatlayacaksın. Neye dayanmalısın?',
+      options: ['Daha çok ölçüme', 'Çoğunluğun görüşüne', 'Doğruluğundan emin olduğun bilgilere'], answer: 2,
+      hints: ['Ölçüm örnek verir; ispat etmez.', 'Kalabalık da yanılabilir; ispat oy sayısına bakmaz.', ''],
+      right: 'Evet. İspatın her adımı sağlam bir bilgiye basar.',
+    });
     await c.say('Bu üç bilgiyi sonraki derste ispatta kullanacağız.');
   }
 
   /* ---- 2. Zincir nerede biter? ---- */
   async function zincir(c) {
     const svg = c.svg(1000, 562);
-    tas(c, svg, 330, 24, 340, 58, 'İç açılar toplamı 180°');
-    ['doğru açı', 'iç ters açılar', 'tek paralel'].forEach((m, i) => tas(c, svg, 150 + i * 240, 94, 220, 58, m));
-    const r2 = c.S('g', {}, svg), r3 = c.S('g', {}, svg), noktalar = c.S('g', {}, svg), aks = c.S('g', {}, svg);
+    const duvar = c.S('g', {}, svg);
+    tas(c, duvar, 330, 24, 340, 58, 'İç açılar toplamı 180°');
+    ['doğru açı', 'iç ters açılar', 'tek paralel'].forEach((m, i) => tas(c, duvar, 150 + i * 240, 94, 220, 58, m));
+    const r2 = c.S('g', {}, duvar), r3 = c.S('g', {}, duvar), noktalar = c.S('g', {}, duvar), aks = c.S('g', {}, duvar);
     for (let i = 0; i < 4; i++) { tas(c, r2, 116 + i * 196, 164, 180, 58); tas(c, r3, 116 + i * 196, 234, 180, 58); }
     [318, 338, 358].forEach((y) => nokta(c, noktalar, [500, y], RENK.soluk, 4));
     tas(c, aks, 134, 388, 150, 62, null, { renk: RENK.dis });
@@ -57,21 +127,40 @@
     tas(c, aks, 716, 388, 150, 62, null, { renk: RENK.dis });
     yazi(c, aks, 500, 498, 'Aksiyomlar', { size: 28, kalin: 700, renk: RENK.dis });
     gizle(r2, r3, noktalar, aks);
+
+    // Anlat: zincir aşağı iner, sonsuza inemez; en altta aksiyomlar durur. Örnek: iki noktadan bir doğru geçer.
     await c.say('Üstteki önerme üç bilgiye dayanıyor.');
     await par(c.say('Peki bu üç bilgi neye dayanıyor?', { speak: '[curious] Peki bu üç bilgi neye dayanıyor?' }), belir(c, r2, 500));
     await par(c.say('Onlar da başka bilgilere dayanıyor; zincir aşağı iniyor.'), (async () => { await belir(c, r3, 500, 0.6); await belir(c, noktalar, 400); })());
-    await c.choice({
-      tag: 'Tahmin et', q: 'Her bilgiyi başka bir bilgiyle ispatlarsak bu zincir nerede biter?',
-      options: ['Hiç bitmez, sonsuza kadar iner', 'İspatsız kabul edilen birkaç temel bilgide', 'En çok ölçülen bilgide'], answer: 1,
-      hints: ['Sonu olmayan bir zincirle hiçbir şey ispatlanamazdı.', '', 'Ölçüm bir ispatın temeli olamaz.'],
-      right: 'Zincir, doğru kabul edilen temel bilgilerde durur.',
-    });
+    await c.say('Zincir sonsuza inemez: sonu olmasa hiçbir şey ispatlanamazdı.', { speak: 'Zincir sonsuza inemez: sonu olmasa hiçbir şey ispatlanamazdı.' });
     await par(c.say('En altta <b>aksiyomlar</b> durur: ispatsız kabul edilen temel bilgiler.', { speak: 'En altta aksiyomlar durur: [short pause] ispatsız kabul edilen temel bilgiler.' }), belir(c, aks, 600));
     await par(c.say('Örneğin bu bilgi ispatlanmaz; doğru kabul edilir.'), (async () => {
       await c.tween(500, (e) => ornek.k.setAttribute('stroke-width', lerp(2, 5, e)));
       await c.tween(500, (e) => ornek.k.setAttribute('stroke-width', lerp(5, 3, e)));
     })());
+    await c.say('Aksiyomlar böyle temel bilgilerdir; üstlerindeki her bilgi ispatlanır.');
+
+    // Birlikte çöz: üç bilgilik tablo; ilk ikisi yerine konmuş, üçüncüyü öğrenci koyar.
+    await belir(c, duvar, 300, 0);
+    const tablo = c.S('g', {}, svg);
+    const satirlar = [['İki noktadan bir doğru geçer.', 'aksiyom', RENK.dis], ['İç açılar toplamı 180°dir.', 'ispatlanır', RENK.soluk], ['Dış açılar toplamı 360°dir.', '?', RENK.yazi]];
+    const adlar = satirlar.map(([bilgi, ad, renk], i) => {
+      const y = 165 + i * 120;
+      kutu(c, tablo, 90, y - 46, 820, 84, i === 0 ? { renk: RENK.dis } : {});
+      yazi(c, tablo, 120, y + 6, bilgi, { hiza: 'start', size: 26, kalin: 600 });
+      return yazi(c, tablo, 880, y + 6, ad, { hiza: 'end', size: 26, kalin: 700, renk });
+    });
+    gizle(tablo);
+    await par(c.say('Üç bilgiyi yerine koyalım; ilk ikisi hazır.'), belir(c, tablo, 400));
+    await c.choice({
+      tag: 'Birlikte çöz', q: 'Üçüncü bilgi hangi türdendir?',
+      options: ['Aksiyom', 'İspatlanır', 'Ölçümle kabul edilir'], answer: 1,
+      hints: ['Aksiyom en alttaki temel bilgidir; bu, ikinci satırdaki gibi bir önerme.', '', 'Ölçmek yalnızca ölçüleni doğrular; bu önerme bütün üçgenlerden söz ediyor.'],
+      right: 'Evet. İç açılar toplamı gibi bu da ispatlanır.',
+    });
+    cevapla(adlar[2], 'ispatlanır');
     c.note('<b>Aksiyom:</b> ispatsız kabul edilen temel bilgi.<br>İki noktadan bir doğru geçer.', 'Aksiyom', 'gs-aksiyom');
+    await c.say('İspatlanan her bilgi, sonunda aksiyomlara dayanır.');
   }
 
   /* ---- 3. Ölçmeden ispata ---- */
@@ -205,10 +294,11 @@
       hook: 'Bir mimar “bu çizim doğru” derken hangi bilgilere güvenir?',
       button: 'Derse başla ›',
     },
-    goals: ['Bir ispatın doğruluğundan emin olunan bilgilere dayandığını görür.', 'Aksiyomu ve Öklid geometrisinin aksiyomatik yapısını tanır.', 'Geometrinin ölçme kurallarından kuramsal bir yapıya nasıl dönüştüğünü anlatır.', 'Geometriye katkı sağlayan isimleri ve <i>Geometri</i> kitabının terimlerini tanır.'],
+    goals: ['Bir ispatın doğruluğundan emin olunan bilgilere dayandığını görür.', 'Aksiyomu ispatlanan bilgiden ayırır; Öklid geometrisinin aksiyomatik yapısını tanır.', 'Geometrinin ölçme kurallarından kuramsal bir yapıya nasıl dönüştüğünü anlatır.', 'Geometriye katkı sağlayan isimleri ve <i>Geometri</i> kitabının terimlerini tanır.'],
     scenes: [
+      { title: 'Hatırla', goal: 'Doğrulama ile ispatı hatırla.', run: hatirla },
       { title: 'Havada duran taş', goal: 'İspatın doğruluğundan emin olunan bilgilere dayandığını gör.', run: havadaTas },
-      { title: 'Zincir nerede biter?', goal: 'Zincirin sonunda aksiyomların durduğunu gör.', run: zincir },
+      { title: 'Zincir nerede biter?', goal: 'Zincir aksiyomlarda biter; üstlerindeki her bilgi ispatlanır.', run: zincir },
       { title: 'Ölçmeden ispata', goal: 'Geometrinin arazi ölçümünden kuramsal bir yapıya uzanan yolunu izle.', run: serit },
       { title: 'Geometri bir yapıdır', goal: 'Öklid geometrisinin aksiyomlar üstüne kurulduğunu gör.', run: yapi },
       { title: 'Katkı sağlayanlar ve Geometri kitabı', goal: 'Dört bilim insanını tanı; eski terimleri bugünküyle eşleştir.', run: katki },
@@ -219,13 +309,25 @@
         q: 'Bir ispatta kullanılan her bilgi nasıl olmalıdır?',
         options: ['Yeni ölçülmüş olmalı', 'Doğruluğundan emin olunan bir bilgi olmalı', 'Çoğunluğun kabul ettiği bir görüş olmalı'], answer: 1,
         why: ['Ölçüm örnek verir; ispatın dayanağı olamaz.', 'İspat, doğruluğu bilinen bilgilerin üstüne kurulur.', 'Çoğunluk da yanılabilir; ispat oy sayısına bakmaz.'],
-        scene: 0,
+        scene: 1,
       },
       {
         q: 'Öklid geometrisinde ispatların temelini ne oluşturur?',
         options: ['En çok tekrar edilen ölçümler', 'Çizimlerin düzgünlüğü', 'Aksiyomlara dayanan yapı'], answer: 2,
         why: ['Tekrar edilen ölçüm yine örnektir.', 'Düzgün çizim tek bir şekli gösterir.', 'Altta aksiyomlar, üstte onlara dayanarak ispatlananlar durur.'],
-        scene: 3,
+        scene: 4,
+      },
+      {
+        q: 'Bir ispatın bir adımında gerekçe olarak “Çünkü çizimde öyle görünüyor.” yazıldı. Sorun nedir?',
+        options: ['Görünüş, doğruluğundan emin olunan bir bilgi değildir.', 'Çizim küçük kalmıştır.', 'Gerekçe çok kısadır.'], answer: 0,
+        why: ['Görünüş yanıltabilir; ispatın her adımı doğruluğu bilinen bir bilgiye dayanır.', 'Çizim büyüse de görünüş bir gerekçe olmaz.', 'Gerekçenin uzunluğu değil, dayandığı bilgi önemlidir.'],
+        scene: 1,
+      },
+      {
+        q: 'Aksiyom için hangisi doğrudur?',
+        options: ['En çok ölçülen bilgidir.', 'İspatsız kabul edilen temel bilgidir.', 'İspatı en uzun olan bilgidir.'], answer: 1,
+        why: ['Ölçüm sayısı bir bilgiyi aksiyom yapmaz.', 'Zincirin en altında durur; öteki bilgiler ona dayanarak ispatlanır.', 'Aksiyomun ispatı yoktur; doğru kabul edilir.'],
+        scene: 2,
       },
     ],
     summary: [

@@ -110,3 +110,34 @@ Kullanıcı onayı (8 Ekim 2026): A konusunu izledi, "bunları beğendim". "Hat�
 
 Kullanıcının bakması gerekenler: A2'de "bir noktadan tek paralel" ve "doğru açı 180°" taşlarının "başka bilgilere dayanan" bilgi olarak durması (eski içerik); "Hatırla" sahnelerinin açılış cümleleri dersten derse farklı (A2 "Önce geçen dersten iki soru.", A5 "Önce hatırla: …"); A4'te senaryoda olmayan küçük soru; A5 "İkinci yol" tahtasındaki öğe sayısı.
 
+## Pilotun seslendirilmesi ve yayını (8 Ekim 2026, `plan/YURUTME.md` adım 1)
+
+İzin: kullanıcı, "seslendirme, commit ve yayına geçebilirsin." Pilot dinleme adımı atlandı (ses ve yönergeler bu temada onaylıydı). Yukarıdaki "Seslendirme" tablosunda A1–A5 satırları eski metne aittir; A konusunun geçerli sayıları aşağıdadır.
+
+- **Metin denetimi (1.1, iki Sonnet ajanı).** A1 ve A2'de değişiklik gerekmedi; A3'te 4, A4'te 1, A5'te 4, A6'da 1 `speak` eklendi ya da düzeltildi (x'e gelen ekler "x terimlerini", "x değerine"; "C’deki" → "C köşesindeki", "B’ye" → "B köşesine"; "x eşittir kırk sekiz derece"; iki `[thoughtful]`, bir `[short pause]`). "Sahne otomatik tamamlanamadı" uyarısı yok; A5 dökümü bu kez takılmadı.
+- **Tarama (1.2, ana oturum).** Altı dökümde rakam ve simge yok; yönergeler yalnızca üç izinli etiket; başlangıç kopyasıyla karşılaştırmada yalnızca `speak` değişmiş, altyazılar aynı. Ders başına üç yönerge sınırı için klibi olmayan dört satırdan yönerge alındı (A1 bir `[thoughtful]`; A2 bir `[curious]`, bir `[thoughtful]`; A4 bir `[short pause]`). A3'te "A B kenarı" → "AB kenarı" (öteki derslerle aynı yazım).
+- **Üretim (1.3, iki Haiku ajanı).** 131 yeni klip, 7.027 karakter; hata ve yeniden deneme yok; hiçbir klip iki kez üretilmedi. Metni değişmeyen 68 cümlenin eski klibi yeniden kullanıldı; metni artık derste geçmeyen eski klipleri araç sildi.
+- **Sayfalar (1.4).** Altı sayfada `ses/<ders-id>.js` satırı.
+- **Doğrulama (1.5).** Altı derste dizin, klip dosyaları ve döküm birebir; `--liste` "Üretilecek: 0 klip"; `olc.js` altı derste temiz; `denetle.js` "Sorun yok" (13 kısa ders); `sure.js` yeniden çalıştırıldı: A konusu 40:21, tema 76:36.
+
+| Ders | Satır | Karakter | Klip (yeni) | Süre | Yönerge | Tahmini ders süresi |
+|---|---|---|---|---|---|---|
+| A1 | 21 | 1.175 | 21 (17) | 90,2 sn | 3 | 5:10 |
+| A2 | 37 | 1.995 | 37 (12) | 150,4 sn | 3 | 7:19 |
+| A3 | 54 | 2.908 | 54 (41) | 232,8 sn | 3 | 9:05 |
+| A4 | 38 | 2.069 | 38 (24) | 161,7 sn | 3 | 7:27 |
+| A5 | 41 | 2.119 | 41 (29) | 171,6 sn | 3 | 7:54 |
+| A6 | 8 | 434 | 8 (8) | 33,1 sn | 1 | 3:26 |
+| **A konusu** | **199** | **10.700** | **199 (131)** | **839,8 sn (14,0 dk), 6,83 MB** | **16** | **40:21** |
+
+Tema toplamı: 327 klip, 23,2 dk, 11,3 MB (B ve C değişmedi: 128 klip).
+
+Süre aykırısı (karakter başına süre, dersin ortancasından %30'dan fazla): yalnızca A3 sahne 7, `4bc30c58.mp3`, 4,16 sn, +%38, "Bir üçgenin açıları x, iki x ve üç x." (harf sayan satır; beklenen türden). Kısa yönde aykırı yok.
+
+Dinlenmesi gerekenler (kullanıcı):
+
+- "x" içeren satırlar (A3 sahne 7, A4 sahne 6): model "iks" diyor mu.
+- Eski seslendirmeden kalan, tek harfe ek gelen dört klip (yeniden üretilmedi, ücretlenmesin diye): A3 sahne 5 "A’daki beta ve gama…" (`704b5818`), A4 sahne 2 "…C’den öteye uzatıyoruz" (`5582d0ff`), A5 sahne 4 "Önce A’daki açı: AC keseni boyunca C’ye taşınıyor" (`2db1b3e1`) ve "Şimdi B’deki açı: BC keseni boyunca C’ye kayıyor" (`d3cb4374`).
+- İki harfli adlar bitişik yazıldı ("AB kenarı", "AC keseni", "BC doğrusunu").
+
+Açık içerik sorusu: A2'de "bir noktadan tek paralel" ve "doğru açı 180°dir" taşları "başka bilgilere dayanan" bilgi olarak duruyor (eski içerik).
