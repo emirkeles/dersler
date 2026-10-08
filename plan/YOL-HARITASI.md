@@ -1,10 +1,14 @@
 # Yol haritası
 
-Son güncelleme: 8 Ekim 2026. Sıranın gerekçesi ve sayılar `TASKS.md` içindeki "Araçlar: yeni anlatım kuralları ve eski temaların sayımı" bölümündedir. "Sınıfta gerekeceği zaman" sütunu ders saatlerinden çıkarılmış tahmindir, okul takvimiyle doğrulanmadı.
+Son güncelleme: 8 Ekim 2026. Nasıl yürütüleceği (kim ne yapar, hangi alt ajan hangi modelle): `YURUTME.md`. Sıranın gerekçesi ve sayılar `TASKS.md` içindeki "Araçlar: yeni anlatım kuralları ve eski temaların sayımı" bölümündedir. "Sınıfta gerekeceği zaman" sütunu ders saatlerinden çıkarılmış tahmindir, okul takvimiyle doğrulanmadı.
 
-## Şimdi: pilot
+## Şimdi: 1. adım (pilotu kapat)
 
-Yeni anlatım kuralları (`KURALLAR.md` 3–3.4) ilk kez gerçek bir konuda deneniyor.
+Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"). Aşağıdaki "Pilot beğenilirse" sırası yürürlükte; sıradaki iş 1. adımdır: A konusunun seslendirilmesi (kullanıcı ayrıca ister), commit ve yayın.
+
+### Pilotun kaydı
+
+Yeni anlatım kuralları (`KURALLAR.md` 3–3.4) ilk kez gerçek bir konuda denendi.
 
 | | |
 |---|---|

@@ -90,3 +90,23 @@ Açık bulgular:
 
 - **Dallanan altyazı (kapandı, 8 Ekim 2026).** A4 S2 ve C2 S2'de altyazı öğrencinin tahminine göre değişiyordu; `ses-uret.js` dersi tek yoldan oynattığı için "Tahminin tuttu…" kolunun klibi yoktu. Kullanıcı kararıyla derste çözüldü: okunan metin iki kolda aynı (var olan klip çalar, yeni üretim yok), tahmini tutan öğrencide altyazının başına yalnızca ekranda "Tahminin tuttu." eklenir. Otomatik oynatma yanlış tahmin kolundan geçtiği için uzun altyazı `olc.js` ile ölçülmedi (10 ve 9 kelime; sınır 12).
 - **Okunuşu dinlenmesi gerekenler.** İki harfli adlar ("AB", "BC", "AC", "BD" bitişik yazıldı), harf harf yazılan üçgen adları ("A B E"), küçük harfli tek değişkenler ("x", "a", "b", "c", "e"), tek harfe gelen ekler ("A’daki", "B’de", "C’ye"; A ve B derslerinde olduğu gibi bırakıldı). A1'de bu türden satır yok; pilot bunları sınamadı.
+
+## Pilot: yeni anlatım kuralları, A konusu (8 Ekim 2026)
+
+`plan/KURALLAR.md` 3–3.4 ilk kez burada deneniyor; sıra ve sonrası `plan/YOL-HARITASI.md`. Senaryo: `senaryolar/A-acilar-ve-ispat.md`, "Pilot" bölümü. Tema yayında olduğu için pilot onaya kadar commit edilmez; dersler dosyadan açılarak izlenir. A1–A5 sayfalarından `ses/<id>.js` satırı çıkarıldı (eski klipler yeni metinle uyuşmuyor); onaydan sonra yeniden seslendirilir. `tema.js` içine `kural: 2` yazılmadı, çünkü B ve C konuları eski kurallarla duruyor.
+
+| Ders | Yazan | Sahne | Çıkış sorusu | olc | Not |
+|---|---|---|---|---|---|
+| A1 Ölçmek ispat değildir | ana oturum | 4 | 4 | temiz | 22 altyazı; iki kavram (genelleme, doğrulama) ilk sorudan önce adlandırılıyor; "Birlikte çöz" üç cümlelik tablo |
+| A2 İspat doğru bilgilerin üstüne kurulur | alt ajan | 6 | 4 | temiz | 37 altyazı; "Hatırla" iki kartlı; taş sahnesinde üç bilgi önce anlatılıyor, altlarına yazısız küçük çizimler eklendi; "Birlikte çöz" üç satırlı tablo. İlk üç sahnenin görüntüsüne ana oturum baktı. Açık: "bir noktadan tek paralel" ve "doğru açı 180°" duvarda "başka bilgilere dayanan" taşlar olarak duruyor (eski içerik) |
+| A3 İç açıların toplamı 180°dir | alt ajan | 7 | 4 | temiz | 54 altyazı; "Tek paralel"de tahmin kalktı, önce gösterim sonra P noktasıyla uygulama sorusu; ispatın son adımı "Birlikte çöz"; "Sıra sende" tam çözülmüş örnek → yarısı çözülmüş → tek başına. "İspatı tamamla" tahtası tam 25 kelimede. İspat ve son sahnenin görüntüsüne ana oturum baktı; 65°/45° çıkış sorusunun `scene` değeri 6 yapıldı |
+| A4 Dış açıların toplamı 360°dir | alt ajan | 6 | 4 | temiz | 39 altyazı; "Dış açı" sahnesi önce tanımı, 70° → 110° örneğini ve yanılgıyı (kırmızı 290° bölge) gösteriyor, tahmin ondan sonra; Yol 2'deki boşluk "Birlikte çöz"; "Sıra sende" örnek → yarısı çözülmüş → iki soru tek başına. Senaryoda olmayan küçük soru (iç 60° → dış 120°) korundu. Örnek ve "Sıra sende" görüntüsüne ana oturum baktı |
+| A5 Dış açı, uzaktaki iki iç açının toplamıdır | alt ajan | 6 | 4 | temiz | 43 altyazı; "Hangi açılar?" önce komşu ve uzak iç açıları adlandırıyor; ispatın ikinci gerekçesi "Birlikte çöz"; ikinci yola iç ters ve yöndeş açı hatırlatması eklendi; "İkinci yol" tahtasında 13–15 yazı öğesi var (kelime 23), "İspat" tam 25 kelimede. Çıkış sorusu 2'nin henüz öğretilmemiş çeldiricileri (üçgen eşitsizliği, en uzun kenar) ana oturumda değiştirildi. İki sahnenin görüntüsüne ana oturum baktı |
+| A6 Konu tekrarı (`a6-tekrar.html`, yeni) | ana oturum | 1 | 8 | temiz | beş kural tek sahnede, sekiz karışık soru |
+
+Pilot denetimi (8 Ekim 2026): altı derste `olc.js` temiz; `sure.js` A konusunu 37:21 ölçtü (eski beş ders 24:30; A1 4:56, A2 7:00, A3 8:01, A4 6:43, A5 7:21, A6 3:20; seslendirme olmadığı için okuma hızıyla); `denetle.js` temada temiz (13 kısa ders). `kural: 2` geçici olarak işaretlenip denetlendiğinde A konusunun altı dersinde sorun ve not çıkmadı; işaret geri alındı. `sure.js --kural`: altı derste soruyla açılan sahne 0, ilk sorudan önce 3–7 altyazı.
+
+Kullanıcı onayı (8 Ekim 2026): A konusunu izledi, "bunları beğendim". "Hatırla" sahneleri aynı cümleyle açılacak biçimde eşitlendi ("Başlamadan önce iki şeyi hatırlayalım."); `olc.js` A2, A3, A5'te yeniden temiz, A konusu 37:25. Seslendirme dökümü (`ses-uret.js --liste`, API çağrısı yok): A1 17, A2 12, A3 41, A4 24 klip üretilecek (toplam 5.095 karakter; metni değişmeyen cümlelerin eski klipleri yeniden kullanılır); A5'in dökümü araçta takıldı, sayılamadı.
+
+Kullanıcının bakması gerekenler: A2'de "bir noktadan tek paralel" ve "doğru açı 180°" taşlarının "başka bilgilere dayanan" bilgi olarak durması (eski içerik); "Hatırla" sahnelerinin açılış cümleleri dersten derse farklı (A2 "Önce geçen dersten iki soru.", A5 "Önce hatırla: …"); A4'te senaryoda olmayan küçük soru; A5 "İkinci yol" tahtasındaki öğe sayısı.
+

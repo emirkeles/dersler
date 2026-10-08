@@ -13,6 +13,7 @@ araclar/                      olc.js, sure.js, denetle.js, ses-uret.js, hikaye-s
 plan/KURALLAR.md              bütün temalar için bağlayıcı kurallar
 plan/ISLEME.md                bir temayı baştan sona işleme alma adımları
 plan/YOL-HARITASI.md          sıradaki işler ve sıraları
+plan/YURUTME.md               bu sıranın yürütülmesi: adımlar, alt ajan modelleri, bitiş ölçütleri
 plan/<ders>/TEMALAR.md       dersin temaları ve durumları
 plan/<ders>/<tema>/          MUFREDAT.md, PLAN.md, senaryolar/
 ```
@@ -30,6 +31,7 @@ Kullanıcı bir temayı işleme almanı isterse (örnek: "geometrik-sekiller tem
 - `ortak/API.md`: ders motorunun API'si, ders ve tema iskeleti, araçlar.
 - Üzerinde çalıştığın temanın `plan/<ders>/<tema>/MUFREDAT.md` ve `PLAN.md` dosyaları.
 - `plan/YOL-HARITASI.md`: sıradaki işler ve hangi sırayla yapılacakları.
+- `plan/YURUTME.md`: bu sıranın nasıl yürütüleceği. Kullanıcı "yürütme planını uygula" derse bu dosya ilk bitmemiş adımdan sürdürülür: ana oturum planlar ve denetler, yazım `model: "sonnet"`, komut ve sayım `model: "haiku"` alt ajanlarıyla yapılır.
 
 ## Bir tema üzerinde çalışırken
 

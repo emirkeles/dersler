@@ -1,0 +1,289 @@
+<title>Dersler İş Panosu</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Düzen: üstte özet (sayılar + tema hattı + ders çubukları), altta beş sütunlu akış panosu: Sonra → Sıradaki → Sürüyor → Sende bekliyor → Bitti. Sitenin kendi koyu paleti ve ders renkleri. */
+:root{
+  color-scheme:dark;
+  --bg:#0c0e13; --surface:#141822; --surface2:#1c2130; --line:#2a3040; --hair:#1f2532;
+  --text:#eceef3; --soft:#c9cfdb; --muted:#8d94a6;
+  --cta:#ffd166; --cta-ink:#1a1405; --good:#3ddc97;
+  --mat:#6ea8ff; --fiz:#ff8a5b; --kim:#c792ff; --biy:#3ddc97; --tde:#ff8fab; --tar:#f5b04c; --cog:#3cc8e8; --gen:#8d94a6;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --radius:8px;
+}
+@media (prefers-color-scheme: light){
+  :root:not([data-theme="dark"]){
+    color-scheme:light;
+    --bg:#f2f4f8; --surface:#ffffff; --surface2:#e8ecf3; --line:#cfd6e2; --hair:#dfe4ec;
+    --text:#151922; --soft:#333b4a; --muted:#5b6476;
+    --cta:#9a6400; --cta-ink:#ffffff; --good:#0f8a5d;
+    --mat:#2f6fd6; --fiz:#cf5a2a; --kim:#8a4fd0; --biy:#12936a; --tde:#cf4672; --tar:#a86d08; --cog:#0e8aab; --gen:#5b6476;
+  }
+}
+:root[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f2f4f8; --surface:#ffffff; --surface2:#e8ecf3; --line:#cfd6e2; --hair:#dfe4ec;
+  --text:#151922; --soft:#333b4a; --muted:#5b6476;
+  --cta:#9a6400; --cta-ink:#ffffff; --good:#0f8a5d;
+  --mat:#2f6fd6; --fiz:#cf5a2a; --kim:#8a4fd0; --biy:#12936a; --tde:#cf4672; --tar:#a86d08; --cog:#0e8aab; --gen:#5b6476;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.45;-webkit-font-smoothing:antialiased}
+.page{max-width:1440px;margin:0 auto;padding-inline:20px;padding-block:28px 56px;display:flex;flex-direction:column;gap:28px}
+h1,h2,h3,p{margin:0}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.label{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+
+/* Üst özet */
+.top{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:32px;align-items:start}
+.lead{display:flex;flex-direction:column;gap:20px;min-width:0}
+h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
+.sub{color:var(--muted);font-size:14px}
+.figs{display:flex;flex-wrap:wrap;gap:12px 36px}
+.fig{display:flex;flex-direction:column;gap:2px}
+.fig b{font-family:var(--mono);font-weight:500;font-size:28px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fig b i{font-style:normal;color:var(--muted);font-size:17px}
+
+/* Tema hattı */
+.hat{display:flex;flex-direction:column;gap:10px;min-width:0}
+.stages{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+.stage{padding:12px 12px 14px;display:flex;flex-direction:column;gap:8px;border-left:1px solid var(--hair);min-width:0}
+.stage:first-child{border-left:0}
+.stage h3{font-size:12.5px;font-weight:500;color:var(--soft);display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.stage h3 span:last-child{font-family:var(--mono);color:var(--text);font-size:14px}
+.sq{display:flex;flex-wrap:wrap;gap:4px;min-height:14px}
+.sq i{width:14px;height:14px;border-radius:3px;background:var(--c);transition:opacity .15s}
+.sq i.dim{opacity:.18}
+.sq em{font-style:normal;color:var(--muted);font-size:12.5px}
+
+/* Ders çubukları */
+.dersler{display:flex;flex-direction:column;gap:10px;min-width:0}
+.drow{display:grid;grid-template-columns:150px minmax(0,1fr) 74px;gap:12px;align-items:center;font-size:13.5px}
+.drow .name{display:flex;align-items:center;gap:8px;min-width:0}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--c);flex:none}
+.track{height:10px;border-radius:5px;background:var(--surface2);position:relative;overflow:hidden}
+.track span{position:absolute;inset:0 auto 0 0;background:var(--c);border-radius:5px}
+.drow .val{text-align:right;color:var(--soft);font-size:12.5px}
+.note{color:var(--muted);font-size:12.5px;max-width:65ch}
+
+/* Süzgeç */
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{font:inherit;font-size:13px;color:var(--soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:5px 12px;display:inline-flex;align-items:center;gap:7px;cursor:pointer}
+.chip:hover{border-color:var(--muted)}
+.chip:focus-visible{outline:2px solid var(--cta);outline-offset:2px}
+.chip[aria-pressed="true"]{background:var(--text);color:var(--bg);border-color:var(--text)}
+
+/* Pano */
+.board{display:grid;grid-template-columns:repeat(auto-fit,minmax(244px,1fr));gap:16px;align-items:start}
+.col{display:flex;flex-direction:column;gap:10px;min-width:0}
+.col>header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+.col>header h2{font-size:14px;font-weight:600;letter-spacing:.01em}
+.col>header span{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.col>p{font-size:12.5px;color:var(--muted);min-height:2.9em}
+.col.you>header{border-bottom-color:var(--cta)}
+.col.you>header h2{color:var(--cta)}
+.col.done>header{border-bottom-color:var(--good)}
+.cards{display:flex;flex-direction:column;gap:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:11px 12px 12px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.card .meta{display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:12px;color:var(--muted)}
+.card .who{display:inline-flex;align-items:center;gap:6px;min-width:0}
+.card .size{font-family:var(--mono);font-size:11.5px;white-space:nowrap}
+.card h3{font-size:14.5px;font-weight:500;line-height:1.3;overflow-wrap:anywhere}
+.card p{font-size:13px;color:var(--soft)}
+.card .when{font-size:12px;color:var(--muted)}
+.card .rank{font-family:var(--mono);font-size:12px;color:var(--cta-ink);background:var(--cta);border-radius:4px;padding:0 6px;font-weight:500}
+.card .prog{height:6px;border-radius:3px;background:var(--surface2);overflow:hidden}
+.card .prog span{display:block;height:100%;background:var(--c);border-radius:3px}
+.col.done .card{background:transparent;border-color:var(--hair);padding-block:8px 9px;gap:3px}
+.col.done .card h3{font-size:13.5px;color:var(--soft)}
+.empty{font-size:12.5px;color:var(--muted);padding:10px 2px}
+
+@media (max-width:900px){
+  .top{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+  .page{padding-inline:16px}
+  .stages{grid-template-columns:minmax(0,1fr)}
+  .stage{border-left:0;border-top:1px solid var(--hair);flex-direction:row;align-items:center;justify-content:space-between}
+  .stage:first-child{border-top:0}
+  .stage h3{flex:1}
+  .sq{justify-content:flex-end;max-width:55%}
+  .drow{grid-template-columns:118px minmax(0,1fr) 62px;gap:8px}
+  .col>p{min-height:0}
+}
+</style>
+
+<div class="page">
+  <section class="top">
+    <div class="lead">
+      <div>
+        <h1>Dersler İş Panosu</h1>
+        <p class="sub">9. sınıf · 8 Ekim 2026 durumu, pilot onaylandı · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
+      </div>
+      <div class="figs">
+        <div class="fig"><span class="label">Kısa ders</span><b>157<i> / 534</i></b></div>
+        <div class="fig"><span class="label">Yayındaki tema</span><b>7<i> / 30</i></b></div>
+        <div class="fig"><span class="label">Ses</span><b>4.875<i> klip · 382 dk</i></b></div>
+        <div class="fig"><span class="label">Konu tekrarı dersi</span><b>1<i> / 144</i></b></div>
+      </div>
+      <div class="hat">
+        <span class="label">Tema hattı · her kare bir tema</span>
+        <div class="stages" id="stages"></div>
+        <p class="note">Yazılan yedi tema yayında ve sesli, ama baştan sona dinlenmedi. Yeni anlatım kuralları Geometrik Şekiller’in A konusunda denendi ve onaylandı; o konu seslendirilip yayına girecek. Kalan 23 temada yalnızca müfredat ve plan taslağı var.</p>
+      </div>
+    </div>
+    <div class="dersler">
+      <span class="label">Ders başına · yazılan / planlanan kısa ders</span>
+      <div id="dersler" class="dersler"></div>
+      <p class="note">Çubukların uzunluğu aynı ölçekte: en uzun çubuk 161 ders (matematik).</p>
+    </div>
+  </section>
+
+  <div class="bar" id="filtre" role="group" aria-label="Derse göre süz"></div>
+
+  <section class="board" id="board"></section>
+</div>
+
+<script>
+const DERS = {
+  mat:{ad:'Matematik', plan:161, bitti:72},
+  fiz:{ad:'Fizik', plan:60, bitti:30},
+  kim:{ad:'Kimya', plan:55, bitti:18},
+  biy:{ad:'Biyoloji', plan:57, bitti:37},
+  tde:{ad:'Türk Dili ve Edebiyatı', plan:91, bitti:0},
+  tar:{ad:'Tarih', plan:56, bitti:0},
+  cog:{ad:'Coğrafya', plan:54, bitti:0},
+  gen:{ad:'Genel'}
+};
+
+// Tema hattı: [ders, tema, adım]  adım: 0 plan taslağı, 1 yazım, 2 seslendirme, 3 yayında (dinleme bekliyor), 4 dinlendi
+const TEMALAR = [
+  ['mat','Sayılar',3],['mat','Nicelikler ve Değişimler',3],['mat','Geometrik Şekiller',3],
+  ['mat','Eşlik ve Benzerlik',0],['mat','Algoritma ve Bilişim',0],['mat','İstatistiksel Araştırma Süreci',0],['mat','Veriden Olasılığa',0],
+  ['fiz','Fizik Bilimi ve Kariyer Keşfi',3],['fiz','Kuvvet ve Hareket',3],['fiz','Akışkanlar',0],['fiz','Enerji',0],
+  ['kim','Etkileşim',3],['kim','Çeşitlilik',0],['kim','Sürdürülebilirlik',0],
+  ['biy','Yaşam',3],['biy','Organizasyon',0],
+  ['tde','Sözün İnceliği',0],['tde','Anlam Arayışı',0],['tde','Anlamın Yapı Taşları',0],['tde','Dilin Zenginliği',0],
+  ['tar','Geçmişin İnşa Sürecinde Tarih',0],['tar','Eski Çağ Medeniyetleri',0],['tar','Orta Çağ Medeniyetleri',0],
+  ['cog','Coğrafyanın Doğası',0],['cog','Mekânsal Bilgi Teknolojileri',0],['cog','Doğal Sistemler ve Süreçler',0],['cog','Beşerî Sistemler ve Süreçler',0],
+  ['cog','Ekonomik Faaliyetler ve Etkileri',0],['cog','Afetler ve Sürdürülebilir Çevre',0],['cog','Bölgeler, Ülkeler ve Küresel Bağlantılar',0]
+];
+const ADIMLAR = ['Plan taslağı','Senaryo ve yazım','Seslendirme','Yayında, dinleme bekliyor','Dinlendi, onaylı'];
+
+const SUTUNLAR = [
+  {id:'sonra', ad:'Sonra', aciklama:'Sırası gelmedi ya da bir karara bağlı.'},
+  {id:'sira', ad:'Sıradaki', aciklama:'Yol haritasındaki sırayla. Tarihler ders saatinden tahmin.'},
+  {id:'suruyor', ad:'Sürüyor', aciklama:'Başlanmış, bitmemiş iş.'},
+  {id:'sende', ad:'Sende bekliyor', aciklama:'Senin dinlemen ya da kararın olmadan ilerlemiyor.', cls:'you'},
+  {id:'bitti', ad:'Bitti', aciklama:'Yazıldı, seslendirildi, yayında.', cls:'done'}
+];
+
+// [sütun, ders, başlık, boyut, not, zaman, ilerleme(0–1)]
+const ISLER = [
+  ['sonra','mat','Algoritma ve Bilişim','31 ders','30 ders saati. Yeni kurallarla yazılacak.'],
+  ['sonra','mat','İstatistiksel Araştırma Süreci','24 ders','34 ders saati. Yeni kurallarla yazılacak.'],
+  ['sonra','mat','Veriden Olasılığa','16 ders','18 ders saati. Yeni kurallarla yazılacak.'],
+  ['sonra','fiz','Enerji','15 ders','18 ders saati. Bir hikâyesi hazır (F1).'],
+  ['sonra','kim','Sürdürülebilirlik','6 ders','8 ders saati. En küçük tema.'],
+  ['sonra','mat','Anlatımın yeniden yazımı: Geometri B–C, Nicelikler, Sayılar','67 ders','Pilottaki düzenle. Ücretli seslendirme gerektirir; tema tema ayrıca istenir.'],
+  ['sonra','biy','Anlatımın yeniden yazımı: eski anlatımlı dersler','16 ders','Matematik temalarından sonra.'],
+  ['sonra','tar','Tarih, üç tema','56 ders','Önce ders kitabı, görsel ve kaynak metin soruları kapanmalı.'],
+  ['sonra','cog','Coğrafya, yedi tema','54 ders','Önce taban harita verisinin kaynağı ve lisansı belli olmalı.'],
+  ['sonra','tde','Türk Dili ve Edebiyatı, dört tema','91 ders','Dersin yazılıp yazılmayacağı kararına bağlı.'],
+  ['sonra','mat','Sayılar hikâyeleri: C3, C4, C5, B5, D7','5 film','Başlanmadı.'],
+  ['sonra','gen','Hikâyelere müzik, efekt ve altyazı','9 film','Sitedeki filmlerin hiçbirinde yok.'],
+  ['sonra','gen','Depo temizliği','','Altı eski uzak dal silinebilir. Yerel araçlar kit.js içine toplanacak.'],
+
+  ['sira','kim','Çeşitlilik','31 + 13 ders','Yeni kurallarla baştan yazılır; 13 konunun her birine konu tekrarı dersi.','Sınıfta gerekeceği zaman: aralık başı'],
+  ['sira','gen','Yedi eski temaya ekler','152 ders · 35 konu','Çıkış soruları 2’den 4’e çıkar, her konuya tekrar dersi yazılır. Klip yeniden üretilmez.','Çeşitlilik ile birlikte yürür'],
+  ['sira','mat','Eşlik ve Benzerlik','18 ders','36 ders saati.','Sınıfta gerekeceği zaman: ocak'],
+  ['sira','fiz','Akışkanlar','15 ders','18 ders saati. İki hikâyesi hazır (A1).','Sınıfta gerekeceği zaman: ocak sonu'],
+  ['sira','biy','Organizasyon','20 ders','24 ders saati.','Sınıfta gerekeceği zaman: mart'],
+
+  ['suruyor','mat','Pilotu kapat: Geometrik Şekiller A konusu','131 klip','Altı ders yeni kurallarla yazıldı ve onaylandı. Kalan: seslendirme, commit, yayın.','Yürütme planı, 1. adım',2/3],
+
+  ['sende','gen','Yayındaki yedi temayı sesli izle','≈ 17 saat','Konu başına en az bir ders yeter. 55 klip süre olarak uzun yönde aykırı; listeler DURUM.md dosyalarında.'],
+  ['sende','mat','Pilotu sesli izle','6 ders','Seslendirme bitince A1–A6. Mümkünse bir 9. sınıf öğrencisi de izlesin; hiçbir kural bunun yerini tutmaz.'],
+  ['sende','mat','A2’deki iki taş','','“Bir noktadan tek paralel” ve “doğru açı 180°dir” başka bilgilere dayanan bilgi gibi duruyor; ilki aksiyoma, ikincisi tanıma daha yakın.'],
+  ['sende','gen','“Kısa ders” adı','','Kural olarak kalktı ama sitede hâlâ böyle yazıyor. “Ders” olsun mu?'],
+  ['sende','tde','Bu ders yazılacak mı?','91 ders','Tam plan, yalnızca okuma ve dil bilgisi, ya da hiç. İsteklerin %40–46’sı site dışı; metin telifi belirsiz.'],
+  ['sende','fiz','Hikâye adaylarını onayla','20 aday','Dört temanın listesi önem sırasıyla hazır; senaryolar onaydan sonra yazılır.'],
+  ['sende','fiz','B1 için iki resim','2 görsel','Kutup ışıkları ve kristal yerinde vektör çizim duruyor; üretimi ayrıca istemen gerekiyor.'],
+  ['sende','biy','D6 ve E1’i sitede izle','2 ders','E1’de “üretilir mi” satırı “Dışarıdan alınır mı?” diye sorulsun mu?'],
+
+  ['bitti','gen','Yeni anlatım kuralları ve araç denetimleri','c7e1ea7','Önce anlat, örnek, hatırla, konu tekrarı. denetle.js ve sure.js bunları denetliyor.'],
+  ['bitti','mat','Pilot: Geometrik Şekiller A konusu','6 ders','Yeniden yazıldı ve onaylandı. 24:30 → 37:25; çıkış sorusu 10 → 28.'],
+  ['bitti','mat','Sayılar','28 ders','496 klip · 4 hikâye'],
+  ['bitti','mat','Nicelikler ve Değişimler','32 ders','526 klip'],
+  ['bitti','mat','Geometrik Şekiller','12 ders','222 klip · 1 hikâye'],
+  ['bitti','fiz','Fizik Bilimi ve Kariyer Keşfi','6 ders','93 klip'],
+  ['bitti','fiz','Kuvvet ve Hareket','24 ders','1.472 klip · 1 hikâye'],
+  ['bitti','kim','Etkileşim','18 ders','1.126 klip'],
+  ['bitti','biy','Yaşam','37 ders','940 klip'],
+  ['bitti','mat','D3 hikâyesi: Yıldızlar bunu giyiyor','75 sn','İşlendi ve D3 dersine bağlandı.'],
+  ['bitti','gen','Yol haritası ve yürütme planı','','plan/YOL-HARITASI.md ve plan/YURUTME.md: sıra, kim ne yapar, bitiş ölçütleri.']
+];
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const $ = id => document.getElementById(id);
+let secili = 'hepsi';
+
+function cizDersler(){
+  const max = 161;
+  $('dersler').innerHTML = Object.entries(DERS).filter(([k]) => k !== 'gen').map(([k,d]) => `
+    <div class="drow" style="--c:var(--${k})">
+      <span class="name"><i class="dot"></i><span>${esc(d.ad)}</span></span>
+      <span class="track" style="width:${(d.plan/max*100).toFixed(1)}%" title="${d.bitti} / ${d.plan}"><span style="width:${(d.bitti/d.plan*100).toFixed(1)}%"></span></span>
+      <span class="val num">${d.bitti} / ${d.plan}</span>
+    </div>`).join('');
+}
+
+function cizHat(){
+  $('stages').innerHTML = ADIMLAR.map((ad,i) => {
+    const t = TEMALAR.filter(x => x[2] === i);
+    const kareler = t.length
+      ? t.map(x => `<i style="--c:var(--${x[0]})" title="${esc(DERS[x[0]].ad)} · ${esc(x[1])}" class="${secili!=='hepsi' && secili!==x[0] ? 'dim':''}"></i>`).join('')
+      : '<em>boş</em>';
+    return `<div class="stage"><h3><span>${esc(ad)}</span><span>${t.length}</span></h3><div class="sq">${kareler}</div></div>`;
+  }).join('');
+}
+
+function cizPano(){
+  $('board').innerHTML = SUTUNLAR.map(s => {
+    const isler = ISLER.filter(x => x[0] === s.id && (secili === 'hepsi' || x[1] === secili || x[1] === 'gen'));
+    const kartlar = isler.map((x,i) => {
+      const [, ders, baslik, boyut, not, zaman, oran] = x;
+      const sira = s.id === 'sira' && secili === 'hepsi' ? `<span class="rank">${i+1}</span>` : '';
+      return `<article class="card" style="--c:var(--${ders})">
+        <div class="meta"><span class="who"><i class="dot"></i>${esc(DERS[ders].ad)}</span><span class="size">${esc(boyut||'')}</span></div>
+        <h3>${sira} ${esc(baslik)}</h3>
+        ${not ? `<p>${esc(not)}</p>` : ''}
+        ${oran ? `<div class="prog" title="${Math.round(oran*100)}%"><span style="width:${(oran*100).toFixed(0)}%"></span></div>` : ''}
+        ${zaman ? `<span class="when">${esc(zaman)}</span>` : ''}
+      </article>`;
+    }).join('');
+    return `<div class="col ${s.cls||''}">
+      <header><h2>${esc(s.ad)}</h2><span>${isler.length}</span></header>
+      <p>${esc(s.aciklama)}</p>
+      <div class="cards">${kartlar || '<div class="empty">Bu derste iş yok.</div>'}</div>
+    </div>`;
+  }).join('');
+}
+
+function cizFiltre(){
+  const sec = [['hepsi','Hepsi']].concat(Object.entries(DERS).filter(([k]) => k !== 'gen').map(([k,d]) => [k,d.ad]));
+  $('filtre').innerHTML = sec.map(([k,ad]) =>
+    `<button type="button" class="chip" id="f-${k}" data-k="${k}" aria-pressed="${k===secili}" style="--c:var(--${k==='hepsi'?'gen':k})">${k==='hepsi'?'':'<i class="dot"></i>'}${esc(ad)}</button>`).join('');
+}
+
+$('filtre').addEventListener('click', e => {
+  const b = e.target.closest('.chip'); if(!b) return;
+  secili = b.dataset.k;
+  try{ localStorage.setItem('pano-ders', secili); }catch(_){}
+  cizFiltre(); cizHat(); cizPano();
+});
+
+try{ const k = localStorage.getItem('pano-ders'); if(k && (k==='hepsi' || (DERS[k] && k!=='gen'))) secili = k; }catch(_){}
+cizDersler(); cizFiltre(); cizHat(); cizPano();
+</script>

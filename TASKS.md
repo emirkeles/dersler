@@ -453,10 +453,44 @@ Kullanıcı tavsiyeleri onayladı ("önerilerin mantıklı bunları uygula"). Ya
 
 Kullanıcı: tasarım mobile uygun olsun; seçilen yol telefonda yatay kullanım (derslere dokunmadan, yalnızca `ortak/`).
 
-- [ ] `ortak/ders.css`: yatay telefon düzeni (kısa ekran): tahta yüksekliği doldurur, altında iki satır altyazı, sağda dar sütun
-- [ ] `ortak/ders.js`: araçlar düğmesi (yatayda açılır menü), dikeyde "telefonu yan çevir" ipucu
-- [ ] Dikey: sınav, özet ve giriş tahtası içeriğe göre uzar; dokunmatikte ilerleme ipucu yapışmaz
-- [ ] Ölçüm: telefon boyutlarında (750×340, 844×390, 915×356, 667×320, 390×844) örnek dersler, görüntülere bak
-- [ ] Dizüstü ölçümü değişmedi mi (1366×657)
-- [ ] `ortak/API.md`: yerleşim paragrafı
-- [ ] Rapor
+- [x] `ortak/ders.css`: yatay telefon düzeni (kısa ekran): tahta yüksekliği doldurur, altında iki satır altyazı, sağda dar sütun
+- [x] `ortak/ders.js`: araçlar düğmesi (yatayda açılır menü), dikeyde "telefonu yan çevir" ipucu
+- [x] Dikey: sınav, özet ve giriş tahtası içeriğe göre uzar; dokunmatikte ilerleme ipucu yapışmaz
+- [x] Ölçüm: telefon boyutlarında (750×340, 844×390, 915×356, 667×320, 390×844) örnek dersler, görüntülere bak
+- [x] Dizüstü ölçümü değişmedi mi (1366×657)
+- [x] `ortak/API.md`: yerleşim paragrafı
+- [x] Rapor
+- [x] Gerçek telefonda deneme: kullanıcı kendi telefonunda inceledi, "iyi duruyor" (8 Ekim 2026)
+- [x] iOS simülatöründe deneme (argent, iPhone 17, iOS 26.5 Safari): dikey, yatay, araçlar menüsü, soru, sınav, yeniden dikey
+- [x] Simülatörde bulunan: üst kenara dokununca Safari çubuğu sayfanın üstünü örtüyordu; sayfa dokunmatikte kaydırılabilir yapıldı, düzen sabitlendi
+- [x] Simülatörde bulunan: doğru cevaptan sonra geri bildirim ve "Devam" sütunun altında gizli kalıyordu; kendiliğinden görünen yere kayıyor
+- [ ] Android Chrome'da deneme yapılmadı
+- [ ] Commit: kullanıcı ayrıca ister
+
+## Pilot: Geometrik Şekiller A konusu yeni kurallarla (8 Ekim 2026)
+
+Ayrıntı: `plan/matematik/geometrik-sekiller/DURUM.md` "Pilot" bölümü. Sonrası: `plan/YOL-HARITASI.md`. Commit ve seslendirme yok (kullanıcı onayına kadar).
+
+- [x] Kurallar, araçlar ve yol haritası commit edildi (`c7e1ea7`; yalnızca kendi değişikliklerim, `ortak/ders.js` içinde tek satır)
+- [x] Pilot senaryosu: `senaryolar/A-acilar-ve-ispat.md` sonuna "Pilot" bölümü (A1–A6)
+- [x] A1 yeniden yazıldı; `olc.js` temiz, görüntülere bakıldı
+- [x] A6 konu tekrarı yazıldı (`a6-tekrar.html`), `tema.js` satırı; `olc.js` temiz, görüntülere bakıldı
+- [x] A1–A5 sayfalarından ses satırı çıkarıldı
+- [x] A2–A5: dört alt ajan yazdı; raporlar okundu, her dersten en az iki sahnenin görüntüsüne bakıldı; A3'te bir `scene` değeri, A5'te öğretilmemiş iki çeldirici düzeltildi
+- [x] `tema.js` sahne sayıları (A2 6, A3 7, A4 6, A5 6), `sure.js` (A konusu 37:21), `denetle.js` temiz; `kural: 2` geçici işaretle A derslerinde sorun yok
+- [x] Kullanıcı A konusunu izledi ve onayladı (8 Ekim 2026: "bunları beğendim")
+- [x] "Hatırla" sahnelerinin açılış cümlesi eşitlendi; `olc.js`, `sure.js`, `denetle.js` yeniden temiz
+- [ ] A konusunun seslendirilmesi (ücretli; kullanıcı ayrıca ister). `ses-uret.js --liste` A5'te takılıyor, üretimden önce bakılacak
+- [ ] Pilotun commit'i ve yayını (seslendirmeden sonra; önce yapılırsa canlıda A1–A5 sessiz kalır)
+- [ ] `plan/YOL-HARITASI.md` 2. adım: Kimya Çeşitlilik ve yedi temaya sese dokunmayan ekler
+
+## Yürütme planı ve temiz oturuma devir (8 Ekim 2026)
+
+Kullanıcı: "seslendirme, commit ve yayına geçebilirsin. bu context'i clear yapıp temiz context'te modellerin uygunluğuna göre sonnet ve haiku subagentlarla bu planı yapacağız."
+
+- [x] `plan/YURUTME.md`: adımlar, kim ne yapar (ana oturum, Sonnet, Haiku), alt ajan görev kalıbı, bitiş ölçütleri
+- [x] `plan/YOL-HARITASI.md` ve `CLAUDE.md` bu dosyayı gösteriyor ("yürütme planını uygula")
+- [x] İş panosu güncellendi (pilot onayı, yeni sıra)
+- [x] Plan dosyaları commit edildi; pilot dersleri seslendirilene kadar commit edilmedi
+- [ ] Temiz oturumda `plan/YURUTME.md` 1. adım: A konusu seslendirme (131 klip, yaklaşık 7.000 karakter), commit, yayın
+

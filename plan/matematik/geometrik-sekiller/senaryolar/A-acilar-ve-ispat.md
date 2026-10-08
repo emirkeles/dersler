@@ -125,3 +125,92 @@ Ortak dil: köşeler A (üstte), B (sol altta), C (sağ altta). Açı ölçüler
 **Hedeflenen yanılgı:** Dış açıyı komşu iç açıyla toplamak ya da üç iç açının toplamına eşitlemek; "komşu olmayan"ı atlamak.
 **Akılda kalıcı cümle:** Dış açı, uzaktaki iki iç açının toplamıdır.
 **Çıkış soruları:** İç açılardan ikisi 40° ve 75°; üçüncü köşedeki dış açı? (115°; çeldiriciler 65°, 245°.) · Dersteki ilk ispat hangi iki bilgiye dayandı? (Doğru: doğru açı 180° ve iç açılar toplamı 180°. Çeldiriciler: dış açılar toplamı 360° ve üçgen eşitsizliği · iç ters açılar ve en uzun kenar.)
+
+---
+
+# Pilot: yeni anlatım kuralları (8 Ekim 2026)
+
+A konusu `../../../KURALLAR.md` 3–3.4'e göre yeniden kurulur. Yukarıdaki senaryolardaki içerik, görseller, sayılar ve yanılgılar geçerlidir; değişen sıra ve eklenen adımlardır. Programın istemediği yeni bilgi eklenmez. Her derste:
+
+- **Hatırla** sahnesi (A1 dışında): başlığı "Hatırla", 1–2 `c.choice` sorusu, önceki derslerden. Sahne her derste aynı cümleyle açılır: "Başlamadan önce iki şeyi hatırlayalım." Yanlışta ipucu kuralı bir cümleyle hatırlatır.
+- **Önce anlat:** hiçbir yeni soru, gereken bilgi anlatılmadan sorulmaz. Sezgiyle yapılabilen tahmin, durum tanıtıldıktan sonra sorulabilir; dersin ilk işi olmaz.
+- **Örnek → birlikte çöz → tek başına:** baştan sona çözülmüş bir örnek; sonra yarısı çözülmüş örnek (`tag: 'Birlikte çöz'`); sonra öğrencinin tek başına çözdüğü soru.
+- **Somuttan soyuta:** önce durum (maket, park, köprü), sonra şema, en son simge ve genel kural.
+- **4 çıkış sorusu:** eski iki soru kalır; ikisi eklenir (biri yeni duruma uygulama, biri hedeflenen yanılgı).
+- Ders sayfasından `ses/<id>.js` satırı çıkar; yeni metin onaylanınca seslendirilir.
+
+## A1 — Ölçmek ispat değildir (4 sahne)
+
+| Sahne | Yeni sıra |
+|---|---|
+| 1. Üç maket | Anlat: mimar üç makette ölçer, üçünde 180°. "Her üçgende iç açılar toplamı 180°dir" cümlesi bir **genelleme**dir: tek üçgenden değil hepsinden söz eder. Ölçmek **doğrulama**dır: yalnızca ölçülen üçgenler için bilgi verir. Dördüncü, ölçülmemiş bir üçgen belirir: onun hakkında ölçüm bir şey söylemez. Üç maketin üçü de dar açılı olduğu gösterilir. Sor: üç ölçüm hangi üçgenler için kesin bilgi verir? (yalnızca bu üçü) |
+| 2. Başka türler | Anlat ve örnek: dik, geniş açılı, ikizkenar ölçülür; yine 180°. Aynı türden üçgenler birbirine benzer; farklı türler denemeyi güçlendirir, ama her türde sayısız üçgen vardır. Birlikte çöz: üç cümlelik tablo; ilk ikisi doldurulmuş ("Bu makette toplam 180°" → örnek; "Altı üçgende toplam 180° çıktı" → doğrulama), üçüncüsünü öğrenci doldurur ("Her üçgende toplam 180°dir" → genelleme). |
+| 3. Dene | Anlat: tepe köşesi azıcık oynayınca yeni bir üçgen olur. Dene: kaydırıcı, sayaç, "denenmemiş: sonsuz". Sor (tek başına): 1000 üçgen denendi, hepsi 180°; denenmemiş kaç üçgen kaldı? (sonsuz) |
+| 4. Doğrulama ve ispat | Anlat: ispat, tek tek denemeden, her üçgen için geçerli adımlarla gösterir. İki sütun. Sor: genellemenin bütün üçgenlerde doğru olduğunu ne gösterir? Adlandır, defter. |
+
+Yeni çıkış soruları: (3) Deniz 10 dörtgende iç açıları ölçtü, hepsinde 360° buldu; "her dörtgende 360°dir" dedi. Elinde ne var? (Doğru: 10 dörtgen için doğrulama. Çeldiriciler: bütün dörtgenler için ispat · yanlış bir ölçüm.) (4) Hangisi bir genellemedir? (Doğru: "Her üçgende iç açılar toplamı 180°dir." Çeldiriciler: "Bu üçgenin açıları 50°, 60°, 70°." · "Ölçtüğüm altı üçgende toplam 180° çıktı.")
+
+## A2 — İspat doğru bilgilerin üstüne kurulur (6 sahne)
+
+Hatırla: (1) Elif 40 üçgende ölçtü, hep 180° buldu. Bu nedir? (Doğru: doğrulama. Çeldiriciler: ispat · genelleme.) (2) Bir genellemenin bütün üçgenlerde doğru olduğunu ne gösterir? (Doğru: ispat. Çeldiriciler: daha çok ölçüm · daha düzgün çizim.)
+
+| Sahne | Yeni sıra |
+|---|---|
+| Havada duran taş | Önce anlat: taş havada; bir ispat başka bilgilere dayanır. Altına üç taş birer birer gelir ve her biri bir cümleyle söylenir. Sonra sor: ispatta kullanılan bilgi nasıl olmalı? (eski tahmin sorusu, anlatımdan sonra) |
+| Zincir nerede biter? | Anlat: alttaki taşların da dayandığı bilgiler var; zincir sonsuza gidemez; en altta ispatsız kabul edilen temel bilgiler durur: **aksiyom**. Örnek: iki noktadan bir doğru geçer. Birlikte çöz: üç bilgilik tablo, ikisi doldurulmuş ("iki noktadan bir doğru geçer" → aksiyom; "iç açılar toplamı 180°dir" → ispatlanır), üçüncüyü öğrenci doldurur ("dış açılar toplamı 360°dir" → ispatlanır). |
+| Ölçmeden ispata · Geometri bir yapıdır · Katkı sağlayanlar | Sıra aynı (zaten önce anlatıyor); her soru anlatımından sonra durur. |
+
+Yeni çıkış soruları: (3) Bir ispatta "çünkü çizimde öyle görünüyor" gerekçesi kullanıldı. Sorun nedir? (Doğru: görünüş, doğruluğundan emin olunan bir bilgi değildir. Çeldiriciler: çizim küçük · gerekçe çok kısa.) (4) Aksiyom için hangisi doğrudur? (Doğru: ispatsız kabul edilen temel bilgidir. Çeldiriciler: en çok ölçülen bilgidir · ispatı en uzun olan bilgidir.)
+
+## A3 — İç açıların toplamı 180°dir (7 sahne)
+
+Hatırla: (1) Bir ispatta kullanılan her bilgi nasıl olmalı? (Doğru: doğruluğundan emin olunan. Çeldiriciler: yeni ölçülmüş · çoğunluğun kabul ettiği.) (2) Üç üçgende ölçüp 180° bulmak nedir? (Doğru: doğrulama. Çeldiriciler: ispat · aksiyom.)
+
+| Sahne | Yeni sıra |
+|---|---|
+| Kopar, yan yana koy | Durum tanıtılır (ressam, üç renkli köşe, dilimler koparılıp bir doğruya dizilecek); tahmin ondan sonra. Sonuç: tek üçgen için doğrulama. |
+| Tek paralel | Anlat ve göster: paralel doğrular kesişmez; A'dan geçen doğru döner, yalnızca bir konumda BC'yi kesmez. Kural defterde. Sor (uygulama): BC üstünde olmayan başka bir noktadan BC'ye kaç paralel çizilir? |
+| İç ters açılar | Aynı (önce hatırlatma, sonra soru). |
+| İspatı tamamla | Adımlar tahtada; son adımın gerekçesini öğrenci tamamlar: `tag: 'Birlikte çöz'`. |
+| Her üçgende | Aynı. |
+| Sıra sende | Örnek (baştan sona çözülür): açılar x, 2x, 3x; 6x = 180°, x = 30°, en büyük açı 90°. Birlikte çöz: açılar x + 10°, x + 20°, 2x − 10°; toplam tahtada kurulur (4x + 20° = 180°), x'i öğrenci bulur. Tek başına: paralel d, 48° ve 62°; A'daki açı. |
+
+Yeni çıkış soruları: (3) Açıları 2x, 3x, 4x olan üçgende en küçük açı? (40°; çeldiriciler 20°, 80°.) (4) Kesenin zıt yanlarında, paralellerin arasında kalan eş açılara ne denir? (İç ters açılar; çeldiriciler yöndeş açılar, ters açılar.)
+
+## A4 — Dış açıların toplamı 360°dir (6 sahne)
+
+Hatırla: (1) İki açısı 50° ve 70° olan üçgenin üçüncü açısı? (60°; çeldiriciler 120°, 70°.) (2) Bir özelliği birkaç üçgende ölçüp görmek nedir? (Doğrulama; çeldiriciler ispat, aksiyom.)
+
+| Sahne | Yeni sıra |
+|---|---|
+| Dış açı | Anlat: kenar uzatılır; uzantı ile öbür kenar arasındaki açı dış açıdır. İç açı ile dış açı bir doğru açı eder. Örnek: iç açı 70° ise dış açı 110°. Yanılgı gösterilir: köşenin dışındaki bütün bölge dış açı değildir. Sonra üç köşenin dış açıları ve tahmin (toplam). |
+| Yol 1: dolaş · Yol 2: hesapla · Karşılaştır, seç | Sıra aynı; Yol 2'deki boşluk doldurma `tag: 'Birlikte çöz'`. |
+| Sıra sende | Örnek (çözülür): üç dış açı eşitse her biri 360° ÷ 3 = 120°. Birlikte çöz: dış açılar 2x, 3x, 120°; 5x = 240° tahtada, x'i öğrenci bulur. Tek başına: iki dış açı 110° ve 130°, üçüncü köşedeki iç açı; C'de iki kenar da uzatılınca oluşan iki dış açı. |
+
+Yeni çıkış soruları: (3) Bir köşedeki iç açı 65° ise aynı köşedeki dış açı? (115°; çeldiriciler 295°, 25°.) (4) İç açıları 50°, 60°, 70° olan üçgenin dış açıları toplamı? (360°; çeldiriciler 180°, 540°.)
+
+## A5 — Dış açı, uzaktaki iki iç açının toplamıdır (6 sahne)
+
+Hatırla: (1) İç açısı 80° olan köşenin dış açısı? (100°; çeldiriciler 280°, 80°.) (2) İki açısı 35° ve 65° olan üçgenin üçüncü açısı? (80°; çeldiriciler 100°, 90°.)
+
+| Sahne | Yeni sıra |
+|---|---|
+| Hangi açılar? | Anlat: C'deki dış açının yanındaki iç açı **komşu** iç açıdır (γ); öbür ikisi **komşu olmayan** (uzak) iç açılardır (α, β). Ölçüler gösterilir: 50°, 60°, 70°, dış 110°. Tahmin ondan sonra; dilimler kayar. |
+| İspat | Üç satır; ilk gerekçe tahtada verilir, ikincisini öğrenci tamamlar: `tag: 'Birlikte çöz'`. |
+| İkinci yol: paralel · Dene | Aynı. |
+| Sıra sende | Örnek (çözülür): dış açı 130°, uzak açılardan biri 75°; öbürü 130° − 75° = 55°. Birlikte çöz: iç açılar 40° ve 85°; "dış = 40° + 85°" tahtada, sonucu öğrenci bulur. Tek başına: dış açı 120° ise komşu iç açı. |
+
+Yeni çıkış soruları: (3) Dış açı 140°, uzak iç açılardan biri 60°; öbür uzak iç açı? (80°; çeldiriciler 40°, 200°.) (4) C köşesindeki dış açı hangi iki açının toplamıdır? (A ve B'deki; çeldiriciler B ve C'deki, A ve C'deki.)
+
+## A6 — Konu tekrarı (`a6-tekrar.html`, 1 sahne + 8 soru)
+
+Yeni bilgi yok. Tek sahne: beş kural tahtada sırayla toplanır ve deftere düşer (doğrulama ve ispat · ispat doğru bilgilere dayanır, en altta aksiyomlar · iç açılar 180° · dış açılar 360° · dış açı = uzak iki iç açı). Sorular karışık sırada (`quiz`):
+
+1. İç açılar 55° ve 65°; üçüncü köşedeki dış açı? (120°; 60°, 240°) — A5
+2. Deniz 200 üçgende dış açıları ölçtü, hep 360° buldu. Elinde ne var? (200 üçgen için doğrulama; ispat · aksiyom) — A1
+3. Açılar x, x + 20°, x + 40°; en küçük açı? (40°; 60°, 80°) — A3
+4. İki dış açı 100° ve 140°; üçüncü dış açı? (120°; 60°, 240°) — A4
+5. İspatsız kabul edilen temel bilgilere ne denir? (aksiyom; genelleme, doğrulama) — A2
+6. Bir köşedeki dış açı 125°; aynı köşedeki iç açı? (55°; 125°, 235°) — A4
+7. İç açılar toplamının ispatı hangi çizimle başlar? (A'dan BC'ye paralel doğru; A'dan BC'ye dikme; A'daki açının açıortayı) — A3
+8. Eşkenar üçgenin bir dış açısı kaç derecedir? (120°; 60°, 240°) — A4
