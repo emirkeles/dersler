@@ -86,10 +86,14 @@
     </div></header>`;
   }
 
-  /* Bir temanın hikâyeleri: videonun ve kapağın yolu, bağlı olduğu kısa dersle birlikte. */
-  const temaHikayeleri = (u, kok) => (u.tema.hikayeler || []).map((h) => ({
-    h, u, d: u.kisa.find((k) => k.kod === h.kod), video: kok + u.tema.yol + h.video, kapak: h.kapak ? kok + u.tema.yol + h.kapak : '',
-  }));
+  /* Bir temanın hikâyeleri: videonun ve kapağın yolu, bağlı olduğu kısa dersle birlikte.
+     Yayında olmayan temanın hikâyeleri katalogdaki satırından gelir; kısa dersi yoktur. */
+  const temaHikayeleri = (u, kok) => {
+    const yol = kok + (u.tema.yol || u.ders.id + '/' + u.tema.id + '/');
+    return (u.tema.hikayeler || []).map((h) => ({
+      h, u, d: (u.kisa || []).find((k) => k.kod === h.kod), video: yol + h.video, kapak: h.kapak ? yol + h.kapak : '',
+    }));
+  };
   const hikayeSatiri = (x, temali) => `<a class="story" href="${x.video}">
       <span class="thumb">${x.kapak ? `<img src="${x.kapak}" alt="" loading="lazy">` : ''}<span class="play">${OYNAT}</span></span>
       <span class="body"><span class="name">${esc(x.h.ad)}</span><span class="from">${temali ? esc(x.u.tema.ad) + ' · ' : ''}${x.h.kod} ${esc(x.h.ders)}</span></span></a>`;
@@ -127,7 +131,7 @@
       const acik = temalar.filter((u) => u.kisa);
       return {
         ders, acik, bekleyen: temalar.filter((u) => !u.kisa), toplam: acik.reduce((n, u) => n + u.kisa.length, 0), biten: acik.reduce((n, u) => n + u.biten, 0),
-        sure: toplamSure(acik.flatMap((u) => u.kisa)), hikayeler: acik.flatMap((u) => temaHikayeleri(u, kok)),
+        sure: toplamSure(acik.flatMap((u) => u.kisa)), hikayeler: temalar.flatMap((u) => temaHikayeleri(u, kok)),
       };
     });
     const [bolum, alt] = location.hash.slice(1).split('/');

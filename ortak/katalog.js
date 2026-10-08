@@ -22,6 +22,10 @@
    değiştirilmez. Sahne sayısı dersin kendi sahneleridir (çıkış soruları ve özet hariç).
    Süre dersin yaklaşık süresidir (saniye); elle yazılmaz, node araclar/sure.js <ders>/<tema> ölçer ve yazar.
    Sayfalar konu ve tema toplamlarını bu sayılardan çıkarır.
+
+   Teması henüz yayında olmayan hikâye: temanın aşağıdaki satırına aynı biçimde `hikayeler: [ … ]` yazılır
+   (yollar yine tema klasörüne göre). Hikâye ana sayfada ve Hikâyeler sayfasında görünür, "Derse git" bağlantısı
+   çıkmaz. Tema yazılınca liste tema.js dosyasına taşınır ve buradan silinir.
    Denetim: node araclar/denetle.js <ders>/<tema> */
 window.KATALOG = {
   sinif: '9. Sınıf',
@@ -38,8 +42,13 @@ window.KATALOG = {
     { id: 'fizik', ad: 'Fizik', simge: 'Δv', renk: '#ff8a5b', temalar: [
       { id: 'fizik-bilimi-ve-kariyer-kesfi', ad: 'Fizik Bilimi ve Kariyer Keşfi', yayinda: true },
       { id: 'kuvvet-ve-hareket', ad: 'Kuvvet ve Hareket', yayinda: true },
-      { id: 'akiskanlar', ad: 'Akışkanlar' },
-      { id: 'enerji', ad: 'Enerji' },
+      { id: 'akiskanlar', ad: 'Akışkanlar', hikayeler: [
+        { kod: 'A1', ders: 'Basınç neye bağlı?', ad: 'Çantanın askısı', video: 'hikaye/a1-canta-askisi/renders/a1-canta-askisi.mp4', kapak: 'hikaye/a1-canta-askisi/renders/kapak.jpg' },
+        { kod: 'A1', ders: 'Basınç neye bağlı?', ad: 'Karda neden batıyorum?', video: 'hikaye/a1-karda-neden-batiyorum/renders/a1-karda-neden-batiyorum.mp4', kapak: 'hikaye/a1-karda-neden-batiyorum/renders/kapak.jpg' },
+      ] },
+      { id: 'enerji', ad: 'Enerji', hikayeler: [
+        { kod: 'F1', ders: 'Metal kaşık neden önce ısınır?', ad: 'Metal neden daha soğuk hissettiriyor?', video: 'hikaye/f1-metal-neden-soguk/renders/f1-metal-neden-soguk.mp4', kapak: 'hikaye/f1-metal-neden-soguk/renders/kapak.jpg' },
+      ] },
     ] },
     { id: 'kimya', ad: 'Kimya', simge: 'H₂O', renk: '#c792ff', temalar: [
       { id: 'etkilesim', ad: 'Etkileşim', yayinda: true },

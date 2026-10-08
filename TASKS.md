@@ -293,3 +293,17 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [ ] Kullanıcı D6 ve E1'i sitede izler; E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulmasına karar (`PLAN.md` bölüm 13)
 - [ ] Kullanıcı filmi izler (7–12. kareler ve seslendirme işlemeden önce onaylanmamıştı); altyazı dosyası yok
 - [ ] D6 ve E1 seslendirilmedi (biyoloji seslendirmesiyle birlikte)
+
+## Üretilmiş hikâyeleri siteye ekle (8 Ekim 2026)
+
+Teması yayında olmayan hikâye temanın `ortak/katalog.js` satırına yazılır; tema yazılınca `tema.js` dosyasına taşınır.
+
+- [x] `ortak/site.js`: hikâyeler yayında olmayan temalardan da toplanır; `ortak/katalog.js` ve `ortak/API.md` açıklaması
+- [x] Akışkanlar A1 "Çantanın askısı": kapak, katalog satırı
+- [x] Akışkanlar A1 "Karda neden batıyorum?" (`~/9-sinif-animasyon/episode-01-hyperframes/final.mp4`): video, kapak, katalog satırı
+- [x] Enerji F1 "Metal neden daha soğuk hissettiriyor?" (`episode-10/final.mp4`): video, kapak, katalog satırı
+- [x] Geometrik Şekiller B3 "Çadır neden kapanmıyor?" (`episode-05/final.mp4`): video, kapak, `tema.js`
+- [x] Görüntü denetimi (ana sayfa, `#hikayeler`, `#fizik`, tema sayfası), `denetle.js matematik/geometrik-sekiller`
+- [ ] Sayılar A7 "3 nanometre": videosu yok (1. kare aşamasında); işlenince `matematik/sayilar/tema.js` içine eklenir
+- [ ] Çadır hikâyesini B3 dersinin son sahnesine bağlamak (istenirse)
+- [ ] Akışkanlar ve Enerji yazılınca katalogdaki `hikayeler` listelerini `tema.js` dosyalarına taşı

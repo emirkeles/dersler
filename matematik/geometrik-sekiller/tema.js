@@ -21,4 +21,7 @@ KATALOG.tema('matematik', 'geometrik-sekiller', {
       ['c3-onermeler-is-gorur.html', 'Doğrulanmış önermeler iş görür', 'Bir mühendis, kafesin hiç ölçmediği bir açısını nasıl bulur?', 6, 366],
     ] },
   ],
+  hikayeler: [
+    { kod: 'B3', ders: 'Üçgen eşitsizliği', ad: 'Çadır neden kapanmıyor?', video: 'hikaye/b3-cadir-neden-kapanmiyor/renders/b3-cadir-neden-kapanmiyor.mp4', kapak: 'hikaye/b3-cadir-neden-kapanmiyor/renders/kapak.jpg' },
+  ],
 });
