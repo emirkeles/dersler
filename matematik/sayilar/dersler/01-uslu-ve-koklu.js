@@ -3466,6 +3466,26 @@
           'Bölmede üsleri toplamışsın (6 + 4). Bölme sayaçları geri sarar, yani çıkarır.'],
         scene: 4,
       },
+      {
+        q: `Bir söylenti, duyan herkesin 5 kişiye anlatmasıyla yayılıyor: 3. turda ${P(5, 3)}, 7. turda ${P(5, 7)} kişi duyuyor. 7. turda duyanlar, 3. turda duyanların kaç katıdır?`,
+        options: ['4', P(5, 4), P(5, 10), '20'], answer: 1,
+        why: [
+          'Turların farkını kat sanmışsın. Her turda sayı 5 katına çıkar; 4 tur, 5·5·5·5 kat demektir.',
+          `Kat sayısı bölmeyle bulunur: ${P(5, 7)} / ${P(5, 3)} = ${P(5, 4)} = ${5 ** 4}. Bölmede üsler çıkarılır.`,
+          'Üsleri toplamışsın (7 + 3). Toplama çarpmanın kuralıdır; burada bölüyoruz.',
+          '5 ile 4’ü çarpmışsın. Üs çarpan değil, sayaçtır: 5·5·5·5 = 625.'],
+        scene: 3,
+      },
+      {
+        q: `${P(2, 5)} + ${P(2, 5)} işleminin sonucu aşağıdakilerden hangisidir?`,
+        options: [P(2, 10), P(4, 5), P(2, 6), P(4, 10)], answer: 2,
+        why: [
+          'Üsleri toplamışsın. Sayaçlar yalnızca çarpmada toplanır; burada toplama var. 2¹⁰ = 1024 eder.',
+          'Tabanları toplamışsın. 4⁵ = 1024 eder; oysa 32 + 32 = 64.',
+          '32 + 32 = 64 = 2⁶. İki tane 2⁵, 2·2⁵ demektir: bir çarpan daha.',
+          'Hem tabanları hem üsleri toplamışsın. Toplamada üs kuralı yoktur: 32 + 32 = 64.'],
+        scene: 2,
+      },
       ],
       summary: [
         `<b>Üs bir sayaçtır.</b> ${P(2, 3)} = 2·2·2: üs, kaç tane çarpan olduğunu sayar.`,
@@ -3497,6 +3517,26 @@
             '5⁰ = 0 almışsın. Sıfırıncı kuvvet 1’dir.',
             '2⁻¹ = −2 almışsın. Negatif üs sayıyı negatif yapmaz, ters çevirir: 1/2.',
             '2⁻¹ = 1 almışsın. 2⁻¹ = 1/2’dir.'],
+          scene: 0,
+        },
+        {
+          q: `Bir video 5 tur ileri, sonra 2 tur geri sarılıyor: ${P(2, 5)} · ${P(2, '−2')} kaça eşittir?`,
+          options: ['128', FR(1, 8), '8', P(2, '−10')], answer: 2,
+          why: [
+            'Geri sarmayı da ileri saymışsın (5 + 2 = 7). Eksi üs geri adımdır.',
+            'Üsleri ters çıkarmışsın (2 − 5 = −3). 5 ileri, 2 geri: 3 tur ileride kalırsın.',
+            'Çarpmada üsler toplanır: 5 + (−2) = 3 ve 2³ = 8. Kontrol: 32 · 1/4 = 8.',
+            'Üsleri çarpmışsın. Çarpmada üsler toplanır.'],
+          scene: 1,
+        },
+        {
+          q: 'Aşağıdakilerden hangisi doğrudur?',
+          options: [`${P(3, '−2')} negatif bir sayıdır.`, `${P(7, 0)} = 0`, `${P(10, '−1')} = −10`, `${P(4, '−1')} sıfırdan büyüktür.`], answer: 3,
+          why: [
+            '3⁻² = 1/9. Eksi üs sayıyı negatif yapmaz, ters çevirir.',
+            '7⁰ = 1. Geri sararken 7¹ = 7’den sonra 7’ye bölünür: 1 gelir.',
+            '10⁻¹ = 1/10. Eksi işareti üstedir; sayının işaretini değiştirmez.',
+            '4⁻¹ = 1/4. Eksi üs ters çevirir; sonuç pozitif kalır.'],
           scene: 0,
         },
       ],
@@ -3531,6 +3571,26 @@
           '2⁻¹ = −2 almışsın, sonra 3 − (−2) = 5 yapmışsın. Negatif üs sayıyı negatif yapmaz, ters çevirir (1/2).'],
         scene: 1,
       },
+        {
+          q: 'Alanı 144 m² olan kare bir bahçenin bir kenarı kaç metredir?',
+          options: ['72', '36', '12', '14'], answer: 2,
+          why: [
+            '144’ün yarısını almışsın. Kenar, kendisiyle çarpılınca 144 veren sayıdır.',
+            '144’ü 4’e bölmüşsün. Alan, kenarın kendisiyle çarpımıdır; 36·36 = 1296 eder.',
+            '12·12 = 144, yani √144 = 12.',
+            '14·14 = 196 eder, 144 değil.'],
+          scene: 0,
+        },
+        {
+          q: `${rt(16)} kaçtır?`,
+          options: ['4 ve −4', '−4', '8', '4'], answer: 3,
+          why: [
+            '(−4)·(−4) de 16 eder; ama √ işareti yalnızca negatif olmayan sayıyı gösterir.',
+            '√ işareti negatif olmayan sayıyı gösterir: 4.',
+            '16’nın yarısını almışsın. 8·8 = 64 eder.',
+            '4·4 = 16 ve 4 negatif değil: √16 = 4.'],
+          scene: 0,
+        },
       ],
       summary: [
         `<b>Kök, sayacı ikiye böler:</b> √a = ${P('a', '1/2')}`,
@@ -3562,6 +3622,26 @@
           `Yalnızca paya √3 ile çarpmışsın, paydayı unutmuşsun; 6√3 ≈ ${fmt(6 * Math.sqrt(3))} olur, değer değişir.`,
           `Pay ile paydayı karıştırmışsın. 6/√3 ≈ ${fmt(6 / Math.sqrt(3))}, √3/2 ≈ ${fmt(Math.sqrt(3) / 2)}.`],
         scene: 1,
+      },
+      {
+        q: `Kenarları ${rt(12)} m ve ${rt(3)} m olan dikdörtgen bir halının alanı kaç m²’dir?`,
+        options: [rt(15), '6', '36', '18'], answer: 1,
+        why: [
+          'Kök içlerini toplamışsın. Alan çarpımla bulunur: √12·√3 = √36.',
+          '√12·√3 = √(12·3) = √36 = 6.',
+          'Kök içlerini çarpmışsın ama kökü almayı unutmuşsun: √36 = 6.',
+          '36’nın yarısını almışsın. Kök yarısı değildir: √36 = 6, çünkü 6·6 = 36.'],
+        scene: 0,
+      },
+      {
+        q: `${rt('36 + 64')} kaçtır?`,
+        options: ['14', '50', '10', '100'], answer: 2,
+        why: [
+          '√36 + √64 = 6 + 8 yapmışsın. Kök toplamaya dağılmaz.',
+          'Toplamın yarısını almışsın. Kök yarısı değildir.',
+          'Önce içerisi toplanır: √100 = 10.',
+          'İçeriyi toplamışsın ama kökü almamışsın: √100 = 10.'],
+        scene: 2,
       },
       ],
       summary: [
@@ -3601,6 +3681,26 @@
             '⁴√16 = 2 doğru; ama 2³ = 2·2·2 = 8’dir, 2·3 değil.'],
           scene: 2,
         },
+        {
+          q: 'Hacmi 64 cm³ olan bir küpün bir kenarı kaç santimetredir?',
+          options: ['8', '32', '16', '4'], answer: 3,
+          why: [
+            'Karekök almışsın (8·8 = 64). Küpte kenar üç kez çarpılır: 8·8·8 = 512.',
+            '64’ün yarısını almışsın. Aranan, üç kez çarpılınca 64 veren sayı.',
+            '64’ü 4’e bölmüşsün. 16·16·16 = 4096 eder.',
+            '4·4·4 = 64, yani ∛64 = 4.'],
+          scene: 0,
+        },
+        {
+          q: `${P(4, '5/2')} kaçtır?`,
+          options: ['10', '32', '20', '1024'], answer: 1,
+          why: [
+            '4 ile 5/2’yi çarpmışsın. Üs çarpan değildir.',
+            'Payda 2: √4 = 2. Pay 5: 2·2·2·2·2 = 32.',
+            'Paydayı atlayıp 4 ile 5’i çarpmışsın. Payda kök aldırır, pay kuvvet.',
+            '4⁵ almışsın, kökü unutmuşsun. Payda 2: önce √4 = 2, sonra 2⁵ = 32.'],
+          scene: 2,
+        },
       ],
       summary: [
         `<b>Payda kökü, pay kuvveti söyler.</b> ${P(8, '2/3')} = (${M.m(M.sqrt(8, 3))})² = 4`,
@@ -3638,6 +3738,26 @@
             `Paydayı 2 saymışsın. √3 + 1 ≈ ${fmt(Math.sqrt(3) + 1)}.`],
           scene: 2,
         },
+        {
+          q: `Kenarları (${rt(10)} + 3) m ve (${rt(10)} − 3) m olan dikdörtgenin alanı kaç m²’dir?`,
+          options: ['19', '1', '7', `19 − 6${rt(10)}`], answer: 1,
+          why: [
+            'Kareleri toplamışsın (10 + 9). Eşleniklerin çarpımında kareler çıkarılır.',
+            'Dört parça: 10 − 3√10 + 3√10 − 9. Köklü parçalar götürür: 10 − 9 = 1.',
+            '3’ün karesini almamışsın: 3·3 = 9 ve 10 − 9 = 1.',
+            'Bu (√10 − 3)’ün karesi. Burada çarpanlar eşlenik; köklü parçalar birbirini götürür.'],
+          scene: 1,
+        },
+        {
+          q: `${FR(3, rt(5) + ' − 1')} ifadesinde paydayı kökten kurtarmak için pay ve payda hangisiyle çarpılır?`,
+          options: [rt(5), `${rt(5)} − 1`, `−${rt(5)} + 1`, `${rt(5)} + 1`], answer: 3,
+          why: [
+            'Payda 5 − √5 olur; kök kalır. Tek kök yalnızca tek terimli paydada işe yarar.',
+            'Payda 6 − 2√5 olur; kök kalır.',
+            'Bu, paydanın eksilisi. Payda −6 + 2√5 olur; kök kalır.',
+            'Eşleniği: payda 5 − 1 = 4 olur, kök kalmaz.'],
+          scene: 0,
+        },
       ],
       summary: [
         `<b>Eşlenik, kökü yok eden ikizdir.</b> (${rt(3)} − 1)(${rt(3)} + 1) = 3 − 1 = 2`,
@@ -3674,6 +3794,26 @@
             'Virgülü 4 basamak kaydırmışsın. Üs 5.',
             'Üs pozitif: sayı büyür. Virgül sağa kayar.'],
           scene: 0,
+        },
+        {
+          q: 'Bir saç telinin kalınlığı yaklaşık 0,00007 metredir. Bu sayının bilimsel gösterimi hangisidir?',
+          options: [`7 × ${P(10, 5)}`, `7 × ${P(10, '−4')}`, `7 × ${P(10, '−5')}`, `7 × ${P(10, '−6')}`], answer: 2,
+          why: [
+            'Üs pozitif olursa 700 000 eder. Küçük sayıda üs negatiftir.',
+            '10⁻⁴ ile 0,0007 olur. Virgül 5 basamak kaymalı.',
+            'Virgül 5 basamak sağa kayar: 0,00007 = 7 × 10⁻⁵.',
+            '10⁻⁶ ile 0,000007 olur. Virgül 5 basamak kaymalı.'],
+          scene: 1,
+        },
+        {
+          q: 'Aşağıdakilerden hangisi bilimsel gösterimdir?',
+          options: [`12 × ${P(10, 4)}`, `6,02 × ${P(10, 7)}`, `0,5 × ${P(10, '−3')}`, `10 × ${P(10, 2)}`], answer: 1,
+          why: [
+            '12, 10’dan büyük. Doğrusu 1,2 × 10⁵.',
+            '6,02 sayısı 1 ile 10 arasında: kurala uyar.',
+            '0,5, 1’den küçük. Doğrusu 5 × 10⁻⁴.',
+            'İlk çarpan 10 olamaz; 10’dan küçük olmalı. Doğrusu 1 × 10³.'],
+          scene: 2,
         },
       ],
       summary: [
@@ -3713,13 +3853,33 @@
             '≈ işareti eşit demek değildir; 1,41 yalnızca yaklaşık değerdir.'],
           scene: 2,
         },
+        {
+          q: `3,1·3,1 = 9,61 ve 3,2·3,2 = 10,24 olduğuna göre ${rt(10)} için hangisi doğrudur?`,
+          options: [`3,2 &lt; ${rt(10)} &lt; 3,3`, `${rt(10)} = 3,2`, `9,61 &lt; ${rt(10)} &lt; 10,24`, `3,1 &lt; ${rt(10)} &lt; 3,2`], answer: 3,
+          why: [
+            '3,2’nin karesi 10,24: 10’u geçti. Kök 3,2’den küçük.',
+            '3,2·3,2 = 10,24 eder, 10 değil.',
+            'Bunlar karelerdir. Kök, kareleri bu sayılar olan 3,1 ile 3,2’nin arasındadır.',
+            '9,61 &lt; 10 &lt; 10,24, yani 3,1 &lt; √10 &lt; 3,2.'],
+          scene: 1,
+        },
+        {
+          q: `${rt(5)} ≈ 2,2 alınıyor; 2,2·2,2 = 4,84. Hangisi doğrudur?`,
+          options: [`2,2, ${rt(5)}’ten biraz küçüktür.`, `2,2, ${rt(5)}’ten biraz büyüktür.`, `2,2 ile ${rt(5)} aynı sayıdır.`, 'Bu yaklaşık değerle alan hesabında hata olmaz.'], answer: 0,
+          why: [
+            'Karesi 4,84: 5’e ulaşmadı. 2,2 kökün biraz altında kalır.',
+            'Büyük olsaydı karesi 5’i geçerdi; oysa 4,84 &lt; 5.',
+            '≈ eşit demek değildir: 2,2·2,2 = 4,84 eder, 5 değil.',
+            'Fark küçük ama var: 5 − 4,84 = 0,16.'],
+          scene: 2,
+        },
       ],
       summary: [
         `<b>Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz.</b> ${rt(1000)} ≈ 31,6`,
         `<b>Sıkıştır:</b> 961 &lt; 1000 &lt; 1024, yani 31 &lt; ${rt(1000)} &lt; 32.`,
         '<b>≈ eşit demek değildir:</b> 31,6² = 998,56.',
       ],
-      next: { href: 'b1-kume-dili.html', label: 'Sonraki konu: Aralıklar ve kümeler ›' },
+      next: { href: 'a9-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
     },
   };
   const anahtar = window.DERS_PARCA || 'a1';

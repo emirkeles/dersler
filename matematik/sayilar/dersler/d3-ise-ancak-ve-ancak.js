@@ -155,6 +155,26 @@
           'Tersi yanlış: x = 4.'],
         scene: 3,
       },
+      {
+        q: '“n 12’nin katı ⇒ n 4’ün katı” önermesinde <b>gösterilecek</b> (hüküm) olan hangisidir?',
+        options: ['n 12’nin katıdır', 'n 4’ün katıdır', 'n 3’ün katıdır', 'n 12’nin katı değildir'], answer: 1,
+        why: [
+          'Bu okun solu: verilen (hipotez).',
+          'Okun sağı gösterilecek olandır: hüküm.',
+          'Önermede geçmiyor; gösterilecek olan okun sağında yazılıdır.',
+          'Bu, verilenin değili; önermede geçmiyor.'],
+        scene: 2,
+      },
+      {
+        q: 'Reklam: “Şampiyonlar bu ayakkabıyı giyer.” (şampiyon ⇒ ayakkabıyı giyer). Ece bu ayakkabıyı giyiyor. Buradan hangisi <b>kesin</b> olarak çıkar?',
+        options: ['Ece şampiyondur.', 'Ece şampiyon değildir.', 'Ece’nin şampiyon olup olmadığı bu bilgiden çıkmaz.', 'Ayakkabıyı giyen herkes şampiyondur.'], answer: 2,
+        why: [
+          'Ok yalnızca şampiyondan ayakkabıya gider; tersi doğru olmayabilir (x > 3 olup x > 5 olmayan x = 4 gibi).',
+          'Şampiyon olmayan biri de ayakkabıyı giyebilir ama Ece’nin şampiyon olmadığı da kesin değil.',
+          'Ters yön verilmedi: Ece şampiyon olabilir de olmayabilir de.',
+          'Bu, okun tersi; verilen yalnızca şampiyondan ayakkabıya giden yön.'],
+        scene: 4,
+      },
     ],
     summary: [
       '<b>İse tek yön, ancak ve ancak çift yön.</b>',

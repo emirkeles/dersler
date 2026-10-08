@@ -395,6 +395,26 @@
           '4, A’nın elemanı değil.'],
         scene: 2,
       },
+      {
+        q: `${M_('K = {x : x < 7, x ∈ ℕ}')} kümesinin alt kümesi aşağıdakilerden hangisidir?`,
+        options: [M_('{4, 5, 6, 7}'), M_('{1, 2, 9}'), M_('{0, 3, 6}'), M_('{6, 7, 8}')], answer: 2,
+        why: [
+          '7, K’nın elemanı değil: 7, 7’den küçük değildir. Tek eleman dışarıda kalınca alt küme bozulur.',
+          '9, K’nın dışında. Her eleman K’da olmalı.',
+          'K = {0, 1, 2, 3, 4, 5, 6}. 0, 3 ve 6’nın üçü de K’da.',
+          '7 ve 8, K’nın dışında. Her eleman K’da olmalı.'],
+        scene: 2,
+      },
+      {
+        q: `${M_('A = {x : x < 1, x ∈ ℕ}')} kümesi için hangisi doğrudur?`,
+        options: ['A boş kümedir.', M_('s(A) = 0'), M_('A = {1}'), M_('A = {0} ve s(A) = 1')], answer: 3,
+        why: [
+          '0 da bir doğal sayıdır ve 1’den küçüktür. A’nın bir elemanı var.',
+          'Eleman sayısı 0 olan küme boş kümedir; ama 0 sayısı A’da.',
+          '1, 1’den küçük değildir; A’da olamaz.',
+          '1’den küçük tek doğal sayı 0. {0} boş değildir, bir elemanı var.'],
+        scene: 3,
+      },
     ],
     summary: [
       '<b>Küme bir listedir; ya sayarsın ya kuralını söylersin.</b>',

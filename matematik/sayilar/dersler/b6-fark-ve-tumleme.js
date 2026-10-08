@@ -366,6 +366,26 @@
           'Tümleyen kümenin dışıdır; bu yine aradaki parça.'],
         scene: 3,
       },
+      {
+        q: `${M_('[0, 8) \\ (3, 5]')} işleminin sonucu nedir?`,
+        options: [M_('[0, 3] ∪ (5, 8)'), M_('[0, 3) ∪ [5, 8)'), M_('(3, 5]'), M_('[0, 3] ∪ [5, 8)')], answer: 0,
+        why: [
+          '3 çıkarılan kümede yok, kalır. 5 çıkarılan kümede var, silinir.',
+          'İki ucu da ters çevirmişsin. 3 kalır (dolu), 5 gider (boş).',
+          'Bu kesişim: iki kümede de olanlar. Fark onları siler.',
+          '5 çıkarılan kümede dolu; farkta boş olmalı.'],
+        scene: 2,
+      },
+      {
+        q: `${M_('A = [1, 5]')} ve ${M_('B = [3, 8]')} için ${M_('B \\ A')} nedir?`,
+        options: [M_('[1, 3)'), M_('[3, 5]'), M_('[5, 8]'), M_('(5, 8]')], answer: 3,
+        why: [
+          'Bu A \\ B: sırayı çevirmişsin. Burada B’den A silinir.',
+          'Bu kesişim: iki kümede de olanlar. Fark onları siler.',
+          '5, A’da dolu; B \\ A’da 5 olamaz.',
+          'B’den A’ya değen parça silinir; 5, A’da olduğu için gider.'],
+        scene: 2,
+      },
     ],
     summary: [
       '<b>Tümleyende dolu boşalır, boş dolar.</b>',

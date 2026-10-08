@@ -1825,6 +1825,24 @@
             `Negatif kesirler de rasyoneldir: −3 = −${F(3, 1)}.`],
           scene: 3,
         },
+        {
+          q: '7 − 11 işleminin sonucu hangi kümelerde yer alır?',
+          options: ['N, Z ve Q’da', 'Yalnızca Z’de, Q’da değil', 'Z’de ve Q’da, N’de değil'], answer: 2,
+          why: [
+            '7 − 11 = −4 ve −4 ∉ N: doğal sayılar negatif olamaz.',
+            `Z, Q’nun içindedir: −4 = −${F(4, 1)} olduğundan Q’da da yer alır.`,
+            `−4 ∈ Z ve Z ⊂ Q olduğundan −4 ∈ Q; ama −4 ∉ N.`],
+          scene: 2,
+        },
+        {
+          q: `12 ÷ 4 = 3 çıktı ve sonuç N’de kaldı. Bu, N’nin bölmede <b>kapalı</b> olduğunu gösterir mi?`,
+          options: ['Evet, sonuç N’de kaldı', 'Hayır, 3 ÷ 4 N’de değil; tek karşı örnek kapalılığı bozar', 'Hayır, bölme N’de hiçbir zaman sonuç vermez'], answer: 1,
+          why: [
+            'Kapalılık her çift için sonucun kutuda kalmasıdır. Tek çiftin tutması yetmez.',
+            `${F(3, 4)} ∉ N: bir karşı örnek bulundu. 12 ÷ 4 yalnızca tutan bir örnek.`,
+            'Bölme N’de bazen sonuç verir (12 ÷ 4 = 3); sorun her çiftte vermemesi.'],
+          scene: 1,
+        },
       ],
       summary: [
         '<b>Yapılamayan işlem yeni kutu açar.</b>',
@@ -1860,6 +1878,24 @@
             `0,8333… = ${F(5, 6)}. Devreden ondalık bir kesirdir.`,
             'Üçler sonsuza kadar sürüyor; bölmede kalan hiç 0 olmuyor.'],
           scene: 1,
+        },
+        {
+          q: 'Hangi kesrin ondalık açılımı <b>biter</b>?',
+          options: [F(7, 20), F(5, 9), F(2, 11)], answer: 0,
+          why: [
+            '70 ÷ 20 = 3 kalan 10; 100 ÷ 20 = 5 kalan 0. Kalan 0 oldu: 0,35.',
+            '50 ÷ 9 = 5 kalan 5: aynı kalan geri geldi, rakam sürekli tekrar eder: 0,555…',
+            '20 ÷ 11 = 1 kalan 9; 90 ÷ 11 = 8 kalan 2: kalan 2 geri geldi, 0,1818… devreder.'],
+          scene: 3,
+        },
+        {
+          q: `${F(1, 13)} = 0,${ov('076923')} olarak yazılır. Tekrar eden öbek 6 basamaklı. Bu sayı için hangisi doğrudur?`,
+          options: ['Öbek uzun olduğu için rasyonel değildir','Rakamlar tekrar ettiği için rasyoneldir', 'Yalnızca kısa öbekli devreden ondalıklar rasyoneldir'], answer: 1,
+          why: [
+            'Ölçüt öbeğin uzunluğu değil, tekrar edip etmemesi. Öbek ne kadar uzun olursa olsun tekrar ediyor.',
+            `Rakamlar tekrar ediyor, yani kalan tekrar ediyor. Zaten ${F(1, 13)} bir kesir.`,
+            'Öbeğin uzunluğunun rasyonel olmakla ilgisi yok. Devreden her ondalık rasyoneldir.'],
+          scene: 2,
         },
       ],
       summary: [
@@ -1898,6 +1934,26 @@
             '5 tam kare değil: √5 = 2,236… ne biter ne devreder.'],
           scene: 2,
         },
+        {
+          q: 'Alanı 20 cm² olan karenin kenarı için hangisi doğrudur?',
+          options: [`Kenarı ${M.sqrt(20)} cm’dir ve irrasyoneldir`, 'Kenarı 4 cm’dir', 'Kenarı 10 cm’dir', `Kenarı ${M.sqrt(20)} cm’dir ama rasyoneldir`], answer: 0,
+          why: [
+            '20 tam kare değil: √20 = 4,472… ne biter ne devreder.',
+            '4 · 4 = 16, alan 20 değil. Kenar 4’ten büyük.',
+            '10 · 10 = 100. 10, alanın yarısı; kenar kendisiyle çarpılınca 20 verir.',
+            `${M.sqrt(20)} hiçbir kesre eşit değil. Kökün görünmesi tek başına rasyonel yapmaz.`],
+          scene: 0,
+        },
+        {
+          q: `${M.sqrt(3)} için hangisi doğrudur?`,
+          options: ['Sayı doğrusunda yeri yok, çünkü kesre eşit değil', 'Kesre eşit olduğu için sayı doğrusunda yeri var', 'Sayı doğrusunda yeri yok ama gerçek sayıdır', 'Sayı doğrusunda yeri var ama hiçbir kesre eşit değil'], answer: 3,
+          why: [
+            'Kesre eşit olmamak, sayı doğrusunda yer almamak demek değil. Delik sayı doğrusunda değil, Q’da.',
+            '3 tam kare değil: √3 = 1,732… ne biter ne devreder, kesir olarak yazılamaz.',
+            'Gerçek sayılar sayı doğrusunun tamamını doldurur. Yeri olmayan gerçek sayı yok.',
+            '√3 sayı doğrusunda 1,7 civarında bir yerdedir; ama kesir değildir. Sayı doğrusundaki delik Q’nun deliği.'],
+          scene: 0,
+        },
       ],
       summary: [
         '<b>Ne biter ne devreder: irrasyonel.</b>',
@@ -1933,6 +1989,24 @@
             '1/5 = 3/15 ve 1/3 = 5/15; 4/15 tam ortalarıdır.',
             '2/5 = 0,4: 1/3’ün sağında kalır.'],
           scene: 2,
+        },
+        {
+          q: `${F(1, 4)} ile ${F(1, 2)} sayılarının <b>tam ortasındaki</b> sayı hangisidir?`,
+          options: [F(1, 3), F(3, 8), F(3, 4)], answer: 1,
+          why: [
+            '1/3 iki sayının arasında; ama tam ortası değil. 1/4 = 0,25 ve 1/2 = 0,5; ortası 0,375.',
+            `${F(1, 4)} + ${F(1, 2)} = ${F(3, 4)}; ikiye bölününce ${F(3, 8)}.`,
+            'Toplamı almışsın, ikiye bölmeyi unutmuşsun. 3/4 zaten 1/2’den büyük.'],
+          scene: 2,
+        },
+        {
+          q: '0,5 ile 0,6 arasında kaç sayı vardır?',
+          options: ['Sonsuz çok', 'Hiç yok; 0,6, 0,5’ten sonraki sayıdır', 'Yalnızca bir tane: 0,55'], answer: 0,
+          why: [
+            '0,55, 0,555, 0,5555… hepsi arada. Her iki sayının arasına yeni bir sayı girer.',
+            'Kesirlerde “bir sonraki sayı” yoktur. 0,5 ile 0,6’nın arasında 0,55 var.',
+            '0,55 arada; ama 0,57 de, 0,501 de arada. Tek bir tane değil.'],
+          scene: 0,
         },
       ],
       summary: [
@@ -1970,13 +2044,31 @@
             'İki rasyonelin toplamı ve yarısı yine rasyoneldir.'],
           scene: 2,
         },
+        {
+          q: 'Ayşe “iki rasyonelin çarpımı her zaman tam sayıdır” diyor. Onu çürütmek için hangi iki sayıyı seçmelisin?',
+          options: ['2 ve 3', `${F(1, 2)} ve 6`, `${F(1, 2)} ve ${F(1, 3)}`], answer: 2,
+          why: [
+            '2 · 3 = 6 tam sayı: bu iddiayı destekleyen bir tanık, çürütmez.',
+            `${F(1, 2)} · 6 = 3 tam sayı çıkıyor: bu da çürütmez.`,
+            `${F(1, 2)} · ${F(1, 3)} = ${F(1, 6)} tam sayı değil. Tek karşı örnek yeter.`],
+          scene: 1,
+        },
+        {
+          q: `Selin “iki irrasyonelin çarpımı rasyoneldir” iddiasını ${M.sqrt(2)} · ${M.sqrt(8)} = 4 ve ${M.sqrt(3)} · ${M.sqrt(12)} = 6 ile denedi. İkisi de tuttu. Selin ne söyleyebilir?`,
+          options: ['İki örnek tuttuğu için iddia kanıtlandı', `Kanıtlanmadı; ${M.sqrt(2)} · ${M.sqrt(3)} = ${M.sqrt(6)} irrasyonel, bu tek örnek iddiayı çürütür`, 'İki örnek yetmedi; ama on örnek tutarsa iddia kanıtlanır'], answer: 1,
+          why: [
+            'İki örnek, sonsuz çiftin yalnızca ikisi. Tanıklar kanıtlamaz.',
+            `${M.sqrt(2)} · ${M.sqrt(3)} = ${M.sqrt(6)}; 6 tam kare değil, sonuç irrasyonel. Tek karşı örnek yeter.`,
+            'Kaç örnek olursa olsun “her zaman” demeye yetmez. Bin tanık da kanıtlamaz.'],
+          scene: 0,
+        },
       ],
       summary: [
         '<b>Bin örnek kanıtlamaz, tek karşı örnek çürütür.</b>',
         '“Her” iddiasını çürütmek için tek karşı örnek yeter: √2 · √2 = 2.',
         `Kanıtlamak için ispat gerekir: a &lt; b rasyonelse a &lt; ${F('a + b', 2)} &lt; b.`,
       ],
-      next: { href: 'd1-onerme.html', label: 'Sonraki konu: Önerme ›' },
+      next: { href: 'c6-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
     },
   };
 

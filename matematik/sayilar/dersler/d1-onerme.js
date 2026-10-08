@@ -195,6 +195,26 @@
           '(1/2)² = 1/4 > 0: önermeyi destekleyen bir örnek.'],
         scene: 2,
       },
+      {
+        q: '“∃x ∈ ℤ, x² = 2x” önermesinin <b>doğru</b> olduğunu göstermek için hangi değer yeter?',
+        options: ['x = 1', 'x = 2', 'x = 3', 'x = −1'], answer: 1,
+        why: [
+          '1² = 1 ama 2 · 1 = 2: eşit değil.',
+          '2² = 4 ve 2 · 2 = 4. “Bazı” için tek örnek yeter.',
+          '3² = 9 ama 2 · 3 = 6: eşit değil.',
+          '(−1)² = 1 ama 2 · (−1) = −2: eşit değil.'],
+        scene: 3,
+      },
+      {
+        q: 'Bir tartıda “paket 5 kg’dan hafiftir” önermesi <b>yanlış</b> çıktı. Hangisi kesin doğrudur?',
+        options: ['Paket 5 kg’dan ağırdır.', 'Paket tam 5 kg’dır.', 'Paket 5 kg’dan hafiftir.', 'Paket en az 5 kg’dır.'], answer: 3,
+        why: [
+          'Paket tam 5 kg da olabilir; eşitlik unutulmuş. Değil, “ya da eşit”i de içerir.',
+          'Tam 5 kg olabilir ama 6 kg da olabilir; kesin değil.',
+          'Bu, yanlış çıkan önermenin kendisi. Değili doğruluğu ters çevirir.',
+          '“Hafif” yanlışsa değili doğrudur: 5 kg ya da daha ağır.'],
+        scene: 1,
+      },
     ],
     summary: [
       '<b>“Her” için hepsi, “bazı” için biri yeter.</b>',

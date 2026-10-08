@@ -235,12 +235,32 @@
           'Sonuç doğru ama neden yanlış: önemli olan 22’ye uzaklık.'],
         scene: 0,
       },
+      {
+        q: 'Bir fırın 180 °C’ye ayarlı. Gerçek sıcaklık x, hedefe 10 °C’den az uzaksa x hangi aralıktadır?',
+        options: [M_('(180, 190)'), M_('[170, 190]'), M_('(170, 190)'), M_('(−∞, 190)')], answer: 2,
+        why: [
+          'Yalnızca yukarı yana bakmışsın. 180’in altında da 10’a kadar pay var.',
+          '“10’dan az” tam 10’u almaz; uçlar boş nokta olmalı.',
+          '|x − 180| &lt; 10: 180 − 10 = 170 ile 180 + 10 = 190 arası, uçlar hariç.',
+          'Tek yöne bakmışsın. Hedefin altında da sınır var: 170.'],
+        scene: 1,
+      },
+      {
+        q: `${M_('(2, 12)')} aralığı hangi eşitsizlikle yazılır?`,
+        options: [M_('|x − 2| < 12'), M_('|x − 5| < 10'), M_('|x − 7| < 10'), M_('|x − 7| < 5')], answer: 3,
+        why: [
+          'Aralığın bir ucunu merkez, öteki ucunu pay sanmışsın. Merkez tam ortadadır.',
+          'Merkez 7 olmalı; 5, aralığın ortası değil. Pay da yarı genişlik, 5.',
+          'Merkez doğru (7) ama 10 tüm genişlik. Pay yarı genişlik: 10’un yarısı 5.',
+          'Merkez ortada: (2 + 12)/2 = 7. Pay yarı genişlik: (12 − 2)/2 = 5.'],
+        scene: 2,
+      },
     ],
     summary: [
       '<b>Mutlak değer, hedefe uzaklıktır.</b>',
       `${M_('|x − a| < r')} ⇔ ${M_('a − r < x < a + r')}`,
       `<b>İki yönde:</b> ${M_('|x − 3| < 1')} ⇔ ${M_('2 < x < 4')}; ≤ olursa ${M_('[2, 4]')}`,
     ],
-    next: { href: 'c1-her-kutu-bir-ihtiyac.html', label: 'Sonraki konu: Sayı kümeleri ›' },
+    next: { href: 'b8-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   };
 };

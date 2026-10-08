@@ -2559,6 +2559,26 @@
             '4,995 ondan büyük ve hâlâ 5’ten küçük.'],
           scene: 3,
         },
+        {
+          q: `Mini trenin kapısında “95 cm’den kısa olanlar biner” yazıyor. Boy x cm ise kural ve sayı doğrusundaki 95 noktası hangisidir?`,
+          options: [`${M_('x < 95')}, 95’te boş nokta, sola doğru şerit`, `${M_('x ≤ 95')}, 95’te dolu nokta, sola doğru şerit`, `${M_('x < 95')}, 95’te boş nokta, sağa doğru şerit`, `${M_('x > 95')}, 95’te boş nokta, sağa doğru şerit`], answer: 0,
+          why: [
+            '“Kısa” eşitlik koymaz: tam 95 cm olan binemez, nokta boş. Kısa boylar solda.',
+            '“95’ten kısa” demek 95’i almaz. Dolu nokta 95’i de içeri alırdı.',
+            'Nokta doğru, yön ters: 95’ten kısa boylar solda durur.',
+            'Kısa yerine uzun okumuşsun: büyük sayılar sağda, ama burada küçük boylar aranıyor.'],
+          scene: 2,
+        },
+        {
+          q: `${M_('x ≥ 9')} ve ${M_('x > 9')} kuralları için hangisi doğrudur?`,
+          options: ['İkisi de tam olarak aynı sayıları kabul eder.', `Yalnızca ${M_('x ≥ 9')} kuralı 9’u kabul eder.`, `Yalnızca ${M_('x > 9')} kuralı 9’u kabul eder.`, 'İkisi de 9’u kabul etmez.'], answer: 1,
+          why: [
+            'Tek bir sayı fark yaratır: 9 birinde var, ötekinde yok.',
+            '≥ 9’u da alır (dolu nokta); &gt; almaz (boş nokta).',
+            'İşaretleri ters okumuşsun. Eşitlik > ile gelmez, ≥ ile gelir.',
+            '≥ eşitliği de alır; bu kuralda 9 içeride, dolu nokta.'],
+          scene: 2,
+        },
       ],
       summary: [
         '<b>Eşitlik varsa nokta dolu.</b> ≥ ve ≤ dolu, &gt; ve &lt; boş nokta.',
@@ -2591,6 +2611,26 @@
             'Yön ters: 7’den büyükler sağda.',
             '7 dahil: köşeli. ∞ hep yuvarlak.'],
           scene: 2,
+        },
+        {
+          q: 'Bir ilaç, sıcaklığı 2 °C ve üzeri, 8 °C’den düşük bir ortamda saklanır. Sıcaklık x ise x hangi aralıktadır?',
+          options: [M_('[2, 8]'), M_('(2, 8)'), M_('[2, 8)'), M_('(2, 8]')], answer: 2,
+          why: [
+            '“8’den düşük” 8’i almaz; sağda köşeli olmamalı.',
+            '“2 ve üzeri” 2’yi de alır; solda yuvarlak olmamalı.',
+            '2 dahil: köşeli. 8 hariç: yuvarlak.',
+            'Parantezler ters yerde.'],
+          scene: 0,
+        },
+        {
+          q: `${M_('(2, 9]')} aralığı için hangisi doğrudur?`,
+          options: ['2 aralığın elemanıdır, 9 değildir.', 'Ne 2 ne 9 aralığın elemanıdır.', 'Hem 2 hem 9 aralığın elemanıdır.', '9 aralığın elemanıdır, 2 değildir.'], answer: 3,
+          why: [
+            'Parantezleri ters okumuşsun. Yuvarlak hariç, köşeli dahil.',
+            'Sağdaki köşeli parantez 9’u içeri alır.',
+            'Soldaki yuvarlak parantez 2’yi dışarıda bırakır.',
+            'Yuvarlak 2’yi dışarıda bırakır; köşeli 9’u içeri alır.'],
+          scene: 1,
         },
       ],
       summary: [
@@ -2625,6 +2665,26 @@
             '3 dahil: x ≤ 3 yazıyor.'],
           scene: 1,
         },
+        {
+          q: `${M_('{x : −2 < x ≤ 3, x ∈ ℕ}')} kümesinin kaç elemanı vardır?`,
+          options: ['5', 'Sonsuz', '4', '3'], answer: 2,
+          why: [
+            'ℤ’deki gibi −1’i de saymışsın. Doğal sayılarda negatif sayı yok.',
+            'Sonsuz eleman ℝ’de olurdu. Burada x ∈ ℕ yazıyor; doğal sayılar ayrık noktalardır.',
+            'ℕ’de bu aralığa düşenler: 0, 1, 2, 3.',
+            '0’ı unutmuşsun: doğal sayılar 0’dan başlar.'],
+          scene: 1,
+        },
+        {
+          q: `${M_('A = {x : 4 ≤ x ≤ 6, x ∈ ℝ}')} ve ${M_('B = {x : 4 ≤ x ≤ 6, x ∈ ℤ}')} için hangisi doğrudur?`,
+          options: [`${M_('B ⊂ A')}; 4,5 gibi sayılar yalnızca A’dadır.`, `${M_('A ⊂ B')}`, 'A’nın da B’nin de üç elemanı vardır.', `${M_('A = B')}, çünkü ikisinde de uçlar 4 ve 6.`], answer: 0,
+          why: [
+            'B = {4, 5, 6} ve hepsi A’da. A ise 4,5 gibi araya düşen sayıları da içerir.',
+            '4,5 A’nın elemanı ama B’nin değil; A, B’nin içinde değil.',
+            'B = {4, 5, 6} üç elemanlı; A ise bir aralık ve sonsuz sayıda eleman içerir.',
+            'Uçlar aynı ama ℝ ile ℤ farklı: A’da 4,5 var, B’de yok.'],
+          scene: 1,
+        },
       ],
       summary: [
         '<b>Eşitsizlik, aralık, doğru, küme: aynı şey.</b>',
@@ -2657,6 +2717,26 @@
             '4 ikinci aralıkta dolu: iki parça kaynaşır.',
             'Birleşim en az birinde olan bütün sayılardır.'],
           scene: 2,
+        },
+        {
+          q: 'Bir odanın sıcaklığı için iki kural var: A kuralı x &lt; 5, B kuralı x ≥ 2. İkisini birden sağlayan sıcaklıklar hangi aralıktadır?',
+          options: [M_('[2, 5]'), M_('[2, 5)'), M_('(−∞, ∞)'), M_('(2, 5)')], answer: 1,
+          why: [
+            'x &lt; 5 kuralı 5’i almaz; sağ uç boş nokta olmalı.',
+            'İki kuralı birden sağlayan: 2’den başlar (dahil), 5’te biter (hariç).',
+            'Bu birleşimin sonucu (∪). “İkisini birden” kesişimdir.',
+            'x ≥ 2 kuralı 2’yi alır; sol uç dolu olmalı.'],
+          scene: 1,
+        },
+        {
+          q: `${M_('(0, 3] ∩ [3, 7)')} işleminin sonucu nedir?`,
+          options: [M_('(0, 7)'), '∅', M_('[0, 3]'), M_('{3}')], answer: 3,
+          why: [
+            'Bu birleşimin sonucu (∪). Kesişim yalnızca ortak parçadır.',
+            '3 ikisinde de dolu; ortak bir sayı var, küme boş değil.',
+            'Bu ilk aralığın 3’e kadar kısmı; 3’ün gerisi ikinci aralıkta yok.',
+            'Ortak tek sayı 3: iki aralıkta da dolu nokta.'],
+          scene: 3,
         },
       ],
       summary: [

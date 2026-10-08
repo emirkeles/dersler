@@ -183,12 +183,32 @@
           'x = 0 için (−2) · 5 = −10; 0 değil.'],
         scene: 2,
       },
+      {
+        q: '<b>73² − 27²</b> işlemini zihinden hangisi verir?',
+        options: ['(73 − 27)² = 46² = 2116', '(73 + 27)² = 100² = 10 000', '73 − 27 = 46', '(73 − 27)(73 + 27) = 46 · 100 = 4600'], answer: 3,
+        why: [
+          'Farkın karesini almışsın. İki kare farkı (a − b)(a + b) olur.',
+          'Toplamın karesini almışsın. İki kare farkı (a − b)(a + b) olur.',
+          'Yalnızca tabanları çıkarmışsın; kareler hâlâ duruyor. İki çarpan gerekir.',
+          'a² − b² = (a − b)(a + b): 46 · 100 = 4600.'],
+        scene: 1,
+      },
+      {
+        q: '“a · b = 12 ise a = 12 ∨ b = 12” önermesini hangi değerler <b>çürütür</b>?',
+        options: ['a = 12, b = 1', 'a = 1, b = 12', 'a = 3, b = 4', 'a = 0, b = 12'], answer: 2,
+        why: [
+          '12 · 1 = 12 ve a = 12: önerme tutuyor, çürütmez.',
+          '1 · 12 = 12 ve b = 12: önerme tutuyor, çürütmez.',
+          '3 · 4 = 12 ama ne a ne b 12. “Biri belirli sayıdır” kuralı yalnızca çarpım 0 iken geçerli.',
+          '0 · 12 = 0, 12 değil: bu değerler önermenin varsayımını bile sağlamıyor.'],
+        scene: 2,
+      },
     ],
     summary: [
       '<b>Çarpım 0 ise çarpanlardan en az biri 0’dır.</b>',
       'Çarpanlara ayırmak, dağılmayı ve özdeşlikleri geriye okumaktır: 6x + 9 = 3 · (2x + 3), x² − 9 = (x − 3)(x + 3).',
       'a · b = 0 ⇔ a = 0 ∨ b = 0 &nbsp;ve&nbsp; a · b ≠ 0 ⇔ a ≠ 0 ∧ b ≠ 0',
     ],
-    next: { href: 'index.html', label: 'Tüm dersler ›' },
+    next: { href: 'd9-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   };
 };

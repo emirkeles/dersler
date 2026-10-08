@@ -215,6 +215,26 @@
           'Bu, (a − b)² açılımıdır.'],
         scene: 3,
       },
+      {
+        q: '<b>(2x − 5)²</b> açılımı hangisidir?',
+        options: ['4x² − 10x + 25', '4x² − 25', '4x² + 20x + 25', '4x² − 20x + 25'], answer: 3,
+        why: [
+          'Ortadaki terim 2 · 2x · 5 = 20x olmalı; 2x’in 2’si atlanmış.',
+          'Ortadaki −2ab terimi unutulmuş; bu iki kare farkı olurdu.',
+          'Farkın karesinde ortadaki terim eksidir: −20x.',
+          '(2x)² − 2 · 2x · 5 + 5² = 4x² − 20x + 25.'],
+        scene: 2,
+      },
+      {
+        q: 'Elif, <b>(a − b)² = a² − b²</b> eşitliğini a = 5, b = 0 için denedi: 25 = 25. Elif ne sonuç çıkarmalı?',
+        options: ['Tuttuğuna göre özdeşliktir.', 'Bir örnek yetmez; a = 5, b = 2 için 9 ≠ 21, özdeşlik değildir.', 'a = 5, b = 2 için de tutar; yani özdeşliktir.', 'b = 0 ile denemek geçersizdir; b = 1 ile tutsaydı özdeşlik olurdu.'], answer: 1,
+        why: [
+          'Tek örnek kanıtlamaz; her değer için doğru olması gerekir.',
+          'Tek karşı örnek yeter: (5 − 2)² = 9 ama 5² − 2² = 21.',
+          'a = 5, b = 2 için tutmaz: 9 ≠ 21.',
+          'Tek bir değer yine yetmez; üstelik a = 5, b = 1 için de tutmaz: 16 ≠ 24.'],
+        scene: 1,
+      },
     ],
     summary: [
       '<b>(a + b)² dört parçadır, iki değil.</b>',

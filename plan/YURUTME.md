@@ -113,7 +113,9 @@ Anlatım ve altyazı değişmez; klip yeniden üretilmez. Tema başına iş:
 
 Sıra: Nicelikler ve Değişimler (3 konu), Sayılar (4), Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
 
-Biten: Nicelikler ve Değişimler (8 Ekim 2026; görev tanımı örneği `plan/matematik/nicelikler-ve-degisimler/gorev/ek-soru-gorevi.md`, sonraki temada kopyalanıp uyarlanır). Sıradaki: Sayılar.
+Biten: Nicelikler ve Değişimler (8 Ekim 2026; görev tanımı örneği `plan/matematik/nicelikler-ve-degisimler/gorev/ek-soru-gorevi.md`, sonraki temada kopyalanıp uyarlanır), Sayılar (8 Ekim 2026; kiti olmayan temada kendi başına çalışan tekrar dersi örneği `matematik/sayilar/dersler/a9-tekrar.js`, görev tanımı `plan/matematik/sayilar/gorev/ek-soru-gorevi.md`). Sıradaki: Geometrik Şekiller B ve C.
+
+İçerik denetiminde (2b.4) iki şeye ayrıca bakılır: şıkta ya da geri bildirimde sonraki dersin terimi geçiyor mu; eklenen soruların doğru şıkkı hep aynı yerde mi.
 
 | # | İş | Kim |
 |---|---|---|

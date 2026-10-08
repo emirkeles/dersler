@@ -530,6 +530,14 @@ Tema 1 · Nicelikler ve Değişimler (görev tanımı: `plan/matematik/nicelikle
 - [x] 2b.2 Konu B (6 ders + `b7-tekrar`) ve Konu C (10 ders + `c11-tekrar`): birer Sonnet ajanı
 - [x] 2b.3 Ölçüm: `olc.js` A1–A17 (Haiku) ve B, C'den sekiz ders temiz; `sure.js` tema 155:02; `denetle.js` "35 kısa ders, yayında. Sorun yok."
 - [x] 2b.4 İçerik denetimi: 64 ek soru ve 30 tekrar sorusu elle doğrulandı; üç tekrar dersinden görüntülere bakıldı
-- [ ] 2b.5 Commit ve push (yalnızca bu temanın dosyaları)
+- [x] 2b.5 Commit `dde7ea6`, `origin/main`e gönderildi (yalnızca bu temanın dosyaları ve kayıtlar; Kimya Çeşitlilik commit dışında). Canlı sitede doğrulanmadı; bu satırın kendisi commit edilmedi
 
-Sıradaki temalar: Sayılar (4 konu), Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
+Tema 2 · Sayılar (görev tanımı: `plan/matematik/sayilar/gorev/ek-soru-gorevi.md`; ilerleme `plan/matematik/sayilar/DURUM.md`)
+
+- [x] 2b.1 Konu A (ana oturum, örnek): 8 derse ikişer çıkış sorusu (dört şıklı; biri yeni durum, biri yanılgı), `a9-tekrar` (sekiz kural, on soru; `olc.js` temiz, beş görüntüye bakıldı), A8 → A9 → B1 bağlantısı, `tema.js` satırları (A9, B8, C6, D9); A1–A8 ölçümünde sayfa kayması, panel taşması ve konsol hatası yok
+- [x] 2b.2 Konu B (7 ders, 14 soru + `b8-tekrar`: yedi kural, on soru), Konu C (5 ders, 10 soru + `c6-tekrar`: yedi kural, on soru), Konu D (8 ders, 16 soru + `d9-tekrar`: sekiz kural, on soru): birer Sonnet ajanı
+- [x] 2b.3 Ölçüm: `olc.js` 32 derste (ana oturum, toplu komut): sayfa kayması, panel taşması, konsol hatası yok; dört tekrar dersinde bütün sayaçlar 0. `sure.js` tema 173:52; `denetle.js` "32 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/32, konu tekrarı yok 0/4
+- [x] 2b.4 İçerik denetimi: 56 ek soru ve 40 tekrar sorusu elle doğrulandı; C2'de sonraki dersin terimi ("irrasyonel") şıktan çıkarıldı, B2 ve B4'te doğru şıkkın yeri değiştirildi (B'de dördüncü sorunun cevabı hep son şıktı); dört tekrar dersinden görüntülere bakıldı
+- [ ] 2b.5 Commit ve push
+
+Sıradaki temalar: Geometrik Şekiller B ve C (2), Biyoloji Yaşam (8), Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).

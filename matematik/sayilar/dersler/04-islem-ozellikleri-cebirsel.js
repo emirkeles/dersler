@@ -1632,6 +1632,25 @@
             'Sonuç doğru çıkar ama 17 · 25 zihinden zor.'],
           scene: 4,
         },
+        {
+          q: 'Kasada 25, 38 ve 75 lira var. Toplamı zihinden <b>en kolay</b> hangisi verir?',
+          options: ['(25 + 38) + 75 = 63 + 75', '25 + (38 + 75) = 25 + 113', '(25 + 75) + 38 = 100 + 38'], answer: 2,
+          why: [
+            'Sonuç doğru çıkar ama 63 + 75 zihinden zor.',
+            'Sonuç doğru çıkar ama 38 + 75 zihinden zor.',
+            'Değişme 75’i öne alır, birleşme 25 + 75’i gruplar: 100 + 38 = 138.'],
+          scene: 4,
+        },
+        {
+          q: '<b>(20 − 8) − 5</b> ve <b>20 − (8 − 5)</b> işlemlerinin sonuçları sırasıyla kaçtır?',
+          options: ['7 ve 7', '17 ve 7', '7 ve 17', '12 ve 3'], answer: 2,
+          why: [
+            'İkinci işlemde parantezi yok saymışsın. 8 − 5 = 3 önce yapılır: 20 − 3 = 17.',
+            'Sonuçlar ters yazılmış: (20 − 8) − 5 = 12 − 5 = 7.',
+            '(20 − 8) − 5 = 7 ve 20 − (8 − 5) = 17. Çıkarmada birleşme yok.',
+            'Yalnızca ilk adımları yazmışsın: 12 − 5 = 7 ve 20 − 3 = 17.'],
+          scene: 3,
+        },
       ],
       summary: [
         '<b>Toplama ve çarpmada var, çıkarmada yok.</b>',
@@ -1667,6 +1686,24 @@
             'Eksi yalnızca b’ye uygulandı: 10 − (3 + 2) = 5 ama 10 − 3 + 2 = 9.',
             'Eksi, parantezdeki herkese ulaşır: 10 − 3 − 2 = 5.',
             'Eksi yok sayıldı: 10 + 3 + 2 = 15.'],
+          scene: 3,
+        },
+        {
+          q: '<b>6 · 103</b>’ü zihinden hangisi doğru verir?',
+          options: ['6 · 100 + 3 = 603', '6 · (100 − 3) = 582', '6 · (100 + 3) = 6 · 100 + 6 · 3 = 618'], answer: 2,
+          why: [
+            '3, 6 ile çarpılmadı. 6, hem 100 ile hem 3 ile çarpılır.',
+            '103 = 100 + 3; eksi değil artı.',
+            '6, parantezdeki herkesle çarpılır: 600 + 18 = 618.'],
+          scene: 2,
+        },
+        {
+          q: '<b>4 · (a − 6)</b> açılımı hangisidir?',
+          options: ['4a − 24', '4a − 6', '4a + 24'], answer: 0,
+          why: [
+            '4, parantezdeki herkesle çarpılır: 4 · a − 4 · 6 = 4a − 24.',
+            '4 yalnızca a ile çarpılmış; 6’ya ulaşmadı. 4 · (10 − 6) = 16 ama 40 − 6 = 34.',
+            'Eksi artıya dönmez: 4 · (10 − 6) = 16 ama 40 + 24 = 64.'],
           scene: 3,
         },
       ],
@@ -1707,6 +1744,26 @@
             '2’nin tersi 1/2 ve 1/2 ∉ ℤ. Tek karşı örnek yeter.',
             'Bir karşı örnek var: 2’nin tersi 1/2 tam sayı değil.'],
           scene: 3,
+        },
+        {
+          q: '−3/4 sayısının <b>çarpmaya göre tersi</b> hangisidir?',
+          options: ['3/4', '4/3', '−3/4', '−4/3'], answer: 3,
+          why: [
+            'Bu, toplamaya göre ters: −3/4 + 3/4 = 0.',
+            'İşaret unutulmuş: (−3/4) · (4/3) = −1, 1 değil.',
+            'Sayının kendisi: (−3/4) · (−3/4) = 9/16, 1 değil.',
+            '(−3/4) · (−4/3) = 12/12 = 1.'],
+          scene: 1,
+        },
+        {
+          q: '“0, çarpmanın birim (etkisiz) elemanıdır.” iddiasını hangi örnek <b>çürütür</b>?',
+          options: ['0 + 5 = 5', '5 · 0 = 0', '1 · 5 = 5', '5 + (−5) = 0'], answer: 1,
+          why: [
+            'Bu, toplamada 0’ın etkisiz olduğunu gösterir; çarpma hakkında bir şey söylemez.',
+            '5 · 0 = 0: 5 değişti. Çarpmada 0 etkisiz değil, yutandır.',
+            '1 · 5 = 5: çarpmanın birim elemanı 1’dir; iddiayı çürütmez.',
+            'Bu, toplamaya göre ters elemanı gösterir; çarpmanın birimiyle ilgisi yok.'],
+          scene: 2,
         },
       ],
       summary: [

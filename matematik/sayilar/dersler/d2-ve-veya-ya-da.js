@@ -162,6 +162,26 @@
           'Hiçbir sayı hem 2’den küçük hem 6’dan büyük olamaz.'],
         scene: 3,
       },
+      {
+        q: 'n = 8 için hangisi <b>doğrudur</b>?',
+        options: ['n 3’ün katı ⊻ n 4’ün katı', 'n tek ∨ n 3’ün katı', 'n çift ⊻ n 4’ün katı', 'n çift ∧ n 3’ün katı'], answer: 0,
+        why: [
+          '8, 4’ün katı ama 3’ün katı değil: yalnızca biri doğru.',
+          '8 tek değil, 3’ün katı da değil: “veya” için en az biri doğru olmalı.',
+          '8 hem çift hem 4’ün katı; “ya da” yalnızca biri doğruyken doğrudur.',
+          '8, 3’ün katı değil: “ve” için ikisi de doğru olmalı.'],
+        scene: 2,
+      },
+      {
+        q: 'Bir spor kulübü “basketbol <b>veya</b> voleybol oynayanları” üye alıyor. Hangi öğrenci <b>alınmaz</b>?',
+        options: ['Ayşe: yalnızca basketbol oynuyor', 'Burak: yalnızca voleybol oynuyor', 'Deniz: ikisini de oynuyor', 'Elif: ikisini de oynamıyor'], answer: 3,
+        why: [
+          'Biri doğru: “veya” için yeter.',
+          'Biri doğru: “veya” için yeter.',
+          'İkisi birden doğru; “veya” bunu da kabul eder.',
+          'İkisi de yanlış: “veya” için en az biri doğru olmalı.'],
+        scene: 1,
+      },
     ],
     summary: [
       '<b>Ve ikisini ister, veya en az birini, ya da yalnızca birini.</b>',

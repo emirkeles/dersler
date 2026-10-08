@@ -17,7 +17,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
-| 1 | Sayılar | `sayilar` | <https://tymm.meb.gov.tr/matematik-dersi/unite/21> | 38 | 4 | 28 | yazıldı, yayında |
+| 1 | Sayılar | `sayilar` | <https://tymm.meb.gov.tr/matematik-dersi/unite/21> | 38 | 4 | 32 | yazıldı, yayında, seslendirildi; 8 Ekim 2026'da çıkış soruları 4'e çıktı, dört konu tekrarı dersi eklendi (seslendirilmedi) |
 | 2 | Nicelikler ve Değişimler | `nicelikler-ve-degisimler` | <https://tymm.meb.gov.tr/matematik-dersi/unite/23> | 38 | 3 | 35 | yazıldı, yayında, seslendirildi (8 Ekim 2026; kullanıcı henüz dinlemedi); aynı gün çıkış soruları 4'e çıktı, üç konu tekrarı dersi eklendi (tekrar dersleri sessiz) |
 | 3 | Geometrik Şekiller | `geometrik-sekiller` | <https://tymm.meb.gov.tr/matematik-dersi/unite/25> | 12 | 3 | 12 | yazıldı (7 Ekim 2026), genişletildi (8 Ekim 2026: 9 → 12 kısa ders, ders kitabıyla karşılaştırılarak); yayında (8 Ekim 2026); A konusu 8 Ekim 2026'da yeni anlatım kurallarıyla yeniden yazıldı ve konu tekrarı dersi eklendi (13 dosya; pilot, kullanıcı onayladı); seslendirildi (8 Ekim 2026; A konusu yeni metinle yeniden; kullanıcı yeni klipleri henüz dinlemedi) |
 | 4 | Eşlik ve Benzerlik | `eslik-ve-benzerlik` | <https://tymm.meb.gov.tr/matematik-dersi/unite/83> | 36 | 5 | 18 | plan taslağı; işleme alınmayı bekliyor |
