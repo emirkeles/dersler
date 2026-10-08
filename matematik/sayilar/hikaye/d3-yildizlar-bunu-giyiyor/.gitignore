@@ -1,0 +1,6 @@
+snapshots/
+kareler/
+.hyperframes/
+.thumbnails/
+renders/work-*/
+renders/.*

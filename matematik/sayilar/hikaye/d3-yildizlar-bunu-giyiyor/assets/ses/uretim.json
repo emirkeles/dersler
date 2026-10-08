@@ -1,0 +1,57 @@
+{
+ "10": {
+  "metin": "Azra salona girer, ancak ve ancak bileti varsa.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "11": {
+  "metin": "İse tek yön, [short pause] ancak ve ancak çift yön.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "01": {
+  "metin": "Azra, BLACKPINK hayranı. Okul dönüşü bir reklam panosunun önünde durdu.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "02": {
+  "metin": "Panoda sahne ışıkları, bir çift ayakkabı ve tek bir cümle vardı: Yıldızlar bu ayakkabıyı giyiyor.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "03": {
+  "metin": "Doğru olsun: sahnenin yıldızıysan bu ayakkabıyı giyiyorsun.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "04": {
+  "metin": "Azra harçlığını biriktirdi, ayakkabıyı aldı ve giydi.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "05": {
+  "metin": "[thoughtful] Aynaya baktı. Ayakkabı aynıydı; ama Azra hâlâ odasındaydı, sahnede değil.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "06": {
+  "metin": "Reklam, yıldızsan giyersin diyordu. Azra onu tersinden okumuştu: giyersen yıldız olursun.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "07": {
+  "metin": "Oysa bu yol tek yönlü. Ters yönü çürütmeye tek karşı örnek yeter: Azra'nın kendisi.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "08": {
+  "metin": "Bir ay sonra Azra, BLACKPINK konserinin kapısında. Burada yol iki yöne de açık.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "09": {
+  "metin": "Bileti olan içeri girer; içeri giren herkesin de bileti vardır.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ }
+}

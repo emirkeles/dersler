@@ -11,7 +11,8 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 | 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) ve A8 dersinin son sahnesine bağlandı | Son işleme, müzik, efekt, altyazı dosyası |
 | 3 · B7 Kombi 22 derecede | Seslendirildi, işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) ve B7 dersinin son sahnesine bağlandı | Müzik, efekt, altyazı dosyası |
 | 5 · A7 3 nanometre | Seslendirildi (George, erkek ses; kullanıcı seçti), işlendi (`hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4`, 73,5 sn) ve A7 dersinin son sahnesine bağlandı (8 Ekim 2026; `hikaye/A7-3-nanometre.md`) | Müzik, efekt, altyazı dosyası |
-| 2 C4 · 4 C5 · 6 D3 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
+| 6 · D3 Yıldızlar bunu giyiyor | Seslendirildi (Gamze Özdemir, 11 klip, 62,8 sn konuşma), işlendi (`hikaye/d3-yildizlar-bunu-giyiyor/renders/d3-yildizlar-bunu-giyiyor.mp4`, 74,5 sn) ve D3 dersinin son sahnesine bağlandı (8 Ekim 2026; `hikaye/D3-yildizlar-bunu-giyiyor.md`) | Müzik, efekt, altyazı dosyası, sesli izleme |
+| 2 C4 · 4 C5 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
 
 Motorda video sahnesi türü var (`ortak/API.md`). Tema sayfasında "Hikâyeler" başlığı var (7 Ekim 2026; liste `ortak/katalog.js` içinde). Kapanış kartında her zaman dersin akılda kalıcı cümlesi yazar; tek istisna C5'teki siyah kuğu cümlesidir (`senaryolar/C-sayi-kumeleri.md`).
 
@@ -67,7 +68,7 @@ Sıralama ölçütü: (1) program o fikir için gerçek yaşam bağlamını aç�
 | 3 | B7 Mutlak değerle aralık | \|x − a\| < r: hedefe uzaklık payın içinde | Kombi ve klima termostatı | Kombi 22 dereceye ayarlı; 1 derecelik payın dışına çıkınca çalışır. 21,4 de 22,8 de "tamam"; 20,9 değil. Önemli olan 22'ye uzaklık. | "Mutlak değer, hedefe uzaklıktır." |
 | 4 | C5 İspat mı, karşı örnek mi? | Bin örnek kanıtlamaz, tek karşı örnek çürütür | "Her zaman", "hiçbir zaman" diye başlayan iddialar | Avrupa'da yüzyıllarca "bütün kuğular beyazdır" denir; 1697'de Avustralya'da siyah kuğu görülür. Bugüne bağlanır: "bu uygulama hiç çökmez", "ben hiç geç kalmam". | "Bin beyaz kuğu kanıtlamaz, tek siyah kuğu çürütür." |
 | 5 | A7 Bilimsel gösterim | Üs, virgülün kaç basamak kaydığını sayar; çok küçük sayı böyle okunur | Telefon reklamındaki "3 nanometre" | Reklam "3 nanometre işlemci" diyor: metrenin milyarda üçü, dersteki 3 × 10⁻⁹. Ne kadar küçük? Bir saç teli yaklaşık 7 × 10⁻⁵ metre. Üsler −5 ve −9: arada dört basamak var; saç telinin kalınlığına yan yana on binlercesi sığar. | "Virgül kayar, üs sayar." |
-| 6 | D3 İse, ancak ve ancak | "p ise q" doğruyken "q ise p" doğru olmayabilir | Reklamlar, "başarılı insanlar şunu yapar" paylaşımları | Reklam: "Şampiyonlar bu ayakkabıyı giyiyor." Doğru olsun: şampiyonsan bu ayakkabıyı giyiyorsun. Öğrenci ayakkabıyı alır, koşuda yine sonuncu gelir: ok tek yönlüydü. Karşılaştırma: konser kapısı. Bileti olan girer, giren herkesin de bileti vardır: iki yön. | "İse tek yön, ancak ve ancak çift yön." |
+| 6 | D3 İse, ancak ve ancak | "p ise q" doğruyken "q ise p" doğru olmayabilir | Reklamlar, "başarılı insanlar şunu yapar" paylaşımları | Azra BLACKPINK hayranı. Reklam: "Yıldızlar bu ayakkabıyı giyiyor." Doğru olsun: sahnenin yıldızıysan bu ayakkabıyı giyiyorsun. Azra ayakkabıyı alır, giyer; hâlâ odasında, sahnede değil: ok tek yönlüydü, karşı örnek Azra'nın kendisi. Karşılaştırma: BLACKPINK konserinin kapısı. Bileti olan girer, giren herkesin de bileti vardır: iki yön. Ayrıntılı plan: `hikaye/D3-yildizlar-bunu-giyiyor.md`. | "İse tek yön, ancak ve ancak çift yön." |
 | 7 | B5 Kesişim ve birleşim | "Ve" listeyi daraltır, "veya" genişletir | Alışveriş uygulamasındaki filtreler | Spor ayakkabı arayan öğrenci marka filtresinde iki kutu işaretler: A **veya** B; liste genişler. Sonra numara filtresini açar: marka **ve** numara 40–42; liste daralır. Aynı filtrenin içindeki işaretler "veya", filtreler arası "ve". Fiyat 1000–2000 TL eklenince kalanlar iki aralığın kesişimi. | "∩ ve, ∪ veya." |
 | 8 | D7 Özdeşlikler | (a + b)² = a² + 2ab + b²: kenar biraz büyüyünce alan beklenenden çok büyür | Tepsi, pizza, ekran, halı boyu seçerken | Börekçide 30'luk kare tepsi mi, 40'lık mı? Kenar yalnızca 10 cm büyüyor; ama 30'luk 900 cm², 40'lık 1600 cm²: neredeyse iki katı börek. Aradaki 700 cm² nereden geldi: iki şerit (300 + 300) ve köşedeki küçük kare (100). | "(a + b)² dört parçadır, iki değil." |
 | 9 | C3 Sayı doğrusundaki delik | √2 gerçek bir uzunluktur ama ondalığı ne biter ne devreder | A4 kâğıdı ve fotokopideki %141 | A4'ü ikiye katlayınca aynı biçimde A5 çıkar. Bu ancak uzun kenar kısa kenarın √2 katıysa olur. Fotokopi makinesi büyütürken %141 yazar; 1,41 değil 1,414…, o da değil: sayı bitmediği için makine yuvarlamak zorunda. | "Ne biter ne devreder: irrasyonel." |
@@ -81,7 +82,7 @@ Müfredat dayanağı:
 | 3 | Kombi 22 derecede | Program \|x − 3\| < 1 gösteriminin "gerçek yaşam durumu bağlamları da dikkate alınarak" tartışılmasını istiyor. |
 | 4 | Siyah kuğu | Çıktının süreç bileşeni: önermeleri "ispatlamak ya da çürütmek"; program "aksine örnek verebilmenin önemi" üzerinde durulmasını istiyor. |
 | 5 | 3 nanometre ne kadar küçük? | Programın gerçek yaşamla en çok ilişkilendirdiği konu: bilimsel gösterimin fizik, kimya ve biyolojideki kullanımına ("atomun büyüklüğü" gibi) örnekler isteniyor. Dersin açılış sayısını (3 × 10⁻⁹) kullanır; yeni bilgi getirmez. |
-| 6 | Şampiyonlar bunu giyiyor | "İse" ve "ancak ve ancak" bağlaçlarının anlamlarının tartışılması çıktının içeriğinde. Program önermenin "matematiksel örnekler üzerinde" incelenmesini istiyor; ders öyle kurulu, hikâye yalnızca aktarım. Gerçek yaşam örneği istenmiyor. |
+| 6 | Yıldızlar bunu giyiyor | "İse" ve "ancak ve ancak" bağlaçlarının anlamlarının tartışılması çıktının içeriğinde. Program önermenin "matematiksel örnekler üzerinde" incelenmesini istiyor; ders öyle kurulu, hikâye yalnızca aktarım. Gerçek yaşam örneği istenmiyor. |
 | 7 | Alışveriş filtresi | Aralıklarla kesişim ve birleşim çıktının ana içeriği; "ve / veya" ayrıca dördüncü çıktıda mantık bağlacı olarak geçiyor (D2). Program gerçek yaşam örneği istemiyor. |
 | 8 | 30'luk tepsi mi, 40'lık mı? | Özdeşlikler çıktının içeriğinde ve "geometrik modellerle temsil edilir" deniyor. Program gerçek yaşam örneği istemiyor. |
 | 9 | A4 kâğıdının sırrı | İrrasyonel sayılar program tarafından ön bilgi sayılıyor ("irrasyonel sayıları bildiği kabul edilmektedir"). |
@@ -98,6 +99,7 @@ Doğruluk notları:
 - "3 nanometre" çipin üretim kuşağının adıdır; içindeki parçaların gerçek ölçüsü değildir. Hikâye "en küçük parça 3 nanometre" demez; reklamdaki sayının ne kadar küçük bir uzunluk olduğunu anlatır. Saç teli kişiye göre yaklaşık 2 × 10⁻⁵ ile 2 × 10⁻⁴ metre arasındadır; 7 × 10⁻⁵ alınırsa oran yaklaşık 23 000 olur, hikâyede "on binlerce" denir. A7 dersinin açılış sorusundaki "çipin en küçük parçası" ifadesi aynı gerekçeyle gevşek; A bölümü kapalı olduğu için dokunulmadı.
 - A serisi kâğıtların kenar oranı √2'dir (297 / 210 ≈ 1,414); A4'ten A3'e büyütme oranı makinelerde %141 olarak yazılır.
 - 30² = 900, 40² = 1600; fark 700 = 2 · 30 · 10 + 10².
+- D3 hikâyesinde Azra, reklam, ayakkabı ve konser kurgudur. BLACKPINK gerçek bir gruptur; anlatım grup hakkında adından başka bilgi vermez. Görüntüde ise (kullanıcı kararı, 8 Ekim 2026) grubun dört üyesi şematik olarak ve logosu panoda yer alır; ayrıntı ve kaynaklar `hikaye/D3-yildizlar-bunu-giyiyor.md` bölüm 3, 4 ve 6.
 
 ### Gözden geçirme (6 Ekim 2026, onaylandı)
 
@@ -110,6 +112,8 @@ Bölüm D yazıldıktan sonra liste program metniyle yeniden karşılaştırıld
 | B5'e "veya" eklendi; kapanış kartı dersin cümlesi oldu | Eski hâli yalnızca "ve"yi gösteriyordu. Yeni hâli D2'yi de taşıyor. |
 | D7'de tepsiler 20 ve 40 yerine 30 ve 40 | a = b olunca dört parça aynı kare çıkıyor, unutulan iki dikdörtgen (2ab) görünmüyordu; eski hâli özdeşliği değil ölçeklemeyi anlatıyordu. |
 | C3 son sırada kaldı; anlatım %141'in yuvarlama olduğuna bağlandı | Eski hâli √2'nin gerçek bir uzunluk olduğunu gösteriyor ama kapanış cümlesindeki "ne biter ne devreder"e değmiyordu. |
+
+**Değişiklik (8 Ekim 2026, kullanıcı isteği):** 6 numaralı hikâyenin sahnesi K-pop'a taşındı ve adı "Şampiyonlar bunu giyiyor" yerine "Yıldızlar bunu giyiyor" oldu. Karakter Azra, grup BLACKPINK. Fikir, iki örnek (reklam ve konser kapısı) ve kapanış cümlesi aynı; koşu sahnesi çıktı.
 
 ### Hikâyesi olmayan dersler ve nedeni
 

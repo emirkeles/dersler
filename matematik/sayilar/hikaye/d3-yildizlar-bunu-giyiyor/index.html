@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Yıldızlar bunu giyiyor</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin-ext.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+          U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* Renkler (frame.md): kâğıt #f4f1f7, nokta #b9b2c6, siyah #1b1720, pembe #e0347f, açık pembe #f8c6dc,
+         uzak yüzey #ddd7e7, beyaz #fff, vurgu sarı #ffd93b; yalnızca panoda: sahne ışığı #fce6f0, sarışın saç #f1d9a6. */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f4f1f7;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Plex Sans", sans-serif;
+      }
+      #sahne text {
+        font-family: "Plex Sans", sans-serif;
+      }
+      #sahne {
+        position: absolute;
+        inset: 0;
+      }
+      #dunya,
+      #ust {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      /* c: kontur. ck: çıkartma (beyaz kesim payı ve sert gölge). */
+      .c {
+        stroke: #1b1720;
+        stroke-width: 6;
+        stroke-linejoin: round;
+        stroke-linecap: round;
+      }
+      .ck {
+        filter: url(#cikartma);
+      }
+      .fk { fill: #1b1720; }
+      .fp { fill: #e0347f; }
+      .fa { fill: #f8c6dc; }
+      .fg { fill: #ddd7e7; }
+      .fb { fill: #ffffff; }
+      /* Keçeli kalem çizgisi; pathLength = 1 ile baştan sona çizilir. */
+      .kalem {
+        fill: none;
+        stroke: #1b1720;
+        stroke-width: 12;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 1;
+      }
+      #kapanis {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #perde {
+        position: absolute;
+        inset: 0;
+        background: rgba(27, 23, 32, 0.86);
+      }
+      #kart {
+        position: relative;
+        width: 1380px;
+        padding: 92px 110px 84px;
+        border: 8px solid #1b1720;
+        border-radius: 30px;
+        background: #ffffff;
+        box-shadow: 18px 18px 0 #ffd93b;
+        color: #1b1720;
+      }
+      #cumle {
+        font-size: 80px;
+        font-weight: 600;
+        line-height: 1.16;
+        letter-spacing: -0.01em;
+      }
+      .satir {
+        display: block;
+        width: 100%;
+      }
+      #cizgi {
+        width: 100%;
+        height: 4px;
+        margin: 50px 0 44px;
+        border-radius: 2px;
+        background: #1b1720;
+        opacity: 0.35;
+        transform-origin: 0 50%;
+      }
+      #simgeler {
+        display: flex;
+        align-items: center;
+        gap: 90px;
+      }
+      #simgeler svg {
+        display: block;
+        width: 300px;
+        height: 110px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="74.5" data-width="1920" data-height="1080">
+      <!-- Tek dünya: Azra'nın hayran defterinin geniş sayfası (5760 × 1080). Kamera #kam grubunun dönüşümüdür. -->
+      <!-- Dünya zamanlı bir klip değildir; baştan sona durur. Zamanlama betikteki T tablosundadır. -->
+      <section id="sahne">
+        <svg id="dunya" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" data-layout-allow-overflow="">
+          <defs>
+            <pattern id="nokta" width="40" height="40" patternUnits="userSpaceOnUse">
+              <circle cx="20" cy="20" r="2.6" fill="#b9b2c6" />
+            </pattern>
+            <!-- Panonun yüzeyi: sönük ışık noktaları. -->
+            <pattern id="isik-nokta" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="11" cy="11" r="3" fill="#3b3344" />
+            </pattern>
+            <pattern id="bant-cizgi" width="18" height="18" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <rect width="7" height="18" fill="#ffffff" opacity="0.7" />
+            </pattern>
+            <!-- Çıkartma: çevresinde beyaz kesim payı, altında kâğıda düşen sert gölge. -->
+            <filter id="cikartma" x="-50%" y="-50%" width="200%" height="200%" color-interpolation-filters="sRGB">
+              <femorphology in="SourceAlpha" operator="dilate" radius="9" result="genis" />
+              <fegaussianblur in="genis" stdDeviation="2.4" result="yumusak" />
+              <fecomponenttransfer in="yumusak" result="kenar">
+                <fefunca type="linear" slope="9" intercept="-4" />
+              </fecomponenttransfer>
+              <feflood flood-color="#ffffff" result="beyaz" />
+              <fecomposite in="beyaz" in2="kenar" operator="in" result="pay" />
+              <feoffset in="kenar" dx="7" dy="9" result="kayik" />
+              <feflood flood-color="#1b1720" flood-opacity="0.2" result="koyu" />
+              <fecomposite in="koyu" in2="kayik" operator="in" result="golge" />
+              <femerge>
+                <femergenode in="golge" />
+                <femergenode in="pay" />
+                <femergenode in="SourceGraphic" />
+              </femerge>
+            </filter>
+            <clippath id="pano-ic">
+              <rect x="1060" y="140" width="630" height="380" rx="8" />
+            </clippath>
+            <!-- Ayakkabı: filmin her yerinde aynı çizim (panoda, Azra'nın ayağında, ok-yolun ucunda). -->
+            <symbol id="ayakkabi" viewBox="0 0 200 112">
+              <path d="M 12 84 L 12 34 Q 12 14 34 14 L 58 14 Q 72 14 80 26 L 104 56 Q 118 66 150 68 Q 190 72 190 86 Z" fill="#ffffff" stroke="#1b1720" stroke-width="7" stroke-linejoin="round" />
+              <path d="M 34 14 L 58 14 Q 70 14 78 24 L 64 34 Q 48 26 30 30 Z" fill="#f8c6dc" stroke="#1b1720" stroke-width="5" stroke-linejoin="round" />
+              <path d="M 12 26 h 14 v 28 h -14 Z" fill="#e0347f" stroke="#1b1720" stroke-width="5" stroke-linejoin="round" />
+              <path d="M 88 36 l -16 11 M 98 48 l -16 11 M 108 59 l -15 10" fill="none" stroke="#1b1720" stroke-width="5" stroke-linecap="round" />
+              <path d="M 152 69 Q 146 78 150 86" fill="none" stroke="#1b1720" stroke-width="5" stroke-linecap="round" />
+              <path d="M 46 62 c -7 -9 -19 0 -9 9 l 9 8 l 9 -8 c 10 -9 -2 -18 -9 -9 Z" fill="#e0347f" />
+              <rect x="5" y="82" width="190" height="25" rx="12.5" fill="#e0347f" stroke="#1b1720" stroke-width="7" />
+            </symbol>
+            <clippath id="ayna-ic">
+              <rect x="3033" y="273" width="174" height="386" rx="79" />
+            </clippath>
+            <!-- Bilet ve kapı: ok-yolun 8. kareden sonraki iki ucu. -->
+            <symbol id="bilet" viewBox="0 0 100 56">
+              <rect x="3.5" y="3.5" width="93" height="49" rx="8" fill="#ffffff" stroke="#1b1720" stroke-width="7" />
+              <rect x="11" y="13" width="48" height="10" rx="5" fill="#e0347f" />
+              <rect x="11" y="31" width="32" height="8" rx="4" fill="#ddd7e7" />
+              <path d="M 70 9 V 47" fill="none" stroke="#1b1720" stroke-width="4" stroke-dasharray="5 5" />
+              <circle cx="83" cy="28" r="6" fill="#e0347f" />
+            </symbol>
+            <symbol id="kapi" viewBox="0 0 100 130">
+              <path d="M 6 126 V 46 A 44 44 0 0 1 94 46 V 126 Z" fill="#1b1720" stroke="#1b1720" stroke-width="7" stroke-linejoin="round" />
+              <path d="M 22 126 V 50 A 28 28 0 0 1 78 50 V 126 Z" fill="#e0347f" />
+              <polygon points="38,56 62,56 78,126 22,126" fill="#f8c6dc" />
+            </symbol>
+          </defs>
+
+          <g id="kam">
+            <!-- Defter kâğıdı: noktalı; solda delikler ve kenar çizgisi. -->
+            <rect x="-1200" y="-800" width="8200" height="2700" fill="#f4f1f7" />
+            <rect x="-1200" y="-800" width="8200" height="2700" fill="url(#nokta)" />
+            <line x1="104" y1="-800" x2="104" y2="1900" stroke="#f8c6dc" stroke-width="4" />
+            <g fill="#d6cee2" stroke="#b9b2c6" stroke-width="3">
+              <circle cx="52" cy="160" r="17" /><circle cx="52" cy="540" r="17" /><circle cx="52" cy="920" r="17" />
+            </g>
+
+            <!-- ============ Bölge 1 — sokak ve pano (x = 0–1920) ============ -->
+            <g id="zemin" class="ck">
+              <rect class="c fg" x="170" y="694" width="1600" height="58" rx="16" />
+              <path class="c" fill="none" stroke-width="4" d="M 370 696 v 54 M 570 696 v 54 M 770 696 v 54 M 970 696 v 54 M 1170 696 v 54 M 1370 696 v 54 M 1570 696 v 54" />
+            </g>
+
+            <g id="binalar" class="ck">
+              <rect class="c fg" x="240" y="430" width="150" height="264" />
+              <rect class="c fa" x="520" y="480" width="130" height="214" />
+              <rect class="c fb" x="370" y="330" width="170" height="364" />
+              <path class="c" fill="none" d="M 455 330 v -46 M 455 298 l -15 -14 M 455 298 l 15 -14" />
+              <g class="c fb" stroke-width="4">
+                <rect x="262" y="462" width="34" height="40" /><rect x="320" y="462" width="34" height="40" />
+                <rect x="262" y="534" width="34" height="40" /><rect x="320" y="534" width="34" height="40" />
+                <rect x="262" y="606" width="34" height="40" /><rect x="320" y="606" width="34" height="40" />
+              </g>
+              <g class="c fa" stroke-width="4">
+                <rect x="392" y="362" width="30" height="38" /><rect x="440" y="362" width="30" height="38" /><rect x="488" y="362" width="30" height="38" />
+                <rect x="392" y="432" width="30" height="38" /><rect x="488" y="432" width="30" height="38" />
+                <rect x="392" y="502" width="30" height="38" /><rect x="440" y="502" width="30" height="38" /><rect x="488" y="502" width="30" height="38" />
+                <rect x="392" y="572" width="30" height="38" /><rect x="440" y="572" width="30" height="38" />
+              </g>
+              <rect class="c fp" stroke-width="4" x="440" y="432" width="30" height="38" />
+              <rect class="c fp" stroke-width="4" x="488" y="572" width="30" height="38" />
+              <g class="c fb" stroke-width="4">
+                <rect x="540" y="506" width="34" height="36" /><rect x="596" y="506" width="34" height="36" />
+                <rect x="562" y="612" width="48" height="82" />
+              </g>
+              <rect class="c fp" x="510" y="562" width="150" height="30" rx="6" />
+            </g>
+
+            <g id="bulut-1" class="ck">
+              <path class="c fb" d="M 246 216 a 29 29 0 0 1 4 -57 a 46 46 0 0 1 86 -16 a 38 38 0 0 1 68 24 a 25 25 0 0 1 -4 49 Z" />
+            </g>
+            <g id="kalp-1" class="ck">
+              <path class="c fp" d="M 540 250 c -16 -26 -60 -6 -34 26 l 34 32 l 34 -32 c 26 -32 -18 -52 -34 -26 Z" />
+            </g>
+            <g id="kalp-2" class="ck">
+              <path class="c fk" d="M 618 226 c -9 -15 -34 -3 -19 15 l 19 18 l 19 -18 c 15 -18 -10 -30 -19 -15 Z" />
+            </g>
+
+            <!-- Grubun logosu: defterde bir çıkartma. Harfler betikte dizilir (C ve N aynalı, A çizgisiz). -->
+            <g id="logo-cikartma" class="ck">
+              <g transform="rotate(-5 670 150)">
+                <rect id="logo-zemin" class="c fk" x="480" y="108" width="320" height="84" rx="14" />
+                <g id="logo-yazi"></g>
+              </g>
+            </g>
+
+            <g id="lamba" class="ck">
+              <rect class="fk" x="684" y="252" width="14" height="442" />
+              <rect class="fk" x="670" y="672" width="42" height="22" rx="6" />
+              <path fill="none" stroke="#1b1720" stroke-width="13" stroke-linecap="round" d="M 691 258 q 0 -42 44 -42 h 26" />
+              <path class="c fp" d="M 752 206 h 60 l 12 30 h -84 Z" />
+              <ellipse class="c fb" cx="782" cy="240" rx="24" ry="9" />
+            </g>
+
+            <!-- Reklam panosu. İçindekiler 2. karede yanar. -->
+            <g id="pano" class="ck">
+              <rect class="fk" x="1160" y="530" width="26" height="164" />
+              <rect class="fk" x="1564" y="530" width="26" height="164" />
+              <rect class="fk" x="1168" y="96" width="40" height="30" rx="6" />
+              <rect class="fk" x="1542" y="96" width="40" height="30" rx="6" />
+              <rect class="c fk" x="1040" y="120" width="670" height="420" rx="20" />
+              <rect x="1060" y="140" width="630" height="380" rx="8" fill="url(#isik-nokta)" />
+              <g clip-path="url(#pano-ic)">
+                <polygon id="koni-1" fill="#fce6f0" points="1096,140 1376,140 1420,486 1062,486" />
+                <polygon id="koni-2" fill="#e0347f" opacity="0.62" points="1392,140 1444,140 1420,486 1190,486" />
+                <ellipse id="isik-havuzu" cx="1241" cy="486" rx="186" ry="16" fill="#ffffff" />
+                <!-- Sahnenin yıldızları: grubun dört üyesi (şematik, yüz ayrıntısı yok); ayaklarında aynı ayakkabı.
+                     Çizimler betikte kurulur (uye). -->
+                <g id="yildiz-kisi"></g>
+                <g id="pano-logo"></g>
+                <!-- Bir çift ayakkabı. -->
+                <g id="pano-ayk">
+                  <use href="#ayakkabi" x="1496" y="226" width="180" height="101" />
+                  <use href="#ayakkabi" x="1432" y="288" width="228" height="128" />
+                </g>
+                <!-- Reklamın cümlesi: yazı değil, üç kalem çizgisi (üç sözcük). -->
+                <g fill="#ffffff">
+                  <rect id="soz-1" x="1428" y="452" width="112" height="22" rx="11" />
+                  <rect id="soz-2" x="1556" y="452" width="52" height="22" rx="11" />
+                  <rect id="soz-3" x="1624" y="452" width="52" height="22" rx="11" />
+                </g>
+              </g>
+              <rect x="1056" y="136" width="638" height="388" rx="10" fill="none" stroke="#e0347f" stroke-width="8" />
+            </g>
+            <g id="bant-1">
+              <g transform="translate(1052 128) rotate(-36)">
+                <rect x="-70" y="-18" width="140" height="36" fill="#f8c6dc" opacity="0.9" />
+                <rect x="-70" y="-18" width="140" height="36" fill="url(#bant-cizgi)" />
+              </g>
+            </g>
+            <g id="bant-2">
+              <g transform="translate(1698 128) rotate(36)">
+                <rect x="-70" y="-18" width="140" height="36" fill="#f8c6dc" opacity="0.9" />
+                <rect x="-70" y="-18" width="140" height="36" fill="url(#bant-cizgi)" />
+              </g>
+            </g>
+
+            <!-- Azra: yüz ayrıntısı yok. Çizim ayaklarının ortasına göredir (0, 0); yer çizgisi y = 700. -->
+            <g transform="translate(0 700)">
+              <g id="azra" class="ck">
+                <g id="azra-ic">
+                  <g id="azra-govde">
+                    <rect class="c fb" x="-94" y="-288" width="58" height="106" rx="18" />
+                    <rect class="c fa" stroke-width="5" x="-88" y="-234" width="42" height="38" rx="8" />
+                    <g id="bacak-1">
+                      <rect class="c fa" x="-29" y="-130" width="23" height="116" rx="10" />
+                      <path class="c fk" d="M -31 -2 v -12 q 0 -8 10 -8 h 14 q 16 2 20 14 v 6 Z" />
+                    </g>
+                    <g id="bacak-2">
+                      <rect class="c fa" x="5" y="-130" width="23" height="116" rx="10" />
+                      <path class="c fk" d="M 3 -2 v -12 q 0 -8 10 -8 h 14 q 16 2 20 14 v 6 Z" />
+                    </g>
+                    <path class="c fk" d="M -46 -122 L 46 -122 L 37 -194 L -37 -194 Z" />
+                    <rect class="c fa" x="-9" y="-312" width="22" height="24" />
+                    <path class="c fp" d="M -38 -268 Q -62 -300 -30 -308 L 14 -300 Z" />
+                    <rect class="c fp" x="-44" y="-298" width="88" height="118" rx="28" />
+                    <path fill="none" stroke="#1b1720" stroke-width="9" stroke-linecap="round" d="M -30 -294 Q -6 -250 -38 -196" />
+                    <g id="azra-kol">
+                      <rect class="c fp" x="-4" y="-282" width="28" height="98" rx="14" transform="rotate(-8 10 -270)" />
+                      <circle class="c fa" cx="24" cy="-184" r="12" />
+                    </g>
+                    <g id="azra-bas">
+                      <g id="azra-sac">
+                        <path class="c fk" d="M -22 -364 C -68 -388 -108 -350 -94 -292 C -82 -320 -60 -332 -28 -332 Z" />
+                      </g>
+                      <circle class="c fa" cx="4" cy="-340" r="44" />
+                      <path class="c fk" d="M 4 -384 A 44 44 0 0 0 -40 -340 A 44 44 0 0 0 -27 -309 Q -22 -332 -6 -346 Q 16 -364 46 -352 A 44 44 0 0 0 4 -384 Z" />
+                      <circle class="c fp" stroke-width="4" cx="-32" cy="-352" r="11" />
+                    </g>
+                  </g>
+                </g>
+              </g>
+            </g>
+
+            <!-- ============ Bölge 2 — oda ve ayna (x = 1920–3840) ============ -->
+            <g id="hali" class="ck">
+              <rect class="c fa" x="2080" y="694" width="1620" height="58" rx="16" />
+              <path class="c" fill="none" stroke-width="4" d="M 2240 696 v 54 M 2400 696 v 54 M 2560 696 v 54 M 2720 696 v 54 M 2880 696 v 54 M 3040 696 v 54 M 3200 696 v 54 M 3360 696 v 54 M 3520 696 v 54" />
+            </g>
+            <g id="pencere" class="ck">
+              <rect class="c fb" x="2110" y="170" width="260" height="260" rx="10" />
+              <g class="c fg" stroke-width="4">
+                <rect x="2132" y="192" width="100" height="100" /><rect x="2248" y="192" width="100" height="100" />
+                <rect x="2132" y="308" width="100" height="100" /><rect x="2248" y="308" width="100" height="100" />
+              </g>
+              <path class="c fp" d="M 2098 158 h 64 q -6 150 -52 286 h -12 Z" />
+              <path class="c fp" d="M 2382 158 h -64 q 6 150 52 286 h 12 Z" />
+              <rect class="fk" x="2086" y="146" width="308" height="14" rx="7" />
+            </g>
+            <!-- Odadaki afiş: grubun dört üyesi ve logosu (betikte kurulur). -->
+            <g id="afis" class="ck">
+              <rect class="c fk" x="2440" y="140" width="260" height="290" rx="10" />
+              <rect x="2456" y="214" width="228" height="200" fill="#fce6f0" />
+              <g id="afis-logo"></g>
+              <g id="afis-uyeler"></g>
+            </g>
+            <g id="bant-3">
+              <g transform="translate(2570 140) rotate(-4)">
+                <rect x="-56" y="-17" width="112" height="34" fill="#f8c6dc" opacity="0.9" />
+                <rect x="-56" y="-17" width="112" height="34" fill="url(#bant-cizgi)" />
+              </g>
+            </g>
+            <g id="komodin" class="ck">
+              <rect class="c fg" x="2130" y="570" width="220" height="124" rx="10" />
+              <rect class="c fb" x="2150" y="590" width="180" height="40" rx="6" />
+              <rect class="c fb" x="2150" y="640" width="180" height="40" rx="6" />
+              <circle class="fk" cx="2240" cy="610" r="6" /><circle class="fk" cx="2240" cy="660" r="6" />
+            </g>
+            <g id="kumbara" class="ck">
+              <rect class="c fp" x="2204" y="546" width="17" height="26" rx="5" />
+              <rect class="c fp" x="2262" y="546" width="17" height="26" rx="5" />
+              <path class="c" fill="none" d="M 2176 514 q -18 -4 -13 -20" />
+              <path class="c fp" d="M 2260 482 l 14 -24 l 14 28 Z" />
+              <ellipse class="c fp" cx="2240" cy="516" rx="66" ry="46" />
+              <ellipse class="c fa" cx="2302" cy="520" rx="15" ry="19" />
+              <circle class="fk" cx="2299" cy="514" r="3" /><circle class="fk" cx="2305" cy="526" r="3" />
+              <circle class="fk" cx="2274" cy="500" r="4.5" />
+              <path class="c" fill="none" d="M 2220 473 h 32" />
+            </g>
+            <g id="para-1"><circle class="c fb" cx="2236" cy="446" r="14" /></g>
+            <g id="para-2"><circle class="c fb" cx="2236" cy="446" r="14" /></g>
+            <g id="para-3"><circle class="c fb" cx="2236" cy="446" r="14" /></g>
+            <g id="kutu" class="ck">
+              <rect class="c fb" x="2470" y="632" width="180" height="62" rx="6" />
+              <g id="kutu-kapak"><rect class="c fp" x="2460" y="610" width="200" height="26" rx="6" /></g>
+            </g>
+            <g id="yatak" class="ck">
+              <rect class="c fg" x="3652" y="440" width="40" height="254" rx="10" />
+              <rect class="fk" x="3312" y="660" width="16" height="34" /><rect class="fk" x="3636" y="660" width="16" height="34" />
+              <rect class="c fb" x="3300" y="600" width="372" height="64" rx="12" />
+              <rect class="c fb" x="3556" y="560" width="104" height="52" rx="22" />
+              <path class="c fp" d="M 3300 588 h 244 v 80 h -244 Z" />
+              <path class="c" fill="none" stroke-width="4" d="M 3300 612 h 244" />
+            </g>
+            <!-- Boy aynası: içindeki yansıma kırpılır. -->
+            <g id="ayna" class="ck">
+              <rect class="fk" x="3060" y="676" width="120" height="18" rx="6" />
+              <rect class="c fp" x="3010" y="250" width="220" height="432" rx="100" />
+              <rect class="c fb" x="3030" y="270" width="180" height="392" rx="82" />
+              <g clip-path="url(#ayna-ic)">
+                <path fill="none" stroke="#ddd7e7" stroke-width="9" stroke-linecap="round" d="M 3052 350 l 46 -46 M 3052 390 l 80 -80" />
+                <g id="yansima">
+                  <rect x="3140" y="330" width="60" height="70" fill="#ddd7e7" stroke="#1b1720" stroke-width="4" />
+                  <path fill="none" stroke="#1b1720" stroke-width="4" d="M 3170 330 v 70 M 3140 365 h 60" />
+                  <polygon id="ayna-koni" fill="#e0347f" points="3092,270 3148,270 3214,662 3026,662" />
+                  <g id="yansima-azra" transform="translate(3116 646) scale(-0.84 0.84)"></g>
+                </g>
+              </g>
+            </g>
+            <!-- Panodaki ayakkabının çıkartması: "ayakkabı aynıydı". -->
+            <g id="ayna-ayk" class="ck">
+              <g transform="rotate(-7 3345 440)">
+                <rect class="c fb" x="3262" y="388" width="170" height="108" rx="12" />
+                <use href="#ayakkabi" x="3274" y="400" width="146" height="82" />
+              </g>
+            </g>
+            <g id="bant-4">
+              <g transform="translate(3340 386) rotate(-12)">
+                <rect x="-48" y="-15" width="96" height="30" fill="#f8c6dc" opacity="0.9" />
+                <rect x="-48" y="-15" width="96" height="30" fill="url(#bant-cizgi)" />
+              </g>
+            </g>
+            <!-- Karşı örnek: fosforlu kalemle Azra'nın çevresine çizilen halka. -->
+            <ellipse id="halka" cx="2836" cy="498" rx="172" ry="246" fill="none" stroke="#ffd93b" stroke-width="18" stroke-linecap="round" pathLength="1" stroke-dasharray="1" transform="rotate(-5 2836 498)" />
+            <g transform="translate(0 700)"><g id="azra-yer-2"></g></g>
+
+            <!-- ============ Bölge 3 — konser kapısı (x = 3840–5760) ============ -->
+            <g id="zemin-3" class="ck">
+              <rect class="c fg" x="3950" y="694" width="1700" height="58" rx="16" />
+              <path class="c" fill="none" stroke-width="4" d="M 4150 696 v 54 M 4350 696 v 54 M 4550 696 v 54 M 4750 696 v 54 M 5350 696 v 54 M 5550 696 v 54" />
+            </g>
+            <!-- Takvim: bir ay geçer (rakam yok); alttaki yaprakta konser günü işaretli. -->
+            <g id="takvim" class="ck">
+              <rect class="c fb" x="3990" y="160" width="170" height="184" rx="10" />
+              <rect class="c fp" x="3990" y="160" width="170" height="46" rx="10" />
+              <rect class="fk" x="4028" y="144" width="12" height="32" rx="6" /><rect class="fk" x="4110" y="144" width="12" height="32" rx="6" />
+              <g fill="#ddd7e7">
+                <circle cx="4022" cy="240" r="8" /><circle cx="4058" cy="240" r="8" /><circle cx="4094" cy="240" r="8" /><circle cx="4130" cy="240" r="8" />
+                <circle cx="4022" cy="276" r="8" /><circle cx="4058" cy="276" r="8" /><circle cx="4130" cy="276" r="8" />
+                <circle cx="4022" cy="312" r="8" /><circle cx="4058" cy="312" r="8" /><circle cx="4094" cy="312" r="8" /><circle cx="4130" cy="312" r="8" />
+              </g>
+              <path fill="#e0347f" d="M 4094 272 c -6 -9 -20 -2 -11 9 l 11 10 l 11 -10 c 9 -11 -5 -18 -11 -9 Z" />
+              <g id="takvim-yaprak">
+                <rect class="c fb" x="3990" y="206" width="170" height="138" />
+                <g fill="#ddd7e7">
+                  <circle cx="4022" cy="240" r="8" /><circle cx="4058" cy="240" r="8" /><circle cx="4094" cy="240" r="8" /><circle cx="4130" cy="240" r="8" />
+                  <circle cx="4022" cy="276" r="8" /><circle cx="4058" cy="276" r="8" /><circle cx="4094" cy="276" r="8" /><circle cx="4130" cy="276" r="8" />
+                  <circle cx="4022" cy="312" r="8" /><circle cx="4058" cy="312" r="8" /><circle cx="4094" cy="312" r="8" /><circle cx="4130" cy="312" r="8" />
+                </g>
+              </g>
+            </g>
+            <!-- Konser salonu: girişte grubun logosu, kapının yanında dört üyeli afiş. Sahne görünmez. -->
+            <g id="salon" class="ck">
+              <rect class="c fk" x="4420" y="170" width="1220" height="524" rx="26" />
+              <rect x="4440" y="190" width="1180" height="490" fill="url(#isik-nokta)" />
+              <rect x="4740" y="204" width="680" height="130" rx="14" fill="#1b1720" stroke="#e0347f" stroke-width="8" />
+              <g id="salon-logo"></g>
+              <rect class="fk" x="4942" y="392" width="276" height="24" rx="8" />
+              <rect class="c fp" x="4960" y="410" width="240" height="284" />
+              <polygon fill="#f8c6dc" points="5012,413 5148,413 5197,694 4963,694" />
+              <g id="icerdekiler" class="fk">
+                <circle cx="5022" cy="588" r="24" /><rect x="4988" y="614" width="68" height="80" rx="24" />
+                <circle cx="5080" cy="568" r="24" /><rect x="5046" y="594" width="68" height="100" rx="24" />
+                <circle cx="5138" cy="588" r="24" /><rect x="5104" y="614" width="68" height="80" rx="24" />
+              </g>
+              <rect class="c fb" x="5290" y="396" width="250" height="266" rx="8" />
+              <rect x="5304" y="410" width="222" height="238" fill="#fce6f0" />
+              <g id="salon-afis"></g>
+            </g>
+            <polygon id="kapi-isik" fill="#f8c6dc" opacity="0.9" points="4960,698 5200,698 5236,748 4924,748" />
+            <g id="ic-bilet-1" class="ck"><use href="#bilet" x="4984" y="500" width="76" height="43" /></g>
+            <g id="ic-bilet-2" class="ck"><use href="#bilet" x="5042" y="478" width="76" height="43" /></g>
+            <g id="ic-bilet-3" class="ck"><use href="#bilet" x="5100" y="500" width="76" height="43" /></g>
+            <g id="turnike" class="ck">
+              <rect class="c fg" x="4900" y="596" width="32" height="98" rx="8" />
+              <circle class="c fb" cx="4916" cy="582" r="18" />
+              <path id="okuyucu-onay" fill="none" stroke="#e0347f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" d="M 4907 582 l 7 7 l 12 -14" />
+            </g>
+            <g id="turnike-kol"><rect class="c fp" x="4930" y="636" width="96" height="14" rx="7" /></g>
+            <g id="sira"></g>
+            <g transform="translate(0 700)"><g id="azra-yer-3"></g></g>
+          </g>
+        </svg>
+        <!-- Ok-yol şeridi: ekrana sabit. Dersteki ⇒ simgesinin iki çizgisi bir yolun iki kenarıdır. -->
+        <svg id="ust" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" data-layout-allow-overflow="">
+          <defs>
+            <clippath id="ok2-kirp"><rect id="ok2-kirp-r" x="1290" y="896" width="0" height="112" /></clippath>
+          </defs>
+          <g id="serit-kat">
+            <g id="serit" class="ck"><rect class="c fb" x="330" y="796" width="1260" height="212" rx="26" /></g>
+            <g id="ikon-yildiz" class="ck"><path id="yildiz-yol" class="c fp" d="" /></g>
+            <g id="ikon-bilet" class="ck"><g transform="rotate(-10 480 902)"><use href="#bilet" x="388" y="850" width="184" height="103" /></g></g>
+            <g id="ikon-ayk" class="ck"><use href="#ayakkabi" x="1350" y="850" width="184" height="103" /></g>
+            <g id="ikon-kapi" class="ck"><use href="#kapi" x="1386" y="830" width="110" height="143" /></g>
+            <!-- Reklamın oku: yıldızdan ayakkabıya. 8. karede sola ikinci baş çizilir (⇔). -->
+            <g id="ok-1">
+              <rect id="ok1-sari" x="658" y="884" width="604" height="36" fill="#ffd93b" />
+              <path id="ok1-ust" class="kalem" d="M 658 884 H 1262" pathLength="1" />
+              <path id="ok1-alt" class="kalem" d="M 658 920 H 1262" pathLength="1" />
+              <path id="ok1-bas" class="kalem" d="M 1236 858 L 1290 902 L 1236 946" pathLength="1" />
+              <path id="ok1-bas-sol" class="kalem" d="M 684 858 L 630 902 L 684 946" pathLength="1" />
+              <g id="isik-1"><circle r="20" fill="#ffffff" stroke="#1b1720" stroke-width="5" /><circle r="9" fill="#e0347f" /></g>
+              <g id="isik-1b"><circle r="20" fill="#ffffff" stroke="#1b1720" stroke-width="5" /><circle r="9" fill="#e0347f" /></g>
+            </g>
+            <!-- Azra'nın okuması: ayakkabıdan yıldıza; pembe, kesik. -->
+            <g id="ok-2">
+              <g clip-path="url(#ok2-kirp)">
+                <path fill="none" stroke="#e0347f" stroke-width="12" stroke-linecap="round" stroke-dasharray="26 20" d="M 1262 934 H 658 M 1262 970 H 658" />
+                <path fill="none" stroke="#e0347f" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" d="M 684 908 L 630 952 L 684 996" />
+              </g>
+              <g id="isik-2"><circle r="20" fill="#ffffff" stroke="#1b1720" stroke-width="5" /><circle r="9" fill="#e0347f" /></g>
+              <path id="carpi-1" class="kalem" stroke-width="14" d="M 905 908 L 1015 996" pathLength="1" />
+              <path id="carpi-2" class="kalem" stroke-width="14" d="M 1015 908 L 905 996" pathLength="1" />
+            </g>
+            <g id="onay" class="ck">
+              <circle class="c fb" cx="1566" cy="820" r="32" />
+              <path fill="none" stroke="#e0347f" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" d="M 1550 820 l 12 12 l 21 -25" />
+            </g>
+            <g id="hayaletler"></g>
+          </g>
+        </svg>
+      </section>
+
+      <!-- Kapanış kartı: dersin akılda kalıcı cümlesi ve iki simge (öteki hikâyelerle aynı düzen). -->
+      <div id="kapanis">
+        <div id="perde"></div>
+        <div id="kart">
+          <div id="cumle">
+            <span class="satir" id="c1">İse tek yön,</span>
+            <span class="satir" id="c2">ancak ve ancak çift yön.</span>
+          </div>
+          <div id="cizgi"></div>
+          <div id="simgeler">
+            <svg id="s-ise" viewBox="0 0 300 110" width="300" height="110" xmlns="http://www.w3.org/2000/svg">
+              <rect x="24" y="37" width="216" height="36" fill="#ffd93b" />
+              <path fill="none" stroke="#1b1720" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" d="M 24 37 H 240 M 24 73 H 240 M 214 11 L 268 55 L 214 99" />
+            </svg>
+            <svg id="s-ancak" viewBox="0 0 300 110" width="300" height="110" xmlns="http://www.w3.org/2000/svg">
+              <rect x="60" y="37" width="180" height="36" fill="#ffd93b" />
+              <path fill="none" stroke="#1b1720" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" d="M 60 37 H 240 M 60 73 H 240 M 214 11 L 268 55 L 214 99 M 86 11 L 32 55 L 86 99" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Anlatım: düzeyi eşitlenmiş klipler (assets/ses-esit/). Başlangıçlar betikteki S tablosuyla aynıdır. -->
+      <audio id="ses-01" src="assets/ses-esit/01.mp3" data-start="0.6" data-duration="5.52" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-02" src="assets/ses-esit/02.mp3" data-start="6.87" data-duration="7.92" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-03" src="assets/ses-esit/03.mp3" data-start="16.14" data-duration="4.32" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-04" src="assets/ses-esit/04.mp3" data-start="21.41" data-duration="4.4" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-05" src="assets/ses-esit/05.mp3" data-start="26.56" data-duration="6.4" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-06" src="assets/ses-esit/06.mp3" data-start="33.71" data-duration="7.92" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-07" src="assets/ses-esit/07.mp3" data-start="42.38" data-duration="6.8" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-08" src="assets/ses-esit/08.mp3" data-start="50.23" data-duration="6.56" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-09" src="assets/ses-esit/09.mp3" data-start="57.54" data-duration="4.56" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-10" src="assets/ses-esit/10.mp3" data-start="62.85" data-duration="4.16" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-11" src="assets/ses-esit/11.mp3" data-start="68.06" data-duration="4.24" data-track-index="3" data-volume="1"></audio>
+    </div>
+    <script>
+      /* Yazı tipi yüklenince kurulur: logonun harfleri ölçülen genişliğe göre dizilir. */
+      const kur = () => {
+        const NS = "http://www.w3.org/2000/svg";
+        const al = (id) => document.getElementById(id);
+        const ekle = (ust, ad, oz) => {
+          const e = document.createElementNS(NS, ad);
+          for (const k in oz) e.setAttribute(k, oz[k]);
+          ust.appendChild(e);
+          return e;
+        };
+        const KOYU = "#1b1720", PEMBE = "#e0347f", TEN = "#f8c6dc", BEYAZ = "#ffffff", SARISIN = "#f1d9a6", GRI = "#ddd7e7";
+
+        /* Grubun logosu: düz büyük harfler; C ve N aynalı, A çizgisiz (ters çevrilmiş V). Resmî çizim değil,
+           elimizdeki yazı tipiyle yaklaşık dizgi. (cx, y): ortası ve taban çizgisi; s: yazı boyu. Genişliği döner. */
+        const logoYaz = (g, cx, y, s, renk) => {
+          const HARF = [["B"], ["L"], ["V", "ters"], ["C", "ayna"], ["K"], ["P"], ["I"], ["N", "ayna"], ["K"]];
+          const ARA = s * 0.04, BUYUK = s * 0.698;
+          const ts = HARF.map(([h]) => {
+            /* Harfler bilerek bitişik dizilir (tek sözcük) ve kapanış kartı logonun üstüne gelir; yerleşim denetimi
+               bunları üst üste yazı ya da örtülmüş yazı saymasın. */
+            const t = ekle(g, "text", { x: 0, y, "font-size": s, "font-weight": 700, fill: renk, "data-layout-allow-overlap": "", "data-layout-allow-occlusion": "" });
+            t.textContent = h;
+            return t;
+          });
+          const w = ts.map((t) => t.getComputedTextLength());
+          const W = w.reduce((a, b) => a + b, 0) + ARA * (HARF.length - 1);
+          let x = cx - W / 2;
+          ts.forEach((t, i) => {
+            const xc = x + w[i] / 2;
+            t.setAttribute("x", x.toFixed(2));
+            if (HARF[i][1] === "ayna") t.setAttribute("transform", `matrix(-1 0 0 1 ${(2 * xc).toFixed(2)} 0)`);
+            if (HARF[i][1] === "ters") t.setAttribute("transform", `rotate(180 ${xc.toFixed(2)} ${(y - BUYUK / 2).toFixed(2)})`);
+            x += w[i] + ARA;
+          });
+          return W;
+        };
+        const LW = logoYaz(al("logo-yazi"), 670, 169, 54, PEMBE);
+        al("logo-zemin").setAttribute("x", (670 - LW / 2 - 30).toFixed(1));
+        al("logo-zemin").setAttribute("width", (LW + 60).toFixed(1));
+        logoYaz(al("pano-logo"), 1568, 196, 38, PEMBE);
+        logoYaz(al("afis-logo"), 2570, 196, 34, PEMBE);
+        logoYaz(al("salon-logo"), 5080, 302, 92, PEMBE);
+
+        /* Yüzsüz, şematik bir kişi; ayak ortası (x, y). sac: renk; uzun: saçın indiği yükseklik (yoksa kısa);
+           on: "ayrik" | "kakul"; kuyruk: at kuyruğu; ust, alt: renk; altTur: "etek" | "sort"; duz: düz siyah
+           ayakkabı (yoksa reklamdaki); bilet: elinde bilet. Dış grup hareket ettirilir, iç grup yerleşimi tutar. */
+        const KOL = {
+          yukariSag: "M 17 -164 L 36 -184 L 33 -214", yukariSol: "M -17 -164 L -36 -184 L -33 -214",
+          belSol: "M -17 -164 L -36 -144 L -21 -128", belSag: "M 17 -164 L 36 -144 L 21 -128",
+          asagiSag: "M 18 -164 L 25 -122", asagiSol: "M -18 -164 L -25 -122",
+        };
+        const uye = (ust, x, y, o, olcek = 1, oz = {}) => {
+          const c = `stroke="${KOYU}" stroke-width="${o.kalin || 4.5}" stroke-linejoin="round" stroke-linecap="round"`;
+          let h = "";
+          if (o.uzun) h += `<path ${c} fill="${o.sac}" d="M -21 -204 Q -32 -160 -26 ${-o.uzun} ${o.dalga ? "q 9 9 17 0 q 9 9 18 0 q 9 9 17 0" : `L 26 ${-o.uzun}`} Q 32 -160 21 -204 Z" />`;
+          if (o.kuyruk) h += `<path ${c} fill="${o.sac}" d="M 8 -214 C 44 -228 50 -176 34 -142 C 32 -172 24 -190 8 -196 Z" />`;
+          h += `<rect ${c} fill="${TEN}" x="-18" y="-92" width="15" height="80" rx="7" /><rect ${c} fill="${TEN}" x="3" y="-92" width="15" height="80" rx="7" />`;
+          h += o.altTur === "sort"
+            ? `<rect ${c} fill="${o.alt}" x="-21" y="-126" width="42" height="32" rx="6" />`
+            : `<path ${c} fill="${o.alt}" d="M -26 -82 L 26 -82 L 19 -126 L -19 -126 Z" />`;
+          h += `<rect ${c} fill="${TEN}" x="-5" y="-184" width="10" height="14" />`;
+          h += `<rect ${c} fill="${o.ust}" x="-20" y="-174" width="40" height="54" rx="11" />`;
+          for (const k of o.kollar) {
+            h += `<path fill="none" stroke="${KOYU}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round" d="${KOL[k]}" /><path fill="none" stroke="${TEN}" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="${KOL[k]}" />`;
+            if (k === "yukariSag") h += `<circle cx="33" cy="-224" r="7" fill="${KOYU}" />`;
+            if (k === "yukariSol") h += `<circle cx="-33" cy="-224" r="7" fill="${KOYU}" />`;
+          }
+          h += `<circle ${c} fill="${TEN}" cx="0" cy="-200" r="19" />`;
+          h += o.on === "kakul"
+            ? `<path ${c} fill="${o.sac}" d="M -18.3 -205 A 19 19 0 0 1 18.3 -205 Z" />`
+            : `<path ${c} fill="${o.sac}" d="M -18 -194 A 19 19 0 0 1 18 -194 C 16 -206 8 -212 0 -216 C -8 -212 -16 -206 -18 -194 Z" />`;
+          h += o.duz
+            ? `<path fill="${KOYU}" d="M -22 0 v -9 q 0 -7 8 -7 h 9 q 10 2 12 10 v 6 Z" /><path fill="${KOYU}" d="M -1 0 v -9 q 0 -7 8 -7 h 9 q 10 2 12 10 v 6 Z" />`
+            : `<use href="#ayakkabi" x="-36" y="-21" width="38" height="21.3" /><use href="#ayakkabi" x="0" y="-21" width="38" height="21.3" />`;
+          if (o.bilet) h += `<use href="#bilet" x="12" y="-142" width="46" height="26" />`;
+          const dis = ekle(ust, "g", oz);
+          ekle(dis, "g", { transform: `translate(${x} ${y}) scale(${olcek})` }).innerHTML = h;
+          return dis;
+        };
+        /* Grubun dört üyesi: saçla ayrışırlar. Panoda, odadaki afişte ve salonun afişinde aynı çizim. */
+        const GRUP = [
+          { sac: KOYU, uzun: 120, on: "ayrik", ust: PEMBE, alt: PEMBE, kollar: ["asagiSol", "belSag"] },
+          { sac: KOYU, kuyruk: true, on: "ayrik", ust: KOYU, alt: BEYAZ, kollar: ["yukariSol", "asagiSag"] },
+          { sac: SARISIN, uzun: 124, dalga: true, on: "ayrik", ust: KOYU, alt: KOYU, kollar: ["asagiSol", "belSag"] },
+          { sac: KOYU, uzun: 112, on: "kakul", ust: BEYAZ, alt: KOYU, altTur: "sort", kollar: ["asagiSol", "yukariSag"] },
+        ];
+        const grup = (ust, cx, y, aralik, olcek) => GRUP.forEach((o, i) => uye(ust, cx + (i - 1.5) * aralik, y, o, olcek));
+        grup(al("yildiz-kisi"), 1224, 486, 84, 1);
+        grup(al("afis-uyeler"), 2570, 404, 52, 0.58);
+        grup(al("salon-afis"), 5415, 638, 52, 0.6);
+        /* Sıradaki iki kişi (kurgu): ellerinde bilet. */
+        uye(al("sira"), 4800, 694, { sac: KOYU, kuyruk: true, on: "ayrik", ust: GRI, alt: KOYU, kollar: ["asagiSol", "asagiSag"], duz: true, bilet: true, kalin: 3.5 }, 1.7, { id: "kisi-a", class: "ck" });
+        uye(al("sira"), 4630, 694, { sac: KOYU, uzun: 112, on: "kakul", ust: BEYAZ, alt: PEMBE, altTur: "sort", kollar: ["asagiSol", "asagiSag"], duz: true, bilet: true, kalin: 3.5 }, 1.7, { id: "kisi-b", class: "ck" });
+
+        /* Azra'nın öteki bölgelerdeki kopyaları (kimliklere sonek eklenir) ve ayağındaki reklam ayakkabısı. */
+        const azraKopya = (sonek, ust, cikartma = true) => {
+          const k = al("azra").cloneNode(true);
+          k.id = "azra" + sonek;
+          if (!cikartma) k.removeAttribute("class");
+          k.querySelectorAll("[id]").forEach((e) => (e.id += sonek));
+          ust.appendChild(k);
+          [["bacak-1", -36], ["bacak-2", -2]].forEach(([b, x], i) => {
+            al(b + sonek).querySelector("path").id = `eski${sonek}-${i}`;
+            ekle(al(b + sonek), "use", { id: `ayk${sonek}-${i}`, href: "#ayakkabi", x, y: -31, width: 54, height: 30.2 });
+          });
+        };
+        azraKopya("-2", al("azra-yer-2"));
+        azraKopya("-y", al("yansima-azra"), false);
+        azraKopya("-3", al("azra-yer-3"));
+        ["-y", "-3"].forEach((s) => [0, 1].forEach((i) => al(`eski${s}-${i}`).setAttribute("opacity", 0)));
+        ekle(al("azra-govde-3"), "use", { id: "azra-bilet", href: "#bilet", x: 22, y: -236, width: 84, height: 47 });
+
+        /* Ok-yolun ucundaki yıldız. */
+        (() => {
+          let d = "";
+          for (let i = 0; i < 10; i++) {
+            const r = i % 2 ? 29 : 64, a = -Math.PI / 2 + (i * Math.PI) / 5;
+            d += `${i ? "L" : "M"}${(480 + r * Math.cos(a)).toFixed(1)} ${(906 + r * Math.sin(a)).toFixed(1)} `;
+          }
+          al("yildiz-yol").setAttribute("d", d + "Z");
+        })();
+
+        /* Kamera: sayfada bakılan nokta (cx, cy) ve büyütme (z). Tek durum nesnesi; çizim ondan hesaplanır. */
+        const st = { cx: 948, cy: 432, z: 1.15 };
+        const ciz = () => al("kam").setAttribute("transform", `translate(${(960 - st.cx * st.z).toFixed(2)} ${(540 - st.cy * st.z).toFixed(2)}) scale(${st.z.toFixed(4)})`);
+        /* 3. kareden sonra kamera: resim üst üçte ikide, şerit altta. */
+        const K3 = { cx: 1200, cy: 492, z: 1.1 };
+
+        /* Panodaki üç kalem çizgisinin ekrandaki yeri (3. karenin kamerasıyla): şeride inip ok-yol olurlar. */
+        const HAYALET = [[1428, 112, 960, 884, 604], [1556, 52, 960, 920, 604], [1624, 52, 1263, 902, 60]].map(([x, w, hx, hy, hw], i) => {
+          const gx = (x - K3.cx) * K3.z + 960, gw = w * K3.z, gy = (452 - K3.cy) * K3.z + 540, gh = 22 * K3.z;
+          ekle(al("hayaletler"), "rect", { id: `hayalet-${i}`, x: gx.toFixed(1), y: gy.toFixed(1), width: gw.toFixed(1), height: gh.toFixed(1), rx: 12, fill: KOYU });
+          return { h: `#hayalet-${i}`, ox: gx + gw / 2, oy: gy + gh / 2, hx, hy, sx: hw / gw };
+        });
+
+        const tl = gsap.timeline({ paused: true });
+        const R = { immediateRender: false };
+        const simdi = { ...st };
+        const git = (t, sure, hedef, ease = "power2.inOut") => {
+          const bas = {};
+          for (const k in hedef) bas[k] = simdi[k];
+          tl.fromTo(st, bas, { ...hedef, duration: sure, ease, immediateRender: false, onUpdate: ciz }, t);
+          Object.assign(simdi, hedef);
+        };
+        const gir = (hedef, t, sure = 0.4, son = 1) => tl.fromTo(hedef, { opacity: 0 }, { opacity: son, duration: sure, ease: "power2.out" }, t);
+        /* Çıkartma yapışır: biraz büyük ve eğik gelir, yerine oturur (taşma yok). */
+        const yapis = (hedef, t, ox, oy, egik0, egik1 = 0, buyuk = 1.14) => {
+          tl.fromTo(hedef, { opacity: 0 }, { opacity: 1, duration: 0.14, ease: "none" }, t);
+          tl.fromTo(hedef, { scale: buyuk, rotation: egik0, svgOrigin: `${ox} ${oy}` }, { scale: 1, rotation: egik1, duration: 0.55, ease: "power3.out" }, t);
+        };
+        /* Bir kez büyür ve döner: sözle aynı anda işaret eder. */
+        const vurgu = (hedef, t, ox, oy, kat = 1.1) =>
+          tl.fromTo(hedef, { scale: 1, svgOrigin: `${ox} ${oy}` }, { scale: kat, duration: 0.26, ease: "power2.out", yoyo: true, repeat: 1, ...R }, t);
+        /* Kâğıt bant: ortasından iki yana açılır. */
+        const bant = (hedef, t, ox, oy) => tl.fromTo(hedef, { opacity: 0, scaleX: 0, svgOrigin: `${ox} ${oy}` }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "power2.out" }, t);
+        /* Kalem çizer: çizgi baştan sona uzar (pathLength = 1). */
+        const cizgiCiz = (hedef, t, sure = 0.3) => {
+          tl.fromTo(hedef, { opacity: 0 }, { opacity: 1, duration: 0.02, ease: "none" }, t);
+          tl.fromTo(hedef, { strokeDashoffset: 1 }, { strokeDashoffset: 0, duration: sure, ease: "power2.inOut" }, t);
+        };
+        /* Yoldaki ışık: belirir, yürür, söner. */
+        const yuru = (hedef, t, sure, x0, x1, y) => {
+          tl.fromTo(hedef, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none", ...R }, t);
+          tl.fromTo(hedef, { x: x0, y }, { x: x1, y, duration: sure, ease: "sine.inOut", ...R }, t);
+          tl.fromTo(hedef, { opacity: 1 }, { opacity: 0, duration: 0.18, ease: "none", ...R }, t + sure + 0.08);
+        };
+        /* Azra yürür (n çift adım): adım, gövde, saç ve kol birlikte. Bitiş anını döner. */
+        const ADIM = 0.3;
+        const yuruAzra = (s, t, x0, x1, n) => {
+          const b1 = "#bacak-1" + s, b2 = "#bacak-2" + s, son = t + ADIM * n;
+          tl.fromTo("#azra" + s, { x: x0 }, { x: x1, duration: ADIM * n, ease: "none", ...R }, t);
+          tl.fromTo(b1, { rotation: 0, svgOrigin: "-17 -126" }, { rotation: -16, duration: ADIM / 2, ease: "sine.out", ...R }, t - ADIM / 2);
+          tl.fromTo(b2, { rotation: 0, svgOrigin: "17 -126" }, { rotation: 16, duration: ADIM / 2, ease: "sine.out", ...R }, t - ADIM / 2);
+          tl.fromTo(b1, { rotation: -16 }, { rotation: 16, duration: ADIM, ease: "sine.inOut", yoyo: true, repeat: n - 1, ...R }, t);
+          tl.fromTo(b2, { rotation: 16 }, { rotation: -16, duration: ADIM, ease: "sine.inOut", yoyo: true, repeat: n - 1, ...R }, t);
+          tl.fromTo(b1, { rotation: -16 }, { rotation: 0, duration: 0.2, ease: "sine.out", ...R }, son);
+          tl.fromTo(b2, { rotation: 16 }, { rotation: 0, duration: 0.2, ease: "sine.out", ...R }, son);
+          tl.fromTo("#azra-govde" + s, { y: 0 }, { y: -7, duration: ADIM / 2, ease: "sine.inOut", yoyo: true, repeat: n * 2 - 1, ...R }, t);
+          tl.fromTo("#azra-sac" + s, { rotation: 5, svgOrigin: "-26 -350" }, { rotation: -7, duration: ADIM, ease: "sine.inOut", yoyo: true, repeat: n - 1, ...R }, t);
+          tl.fromTo("#azra-sac" + s, { rotation: 5 }, { rotation: -3, duration: 0.5, ease: "sine.out", ...R }, son);
+          tl.fromTo("#azra-kol" + s, { rotation: 7, svgOrigin: "10 -274" }, { rotation: -7, duration: ADIM, ease: "sine.inOut", yoyo: true, repeat: n - 1, ...R }, t);
+          tl.fromTo("#azra-kol" + s, { rotation: 7 }, { rotation: 0, duration: 0.3, ease: "sine.out", ...R }, son);
+          return son;
+        };
+
+        /* Zaman. S: kliplerin filmdeki başlangıcı (<audio> öğeleriyle aynı); T: karelerin başlangıcı.
+           C: klibin içindeki işaret anları (sn), eşitlenmiş kliplerdeki duraklamalardan ve sözcük dökümünden
+           (assets/ses-esit/olcum.json). Klipler yeniden üretilirse S, C ve <audio> satırları birlikte değişir. */
+        const S = { l1: 0.6, l2: 6.87, l3: 16.14, l4: 21.41, l5: 26.56, l6: 33.71, l7: 42.38, l8: 50.23, l9: 57.54, l10: 62.85, l11: 68.06 };
+        const T = { l1: 0, l2: 6.37, l3: 15.04, l4: 20.71, l5: 26.06, l6: 33.21, l7: 41.88, l8: 49.43, l9: 57.04, l10: 62.35, l11: 67.26, son: 74.5 };
+        const C = {
+          l1: { grup: 1.0, durdu: 4.9 },
+          l2: { isik: 0.5, ayk: 2.0, cumle: 3.7, yildizlar: 5.55, buAyk: 6.35, giyiyor: 7.2 },
+          l3: { dogru: 0.05, yildiz: 1.8, giy: 3.0 },
+          l4: { birik: 1.1, aldi: 2.9, giydi: 3.6 },
+          l5: { ayna: 0.1, ayni: 2.2, ama: 3.15, sahnede: 5.37 },
+          l6: { reklam: 0.9, ters: 3.9, giyersen: 5.98 },
+          l7: { tekyon: 1.0, ters: 2.12, karsi: 3.9, azra: 5.38 },
+          l8: { biray: 0.05, konser: 2.7, iki: 5.0 },
+          l9: { bileti: 0.05, giren: 2.05 },
+          l10: { girer: 0.9, ancak: 1.87, bilet: 2.95 },
+          l11: { ise: 0.05, ancak: 2.1 },
+        };
+        const v = (n, k) => S["l" + n] + C["l" + n][k];
+
+        /* Başlangıçta görünmeyenler ve Azra'ların yeri. */
+        gsap.set(["#isik-1", "#isik-1b", "#isik-2", "#ok-2", "#okuyucu-onay", "#ayna-koni", "#para-1", "#para-2", "#para-3", "#ayk-2-0", "#ayk-2-1", "#hayalet-0", "#hayalet-1", "#hayalet-2"], { opacity: 0 });
+        gsap.set("#azra", { x: 500 });
+        gsap.set("#azra-2", { x: 2850 });
+        gsap.set("#azra-3", { x: 4460 });
+
+        /* ---- Kare 1 — pano. Çıkartmalar sırayla yapışır; Azra yürür ve panonun önünde durur. ---- */
+        yapis("#zemin", T.l1 + 0.15, 970, 723, -1.2, 0, 1.06);
+        yapis("#binalar", T.l1 + 0.3, 445, 510, 3, -1);
+        yapis("#logo-cikartma", T.l1 + 0.45, 670, 150, 9, 0, 1.18);
+        yapis("#bulut-1", T.l1 + 0.55, 325, 170, -6, 2);
+        yapis("#lamba", T.l1 + 0.7, 745, 450, -4, 0.8);
+        yapis("#pano", T.l1 + 0.9, 1375, 400, 3.5, -1, 1.1);
+        bant("#bant-1", T.l1 + 1.3, 1052, 128);
+        bant("#bant-2", T.l1 + 1.42, 1698, 128);
+        yapis("#kalp-1", T.l1 + 1.0, 540, 275, -14, -8);
+        yapis("#kalp-2", T.l1 + 1.1, 618, 238, 16, 10);
+        vurgu("#logo-cikartma", v(1, "grup"), 670, 150, 1.08);
+        yapis("#azra-ic", T.l1 + 1.2, 0, -190, -8, 0);
+        /* "Durdu" sözünde yürüyüş biter. Pano, Azra yaklaşırken yanar: Azra bunun için durur. */
+        const DUR = v(1, "durdu");
+        yuruAzra("", DUR - ADIM * 10, 500, 852, 10);
+        tl.fromTo("#azra-bas", { rotation: 0, svgOrigin: "2 -302" }, { rotation: -9, duration: 0.5, ease: "power2.out" }, DUR + 0.15);
+        const YAN = DUR - 0.7;
+        tl.fromTo("#koni-1", { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none" }, YAN);
+        tl.fromTo("#koni-1", { opacity: 1 }, { opacity: 0.3, duration: 0.08, ease: "none", ...R }, YAN + 0.14);
+        tl.fromTo("#koni-1", { opacity: 0.3 }, { opacity: 1, duration: 0.22, ease: "power2.out", ...R }, YAN + 0.24);
+        gir("#isik-havuzu", YAN + 0.24, 0.25, 0.92);
+        gir("#yildiz-kisi", YAN, 0.12);
+        gir("#pano-logo", YAN + 0.24, 0.25);
+        git(T.l1, T.l2 - T.l1, { cx: 966, z: 1.19 }, "none");
+
+        /* ---- Kare 2 — reklam. Kamera panoya iner; sözle aynı sırada: ışıklar, ayakkabı, cümle. ---- */
+        git(T.l2, 1.3, { cx: 1292, cy: 372, z: 1.74 });
+        git(T.l2 + 1.3, T.l3 - T.l2 - 1.3, { z: 1.8 }, "none");
+        gir("#koni-2", v(2, "isik"), 0.35, 0.62);
+        tl.fromTo("#koni-2", { rotation: 14, svgOrigin: "1418 140" }, { rotation: 0, duration: 0.9, ease: "power3.out" }, v(2, "isik"));
+        yapis("#pano-ayk", v(2, "ayk"), 1550, 322, 7, 0, 1.2);
+        vurgu("#pano-ayk", v(2, "ayk") + 0.75, 1550, 322, 1.06);
+        ["#soz-1", "#soz-2", "#soz-3"].forEach((s, i) => {
+          const x = [1428, 1556, 1624][i], xo = [1484, 1582, 1650][i];
+          tl.fromTo(s, { opacity: 0, scaleX: 0, svgOrigin: `${x} 463` }, { opacity: 1, scaleX: 1, duration: 0.3, ease: "power2.out" }, v(2, "cumle") + i * 0.28);
+          tl.fromTo(s, { scaleY: 1, svgOrigin: `${xo} 463` }, { scaleY: 1.6, duration: 0.2, ease: "power2.out", yoyo: true, repeat: 1, ...R }, v(2, "giyiyor") + i * 0.1);
+        });
+        /* "Yıldızlar / bu ayakkabıyı / giyiyor": resimler sözle aynı sırada işaret edilir. */
+        vurgu("#yildiz-kisi", v(2, "yildizlar"), 1224, 486, 1.07);
+        vurgu("#pano-ayk", v(2, "buAyk"), 1550, 322, 1.08);
+        tl.fromTo("#azra-sac", { rotation: -3 }, { rotation: 2, duration: 1.4, ease: "sine.inOut", yoyo: true, repeat: 5, ...R }, T.l2);
+
+        /* ---- Kare 3 — doğru olsun. Şerit açılır; panodaki cümlenin çizgileri inip ok-yol olur. ---- */
+        git(T.l3, 1.0, K3);
+        yapis("#serit", T.l3 + 0.25, 960, 902, -2, 0, 1.08);
+        yapis("#ikon-yildiz", T.l3 + 0.55, 480, 906, -18, -6);
+        yapis("#ikon-ayk", T.l3 + 0.7, 1442, 902, 12, 4);
+        const INIS = T.l3 + 1.0;
+        HAYALET.forEach((g, i) => {
+          tl.fromTo(g.h, { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none", ...R }, INIS + i * 0.05);
+          tl.fromTo(g.h, { x: 0, y: 0, scaleX: 1, scaleY: 1, svgOrigin: `${g.ox.toFixed(1)} ${g.oy.toFixed(1)}` }, { x: g.hx - g.ox, y: g.hy - g.oy, scaleX: g.sx, scaleY: 0.5, duration: 0.6, ease: "power2.inOut", ...R }, INIS + 0.1 + i * 0.05);
+          tl.fromTo(g.h, { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "none", ...R }, INIS + 0.72 + i * 0.05);
+        });
+        tl.fromTo(["#ok1-ust", "#ok1-alt"], { opacity: 0 }, { opacity: 1, duration: 0.15, ease: "none" }, INIS + 0.68);
+        cizgiCiz("#ok1-bas", INIS + 0.8, 0.3);
+        tl.fromTo("#ok1-sari", { scaleX: 0, svgOrigin: "658 902" }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, INIS + 0.85);
+        yapis("#onay", Math.max(v(3, "dogru") + 0.75, INIS + 1.2), 1566, 820, -20, 0, 1.4);
+        vurgu("#ikon-yildiz", v(3, "yildiz"), 480, 906, 1.15);
+        yuru("#isik-1", v(3, "yildiz") + 0.3, v(3, "giy") - v(3, "yildiz") - 0.3, 672, 1248, 902);
+        vurgu("#ikon-ayk", v(3, "giy"), 1442, 902, 1.15);
+
+        /* ---- Kare 4 — Azra alır. Kamera odaya kayar; üç fiil üç çıkartma: kumbara, kutu, ayaktaki ayakkabı. ---- */
+        git(T.l4, 1.3, { cx: 2880 });
+        git(T.l4 + 1.3, T.l8 - T.l4 - 1.3, { cx: 2900 }, "none");
+        yapis("#hali", T.l4 + 0.1, 2890, 723, 1, 0, 1.05);
+        yapis("#pencere", T.l4 + 0.22, 2240, 300, -3, 1);
+        yapis("#afis", T.l4 + 0.34, 2570, 285, 4, -2);
+        bant("#bant-3", T.l4 + 0.75, 2570, 140);
+        yapis("#komodin", T.l4 + 0.46, 2240, 632, 2, 0);
+        yapis("#yatak", T.l4 + 0.58, 3490, 600, -2, 0);
+        yapis("#ayna", T.l4 + 0.7, 3120, 470, 3, 0);
+        yapis("#azra-ic-2", T.l4 + 0.85, 0, -190, -6, 0);
+        yapis("#kumbara", v(4, "birik") - 0.75, 2240, 516, -10, 0, 1.25);
+        ["#para-1", "#para-2", "#para-3"].forEach((p, i) => {
+          const t = v(4, "birik") - 0.15 + i * 0.28;
+          tl.fromTo(p, { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "none", ...R }, t);
+          tl.fromTo(p, { y: -110 }, { y: 16, duration: 0.32, ease: "power2.in", ...R }, t);
+          tl.fromTo(p, { opacity: 1 }, { opacity: 0, duration: 0.06, ease: "none", ...R }, t + 0.3);
+          vurgu("#kumbara", t + 0.3, 2240, 572, 1.05);
+        });
+        yapis("#kutu", v(4, "aldi") - 0.75, 2560, 660, 6, 0, 1.2);
+        tl.fromTo("#kutu-kapak", { rotation: 0, svgOrigin: "2460 636" }, { rotation: -34, duration: 0.35, ease: "power2.out" }, v(4, "aldi") - 0.1);
+        const GIY = v(4, "giydi");
+        tl.fromTo(["#ayk-2-0", "#ayk-2-1"], { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none", ...R }, GIY);
+        tl.fromTo(["#eski-2-0", "#eski-2-1"], { opacity: 1 }, { opacity: 0, duration: 0.1, ease: "none", ...R }, GIY);
+        tl.fromTo("#ayk-2-0", { scale: 1.9, svgOrigin: "-9 -16" }, { scale: 1, duration: 0.45, ease: "power3.out" }, GIY);
+        tl.fromTo("#ayk-2-1", { scale: 1.9, svgOrigin: "25 -16" }, { scale: 1, duration: 0.45, ease: "power3.out" }, GIY);
+        tl.fromTo("#azra-govde-2", { y: 0 }, { y: -16, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1, ...R }, GIY + 0.15);
+        vurgu("#ikon-ayk", GIY + 0.3, 1442, 902, 1.15);
+
+        /* ---- Kare 5 — ayna. Ayakkabı aynı; aynada sahne ışığı belirir ve söner. "Sahnede değil"de kare durağan. ---- */
+        gir("#yansima", v(5, "ayna") + 0.3, 0.5);
+        tl.fromTo("#azra-bas-2", { rotation: 0, svgOrigin: "2 -302" }, { rotation: 6, duration: 0.5, ease: "power2.out" }, v(5, "ayna") + 0.2);
+        yapis("#ayna-ayk", v(5, "ayni") - 0.45, 3345, 440, 10, 0, 1.25);
+        bant("#bant-4", v(5, "ayni") - 0.1, 3340, 386);
+        vurgu("#ayna-ayk", v(5, "ayni") + 0.2, 3345, 440, 1.1);
+        tl.fromTo("#ayna-koni", { opacity: 0 }, { opacity: 0.75, duration: 0.25, ease: "power2.out", ...R }, v(5, "ama"));
+        tl.fromTo("#ayna-koni", { opacity: 0.75 }, { opacity: 0, duration: 0.6, ease: "power2.in", ...R }, v(5, "ama") + 1.1);
+        tl.fromTo("#ikon-yildiz", { opacity: 1 }, { opacity: 0.3, duration: 0.6, ease: "power2.in", ...R }, v(5, "ama") + 1.1);
+
+        /* ---- Kare 6 — tersinden. Reklamın oku yukarı çıkar; altına Azra'nın okuması çizilir (sağdan sola). ---- */
+        yuru("#isik-1", v(6, "reklam"), 1.3, 672, 1248, 902);
+        tl.fromTo("#ok-1", { y: 0 }, { y: -50, duration: 0.5, ease: "power2.inOut" }, v(6, "ters") - 0.7);
+        tl.fromTo("#ok-2", { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none", ...R }, v(6, "ters") - 0.15);
+        tl.fromTo("#ok2-kirp-r", { attr: { x: 1290, width: 0 } }, { attr: { x: 610, width: 680 }, duration: 1.2, ease: "power2.inOut" }, v(6, "ters") - 0.15);
+        vurgu("#ikon-ayk", v(6, "giyersen"), 1442, 902, 1.15);
+        vurgu("#ikon-yildiz", v(6, "giyersen") + 0.6, 480, 906, 1.15);
+
+        /* ---- Kare 7 — karşı örnek. Ters yolda ışık yarı yolda durur, döner; çarpı; Azra'nın çevresine halka. ---- */
+        yuru("#isik-1", v(7, "tekyon") - 0.3, 1.1, 672, 1248, 902);
+        const TERS = v(7, "ters");
+        tl.fromTo("#isik-2", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "none", ...R }, TERS);
+        tl.fromTo("#isik-2", { x: 1248, y: 952 }, { x: 985, y: 952, duration: 0.9, ease: "power2.out", ...R }, TERS);
+        tl.fromTo("#isik-2", { x: 985 }, { x: 1003, duration: 0.09, ease: "sine.inOut", yoyo: true, repeat: 5, ...R }, TERS + 0.95);
+        tl.fromTo("#isik-2", { x: 985 }, { x: 1248, duration: 0.55, ease: "power2.in", ...R }, TERS + 1.55);
+        tl.fromTo("#isik-2", { opacity: 1 }, { opacity: 0, duration: 0.15, ease: "none", ...R }, TERS + 2.1);
+        cizgiCiz("#carpi-1", v(7, "karsi") + 0.5, 0.22);
+        cizgiCiz("#carpi-2", v(7, "karsi") + 0.72, 0.22);
+        cizgiCiz("#halka", v(7, "azra"), 0.8);
+
+        /* ---- Kare 8 — konser kapısı. Ters ok silinir; kamera kapıya kayar; uçlar bilet ve kapı, ok çift başlı. ---- */
+        tl.fromTo("#ok-2", { opacity: 1 }, { opacity: 0, duration: 0.3, ease: "none", ...R }, T.l8);
+        tl.fromTo("#ok-1", { y: -50 }, { y: 0, duration: 0.45, ease: "power2.inOut", ...R }, T.l8 + 0.2);
+        git(T.l8, 1.5, { cx: 4800 });
+        git(T.l8 + 1.5, T.l11 - T.l8 - 1.5, { cx: 4820 }, "none");
+        yapis("#zemin-3", T.l8 + 0.3, 4800, 723, 1, 0, 1.05);
+        yapis("#takvim", T.l8 + 0.45, 4075, 250, -8, 3, 1.2);
+        yapis("#salon", T.l8 + 0.55, 5030, 430, 1.5, 0, 1.06);
+        gir("#kapi-isik", T.l8 + 0.9, 0.3, 0.9);
+        yapis("#turnike", T.l8 + 0.8, 4916, 640, -6, 0);
+        gir("#turnike-kol", T.l8 + 0.95, 0.2);
+        yapis("#kisi-a", T.l8 + 0.95, 4800, 500, 5, 0);
+        yapis("#kisi-b", T.l8 + 1.05, 4630, 500, -5, 0);
+        yapis("#azra-ic-3", T.l8 + 1.15, 0, -190, -6, 0);
+        tl.fromTo("#takvim-yaprak", { scaleY: 1, svgOrigin: "4075 206" }, { scaleY: 0, duration: 0.5, ease: "power2.in" }, T.l8 + 1.6);
+        const KONSER = v(8, "konser");
+        tl.fromTo("#ikon-yildiz", { scale: 1, opacity: 0.3, svgOrigin: "480 906" }, { scale: 0, opacity: 0, duration: 0.25, ease: "power2.in", ...R }, KONSER - 0.6);
+        tl.fromTo("#ikon-ayk", { scale: 1, opacity: 1, svgOrigin: "1442 902" }, { scale: 0, opacity: 0, duration: 0.25, ease: "power2.in", ...R }, KONSER - 0.6);
+        yapis("#ikon-bilet", KONSER - 0.3, 480, 902, -14, 0);
+        yapis("#ikon-kapi", KONSER - 0.15, 1441, 902, 10, 0);
+        cizgiCiz("#ok1-bas-sol", v(8, "iki") + 0.1, 0.35);
+        vurgu("#ok-1", v(8, "iki") + 0.55, 960, 902, 1.06);
+
+        /* ---- Kare 9 — bilet. Önce biletten kapıya (bileti olan girer), sonra kapıdan bilete (girenin bileti var). ---- */
+        const gecis = (t) => {
+          tl.fromTo("#okuyucu-onay", { opacity: 0 }, { opacity: 1, duration: 0.1, ease: "none", ...R }, t);
+          tl.fromTo("#turnike-kol", { rotation: 0, svgOrigin: "4930 643" }, { rotation: -78, duration: 0.25, ease: "power2.out", ...R }, t + 0.1);
+          tl.fromTo("#turnike-kol", { rotation: -78 }, { rotation: 0, duration: 0.25, ease: "power2.in", ...R }, t + 1.0);
+          tl.fromTo("#okuyucu-onay", { opacity: 1 }, { opacity: 0, duration: 0.1, ease: "none", ...R }, t + 1.0);
+        };
+        const iceri = (h, t, x0, x1) => {
+          tl.fromTo(h, { x: x0 }, { x: x1, duration: 0.8, ease: "power1.inOut", ...R }, t);
+          tl.fromTo(h, { opacity: 1 }, { opacity: 0, duration: 0.22, ease: "none", ...R }, t + 0.58);
+        };
+        const BILETI = v(9, "bileti");
+        gecis(BILETI + 0.15);
+        iceri("#kisi-a", BILETI + 0.3, 0, 280);
+        tl.fromTo("#kisi-b", { x: 0 }, { x: 170, duration: 0.6, ease: "power1.inOut", ...R }, BILETI + 0.45);
+        yuruAzra("-3", BILETI + 0.5, 4460, 4630, 2);
+        gecis(BILETI + 1.3);
+        iceri("#kisi-b", BILETI + 1.45, 170, 450);
+        yuruAzra("-3", BILETI + 1.6, 4630, 4800, 2);
+        yuru("#isik-1", BILETI + 0.3, 1.2, 672, 1248, 902);
+        const GIREN = v(9, "giren");
+        [[5022, 521, -8], [5080, 499, 4], [5138, 521, 10]].forEach(([x, y, e], i) => yapis(`#ic-bilet-${i + 1}`, GIREN + 0.3 + i * 0.22, x, y, -15, e, 1.5));
+        yuru("#isik-1b", GIREN + 0.4, 1.2, 1248, 672, 902);
+
+        /* ---- Kare 10 — ancak ve ancak. Azra biletini gösterir, girer; yolda iki ışık karşılıklı yürür. ---- */
+        const GIRER = v(10, "girer");
+        vurgu("#azra-bilet", T.l10 + 0.2, 64, -212, 1.5);
+        gecis(GIRER - 0.6);
+        yuruAzra("-3", GIRER - 0.45, 4800, 5090, 4);
+        tl.fromTo("#azra-3", { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "none", ...R }, GIRER + 0.5);
+        vurgu("#ok-1", v(10, "ancak"), 960, 902, 1.06);
+        yuru("#isik-1", v(10, "ancak") + 0.1, 1.3, 672, 1248, 902);
+        yuru("#isik-1b", v(10, "ancak") + 0.1, 1.3, 1248, 672, 902);
+        vurgu("#ikon-bilet", v(10, "bilet"), 480, 902, 1.15);
+
+        /* ---- Kare 11 — kapanış: perde iner, kart gelir; cümle iki parça, her parçayla kendi simgesi. ---- */
+        tl.fromTo("#ust", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "power2.in" }, T.l11 + 0.05);
+        tl.fromTo("#perde", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, T.l11 + 0.05);
+        tl.fromTo("#kart", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, T.l11 + 0.2);
+        tl.fromTo("#c1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, v(11, "ise") - 0.1);
+        tl.fromTo("#cizgi", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, v(11, "ise") + 0.5);
+        tl.fromTo("#s-ise", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, v(11, "ise") + 0.75);
+        tl.fromTo("#c2", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, v(11, "ancak") - 0.1);
+        tl.fromTo("#s-ancak", { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, v(11, "ancak") + 1.4);
+
+        ciz();
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      };
+      Promise.all([document.fonts.load('700 54px "Plex Sans"', "BLVCKPIN"), document.fonts.load('600 80px "Plex Sans"', "İse tek yön, ancak ve ancak çift yön."), document.fonts.ready]).then(kur, kur);
+    </script>
+  </body>
+</html>

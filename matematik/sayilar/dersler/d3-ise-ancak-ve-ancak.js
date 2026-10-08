@@ -132,6 +132,7 @@
       { title: 'Çift yön: ⇔', goal: 'İki yön de doğruysa “ancak ve ancak” denir.', run: ciftYon },
       { title: 'Verilen ve gösterilecek', goal: 'Okun solu hipotez, sağı hükümdür; ispat aradaki yoldur.', run: verilen },
       { title: 'Sıra sende: hangi ok?', goal: 'Ters yönü sına; ⇒ mi ⇔ mi karar ver.', run: sira },
+      { title: 'Hikâye: Yıldızlar bunu giyiyor', goal: '“İse”nin tek yönlü olduğunu bir reklamda gör.', video: 'hikaye/d3-yildizlar-bunu-giyiyor/renders/d3-yildizlar-bunu-giyiyor.mp4' },
     ],
     quiz: [
       {

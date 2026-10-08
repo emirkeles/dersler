@@ -31,7 +31,7 @@ KATALOG.tema('matematik', 'sayilar', {
     { harf: 'D', ad: 'İşlem özellikleri ve cebir', renk: '#3cc8e8', dersler: [
       ['d1-onerme.html', 'Önerme: doğru ya da yanlış', '“Her asal sayı tektir.” Yanlış çıkarmak için kaç sayı gerekir?', 5, 280],
       ['d2-ve-veya-ya-da.html', 'Ve, veya, ya da', '6 için “çift veya 3’ün katı” demek doğru olur mu?', 5, 226],
-      ['d3-ise-ancak-ve-ancak.html', 'İse, ancak ve ancak', '“x > 5 ise x > 3” doğru. Tersi de doğru mu?', 4, 215],
+      ['d3-ise-ancak-ve-ancak.html', 'İse, ancak ve ancak', '“x > 5 ise x > 3” doğru. Tersi de doğru mu?', 5, 291],
       ['d4-degisme-ve-birlesme.html', 'Değişme ve birleşme', '17 + 28 + 12: kasiyer önce hangi ikisini toplar?', 5, 277],
       ['d5-dagilma.html', 'Dağılma', 'Kasiyer 7 × 98’i hesap makinesinden önce nasıl buluyor?', 5, 308],
       ['d6-birim-ters-yutan.html', 'Birim, ters, yutan', 'Hangi sayıya basarsan hesap makinesinin ekranı değişmez?', 5, 241],
@@ -44,5 +44,6 @@ KATALOG.tema('matematik', 'sayilar', {
     { kod: 'A7', ders: 'Bilimsel gösterim', ad: '3 nanometre ne kadar küçük?', video: 'hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4', kapak: 'hikaye/a7-3-nanometre/renders/kapak.jpg' },
     { kod: 'A8', ders: 'Yaklaşık değer', ad: 'Bir dönüm tarla, kaç metre çit?', video: 'hikaye/a8-tarla-cit/renders/sesli-taslak.mp4', kapak: 'hikaye/a8-tarla-cit/renders/kapak.jpg' },
     { kod: 'B7', ders: 'Mutlak değerle aralık', ad: 'Kombi 22 derecede', video: 'hikaye/b7-kombi-22/renders/b7-kombi-22.mp4', kapak: 'hikaye/b7-kombi-22/renders/kapak.jpg' },
+    { kod: 'D3', ders: 'İse, ancak ve ancak', ad: 'Yıldızlar bunu giyiyor', video: 'hikaye/d3-yildizlar-bunu-giyiyor/renders/d3-yildizlar-bunu-giyiyor.mp4', kapak: 'hikaye/d3-yildizlar-bunu-giyiyor/renders/kapak.jpg' },
   ]
 });

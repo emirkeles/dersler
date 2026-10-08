@@ -21,7 +21,7 @@ Bölümün hikâyesi hesap makinesiz kasiyer. Dayanak `plan/matematik/sayilar/MU
 - **D2:** çerçeve yerine her sayının üstünde p, altında q işareti var (çiftler ve 3'ün katları ardışık değil, çerçeveye sığmıyor). Sahne 4'te iki önerme izleniyor ("ve" ile orta aralık, "veya" ile iki parça); "ya da" ışığı yok.
 - **D5 beş sahne:** kasiyer açılışı (S1) ve alan modeli (S2) ayrı sahneler.
 - **D6:** "geri alma düğmesi" çizilmedi; eski sahnenin sayı doğrusu ve çeyrek çubukları kullanıldı. Sahne 1'de hesap makinesi sorusu var.
-- **D7:** hikâye videosu gelene kadar 4 sahne. **D3:** hikâye videosu gelince 5. sahne olur.
+- **D7:** hikâye videosu gelene kadar 4 sahne. **D3:** hikâye videosu geldi (8 Ekim 2026); ders 5 sahne.
 
 Derslere bilerek almadıklarım (programda yok; karar 2, "kafa karıştıran hiçbir şey olmayacak"): doğruluk tabloları, p ⇒ q ≡ p′ ∨ q, karşıt ve karşıt ters, De Morgan kuralının genel yazımı, totoloji ve çelişki, "açık önerme" terimi, hipotezi yanlış olan "ise" önermeleri, çıkarmanın birim elemanı, x² + bx + c türü üç terimlileri çarpanlara ayırma, gruplandırma, küp özdeşlikleri. Programda varsa söyleyin, ilgili derse eklerim.
 
@@ -102,12 +102,12 @@ Derslere bilerek almadıklarım (programda yok; karar 2, "kafa karıştıran hi�
 | 2. Çift yön: ⇔ | İki nokta, a ve b. a < b ⇒ b − a > 0: b sağdaysa aradaki fark pozitif. Tersi: b − a > 0 ⇒ a < b: o da doğru. İki ok birleşir: a < b ⇔ b − a > 0. Kaydırıcıyla a ve b oynar; b sola geçince ikisi birlikte yanlış olur. |
 | 3. Verilen ve gösterilecek | C5'teki ispat yeniden yazılır: "a ve b rasyonel ⇒ (a + b)/2 rasyonel." Okun solu verilen (hipotez), sağı gösterilecek (hüküm). İspat, soldan sağa giden yoldur. |
 | 4. Sıra sende | Üç kartta ok seçilir, ⇒ mi ⇔ mi; ters yön yanlışsa karşı örneği yazılır: "n 4'ün katı … n çift" (⇒; 6) · "x = 3 … x² = 9" (⇒; −3) · "x > 0 … −x < 0" (⇔). |
-| 5. Hikâye | "Şampiyonlar bunu giyiyor" videosu (hikâye planında 6 numara). |
+| 5. Hikâye | "Yıldızlar bunu giyiyor" videosu (hikâye planında 6 numara; eski adı "Şampiyonlar bunu giyiyor"). |
 
 **Hedeflenen yanılgı:** "p ise q" doğruysa "q ise p" de doğrudur sanmak.
 **Akılda kalıcı cümle:** "İse tek yön, ancak ve ancak çift yön."
 **Çıkış soruları:** "x > 3 ise x > 5" önermesini hangi x çürütür? (4; çeldiriciler: 2, 6, 7) · Hangisinde ⇒ yerine ⇔ yazılabilir? ("x − 2 = 0 ⇒ x = 2"; çeldiriciler: "x = 3 ⇒ x² = 9", "n 4'ün katı ⇒ n çift", "x > 5 ⇒ x > 3")
-**Hikâye:** Var; videosu içerik bittikten sonra üretilir. Video gelene kadar ders 4 sahneyle yayınlanır.
+**Hikâye:** Var; video üretildi ve dersin 5. sahnesine bağlandı (8 Ekim 2026; `hikaye/d3-yildizlar-bunu-giyiyor/`). Ders 5 sahne.
 **Not:** Sahne 2'deki önerme programın kendi örneği. Hipotezi yanlış olan "ise" önermelerine girilmez.
 
 ---
