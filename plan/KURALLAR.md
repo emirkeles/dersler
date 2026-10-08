@@ -24,6 +24,7 @@ Program **kapsamı** belirler: hangi konu anlatılır, nerede durulur. Fen ve so
 - Kitapta olup programın anmadığı konu yine girmez. Kapsam soruları kitaba göre değil programa göre kapanır.
 - Kitaptan alınan her bilgi `PLAN.md` içinde kaynağıyla yazılır ("Ders kitabı, s. 84"). Hafızadan tanım, formül, sayı, tarih ya da ad yazılmaz.
 - Kitap alınamıyorsa ya da bilgi kitapta da yoksa konu program metninde yazdığı kadarıyla anılır ve `PLAN.md` açık sorularına yazılır.
+- İstisna: kitap, programın istediği bir içeriği açılamayan bir e-içeriğe (giriş isteyen EBA videosu, animasyon, karekod) bırakıyorsa konu eksik bırakılmaz ve öğrenciye "eksik" denmez. İçerik programın istediği genellikte, yerleşik ders bilgisinden yazılır: az bilgi verilmez, programın saymadığı ayrıntıya girilmez. Kitap dışından gelen her bilgi `PLAN.md` içinde tek tek, "kitap dışı" diye yazılır. (Kullanıcı kararı, 8 Ekim 2026; ilk uygulama biyoloji Yaşam D6 ve E1.)
 - Kitap **yazarın** kaynağıdır, öğrencinin değil. Siteye giren kişi ders kitabını izlemek zorunda değildir; ders kendi başına yeter. Altyazıda, tahtada, soruda, geri bildirimde ve defterde kitaba, sayfaya, "hazır veri"ye ya da sınıfa gönderme olmaz ("kitapta verilmiştir", "kitabın tablosu", "sınıfta yapılır" yazılmaz). Veri bir durumun içinde sunulur: kim ölçtü, neyi, neden. Sayfa numarası yalnızca `PLAN.md` ve senaryoda durur. (Kullanıcı kararı, 7 Ekim 2026; kimya Etkileşim temasını izledikten sonra.)
 
 ### 2.2 Deney, gözlem ve ürün isteyen çıktılar

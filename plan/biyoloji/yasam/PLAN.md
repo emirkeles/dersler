@@ -215,8 +215,8 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   3. D2–D5'teki ortak özellik listesiyle karşılaştırma: virüsün canlılarla ortak ve cansızlarla ortak özellikleri.
   4. Sonuç: virüslerin canlı veya cansız olarak sınıflandırılmama nedeni (1.4.c).
 - **Program dayanağı:** BİY.9.1.4 c) "Canlıların ortak özelliklerinden yola çıkarak virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar." Uygulama c): "…virüslerin yapılarını ve çoğalma mekanizmalarını genel olarak tespit etmeleri istenir… Öğrenciler, canlıların ortak özelliklerinden yola çıkarak virüslerin canlılık ve cansızlık özelliklerini tartışır… virüslerin canlı ve cansızlarla ortak özellikleri konusunda ulaştıkları sonuçları açıklamaları istenir." Sınır: "genel olarak". Hastalık örnekleri ve bakteriyofaj "verilebilir", "vurgulanabilir" diye geçer; bölüm 6, soru 6.
-- **Açılış sorusu:** Virüsü bir hücreyle aynı biçimde değerlendirebilir miyiz?
-- **Akılda kalıcı cümle:** Virüs listeyi yarım doldurur.
+- **Açılış sorusu:** Virüs çoğalır ve hastalık yapar. Peki canlı mıdır? (8 Ekim 2026'da değişti; bölüm 13)
+- **Akılda kalıcı cümle:** Virüs = genetik madde + protein kılıf; yalnızca canlı hücrede çoğalır, canlı ile cansız arasında yer alır.
 
 ### Konu E · İnorganik moleküller (BİY.9.1.5)
 
@@ -228,8 +228,8 @@ Ders sırası: A1 → A2 → A3 → B1 → B2 → B3 → C1 → C2 → D1 → �
   2. "İnorganik Bileşiklerin Genel Özellikler" tablosu; satırları: sindirime uğrama, hücresel solunumda kullanılma, canlılar tarafından üretilme/üretilmeme, hücre zarından geçiş, canlı yapısına katılma, yaşamsal faaliyetlerin düzenlenmesinde görev alma.
   3. Tablodan inorganik moleküllerin özelliklerinin tanımlanması (1.5.a).
 - **Program dayanağı:** BİY.9.1.5 a) "İnorganik moleküllerin özelliklerini tanımlar." Uygulama a): "…öğrencilerin inorganik bileşikleri “sindirime uğrama, hücresel solunumda kullanılma, canlılar tarafından üretilme/üretilmeme, hücre zarından geçiş, canlı yapısına katılma, yaşamsal faaliyetlerin düzenlenmesinde görev alma” gibi özellikler açısından değerlendirerek bu özellikleri tanımlamaları beklenir." Çerçeve: "İnorganik Moleküller (Su, Mineraller)".
-- **Açılış sorusu:** Su ve mineraller hücrede hangi işlere katkı sağlar?
-- **Akılda kalıcı cümle:** Su ve mineraller yaşamsal işlevlere katılır.
+- **Açılış sorusu:** Su ve mineraller enerji vermez. Peki neden onlarsız yaşayamayız? (8 Ekim 2026'da değişti; bölüm 13)
+- **Akılda kalıcı cümle:** Su ve mineraller sindirilmez, enerji vermez, dışarıdan alınır; zardan doğrudan geçer, yapıya katılır ve düzenler.
 
 #### E2 · Su tutunur
 
@@ -489,14 +489,14 @@ Bu konunun bütün derslerinde ortak sınır: "moleküllerin açık formüllerin
 
 ## 4. Müfredat denetimi
 
-Programın her isteği bir satır; her kısa dersin dayanağı vardır. Durum: ders / benzetim / site dışı. Sitede karşılanan bilgi, nitel benzetim ve sınıfta yapılacak ölçüm/ürün ayrıdır. D6 ve E1 kaynak erişimi nedeniyle kısmîdir; temiz ekran ölçümü tam kapsam anlamına gelmez. F’nin ayrıntılı sahne–içerik eşlemesi F-RAPOR.md’de de bulunur.
+Programın her isteği bir satır; her kısa dersin dayanağı vardır. Durum: ders / benzetim / site dışı. Sitede karşılanan bilgi, nitel benzetim ve sınıfta yapılacak ölçüm/ürün ayrıdır. D6 ve E1 7 Ekim'de kaynak erişimi nedeniyle kısmîydi; 8 Ekim 2026'da kullanıcı kararıyla kitap dışı bilgiyle tamamlandı (bölüm 13). F’nin ayrıntılı sahne–içerik eşlemesi F-RAPOR.md’de de bulunur.
 
 | Programın istediği | Hangi kısa ders | Durum | Sahne / karşılanma sınırı |
 |---|---|---|---|
 | Tema amacı: biyolojideki gelişmelerin insan hayatına katkılarını sorgulama | A1, A2, A3 | ders | A1 S1–5; A2 S1–4; A3 S1–3 |
 | Tema amacı: bilimin doğasını yorumlama | B1, B2, B3 | ders | B1 S1–4; B2 S1–4; B3 S1–4 |
 | Tema amacı: bilim etiğine uygunluk ve organik moleküller hakkında bilgi toplama | C1, C2; F1–F12 | ders | F1 S1–4; F2 S1–3; F3 S1–3; F4 S1–3; F5 S1–3; F6 S1–3; F7 S1–4; F8 S1–3; F9 S1–3; F10 S1–4; F11 S1–4; F12 S1–3; C1 S1–4; C2 S1–4 |
-| Tema amacı: canlıların özelliklerini gözlemleme; inorganik moleküllerin önemi hakkında çıkarım | D1–D6; E1–E5 | benzetim | D1 S1–4; D2 S1–4; D3 S1–4; D4 S1–3; D5 S1–3; D6 S1–3; E1 S1–3; E2 S1–4; E3 S1–4; E4 S1–4; E5 S1–4 |
+| Tema amacı: canlıların özelliklerini gözlemleme; inorganik moleküllerin önemi hakkında çıkarım | D1–D6; E1–E5 | benzetim | D1 S1–4; D2 S1–4; D3 S1–4; D4 S1–3; D5 S1–3; D6 S1–5; E1 S1–4; E2 S1–4; E3 S1–4; E4 S1–4; E5 S1–4 |
 | Tema amacı: besinlerde karbohidrat, yağ, protein varlığı ve enzim aktivitesi deneyleri | G1–G3; H1–H3 | benzetim | G1 S1–4; G2 S1–4; G3 S1–4; H1 S1–4; H2 S1–4; H3 S1–4 |
 | BİY.9.1.1 a) dönüm noktalarının katkılarını belirtir | A1 | ders | A1 S1–5 |
 | BİY.9.1.1 b) katkılarla ilgili sorular sorar | A2 | benzetim | A2 S1 |
@@ -528,7 +528,7 @@ Programın her isteği bir satır; her kısa dersin dayanağı vardır. Durum: d
 | Rapordaki bilgileri farklı ve güvenilir kaynaklardan doğrulama | C2 | benzetim | C2 S3–4 |
 | BİY.9.1.4 a) ortak özellikleri gözlemleyerek tanımlar | D2, D3 (doğrudan), D4, D5 (dolaylı) | benzetim (hazır gözlem/model) | D2 S1–4; D3 S1–4; D4 S1–3; D5 S1–3 |
 | BİY.9.1.4 b) gözlemlerden veri toplar ve kaydeder | D1 (D2–D5'te form kullanılır) | benzetim; gerçek gözlem site dışı | D1 S1–4 |
-| BİY.9.1.4 c) virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar | D6 | ders (kısmî; yapı/çoğalma kaynağı bekliyor) | D6 S1–3 |
+| BİY.9.1.4 c) virüslerin canlı veya cansız olarak sınıflandırılmama nedenlerini açıklar | D6 | ders | D6 S1, S5 |
 | İki farklı canlı; duyularla ya da basit araçlarla; üç gün, düzenli aralıklarla; gözlem formu | D1 | benzetim; gerçek üç gün site dışı | D1 S1–4 |
 | Gözlenen canlılarda benzerlik ve farklılıklar | D2, D3 | benzetim | D2 S1–4; D3 S3–4 |
 | Dolaylı gözlemlenebilir özelliklere ilişkin tahmin ve güvenilir kaynaktan doğrulama | D4, D5 | benzetim | D1 S4; D4 S1–3; D5 S1–3 |
@@ -537,12 +537,12 @@ Programın her isteği bir satır; her kısa dersin dayanağı vardır. Durum: d
 | Çerçeve: Beslenme, Boşaltım, Büyüme ve Gelişme | D2 | ders | D2 S1–4 |
 | Çerçeve: Enerji Üretimi ve Tüketimi, Metabolizma, Homeostazi | D5 | ders | D5 S1–3 |
 | Çerçeve: Uyarılara Tepki, Üreme, Varyasyon ve Adaptasyon | D3 | ders | D3 S1–4 |
-| Virüslerin yapısı ve çoğalma mekanizması (genel olarak); canlılık ve cansızlık özellikleri | D6 | ders (kısmî; EBA kaynak bekliyor) | D6 S1–3; yapı/çoğalma öğretilmedi |
-| BİY.9.1.5 a) inorganik moleküllerin özelliklerini tanımlar | E1 | ders (kısmî; tam tablo kaynak bekliyor) | E1 S1–3 |
+| Virüslerin yapısı ve çoğalma mekanizması (genel olarak); canlılık ve cansızlık özellikleri | D6 | ders (yapı ve çoğalma kitap dışı; bölüm 13) | yapı D6 S2; çoğalma S3; hastalık örnekleri ve bakteriyofaj S4; canlılık ve cansızlık özellikleri S5 |
+| BİY.9.1.5 a) inorganik moleküllerin özelliklerini tanımlar | E1 | ders | E1 S1–4 |
 | BİY.9.1.5 b) suyun genel özellikleri ile ilgili veri toplar ve kaydeder | E2, E3 | benzetim; gerçek veri toplama site dışı | E2 S1–3; E3 S1–3 |
 | BİY.9.1.5 b) minerallerin görevleri ile ilgili bilgi toplar ve kaydeder | E4 | benzetim (hazır kaynak bilgisi) | E4 S1–4 |
 | BİY.9.1.5 c) inorganik moleküllerin önemiyle ilgili verileri yorumlar ve değerlendirir | E2, E3 (su), E5 (mineraller) | benzetim | E2 S4; E3 S4; E5 S1–4 |
-| "İnorganik Bileşiklerin Genel Özellikler" tablosu ve altı özellik | E1 | ders (kısmî; tam karşılaştırma yok) | E1 S3; kaynaklı görevler S1–2 |
+| "İnorganik Bileşiklerin Genel Özellikler" tablosu ve altı özellik | E1 | ders (tablonun cevapları kitap dışı; bölüm 13) | sindirim, zar geçişi, solunum E1 S3; üretilme, yapıya katılma, düzenleme S4; kaynaklı görevler S1–2 |
 | Suyun adezyon-kohezyon kuvveti, yüzey gerilimi | E2 | benzetim | E2 S1–4 |
 | Suyun yoğunluğu, çözücülüğü, ısı tutma kapasitesi (öz ısı) | E3 | benzetim | E3 S1–4 |
 | Köprü kurma: hücrelerde ve vücutta en fazla bulunan molekül su | E3 | ders | E1 S1 |
@@ -669,7 +669,7 @@ Tarih: 7 Ekim 2026. Bölüm 6’daki bütün sorular aşağıdaki kararlarla kap
 | 3 | Ön bilgi listeleri | B2’de yedi basamak (s. 25–26) araştırma içinde bulunur; B3 özellikleri (s. 23–24) kullanır, listeyi yeniden öğretmez. Evrensel ve değişmez bir sıra iddiası kurulmaz. | 3–4 |
 | 4 | Etik ölçüt ve olay | C1 kitabın park ödevi olayını (s. 31–32) ve aşı/onam tartışmasını (s. 30) kullanır. Franklin ve HeLa etik vakaları zenginleştirme olduğu için yok. | 1–4 |
 | 5 | Doğrudan/dolaylı gözlem | D1–D5 sabit özellik etiketleri öğretmez: araç, süre ve kanıta göre değerlendirme yapılır. Varyasyon/adaptasyon tek fotoğraftan kanıtlanmış sayılmaz (s. 40–41). | 3–4,7 |
-| 6 | Virüs ek örnekleri | Hastalık ve bakteriyofaj fırsatı program kadarıyla anılır; tedavi ayrıntısı eklenmez. Kitap s. 41–42 yapı/çoğalmayı EBA videosuna bırakıyor; bağlantı giriş ekranına yönlendi. Kaynak doğrulanana kadar D6 bu bölümde açık kaynak sınırı gösterir. | 1,4 |
+| 6 | Virüs ek örnekleri | Hastalık ve bakteriyofaj fırsatı program kadarıyla anılır; tedavi ayrıntısı eklenmez. Kitap s. 41–42 yapı/çoğalmayı EBA videosuna bırakıyor; bağlantı giriş ekranına yönlendi. Kaynak doğrulanana kadar D6 bu bölümde açık kaynak sınırı gösterir. **8 Ekim 2026:** kullanıcı kararıyla yapı ve çoğalma kitap dışı bilgiyle yazıldı; sınır notu kalktı (bölüm 13). | 1,4 |
 | 7 | Organik yapı derinliği | Amino asit bölümleri ve nükleotit parçaları, DNA/RNA bazları kitap s. 63,68–70’ten şemayla verilir. Açık formül, bağ adları, doymuş/doymamış ayrımı, esansiyel ayrımı ve sentez mekanizması yok. F1 kalır; üç anahtar kavram beş sahneye sığar. | 1–4,6 |
 | 8 | Ayraçlar | Lugol–nişasta, Benedict–glikoz/fruktoz, Biüret–protein, Sudan III/IV–lipit; ad ve renkler s. 75’ten. Diğer ayraçlar zorunlu ayrı liste değildir. G gerçek laboratuvar deneyine hazırlık benzetimidir. | 3–4,7 |
 | 9 | Enzim deneyi | Katalaz, amilaz ve lipaz adları programdan; isimlendirme kuralları yok. Düzenek s. 80–83; s. 82 ölçüm tabloları boş. Sayısal kabarcık verisi ve katalaz optimumu üretilemez. H2/H3 kitap s. 67’nin nitel eğrilerini ve s. 83 koşullarını analiz eder; gerçek ölçüm site dışıdır. Yalnız pH/sıcaklık. | 1–4 |
@@ -694,8 +694,8 @@ Kaynak: [MEB 9. sınıf Biyoloji ders kitabı](https://tymm.meb.gov.tr/kitap/36/
 | B3 | 23–24,28 | Bilimin doğası özellikleri ve bağlamı koruyan yorum |
 | C1–C2 | 30–32 | Aşı araştırması/onam/adalet soruları; park ödevi vakası; veriyi değiştirmeme ve kaynak/katkı gösterme |
 | D1–D5 | 33–41 | Gözlem formu, canlılık örnekleri, prokaryot/ökaryot, beslenme, organizasyon, metabolizma, homeostazi |
-| D6 | 41–42,88 | Hücre tanımına tam uymama; yapı/çoğalma için EBA video yönlendirmesi. Video doğrulanamadı; ayrıntı eklenmez |
-| E1 | 45–46,51 | İnorganik tablo altı özelliği; suyun görevleri ve minerallerin dışarıdan alınması. Boş tablonun kaynakta bulunmayan cevapları yazılmaz |
+| D6 | 41–42,88 | Hücre tanımına tam uymama; yapı/çoğalma için EBA video yönlendirmesi. Video açılamadı; yapı, çoğalma ve canlı/cansız karşılaştırması 8 Ekim 2026'da kitap dışı bilgiyle yazıldı (bölüm 13) |
+| E1 | 45–46,51 | İnorganik tablo altı özelliği (satırlar s. 46); suyun görevleri ve minerallerin dışarıdan alınması. Kitabın boş bıraktığı tablo cevapları 8 Ekim 2026'da kitap dışı bilgiyle dolduruldu (bölüm 13) |
 | E2–E3 | 47–51 | Altı su deneyi; adezyon/kohezyon, yüzey gerilimi, buz yoğunluğu, çözücülük, ısı tutma ilişkisi; sayısal ölçüm yok |
 | E4–E5 | 51–53,170 (Form 8) | On bir mineralin işlevi, besinleri ve eksiklik sonuçları; dengeli beslenme |
 | F1 | 56–57 | Beş organik grup; monomer/polimer, dehidrasyon/hidroliz; lipitlerin polimer olmaması |
@@ -739,8 +739,8 @@ Her kısa dersin yöntem tercihi biyolojik fikre göre yapılır; matematik şab
 | D3 | Işığa yönelen temsili bitki, iki üreme yolu, kelebek desenleri ve ördek ayağı | Anlık tepkiyi kalıtsal uyumdan, farkı genetik neden iddiasından ayırır. | s.37–39 |
 | D4 | Fotoğraf→inceleme aracı, çekirdek var/yok, hücresel organizasyon | Prokaryot/ökaryot yalnız çekirdek düzeyinde; organel öğretimi yok. | s.34–35,41 |
 | D5 | Yapım/yıkım, besin→ATP→kas, terleme→iç denge; nitel ilişki seçimi | Metabolizma iki yönüyle kullanılır; kaynaksız sıcaklık veya ölçüm sonucu üretilmez. | s.36–39 |
-| D6 | Hücre karşılaştırması, ölçekli olmayan boyut şeritleri, iki sınıf arasında virüs | s.41 biyolojik bilgisiyle sınıflandırma sınırını öğretir; kaynak denetimi dersine dönüşmez. | s.34,41–42; s.88 yalnız kapsam kontrolü |
-| E1 | Su görevleri, toprak→bitki→hayvan mineral yolu, 6 değerlendirme yönünü ardışık karşılaştırma | Kaynaklı görevlerden doğrudan biyolojik çıkarım; boş tablonun cevapları uydurulmaz. | s.45–46,51 |
+| D6 | Hücre ile virüs; etiketli virüs şeması; bakteriyofajın bakteride beş adımlı çoğalması; hedef hücre satırları; iki sütunlu canlı/cansız karşılaştırması | Öğret: yapı ve çoğalma bilinmeden sınıflandırma sorusu cevaplanamaz; her soru o ana kadar anlatılanla cevaplanır. | s.41 (hücre tanımı, boyut); gerisi kitap dışı, bölüm 13 |
+| E1 | Su görevleri, toprak→bitki→hayvan mineral yolu, zardan geçiş çizimi, altı özelliğin üçer satırlık iki tablosu | Öğret: her satırın nedeni söylenir, sonra tabloya yazılır. | s.45–46,51; tablo cevapları kitap dışı, bölüm 13 |
 | E2 | İki lam/su tabakası, dolu bardağa para, karabiber/parmak koşulu, bitkide su yolu | Su–cam/su–su çekimleri ile yüzey gerilimi, aynı kaynak düzeneklerinden nitel olarak açıklanır. | s.47–48,50–51 |
 | E3 | Buz yüzmesi, beş bardak çözme düzeni, eşit su/yağ koşulları ve boş ölçüm planı, yaşama katkı | Öğrenci malzeme/koşul seçer; kaynaklı nitel sonuç görür. Gerçek sıcaklık ve maddeye özgü çözünme sonucu üretilmez. | s.48–49,51; taşıma s.45 |
 | E4 | Genel bağlam seçimi → her mineralin görev/besin öğretimi → çift eşleştirmesi → kayıt; her kartta tek mineral | Bütün program listesi kapsanır; 25 kelime sınırı için kartlar sırayla açılır. | s.170 Form8; bağlam s.51–53 |
@@ -793,7 +793,7 @@ Kitap içerik kaynağıdır; öğrenci yanında kitap açıkmış gibi anlatılm
 
 ## 11. Uygulanan kısa ders listesi
 
-8 konu, 37 kısa ders, 136 özgün sahne; 74 çıkış sorusu. Başlık ve açılışlar bağımsız kursun son hâlidir. D6/E1 kaynak nedeniyle kısmîdir; ilgili notlar denetim tablosunda ve DURUM.md’de bulunur.
+8 konu, 37 kısa ders, 136 özgün sahne; 74 çıkış sorusu. Başlık ve açılışlar bağımsız kursun son hâlidir. D6 ve E1 8 Ekim 2026'da tamamlandı (D6 5 sahne, E1 4 sahne; bölüm 13).
 
 | Kod | Son başlık | Sahne | Dosya |
 |---|---|---:|---|
@@ -810,8 +810,8 @@ Kitap içerik kaynağıdır; öğrenci yanında kitap açıkmış gibi anlatılm
 | D3 | Tepki ve kalıtsal uyum | 4 | [ders](../../../biyoloji/yasam/d3-tepki-ureme-uyum.html) |
 | D4 | Hücre ve organizasyon | 3 | [ders](../../../biyoloji/yasam/d4-hucre-organizasyon.html) |
 | D5 | Metabolizma ve iç denge | 3 | [ders](../../../biyoloji/yasam/d5-metabolizma-enerji.html) |
-| D6 | Virüs ve canlılık sınırı | 3 | [ders](../../../biyoloji/yasam/d6-virus-siniri.html) |
-| E1 | Su ve minerallerin yaşamsal görevleri | 3 | [ders](../../../biyoloji/yasam/e1-inorganik-ozellikler.html) |
+| D6 | Virüs ve canlılık sınırı | 5 | [ders](../../../biyoloji/yasam/d6-virus-siniri.html) |
+| E1 | Su ve minerallerin yaşamsal görevleri | 4 | [ders](../../../biyoloji/yasam/e1-inorganik-ozellikler.html) |
 | E2 | Su tutunur | 4 | [ders](../../../biyoloji/yasam/e2-su-tutunur.html) |
 | E3 | Su taşır ve dengeler | 4 | [ders](../../../biyoloji/yasam/e3-su-tasir-dengeler.html) |
 | E4 | Mineraller ne iş görür? | 4 | [ders](../../../biyoloji/yasam/e4-mineral-gorevleri.html) |
@@ -926,5 +926,45 @@ Kitapta açıkça yazmayan, kitaptaki iki bilginin birleştirilmesiyle ya da ilk
 - D1, B2, A2, G3: öykü ve soru senaryoları kurgu (ölçüm ya da sayı içermez).
 - Kitapta olası hata: s. 84 Fleming, Florey ve Chain için "Nobel Barış Ödülü" yazıyor; derslerde kullanılmadı.
 
-Dokunulmayanlar: F1–F8, F10–F12 (hafif düzenleme) ve D3–D6, E1, E3 (düzenleme). D6'daki "bu derste henüz eksiktir" cümlesi ve tema sayfasındaki notu duruyor.
+Dokunulmayanlar: F1–F8, F10–F12 (hafif düzenleme) ve D3–D6, E1, E3 (düzenleme). D6'daki "bu derste henüz eksiktir" cümlesi ve tema sayfasındaki notu 8 Ekim 2026'da kalktı; D6 baştan, E1'in son sahnesi yeniden yazıldı (bölüm 13).
 
+## 13. D6 ve E1: kitap dışı içerik — 8 Ekim 2026
+
+**Kullanıcı kararı (8 Ekim 2026):** "EBA videosunu açamıyorsan sen konuyu anlaşılır şekilde anlatan içerikler yükle; öğrenci konuyu senin içeriklerinle anlasın. E1'deki tablo için de aynısını uygula. EBA girişi yapamadığın yerlerde konuyu ve müfredatı inceleyerek az bilgi vermeden ve gereksiz detaylara girmeden açıklayıcı şekilde anlat." Kural `plan/KURALLAR.md` 2.1'e istisna olarak yazıldı.
+
+Ölçü: programın istediği genellik (BİY.9.1.4 uygulama c "genel olarak"; BİY.9.1.5 uygulama a'nın saydığı altı özellik). Kitap 8 Ekim'de yeniden okundu (s. 41, 42, 45, 46, 51).
+
+### D6 · Virüs ve canlılık sınırı (3 → 5 sahne, baştan yazıldı)
+
+| Sahne | İçerik | Kaynak |
+|---|---|---|
+| 1 Virüs bir hücre mi? | Canlılar hücreden oluşur; virüs hücre değildir, çok daha küçük ve basittir; boyut canlılığın ölçütü değildir | kitap s. 41; hücrenin zarı, sitoplazması ve protein üreten ribozomu bu sahnede tanıtılır (kitap dışı) |
+| 2 Virüsün yapısı | Genetik madde (DNA ya da RNA) ve protein kılıf (kapsit); bazı virüslerde zarf; sitoplazma, ribozom ve enerji üreten yapı yok | kitap dışı |
+| 3 Virüs nasıl çoğalır? | Yalnızca canlı hücrede çoğalır. Bakteriyofaj örneğinde beş adım: tutunma, genetik maddeyi aktarma, parçaların hücrece üretimi, birleşme, çıkış | kitap dışı |
+| 4 Hastalık ve fırsat | Her virüs kendine uygun hücreye tutunur (grip: solunum yolu, kuduz: sinir hücresi); hastalık örnekleri (grip, kızamık, suçiçeği, kuduz, COVID-19); bakteriyofaj ve antibiyotiğe dirençli bakteriler | program "verilebilir", "vurgulanabilir" der; örnekler kitap dışı |
+| 5 Canlı mı, cansız mı? | Cansıza benzer: hücresi ve metabolizması yok, tek başına çoğalamaz. Canlıya benzer: genetik maddesi var, hücrede çoğalır, zamanla değişebilir. Sonuç: canlı ile cansız arasında | sonuç kitap s. 41; gerekçeler kitap dışı |
+
+Bilerek alınmayanlar: virüs çeşitleri ve biçimleri, litik ve lizogenik döngü adları, hücre dışında kristalleşme, bağışıklık ve aşı, antibiyotiklerin virüse etki etmemesi, bulaşma yolları. Program bunları saymaz.
+
+Eski dersten çıkanlar: ölçeksiz boyut şeritleri ve "şeritler gerçek ölçüm vermiyor" uyarısı (`KURALLAR.md` 3.1: yazarın çekinceleri öğrenciye söylenmez), "bu derste henüz eksiktir" cümlesi.
+
+### E1 · Su ve minerallerin yaşamsal görevleri (3 → 4 sahne; 1 ve 2. sahneler değişmedi)
+
+Kitabın s. 46'daki tablosu altı satırı Su ve Mineraller sütunlarıyla boş verir. Cevaplar:
+
+| Satır (kitap) | Derste soru | Su | Mineral | Gerekçe (derste söylenen) | Kaynak |
+|---|---|---|---|---|---|
+| sindirilir / sindirilmez | Sindirilir mi? | Hayır | Hayır | Büyük molekül sindirilerek küçültülür; su ve mineral zaten küçüktür | kitap dışı |
+| hücre zarından geçer / geçmez | Zardan geçer mi? | Evet | Evet | Küçük oldukları için doğrudan geçerler | kitap dışı |
+| hücresel solunumda kullanılır / kullanılmaz | Enerji verir mi? | Hayır | Hayır | Solunumda enerji veren, karbonhidrat ve yağ gibi organik besinlerdir | kitap dışı |
+| canlılar tarafından üretilir / üretilmez | Dışarıdan alınır mı? | Evet | Evet | Mineral hiç üretilemez (kitap s. 51); canlı suyu da dışarıdan alır | mineral kitap; su kitap dışı |
+| canlı yapısına katılır / katılmaz | Yapıya katılır mı? | Evet | Evet | Su hücrenin büyük bölümü (s. 45); kalsiyum ve fosfor kemik ve dişte | su kitap; kalsiyum ve fosfor E4'te de anlatılır |
+| düzenlemede görev alır / almaz | Düzenleyici mi? | Evet | Evet | Su sıcaklığı dengeler (s. 45); mineraller kas, sinir, su dengesi (s. 51) | kitap |
+
+**Yazarın kararı, "üretilir mi" satırı:** su bazı tepkimelerde açığa çıkar (F1'de anlatılan su çıkışlı bağ kurma, solunum). Bu yüzden satır "üretilmez" diye değil "Dışarıdan alınır mı?" diye soruldu ve derste "Bazı tepkimelerde su açığa çıkar, ama bu ihtiyacı karşılamaz." cümlesi var. Öğretmen anahtarı "üretilmez" bekliyorsa cevap bununla çelişmez. Kullanıcı isterse satır kitabın sözüyle ("Üretilir mi? Hayır") yazılır.
+
+Çıkış soruları: E1'in ilk sorusu tablodan soruldu (sindirilmeden zardan geçme); ikincisi değişmedi.
+
+### Denetim
+
+`olc.js` D6 ve E1'de temiz (D6: 5 sahne, 36 altyazı; E1: 4 sahne, 32 altyazı), `sure.js` süreleri yazdı (D6 365 sn, E1 306 sn), `denetle.js` temada temiz; her iki dersin görüntüleri incelendi. Seslendirme üretilmedi; iki dersin `speak` metni yeni anlatımla birlikte yeniden denetlenecek.

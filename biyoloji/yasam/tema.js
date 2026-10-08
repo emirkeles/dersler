@@ -14,10 +14,10 @@ KATALOG.tema('biyoloji','yasam',{
 ['d3-tepki-ureme-uyum.html', 'Tepki ve kalıtsal uyum', 'Işığa yönelme, kalıtsal uyumun tek başına kanıtı mı?', 4, 268],
 ['d4-hucre-organizasyon.html', 'Hücre ve organizasyon', 'Bir yaprak fotoğrafı hücreyi göstermek için yeterli mi?', 3, 224],
 ['d5-metabolizma-enerji.html', 'Metabolizma ve iç denge', 'Terleme kaydı iç dengeyle nasıl ilişkilendirilir?', 3, 245],
-['d6-virus-siniri.html', 'Virüs ve canlılık sınırı', 'Virüsü bir hücreyle aynı biçimde değerlendirebilir miyiz?', 3, 243]
+['d6-virus-siniri.html', 'Virüs ve canlılık sınırı', 'Virüs çoğalır ve hastalık yapar. Peki canlı mıdır?', 5, 365]
 ]},
  {harf:'E',ad:'İnorganik moleküller',renk:'#3cc8e8',dersler:[
-['e1-inorganik-ozellikler.html', 'Su ve minerallerin yaşamsal görevleri', 'Su ve mineraller hücrede hangi işlere katkı sağlar?', 3, 235],
+['e1-inorganik-ozellikler.html', 'Su ve minerallerin yaşamsal görevleri', 'Su ve mineraller enerji vermez. Peki neden onlarsız yaşayamayız?', 4, 306],
 ['e2-su-tutunur.html', 'Su tutunur', 'Ağzına kadar dolu bardağa para atarsan su hemen taşar mı?', 4, 269],
 ['e3-su-tasir-dengeler.html', 'Su taşır ve dengeler', 'Buz su yüzeyinde kalınca altındaki yaşam nasıl etkilenir?', 4, 285],
 ['e4-mineral-gorevleri.html', 'Mineraller ne iş görür?', 'Sütteki, çaydaki ve muzdaki mineraller vücutta ne iş görür?', 4, 285],

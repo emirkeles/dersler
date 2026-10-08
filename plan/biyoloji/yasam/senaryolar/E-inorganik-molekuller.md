@@ -4,16 +4,19 @@ Dayanak: BİY.9.1.5 a–c; içerik çerçevesi, uygulama a–c. Ayrıntılar MEB
 
 ## E1 · Su ve mineraller yaşamsal işlevlere katılır
 
-- Fikir: İnorganik bileşenler yapıya katılır ve yaşamsal faaliyetleri destekler.
-- Açılış: Su ve mineraller hücrede hangi işlere katkı sağlar?
+3 ve 4. sahneler 8 Ekim 2026'da yazıldı (kullanıcı kararı; `PLAN.md` bölüm 13): kitabın s. 46'da boş verdiği altı satırlık tablo, kitap dışı bilgiyle dolduruldu. 1 ve 2. sahneler değişmedi.
+
+- Fikir: Su ve mineraller sindirilmez, enerji vermez, dışarıdan alınır; zardan doğrudan geçer, yapıya katılır ve düzenler.
+- Açılış: Su ve mineraller enerji vermez. Peki neden onlarsız yaşayamayız?
 - 1. sahne: Su→hücre yapısı→taşıma/atık/sıcaklık düzenleme şeması; öğrenci suyun göreviyle ilgili çıkarımı seçer. Kaynak s.45.
 - 2. sahne: Toprakta çözünmüş mineraller→bitki ve besin/içme suyu→hayvan; minerallerin bünyede üretilemeyip dışarıdan alındığı açıklanır. Kaynak s.51.
-- 3. sahne: Altı değerlendirme yönü üç ardışık ikili kart grubunda gösterilir: sindirim/solunum, üretim/zar geçişi, yapıya katılma/düzenleme. Yalnız s.45 ve51'den doğrulanan örnekler doldurulur; suyun sindirime katkısı ile sindirilmesini karıştırma yanılgısı hedeflenir.
-- Yanılgı: İnorganik bileşenler önemsizdir; bir süreçte görev almak o süreçte parçalanmaktır.
-- Cümle: Su ve mineraller yaşamsal işlevlere katılır.
-- Çıkış 1: Suyun çözücülüğü besin taşımaya / bütün hücreleri aynı yapmaya / yaşamı durdurmaya katkı seçeneklerinde ilk.
+- 3. sahne · Küçük molekül, doğrudan geçiş. Hücre zarı çizgisi; nişasta zinciri zara dayanır ve geçemez (büyük molekül önce sindirilir), su ve mineral noktaları küçüktür. Soru: içtiğin su hücreye girmeden önce sindirilir mi? (Hayır.) Noktalar zardan geçer. Tablo açılır (Özellik · Su · Mineral): "Sindirilir mi? Hayır, Hayır", "Zardan geçer mi? Evet, Evet". Hücresel solunumda enerji veren organik besinlerdir; "Enerji verir mi? Hayır, Hayır".
+- 4. sahne · Yapıya katılır, düzenler. Aynı tablo, üç satır. "Dışarıdan alınır mı? Evet, Evet": mineral hiç üretilemez; canlı suyu da dışarıdan alır, tepkimelerde açığa çıkan su ihtiyacı karşılamaz. "Yapıya katılır mı? Evet, Evet": su hücrenin büyük bölümü, kalsiyum ve fosfor kemik ve dişte. Düzenleyici molekül tanımlanır, su terlemeyle sıcaklığı dengeler. Soru: minerallerin kas ve sinirlerin çalışmasında görev alması hangi özelliğe örnek? (Düzenleme.) "Düzenleyici mi? Evet, Evet". Kapanış: enerji vermezler ama onlarsız hiçbir yaşamsal faaliyet yürümez.
+- Yanılgı: İnorganik bileşenler önemsizdir; enerji vermeyen madde gereksizdir; alınan her madde sindirilir.
+- Cümle: Su ve mineraller sindirilmez, enerji vermez, dışarıdan alınır; zardan doğrudan geçer, yapıya katılır ve düzenler.
+- Çıkış 1: Su ve mineraller için hangisi doğru: sindirilmeden zardan geçerler / solunumda enerji verirler / yapıya katılmazlar seçeneklerinde ilk.
 - Çıkış 2: Mineraller bünyede üretildiği için besin gerekmez / dışarıdan alınır / yalnız hayvanda bulunur seçeneklerinde ikinci.
-- Kısmi kapsam: s.46 tablosu boş, s.45 animasyonu giriş ekranına yönlendi; su üretimi, su/mineral sindirilme/solunum/zar geçişi tam sınıflandırma cevapları kaynaklanamadı. Minerallerin üretilemediği s.51 ile doğrulanır. Bu eksik kapsam raporlanır; kaynak geliştirme dersi yazılmaz.
+- Kapsam: BİY.9.1.5 a ve uygulama a'nın altı özelliği. "Üretilir mi" satırı "Dışarıdan alınır mı?" diye soruldu (gerekçe `PLAN.md` bölüm 13).
 
 ## E2 · Su tutunur
 

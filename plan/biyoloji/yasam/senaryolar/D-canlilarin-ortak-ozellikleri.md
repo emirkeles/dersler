@@ -123,13 +123,17 @@ Tahta: üç günün dolu tablosu; üreme satırı vurgulanır (altı eksi).
 
 ## D6 · Virüs ve canlılık sınırı
 
-- Fikir: Virüs, canlı hücre tanımına tam uymadığı için canlı/cansız ayrımında doğrudan sıradan hücre gibi değerlendirilmez.
-- Açılış: Virüsü bir hücreyle aynı biçimde değerlendirebilir miyiz?
-- 1. sahne: Temsili prokaryot/ökaryot hücreler karşılaştırılır; canlıların hücresel yapısı ile virüsün hücre tanımına tam uymaması ayrı şemalarda gösterilir. Öğrenci yapı ve süreçlerin birlikte değerlendirilmesini seçer.
-- 2. sahne: Hücre/virüs için ölçekli olmayan boyut şeritleri; genel olarak daha küçük ve basit yapı bilgisi verilir. Boyutun canlılık kararına tek başına yetmediği seçilir; ölçüm veya oran uydurulmaz.
-- 3. sahne: Canlı ve cansız kutuları arasında virüs gösterilir; hücre tanımının sınırıyla canlı/cansız olarak doğrudan sınıflandırılamama ilişkilendirilir. Yapı/çoğalma içeriğinin kaynak doğrulaması beklediği tek kısa kapsam notu olarak belirtilir.
-- Yanılgı: Küçük olan cansızdır; virüs prokaryot veya ökaryot hücreyle aynıdır.
-- Cümle: Virüsler canlı hücre tanımına tam uymaz.
-- Çıkış 1: Virüs hücre tanımına tam uymaz / ökaryottur / prokaryottur seçeneklerinde ilk.
-- Çıkış 2: Daha küçük olması kesin canlı / kesin cansız / tek başına yetmez seçeneklerinde son.
-- Kapsam: BİY.9.1.4 c kısmen karşılanır; yapı/çoğalma ve bütün ortak özelliklerin ayrıntılı karşılaştırması kaynak doğrulaması bekler. Ders kaynak denetimi öğretimine dönüştürülmez; s.41'in doğrudan biyolojik bilgisiyle sınırlı kalır. Virüslerin hastalığa neden olabileceği ve bakteriyofajların antibiyotiklere alternatif tedavi fırsatı programda anıldığı kadar iki kısa altyazıyla yer aldı. Zihin haritası ve sınıf tartışması site dışıdır.
+8 Ekim 2026'da baştan yazıldı (kullanıcı kararı; `PLAN.md` bölüm 13). Yapı ve çoğalma kitapta yok (s. 42 giriş isteyen videoya bırakıyor); programın istediği genellikte, kitap dışı bilgiyle yazıldı.
+
+- Fikir: Virüs genetik madde ile protein kılıftan oluşur, yalnızca canlı hücrede çoğalır; bu yüzden ne canlı ne cansız sayılır.
+- Açılış: Öğret. Virüs çoğalır ve hastalık yapar. Peki canlı mıdır?
+- 1. sahne · Virüs bir hücre mi? Hücre çizilir (zar, sitoplazma, ribozom); canlılar hücreden oluşur, hücre beslenir, enerji üretir, büyür, bölünür. Yanında küçük virüs: hücre değildir, çok daha küçük ve basittir. Soru: küçük olması tek başına cansız olduğunu gösterir mi? (Hayır; boyut ölçüt değildir.)
+- 2. sahne · Virüsün yapısı. Büyük virüs şeması sırayla etiketlenir: genetik madde (DNA ya da RNA; yeni virüsün bilgisini taşır), protein kılıf (kapsit), bazı virüslerde zarf. Sonra "Virüste yok" kartı: sitoplazma, ribozom, enerji üreten yapı. Soru: ribozomu olmayan virüs kılıf proteinini kendi başına üretebilir mi? (Hayır; bir hücrenin ribozomuna muhtaç.)
+- 3. sahne · Virüs nasıl çoğalır? Bakteri ve bakteriyofaj. Beş adım canlandırılır ve yanda sırayla yazılır: 1 tutunma, 2 aktarma, 3 üretim, 4 birleşme, 5 çıkış. İkinci adımdan sonra soru: yeni virüs parçalarını kim üretir? (Hücrenin ribozomları ve enerjisi.) Kapanış: çıkan her virüs yeni bir hücrede aynı döngüyü başlatır.
+- 4. sahne · Hastalık ve fırsat. Her virüs kendine uygun hücreye tutunur: grip virüsü solunum yolu hücresi, kuduz virüsü sinir hücresi. Çoğalırken hücreye zarar verdiği için hastalık; örnekler: grip, kızamık, suçiçeği, kuduz, COVID-19. Bakteriyofaj yalnızca bakteride çoğalır. Soru: bu özellik neye yarayabilir? (Hastalık yapan bakterileri yok etmeye.) Antibiyotiğe dirençli bakterilerde alternatif tedavi fırsatı.
+- 5. sahne · Canlı mı, cansız mı? İki sütun. Cansıza benzer: hücresi yok, metabolizması yok, tek başına çoğalamaz. Soru: canlılara benzeyen yanı hangisi? (Genetik madde taşıması ve hücrede çoğalması.) Canlıya benzer: genetik maddesi var, hücrede çoğalır, zamanla değişebilir. Sonuç: hücre dışında cansız gibi, hücre içinde canlıya benzer; ne canlı ne cansız olarak sınıflandırılır.
+- Yanılgı: Küçük olan cansızdır; virüs bir hücredir; virüs kendi kendine çoğalır.
+- Cümle: Virüs = genetik madde + protein kılıf. Yalnızca canlı hücrede çoğalır; canlı ile cansız arasında yer alır.
+- Çıkış 1: Virüsün yapısında hangisi bulunur: genetik madde ve protein kılıf / ribozom ve sitoplazma / enerji üreten yapılar seçeneklerinde ilk.
+- Çıkış 2: Neden canlı olarak sınıflandırılamaz: genetik maddesi yok / hücre dışında yaşamsal faaliyet göstermez / çok küçük seçeneklerinde ikinci.
+- Kapsam: BİY.9.1.4 c ve uygulama c'nin tamamı. Alınmayanlar: virüs çeşitleri, döngü adları, kristalleşme, bağışıklık ve aşı (program saymaz). Zihin haritası ve sınıf tartışması site dışıdır.

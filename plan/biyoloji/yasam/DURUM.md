@@ -1,6 +1,6 @@
 # Durum — Yaşam
 
-7 Ekim 2026. **Teknik yazım ve denetim tamam; tam müfredat kapsamı D6/E1 kaynak erişimi bekliyor.** 8 konu, 37 ders, 136 özgün sahne, 74 çıkış sorusu. Tema yayında değil.
+7 Ekim 2026. **Teknik yazım ve denetim tamam; tam müfredat kapsamı D6/E1 kaynak erişimi bekliyor.** (8 Ekim 2026: D6 ve E1 kullanıcı kararıyla kitap dışı bilgiyle tamamlandı; en alttaki "D6 ve E1" bölümü.) 8 konu, 37 ders, 136 özgün sahne, 74 çıkış sorusu. Tema yayında değil.
 
 | Adım | Durum |
 |---|---|
@@ -28,8 +28,8 @@
 | D3 | bitti | bitti | temiz | Son görüntü incelemesi tamam |
 | D4 | bitti | bitti | temiz | Son görüntü incelemesi tamam |
 | D5 | bitti | bitti | temiz | Son görüntü incelemesi tamam |
-| D6 | bitti | kısmî | temiz | kısmî: yapı/çoğalma EBA kaynağı bekliyor |
-| E1 | bitti | kısmî | temiz | kısmî: tam altı özellik tablosunun cevapları kaynak bekliyor |
+| D6 | bitti | bitti (8 Ekim 2026, baştan; 5 sahne) | temiz | yapı ve çoğalma kitap dışı bilgiyle yazıldı; görüntüler incelendi |
+| E1 | bitti | bitti (8 Ekim 2026; 4 sahne) | temiz | altı özellik tablosu kitap dışı bilgiyle dolduruldu; görüntüler incelendi |
 | E2 | bitti | bitti | temiz | Son görüntü incelemesi tamam |
 | E3 | bitti | bitti | temiz | Son görüntü incelemesi tamam |
 | E4 | bitti | bitti | temiz | Son görüntü incelemesi tamam |
@@ -55,8 +55,8 @@
 
 ## Kaldığımız yer / devam
 
-1. D6: kitap s42 virüs videosu, EBA `resourceId=cea5d7aa622370b61fa89ad5d43f3166` giriş sayfasına yönlendi. Kaynağın yapı ve genel çoğalma içeriği erişilebilir olduğunda ekle; BİY.9.1.4 c/uygulama c yeniden denetlensin. Hafızadan kapsit/genetik yapı/çoğalma eklenmedi.
-2. E1: s46 altı özellik karşılaştırma tablosu boş; s45 EBA animasyonu `resourceId=3d45da285a3549002b315f9e91f4c0a8` giriş sayfasına yönlendi. Su üretimi ve su/minerallerin sindirim, solunum ve zar geçişi tam cevapları kaynakla tamamlanmalı. S161 cevap anahtarı karekodu da giriş ekranına yönlendi. Mineralin üretilememesi s51’den doğrulanmış ve öğretildi.
+1. **Kapandı (8 Ekim 2026, kullanıcı kararı).** D6: kitap s42 virüs videosu, EBA `resourceId=cea5d7aa622370b61fa89ad5d43f3166` giriş sayfasına yönlendi. Kaynağın yapı ve genel çoğalma içeriği erişilebilir olduğunda ekle; BİY.9.1.4 c/uygulama c yeniden denetlensin. Hafızadan kapsit/genetik yapı/çoğalma eklenmedi.
+2. **Kapandı (8 Ekim 2026, kullanıcı kararı).** E1: s46 altı özellik karşılaştırma tablosu boş; s45 EBA animasyonu `resourceId=3d45da285a3549002b315f9e91f4c0a8` giriş sayfasına yönlendi. Su üretimi ve su/minerallerin sindirim, solunum ve zar geçişi tam cevapları kaynakla tamamlanmalı. S161 cevap anahtarı karekodu da giriş ekranına yönlendi. Mineralin üretilememesi s51’den doğrulanmış ve öğretildi.
 3. Sınıfta gerçek gözlem/deney/ölçüm, serbest kaynak araştırması ve ürün hazırlanması gerekir; hazır benzetimler bunları tamamlamış sayılmaz. H sayısal ölçüm tablosu/grafiği için s82 hazır veri vermiyor.
 4. Gerçek öğrenci süre hedefi, mobil/klavye ve bütün yanlış cevap/baştan yolları denenmedi. Görsel yeniden yayın lisansı kesin doğrulanmadı; kaynak/hak kaydı gorsel/KAYNAK.md’de.
 
@@ -105,8 +105,8 @@ Bütçe tahmini (`SESLENDIRME.md` oranlarıyla): yaklaşık 61,4 dk ses, 29,0 MB
 | D3 | 28 | 1.728 | 3 | 2 thoughtful, 1 short pause |  |
 | D4 | 24 | 1.373 | 3 | 2 thoughtful, 1 short pause |  |
 | D5 | 27 | 1.698 | 5 | 2 thoughtful, 1 short pause |  |
-| D6 | 24 | 1.516 | 3 | 2 thoughtful, 1 short pause | üretim bekler: içerik kaynak bekliyor |
-| E1 | 23 | 1.436 | 2 | 1 thoughtful, 1 short pause | üretim bekler: içerik kaynak bekliyor |
+| D6 | 36 | 2.282 | 2 | 1 short pause, 1 thoughtful | 8 Ekim 2026'da baştan yazıldı; yeni metin denetlenmedi, üretilmedi |
+| E1 | 32 | 1.983 | 3 | 2 short pause, 1 thoughtful | 8 Ekim 2026'da 3 ve 4. sahne yazıldı; yeni metin denetlenmedi, üretilmedi |
 | E2 | 28 | 1.557 | 3 | 2 thoughtful, 1 short pause |  |
 | E3 | 31 | 1.891 | 3 | 2 thoughtful, 1 short pause |  |
 | E4 | 29 | 1.800 | 2 | 2 thoughtful |  |
@@ -150,7 +150,7 @@ E5'te iki yazım hatası düzeltildi; `olc.js` temiz: "kükürtün" → "kükür
 
 ### Açık bulgular (dokunulmadı; içerik kararı)
 
-- D6 sahne 3: "Virüsün yapı ve çoğalma bölümü bu derste henüz eksiktir." yer tutucu cümlesi seslendirilecek satırlar arasında; ders yayında.
+- ~~D6 sahne 3: "Virüsün yapı ve çoğalma bölümü bu derste henüz eksiktir." yer tutucu cümlesi~~ kalktı (8 Ekim 2026); tema sayfasının dipnotundaki aynı cümle de silindi.
 - E2 sahne 1: "Lamları ayırma deneyimi" büyük olasılıkla "deneyi" olacaktı (doğrulanmadı). E3 sahne 3: "Gerçek sıcaklıklar olmadan hangi sıvının hızını ölçtüğünü söyleyemezsin." anlamı bulanık. F6 sahne 1: "Baş suyla, kuyruklar ise suyla daha az temas eder." eksiltili. F3 sahne 2: şablon Maltoz için "Glikoz ve Glikoz bu şekerin birimleridir." üretiyor.
 - Cevabı sorudan önce söyleyen anlatım: F2 sahne 2 ("Deoksiriboz DNA’nın yapısına katılır."), F10 sahne 4 ("DNA’da adenin timinle…"). F10 sahne 3'te bir cümle sorudan önce ve sonra iki kez söyleniyor.
 - Aynı klip art arda çok kez çalacak: A1 sahne 3 ve A2 sahne 3 (üçer kez), G1 sahne 4 (iki cümle dörder kez), E4 ve E5 (mineral başına yinelenen iki cümle, toplam 11 kez). Sesli izlemede tekdüze kalabilir.
@@ -170,3 +170,18 @@ Ayrıntı ve konu konu karar: `PLAN.md` bölüm 12.
 
 Yayındaki 37 dersin 20'si yeni anlatımla (A, B, C konularının tamamı, D1, D2, E2, E4, E5, F9, G ve H konularının tamamı); 17 ders eski anlatımla (D3–D6, E1, E3, F1–F8, F10–F12). `tema.js` sahne sayıları, giriş soruları ve süreler güncel. A1'in pilot klipleri (`ses/yasam-a1/`, 24 klip) eski metne ait; yeni derste çalmaz.
 
+## D6 ve E1: kitap dışı içerikle tamamlama (8 Ekim 2026)
+
+Kullanıcı kararı ve içerik dökümü: `PLAN.md` bölüm 13. Kural: `plan/KURALLAR.md` 2.1 (istisna).
+
+| İş | Durum |
+|---|---|
+| D6 baştan (5 sahne, 36 altyazı): hücre ile virüs, yapı, çoğalma, hastalık ve bakteriyofaj, canlı/cansız | yazıldı; `olc.js` temiz; görüntüler incelendi |
+| E1 3 ve 4. sahne (4 sahne, 32 altyazı): altı özelliğin tablosu | yazıldı; `olc.js` temiz; görüntüler incelendi |
+| `tema.js` (D6 5 sahne, E1 4 sahne, açılış soruları), tema sayfası dipnotu | güncel; `sure.js` D6 365 sn, E1 306 sn; `denetle.js` temiz |
+| Senaryolar (D6, E1), `PLAN.md` denetim tablosu ve bölüm 13 | güncel |
+| Seslendirme | üretilmedi. Yukarıdaki "Seslendirme" tablosunda D6 ve E1 satırları eski metne ait; yeni metin (D6 36, E1 32 altyazı) seslendirmeden önce yeniden denetlenecek |
+
+Kullanıcının bakması istenenler: E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulması (`PLAN.md` bölüm 13); D6 3. sahnedeki çoğalma canlandırması.
+
+Yayındaki 37 dersin 21'i yeni anlatımla (D6 eklendi); E1'in ilk iki sahnesi eski anlatımda.
