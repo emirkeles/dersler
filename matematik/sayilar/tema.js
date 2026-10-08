@@ -9,7 +9,7 @@ KATALOG.tema('matematik', 'sayilar', {
       ['a4-koklerle-islem.html', 'Köklerle işlem', '√9 + √16 ile √(9+16) aynı mı?', 4, 444],
       ['a5-rasyonel-us.html', 'Rasyonel üs ve n. kök', 'Yolu üçe bölersek ilk parçanın sonunda kaç kişi vardı?', 4, 223],
       ['a6-eslenik.html', 'Eşlenik', 'Paydada √3 − 1 varsa kökten nasıl kurtuluruz?', 4, 224],
-      ['a7-bilimsel-gosterim.html', 'Bilimsel gösterim', '150 000 000 km. Bu sıfırları her seferinde yazacak mıyız?', 3, 195],
+      ['a7-bilimsel-gosterim.html', 'Bilimsel gösterim', '150 000 000 km. Bu sıfırları her seferinde yazacak mıyız?', 4, 271],
       ['a8-yaklasik-deger.html', 'Yaklaşık değer', 'Alanı 1000 m² olan kare tarlanın kenarı kaç metre?', 4, 272],
     ] },
     { harf: 'B', ad: 'Aralıklar ve kümeler', renk: '#3ddc97', dersler: [
@@ -41,6 +41,7 @@ KATALOG.tema('matematik', 'sayilar', {
   ],
   // Hikâye videoları dersin son sahnesinde de oynar; burada tek tek yeniden izlenebilir.
   hikayeler: [
+    { kod: 'A7', ders: 'Bilimsel gösterim', ad: '3 nanometre ne kadar küçük?', video: 'hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4', kapak: 'hikaye/a7-3-nanometre/renders/kapak.jpg' },
     { kod: 'A8', ders: 'Yaklaşık değer', ad: 'Bir dönüm tarla, kaç metre çit?', video: 'hikaye/a8-tarla-cit/renders/sesli-taslak.mp4', kapak: 'hikaye/a8-tarla-cit/renders/kapak.jpg' },
     { kod: 'B7', ders: 'Mutlak değerle aralık', ad: 'Kombi 22 derecede', video: 'hikaye/b7-kombi-22/renders/b7-kombi-22.mp4', kapak: 'hikaye/b7-kombi-22/renders/kapak.jpg' },
   ]

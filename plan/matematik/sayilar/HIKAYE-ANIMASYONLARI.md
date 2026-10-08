@@ -10,7 +10,8 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 |---|---|---|
 | 1 · A8 Tarla ve çit | Seslendirildi; sesli taslak işlendi (`hikaye/a8-tarla-cit/renders/sesli-taslak.mp4`) ve A8 dersinin son sahnesine bağlandı | Son işleme, müzik, efekt, altyazı dosyası |
 | 3 · B7 Kombi 22 derecede | Seslendirildi, işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) ve B7 dersinin son sahnesine bağlandı | Müzik, efekt, altyazı dosyası |
-| 2 C4 · 4 C5 · 5 A7 · 6 D3 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
+| 5 · A7 3 nanometre | Seslendirildi (George, erkek ses; kullanıcı seçti), işlendi (`hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4`, 73,5 sn) ve A7 dersinin son sahnesine bağlandı (8 Ekim 2026; `hikaye/A7-3-nanometre.md`) | Müzik, efekt, altyazı dosyası |
+| 2 C4 · 4 C5 · 6 D3 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
 
 Motorda video sahnesi türü var (`ortak/API.md`). Tema sayfasında "Hikâyeler" başlığı var (7 Ekim 2026; liste `ortak/katalog.js` içinde). Kapanış kartında her zaman dersin akılda kalıcı cümlesi yazar; tek istisna C5'teki siyah kuğu cümlesidir (`senaryolar/C-sayi-kumeleri.md`).
 

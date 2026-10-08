@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>3 nanometre ne kadar küçük?</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin-ext.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+          U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* Dört mürekkep ve kâğıt (frame.md). */
+      :root {
+        --krem: #f3ebdc;
+        --koyu: #191c45;
+        --mavi: #3560c4;
+        --sari: #f6c231;
+        --mercan: #d8334a;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #f3ebdc;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Plex Sans", sans-serif;
+      }
+      #sahne {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+      }
+      #dunya,
+      #ust,
+      #dis-kat {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      #dis-kat {
+        z-index: 3;
+        pointer-events: none;
+      }
+      #kapanis {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #perde {
+        position: absolute;
+        inset: 0;
+        background: rgba(25, 28, 69, 0.84);
+      }
+      #kart {
+        position: relative;
+        width: 1380px;
+        padding: 96px 110px 88px;
+        border: 8px solid #191c45;
+        border-radius: 30px;
+        background: #f3ebdc;
+        box-shadow: 18px 18px 0 #f6c231;
+        color: #191c45;
+      }
+      #cumle {
+        font-size: 80px;
+        font-weight: 600;
+        line-height: 1.16;
+        letter-spacing: -0.01em;
+      }
+      .satir {
+        display: block;
+        width: 100%;
+      }
+      #cizgi {
+        width: 100%;
+        height: 4px;
+        margin: 54px 0 40px;
+        border-radius: 2px;
+        background: #191c45;
+        opacity: 0.35;
+        transform-origin: 0 50%;
+      }
+      #model {
+        font-size: 44px;
+        font-weight: 500;
+        color: #191c45;
+        font-variant-numeric: tabular-nums;
+      }
+      #model sup {
+        font-size: 0.62em;
+        line-height: 0;
+      }
+      #sahne text {
+        font-family: "Plex Sans", sans-serif;
+        font-variant-numeric: tabular-nums;
+      }
+      /* Mürekkep sınıfları: k koyu, m mavi, s sarı, r mercan, p kâğıt (mürekkepsiz bırakılan yer). */
+      .fk { fill: #191c45; }
+      .fm { fill: #3560c4; }
+      .fs { fill: #f6c231; }
+      .fp { fill: #f3ebdc; }
+      .ck { fill: none; stroke: #191c45; stroke-linecap: round; stroke-linejoin: round; }
+      .cp { fill: none; stroke: #f3ebdc; stroke-linecap: round; stroke-linejoin: round; }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-15lu" id="root" data-composition-id="main" data-start="0" data-duration="73.5" data-width="1920" data-height="1080">
+      <!-- Tek dünya: akşamüstü durak. Kamera ileriki karelerde aynı resmin içinde panoya ve saç teline iner. -->
+      <!-- Dünya zamanlı bir klip değildir; baştan sona durur. Zamanlama betikteki T tablosundadır. -->
+      <section data-hf-id="hf-sgag" id="sahne">
+        <svg data-hf-id="hf-5c9c" id="dunya" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" data-layout-allow-overflow="">
+          <defs data-hf-id="hf-mh0t">
+            <!-- Nokta taramaları: ara ton, mürekkebin seyreltilmiş hâli. -->
+            <pattern data-hf-id="hf-3ukw" id="tr-mavi" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-kyr2" cx="8" cy="8" r="6" fill="#3560c4" />
+            </pattern>
+            <pattern data-hf-id="hf-s039" id="tr-mavi-acik" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-er4v" cx="8" cy="8" r="3.2" fill="#3560c4" />
+            </pattern>
+            <pattern data-hf-id="hf-nhiu" id="tr-sari" width="16" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-ixjl" cx="8" cy="8" r="5" fill="#f6c231" />
+            </pattern>
+            <!-- Saç teli düzlemlerinin dokusu: telin yüzeyi, sonra giderek açılan tarama. -->
+            <pattern data-hf-id="hf-80wx" id="tr-kutikul" width="400" height="340" patternUnits="userSpaceOnUse">
+              <path data-hf-id="hf-39u8" d="M 0 85 C 60 55 130 115 200 85 S 340 55 400 85" fill="none" stroke="#3560c4" stroke-width="8" opacity="0.7" />
+              <path data-hf-id="hf-tlow" d="M 0 255 C 70 285 120 225 200 255 S 330 285 400 255" fill="none" stroke="#3560c4" stroke-width="8" opacity="0.7" />
+            </pattern>
+            <pattern data-hf-id="hf-9t10" id="tr-d1" width="110" height="110" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-w50y" cx="55" cy="55" r="30" fill="#3560c4" opacity="0.5" />
+            </pattern>
+            <pattern data-hf-id="hf-1s1b" id="tr-d2" width="280" height="280" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-pw7n" cx="140" cy="140" r="84" fill="#3560c4" opacity="0.5" />
+            </pattern>
+            <pattern data-hf-id="hf-ry3w" id="tr-d3" width="700" height="700" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-b228" cx="350" cy="350" r="236" fill="#3560c4" opacity="0.45" />
+            </pattern>
+            <pattern data-hf-id="hf-ikxz" id="tr-d4" width="1800" height="1800" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+              <circle data-hf-id="hf-xxg8" cx="900" cy="900" r="640" fill="#3560c4" opacity="0.35" />
+            </pattern>
+            <filter data-hf-id="hf-olq8" id="dis" x="0" y="0" width="100%" height="100%">
+              <feturbulence data-hf-id="hf-0ffn" type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="g" />
+              <fecolormatrix data-hf-id="hf-s6oy" in="g" type="matrix" values="0 0 0 0 0.10  0 0 0 0 0.11  0 0 0 0 0.27  0 0 0 0.5 -0.1" />
+            </filter>
+          </defs>
+
+          <!-- Kâğıt -->
+          <rect data-hf-id="hf-5pfj" class="fp" x="-960" y="-540" width="3840" height="2160" />
+
+          <!-- Durak dünyası. Kamera bu grubun dönüşümüdür (betikte "ciz"). -->
+          <g data-hf-id="hf-jato" id="kam">
+          <!-- Gök: üstte düz mavi, ufka doğru nokta taramasıyla açılır (noktalar betikte dizilir). -->
+          <g data-hf-id="hf-2nhq" class="m" id="gok">
+            <rect data-hf-id="hf-ixen" class="fm" x="-960" y="-540" width="3840" height="790" />
+            <g data-hf-id="hf-hbyu" id="gok-nokta" fill="#3560c4" />
+          </g>
+          <!-- Bulutlar ve rüzgâr çizgileri: mavinin içinde boş bırakılmış kâğıt. -->
+          <g data-hf-id="hf-jj4j" class="p" id="bulutlar">
+            <g data-hf-id="hf-2quh" id="bulut-1">
+              <rect data-hf-id="hf-smqb" class="fp" x="330" y="118" width="250" height="44" rx="22" />
+              <rect data-hf-id="hf-5asg" class="fp" x="390" y="84" width="150" height="44" rx="22" />
+            </g>
+            <g data-hf-id="hf-8wka" id="bulut-2">
+              <rect data-hf-id="hf-5q5f" class="fp" x="1450" y="96" width="300" height="46" rx="23" />
+              <rect data-hf-id="hf-34hr" class="fp" x="1530" y="62" width="160" height="46" rx="23" />
+              <rect data-hf-id="hf-lcn8" class="fp" x="1420" y="150" width="120" height="26" rx="13" />
+            </g>
+            <path data-hf-id="hf-vdr0" class="cp" id="ruzgar-1" stroke-width="7" d="M 760 190 C 850 170 920 204 1000 180 c 44 -14 46 -62 8 -64 c -28 -2 -34 34 -8 38" />
+            <path data-hf-id="hf-hd8w" class="cp" id="ruzgar-2" stroke-width="7" d="M 1130 196 C 1200 180 1260 206 1320 188" />
+          </g>
+
+          <!-- Alçak güneş -->
+          <g data-hf-id="hf-6i57" class="s" id="gunes">
+            <circle data-hf-id="hf-9rso" cx="420" cy="600" r="184" fill="url(#tr-sari)" />
+            <circle data-hf-id="hf-hju3" class="fs" cx="420" cy="600" r="128" />
+          </g>
+
+          <!-- Uzak şehir: mavi tarama -->
+          <g data-hf-id="hf-jdrm" class="m" id="sehir-uzak">
+            <path data-hf-id="hf-phk5" fill="url(#tr-mavi)" d="M -40 860 V 720 H 150 V 660 H 260 V 740 H 300 L 345 700 L 390 740 H 420 V 770 H 560 V 690 H 640 V 730 H 760 V 650 H 850 V 710 H 930 V 760 H 1000 V 680 H 1120 V 720 H 1390 V 700 H 1480 V 640 H 1560 V 720 H 1600 L 1630 690 L 1660 720 V 670 H 1760 V 740 H 1850 V 690 H 1960 V 860 Z" />
+            <rect data-hf-id="hf-e6rp" class="fm" x="798" y="596" width="6" height="56" />
+            <rect data-hf-id="hf-awem" class="fm" x="1516" y="590" width="6" height="52" />
+            <rect data-hf-id="hf-ni7k" class="fm" x="200" y="622" width="6" height="40" />
+          </g>
+          <!-- Yakın şehir: düz mavi, pencereler kâğıt -->
+          <g data-hf-id="hf-zqw5" class="m" id="sehir-yakin">
+            <path data-hf-id="hf-q80f" class="fm" d="M -40 860 V 792 H 110 V 760 H 230 V 806 H 340 V 778 H 450 V 820 H 560 V 860 Z" />
+            <path data-hf-id="hf-wfoa" class="fm" d="M 1390 860 V 810 H 1500 V 776 H 1600 V 800 H 1700 V 765 H 1800 V 812 H 1960 V 860 Z" />
+            <g data-hf-id="hf-s9gg" class="fp">
+              <rect data-hf-id="hf-s0sw" x="128" y="780" width="14" height="18" /><rect data-hf-id="hf-nvv0" x="160" y="780" width="14" height="18" /><rect data-hf-id="hf-iinn" x="192" y="780" width="14" height="18" />
+              <rect data-hf-id="hf-4kg2" x="128" y="816" width="14" height="18" /><rect data-hf-id="hf-s5l5" x="192" y="816" width="14" height="18" />
+              <rect data-hf-id="hf-ga6l" x="360" y="798" width="14" height="18" /><rect data-hf-id="hf-5i9i" x="392" y="798" width="14" height="18" /><rect data-hf-id="hf-ocnn" x="424" y="830" width="14" height="18" />
+              <rect data-hf-id="hf-4nng" x="30" y="812" width="14" height="18" /><rect data-hf-id="hf-ihlt" x="62" y="812" width="14" height="18" />
+              <rect data-hf-id="hf-9zo3" x="1720" y="786" width="14" height="18" /><rect data-hf-id="hf-qt04" x="1752" y="786" width="14" height="18" /><rect data-hf-id="hf-qil9" x="1752" y="822" width="14" height="18" />
+              <rect data-hf-id="hf-e9u7" x="1830" y="830" width="14" height="18" /><rect data-hf-id="hf-b11q" x="1862" y="830" width="14" height="18" />
+            </g>
+          </g>
+
+          <!-- Yer: kaldırım kâğıt, yol mavi -->
+          <g data-hf-id="hf-4kcz" class="m" id="yol">
+            <rect data-hf-id="hf-2hvy" class="fm" x="-960" y="1000" width="3840" height="620" />
+            <g data-hf-id="hf-wpg8" class="fp">
+              <rect data-hf-id="hf-1i4q" x="40" y="1036" width="120" height="9" /><rect data-hf-id="hf-454u" x="260" y="1036" width="120" height="9" /><rect data-hf-id="hf-5e02" x="480" y="1036" width="120" height="9" />
+              <rect data-hf-id="hf-qdk3" x="700" y="1036" width="120" height="9" /><rect data-hf-id="hf-b033" x="920" y="1036" width="120" height="9" /><rect data-hf-id="hf-xdfc" x="1140" y="1036" width="120" height="9" />
+              <rect data-hf-id="hf-i8a4" x="1360" y="1036" width="120" height="9" /><rect data-hf-id="hf-nt40" x="1580" y="1036" width="120" height="9" /><rect data-hf-id="hf-uelb" x="1800" y="1036" width="120" height="9" />
+            </g>
+            <rect data-hf-id="hf-l6oc" x="960" y="866" width="780" height="26" rx="13" fill="url(#tr-mavi)" />
+          </g>
+          <g data-hf-id="hf-m8zk" class="k" id="yer-cizgi">
+            <rect data-hf-id="hf-ez7n" class="fk" x="-960" y="857" width="3840" height="6" />
+            <rect data-hf-id="hf-rcnd" class="fk" x="-960" y="988" width="3840" height="12" />
+            <path data-hf-id="hf-xajg" class="ck" stroke-width="4" d="M 300 863 L 270 988 M 620 863 L 606 988 M 940 863 L 942 988 M 1260 863 L 1278 988 M 1580 863 L 1614 988 M 1880 863 L 1930 988" opacity="0.35" />
+          </g>
+
+          <!-- Sokak lambası -->
+          <g data-hf-id="hf-vcod" class="s" id="lamba-isik">
+            <path data-hf-id="hf-n151" fill="url(#tr-sari)" d="M 154 240 H 240 L 330 856 H 64 Z" />
+          </g>
+          <g data-hf-id="hf-3tjs" class="k" id="lamba">
+            <rect data-hf-id="hf-la91" class="fk" x="92" y="232" width="12" height="628" />
+            <path data-hf-id="hf-stzi" class="ck" stroke-width="12" d="M 98 236 C 98 196 150 204 178 216" />
+            <rect data-hf-id="hf-koxo" class="fk" x="148" y="208" width="98" height="26" rx="10" />
+            <rect data-hf-id="hf-s1oi" class="fk" x="78" y="840" width="40" height="20" rx="4" />
+          </g>
+          <g data-hf-id="hf-2eyt" class="s"><rect data-hf-id="hf-e9bb" class="fs" x="160" y="234" width="74" height="9" rx="4" /></g>
+
+          <!-- Durak -->
+          <g data-hf-id="hf-6d2u" class="p"><rect data-hf-id="hf-hmmh" class="fp" x="1392" y="330" width="324" height="460" /></g>
+          <g data-hf-id="hf-3dz4" class="m" id="durak-cam">
+            <path data-hf-id="hf-i7ie" fill="url(#tr-mavi-acik)" d="M 1420 790 L 1560 330 H 1640 L 1500 790 Z M 1610 790 L 1716 442 V 620 L 1664 790 Z" />
+          </g>
+          <g data-hf-id="hf-dzkg" class="k" id="durak">
+            <rect data-hf-id="hf-ee1k" class="ck" stroke-width="7" x="1392" y="330" width="324" height="460" />
+            <path data-hf-id="hf-jkfk" class="ck" stroke-width="7" d="M 1554 330 V 790" />
+            <rect data-hf-id="hf-vol1" class="fk" x="950" y="258" width="800" height="30" rx="6" />
+            <rect data-hf-id="hf-hd2y" class="fk" x="966" y="288" width="12" height="572" />
+            <rect data-hf-id="hf-tqyt" class="fk" x="1722" y="288" width="12" height="572" />
+            <rect data-hf-id="hf-sk1d" class="fk" x="1420" y="706" width="270" height="22" rx="7" />
+            <rect data-hf-id="hf-8lor" class="fk" x="1442" y="728" width="12" height="132" />
+            <rect data-hf-id="hf-45ha" class="fk" x="1656" y="728" width="12" height="132" />
+          </g>
+          <g data-hf-id="hf-cme3" class="m"><rect data-hf-id="hf-d30k" class="fm" x="962" y="288" width="776" height="9" /></g>
+
+          <!-- Reklam panosu: üstte sarı zemin ve telefon, altta "3 nm" -->
+          <g data-hf-id="hf-c6xm" class="p"><rect data-hf-id="hf-51bu" class="fp" x="1014" y="322" width="352" height="512" /></g>
+          <g data-hf-id="hf-t4u3" class="s" id="pano-sari"><rect data-hf-id="hf-1ffb" class="fs" x="1022" y="330" width="336" height="312" /></g>
+          <g data-hf-id="hf-3b66" class="k" id="telefon" transform="rotate(-9 1190 486)">
+            <rect data-hf-id="hf-w3x9" class="fk" x="1120" y="355" width="140" height="262" rx="24" />
+            <rect data-hf-id="hf-8xok" class="fp" x="1130" y="365" width="120" height="242" rx="15" />
+            <rect data-hf-id="hf-n29p" class="fk" x="1174" y="374" width="32" height="9" rx="4.5" />
+            <path data-hf-id="hf-uvnt" class="ck" stroke-width="6" d="M 1172 448 V 434 M 1190 448 V 434 M 1208 448 V 434 M 1172 524 V 538 M 1190 524 V 538 M 1208 524 V 538 M 1152 468 H 1138 M 1152 486 H 1138 M 1152 504 H 1138 M 1228 468 H 1242 M 1228 486 H 1242 M 1228 504 H 1242" />
+            <rect data-hf-id="hf-hh3q" class="fk" x="1154" y="450" width="72" height="72" rx="9" />
+            <rect data-hf-id="hf-tdw3" class="fp" x="1172" y="468" width="36" height="36" rx="4" />
+          </g>
+          <g data-hf-id="hf-67gb" class="k" id="pano">
+            <rect data-hf-id="hf-khbz" class="ck" stroke-width="18" x="1013" y="321" width="354" height="514" rx="10" />
+            <rect data-hf-id="hf-a4du" class="fk" x="1022" y="640" width="336" height="5" />
+            <rect data-hf-id="hf-uiti" class="fk" x="1052" y="844" width="16" height="16" />
+            <rect data-hf-id="hf-o7f5" class="fk" x="1312" y="844" width="16" height="16" />
+          </g>
+          <g data-hf-id="hf-abam" id="pano-yazi-kap">
+            <text data-hf-id="hf-rbyc" class="r" id="pano-yazi" x="1190" y="774" text-anchor="middle" font-size="112" font-weight="700" fill="#d8334a" letter-spacing="-1">3 nm</text>
+          </g>
+
+          <!-- Durak tabelası -->
+          <g data-hf-id="hf-pwkd" class="k"><rect data-hf-id="hf-04qu" class="fk" x="1836" y="418" width="10" height="442" /></g>
+          <g data-hf-id="hf-2phq" class="m" id="tabela">
+            <rect data-hf-id="hf-mip5" class="fm" x="1796" y="330" width="90" height="90" rx="16" />
+            <rect data-hf-id="hf-acu5" class="fp" x="1814" y="352" width="54" height="38" rx="9" />
+            <rect data-hf-id="hf-74lp" class="fm" x="1820" y="359" width="42" height="12" rx="3" />
+            <circle data-hf-id="hf-9t1u" class="fp" cx="1827" cy="398" r="6.5" /><circle data-hf-id="hf-f8tn" class="fp" cx="1855" cy="398" r="6.5" />
+          </g>
+          <g data-hf-id="hf-760h" class="k"><rect data-hf-id="hf-nros" class="ck" stroke-width="6" x="1796" y="330" width="90" height="90" rx="16" /></g>
+
+          <!-- Ece: sağa, panoya bakıyor. Rüzgâr soldan sağa eser; bir saç teli panoya doğru uzanır. -->
+          <g data-hf-id="hf-emj8" id="ece">
+            <g data-hf-id="hf-ah7f" class="m"><ellipse data-hf-id="hf-r0zw" cx="708" cy="913" rx="98" ry="11" fill="url(#tr-mavi)" /></g>
+            <g data-hf-id="hf-8cxk" class="k">
+              <rect data-hf-id="hf-799j" class="fk" x="676" y="780" width="19" height="120" />
+              <rect data-hf-id="hf-2y8k" class="fk" x="712" y="780" width="19" height="120" />
+              <rect data-hf-id="hf-d6y8" class="fk" x="668" y="894" width="42" height="19" rx="8" />
+              <rect data-hf-id="hf-5059" class="fk" x="706" y="894" width="46" height="19" rx="8" />
+            </g>
+            <g data-hf-id="hf-a2we" class="m"><rect data-hf-id="hf-7mz2" class="fm" x="604" y="612" width="60" height="116" rx="20" /></g>
+            <g data-hf-id="hf-7ymj" class="k">
+              <rect data-hf-id="hf-ejyz" class="ck" stroke-width="6" x="604" y="612" width="60" height="116" rx="20" />
+              <path data-hf-id="hf-b4eq" class="ck" stroke-width="5" d="M 616 676 H 652" />
+            </g>
+            <g data-hf-id="hf-w3o9" class="s"><path data-hf-id="hf-rbek" class="fs" d="M 650 600 C 660 572 742 572 752 600 L 774 794 H 628 Z" /></g>
+            <g data-hf-id="hf-5z3e" class="k">
+              <path data-hf-id="hf-pkkl" class="ck" stroke-width="6" d="M 650 600 C 660 572 742 572 752 600 L 774 794 H 628 Z" />
+              <path data-hf-id="hf-rnw0" class="ck" stroke-width="5" d="M 724 700 l 26 5" />
+            </g>
+            <g data-hf-id="hf-xalc" class="s"><path data-hf-id="hf-gpni" class="fs" d="M 690 604 C 722 634 730 690 718 730 L 694 726 C 702 692 698 652 676 624 Z" /></g>
+            <g data-hf-id="hf-cl8n" class="p"><circle data-hf-id="hf-sz0g" class="fp" cx="706" cy="738" r="11" /></g>
+            <g data-hf-id="hf-5ksd" class="k">
+              <path data-hf-id="hf-oivp" class="ck" stroke-width="6" d="M 690 604 C 722 634 730 690 718 730 L 694 726 C 702 692 698 652 676 624" />
+              <circle data-hf-id="hf-aa5v" class="ck" stroke-width="5" cx="706" cy="738" r="11" />
+            </g>
+            <g data-hf-id="hf-czjo" class="p">
+              <rect data-hf-id="hf-8si6" class="fp" x="694" y="556" width="22" height="26" />
+              <circle data-hf-id="hf-7xbf" class="fp" cx="706" cy="528" r="42" />
+              <path data-hf-id="hf-9u9y" class="fp" d="M 746 520 q 14 7 0 16 Z" />
+            </g>
+            <g data-hf-id="hf-6rpg" class="k">
+              <path data-hf-id="hf-xt9k" class="ck" stroke-width="6" d="M 694 566 V 580 M 716 566 V 580" />
+              <circle data-hf-id="hf-6fit" class="ck" stroke-width="6" cx="706" cy="528" r="42" />
+              <path data-hf-id="hf-iwef" class="ck" stroke-width="5" d="M 746 520 q 14 7 0 16" />
+              <path data-hf-id="hf-rmck" class="fk" d="M 744 502 C 732 466 676 462 662 506 C 652 536 660 566 650 600 C 644 622 628 636 614 640 C 640 648 672 630 682 600 C 690 574 684 548 692 524 C 700 504 722 496 744 502 Z" />
+              <path data-hf-id="hf-148k" class="fk" id="tel-1" d="M 696 490 C 728 452 800 472 860 440 C 826 482 786 496 746 512 Z" />
+              <path data-hf-id="hf-42mi" class="ck" id="tel-2" stroke-width="5" d="M 716 476 C 776 436 836 448 892 422" />
+              <path data-hf-id="hf-bqsq" class="ck" id="tel-3" stroke-width="3.5" d="M 706 472 C 796 404 880 432 968 392" />
+            </g>
+          </g>
+
+          <!-- Rüzgârdaki yapraklar -->
+          <g data-hf-id="hf-ofxw" class="s" id="yapraklar">
+            <g data-hf-id="hf-co8p" id="yaprak-1"><ellipse data-hf-id="hf-ubd1" class="fs" cx="880" cy="640" rx="19" ry="9" transform="rotate(-28 880 640)" /></g>
+            <g data-hf-id="hf-ityi" id="yaprak-2"><ellipse data-hf-id="hf-0ny5" class="fs" cx="548" cy="474" rx="17" ry="8" transform="rotate(22 548 474)" /></g>
+            <g data-hf-id="hf-ms2j" id="yaprak-3"><ellipse data-hf-id="hf-28bm" class="fs" cx="930" cy="760" rx="15" ry="7" transform="rotate(-12 930 760)" /></g>
+          </g>
+            <!-- 3. kare: "nm"nin altı çizilir. -->
+            <g data-hf-id="hf-qxqa" id="nm-cizgi-kap">
+              <rect data-hf-id="hf-1ul2" id="nm-cizgi" x="1158" y="791" width="160" height="9" rx="4.5" fill="#d8334a" />
+            </g>
+
+            <!-- 5. kare: kopan saç teli panonun sarı zeminine gelir; (1066, 470) noktasında dikeydir. -->
+            <g data-hf-id="hf-myam" id="ucan-tel" opacity="0">
+              <path data-hf-id="hf-6a22" class="ck" stroke-width="3.5" d="M 1036 318 C 1072 372 1066 432 1066 470 C 1066 508 1060 566 1092 622" />
+            </g>
+          </g>
+
+          <!-- Saç teli düzlemleri. Her düzlem bir öncekinin 10 kat yakınıdır; 200 px sırasıyla 10⁻⁵ … 10⁻⁹ m eder.
+               Dönüşümleri ve görünürlükleri betikteki tek "d" değerinden hesaplanır. -->
+          <g data-hf-id="hf-wynp" id="duz-0" style="display: none">
+            <rect data-hf-id="hf-0g0e" class="fs" x="-9600" y="-5400" width="21120" height="11880" />
+            <rect data-hf-id="hf-5yxh" class="fk" x="260" y="-5400" width="1400" height="11880" />
+            <rect data-hf-id="hf-7jmo" x="260" y="-5400" width="1400" height="11880" fill="url(#tr-kutikul)" />
+            <!-- Ölçü çizgisi: telin kalınlığı, 200 piksellik yedi parça. -->
+            <g data-hf-id="hf-kkf7" id="olcu-cizgi" opacity="0">
+              <g data-hf-id="hf-gygw" id="olcu-cizgi-ic">
+                <rect data-hf-id="hf-9cap" class="fp" x="260" y="296" width="1400" height="8" />
+                <g data-hf-id="hf-vij5" class="fp">
+                  <rect data-hf-id="hf-k88i" x="256" y="262" width="8" height="76" /><rect data-hf-id="hf-q1dk" x="456" y="276" width="8" height="48" /><rect data-hf-id="hf-74cu" x="656" y="276" width="8" height="48" />
+                  <rect data-hf-id="hf-ymac" x="856" y="276" width="8" height="48" /><rect data-hf-id="hf-hqz7" x="1056" y="276" width="8" height="48" /><rect data-hf-id="hf-gf2l" x="1256" y="276" width="8" height="48" />
+                  <rect data-hf-id="hf-bq27" x="1456" y="276" width="8" height="48" /><rect data-hf-id="hf-sz0z" x="1656" y="262" width="8" height="76" />
+                </g>
+              </g>
+            </g>
+          </g>
+          <g data-hf-id="hf-aljo" id="duz-1" style="display: none">
+            <rect data-hf-id="hf-4gsm" class="fk" x="-9600" y="-5400" width="21120" height="11880" />
+            <rect data-hf-id="hf-uge9" x="-9600" y="-5400" width="21120" height="11880" fill="url(#tr-d1)" />
+          </g>
+          <g data-hf-id="hf-ertn" id="duz-2" style="display: none">
+            <rect data-hf-id="hf-5a8a" class="fk" x="-9600" y="-5400" width="21120" height="11880" />
+            <rect data-hf-id="hf-9lvq" x="-9600" y="-5400" width="21120" height="11880" fill="url(#tr-d2)" />
+          </g>
+          <g data-hf-id="hf-ky7e" id="duz-3" style="display: none">
+            <rect data-hf-id="hf-5ojb" class="fk" x="-9600" y="-5400" width="21120" height="11880" />
+            <rect data-hf-id="hf-0vir" x="-9600" y="-5400" width="21120" height="11880" fill="url(#tr-d3)" />
+          </g>
+          <g data-hf-id="hf-5pyx" id="duz-4" style="display: none">
+            <rect data-hf-id="hf-62uc" class="fk" x="-9600" y="-5400" width="21120" height="11880" />
+            <rect data-hf-id="hf-e4tc" x="-9600" y="-5400" width="21120" height="11880" fill="url(#tr-d4)" />
+          </g>
+        </svg>
+
+        <!-- Ekrana sabit katman: ölçü etiketleri, basamak satırı. Kamerayla birlikte büyümez. -->
+        <svg data-hf-id="hf-sakh" id="ust" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" data-layout-allow-overflow="">
+          <defs data-hf-id="hf-vl9d">
+            <!-- 3 nm işareti: 600 piksellik parça, içinde birer nanometrelik iki çentik. -->
+            <pattern data-hf-id="hf-wto4" id="tr-isaret" width="600" height="92" patternUnits="userSpaceOnUse">
+              <rect data-hf-id="hf-jcmx" x="10" y="0" width="580" height="92" fill="#d8334a" />
+              <rect data-hf-id="hf-5lrb" x="198" y="0" width="4" height="92" fill="#191c45" opacity="0.55" />
+              <rect data-hf-id="hf-2jcl" x="398" y="0" width="4" height="92" fill="#191c45" opacity="0.55" />
+            </pattern>
+          </defs>
+
+          <!-- 9. kare: yan yana dizilen 3 nm işaretleri -->
+          <g data-hf-id="hf-ungi" id="bant" opacity="0">
+            <rect data-hf-id="hf-3gvd" id="bant-desen" x="660" y="494" width="600" height="92" fill="url(#tr-isaret)" />
+            <rect data-hf-id="hf-oas7" id="bant-duz" x="660" y="494" width="600" height="92" fill="#d8334a" opacity="0" />
+          </g>
+          <g data-hf-id="hf-m9vc" id="isaret-yazi-kap">
+            <text data-hf-id="hf-4w6l" id="isaret-yazi" x="960" y="446" text-anchor="middle" font-size="96" font-weight="700" fill="#f3ebdc" opacity="0">3 nm</text>
+          </g>
+          <g data-hf-id="hf-m1t4" id="sayac" opacity="0">
+            <rect data-hf-id="hf-66iz" x="740" y="366" width="440" height="100" rx="20" fill="#f3ebdc" stroke="#191c45" stroke-width="6" />
+            <text data-hf-id="hf-qj4t" id="sayac-yazi" x="960" y="438" text-anchor="middle" font-size="60" font-weight="700" fill="#191c45">1</text>
+            <g data-hf-id="hf-rucr" id="sayac-son" opacity="0">
+              <path data-hf-id="hf-u0kh" class="ck" stroke-width="6" d="M 834 408 q 9 -11 18 0 t 18 0 M 834 426 q 9 -11 18 0 t 18 0" />
+              <text data-hf-id="hf-n3lt" x="996" y="438" text-anchor="middle" font-size="60" font-weight="700" fill="#191c45">23 000</text>
+            </g>
+          </g>
+
+          <!-- Ölçek etiketi: 200 piksellik çubuk kaç metre? -->
+          <g data-hf-id="hf-zpm9" id="olcek" opacity="0">
+            <rect data-hf-id="hf-auww" x="800" y="30" width="320" height="140" rx="18" fill="#f3ebdc" stroke="#191c45" stroke-width="6" />
+            <text data-hf-id="hf-2zic" x="960" y="96" text-anchor="middle" font-size="54" font-weight="700" fill="#191c45"><tspan data-hf-id="hf-ja0m">10</tspan><tspan data-hf-id="hf-3ule" id="olcek-us" dy="-22" font-size="38" fill="#d8334a">−5</tspan><tspan data-hf-id="hf-shgt" dy="22"> m</tspan></text>
+            <rect data-hf-id="hf-aaik" class="fk" x="860" y="130" width="200" height="8" />
+            <rect data-hf-id="hf-waww" class="fk" x="856" y="118" width="8" height="32" /><rect data-hf-id="hf-dved" class="fk" x="1056" y="118" width="8" height="32" />
+          </g>
+          <g data-hf-id="hf-uehz" id="on-kat" opacity="0">
+            <rect data-hf-id="hf-huvo" x="1146" y="60" width="150" height="80" rx="40" fill="#f3ebdc" stroke="#191c45" stroke-width="6" />
+            <text data-hf-id="hf-nj09" x="1221" y="116" text-anchor="middle" font-size="46" font-weight="700" fill="#191c45">× 10</text>
+          </g>
+
+          <!-- 4. kareden sonra: reklamdaki uzunluğun bilimsel gösterimi sol üstte bekler. -->
+          <g data-hf-id="hf-fx8n" id="cip-a" opacity="0">
+            <rect data-hf-id="hf-oza5" x="40" y="36" width="440" height="104" rx="18" fill="#f3ebdc" stroke="#191c45" stroke-width="6" />
+            <rect data-hf-id="hf-472q" class="ck" stroke-width="6" x="72" y="56" width="38" height="64" rx="9" />
+            <rect data-hf-id="hf-1djj" class="fk" x="83" y="80" width="16" height="16" rx="3" />
+            <text data-hf-id="hf-c1gk" x="136" y="106" font-size="50" font-weight="700" fill="#191c45"><tspan data-hf-id="hf-9aq2">3 × 10</tspan><tspan data-hf-id="hf-kszt" dy="-20" font-size="36" fill="#d8334a">−9</tspan><tspan data-hf-id="hf-l44v" dy="20"> m</tspan></text>
+          </g>
+
+          <!-- Basamak satırı: dersteki gibi rakamlar durur, virgül kayar, sayaç değişir. Satırlar betikte dizilir. -->
+          <g data-hf-id="hf-px68" id="serit">
+            <rect data-hf-id="hf-duzu" class="fs" x="126" y="626" width="1700" height="380" rx="18" />
+            <rect data-hf-id="hf-ut6b" x="110" y="610" width="1700" height="380" rx="18" fill="#f3ebdc" stroke="#191c45" stroke-width="8" />
+            <g data-hf-id="hf-8tny" id="satir-a" />
+            <g data-hf-id="hf-4vjx" id="satir-b" />
+            <!-- 7. kare: iki gösterim alt alta -->
+            <g data-hf-id="hf-bj80" id="kiyas">
+              <g data-hf-id="hf-4pm6" id="kiyas-1">
+                <path data-hf-id="hf-6d9o" class="ck" stroke-width="7" d="M 600 700 C 640 716 596 746 636 762" />
+                <text data-hf-id="hf-jew7" id="k1-govde" x="720" y="768" font-size="88" font-weight="700" fill="#191c45">7 × 10</text>
+                <text data-hf-id="hf-1pxf" id="k1-us" x="720" y="734" font-size="64" font-weight="700" fill="#d8334a">−5</text>
+                <text data-hf-id="hf-i6tl" id="k1-m" x="720" y="768" font-size="88" font-weight="700" fill="#191c45">m</text>
+              </g>
+              <g data-hf-id="hf-0ri5" id="kiyas-2">
+                <rect data-hf-id="hf-thop" class="ck" stroke-width="7" x="598" y="846" width="42" height="72" rx="10" />
+                <rect data-hf-id="hf-svx5" class="fk" x="610" y="873" width="18" height="18" rx="3" />
+                <text data-hf-id="hf-6u7f" id="k2-govde" x="720" y="918" font-size="88" font-weight="700" fill="#191c45">3 × 10</text>
+                <text data-hf-id="hf-yfak" id="k2-us" x="720" y="884" font-size="64" font-weight="700" fill="#d8334a">−9</text>
+                <text data-hf-id="hf-c1k5" id="k2-m" x="720" y="918" font-size="88" font-weight="700" fill="#191c45">m</text>
+              </g>
+              <path data-hf-id="hf-vqs9" id="kiyas-ok" class="ck" stroke-width="7" d="M 1360 716 V 898 M 1340 736 L 1360 714 L 1380 736 M 1340 878 L 1360 900 L 1380 878" />
+            </g>
+          </g>
+
+          <!-- Dört basamak: 7. karede şeritte belirir, 8. karede ölçek etiketinin altına taşınır; her yakınlaşmada biri dolar. -->
+          <g data-hf-id="hf-low3" id="pipler">
+            <g data-hf-id="hf-o105" id="pip-0" opacity="0"><circle data-hf-id="hf-uruu" r="14" fill="#f3ebdc" stroke="#191c45" stroke-width="5" /><circle data-hf-id="hf-w0h5" id="pip-0-d" r="14" fill="#d8334a" stroke="#191c45" stroke-width="5" opacity="0" /></g>
+            <g data-hf-id="hf-8ukw" id="pip-1" opacity="0"><circle data-hf-id="hf-fafe" r="14" fill="#f3ebdc" stroke="#191c45" stroke-width="5" /><circle data-hf-id="hf-acui" id="pip-1-d" r="14" fill="#d8334a" stroke="#191c45" stroke-width="5" opacity="0" /></g>
+            <g data-hf-id="hf-11n3" id="pip-2" opacity="0"><circle data-hf-id="hf-foqf" r="14" fill="#f3ebdc" stroke="#191c45" stroke-width="5" /><circle data-hf-id="hf-oxnb" id="pip-2-d" r="14" fill="#d8334a" stroke="#191c45" stroke-width="5" opacity="0" /></g>
+            <g data-hf-id="hf-rib6" id="pip-3" opacity="0"><circle data-hf-id="hf-g31g" r="14" fill="#f3ebdc" stroke="#191c45" stroke-width="5" /><circle data-hf-id="hf-dufc" id="pip-3-d" r="14" fill="#d8334a" stroke="#191c45" stroke-width="5" opacity="0" /></g>
+          </g>
+        </svg>
+      </section>
+
+      <!-- Kapanış kartı (10. kare). Klip değildir; perde ve kart son kareye kadar saydamdır. -->
+      <section data-hf-id="hf-kxgq" id="kapanis">
+        <div data-hf-id="hf-ia4r" id="perde"></div>
+        <div data-hf-id="hf-xslf" id="kart">
+          <p data-hf-id="hf-va8w" id="cumle">
+            <span data-hf-id="hf-niku" class="satir" id="c1">Virgül kayar,</span>
+            <span data-hf-id="hf-kbg8" class="satir" id="c2">üs sayar.</span>
+          </p>
+          <div data-hf-id="hf-96ft" id="cizgi"></div>
+          <p data-hf-id="hf-9424" id="model">3 nm = 3 × 10<sup data-hf-id="hf-pvka">−9</sup> m</p>
+        </div>
+      </section>
+
+      <!-- Anlatım (George, eleven_v4). Klipler ses düzeyi eşitlenmiş kopyalardır; ham hâlleri assets/ses/ içinde. -->
+      <audio id="ses-01" src="assets/ses-esit/01.mp3" data-start="0.6" data-duration="7.84" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-02" src="assets/ses-esit/02.mp3" data-start="9.3" data-duration="3.44" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-03" src="assets/ses-esit/03.mp3" data-start="13.4" data-duration="9.44" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-04" src="assets/ses-esit/04.mp3" data-start="23.5" data-duration="7.6" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-05" src="assets/ses-esit/05.mp3" data-start="31.9" data-duration="7.2" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-06" src="assets/ses-esit/06.mp3" data-start="39.7" data-duration="6.16" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-07" src="assets/ses-esit/07.mp3" data-start="46.6" data-duration="5.2" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-08" src="assets/ses-esit/08.mp3" data-start="52.4" data-duration="4.56" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-09" src="assets/ses-esit/09.mp3" data-start="59.3" data-duration="7.76" data-track-index="3" data-volume="1"></audio>
+      <audio id="ses-10" src="assets/ses-esit/10.mp3" data-start="68.4" data-duration="2.48" data-track-index="3" data-volume="1"></audio>
+
+      <!-- Kâğıt dişi: bütün resmin üstünde, çarpılarak. -->
+      <svg data-hf-id="hf-ca7t" id="dis-kat" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg" style="mix-blend-mode: multiply">
+        <rect data-hf-id="hf-53so" width="1920" height="1080" filter="url(#dis)" />
+      </svg>
+    </div>
+    <script>
+      /* Yazı tipi yüklenince kurulur: bazı etiketler ölçülen yazı genişliğine göre yerleşir. */
+      const kur = () => {
+        const NS = "http://www.w3.org/2000/svg";
+        const ekle = (ust, ad, oz) => {
+          const e = document.createElementNS(NS, ad);
+          for (const k in oz) e.setAttribute(k, oz[k]);
+          ust.appendChild(e);
+          return e;
+        };
+        const al = (id) => document.getElementById(id);
+        const KOYU = "#191c45", MAVI = "#3560c4", MERCAN = "#d8334a";
+
+        /* Gök taraması: y = 250'de noktalar birbirine değer (düz mavi), ufka doğru küçülür. Rastgele yok. */
+        (() => {
+          const ADIM = 22, UST = 250, ALT = 610;
+          let d = "";
+          for (let sira = 0, y = UST; y <= ALT; sira++, y += ADIM / 2) {
+            const t = (y - UST) / (ALT - UST);
+            const r = 15.8 * Math.pow(1 - t, 1.15);
+            if (r < 0.9) break;
+            for (let x = -960 + (sira % 2 ? ADIM / 2 : 0); x <= 2880; x += ADIM) {
+              d += `M${x - r},${y}a${r},${r} 0 1,0 ${2 * r},0a${r},${r} 0 1,0 ${-2 * r},0`;
+            }
+          }
+          ekle(al("gok-nokta"), "path", { d: d.replace(/(\.\d\d)\d+/g, "$1") });
+        })();
+
+        /* Basamak satırı (dersteki "basamak" ile aynı davranış). Rakamlar X(i)'de durur; virgül VX(k)'ye,
+           yani k rakamın sağına kayar; üs = 1 − k olur. Sayaç, üst üste duran yazıların sırayla açılmasıdır. */
+        const DX = 92, BOS = 34, SY = 836;
+        const grup = (i) => (i === 0 ? 0 : Math.floor((i - 1) / 3));
+        const satir = (ad, rakam, x0) => {
+          const g = al(ad), n = rakam.length;
+          const X = (i) => x0 + i * DX + grup(i) * BOS;
+          const VX = (k) => (k >= n ? X(n - 1) + DX / 2 : (X(k - 1) + X(k)) / 2);
+          const yazi = (id, x, metin, oz = {}) => {
+            const t = ekle(g, "text", { id: `${ad}-${id}`, x, y: SY, "font-size": 96, "font-weight": 700, fill: KOYU, "text-anchor": "middle", opacity: 0, ...oz });
+            t.textContent = metin;
+            return t;
+          };
+          const iz = ekle(g, "g", { id: `${ad}-iz` });
+          for (let k = 2; k <= n; k++) {
+            const a = VX(k - 1), b = VX(k), yb = SY + 34;
+            ekle(iz, "path", { id: `${ad}-iz${k}`, d: `M${a},${yb} Q${(a + b) / 2},${yb + 30} ${b},${yb}`, fill: "none", stroke: MAVI, "stroke-width": 5, "stroke-linecap": "round", opacity: 0 });
+          }
+          for (let i = 1; i < n - 1; i++) ekle(g, "circle", { id: `${ad}-n${i}`, cx: X(i), cy: SY + 62, r: 7, fill: KOYU, opacity: 0 });
+          [...rakam].forEach((ch, i) => yazi(`r${i}`, X(i), ch));
+          /* Virgül çizimdir (yazı değil): rakamların arasından geçerken üstlerine binmez. */
+          const v = ekle(g, "g", { id: `${ad}-v`, transform: `translate(${VX(1)} ${SY})`, opacity: 0 });
+          ekle(v, "circle", { cx: 0, cy: -8, r: 8.5, fill: MERCAN });
+          ekle(v, "path", { d: "M 3 -6 L -6 17", fill: "none", stroke: MERCAN, "stroke-width": 8.5, "stroke-linecap": "round" });
+          const ux = X(n - 1) + DX / 2 + 48;
+          const us = ekle(g, "g", { id: `${ad}-us`, opacity: 0 });
+          const carpi = ekle(us, "text", { x: ux, y: SY, "font-size": 96, "font-weight": 700, fill: KOYU });
+          carpi.textContent = "× 10";
+          const cw = carpi.getComputedTextLength();
+          for (let j = 0; j < n; j++) {
+            const t = ekle(us, "text", { id: `${ad}-u${j}`, x: ux + cw + 6, y: SY - 40, "font-size": 62, "font-weight": 700, fill: MERCAN, opacity: j ? 0 : 1 });
+            t.textContent = j ? `−${j}` : "0";
+          }
+          yazi("m", ux + 34, "m");
+          return { ad, n, X, VX, mKayma: cw + 118 };
+        };
+        const A = satir("satir-a", "0000000003", 330);
+        const B = satir("satir-b", "000007", 520);
+
+        /* Kıyas satırları: üs ve birim, gövdenin ölçülen genişliğine göre yerleşir. */
+        for (const k of ["k1", "k2"]) {
+          const w = al(`${k}-govde`).getComputedTextLength();
+          al(`${k}-us`).setAttribute("x", 720 + w + 6);
+          al(`${k}-m`).setAttribute("x", 720 + w + 6 + al(`${k}-us`).getComputedTextLength() + 26);
+        }
+
+        /* ---- Kamera ve derinlik: tek durum nesnesi. Görüntü her an yalnızca bu değerlerden hesaplanır. ----
+           z: dünyanın büyütmesi (log10). (px, py) dünyadaki nokta, ekranda (qx, qy)'ye gelir.
+           d: saç telinin içine derinlik. d = 0'da 200 px = 10⁻⁵ m; her 1 artışta görüntü 10 kat büyür.
+           Dünyadaki tel 3,5 px, tel düzlemindeki 1400 px olduğundan d = z − log10(400).
+           bw: 3 nm işaretlerinin dizildiği bandın yarı genişliği (px). */
+        const Z_TEL = Math.log10(400);
+        const st = { px: 1190, py: 620, qx: 1190, qy: 620, z: 0, d: -2.9, bw: 0 };
+        const kam = al("kam"), duz = [0, 1, 2, 3, 4].map((k) => al(`duz-${k}`));
+        const bantDesen = al("bant-desen"), bantDuz = al("bant-duz"), desen = al("tr-isaret");
+        const olcekUs = al("olcek-us"), sayacYazi = al("sayac-yazi");
+        const rampa = (x, a, b) => Math.min(1, Math.max(0, (x - a) / (b - a)));
+        const bin = (n) => String(n).replace(/\B(?=(\d{3})+$)/g, " ");
+        const ciz = () => {
+          const d = st.d;
+          /* Dünya: tel düzlemi tümüyle açılınca gizlenir. */
+          const dunyaGorunur = d < -0.52;
+          kam.style.display = dunyaGorunur ? "" : "none";
+          if (dunyaGorunur) {
+            const S = Math.min(Math.pow(10, st.z), 125);
+            kam.setAttribute("transform", `translate(${st.qx - S * st.px} ${st.qy - S * st.py}) scale(${S})`);
+          }
+          /* Düzlemler: k. düzlem d = k'de bire birdir; bir sonraki tümüyle açılınca gizlenir. */
+          duz.forEach((g, k) => {
+            const op = k === 0 ? rampa(d, -0.92, -0.52) : rampa(d, k - 0.65, k - 0.25);
+            const gorunur = op > 0 && (k === 4 || d < k + 0.75);
+            g.style.display = gorunur ? "" : "none";
+            if (!gorunur) return;
+            const s = Math.pow(10, d - k);
+            g.setAttribute("opacity", op);
+            g.setAttribute("transform", `translate(960 540) scale(${s}) translate(-960 -540)`);
+          });
+          /* Ölçek etiketi: 200 px = 10^(−5 − d) m. */
+          olcekUs.textContent = `−${5 + Math.round(Math.min(4, Math.max(0, d)))}`;
+          /* 3 nm işaretleri: bir işaret 600 · 10^(d − 4) px. Bant telin dışına taşmaz. */
+          const per = 600 * Math.pow(10, d - 4);
+          const w = Math.min(st.bw, 700 * Math.pow(10, d));
+          for (const r of [bantDesen, bantDuz]) {
+            r.setAttribute("x", 960 - w);
+            r.setAttribute("width", Math.max(0.01, 2 * w));
+          }
+          desen.setAttribute("patternTransform", `translate(${960 - per / 2} 494) scale(${per / 600} 1)`);
+          bantDuz.setAttribute("opacity", 1 - rampa(per, 20, 60));
+          sayacYazi.textContent = bin(Math.min(23333, Math.max(1, Math.round((2 * w) / per))));
+        };
+
+        const tl = gsap.timeline({ paused: true });
+        const simdi = { ...st };
+        const git = (t, sure, hedef, ease = "power2.inOut") => {
+          const bas = {};
+          for (const k in hedef) bas[k] = simdi[k];
+          tl.fromTo(st, bas, { ...hedef, duration: sure, ease, immediateRender: false, onUpdate: ciz }, t);
+          Object.assign(simdi, hedef);
+        };
+        const gir = (hedef, t, sure = 0.45, oz = {}) => tl.fromTo(hedef, { opacity: 0, ...(oz.bas || {}) }, { opacity: 1, duration: sure, ease: oz.ease || "power3.out", ...(oz.son || {}) }, t);
+        const cik = (hedef, t, sure = 0.35) => tl.fromTo(hedef, { opacity: 1 }, { opacity: 0, duration: sure, ease: "power2.in", immediateRender: false }, t);
+
+        /* Zaman: karelerin başlangıçları (sn). Kliplerin gerçek sürelerinden çıkarıldı (assets/ses-esit/olcum.json);
+           klipler kare başlangıcından 0,2–0,8 sn sonra girer (<audio> öğeleri). Karelerin içindeki işaret anları
+           kliplerdeki duraklamalara göre yerleştirildi; klipler yeniden üretilirse bu tablo ve o anlar değişir. */
+        const T = { l1: 0, l2: 8.9, l3: 13.2, l4: 23.3, l5: 31.5, l6: 39.5, l7: 46.3, l8: 52.2, l9: 59.0, l10: 67.6, son: 73.5 };
+
+        /* Virgülün k − 1'den k'ye kayışı: küçük bir yay, altında iz, sayaç bir değişir, geride kalan sıfır solar. */
+        const kay = (R, k, t, sure) => {
+          const v = `#${R.ad}-v`;
+          tl.fromTo(v, { x: R.VX(k - 1) }, { x: R.VX(k), duration: sure, ease: "power2.inOut", immediateRender: false }, t);
+          tl.fromTo(v, { y: SY }, { y: SY - 24, duration: sure / 2, ease: "sine.out", immediateRender: false }, t);
+          tl.fromTo(v, { y: SY - 24 }, { y: SY, duration: sure / 2, ease: "sine.in", immediateRender: false }, t + sure / 2);
+          tl.fromTo(`#${R.ad}-iz${k}`, { opacity: 0 }, { opacity: 0.75, duration: 0.2, ease: "none" }, t + sure * 0.7);
+          const an = t + sure * 0.82;
+          tl.set(`#${R.ad}-u${k - 2}`, { opacity: 0 }, an);
+          tl.set(`#${R.ad}-u${k - 1}`, { opacity: 1 }, an);
+          tl.fromTo(`#${R.ad}-u${k - 1}`, { scale: 1.35, transformOrigin: "50% 60%" }, { scale: 1, duration: 0.3, ease: "power2.out", immediateRender: false }, an);
+          tl.fromTo(`#${R.ad}-r${k - 2}`, { opacity: 1 }, { opacity: 0.22, duration: 0.3, ease: "none", immediateRender: false }, an);
+        };
+        /* Satırın açılışı: önce "0," ve birim, sonra öteki rakamlar sırayla; en son rakam ayrı gelir. */
+        const satirAc = (R, t0, tSifir, aralik, tSon) => {
+          const giris = (id, t) => tl.fromTo(`#${R.ad}-${id}`, { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.4, ease: "power3.out" }, t);
+          giris("r0", t0);
+          gir(`#${R.ad}-v`, t0 + 0.12, 0.3);
+          giris("m", t0 + 0.2);
+          for (let i = 1; i < R.n - 1; i++) {
+            giris(`r${i}`, tSifir + (i - 1) * aralik);
+            tl.fromTo(`#${R.ad}-n${i}`, { opacity: 0, scale: 0, transformOrigin: "50% 50%" }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, tSifir + (i - 1) * aralik + 0.1);
+          }
+          tl.fromTo(`#${R.ad}-r${R.n - 1}`, { opacity: 0, scale: 0.5, transformOrigin: "50% 60%" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, tSon);
+        };
+        /* Satırın kayışı: "× 10⁰" açılır, birim sağa çekilir, virgül sona kadar kayar, sonuç bir kez vurgulanır. */
+        const satirKay = (R, t0, tIlk, ilkSure, tSeri, aralik, sure, tVurgu) => {
+          for (let i = 1; i < R.n - 1; i++) cik(`#${R.ad}-n${i}`, t0, 0.3);
+          tl.fromTo(`#${R.ad}-m`, { x: 0 }, { x: R.mKayma, duration: 0.45, ease: "power3.inOut", immediateRender: false }, t0);
+          gir(`#${R.ad}-us`, t0 + 0.4, 0.4);
+          kay(R, 2, tIlk, ilkSure);
+          for (let k = 3; k <= R.n; k++) kay(R, k, tSeri + (k - 3) * aralik, sure);
+          cik(`#${R.ad}-iz`, tVurgu, 0.4);
+          cik(`#${R.ad}-v`, tVurgu, 0.4);
+          const son = [`#${R.ad}-r${R.n - 1}`, `#${R.ad}-us`, `#${R.ad}-m`];
+          tl.fromTo(son, { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.1, duration: 0.28, ease: "power2.out", yoyo: true, repeat: 1, immediateRender: false }, tVurgu);
+        };
+
+        /* ---- Kare 1 — durak. Baskı sırası: mavi, koyu, sarı (kayık gelir, yerine oturur), en son mercan. ---- */
+        tl.fromTo(".m", { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out", stagger: 0.03 }, T.l1 + 0.1);
+        tl.fromTo(".k", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out", stagger: 0.02 }, T.l1 + 0.55);
+        tl.fromTo(".s", { opacity: 0, x: 26, y: -20 }, { opacity: 1, x: 5, y: -4, duration: 0.8, ease: "power3.out", stagger: 0.04 }, T.l1 + 1.0);
+        tl.fromTo("#pano-yazi", { opacity: 0, scale: 0.6, svgOrigin: "1190 736" }, { opacity: 1, scale: 1, duration: 0.5, ease: "back.out(1.7)" }, T.l1 + 7.3);
+        /* Rüzgâr: saç telleri ve yapraklar; her hareket sonlu. */
+        const RUZGAR = T.l1 + 1.4;
+        tl.fromTo("#tel-1", { rotation: -2, svgOrigin: "720 496" }, { rotation: 3, duration: 1.3, ease: "sine.inOut", yoyo: true, repeat: 5 }, RUZGAR);
+        tl.fromTo("#tel-2", { rotation: 3, svgOrigin: "716 476" }, { rotation: -3, duration: 1.1, ease: "sine.inOut", yoyo: true, repeat: 6 }, RUZGAR);
+        tl.fromTo("#tel-3", { rotation: -3, svgOrigin: "706 472" }, { rotation: 2.5, duration: 1.45, ease: "sine.inOut", yoyo: true, repeat: 4 }, RUZGAR);
+        tl.fromTo("#yaprak-1", { x: -70, y: 14, rotation: -30, svgOrigin: "880 640" }, { x: 0, y: 0, rotation: 0, duration: 7.0, ease: "sine.out" }, RUZGAR);
+        tl.fromTo("#yaprak-2", { x: -90, y: -10, rotation: 40, svgOrigin: "548 474" }, { x: 0, y: 0, rotation: 0, duration: 7.0, ease: "sine.out" }, RUZGAR);
+        tl.fromTo("#yaprak-3", { x: -50, y: 20, rotation: -20, svgOrigin: "930 760" }, { x: 0, y: 0, rotation: 0, duration: 7.0, ease: "sine.out" }, RUZGAR);
+        tl.fromTo("#bulut-1", { x: -24 }, { x: 10, duration: T.l2, ease: "none" }, 0);
+        tl.fromTo("#bulut-2", { x: -14 }, { x: 14, duration: T.l2, ease: "none" }, 0);
+        git(T.l1, T.l2 - T.l1, { z: Math.log10(1.05) }, "none");
+
+        /* ---- Kare 2 — soru: kamera panoya iner ve durur. ---- */
+        git(T.l2, 1.3, { px: 1190, py: 712, qx: 960, qy: 470, z: Math.log10(3.2) }, "power3.inOut");
+
+        /* ---- Kare 3 — sıfırlar: "nm"nin altı çizilir, şerit açılır, sayı sıfırlarıyla yazılır. ---- */
+        tl.fromTo("#nm-cizgi", { scaleX: 0, svgOrigin: "1158 795" }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, T.l3 + 0.3);
+        git(T.l3 + 2.8, 0.9, { qy: 300 }, "power3.inOut");
+        tl.fromTo("#serit", { y: 520 }, { y: 0, duration: 0.8, ease: "power3.out" }, T.l3 + 2.9);
+        satirAc(A, T.l3 + 4.4, T.l3 + 6.0, 0.2, T.l3 + 8.7);
+
+        /* ---- Kare 4 — virgül dokuz basamak: sayaç 0'dan −9'a iner. ---- */
+        satirKay(A, T.l4 + 0.1, T.l4 + 1.0, 0.7, T.l4 + 1.8, 0.36, 0.32, T.l4 + 5.2);
+
+        /* ---- Kare 5 — saç teli: satır sol üstteki etikete çekilir, tel panonun önüne gelir, kamera tele iner. ---- */
+        cik("#satir-a", T.l5, 0.35);
+        tl.fromTo("#cip-a", { opacity: 0, scale: 0.7, svgOrigin: "260 88" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.5)" }, T.l5 + 0.2);
+        tl.fromTo("#serit", { y: 0 }, { y: 520, duration: 0.6, ease: "power3.in", immediateRender: false }, T.l5 + 0.25);
+        cik("#nm-cizgi-kap", T.l5 + 0.2, 0.3);
+        git(T.l5 + 0.2, 1.2, { px: 1066, py: 470, qx: 960, qy: 540, z: Math.log10(2) }, "power3.inOut");
+        cik("#tel-3", T.l5 + 0.7, 0.2);
+        tl.fromTo("#ucan-tel", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none" }, T.l5 + 0.8);
+        tl.fromTo("#ucan-tel", { x: -330, rotation: -74, svgOrigin: "1066 470" }, { x: 0, rotation: 0, duration: 1.7, ease: "power2.out", immediateRender: false }, T.l5 + 0.8);
+        tl.fromTo("#ucan-tel", { y: -30 }, { y: -74, duration: 0.8, ease: "sine.out", immediateRender: false }, T.l5 + 0.8);
+        tl.fromTo("#ucan-tel", { y: -74 }, { y: 0, duration: 0.9, ease: "sine.inOut", immediateRender: false }, T.l5 + 1.6);
+        simdi.d = Math.log10(2) - Z_TEL;
+        git(T.l5 + 2.6, 2.3, { z: Z_TEL, d: 0 }, "power2.inOut");
+        tl.fromTo("#olcek", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, T.l5 + 4.9);
+        gir("#olcu-cizgi", T.l5 + 5.0, 0.2);
+        tl.fromTo("#olcu-cizgi-ic", { scaleX: 0, svgOrigin: "260 300" }, { scaleX: 1, duration: 0.8, ease: "power2.inOut" }, T.l5 + 5.0);
+        tl.fromTo("#serit", { y: 520 }, { y: 0, duration: 0.7, ease: "power3.out", immediateRender: false }, T.l5 + 5.0);
+        satirAc(B, T.l5 + 5.7, T.l5 + 6.0, 0.13, T.l5 + 6.9);
+
+        /* ---- Kare 6 — virgül beş basamak: aynı hareket, daha kısa. ---- */
+        satirKay(B, T.l6 + 0.1, T.l6 + 1.1, 0.6, T.l6 + 1.9, 0.42, 0.34, T.l6 + 3.8);
+
+        /* ---- Kare 7 — iki üs: gösterimler alt alta, üsler sırayla büyür, arada dört basamak. ---- */
+        cik("#satir-b", T.l7, 0.35);
+        cik("#cip-a", T.l7 + 0.1, 0.35);
+        tl.fromTo("#kiyas-1", { opacity: 0, x: -40 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, T.l7 + 0.3);
+        tl.fromTo("#kiyas-2", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, T.l7 + 0.6);
+        tl.fromTo("#k1-us", { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.4, duration: 0.3, ease: "power2.out", yoyo: true, repeat: 1 }, T.l7 + 1.7);
+        tl.fromTo("#k2-us", { scale: 1, transformOrigin: "50% 60%" }, { scale: 1.4, duration: 0.3, ease: "power2.out", yoyo: true, repeat: 1 }, T.l7 + 2.6);
+        gir("#kiyas-ok", T.l7 + 3.5, 0.4);
+        /* Pipler: şeritteki yerleri (PSX, PSY), ölçek etiketinin altındaki yerleri (PCX, PCY). */
+        const PSX = (i) => 1450 + i * 72, PSY = 808, PCX = (i) => 909 + i * 34, PCY = 204;
+        for (let i = 0; i < 4; i++) {
+          tl.fromTo(`#pip-${i}`, { opacity: 0, x: PSX(i), y: PSY, scale: 0 }, { opacity: 1, x: PSX(i), y: PSY, scale: 1.7, duration: 0.35, ease: "back.out(2.2)" }, T.l7 + 3.9 + i * 0.3);
+        }
+
+        /* ---- Kare 8 — dört yakınlaşma: her adım tam 10 kat; bir pip dolar, etiket bir basamak değişir. ---- */
+        cik("#kiyas-1", T.l8, 0.35);
+        cik("#kiyas-2", T.l8, 0.35);
+        cik("#kiyas-ok", T.l8, 0.35);
+        tl.fromTo("#serit", { y: 0 }, { y: 520, duration: 0.6, ease: "power3.in", immediateRender: false }, T.l8 + 0.15);
+        for (let i = 0; i < 4; i++) {
+          tl.fromTo(`#pip-${i}`, { x: PSX(i), y: PSY, scale: 1.7 }, { x: PCX(i), y: PCY, scale: 1, duration: 0.7, ease: "power3.inOut", immediateRender: false }, T.l8 + 0.1 + i * 0.04);
+          const ts = T.l8 + 2.3 + i * 1.1;
+          git(ts, 0.85, { d: i + 1 }, "power3.inOut");
+          tl.fromTo(`#pip-${i}-d`, { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "none" }, ts + 0.4);
+          tl.fromTo(`#pip-${i}`, { scale: 1 }, { scale: 1.5, duration: 0.18, ease: "power2.out", yoyo: true, repeat: 1, immediateRender: false }, ts + 0.4);
+          tl.fromTo("#on-kat", { opacity: 0, scale: 0.7, svgOrigin: "1221 100" }, { opacity: 1, scale: 1, duration: 0.22, ease: "back.out(2)", immediateRender: false }, ts + 0.05);
+          tl.fromTo("#on-kat", { opacity: 1 }, { opacity: 0, duration: 0.25, ease: "none", immediateRender: false }, ts + 0.75);
+        }
+
+        /* ---- Kare 9 — yan yana: 3 nm işareti görünür; kamera geri çekilirken işaretler dizilir ve sayılır. ---- */
+        cik("#pipler", T.l9, 0.3);
+        gir("#bant", T.l9 + 0.2, 0.15);
+        git(T.l9 + 0.2, 0.7, { bw: 300 }, "power3.out");
+        tl.fromTo("#isaret-yazi", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, T.l9 + 0.7);
+        cik("#isaret-yazi-kap", T.l9 + 3.0, 0.3);
+        tl.fromTo("#sayac", { opacity: 0, scale: 0.7, svgOrigin: "960 416" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.6)" }, T.l9 + 3.3);
+        git(T.l9 + 3.1, 0.8, { bw: 1000 }, "power2.inOut");
+        git(T.l9 + 3.9, 3.4, { d: 0 }, "power2.inOut");
+        tl.set("#sayac-yazi", { opacity: 0 }, T.l9 + 7.4);
+        tl.set("#sayac-son", { opacity: 1 }, T.l9 + 7.4);
+        tl.fromTo("#sayac", { scale: 1 }, { scale: 1.12, duration: 0.25, ease: "power2.out", yoyo: true, repeat: 1, immediateRender: false }, T.l9 + 7.4);
+
+        /* ---- Kare 10 — kapanış: perde iner, kart gelir, cümle iki parça hâlinde okunur. ---- */
+        cik("#ust", T.l10 + 0.1, 0.5);
+        tl.fromTo("#perde", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power1.out" }, T.l10 + 0.1);
+        tl.fromTo("#kart", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, T.l10 + 0.3);
+        tl.fromTo("#c1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, T.l10 + 0.7);
+        tl.fromTo("#c2", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, T.l10 + 2.3);
+        tl.fromTo("#cizgi", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, T.l10 + 3.2);
+        tl.fromTo("#model", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, T.l10 + 3.4);
+
+        ciz();
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      };
+      Promise.all([document.fonts.load('700 96px "Plex Sans"', "0123456789× −m"), document.fonts.ready]).then(kur, kur);
+    </script>
+  </body>
+</html>

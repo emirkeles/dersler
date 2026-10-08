@@ -1,0 +1,11 @@
+{
+  "name": "a7-3-nanometre",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.140 preview",
+    "check": "npx --yes hyperframes@0.8.140 check",
+    "render": "npx --yes hyperframes@0.8.140 render --crf 23 -o renders/a7-3-nanometre.mp4",
+    "publish": "npx --yes hyperframes@0.8.140 publish"
+  }
+}

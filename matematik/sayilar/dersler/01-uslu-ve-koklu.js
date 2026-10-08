@@ -3652,6 +3652,7 @@
         { title: 'Büyük sayı: virgül sola kayar', goal: 'Virgül her sola kayışta 10’un üssü bir artar: 1,5 × 10⁸.', run: sceneA7_1 },
         { title: 'Küçük sayı: virgül sağa kayar', goal: 'Çok küçük sayıda üs negatiftir: 3 × 10⁻⁹.', run: sceneA7_2 },
         { title: 'Kural: 1 ile 10 arasında', goal: 'a × 10ⁿ biçiminde 1 ≤ a < 10 koşulunu uygula.', run: sceneA7_3 },
+        { title: 'Hikâye: 3 nanometre ne kadar küçük?', goal: 'Bilimsel gösterimin hayattaki yerini gör.', video: 'hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4' },
       ],
       quiz: [
         {

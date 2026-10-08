@@ -1,0 +1,52 @@
+{
+ "10": {
+  "metin": "Virgül kayar, [short pause] üs sayar.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "01": {
+  "metin": "Ece durakta otobüs beklerken reklam panosundaki telefona baktı. Üstünde kocaman bir yazı vardı: üç nanometre.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "02": {
+  "metin": "[curious] Kulağa küçük geliyor. Peki ne kadar küçük?",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "03": {
+  "metin": "Nanometre, metrenin milyarda biridir. Üç nanometreyi metreyle yazarsak virgülden sonra sekiz sıfır, ardından bir üç gelir.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "04": {
+  "metin": "Virgülü dokuz basamak sağa kaydıralım. Sayaç eksi dokuzu gösterir: üç çarpı on üzeri eksi dokuz metre.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "05": {
+  "metin": "Şimdi rüzgârın savurduğu tek bir saç teline bakalım. Kalınlığı yaklaşık olarak metrenin yüz binde yedisidir.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "06": {
+  "metin": "Burada virgül yalnızca beş basamak kayar: yedi çarpı on üzeri eksi beş metre.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "07": {
+  "metin": "[thoughtful] Üslere bak: eksi beş ve eksi dokuz. Aralarında dört basamak var.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "08": {
+  "metin": "Öyleyse saç teline dört kez, her seferinde on kat yaklaşalım.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ },
+ "09": {
+  "metin": "Üç nanometre ancak şimdi görünüyor. Tek bir saç telinin kalınlığına bunlardan yan yana on binlercesi sığar.",
+  "model": "eleven_v4",
+  "ses": "JBFqnCBsd6RMkjVDRZzb"
+ }
+}

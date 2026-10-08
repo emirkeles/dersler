@@ -325,6 +325,24 @@ Teması yayında olmayan hikâye temanın `ortak/katalog.js` satırına yazılı
 - [x] Enerji F1 "Metal neden daha soğuk hissettiriyor?" (`episode-10/final.mp4`): video, kapak, katalog satırı
 - [x] Geometrik Şekiller B3 "Çadır neden kapanmıyor?" (`episode-05/final.mp4`): video, kapak, `tema.js`
 - [x] Görüntü denetimi (ana sayfa, `#hikayeler`, `#fizik`, tema sayfası), `denetle.js matematik/geometrik-sekiller`
-- [ ] Sayılar A7 "3 nanometre": videosu yok (1. kare aşamasında); işlenince `matematik/sayilar/tema.js` içine eklenir
+- [x] Sayılar A7 "3 nanometre": işlendi ve `matematik/sayilar/tema.js` içine eklendi (8 Ekim 2026)
 - [ ] Çadır hikâyesini B3 dersinin son sahnesine bağlamak (istenirse)
 - [ ] Akışkanlar ve Enerji yazılınca katalogdaki `hikayeler` listelerini `tema.js` dosyalarına taşı
+## Hikâye: A7 3 nanometre ne kadar küçük? (8 Ekim 2026)
+
+Plan: `plan/matematik/sayilar/hikaye/A7-3-nanometre.md`. Proje: `matematik/sayilar/hikaye/a7-3-nanometre/`.
+
+- [x] Proje iskeleti (`hyperframes init` 0.8.140), `BRIEF.md`
+- [x] Senaryo taslağı: `SCRIPT.md` (10 satır, 123 kelime)
+- [x] Kare planı: `STORYBOARD.md` (10 kare)
+- [x] Görsel kimlik: `frame.md` (risograf baskı, dört mürekkep)
+- [x] 1. kare kuruldu (`index.html`, `kareler/kare-01-durak.png`); `check` temiz
+- [x] Kullanıcı: 1. kare, çizim dili ve senaryo onayı (8 Ekim 2026)
+- [x] 2–10. kareler: on kare kurulu, 65,5 sn, sessiz; `check` temiz; görüntüler `kareler/`
+- [x] Ses: kullanıcı erkek ses istedi; beş Türkçe, altı İngilizce örnek arasından George'u seçti (`JBFqnCBsd6RMkjVDRZzb`, yalnızca bu hikâye). 10 klip, 61,7 sn. Gamze ile üretilen ilk klipler ve örnekler diskte, depo dışında (`assets/ses-gamze/`, `assets/ses-ornek/`)
+- [x] Düzey eşitleme ve ölçüm (`assets/ses-esit/`, `olcum.json`); zamanlama kliplere çekildi (73,5 sn); `check` temiz
+- [x] İşleme (kullanıcı isteğiyle): `renders/a7-3-nanometre.mp4` (1920×1080, 73,5 sn, 26,8 MB, `--crf 23`), `kapak.jpg` (8. saniyeden)
+- [x] Derse bağlama: A7'nin 4. sahnesi, `tema.js` `hikayeler` satırı; `sure.js` (A7 3:15 → 4:31), `olc.js` ve `denetle.js` temiz
+- [ ] Kullanıcı: filmi derste sesli izler (George'un Türkçe okunuşu kulakla denetlenmedi)
+- [ ] `plan/SESLENDIRME.md` durum tablosuna A7 hikâye satırı (ortak dosya; eklenmedi)
+
