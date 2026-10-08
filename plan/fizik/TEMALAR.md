@@ -11,10 +11,10 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 | # | Tema | Klasör | MEB sayfası | Ders saati | Konu | Kısa ders | Durum |
 |---|---|---|---|---|---|---|---|
 | 1 | Fizik Bilimi ve Kariyer Keşfi | `fizik-bilimi-ve-kariyer-kesfi` | <https://tymm.meb.gov.tr/fizik-dersi/unite/43> | 8 | 4 | 6 | yayında (7 Ekim 2026; 26 sahne, 93 klip); iki resim bekliyor, klipler dinlenmedi |
-| 2 | Kuvvet ve Hareket | `kuvvet-ve-hareket` | <https://tymm.meb.gov.tr/fizik-dersi/unite/57> | 24 | 6 | 20 | plan taslağı; işleme alınmayı bekliyor |
+| 2 | Kuvvet ve Hareket | `kuvvet-ve-hareket` | <https://tymm.meb.gov.tr/fizik-dersi/unite/57> | 24 | 6 | 24 | yazıldı ve seslendirildi (8 Ekim 2026; 24 ders, 154 sahne, 1.472 klip; `olc.js` ve `denetle.js` temiz); yayında değil, kullanıcı izlemedi |
 | 3 | Akışkanlar | `akiskanlar` | <https://tymm.meb.gov.tr/fizik-dersi/unite/65> | 18 | 5 | 15 | plan taslağı; işleme alınmayı bekliyor |
 | 4 | Enerji | `enerji` | <https://tymm.meb.gov.tr/fizik-dersi/unite/82> | 18 | 6 | 15 | plan taslağı; işleme alınmayı bekliyor |
-| | **Toplam** | | | **68** | **21** | **56** | |
+| | **Toplam** | | | **68** | **21** | **60** | |
 
 1. tema işleme alındı ve yazıldı; öteki üç temanın planı taslaktır, konu ve kısa ders sayıları işleme alınırken değişebilir. Her `PLAN.md` dosyasının 6. bölümündeki açık sorular, tema işleme alınınca `../ISLEME.md` içindeki kurallarla kapatılır ve kararlar aynı dosyaya yazılır.
 

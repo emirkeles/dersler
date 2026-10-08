@@ -127,7 +127,7 @@ Karelerin hareket kuralları `STORYBOARD.md` içinde her karenin `rules` satır�
 - **E3 dersi henüz yok.** 1–8. adımlar dersten bağımsız yürür (B7 hikâyesi de dersinden önce üretilmişti); 9. adım temayı bekler. Tema işlenirken kapanış cümlesi ya da terimler değişirse 12. satır ve kapanış kartı yeniden üretilir.
 - **Dersin açılışıyla örtüşme.** E3'ün taslak açılış sorusu da gösterge ve ortalama üzerine. Tema işlenirken açılış bu hikâyenin sahnesine göre yeniden yazılabilir (`../../HIKAYE-ANIMASYONLARI.md` bölüm 8, soru 1).
 - **Tema klasörü yalnızca hikâyeyi içeriyor.** `fizik/kuvvet-ve-hareket/` bu projeyle açıldı; içinde tema sayfası ve `tema.js` yok. `araclar/hikaye-ses.js e3-iki-kamera --liste` projeyi buluyor (denendi). `denetle.js` tema işlenmeden bu klasörde çalıştırılmaz.
-- **Örnek olarak sınırı aşan bir sürücü.** Hikâye dayının yaptığını onaylamaz: ceza gelir ve hile işe yaramaz. Ayrı bir can güvenliği cümlesi yok (tek fikir kuralı); bu bağ E6 dersinde kurulur.
+- **Örnek olarak sınırı aşan bir sürücü.** Hikâye dayının yaptığını onaylamaz: ceza gelir ve hile işe yaramaz. Ayrı bir can güvenliği cümlesi yok (tek fikir kuralı); bu bağ E7 dersinde kurulur.
 - **Ses sağlayıcısı.** HyperFrames'in kendi seslendirme yolları Kokoro ve HeyGen'dir. Bu proje derslerle aynı sesi (Gamze Özdemir, ElevenLabs) ve depodaki aracı kullanıyor; değiştirilmedi.
 
 ## 7. Açık kararlar

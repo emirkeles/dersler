@@ -141,7 +141,7 @@ Müfredat sınırları, hikâye yazılırken:
 | 2 · C1–C7 Vektörler | İşlem tekniği. Program gerçek yaşam bağlamı istemiyor, kareli düzlemde çalışılmasını istiyor. Bkz. bölüm 7, ikinci aday. |
 | 2 · D1, D2 Dört temel kuvvet | Dördünden ikisinin (güçlü ve zayıf çekirdek kuvveti) gündelik hayatta doğrudan karşılığı yok; hikâye zorlama olur. |
 | 2 · E4 Hız | Yön fikrini 13 (servis) ve 16 (rüzgâr) taşıyor. |
-| 2 · E6 Sürat sınırı ve yeşil dalga · 2 · F1 Öteleme, dönme, titreşim | Dersin kendisi zaten hayattan bir durumla kurulu; F1'in üç türü 17 numarada bir arada. |
+| 2 · E7 Sürat sınırı ve yeşil dalga · 2 · F1 Öteleme, dönme, titreşim | Dersin kendisi zaten hayattan bir durumla kurulu; F1'in üç türü 17 numarada bir arada. |
 | 3 · A2, B2 Modele ulaşma · 3 · D3 Kaldırma kuvveti nereden gelir? | Deney ve model dersleri; fikirlerini 7, 4 ve 15 taşıyor. |
 | 3 · B4 Merak et, sor, doğrula | Bir sorgulama yöntemi; gündelik sahnesi dersin kendisi. |
 | 3 · C2 Torricelli · 3 · C3 Rüzgâr | Bkz. bölüm 7 (pipet, meltem). |
@@ -164,7 +164,7 @@ Müfredat sınırları, hikâye yazılırken:
 | Düdüklü tencere: 2 atm'de su 120 °C'ta kaynar. | 4 · C1 | Kitapta var (s. 232) ve çok somut; ama çıktı hâl değişimi için gereken ısıyla ilgili, kaynama sıcaklığının değişmesi yan konu. |
 | Denizden çıkınca rüzgârda üşümek. | 4 · C2 | Müfredat: çıktı "hâl değiştirme sıcaklığında bulunan" maddeyle sınırlı; buharlaşma bu sıcaklığın altında olur. |
 | Tostun içindeki domatesin ekmekten çok yakması. | 4 · B2 | Kitapta yok; açıklaması öz ısıya, kütleye ve buhara birden dayanır, tek fikir kuralını bozar. |
-| Yeşil dalga. | 2 · E6 | Programın kendi örneği ama E6 dersinin konusu; hikâye dersi yineler. |
+| Yeşil dalga. | 2 · E7 | Programın kendi örneği ama E7 dersinin konusu; hikâye dersi yineler. |
 
 ## 8. Açık kararlar
 

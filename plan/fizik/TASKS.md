@@ -66,6 +66,21 @@ Plan: `akiskanlar/hikaye/A1-cantanin-askisi.md`
 
 ## Temalar
 
-- [ ] Kuvvet ve Hareket: işleme al
+- [ ] Kuvvet ve Hareket: işleme al (durum: `kuvvet-ve-hareket/DURUM.md`)
+  - [x] Ders kitabı 2. ünite okundu (s. 50–129)
+  - [x] Plan yeniden yazıldı: 24 kısa ders, her derste örnekler, yanılgılar, anlama denetimi (7 Ekim 2026)
+  - [x] 15 açık soru kapatıldı (`PLAN.md` bölüm 7)
+  - [x] Kullanıcı onayı: karar 1 (24 ders, 0,85 sınırı aşılıyor), karar 10 (yeşil dalga: kurgu ve örnek veri), karar 22 (E6'da dik üçgen örneği) — 7 Ekim 2026
+  - [ ] Yeşil dalganın işleyişi için resmî kaynak (bulunamadı; kullanıcı kurgu ve örnek veriyle yürümeyi onayladı)
+  - [x] Senaryolar A–F: 24 ders, 154 sahne, 1.477 anlatım cümlesi; `senaryo-denetle.cjs` temiz
+  - [ ] Kullanıcı senaryoları okur; `PLAN.md` bölüm 8'deki açık notlar (uranyum kartı, s. 88 tablosu, E7'de "10 saniye yeşil")
+  - [x] İskelet: tema sayfası, `tema.js`, `dersler/kit.js`
+  - [x] 24 kısa ders (A1 ana oturum, 23 ders dokuz alt ajan); her biri `olc.js` temiz
+  - [x] Tema denetimi: `denetle.js` temiz, tema sayfası görüntüsü
+  - [ ] Kullanıcı temayı izler (gözle bakılacak sahneler: `kuvvet-ve-hareket/DURUM.md`)
+  - [x] Tablolu sahnelerde 25 kelime istisnası (karar 23; `KURALLAR.md` bölüm 4)
+  - [x] Seslendirme: 24 ders, 1.472 klip, 115,7 dk, 57 MB (8 Ekim 2026)
+  - [ ] Kullanıcı sesli izler: 14 uzun klip ve kulakla doğrulanmamış okunuşlar (`kuvvet-ve-hareket/DURUM.md`)
+  - [ ] Yayın, E3 hikâyesinin derse bağlanması (kullanıcı ister)
 - [ ] Akışkanlar: işleme al
 - [ ] Enerji: işleme al
