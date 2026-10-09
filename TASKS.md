@@ -565,7 +565,7 @@ Tema 5 · Fizik Bilimi ve Kariyer Keşfi (görev tanımı: `plan/fizik/fizik-bil
 - [x] 2b.2 Konu B (2 ders, 4 soru + `b3-tekrar`: altı kural, sekiz soru), Konu C (1 ders, 2 soru + `c2-tekrar`: beş kural, altı soru), Konu D (2 ders, 4 soru + `d3-tekrar`: altı kural, sekiz soru): birer Sonnet ajanı
 - [x] 2b.3 Ölçüm: `olc.js` on derste bütün sayaçlar 0, konsol temiz (Haiku, sırayla); `sure.js` tema 64:05; `denetle.js` "10 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/10, konu tekrarı yok 0/4; `tema.js` satırları (A2, B3, C2, D3) ve süreler
 - [x] 2b.4 İçerik denetimi: 12 ek soru ve 28 tekrar sorusu okundu; `c2-tekrar` soru 5'te doğru şıkkın yeri, B1, `b3-tekrar` ve `d3-tekrar`da dört yazım düzeltildi; dört tekrar dersinden dokuz görüntüye bakıldı
-- [ ] 2b.5 Commit `d143d1f` yerelde (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). **Push yapılamadı:** `git push` "failed to get: -25308 · could not read Username for https://github.com" verdi (anahtarlık bu oturumdan okunamıyor; `gh` belirteci de geçersiz). Kullanıcı kendi terminalinden `git push origin main` çalıştırınca kapanır
+- [x] 2b.5 Commit `d143d1f`, `origin/main`e gönderildi (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). İlk denemede push yapılamadı: oturum SSH üzerinden açıldığı için giriş anahtarlığı kilitliydi ("failed to get: -25308"); kullanıcı `security unlock-keychain` ile açınca gitti. Canlı sitede doğrulanmadı
 - [x] İş panosu (sürüm 11: 179 kısa ders, 22 konu tekrarı, 2b 7 temadan 5'i)
 
 Sıradaki temalar: Kimya Etkileşim (8), Kuvvet ve Hareket (6).
