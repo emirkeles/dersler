@@ -279,8 +279,14 @@
         why: ['Dalgalar, telli çalgıların sesini açıklarken kullanılır.', 'Evet. Mikroskopla görüntülemede ışık konusundan yararlanılır.', 'Esneklik, telin geriliminin ayarlanmasıyla ilgilidir.'], scene: 1 },
       { q: 'Hangisi fizik biliminin tanımına uyar?', options: ['Yalnızca canlıları inceler', 'Yalnızca sayılarla ve şekillerle uğraşır', 'Evreni kuvvet, madde, enerji, uzay ve zaman ilişkileriyle inceler'], answer: 2,
         why: ['Canlıları biyoloji inceler; fizik biyolojiyle bağ kurar.', 'Fizik matematik dilini kullanır, ama konusu evrendeki olaylardır.', 'Evet. Fizik bunu hesaplama ve gözlemle yapar.'], scene: 3 },
+      { q: 'Kaydıraktan kayan bir çocuk aşağı indikçe hızlanır. Bu olayı fiziğin hangi konusu açıklar?',
+        options: ['Enerji dönüşümü', 'Işığın kırılması', 'Elektrik ve manyetizma'], answer: 0,
+        why: ['Evet. Yokuştan inen kaykaycıdaki gibi enerji bir türden ötekine dönüşür.', 'Olayda ışık yok; ışığın kırılması gökkuşağını açıklıyordu.', 'Olayda elektrik yok; bu konu LED lambanın çalışmasını açıklıyordu.'], scene: 4 },
+      { q: 'Deniz: “Gezegenlerin yörüngesi astronominin konusudur; fizikle ilgisi yoktur.” Deniz’e ne dersin?',
+        options: ['Haklısın; gök cisimlerine yalnızca astronomi bakar.', 'Yanılıyorsun; astronomi yörüngeleri fiziğin hareket konusuyla hesaplar.', 'Yanılıyorsun; gezegenleri astronomi değil, yalnızca fizik inceler.'], answer: 1,
+        why: ['Bir olaya iki disiplin birlikte bakabilir; astronomi fizikle bağ kurar.', 'Evet. Gözlem astronominin, yörünge hesabındaki hareket konusu fiziğin.', 'Gezegenleri gözlemleyen disiplin astronomidir; fizik ona hesapta yardım eder.'], scene: 2 },
     ],
     summary: ['<b>Fiziği, öteki bilimlerle kurduğu bağlardan tanırız.</b>', 'Fizik, evreni <b>kuvvet, madde, enerji, uzay ve zaman</b> ilişkileriyle inceler.'],
-    nextLesson: { href: 'b1-gorselleri-neye-gore-ayirirsin.html', label: 'Sonraki: Görselleri neye göre ayırırsın? ›' },
+    nextLesson: { href: 'a2-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

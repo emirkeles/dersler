@@ -57,3 +57,42 @@ Başlangıç ve bitiş: 7 Ekim 2026. Çalışma klasörü paylaşıldığı içi
 - Adım 6: her dersin dizini ile klip dosyaları birebir uyuşuyor; `--liste` altı derste de "Üretilecek: 0 klip" diyor; `olc.js` ve `denetle.js` kliplerle temiz. Süre, dersin ortancasından %30'dan fazla sapan iki klip var, ikisi de kısa cümle (+%32): B2 S2 `a1edfb38` "Dört raf, dört alt dal oldu." (2,9 sn) ve C1 S1 `dc98b88a` "İlk söz Ayzek Nüvtın'dan." (2,4 sn). Dinlenmeli.
 - Kulakla dinlenmesi gerekenler: yukarıdaki iki klip; C1 S1 ve S3'teki yabancı adlar ve yıllar; D1 S1 ve S3'teki "Sörn"; D2 S1 "ASELSAN".
 - Bir altyazının metni değişirse yalnızca o klip yeniden üretilir: `node araclar/ses-uret.js fizik-bilimi-ve-kariyer-kesfi/<kod>`.
+
+## Yürütme planı 2b: sese dokunmayan ekler (9 Ekim 2026)
+
+`plan/YURUTME.md` 2b. Anlatım, altyazı, sahne ve `speak` değişmedi; klip yeniden üretilmedi. Her derse iki çıkış sorusu (2'den 4'e; üç şıklı; biri yeni durum, biri yanılgı), her konunun sonuna konu tekrarı dersi (seslendirilmedi; sayfalarda `ses/…` satırı yok). Görev tanımı ve üç yardımcı araç `gorev/` altında: `ek-soru-gorevi.md`, `ders-ozeti.cjs`, `soru-ekle.cjs`, `sik-sirala.cjs` (Biyoloji Yaşam'dan kopyalandı, yalnızca klasör yolu değişti).
+
+| Konu | Ek sorular | Konu tekrarı | Kim | Durum |
+|---|---|---|---|---|
+| A Fizik bilimi | A1, 2 soru | `a2-tekrar` (beş kural, altı soru) | ana oturum (örnek) | bitti |
+| B Fizik biliminin alt dalları | B1–B2, 4 soru | `b3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+| C Fizik bilimine yön verenler | C1, 2 soru | `c2-tekrar` (beş kural, altı soru) | Sonnet | bitti |
+| D Fizik bilimi ile ilgili kariyer keşfi | D1–D2, 4 soru | `d3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+
+Toplam: 6 derse 12 ek soru, dört tekrar dersinde 28 soru; tema 10 kısa ders.
+
+Denetim: `olc.js` on derste (Haiku ajanı, sırayla) bütün yerleşim ve bütçe sayaçları 0, konsol temiz. `sure.js` tema 64:05 (A 10:20, B 21:30, C 11:39, D 20:36; tekrar dersleri 3:58–5:47). Eski altı dersin süresi 51–70 sn arttı (iki ek soru). `denetle.js`: "10 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/10, konu tekrarı yok 0/4. Karşılaştırmada altı ders dosyasında değişiklik yalnızca `quiz` dizisine ekleme ve dört konunun son dersinde `nextLesson` satırı (D2'de alan yoktu, eklendi). Dört tekrar dersinden dokuz görüntüye bakıldı.
+
+Cevap yerleri (0/1/2): A1 1/2/1, `a2` 2/2/2; B1–B2 3/3/2, `b3` 3/3/2; C1 1/1/2, `c2` 2/2/2; D1–D2 3/3/2, `d3` 3/3/2.
+
+Ana oturumun düzeltmeleri (ajan çıktısı):
+
+- `c2-tekrar` soru 5: doğru şık yanlış yerdeydi (rapor 1 diyordu, dosyada 0; tekrar 3/1/2 oluyordu); `sik-sirala.cjs` ile 1'e alındı.
+- B1 soru 4 geri bildirimi: "derste görsellerin hepsi aynı boydaydı" → "rafı nitelik belirler".
+- `b3-tekrar` soru 1: "Bir mühendis" → "Bir teknisyen" (konuda üç soru aynı kişiyle başlıyordu).
+- `d3-tekrar` soru 3: nottaki kaynak "(Ders kitabı, s. 41)" → "(kaynak: NASA’nın kendi sitesi)"; soru 1 geri bildiriminde derste geçmeyen "ikinci elden" sözü çıkarıldı.
+
+Notlar:
+
+- Tek dersli konularda (A, C) tekrar dersi dersin hemen ardından gelir: beş kural, altı soru (alt sınır). Kullanıcı gereksiz bulursa iki dosya ve `tema.js` satırı silinir, A1 ve C1'in `nextLesson` satırı eski hâline döner.
+- Kullanıcının bakabileceği sorular: `a2-tekrar` soru 1 (bardaktaki kalemin kırık görünmesi: derste kırılma yalnızca gökkuşağıyla geçiyor), `b3-tekrar` soru 4 (salıncak ve kızak: "hareket ve kuvvet" eşlemesi derste bu örneklerle yok), `d3-tekrar` soru 1 (blog yazısının ilk elden olmadığı derste açıkça söylenmiyor), D1 soru 3 (yeni durum olarak zayıf: aynı ayrımı TÜBİTAK için soruyor).
+- `c2-tekrar` tahtasında yedi unsurun hepsi yazıyor; "bilimsel erdem", "ilke" ve "laboratuvar deneyimi" için derste örnek yok, sorularda kullanılmadı.
+- Dört tekrar dersi seslendirilmedi. `speak` hazır: `a2` 1 (LED), `c2` 3 (Newton, Galileo, Kepler, Einstein), `d3` 1 (CERN).
+- Ajan başına bağlam: B 124, C 100, D 129 bin token; ölçüm (Haiku) 48 bin.
+
+## Sıradaki
+
+- Bu temada 2b bitti. Açık iş yok.
+- Yürütme sırası: `plan/YURUTME.md` 2b, sıradaki tema Kimya Etkileşim (`kimya/etkilesim/`, 8 konu, 18 ders: A 2, B 2, C 2, D 1, E 3, F 3, G 1, H 4; sekiz tekrar dersi). Ders dosyaları büyük (25–60 KB, 340–700 satır) ve çok satırlı; çıkış soruları üç şıklı; `dersler/kit.js` yalnızca 2,8 KB, ortak biçim `dersler/tema.css` içinde. Ajanlar ders dosyasını okumaz: bu temanın üç aracı (`plan/fizik/fizik-bilimi-ve-kariyer-kesfi/gorev/*.cjs`; içlerindeki klasör yolu değiştirilerek) ve görev tanımı kopyalanıp `plan/kimya/etkilesim/gorev/` altına uyarlanır. Önce `ders-ozeti.cjs` dökümünün bu temada çalıştığı doğrulanır (ders dosyaları `Ders.start` dışında başka küreseller kullanıyorsa araçtaki sahte ortam genişletilir).
+- 2b.1: A konusu ana oturumda (örnek); 2b.2: kalan yedi konu, konu başına bir Sonnet ajanı (aynı anda en çok dört); ajanlar bittikten sonra `olc.js` Haiku ajanıyla sırayla (on ders altı dakika sürdü), sonra `sure.js` ve `denetle.js` ana oturumda.
+- Görev iletisinde cevap yerleri sayıyla verilir; tek dersli konuda (D, G) tekrar dersi altı soru olur. Ajan raporundaki cevap yerlerine güvenilmez: `ders-ozeti.cjs --sorular <harf>` ile okunur.

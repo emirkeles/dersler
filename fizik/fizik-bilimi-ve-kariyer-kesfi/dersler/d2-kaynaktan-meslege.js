@@ -196,7 +196,14 @@
         why: ['Evet. Kimin, ne zaman yazdığı belli değil.', 'Yazan belli, bilgi ilk elden ve tarihli.', 'Yazan ve yayımlayan belli.'], scene: 1 },
       { q: 'Isı transferi dersi alan bir makine mühendisi, fiziğin hangi alt dalından yararlanır?', options: ['Optik', 'Nükleer fizik', 'Termodinamik'], answer: 2,
         why: ['Optik ışık olaylarını inceler.', 'Nükleer fizik atom çekirdeğini inceler.', 'Evet. Isı ve sıcaklık termodinamiğin konusudur.'], scene: 3 },
+      { q: 'Bir mühendislik öğrencisi, açıklaması “mıknatıslar ve elektrik akımı” olan bir ders alıyor. Bu ders fiziğin hangi alt dalına dayanır?',
+        options: ['Mekanik', 'Elektromanyetizma', 'Optik'], answer: 1,
+        why: ['Mekanik hareket ve kuvvetle ilgilenir; derste mıknatıs ve elektrik akımı var.', 'Evet. Mıknatıs ve elektrik akımı elektromanyetizmanın konusudur.', 'Optik ışık olaylarını inceler; dersin açıklamasında ışık yok.'], scene: 3 },
+      { q: 'Defne, kaynağı belli olmayan bir sitede okuduğu bilgi için şöyle dedi: “Yazarı ve tarihi yok; öyleyse bu bilgi yanlıştır.” Defne’ye en uygun karşılık hangisi?',
+        options: ['Bilgi sınanmalı; başka bir kaynakla doğrulanabilir.', 'Bilgi güvenilir; çünkü kısa ve net yazılmış.', 'Bilgi kullanılmalı; çünkü çok kişi paylaşmış.'], answer: 0,
+        why: ['Evet. Sınanmalı, yanlış demek değildir; başka kaynakla doğrulanır.', 'Kısa ve net olması doğru olduğunu göstermez; yine de kaynağına bakılır.', 'Çok kişinin paylaşması kaynağı belli etmez; bilgi önce sınanır.'], scene: 1 },
     ],
     summary: ['<b>Önce kaynağı sına, sonra bilgiye güven.</b>', 'Kaynağa üç soru: <b>kim yazdı, ilk elden mi, güncel mi?</b>'],
+    nextLesson: { href: 'd3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

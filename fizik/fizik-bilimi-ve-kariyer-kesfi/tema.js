@@ -4,18 +4,22 @@ KATALOG.tema('fizik', 'fizik-bilimi-ve-kariyer-kesfi', {
   tanitim: 'Fizik neyi inceler, hangi dallara ayrılır, kimler yön verdi ve bugün nerelerde, hangi mesleklerle yaşıyor?',
   konular: [
     { harf: 'A', ad: 'Fizik bilimi', renk: '#6ea8ff', dersler: [
-      ['a1-fizik-baglarindan-taninir.html', 'Fizik, öteki bilimlerle bağından tanınır', 'Bir gitar teli titreyip ses verdiğinde, bunu müzik mi açıklar, fizik mi?', 5, 331],
+      ['a1-fizik-baglarindan-taninir.html', 'Fizik, öteki bilimlerle bağından tanınır', 'Bir gitar teli titreyip ses verdiğinde, bunu müzik mi açıklar, fizik mi?', 5, 382],
+      ['a2-tekrar.html', 'Konu tekrarı: Fizik bilimi', 'Konunun kuralları aklında mı?', 1, 238],
     ] },
     { harf: 'B', ad: 'Fizik biliminin alt dalları', renk: '#3ddc97', dersler: [
-      ['b1-gorselleri-neye-gore-ayirirsin.html', 'Görselleri neye göre ayırırsın?', 'Fizikle ilgili on altı fotoğrafı raflara dizecek olsan, kaç raf açardın ve neye göre?', 4, 437],
-      ['b2-fizigin-alt-dallari.html', 'Her grubun bir adı var: fiziğin alt dalları', 'Bir hastanedeki görüntüleme cihazını tasarlayan ekip, fiziğin hangi dalından birini arar?', 4, 423],
+      ['b1-gorselleri-neye-gore-ayirirsin.html', 'Görselleri neye göre ayırırsın?', 'Fizikle ilgili on altı fotoğrafı raflara dizecek olsan, kaç raf açardın ve neye göre?', 4, 491],
+      ['b2-fizigin-alt-dallari.html', 'Her grubun bir adı var: fiziğin alt dalları', 'Bir hastanedeki görüntüleme cihazını tasarlayan ekip, fiziğin hangi dalından birini arar?', 4, 483],
+      ['b3-tekrar.html', 'Konu tekrarı: Fizik biliminin alt dalları', 'İki dersin kuralları aklında mı?', 1, 316],
     ] },
     { harf: 'C', ad: 'Fizik bilimine yön verenler', renk: '#f5b04c', dersler: [
-      ['c1-dort-bilim-insani.html', 'Dört bilim insanı, ortak bir çalışma biçimi', 'Yüzyıllar arayla yaşamış bilim insanlarının ortak yanı ne olabilir?', 4, 369],
+      ['c1-dort-bilim-insani.html', 'Dört bilim insanı, ortak bir çalışma biçimi', 'Yüzyıllar arayla yaşamış bilim insanlarının ortak yanı ne olabilir?', 4, 438],
+      ['c2-tekrar.html', 'Konu tekrarı: Fizik bilimine yön verenler', 'Konunun kuralları aklında mı?', 1, 261],
     ] },
     { harf: 'D', ad: 'Fizik bilimi ile ilgili kariyer keşfi', renk: '#c792ff', dersler: [
-      ['d1-merak-et-sor.html', 'Bilimsel araştırma merkezinde fizik: merak et, sor', 'Bir araştırma merkezinde yalnızca fizikçiler mi çalışır?', 4, 416],
-      ['d2-kaynaktan-meslege.html', 'Bu bilgi güvenilir mi? Kaynaktan mesleğe', 'Bir meslek hakkında iki sitede iki ayrı bilgi okudun; hangisine güveneceğine nasıl karar verirsin?', 5, 355],
+      ['d1-merak-et-sor.html', 'Bilimsel araştırma merkezinde fizik: merak et, sor', 'Bir araştırma merkezinde yalnızca fizikçiler mi çalışır?', 4, 479],
+      ['d2-kaynaktan-meslege.html', 'Bu bilgi güvenilir mi? Kaynaktan mesleğe', 'Bir meslek hakkında iki sitede iki ayrı bilgi okudun; hangisine güveneceğine nasıl karar verirsin?', 5, 410],
+      ['d3-tekrar.html', 'Konu tekrarı: Fizik bilimi ile ilgili kariyer keşfi', 'İki dersin kuralları aklında mı?', 1, 347],
     ] },
   ],
 });

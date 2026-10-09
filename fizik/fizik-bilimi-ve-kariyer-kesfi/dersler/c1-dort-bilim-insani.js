@@ -246,8 +246,14 @@
       { q: 'Einstein 1905’ten sonra dört yıl kendi alanında iş bulamadı, çalışmayı bırakmadı. Bu hangi unsurla değerlendirilir?',
         options: ['Kararlılık', 'Laboratuvar deneyimi', 'Eğitim'], answer: 0,
         why: ['Evet. Zorluğa karşın sürdürmek kararlılıktır.', 'Burada bir laboratuvar çalışması anlatılmıyor.', 'Eğitim, öğrendikleriyle ilgilidir; burada vazgeçmemek anlatılıyor.'], scene: 3 },
+      { q: 'Bir araştırmacı, kimse istemediği hâlde, yalnızca bir olayı anlamayı çok istediği için boş zamanlarında da gözlem yapıyor. Bu durum hangi unsurla değerlendirilir?',
+        options: ['Kararlılık', 'Tutku', 'Eğitim'], answer: 1,
+        why: ['Kararlılık, zorluğa karşın sürdürmektir; burada bir zorluk anlatılmıyor.', 'Evet. Bir şeyi çok isteyerek yapmak tutkudur; Einstein’ın anlama merakı gibi.', 'Eğitim, öğrenilenlerle ilgilidir; burada öğrenim değil, istek anlatılıyor.'], scene: 3 },
+      { q: 'Emre: “Bilim insanı, öncekilerin bilgisini olduğu gibi kabul eder; sorgulamak ona düşmez.” Emre’nin cümlesini düzelten hangisidir?',
+        options: ['Bilim insanı öncekilerin bilgisine bakmaz; her şeyi baştan, tek başına bulmaya çalışır.', 'Bilim insanı bir bilgiye, ünlü biri söylediği ya da eskiden beri bilindiği için güvenir.', 'Bilim insanı öncekilerin bilgisini inceler; gözleme ve ispata dayanmayanı sorgular.'], answer: 2,
+        why: ['Newton bile Galileo ve Kepler’in yasalarından yola çıktı. Öncekilere hiç bakmamak bilim insanının yolu değil.', 'Bu, Emre’nin yanılgısının kendisi. Hazini güveni ünlü ya da eski olmaya değil, gözleme ve ispata bağlar.', 'Evet. İbnülheysem eski kuramı sorguladı ve gözlemle sınadı; Hazini sonucu gözleme ve ispata dayandırdı.'], scene: 1 },
     ],
     summary: ['<b>Çağ değişir; merak, azim ve titiz çalışma değişmez.</b>', 'Bilim insanı <b>meraklı, sabırlı, kararlı ve sorgulayıcıdır</b>.'],
-    nextLesson: { href: 'd1-merak-et-sor.html', label: 'Sonraki: Merak et, sor ›' },
+    nextLesson: { href: 'c2-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

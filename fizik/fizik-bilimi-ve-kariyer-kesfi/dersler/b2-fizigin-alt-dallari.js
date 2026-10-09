@@ -144,8 +144,14 @@
         why: ['Mekanik kuvvet, hareket ve dengeyle ilgilenir.', 'Evet. Termodinamik ısı ve sıcaklıkla ilgilenir.', 'Optik ışık olaylarını inceler.'], scene: 1 },
       { q: 'Atom çekirdeğini ve çekirdekteki tepkimeleri hangi alt dal inceler?', options: ['Nükleer fizik', 'Atom fiziği', 'Katı hâl fiziği'], answer: 0,
         why: ['Evet. Nükleer fizik atom çekirdeğini inceler.', 'Atom fiziği atomun bütününe, elektron dizilimine bakar.', 'Katı hâl fiziği kristal yapılı ve yarı iletken maddeleri inceler.'], scene: 2 },
+      { q: 'Bir mühendis, bir köprünün üzerindeki araçların uyguladığı kuvvetleri ve köprünün dengede kalmasını hesaplıyor. Hangi alt daldan yararlanır?',
+        options: ['Termodinamik', 'Optik', 'Mekanik'], answer: 2,
+        why: ['Termodinamik ısı ve sıcaklıkla ilgilenir; köprü hesabında kuvvet ve denge söz konusu.', 'Optik ışık olaylarını inceler; köprünün dengesinin ışıkla ilgisi yok.', 'Evet. Mekanik kuvvet, hareket ve dengeyle ilgilenir.'], scene: 1 },
+      { q: 'Zeynep: “Atomdaki elektronların dizilimini nükleer fizik inceler.” Zeynep’e ne dersin?',
+        options: ['Haklısın; nükleer fizik atomun bütününü, elektron dizilimini de inceler.', 'Yanılıyorsun; elektron dizilimini atom fiziği, çekirdeği nükleer fizik inceler.', 'Yanılıyorsun; elektron dizilimini katı hâl fiziği, çekirdeği atom fiziği inceler.'], answer: 1,
+        why: ['Nükleer fizik yalnızca atom çekirdeğine bakar; atomun bütününe bakan dal başka.', 'Evet. Atom fiziği atomun bütününe ve elektron dizilimine, nükleer fizik çekirdeğine bakar.', 'Katı hâl fiziği kristal yapılı ve yarı iletken maddeleri inceler. Çekirdeğe atom fiziği değil, nükleer fizik bakar.'], scene: 2 },
     ],
     summary: ['<b>Alt dalın adı, neyi incelediğini söyler.</b>', 'Mekanik, elektromanyetizma, termodinamik, optik, katı hâl fiziği, atom fiziği, nükleer fizik, yüksek enerji ve plazma fiziği'],
-    nextLesson: { href: 'c1-dort-bilim-insani.html', label: 'Sonraki: Dört bilim insanı ›' },
+    nextLesson: { href: 'b3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();
