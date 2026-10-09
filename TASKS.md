@@ -577,4 +577,12 @@ Tema 6 · Kimya Etkileşim (görev tanımı: `plan/kimya/etkilesim/gorev/ek-soru
 - [x] 2b.5 Commit `13098f9`, `origin/main`e gönderildi (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). Canlı sitede doğrulanmadı
 - [x] İş panosu (sürüm 12: 187 kısa ders, 30 konu tekrarı, 2b 7 temadan 6'sı)
 
-Sıradaki tema: Kuvvet ve Hareket (6).
+Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gorev/ek-soru-gorevi.md`; ilerleme `plan/fizik/kuvvet-ve-hareket/DURUM.md` "2b" bölümü)
+
+- [x] 2b.1 Konu A (ana oturum, örnek): A1 ve A2'ye ikişer çıkış sorusu (üç şıklı; biri yeni durum, biri yanılgı), `a3-tekrar` (yedi kural, sekiz soru; `olc.js` temiz, dört görüntüye bakıldı); üç araç `gorev/` altında (`Ders.ease` için düzeltildi: F1 ve F2 yüklenmiyordu); altı konuda son ders → tekrar bağlantısı
+- [x] Görev tanımı `gorev/ek-soru-gorevi.md`
+- [x] 2b.2 Konu B (2 ders, 4 soru + `b3-tekrar`: altı kural, sekiz soru), C (9 ders, 18 soru: iki soru ajanı; `c10-tekrar`: dokuz kural, on soru), D (2 ders, 4 soru + `d3-tekrar`: altı kural, sekiz soru), E (7 ders, 14 soru: iki soru ajanı; `e8-tekrar`: dokuz kural, on soru), F (2 ders, 4 soru + `f3-tekrar`: altı kural, sekiz soru): dokuz Sonnet ajanı, aynı anda en çok dört
+- [x] 2b.3 Ölçüm: `olc.js` 30 derste yerleşim sayaçları 0, konsol temiz (29'u Haiku, `e8` ana oturum); "tahtada 25 kelime" yalnızca önceden kabul edilmiş tablolu sahnelerde (C1, C2, C9, D2, E7); `sure.js` tema 355:16; `denetle.js` "30 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/30, konu tekrarı yok 0/6; `tema.js` satırları ve süreler
+- [x] 2b.4 İçerik denetimi: 48 ek soru ve 52 tekrar sorusu okundu; C9 soru 4, `f3-tekrar` soru 2 yenisiyle değiştirildi, üç uzun doğru şık kısaltıldı, `b3-tekrar` ve `e8-tekrar`da birer soru düzeltildi (ayrıntı `DURUM.md`); 24 ders dosyasında değişikliğin yalnızca `quiz` eklemesi ve `nextLesson` olduğu karşılaştırmayla doğrulandı; altı tekrar dersinden 17 görüntüye bakıldı
+- [ ] 2b.5 Commit ve push (yalnızca bu temanın dosyaları ve kayıtlar)
+- [ ] Kayıt: `DURUM.md` "2b" ve "Sıradaki", `YURUTME.md` 2b satırı, iş panosu

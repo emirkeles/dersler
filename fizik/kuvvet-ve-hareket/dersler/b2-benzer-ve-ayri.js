@@ -297,10 +297,16 @@
       { q: 'Bir bisiklet parçasının etiketinde “1.250 N” yazıyor. Bu nicelik için hangisi doğrudur?',
         options: ['Temel ve vektörel', 'Türetilmiş ve skaler', 'Türetilmiş ve vektörel'], answer: 2,
         why: ['Newton kg·m/s² demektir; kuvvet temel değil, türetilmiştir.', 'Kuvvet yön ister; skaler değil, vektöreldir.', 'Newton kuvvetin birimidir; kuvvet türetilmiş ve vektöreldir.'], scene: 3 },
+      { q: 'Hangi toplama anlamlıdır?',
+        options: ['Bir kutunun kütlesini, üstüne etki eden kuvvetle', 'Bir odanın uzunluğunu, genişliğiyle', 'Bir bisikletçinin hızını, kendi kütlesiyle'], answer: 1,
+        why: ['Kütle ile kuvvet farklı cins niceliklerdir; birbiriyle toplanmaz.', 'Evet. İkisi de uzunluktur; aynı tür nicelikler birbiriyle toplanır.', 'Hız ile kütle farklı cins niceliklerdir; birbiriyle toplanmaz.'], scene: 1 },
+      { q: 'Barış: “Joule türetilmiş bir birim; öyleyse enerji de vektörel bir niceliktir.” Doğru karşılık hangisidir?',
+        options: ['Haksız; enerji türetilmiştir ama yön gerektirmez, skalerdir.', 'Haksız; enerji temel bir niceliktir, o yüzden skalerdir.', 'Haklı; birimi türetilmiş olan her nicelik vektöreldir.'], answer: 0,
+        why: ['Evet. Türetilmiş olmak vektörel olmak demek değildir; enerji yön gerektirmez.', 'Enerji temel değil, türetilmiştir: joule kilogram, metre ve saniyeden kurulur.', 'Birim niceliğin temel mi türetilmiş mi olduğunu söyler; yönü söylemez.'], scene: 3 },
     ],
     summary: ['<b>Sayı ve birim ortak, yön ayırır.</b>',
       'Sürat skaler, hız vektöreldir; ikisinin birimi de m/s’dir.',
       'Temel mi, türetilmiş mi? Skaler mi, vektörel mi? İki soru birbirinden bağımsızdır.'],
-    nextLesson: { href: 'c1-vektor.html', label: 'Sonraki: Vektör: yönlü bir doğru parçası ›' },
+    nextLesson: { href: 'b3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

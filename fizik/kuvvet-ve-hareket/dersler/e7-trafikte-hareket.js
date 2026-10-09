@@ -556,8 +556,14 @@
       { q: 'Bir caddenin ışıkları 10 m/s süratle giden araca göre ayarlı. 20 m/s ile giden sürücü ışıklara daha erken varır; neden zaman kazanmaz?',
         options: ['Çünkü hızlı giden araç daha çok yol alır.', 'Aslında kazanır; hızlı giden bütün ışıkları yeşilde geçer.', 'Çünkü ışık henüz yeşile dönmemiştir; kırmızıda bekler.'], answer: 2,
         why: ['İki araç da aynı yolu alır; fark ışıklara varış anındadır.', 'Işıklar tek bir sürate göre ayarlıdır; hızlı giden erken varır ve kırmızıya yakalanır.', 'Yeşile dönme anları sabittir; erken varan bekler ve 10 m/s ile giden araçla aynı anda geçer.'], scene: 5 },
+      { q: 'Bir sahil yolunda yeşil dalga kurulmuş: birinci ışık referans noktası, üç ışık doğu yönünde 0, 300 ve 600 m konumunda. Işıklar 5 m/s sabit süratle giden elektrikli bir scooter’a göre ayarlı; scooter birinci ışıktan geçerken kronometre başlıyor. Üçüncü ışık kaçıncı saniyede yeşile dönmelidir?',
+        options: ['60. saniyede', '120. saniyede', '180. saniyede'], answer: 1,
+        why: ['60. saniye ikinci ışığın anıdır: 300 / 5. Üçüncü ışık 600 m’dedir.', 'Üçüncü ışık 600 m’de; 600 / 5 = 120 saniye.', '60 ile 120’yi toplamışsın; varış anları toplanmaz, her biri konumdan hesaplanır: 600 / 5.'], scene: 4 },
+      { q: 'Bir tır şoförü 400 km’lik yolu 5 saatte gidiyor ve “Ortalamam 80 km/h; bu yolda sınır 90 km/h olduğuna göre hiçbir an sınırı aşmadım” diyor. Şoförün sonucu veriden kesin çıkar mı?',
+        options: ['Çıkmaz; ortalama bütün yolu anlatır, bazı anlarda 90’ın üstüne çıkılmış olabilir', 'Çıkar; ortalama sınırın altındaysa her an sınırın altında gidilmiştir', 'Çıkmaz; ortalama sınırın altındaysa sınır kesinlikle aşılmıştır'], answer: 0,
+        why: ['Evet. 400 / 5 = 80 km/h; ortalama her anı göstermez, sınır ise her an için geçerlidir.', 'Ortalama her anı göstermez: 80 km/h ortalamayla giden biri bir an 90’ı geçebilir.', 'Ortalama sınırın altındaysa aşıldığı kesin değildir; kesin olan, ortalama sınırın üstündeyse aşıldığıdır.'], scene: 3 },
     ],
     summary: ['<b>Sürat sınırı canı, yeşil dalga yakıtı korur.</b>', 'Göstergedeki değer anlık sürattir; ortalama sürat sınırın üstündeyse sınır kesinlikle aşılmıştır.', 'Yeşil dalgada ışıklar, konumlarına ve seçilen sürate göre ayarlanır; erken varan bekler.'],
-    nextLesson: { href: 'f1-oteleme-donme-titresim.html', label: 'Sonraki: Öteleme, dönme, titreşim ›' },
+    nextLesson: { href: 'e8-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

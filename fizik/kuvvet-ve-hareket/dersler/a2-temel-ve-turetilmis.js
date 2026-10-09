@@ -453,10 +453,16 @@
       { q: 'Kuvvetin birimi newton tek sözcüktür. Kuvvet temel bir nicelik midir?',
         options: ['Evet; birimi tek sözcük olan nicelik temeldir.', 'Hayır; newton kg·m/s² demektir, kuvvet türetilmiştir.', 'Evet; kuvvet dinamometreyle doğrudan ölçülür.'], answer: 1,
         why: ['Sözcük sayısı yanıltır; newton kısa bir addır, içinde üç birim vardır.', 'Newton; kilogram, metre ve saniyeden kurulur. Kuvvet türetilmiştir.', 'Bir aletle ölçülebilmek, niceliği temel yapmaz.'], scene: 5 },
+      { q: 'Bir musluktan bir saniyede akan suyun hacmi m³/s birimiyle yazılır. Bu nicelik hangi temel niceliklerden türetilmiştir?',
+        options: ['Kütle ve zaman', 'Kütle ve uzunluk', 'Uzunluk ve zaman'], answer: 2,
+        why: ['Birimde kilogram yok; metreküp kütleyi değil uzunluğu gösterir.', 'Birimde kilogram yok; saniye de zamanı gösterir.', 'Evet. Metreküp üç metrenin çarpımıdır, saniye zamanı gösterir.'], scene: 5 },
+      { q: 'Ece: “Paketin üstünde 250 gram yazıyor; gram SI birimi olmadığına göre buradaki nicelik temel değildir.” Doğru karşılık hangisidir?',
+        options: ['Haksız; nicelik kütledir, birim değişse de temeldir.', 'Haksız; gram da SI’nın temel birimlerinden biridir.', 'Haklı; yalnızca kilogramla yazılan kütle temeldir.'], answer: 0,
+        why: ['Evet. Gram gündelik bir birimdir ama ölçülen nicelik yine kütledir; kütle temeldir.', 'Gram SI birimi değildir; kütlenin SI birimi kilogramdır.', 'Temel olan birim değil niceliktir; kütle hangi birimle yazılırsa yazılsın temeldir.'], scene: 6 },
     ],
     summary: ['<b>Temel nicelik ölçülür, türetilmiş nicelik temellerden kurulur.</b>',
       'SI’da yedi temel nicelik vardır: uzunluk, kütle, zaman, elektrik akımı, sıcaklık, ışık şiddeti, madde miktarı.',
       'Newton, joule ve pascal kısa adlardır; içlerinde kilogram, metre ve saniye vardır.'],
-    nextLesson: { href: 'b1-yon-isteyen-nicelikler.html', label: 'Sonraki: Bazı nicelikler yön ister ›' },
+    nextLesson: { href: 'a3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

@@ -489,8 +489,14 @@
       { q: 'Bir öğrenci aynı iki vektörü üç yöntemle topladı ve üç ayrı bileşke buldu. Hangisi doğrudur?',
         options: ['Hata yoktur; yöntem değişince bileşke değişir', 'Hata yoktur; yöntemler birbirine yakın sonuç verir', 'Bir yerde hata vardır; örneğin taşırken bir okun yönü ya da boyu değişmiştir'], answer: 2,
         why: ['Toplanan vektörler aynıysa bileşke de aynıdır; değişen yalnızca çizim yoludur.', 'Kareli düzlemde üç yol tam aynı oku verir; fark varsa çizimde hata vardır.', 'Üç yol aynı oku verir; fark çizimdeki bir hatadan gelir.'], scene: 1 },
+      { q: 'Bir hokey diskine iki oyuncu aynı anda vuruyor. Birinin vuruşu 4 sağ, 3 yukarı; ötekinin vuruşu 2 sağ, 1 aşağı giden bir kuvvet oku olarak gösteriliyor. Bu iki kuvvet paralelkenar yöntemiyle toplanırsa köşegen başlangıçtan hangi noktaya ulaşır?',
+        options: ['6 sağ, 2 yukarıdaki noktaya', '6 sağ, 4 yukarıdaki noktaya', '2 sağ, 4 yukarıdaki noktaya'], answer: 0,
+        why: ['Evet. Yatayda 4 ile 2 aynı yönde: 6 sağ. Düşeyde 3 yukarıdan 1 aşağı inilir: 2 yukarı. Uç uca eklemeyle ve bileşenlerle de aynı ok çıkar.', 'Düşeyde biri yukarı, öteki aşağı bakıyor; zıt yön çıkarır: 3 − 1 = 2 yukarı.', 'Yatayda iki kuvvet de sağa bakıyor; aynı yön toplar, 6 sağ çıkar. Düşeyde ise zıt yön çıkarır.'], scene: 3 },
+      { q: 'Selin: “Aynı doğrultudaki iki okla paralelkenar kurulamıyor; öyleyse bu okların bileşkesi çizimle bulunamaz.” Doğru karşılık hangisidir?',
+        options: ['Haklı; bileşke yalnızca paralelkenarla çizilebilir.', 'Haksız; uç uca ekleme tek doğrultuda da bileşkeyi verir.', 'Haksız; paralelkenar tek doğrultuda da kurulabilir.'], answer: 1,
+        why: ['Paralelkenar yollardan yalnızca biridir; uç uca ekleme ve bileşenlerle toplama da aynı oku verir.', 'Evet. Oklar aynı doğruya dizilir; baştan sona çizilen ok bileşkedir.', 'Paralelkenar tek doğrultuda kurulamaz; öteki yollar yine çalışır.'], scene: 4 },
     ],
     summary: ['<b>Yol üç, bileşke tek.</b>', 'Uç uca ekleme, paralelkenar ve bileşenlerle toplama aynı iki vektör için tam aynı oku verir.', 'Tek doğrultudaki “aynı yön toplar, zıt yön çıkarır” kuralı, uç uca eklemenin tek doğru üzerindeki hâlidir.'],
-    nextLesson: { href: 'd1-dort-temel-kuvvet.html', label: 'Sonraki: Kuvvet ve doğadaki dört temel kuvvet ›' },
+    nextLesson: { href: 'c10-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

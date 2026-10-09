@@ -530,10 +530,16 @@
         options: ['Gezegenlerde proton ve nötron yoktur', 'Etki mesafesi atom çekirdeğiyle sınırlıdır', 'Güneş’te güçlü nükleer kuvvet etkili değildir'], answer: 1,
         why: ['Gezegenler de atomlardan oluşur; atomların çekirdeğinde proton ve nötron bulunur.', 'Güçlü olmak ile uzağa ulaşmak ayrı özelliklerdir; gezegenleri kütle çekim kuvveti dolandırır.',
           'Güneş’te hidrojen çekirdeklerinin birleşmesinde güçlü nükleer kuvvet etkilidir.'], scene: 2 },
+      { q: 'Tavandan ipe bağlı çelik bir bilyeye yandan bir mıknatıs yaklaştırılıyor; bilye mıknatısa doğru savrulup ip eğiliyor. Bilyeyi mıknatısa doğru çeken kuvvet ile bilyeyi aşağı çeken kuvvet sırasıyla hangileridir?',
+        options: ['Elektromanyetik kuvvet, kütle çekim kuvveti', 'Kütle çekim kuvveti, elektromanyetik kuvvet', 'İkisi de elektromanyetik kuvvet'], answer: 0,
+        why: ['Evet. Mıknatısın çekmesi elektromanyetik kuvvettir, bilyeyi aşağı çeken kütle çekim kuvvetidir; bir olayda iki temel kuvvet birlikte etkilidir.', 'Sıra ters: mıknatısa doğru çeken, manyetik kutuplarla ilgili kuvvettir; aşağı çeken kütleyle ilgili kuvvettir.', 'Bilyeyi aşağı çeken, mıknatıs ya da yükle değil kütleyle ilgili kuvvettir: kütle çekim kuvveti.'], scene: 4 },
+      { q: 'Tuna: “Kütle çekim kuvveti ile elektromanyetik kuvvet, çekirdeğin dışında da etkili ve ikisinin de etki mesafesi sonsuz kabul edilir; demek ki bunlar aynı kuvvettir.” Doğru karşılık hangisidir?',
+        options: ['Haksız; elektromanyetik kuvvet yalnızca çekirdek düzeyinde etkilidir.', 'Haklı; bir bakımdan benzeyen kuvvetler aynı kuvvettir.', 'Haksız; biri kütleyle, öteki yük ve kutuplarla ilgilidir.'], answer: 2,
+        why: ['Elektromanyetik kuvvet çekirdeğin dışında da etkilidir; Tuna’nın bu söylediği doğru, sorun sonucundadır.', 'Aynı iki kuvvet bir bakımdan benzer, başka bir bakımdan farklı olabilir; benzerlik aynılık demek değildir.', 'Evet. İki kuvvet etki mesafesinde benzer, neyle ilgili oldukları bakımından farklıdır.'], scene: 3 },
     ],
     summary: ['<b>En güçlü kuvvet, çekirdeğin dışına ulaşmaz.</b>',
       'Kütle çekim ve elektromanyetik kuvvet çekirdeğin dışında da etkilidir; etki mesafeleri sonsuz kabul edilir.',
       'Güçlü ve zayıf nükleer kuvvet yalnızca çekirdekte etkilidir; bir olayda birden fazla temel kuvvet bulunabilir.'],
-    nextLesson: { href: 'e1-referans-ve-konum.html', label: 'Sonraki: Nereye göre? Referans noktası ve konum ›' },
+    nextLesson: { href: 'd3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

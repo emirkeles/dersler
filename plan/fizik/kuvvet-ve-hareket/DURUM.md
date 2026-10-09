@@ -164,3 +164,47 @@ Kötü çıkan klibi yenilemek: `ses/kuvvet-ve-hareket-<kod>/<klip>.mp3` silinir
 - "İki kamera arası" filmi işlendi (`hikaye/e3-iki-kamera/renders/e3-iki-kamera.mp4`, 71 sn, 17,6 MB) ve E3'ün 9. sahnesi olarak bağlandı; `tema.js` içine `hikayeler` satırı eklendi (tema sayfasında "Hikâyeler" kartı). `tema.js` E3 sahne sayısı 8 → 9. `olc.js kuvvet-ve-hareket/e3` ve `denetle.js` temiz.
 - `sure.js` yeniden çalıştırıldı: 15 satır değişti. E3 dışındaki 14 dersin (B1, B2, C1–C9, E5–E7) süresi, klipleri üretilmeden önce ölçülmüş değerde kalmıştı; tema toplamı yaklaşık 4 sa 35 dk'dan 4 sa 53 dk'ya çıktı.
 - Kullanıcı filmin 7–12. karelerini ve seslendirmesini işlemeden önce onaylamadı; izleyince değişiklik isterse film yeniden işlenir (dosya adı aynı kalır).
+
+## Yürütme planı 2b: sese dokunmayan ekler (9 Ekim 2026)
+
+`plan/YURUTME.md` 2b. Anlatım, altyazı, sahne ve `speak` değişmedi; klip yeniden üretilmedi. Her derse iki çıkış sorusu (2'den 4'e; üç şıklı; biri yeni durum, biri yanılgı), her konunun sonuna konu tekrarı dersi (seslendirilmedi; sayfalarda `ses/…` satırı yok). Görev tanımı ve üç yardımcı araç `gorev/` altında: `ek-soru-gorevi.md`, `ders-ozeti.cjs`, `soru-ekle.cjs`, `sik-sirala.cjs` (Kimya Etkileşim'den kopyalandı; klasör yolu değişti ve `Ders.ease` gibi motor yardımcıları için sahte nesne eklendi: F1 ve F2 onsuz yüklenmiyordu).
+
+| Konu | Ek sorular | Konu tekrarı | Kim | Durum |
+|---|---|---|---|---|
+| A Temel ve türetilmiş nicelikler | A1–A2, 4 soru | `a3-tekrar` (yedi kural, sekiz soru) | ana oturum (örnek) | bitti |
+| B Skaler ve vektörel nicelikler | B1–B2, 4 soru | `b3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+| C Vektörler | C1–C9, 18 soru | `c10-tekrar` (dokuz kural, on soru) | Sonnet: iki soru ajanı (C1–C5, C6–C9), bir tekrar ajanı | bitti |
+| D Doğadaki temel kuvvetler | D1–D2, 4 soru | `d3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+| E Hareketin temel kavramları | E1–E7, 14 soru | `e8-tekrar` (dokuz kural, on soru) | Sonnet: iki soru ajanı (E1–E4, E5–E7), bir tekrar ajanı | bitti |
+| F Hareket türleri | F1–F2, 4 soru | `f3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+
+Toplam: 24 derse 48 ek soru, altı tekrar dersinde 52 soru; tema 30 kısa ders.
+
+Denetim: `olc.js` 30 derste (29'u Haiku ajanı, sırayla, 48 dakika; `e8` ana oturum) yerleşim sayaçlarının hepsi 0, altyazı ve punto sayaçları 0, konsol temiz. "Tahtada 25 kelime" yalnızca yukarıdaki "Tablolu sahnelerde kabul edilen aşımlar" derslerinde: C1 7/70, C2 20/64, C9 12/65, D2 15/60, E7 14/71 (bu sahnelere dokunulmadı); altı tekrar dersinde 0. `sure.js` tema 355:16 (A 30:00, B 26:41, C 121:18, D 35:39, E 106:56, F 34:42; tekrar dersleri 5:04–7:19). Eski 24 dersin süresi 51–77 sn arttı (iki ek soru). 15 dakikayı geçenler: D1 16:30, E6 17:13, E7 15:21, F1 16:43 (E4 tam 15:00). `denetle.js`: "30 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/30, konu tekrarı yok 0/6. Karşılaştırmada 24 ders dosyasında değişiklik yalnızca `quiz` dizisine ekleme ve altı konunun son dersinde `nextLesson` satırı (F2'de alan yoktu, eklendi). Altı tekrar dersinden 17 görüntüye bakıldı.
+
+Cevap yerleri (0/1/2): A1 1,2,0,2 · A2 1,1,2,0 · `a3` 2,0,1,1,0,2,0,1; B1 1,2,0,1 · B2 2,2,1,0 · `b3` 1,0,2,2,0,1,2,0; C1 1,1,2,0 · C2 1,0,2,1 · C3 0,1,2,0 · C4 2,1,0,2 · C5 1,2,0,1 · C6 1,2,0,2 · C7 2,2,1,0 · C8 2,1,0,2 · C9 1,2,0,1 · `c10` 1,2,0,2,1,0,0,2,1,0; D1 1,1,2,0 · D2 2,1,0,2 · `d3` 0,2,1,0,1,2,1,0; E1 1,2,0,2 · E2 1,2,2,0 · E3 1,1,0,2 · E4 1,1,2,0 · E5 1,0,2,1 · E6 1,2,0,1 · E7 0,2,1,0 · `e8` 2,0,1,0,2,1,1,0,2,1; F1 2,0,1,2 · F2 1,2,0,1 · `f3` 1,2,0,1,2,0,2,1.
+
+Ana oturumun düzeltmeleri (ajan çıktısı):
+
+- C9 soru 4: C5 soru 4 ile aynı yanılgıyı (toplama sırası) soruyordu; "paralelkenar tek doğrultuda kurulamıyor, öyleyse bileşke çizimle bulunamaz" yanılgısıyla değiştirildi.
+- C6 soru 4, C8 soru 4, D2 soru 4: doğru şık ötekilerden uzundu, kısaltıldı.
+- C4 soru 3: "olamaz" kalın yazıldı. E3 soru 3: "piste" → "pistte".
+- `b3-tekrar` soru 2: bağlam halat çekmeydi (C1 ve C4'ün kendi örneği); sıkışmış kapıyla değiştirildi.
+- `f3-tekrar` soru 2: F1 soru 4 ile aynı kalıptaydı (mili sabit, kenarı yer değiştiren dönen cisim); öteleme ve titreşimi birlikte soran yeni soruyla değiştirildi.
+- `e8-tekrar` soru 2: iki çeldirici anlamsız büyüktü (465 ve 6.750 saniye); 60 ve 15 saniye yapıldı.
+
+Notlar:
+
+- `e8-tekrar` sekiz değil dokuz kural: E7'de sürat sınırı ile yeşil dalga tek tahtaya sığmadı. `a3-tekrar` yedi kural (yedi temel nicelik ayrı tahta).
+- Kullanıcının bakabileceği sorular: E1 soru 3 (iki yer referans noktasının iki yanında; derste hep aynı yanda), C5 soru 3 ve `c10` soru 1 (uç uca eklemede zıt yönlü yatay bölüm; kare sayarak bulunuyor), `c10` soru 5 (soru metni bileşkeyi veriyor; sınanan "yöntem değişir, bileşke değişmez"), `b3` soru 4 (alanın skaler olduğu derste yazmıyor; "yön gerekir mi" ölçütüyle bulunuyor), `c10` soru 4 ile C1 soru 3 ve `e8` soru 6 ile E4 soru 3 (aynı kalıp, başka bağlam ve sayılar).
+- Tek dersli konu yok; bütün tekrar dersleri en az iki dersi topluyor.
+- Altı tekrar dersi seslendirilmedi. `speak` hazır: `a3` 6, `b3` 6, `c10` 3, `d3` 0, `e8` 10, `f3` 0.
+- Ajan başına bağlam (bin token): B 142, C1–C5 114, C6–C9 119, `c10` 219, D 163, E1–E4 106, E5–E7 97, `e8` 188, F 154; ölçüm (Haiku) 60. `c10` hedefi (200) aştı: dokuz dersin notları ve çizimli dokuz tahta.
+- Ölçüm ajanına verilen tek döngü 600 saniyelik sınırı aştı ve arka planda bitti; 29 ders 48 dakika sürdü. Sonraki temada döngü baştan arka planda çalıştırılıp bittiğinde dosya okunmalı.
+
+## Sıradaki
+
+- Bu temada 2b bitti; `plan/YURUTME.md` 2b'nin yedi teması da tamam. Açık iş yok.
+- Yürütme sırası 3. adıma geçer: yeni temalar, 2a ile aynı düzen (`plan/YURUTME.md` "2a" tablosu ve "Bağlam bütçesi"). İlk tema Matematik · Eşlik ve Benzerlik (`plan/matematik/TEMALAR.md`; 18 ders; `plan/ISLEME.md` baştan sona, şablon `ortak/sablon/`, `kural: 2`). İlk oturum 2a.1 ve 2a.2'yi yapar (müfredat, ders kitabı, `PLAN.md` kararları, konu A senaryosu, iskelet, `kit.js`, ilk ders) ve biter.
+- Kullanıcıyı bekleyenler: Kimya Çeşitlilik'in izlenmesi, seslendirmesi ve yayını; 36 konu tekrarı dersinin seslendirilmesi (yedi eski temada sessiz).
+- Push "failed to get: -25308" verirse oturum SSH üzerindendir ve giriş anahtarlığı kilitlidir: kullanıcı `security unlock-keychain ~/Library/Keychains/login.keychain-db` çalıştırır.

@@ -506,7 +506,14 @@
       { q: 'Tavan vantilatörünün kanatları da yolda giden bisikletin tekerleği de dönüyor. Yere göre farkları nedir?',
         options: ['Fark yoktur; ikisi de yalnızca döner', 'Vantilatör titreşim, tekerlek dönme yapar', 'Vantilatörün mili sabittir; tekerleğin mili yol boyunca ilerler'], answer: 2,
         why: ['Tekerlek yalnızca dönmez; mili yol boyunca ilerler.', 'İkisinde de gidip gelme yok; ikisi de dönüyor.', 'Vantilatör yalnızca döner; tekerlek hem döner hem ötelenir.'], scene: 1 },
+      { q: 'Düz bir yolda giden ambulansın tepesindeki uyarı lambası, ambulansa bağlı bir milin çevresinde dönüyor. Lamba yola göre hangi hareketleri yapar?',
+        options: ['Dönme ve öteleme; mil yol boyunca ilerler, lamba onun çevresinde dolanır', 'Yalnızca dönme; mil ambulansa bağlı olduğu için yola göre de ilerlemez', 'Yalnızca öteleme; lamba ambulansla birlikte yol boyunca ilerliyor'], answer: 0,
+        why: ['Evet. Mil yola göre ilerler, lamba milin çevresinde dolanır; iki hareket birlikte.', 'Hareketin türü yola göre belirlenir. Mil ambulansla birlikte yol boyunca ilerler.', 'Lamba yalnızca ilerlemiyor; milin çevresinde de dolanıyor.'], scene: 1 },
+      { q: 'Mert: “Matkap ucu duvara girerken hem dönüyor hem ilerliyor. Demek ki üç türün dışında dördüncü bir hareket türü yapıyor.” Doğru karşılık hangisidir?',
+        options: ['Haksız; matkap ucu önce dönüyor, ilerlemesi ondan sonra başlıyor', 'Haksız; yeni bir tür yok, uç bildiğimiz iki türü aynı anda yapıyor', 'Haklı; iki türü birlikte yapan cismin hareketi yeni bir türdür'], answer: 1,
+        why: ['İki hareket sırayla değil, aynı anda yapılır; uç dönerken ilerler.', 'Evet. Türler yine öteleme, dönme ve titreşimdir; burada ikisi birlikte görülüyor.', 'Birlikte görülmeleri yeni bir tür doğurmaz; değişen, bir cisimde kaçının görüldüğüdür.'], scene: 2 },
     ],
     summary: ['<b>Bir cisim aynı anda hem dönebilir hem ilerleyebilir.</b>', 'Birden fazla tür içeren hareket dördüncü bir tür değildir; bildiğimiz üç türe ayrılır.', 'Türü söylerken üç soru sorulur: hangi parça, neye göre, nasıl?'],
+    nextLesson: { href: 'f3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();
