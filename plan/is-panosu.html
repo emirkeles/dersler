@@ -119,13 +119,13 @@ h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
     <div class="lead">
       <div>
         <h1>Dersler İş Panosu</h1>
-        <p class="sub">9. sınıf · 9 Ekim 2026 durumu, pilot yayında, Kimya Çeşitlilik yazıldı, altı temaya ek sorular eklendi · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
+        <p class="sub">9. sınıf · 9 Ekim 2026 durumu, pilot yayında, Kimya Çeşitlilik yazıldı, yedi eski temaya ek sorular eklendi · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
       </div>
       <div class="figs">
-        <div class="fig"><span class="label">Kısa ders</span><b>187<i> / 534</i></b></div>
+        <div class="fig"><span class="label">Kısa ders</span><b>193<i> / 534</i></b></div>
         <div class="fig"><span class="label">Yayındaki tema</span><b>7<i> / 30</i></b></div>
         <div class="fig"><span class="label">Ses</span><b>4.980<i> klip · 390 dk</i></b></div>
-        <div class="fig"><span class="label">Konu tekrarı dersi</span><b>30<i> / 144</i></b></div>
+        <div class="fig"><span class="label">Konu tekrarı dersi</span><b>36<i> / 144</i></b></div>
       </div>
       <div class="hat">
         <span class="label">Tema hattı · her kare bir tema</span>
@@ -148,7 +148,7 @@ h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
 <script>
 const DERS = {
   mat:{ad:'Matematik', plan:164, bitti:82},
-  fiz:{ad:'Fizik', plan:60, bitti:34},
+  fiz:{ad:'Fizik', plan:60, bitti:40},
   kim:{ad:'Kimya', plan:68, bitti:26},
   biy:{ad:'Biyoloji', plan:57, bitti:45},
   tde:{ad:'Türk Dili ve Edebiyatı', plan:91, bitti:0},
@@ -200,7 +200,6 @@ const ISLER = [
   ['sira','biy','Organizasyon','20 ders','24 ders saati.','Sınıfta gerekeceği zaman: mart'],
 
 
-  ['suruyor','gen','Yedi eski temaya ekler','7 temadan 6’sı bitti','Çıkış soruları 2’den 4’e çıkar, her konuya tekrar dersi yazılır; klip yeniden üretilmez. Nicelikler ve Değişimler (32 derse 64 soru, 3 tekrar dersi) , Sayılar (28 derse 56 soru, 4 tekrar dersi), Geometrik Şekiller B–C (7 derse 14 soru, 2 tekrar dersi), Biyoloji Yaşam (37 derse 74 soru, 8 tekrar dersi), Fizik Bilimi ve Kariyer Keşfi (6 derse 12 soru, 4 tekrar dersi) ve Kimya Etkileşim (18 derse 36 soru, 8 tekrar dersi) bitti, yayında. Sırada son tema: Kuvvet ve Hareket.','Yürütme planı, adım 2b',0.86],
 
   ['sende','kim','Çeşitlilik’i izle, sonra seslendirme ve yayını iste','44 ders · 6 sa 38 dk','13 konu yazıldı (31 ders + 13 konu tekrarı), ölçüm ve denetim temiz; depoda, katalogda kapalı. Kitap dışı kurulan yerler ve bakılacak dersler DURUM.md notlarında. H1 için yedi resim istemi hazır (GORSELLER.md).'],
   ['sende','gen','Yayındaki yedi temayı sesli izle','≈ 17 saat','Konu başına en az bir ders yeter. 55 klip süre olarak uzun yönde aykırı; listeler DURUM.md dosyalarında.'],
@@ -213,12 +212,13 @@ const ISLER = [
   ['sende','biy','D6 ve E1’i sitede izle','2 ders','E1’de “üretilir mi” satırı “Dışarıdan alınır mı?” diye sorulsun mu?'],
 
   ['bitti','gen','Yeni anlatım kuralları ve araç denetimleri','c7e1ea7','Önce anlat, örnek, hatırla, konu tekrarı. denetle.js ve sure.js bunları denetliyor.'],
+  ['bitti','gen','Yedi eski temaya ekler','7 tema · 38b94b8','152 derse 304 çıkış sorusu (2’den 4’e), 35 konu tekrarı dersi; klip yeniden üretilmedi, tekrar dersleri sessiz. Son tema Kuvvet ve Hareket: 24 derse 48 soru, altı tekrar dersi.'],
   ['bitti','mat','Pilot: Geometrik Şekiller A konusu','6 ders · 199 klip','Yeniden yazıldı, onaylandı, seslendirildi (131 yeni klip), yayında. 24:30 → 40:21; çıkış sorusu 10 → 28.'],
   ['bitti','mat','Sayılar','32 ders','496 klip · 4 hikâye · 4 çıkış sorusu · dört konu tekrarı (sessiz)'],
   ['bitti','mat','Nicelikler ve Değişimler','35 ders','526 klip · 4 çıkış sorusu · üç konu tekrarı (sessiz)'],
   ['bitti','mat','Geometrik Şekiller','15 ders','327 klip · 1 hikâye · 4 çıkış sorusu · üç konu tekrarı (ikisi sessiz)'],
   ['bitti','fiz','Fizik Bilimi ve Kariyer Keşfi','10 ders','93 klip · 4 çıkış sorusu · dört konu tekrarı (sessiz)'],
-  ['bitti','fiz','Kuvvet ve Hareket','24 ders','1.472 klip · 1 hikâye'],
+  ['bitti','fiz','Kuvvet ve Hareket','30 ders','1.472 klip · 1 hikâye · 4 çıkış sorusu · altı konu tekrarı (sessiz)'],
   ['bitti','kim','Etkileşim','26 ders','1.126 klip · 4 çıkış sorusu · sekiz konu tekrarı (sessiz)'],
   ['bitti','biy','Yaşam','45 ders','940 klip · 4 çıkış sorusu · sekiz konu tekrarı (sessiz)'],
   ['bitti','mat','D3 hikâyesi: Yıldızlar bunu giyiyor','75 sn','İşlendi ve D3 dersine bağlandı.'],
@@ -266,7 +266,7 @@ function cizPano(){
     return `<div class="col ${s.cls||''}">
       <header><h2>${esc(s.ad)}</h2><span>${isler.length}</span></header>
       <p>${esc(s.aciklama)}</p>
-      <div class="cards">${kartlar || '<div class="empty">Bu derste iş yok.</div>'}</div>
+      <div class="cards">${kartlar || '<div class="empty">Şu an iş yok.</div>'}</div>
     </div>`;
   }).join('');
 }

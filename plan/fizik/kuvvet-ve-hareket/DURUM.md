@@ -204,7 +204,7 @@ Notlar:
 
 ## Sıradaki
 
-- Bu temada 2b bitti; `plan/YURUTME.md` 2b'nin yedi teması da tamam. Açık iş yok.
+- Bu temada 2b bitti ve yayında (`38b94b8`, 9 Ekim 2026); `plan/YURUTME.md` 2b'nin yedi teması da tamam. Açık iş yok.
 - Yürütme sırası 3. adıma geçer: yeni temalar, 2a ile aynı düzen (`plan/YURUTME.md` "2a" tablosu ve "Bağlam bütçesi"). İlk tema Matematik · Eşlik ve Benzerlik (`plan/matematik/TEMALAR.md`; 18 ders; `plan/ISLEME.md` baştan sona, şablon `ortak/sablon/`, `kural: 2`). İlk oturum 2a.1 ve 2a.2'yi yapar (müfredat, ders kitabı, `PLAN.md` kararları, konu A senaryosu, iskelet, `kit.js`, ilk ders) ve biter.
 - Kullanıcıyı bekleyenler: Kimya Çeşitlilik'in izlenmesi, seslendirmesi ve yayını; 36 konu tekrarı dersinin seslendirilmesi (yedi eski temada sessiz).
 - Push "failed to get: -25308" verirse oturum SSH üzerindendir ve giriş anahtarlığı kilitlidir: kullanıcı `security unlock-keychain ~/Library/Keychains/login.keychain-db` çalıştırır.
