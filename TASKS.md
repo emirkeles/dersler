@@ -588,3 +588,19 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] Kayıt: `DURUM.md` "2b" ve "Sıradaki", `YURUTME.md` 2b satırı (2b bitti), `plan/fizik/TEMALAR.md`, iş panosu (sürüm 13: 193 kısa ders, 36 konu tekrarı, 2b 7 temadan 7'si)
 
 2b bitti. Sıradaki adım: `plan/YURUTME.md` 3 (yeni temalar; ilk tema Matematik · Eşlik ve Benzerlik). Devir notu: `plan/fizik/kuvvet-ve-hareket/DURUM.md` "Sıradaki".
+
+## Yürütme planı 3: Matematik · Eşlik ve Benzerlik (9 Ekim 2026)
+
+İlerleme ve devir: `plan/matematik/eslik-ve-benzerlik/DURUM.md` ("Sıradaki"). Görev tanımları: `plan/matematik/eslik-ve-benzerlik/gorev/`.
+
+- [x] 2a.1 Müfredat, ders kitabı (2. Kitap s. 10–95; A bölümü ana oturum, B–E dört Sonnet ajanı), `PLAN.md` yeniden yazıldı: 13 karar, 22 kısa ders + 5 konu tekrarı, denetim tablosu (`ders` / `benzetim` / `site dışı`), kitaptan alınanlar
+- [x] 2a.2 Konu A senaryosu (`senaryolar/A-geometrik-donusumler.md`: A1–A5 ve A6 tekrar), iskelet (`index.html`, `tema.js`, `dersler/kit.js`), A1 dersi (5 sahne, 46 altyazı, 7:10; `olc.js` bütün sayaçlar 0, konsol temiz; her sahnenin son karesine bakıldı)
+- [x] Görev tanımları: `gorev/ders-gorevi.md`, `gorev/senaryo-gorevi.md`; kitap betikleri `gorev/dok.py`, `gorev/png.py`
+- [ ] 2a.3 A2–A6 dersleri (Sonnet; önce A2, sonra A3–A6 birlikte) ve denetim noktası
+- [ ] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan); program metniyle karşılaştırma
+- [ ] 2a.5 B–E dersleri ve konu tekrarları (ders başına bir ajan; sekiz ajanda bir oturum sınırı)
+- [ ] 2a.6 Her konudan sonra ölçüm, rapor denetimi, `tema.js` satırları
+- [ ] 2a.7 Tema denetimi: `sure.js`, `denetle.js`, denetim tablosuna sahne numaraları, `TEMALAR.md`
+- [ ] 2a.8 Rapor; kullanıcı izler (seslendirme, yayın ve commit ayrıca istenir)
+- [x] İş panosu (sürüm 14: Eşlik ve Benzerlik yazımda, 1/27 ders)
+

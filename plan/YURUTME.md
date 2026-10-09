@@ -129,6 +129,8 @@ Biten: Nicelikler ve Değişimler (8 Ekim 2026; görev tanımı örneği `plan/m
 
 2a ile aynı düzen; sıra `YOL-HARITASI.md` 3. adımdaki tablodadır. Her tema bittiğinde kullanıcı izler, seslendirme ve yayın ayrıca istenir.
 
+Süren tema: Matematik · Eşlik ve Benzerlik (9 Ekim 2026'da başladı). 2a.1 ve 2a.2 bitti (9 Ekim 2026): plan (22 kısa ders + 5 konu tekrarı), konu A senaryosu, iskelet, `kit.js`, A1. Sıradaki 2a.3 ve 2a.4; devir notu `plan/matematik/eslik-ve-benzerlik/DURUM.md` "Sıradaki". Ders kitabının büyük bölümlerini (konu başına 8–20 sayfa) Sonnet ajanları döküme çevirdi; ana oturum yalnızca ilk konunun bölümünü ve Kontrol Noktası kutularını okudu. Sonraki temalarda da böyle yapılır: ana oturumun bağlamını bu korur.
+
 ### 4. Eski temalarda anlatımın yeniden yazımı
 
 Pilotla aynı düzen (senaryoya "Pilot" bölümü, sonra dersler). Ücretli seslendirme gerektirir; her tema için kullanıcı ayrıca ister. Sıra `YOL-HARITASI.md` 4. adımda.

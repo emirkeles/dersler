@@ -119,7 +119,7 @@ h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
     <div class="lead">
       <div>
         <h1>Dersler İş Panosu</h1>
-        <p class="sub">9. sınıf · 9 Ekim 2026 durumu, pilot yayında, Kimya Çeşitlilik yazıldı, yedi eski temaya ek sorular eklendi · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
+        <p class="sub">9. sınıf · 9 Ekim 2026 durumu, pilot yayında, Kimya Çeşitlilik yazıldı, yedi eski temaya ek sorular eklendi, Eşlik ve Benzerlik yazımda · kaynak: <span class="num">TASKS.md</span>, <span class="num">plan/*/TEMALAR.md</span>, <span class="num">ortak/katalog.js</span></p>
       </div>
       <div class="figs">
         <div class="fig"><span class="label">Kısa ders</span><b>193<i> / 534</i></b></div>
@@ -147,7 +147,7 @@ h1{font-size:26px;font-weight:600;letter-spacing:-.01em;text-wrap:balance}
 
 <script>
 const DERS = {
-  mat:{ad:'Matematik', plan:164, bitti:82},
+  mat:{ad:'Matematik', plan:168, bitti:82},
   fiz:{ad:'Fizik', plan:60, bitti:40},
   kim:{ad:'Kimya', plan:68, bitti:26},
   biy:{ad:'Biyoloji', plan:57, bitti:45},
@@ -160,7 +160,7 @@ const DERS = {
 // Tema hattı: [ders, tema, adım]  adım: 0 plan taslağı, 1 yazım, 2 seslendirme, 3 yayında (dinleme bekliyor), 4 dinlendi
 const TEMALAR = [
   ['mat','Sayılar',3],['mat','Nicelikler ve Değişimler',3],['mat','Geometrik Şekiller',3],
-  ['mat','Eşlik ve Benzerlik',0],['mat','Algoritma ve Bilişim',0],['mat','İstatistiksel Araştırma Süreci',0],['mat','Veriden Olasılığa',0],
+  ['mat','Eşlik ve Benzerlik',1],['mat','Algoritma ve Bilişim',0],['mat','İstatistiksel Araştırma Süreci',0],['mat','Veriden Olasılığa',0],
   ['fiz','Fizik Bilimi ve Kariyer Keşfi',3],['fiz','Kuvvet ve Hareket',3],['fiz','Akışkanlar',0],['fiz','Enerji',0],
   ['kim','Etkileşim',3],['kim','Çeşitlilik',1],['kim','Sürdürülebilirlik',0],
   ['biy','Yaşam',3],['biy','Organizasyon',0],
@@ -195,9 +195,10 @@ const ISLER = [
   ['sonra','gen','Hikâyelere müzik, efekt ve altyazı','9 film','Sitedeki filmlerin hiçbirinde yok.'],
   ['sonra','gen','Depo temizliği','','Altı eski uzak dal silinebilir. Yerel araçlar kit.js içine toplanacak.'],
 
-  ['sira','mat','Eşlik ve Benzerlik','18 ders','36 ders saati.','Sınıfta gerekeceği zaman: ocak'],
   ['sira','fiz','Akışkanlar','15 ders','18 ders saati. İki hikâyesi hazır (A1).','Sınıfta gerekeceği zaman: ocak sonu'],
   ['sira','biy','Organizasyon','20 ders','24 ders saati.','Sınıfta gerekeceği zaman: mart'],
+
+  ['suruyor','mat','Eşlik ve Benzerlik','27 ders','36 ders saati. 22 kısa ders + 5 konu tekrarı. Plan, kararlar, konu A senaryosu ve A1 yazıldı; sırada A2–A6 ve B–E senaryoları.','Sınıfta gerekeceği zaman: ocak',0.04],
 
 
 
