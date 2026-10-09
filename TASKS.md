@@ -559,4 +559,13 @@ Tema 4 · Biyoloji Yaşam (görev tanımı: `plan/biyoloji/yasam/gorev/ek-soru-g
 - [x] 2b.5 Commit `6f65b67`, `origin/main`e gönderildi (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). Canlı sitede doğrulanmadı
 - [x] İş panosu (175 kısa ders, 18 konu tekrarı, 2b 7 temadan 4'ü)
 
-Sıradaki temalar: Fizik Bilimi ve Kariyer Keşfi (4), Kimya Etkileşim (8), Kuvvet ve Hareket (6).
+Tema 5 · Fizik Bilimi ve Kariyer Keşfi (görev tanımı: `plan/fizik/fizik-bilimi-ve-kariyer-kesfi/gorev/ek-soru-gorevi.md`; ilerleme `plan/fizik/fizik-bilimi-ve-kariyer-kesfi/DURUM.md` "2b" bölümü)
+
+- [x] 2b.1 Konu A (ana oturum, örnek): A1'e iki çıkış sorusu (üç şıklı; biri yeni durum, biri yanılgı), `a2-tekrar` (beş kural, altı soru; `olc.js` temiz, üç görüntüye bakıldı), A1 → A2 → B1 bağlantısı; görev tanımı ve üç araç `gorev/` altında
+- [x] 2b.2 Konu B (2 ders, 4 soru + `b3-tekrar`: altı kural, sekiz soru), Konu C (1 ders, 2 soru + `c2-tekrar`: beş kural, altı soru), Konu D (2 ders, 4 soru + `d3-tekrar`: altı kural, sekiz soru): birer Sonnet ajanı
+- [x] 2b.3 Ölçüm: `olc.js` on derste bütün sayaçlar 0, konsol temiz (Haiku, sırayla); `sure.js` tema 64:05; `denetle.js` "10 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/10, konu tekrarı yok 0/4; `tema.js` satırları (A2, B3, C2, D3) ve süreler
+- [x] 2b.4 İçerik denetimi: 12 ek soru ve 28 tekrar sorusu okundu; `c2-tekrar` soru 5'te doğru şıkkın yeri, B1, `b3-tekrar` ve `d3-tekrar`da dört yazım düzeltildi; dört tekrar dersinden dokuz görüntüye bakıldı
+- [ ] 2b.5 Commit `d143d1f` yerelde (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). **Push yapılamadı:** `git push` "failed to get: -25308 · could not read Username for https://github.com" verdi (anahtarlık bu oturumdan okunamıyor; `gh` belirteci de geçersiz). Kullanıcı kendi terminalinden `git push origin main` çalıştırınca kapanır
+- [x] İş panosu (sürüm 11: 179 kısa ders, 22 konu tekrarı, 2b 7 temadan 5'i)
+
+Sıradaki temalar: Kimya Etkileşim (8), Kuvvet ve Hareket (6).

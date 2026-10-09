@@ -92,7 +92,7 @@ Notlar:
 
 ## Sıradaki
 
-- Bu temada 2b bitti. Açık iş yok.
+- Bu temada 2b bitti; commit `d143d1f` yerelde. Açık iş: push (9 Ekim 2026'da bu oturumdan yapılamadı: anahtarlık okunamadı, `gh` belirteci geçersiz). Sonraki oturum önce `git status -sb` ile `main`in `origin/main`den ileride olup olmadığına bakar.
 - Yürütme sırası: `plan/YURUTME.md` 2b, sıradaki tema Kimya Etkileşim (`kimya/etkilesim/`, 8 konu, 18 ders: A 2, B 2, C 2, D 1, E 3, F 3, G 1, H 4; sekiz tekrar dersi). Ders dosyaları büyük (25–60 KB, 340–700 satır) ve çok satırlı; çıkış soruları üç şıklı; `dersler/kit.js` yalnızca 2,8 KB, ortak biçim `dersler/tema.css` içinde. Ajanlar ders dosyasını okumaz: bu temanın üç aracı (`plan/fizik/fizik-bilimi-ve-kariyer-kesfi/gorev/*.cjs`; içlerindeki klasör yolu değiştirilerek) ve görev tanımı kopyalanıp `plan/kimya/etkilesim/gorev/` altına uyarlanır. Önce `ders-ozeti.cjs` dökümünün bu temada çalıştığı doğrulanır (ders dosyaları `Ders.start` dışında başka küreseller kullanıyorsa araçtaki sahte ortam genişletilir).
 - 2b.1: A konusu ana oturumda (örnek); 2b.2: kalan yedi konu, konu başına bir Sonnet ajanı (aynı anda en çok dört); ajanlar bittikten sonra `olc.js` Haiku ajanıyla sırayla (on ders altı dakika sürdü), sonra `sure.js` ve `denetle.js` ana oturumda.
 - Görev iletisinde cevap yerleri sayıyla verilir; tek dersli konuda (D, G) tekrar dersi altı soru olur. Ajan raporundaki cevap yerlerine güvenilmez: `ders-ozeti.cjs --sorular <harf>` ile okunur.
