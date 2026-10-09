@@ -574,7 +574,7 @@ Tema 6 · Kimya Etkileşim (görev tanımı: `plan/kimya/etkilesim/gorev/ek-soru
 - [x] 2b.2 Konu B–H (16 derse 32 soru + yedi tekrar dersi: `b3`, `c3`, `d2`, `e4`, `f4`, `g2`, `h5`): yedi Sonnet ajanı (konu başına bir), aynı anda en çok dört; E3 ve G1'de `soru-ekle.cjs` çalışmadı (`ust(…)` sarmalı), sorular elle eklendi
 - [x] 2b.3 Ölçüm: `olc.js` 26 derste bütün sayaçlar 0, konsol temiz (A–G Haiku, H ana oturum; sırayla); `sure.js` tema 246:27; `denetle.js` "26 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/26, konu tekrarı yok 0/8; `tema.js` satırları ve süreler
 - [x] 2b.4 İçerik denetimi: 36 ek soru ve 62 tekrar sorusu okundu; iki soruda uzun doğru şık, `c3-tekrar`da iki ipucu, `d2-tekrar` ve `h5-tekrar`da birer yazım, `a3-tekrar`da tahta bütçesi düzeltildi (ayrıntı `DURUM.md`); 18 ders dosyasında değişikliğin yalnızca `quiz` eklemesi ve `nextLesson` olduğu karşılaştırmayla doğrulandı; sekiz tekrar dersinden 12 görüntüye bakıldı
-- [ ] 2b.5 Commit ve push (yalnızca bu temanın dosyaları ve kayıtlar)
-- [ ] İş panosu (187 kısa ders, 30 konu tekrarı, 2b 7 temadan 6'sı)
+- [x] 2b.5 Commit `13098f9`, `origin/main`e gönderildi (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). Canlı sitede doğrulanmadı
+- [x] İş panosu (sürüm 12: 187 kısa ders, 30 konu tekrarı, 2b 7 temadan 6'sı)
 
 Sıradaki tema: Kuvvet ve Hareket (6).

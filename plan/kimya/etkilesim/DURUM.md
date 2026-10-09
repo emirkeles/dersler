@@ -265,7 +265,7 @@ Notlar:
 
 ## Sıradaki
 
-- Bu temada 2b bitti. Açık iş yok. Push "failed to get: -25308" verirse oturum SSH üzerindendir ve giriş anahtarlığı kilitlidir: kullanıcı `security unlock-keychain ~/Library/Keychains/login.keychain-db` çalıştırır.
+- Bu temada 2b bitti ve yayında (`13098f9`, 9 Ekim 2026). Açık iş yok. Push "failed to get: -25308" verirse oturum SSH üzerindendir ve giriş anahtarlığı kilitlidir: kullanıcı `security unlock-keychain ~/Library/Keychains/login.keychain-db` çalıştırır.
 - Yürütme sırası: `plan/YURUTME.md` 2b, son tema Kuvvet ve Hareket (`fizik/kuvvet-ve-hareket/`, 6 konu, 24 ders: A 2, B 2, C 9, D 2, E 7, F 2; altı tekrar dersi: `a3`, `b3`, `c10`, `d3`, `e8`, `f3`). Ders dosyaları büyük (toplam 980 KB); kit 17 KB. Bu temanın üç aracı (`plan/kimya/etkilesim/gorev/*.cjs`; içlerindeki klasör yolu ve kimlik öneki değiştirilerek) ve görev tanımı kopyalanıp `plan/fizik/kuvvet-ve-hareket/gorev/` altına uyarlanır. Önce `ders-ozeti.cjs --sorular <harf>` altı konuda denenir; şık sayısı (üç mü dört mü) ve soruların `ust(…)` gibi bir sarmalla yazılıp yazılmadığı (`soru-ekle.cjs` orada çalışmaz) bakılır.
 - 2b.1: A konusu ana oturumda (örnek); 2b.2: kalan beş konu. C (9 ders) ve E (7 ders) bağlam bütçesini aşar: soru ekleme iki ajana bölünür, tekrar dersi üçüncü ajana verilir (Biyoloji Yaşam F konusundaki gibi). Aynı anda en çok dört ajan. Sonra `olc.js` Haiku ajanıyla sırayla (21 ders 32 dakika sürdü), `sure.js` ve `denetle.js` ana oturumda.
 - Görev iletisinde cevap yerleri sayıyla verilir; ajan raporundaki cevap yerlerine güvenilmez: `ders-ozeti.cjs --sorular <harf>` ile okunur. Sayısal soru isteyen konularda (C, E) "sayı uydurma, yazmadan önce hesapla" kuralı görev iletisine yazılır.
