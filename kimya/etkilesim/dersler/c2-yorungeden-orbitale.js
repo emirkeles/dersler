@@ -739,7 +739,13 @@
       { q: 'Temel hâldeki bir atom enerji alıyor ve elektronu daha yüksek enerji seviyesine çıkıyor. Hangisi doğrudur?',
         options: ['Olay yaymadır; atom uyarılmış hâle geçer.', 'Olay soğurmadır; atom temel hâlde kalır.', 'Olay soğurmadır; atom uyarılmış hâle geçer.'], answer: 2,
         why: ['Yaymada atom enerji verir; burada enerji alıyor.', 'Elektronu daha yüksek enerji seviyesine çıkan atom artık temel hâlde değildir.', 'Enerji alıp daha yüksek enerji seviyesine çıkış soğurmadır; atom uyarılmış olur.'], scene: 1 },
+      { q: 'Kerem: “Orbital, yörüngenin yeni adıdır; ikisi de elektronun izlediği yoldur.” Kerem’e hangi karşılık verilmeli?',
+        options: ['Haksız; orbital de bir yoldur ama yörüngeden daha kısadır.', 'Haksız; yörünge kesin bir yol, orbital bir olasılık bölgesidir.', 'Haklı; orbital yalnızca yörüngenin yeni adıdır, anlamı aynıdır.'], answer: 1,
+        why: ['Orbital bir yol değildir; elektronun yolu çizilemez, yalnızca bulunabileceği bölge çizilir.', 'Evet. Yörünge kesin bir yoldur; orbital ise elektronun bulunma olasılığının yüksek olduğu bölgedir.', 'İkisi aynı şey değildir: yörünge kesin bir yol, orbital bir olasılık bölgesidir.'], scene: 4 },
+      { q: 'Bir hidrojen atomunun tek elektronu n = 2 enerji seviyesinde bulunuyor. Atom hangi hâldedir?',
+        options: ['Uyarılmış hâlde; elektron en düşük enerjili yörüngede değildir.', 'Uyarılmış hâlde; çünkü hidrojen tek elektronlu bir atomdur.', 'Temel hâlde; n = 2 çekirdeğe en yakın yörüngedir.'], answer: 0,
+        why: ['Evet. En düşük enerjili yörünge n = 1’dir; elektron n = 2’de olduğu için atom uyarılmıştır.', 'Elektron sayısı hâli belirlemez; elektronun hangi yörüngede olduğu belirler.', 'Çekirdeğe en yakın yörünge n = 1’dir; elektron daha uzak yörüngede olduğu için atom temel hâlde değildir.'], scene: 1 },
     ], summary: ['<b>Elektronun yolu çizilmez; bulunabileceği bölge çizilir.</b>', 'Çekirdek ve enerji seviyeleri kaldı; kesin yörüngenin yerini orbital aldı.'],
-    nextLesson: { href: 'd1-orbital-enerjileri.html', label: 'Sonraki: Enerji sırasını veriden kur ›' },
+    nextLesson: { href: 'c3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

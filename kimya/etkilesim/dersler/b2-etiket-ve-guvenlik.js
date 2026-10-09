@@ -974,7 +974,13 @@
       { q: 'Bir öğrenci etiketi okuyor, gözlük ve eldiven takıyor, sonra sıvıyı pipete ağzıyla çekiyor. Hangi davranışı kurala aykırıdır?',
         options: ['Etiketi okuması', 'Sıvıyı ağzıyla çekmesi', 'Gözlük ve eldiven takması'], answer: 1,
         why: ['Madde kullanılmadan önce etiketi okunur; bu kurala uygundur.', 'Sıvı pipete puarla çekilir, asla ağızla çekilmez.', 'Gözlük ve eldiven koruyucu ekipmandır; takmak kurala uygundur.'], scene: 5 },
+      { q: 'Selin: “Etiketteki işaretin adını söyleyebiliyorum; bu, güvenli çalışmam için yeter.” Selin için ne söylenebilir?',
+        options: ['Haklı; adı bilen kişi uyarıyı zaten yerine getirmiş olur.', 'Haksız; asıl iş, uyarının istediği davranışı yapmaktır.', 'Haksız; işaretler yalnızca laboratuvarda dikkate alınır.'], answer: 1,
+        why: ['Adı bilmek tek başına davranışı değiştirmez; önlem alınmış olmaz.', 'Evet. Adı bilmek ilk adımdır; önlem, uyarının istediği davranışla alınır.', 'İşaret, ürün nerede olursa olsun geçerlidir.'], scene: 6 },
+      { q: 'Etiketinde korozif madde ve çevreye zararlı madde işaretleri bulunan bir sıvıyla çalışan öğrenci, iki uyarıyı da karşılamak için ne yapmalıdır?',
+        options: ['Eldiven ve gözlük takıp artan sıvıyı atık kabına koymak', 'Eldiven ve gözlük takıp artan sıvıyı lavaboya dökmek', 'Yalnızca eldiven takıp artan sıvıyı atık kabına koymak'], answer: 0,
+        why: ['Evet. Eldiven ve gözlük canlı dokuyu korur; atık kabı çevreyi korur.', 'Koruyucu ekipman var ama sıvı lavaboda suya karışır; çevre uyarısı karşılanmadı.', 'Eldiven yalnızca eli korur; korozif madde için gözü gözlük korur.'], scene: 6 },
     ], summary: ['<b>Önce etiket, sonra uygun önlem.</b>', 'Önlem, etiketteki işarete ve güvenlik kurallarına dayanır; bütün uyarıları karşılamalıdır.'],
-    nextLesson: { href: 'c1-atom-modelleri.html', label: 'Sonraki: Yeni veri modeli değiştirir ›' },
+    nextLesson: { href: 'b3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

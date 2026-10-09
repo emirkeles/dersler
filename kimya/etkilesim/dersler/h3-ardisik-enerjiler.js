@@ -476,6 +476,12 @@
       { q: 'Bir A grubu elementinin ilk dört iyonlaşma enerjisi 800, 2427, 3660 ve 25 026 kJ/mol’dür. Bu element hangi gruptadır?',
         options: ['1A', '2A', '3A'], answer: 2,
         why: ['1A için sıçrama ilk enerjiden sonra olmalıydı; burada en büyük fark en sonda.', '2A için sıçrama ikinci enerjiden sonra olmalıydı; 2427 ile 3660 arasındaki fark küçük.', 'Sıçrama üçüncü enerjiden sonradır; üç valans elektronu 3A grubunu gösterir.'], scene: 4 },
+      { q: 'Bir A grubu elementinin ardışık iyonlaşma enerjilerinde en büyük sıçrama dördüncü ile beşinci enerji arasındadır. Bu element hangi gruptadır?',
+        options: ['4A', '5A', '3A'], answer: 0,
+        why: ['Evet. Sıçramadan önce dört enerji vardır; dört valans elektronu 4A grubunu gösterir.', '5A için sıçrama beşinci enerjiden sonra olmalıydı; burada dördüncüden sonradır.', '3A için sıçrama üçüncü enerjiden sonra olmalıydı; burada dördüncüden sonradır.'], scene: 4 },
+      { q: 'Kaan: “İyonlaşma enerjisi her adımda büyüdüğü için her artış bir sıçramadır; valans elektron sayısını bulmak için ilk artışa bakarım.” Kaan’a hangi karşılık verilmelidir?',
+        options: ['Haklı; enerji her adımda büyüdüğü için her artış sıçramadır.', 'Haksız; enerji her adımda aynı miktarda arttığı için sıçrama yoktur.', 'Haksız; sıçrama, enerjinin ötekilerden çok daha fazla arttığı adımdır.'], answer: 2,
+        why: ['Enerji her adımda büyür ama her artış sıçrama değildir. Sıçrama, belirgin biçimde daha büyük olan artıştır.', 'Adımlar eşit değildir; farklar birbirinden çok ayrıdır. Bu yüzden bir adımda sıçrama görülür.', 'Evet. Valans elektronları bitince enerji ötekilerden çok daha fazla artar; yeri elementten elemente değişir.'], scene: 2 },
     ], summary: ['<b>Büyük sıçramadan önce valans elektronları biter.</b>', 'Sıçramadan önceki enerji sayısı, valans elektron sayısını ve kararlı iyonun yükünü verir.'],
     nextLesson: { href: 'h4-elektronegatiflik.html', label: 'Sonraki: Elektronegatiflik ›' },
   });

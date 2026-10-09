@@ -689,6 +689,12 @@
       { q: 'Kalsiyumun yirmi elektronu vardır. Son iki elektron hangi orbitale yerleşir?',
         options: ['3d', '3p', '4s'], answer: 2,
         why: ['Enerji sırasında 4s, 3d’den önce gelir.', '3p orbitalleri on sekizinci elektronla dolar.', '3p dolunca sıradaki en düşük enerjili orbital 4s’dir.'], scene: 5 },
+      { q: 'Silisyumun on dört elektronu vardır. Dizilimi hangisidir?',
+        options: ['1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>2</sup> 3p<sup>2</sup>', '1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>6</sup> 3s<sup>1</sup> 3p<sup>3</sup>', '1s<sup>2</sup> 2s<sup>2</sup> 2p<sup>5</sup> 3s<sup>2</sup> 3p<sup>3</sup>'], answer: 0,
+        why: ['Evet. 2p dolunca sıra 3s’ye gelir; 3s dolunca kalan iki elektron 3p’ye yerleşir.', '3s orbitalinde bir elektronluk yer varken 3p orbitallerine geçilmiş.', '2p orbitallerinde bir elektronluk yer varken 3s orbitaline geçilmiş.'], scene: 4 },
+      { q: 'Aylin: “3d orbitalleri üçüncü seviyede olduğu için 4s’den önce dolar.” Aylin’e hangi karşılık verilmeli?',
+        options: ['Haklı; seviye numarası küçük olan orbital önce dolar.', 'Haksız; 3d en son dolar, 4s ve 4p’den de sonra.', 'Haksız; sırayı numara değil enerji belirler, 4s önce dolar.'], answer: 2,
+        why: ['Orbitalleri numara değil, enerji sıraya dizer; 4s, 3d’den önce dolar.', 'Sıra 4s, 3d, 4p’dir; 3d, 4p’den önce dolar.', 'Evet. Enerji sırasında 4s, 3d’den önce gelir; 4s dolduktan sonra sıra 3d orbitallerine geçer.'], scene: 5 },
     ], summary: ['<b>Elektron, yer olan en düşük enerjili orbitale yerleşir.</b>', 'Sıra: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p. Orbitalleri numara değil, enerji sıraya dizer.'],
     nextLesson: { href: 'e2-pauli-ve-hund.html', label: 'Sonraki: Eş enerjiye önce tek tek ›' },
   });

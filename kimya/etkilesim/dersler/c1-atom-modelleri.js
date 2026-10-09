@@ -819,6 +819,12 @@
       { q: 'Elektron, proton ve nötron kütlelerine göre büyükten küçüğe nasıl sıralanır?',
         options: ['Proton, nötron, elektron', 'Elektron, proton, nötron', 'Nötron, proton, elektron'], answer: 2,
         why: ['Nötronun kütlesi protonunkinden biraz büyüktür.', 'Elektron en hafif olandır; proton onun yaklaşık 1836 katıdır.', 'Nötron protondan biraz büyüktür; proton elektronun yaklaşık 1836 katıdır.'], scene: 3 },
+      { q: 'Çekirdeğinde 5 proton ve 6 nötron bulunan, çekirdeğin dışında 5 elektron olan bir atomun toplam yükü kaçtır?',
+        options: ['0', '+6', '+11'], answer: 0,
+        why: ['Evet. Beş tane +1 ile beş tane −1 birbirini götürür; nötron yüksüzdür.', '6, nötron sayısıdır; nötronlar yüksüz olduğu için yüke katılmaz.', '11, proton ve nötronların toplamıdır; elektronların −1 yükü ve nötronların yüksüzlüğü hesaba katılmamış.'], scene: 3 },
+      { q: 'Zeynep: “1897’de Thomson modeli gelince atomun kendisi değişti; atom artık içinde yüklü tanecikler bulunan bir küre oldu.” Zeynep’e hangi karşılık verilmeli?',
+        options: ['Haklı; yeni model gelince atom da o modele uygun hâle gelir.', 'Haksız; atomun içinde yüklü tanecik yoktur, model yanlıştır.', 'Haksız; atom aynı kaldı, değişen atom hakkındaki bilgidir.'], answer: 2,
+        why: ['Atom modele uymaz, model veriye uyar. Yeni veri gelince model değişti, atom aynı kaldı.', 'Atomda eksi yüklü tanecik bulunduğu ortaya konmuştu; model bu veriye dayanarak kuruldu.', 'Evet. Atom aynı kaldı; yeni veri gelince onu anlatan model değişti.'], scene: 6 },
     ], summary: ['<b>Atom aynı kaldı; yeni veri gelince model değişti.</b>', 'Elektron ve protonla ilgili keşifler modeli değiştirdi; nötron beş modelden sonra keşfedildi.'],
     nextLesson: { href: 'c2-yorungeden-orbitale.html', label: 'Sonraki: Yörüngeden orbitale ›' },
   });

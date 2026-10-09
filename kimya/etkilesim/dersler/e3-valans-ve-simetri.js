@@ -687,7 +687,13 @@
       { q: 'Hangi atom küresel simetri gösterir?',
         options: ['Alüminyum (dizilimi 3p¹ ile biter)', 'Kükürt (dizilimi 3p⁴ ile biter)', 'Magnezyum (dizilimi 3s² ile biter)'].map(ust), answer: 2,
         why: [ust('3p¹: üç kutunun yalnızca birinde elektron vardır; eşit dolmamıştır.'), ust('3p⁴: bir kutuda çift, iki kutuda tek elektron vardır; ne yarı ne tam doludur.'), ust('3s² tam doludur; tam dolu orbitalle biten dizilim küresel simetri gösterir.')], scene: 5 },
+      { q: ust('Vanadyumun dizilimi 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d³. Kaç valans elektronu vardır?'),
+        options: ['5', '2', '3'], answer: 0,
+        why: ['Evet. Dizilim d ile bittiği için son s ve d birlikte sayılır: 2 + 3 = 5.', ust('Yalnızca 4s² sayılmış; 3d³ de birlikte sayılır.'), ust('Yalnızca son yazılan 3d³ sayılmış; 4s² de birlikte sayılır.')], scene: 2 },
+      { q: ust('Zeynep: “Küresel simetri gösteren atomun orbitalleri tam dolu olmalı; dizilimi p³ ile biten atom göstermez.” Hangi karşılık doğrudur?'),
+        options: ['Haklı; yarı dolu orbitaller eşit dolmuş sayılmaz.', 'Haksız; yarı dolu orbitaller de eşit dolmuştur.', ust('Haksız; p³ yarı dolu değil, tam doludur.')], answer: 1,
+        why: ['Eş enerjili orbitallerin hepsinde tek elektron varsa orbitaller eşit dolmuştur; çekim dengelidir.', ust('Evet. p³: üç kutuda birer elektron, yani yarı dolu; eşit dolduğu için küresel simetri gösterir.'), 'p orbitalleri altı elektronla tam dolar; üç elektron yarı doludur.'], scene: 4 },
     ], summary: ['<b>Yarı dolu ya da tam dolu: dengeli dizilim, kararlı atom.</b>', 'Valans elektronları en dış enerji seviyesindedir; atomun kimyasal özelliklerini onların sayısı belirler.'],
-    nextLesson: { href: 'f1-dizilimden-adrese.html', label: 'Sonraki: Dizilim adres verir ›' },
+    nextLesson: { href: 'e4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

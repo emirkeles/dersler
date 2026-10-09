@@ -568,4 +568,13 @@ Tema 5 · Fizik Bilimi ve Kariyer Keşfi (görev tanımı: `plan/fizik/fizik-bil
 - [x] 2b.5 Commit `d143d1f`, `origin/main`e gönderildi (9 Ekim 2026; yalnızca bu temanın dosyaları ve kayıtlar). İlk denemede push yapılamadı: oturum SSH üzerinden açıldığı için giriş anahtarlığı kilitliydi ("failed to get: -25308"); kullanıcı `security unlock-keychain` ile açınca gitti. Canlı sitede doğrulanmadı
 - [x] İş panosu (sürüm 11: 179 kısa ders, 22 konu tekrarı, 2b 7 temadan 5'i)
 
-Sıradaki temalar: Kimya Etkileşim (8), Kuvvet ve Hareket (6).
+Tema 6 · Kimya Etkileşim (görev tanımı: `plan/kimya/etkilesim/gorev/ek-soru-gorevi.md`; ilerleme `plan/kimya/etkilesim/DURUM.md` "2b" bölümü)
+
+- [x] 2b.1 Konu A (ana oturum, örnek): A1 ve A2'ye ikişer çıkış sorusu (üç şıklı; biri yeni durum, biri yanılgı), `a3-tekrar` (altı kural, sekiz soru; `olc.js` temiz, dört görüntüye bakıldı); görev tanımı ve üç araç `gorev/` altında; sekiz konuda son ders → tekrar bağlantısı ve `tema.js` satırları
+- [x] 2b.2 Konu B–H (16 derse 32 soru + yedi tekrar dersi: `b3`, `c3`, `d2`, `e4`, `f4`, `g2`, `h5`): yedi Sonnet ajanı (konu başına bir), aynı anda en çok dört; E3 ve G1'de `soru-ekle.cjs` çalışmadı (`ust(…)` sarmalı), sorular elle eklendi
+- [x] 2b.3 Ölçüm: `olc.js` 26 derste bütün sayaçlar 0, konsol temiz (A–G Haiku, H ana oturum; sırayla); `sure.js` tema 246:27; `denetle.js` "26 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/26, konu tekrarı yok 0/8; `tema.js` satırları ve süreler
+- [x] 2b.4 İçerik denetimi: 36 ek soru ve 62 tekrar sorusu okundu; iki soruda uzun doğru şık, `c3-tekrar`da iki ipucu, `d2-tekrar` ve `h5-tekrar`da birer yazım, `a3-tekrar`da tahta bütçesi düzeltildi (ayrıntı `DURUM.md`); 18 ders dosyasında değişikliğin yalnızca `quiz` eklemesi ve `nextLesson` olduğu karşılaştırmayla doğrulandı; sekiz tekrar dersinden 12 görüntüye bakıldı
+- [ ] 2b.5 Commit ve push (yalnızca bu temanın dosyaları ve kayıtlar)
+- [ ] İş panosu (187 kısa ders, 30 konu tekrarı, 2b 7 temadan 6'sı)
+
+Sıradaki tema: Kuvvet ve Hareket (6).

@@ -683,7 +683,13 @@
       { q: 'Hidrojen 1A grubundadır. Hidrojen için hangisi doğrudur?',
         options: ['Bir alkali metaldir.', 'Bir soy gazdır.', 'Ametaldir; alkali metal değildir.'], answer: 2,
         why: ['Alkali metal adı 1A’daki öteki elementler içindir; hidrojen ametaldir.', 'Soy gazlar 8A grubundadır.', 'Hidrojen 1A’nın en üstündedir ve ametaldir.'], scene: 4 },
+      { q: 'Magnezyumun dizilimi 1s² 2s² 2p⁶ 3s² ile biter. Magnezyum için hangisi doğrudur?',
+        options: ['s bloğunda bir toprak alkali metaldir.', 's bloğunda bir alkali metaldir.', 'p bloğunda bir toprak metalidir.'], answer: 0,
+        why: ['Dizilim 3s² ile biter: s bloğu. En yüksek enerji seviyesinde iki elektron var: 2A, yani toprak alkali metal.', 'Alkali metaller 1A grubundadır; magnezyumun en yüksek enerji seviyesinde iki elektron var.', 'Dizilim p ile bitmiyor; ayrıca toprak metalleri 3A grubundadır.'], scene: 6 },
+      { q: 'Selin: “3A grubunun adı toprak metalleri olduğuna göre bu gruptaki bütün elementler metaldir.” Selin’e hangi karşılık verilmelidir?',
+        options: ['Haklı; bir grubun adı, içindeki bütün elementlerin metal olduğunu gösterir.', 'Haksız; bor yarı metaldir, 3A grubunun öteki elementleri metaldir.', 'Haksız; 3A grubundaki bütün elementler yarı metaldir.'], answer: 1,
+        why: ['Bor 3A grubundadır ve yarı metaldir; grubun adı her elementin özelliğini söylemez.', '3A grubunda yalnızca bor yarı metaldir; öteki elementler metaldir.', 'Yarı metal yalnızca bordur; alüminyum gibi öteki 3A elementleri metaldir.'], scene: 5 },
     ], summary: ['<b>Son elektron hangi orbitaldeyse element o bloktadır.</b>', 'Beş grubun özel adı vardır; aynı gruptaki elementler benzer özellikler gösterir.'],
-    nextLesson: { href: 'g1-iyon-olusumu.html', label: 'Sonraki: Elektron değişir, proton kalır ›' },
+    nextLesson: { href: 'f4-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

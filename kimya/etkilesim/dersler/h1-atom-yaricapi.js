@@ -699,6 +699,12 @@
       { q: 'Cl<sup>−</sup>, K<sup>+</sup> ve Ca<sup>2+</sup> iyonlarının her birinde 18 elektron vardır; proton sayıları 17, 19 ve 20’dir. Yarıçapı en büyük olan hangisidir?',
         options: ['Cl<sup>−</sup>', 'K<sup>+</sup>', 'Ca<sup>2+</sup>'], answer: 0,
         why: ['Çekirdek yükü en küçük olan odur; 18 elektronu en zayıf o çeker: 181 pm.', 'K<sup>+</sup> iyonunda 19 proton vardır; Cl<sup>−</sup> iyonundan güçlü çeker: 133 pm.', 'Ca<sup>2+</sup> iyonunda 20 proton vardır; en güçlü çeken ve en küçük olan odur: 99 pm.'], scene: 5 },
+      { q: 'Atom numaraları 3, 5 ve 8 olan üç atomun elektron dizilimi de ikinci enerji seviyesinde biter. Hangisinin atom yarıçapı en küçüktür?',
+        options: ['Atom numarası 5 olan', 'Atom numarası 3 olan', 'Atom numarası 8 olan'], answer: 2,
+        why: ['Bu atomun protonu 3 numaralıdan çoktur; ama 8 numaralıdaki kadar çok değildir. En küçük o değildir.', 'Üçünün en solundaki atom budur; protonu en az olan, en büyüğüdür.', 'Evet. Üçü de ikinci periyottadır; protonu en çok olan çekirdek elektronları en güçlü çeker ve atom en küçük olur.'], scene: 3 },
+      { q: 'Selin: “Üçüncü periyotta sağa gidildikçe elektron sayısı arttığı için atom da büyür.” Selin’e hangi karşılık verilmelidir?',
+        options: ['Haklı; elektron sayısı arttıkça yeni bir enerji seviyesi eklenir.', 'Haksız; enerji seviyesi sayısı aynı kalır, proton arttıkça çekim güçlenir.', 'Haksız; proton ve elektron birlikte arttığı için yarıçap hiç değişmez.'], answer: 1,
+        why: ['Sağa giderken eklenen elektron yine aynı enerji seviyesine girer; yeni seviye açılmaz.', 'Evet. Elektronlar aynı seviyede kalır, artan proton onları çekirdeğe yaklaştırır; atom küçülür.', 'Proton ve elektron birlikte artar ama sonuç sabit kalmaz: çekim güçlenir ve yarıçap küçülür.'], scene: 2 },
     ], summary: ['<b>Enerji seviyesi eklenince atom büyür, çekirdeğin çekimi güçlenince küçülür.</b>', 'Elektronların birbirini itmesi de yarıçapı etkiler; aynı elementin yarıçapı bile sabit değildir.'],
     nextLesson: { href: 'h2-iyonlasma-enerjisi.html', label: 'Sonraki: İyonlaşma enerjisi ›' },
   });

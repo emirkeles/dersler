@@ -338,6 +338,12 @@
       { q: 'Çaydanlıktaki kireç için limon tuzunun seçilmesinin nedeni nedir?',
         options: ['Limon tuzu kireci çözer.', 'Limon tuzu güzel kokar.', 'Her temizlik ürünü kireci çözer.'], answer: 0,
         why: ['Ürünün işini, içindeki maddenin özelliği belirler.', 'Koku, kirecin çözülmesini açıklamaz.', 'Ürünlerin özellikleri birbirinden farklıdır.'], scene: 1 },
+      { q: 'Bir tava reklamı şöyle diyor: “Bu tava yemeğe hiçbir madde bırakmaz.” Bu söz neden güvenilir bilgi sayılmaz?',
+        options: ['Tava bir mutfak gereci olmadığı için', 'Söz kısa ve kolay anlaşılır olduğu için', 'Koşul da ölçü de vermediği için'], answer: 2,
+        why: ['Tava mutfakta kullanılan bir gereçtir; sorun sözün neye dayandığıdır.', 'Sözün kısa olması onu güvenilmez yapmaz; eksik olan ölçümdür.', 'Evet. Güvenilir bilgide neyin, hangi koşulda ölçüldüğü bellidir.'], scene: 5 },
+      { q: 'Deniz: “B sosunda 0,125 mg ölçüldü; demek ki folyoya sarılan her yiyeceğe 0,125 mg alüminyum geçer.” Deniz’e hangi karşılık verilmeli?',
+        options: ['Haksız; folyodan yiyeceğe hiç alüminyum geçmez.', 'Haksız; sonuç ölçüldüğü koşullar için geçerlidir.', 'Haklı; folyo her koşulda aynı miktarı bırakır.'], answer: 1,
+        why: ['Ölçümlerde üç sosta da yiyeceğe alüminyum geçmişti.', 'Evet. Sos ya da sıcaklık değişince ölçülen miktar da değişti.', 'Birikim sosun asitliğine ve fırının sıcaklığına göre değişti.'], scene: 5 },
     ], summary: ['<b>Ürünün işini ve güvenli kullanımını, içindeki maddenin özelliği belirler.</b>', 'Sos asidikleştikçe ve fırın ısındıkça yiyeceğe daha çok alüminyum geçti.'],
     nextLesson: { href: 'a2-kimyanin-dallari.html', label: 'Sonraki: Bir bilim, farklı sorular ›' },
   });

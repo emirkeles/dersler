@@ -224,3 +224,49 @@ Dinlemede kulak verilecek okunuşlar: orbital adları ("se, pe, de, fe"; "de" ba
 
 Harcanan karakter (bu tema, yeni anlatım): 73.019. Eski anlatımın A1 pilotu (470 karakter, 8 klip) silindi.
 
+
+## Yürütme planı 2b: sese dokunmayan ekler (9 Ekim 2026)
+
+`plan/YURUTME.md` 2b. Anlatım, altyazı, sahne ve `speak` değişmedi; klip yeniden üretilmedi. Her derse iki çıkış sorusu (2'den 4'e; üç şıklı; biri yeni durum, biri yanılgı), her konunun sonuna konu tekrarı dersi (seslendirilmedi; sayfalarda `ses/…` satırı yok). Görev tanımı ve üç yardımcı araç `gorev/` altında: `ek-soru-gorevi.md`, `ders-ozeti.cjs`, `soru-ekle.cjs`, `sik-sirala.cjs` (Fizik Bilimi ve Kariyer Keşfi'nden kopyalandı, yalnızca klasör yolu değişti; döküm aracı bu temada değişiklik istemedi).
+
+| Konu | Ek sorular | Konu tekrarı | Kim | Durum |
+|---|---|---|---|---|
+| A Günlük hayatta kimya | A1–A2, 4 soru | `a3-tekrar` (altı kural, sekiz soru) | ana oturum (örnek) | bitti |
+| B Kimyasal maddeler ve güvenlik | B1–B2, 4 soru | `b3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+| C Atom teorileri | C1–C2, 4 soru | `c3-tekrar` (altı kural, sekiz soru) | Sonnet | bitti |
+| D Orbitallerin enerjisi | D1, 2 soru | `d2-tekrar` (beş kural, altı soru) | Sonnet | bitti |
+| E Elektron dizilimi | E1–E3, 6 soru | `e4-tekrar` (yedi kural, sekiz soru) | Sonnet | bitti |
+| F Periyodik tabloda yer bulma | F1–F3, 6 soru | `f4-tekrar` (yedi kural, sekiz soru) | Sonnet | bitti |
+| G İyon oluşumu | G1, 2 soru | `g2-tekrar` (beş kural, altı soru) | Sonnet | bitti |
+| H Periyodik özellikler | H1–H4, 8 soru | `h5-tekrar` (sekiz kural, on soru) | Sonnet | bitti |
+
+Toplam: 18 derse 36 ek soru, sekiz tekrar dersinde 62 soru; tema 26 kısa ders.
+
+Denetim: `olc.js` 26 derste (A–G Haiku ajanı, H ana oturum; sırayla) bütün yerleşim ve bütçe sayaçları 0, konsol temiz. `sure.js` tema 246:27 (A 24:34, B 31:33, C 31:20, D 15:37, E 36:55, F 38:40, G 16:57, H 50:51; tekrar dersleri 3:51–6:57). Eski 18 dersin süresi 50–67 sn arttı (iki ek soru). `denetle.js`: "26 kısa ders, yayında. Sorun yok."; `--kural`: çıkış sorusu 4–5 değil 0/26, konu tekrarı yok 0/8. Karşılaştırmada 18 ders dosyasında değişiklik yalnızca `quiz` dizisine ekleme ve sekiz konunun son dersinde `nextLesson` satırı (H4'te alan yoktu, eklendi). Sekiz tekrar dersinden 12 görüntüye bakıldı.
+
+Cevap yerleri (0/1/2): A1 1,0,2,1 · A2 1,2,0,2 · `a3` 0,2,1,1,0,2,2,1; B1 1,2,0,2 · B2 2,1,1,0 · `b3` 2,0,1,1,0,2,0,1; C1 1,2,0,2 · C2 1,2,1,0 · `c3` 1,2,0,2,1,0,2,0; D1 1,2,0,1 · `d2` 2,0,1,0,2,1; E1 1,2,0,2 · E2 1,2,2,0 · E3 1,2,0,1 · `e4` 0,2,1,2,0,1,1,2; F1 2,1,0,2 · F2 1,2,2,0 · F3 1,2,0,1 · `f4` 1,0,2,0,2,1,2,0; G1 1,2,2,0 · `g2` 1,2,0,2,1,0; H1 1,0,2,1 · H2 0,1,2,0 · H3 1,2,0,2 · H4 1,2,0,1 · `h5` 2,1,0,0,2,1,2,0,1,2.
+
+Ana oturumun düzeltmeleri (ajan çıktısı):
+
+- `a3-tekrar` üçüncü kural: tahtada 28 kelime vardı; alt satır silindi.
+- C2 soru 3 ve H2 soru 3: doğru şık ötekilerden uzundu, kısaltıldı.
+- `c3-tekrar` soru 5: şıklardaki yıllar çıkarıldı (cevap yalnızca tarih karşılaştırmasıyla bulunuyordu); soru 7: soru metnindeki ipucu cümlesi ("Rutherford modelinde çekirdek vardır") çıkarıldı.
+- `d2-tekrar` soru 3: "Üç 4p orbitalinin üçü" → "Üç 4p orbitali".
+- `h5-tekrar` soru 1: "yan yana durur" → "dizilir" (Al, P ve Cl komşu değil).
+
+Notlar:
+
+- `soru-ekle.cjs` E3 ve G1'de çalışmadı ("son sorunun yeri bulunamadı"): bu iki dosyada sorular `ust('…')` sarmalıyla yazılı. Ajanlar iki soruyu aynı biçimle elle ekledi; karşılaştırmada yalnızca ekleme var, `--sorular` ile okundu. Görev tanımına not düşüldü.
+- Seslendirme metinlerinde Heisenberg "Haysenbörg", Thomson "Tamsın", Rutherford "Raterford" okunuyor; yukarıdaki "Okunuş kararları" bölümünde "Hayzenberg" yazıyor (dosyalar başka). Görev tanımı dosyalardaki okunuşa göre düzeltildi.
+- Tek dersli konularda (D, G) tekrar dersi dersin hemen ardından gelir: beş kural, altı soru. Kullanıcı gereksiz bulursa iki dosya ve `tema.js` satırı silinir, D1 ve G1'in `nextLesson` satırı eski hâline döner.
+- Kullanıcının bakabileceği sorular: `c3-tekrar` soru 6 (berilyum derste geçmiyor; elektron sayısı soruda veriliyor), `d2-tekrar` soru 5 (dördüncü seviyede on altı orbital: toplam derste yazılmıyor, parçalardan bulunuyor), `e4-tekrar` soru 7 ve `h5-tekrar` soru 7 (yarı dolu dizilim karşılaştırması derste N–O ve P–S ile; soruda Si–P ve N–O), `f4-tekrar` soru 4 (14. grup = 4A: derste 3A = 13 veriliyor), B2 soru 4 ile `b3-tekrar` soru 7 (aynı kalıp: iki uyarıyı birlikte karşılayan önlem), `a3-tekrar` soru 2 (sirke 3, süt 6,5, sabunlu su 9: pH değerleri soruda verildi, derste yok).
+- Sekiz tekrar dersi seslendirilmedi. `speak` hazır: `a3` 2 (pH), `c3` 6 (yıllar, Bohr), `d2` 7, `e4` 5, `f4` 11, `g2` 3, `h5` 3.
+- Ajan başına bağlam: B 132, C 126, D 99, E 153, F 169, G 108, H 158 bin token; ölçüm (Haiku) 52 bin.
+
+## Sıradaki
+
+- Bu temada 2b bitti. Açık iş yok. Push "failed to get: -25308" verirse oturum SSH üzerindendir ve giriş anahtarlığı kilitlidir: kullanıcı `security unlock-keychain ~/Library/Keychains/login.keychain-db` çalıştırır.
+- Yürütme sırası: `plan/YURUTME.md` 2b, son tema Kuvvet ve Hareket (`fizik/kuvvet-ve-hareket/`, 6 konu, 24 ders: A 2, B 2, C 9, D 2, E 7, F 2; altı tekrar dersi: `a3`, `b3`, `c10`, `d3`, `e8`, `f3`). Ders dosyaları büyük (toplam 980 KB); kit 17 KB. Bu temanın üç aracı (`plan/kimya/etkilesim/gorev/*.cjs`; içlerindeki klasör yolu ve kimlik öneki değiştirilerek) ve görev tanımı kopyalanıp `plan/fizik/kuvvet-ve-hareket/gorev/` altına uyarlanır. Önce `ders-ozeti.cjs --sorular <harf>` altı konuda denenir; şık sayısı (üç mü dört mü) ve soruların `ust(…)` gibi bir sarmalla yazılıp yazılmadığı (`soru-ekle.cjs` orada çalışmaz) bakılır.
+- 2b.1: A konusu ana oturumda (örnek); 2b.2: kalan beş konu. C (9 ders) ve E (7 ders) bağlam bütçesini aşar: soru ekleme iki ajana bölünür, tekrar dersi üçüncü ajana verilir (Biyoloji Yaşam F konusundaki gibi). Aynı anda en çok dört ajan. Sonra `olc.js` Haiku ajanıyla sırayla (21 ders 32 dakika sürdü), `sure.js` ve `denetle.js` ana oturumda.
+- Görev iletisinde cevap yerleri sayıyla verilir; ajan raporundaki cevap yerlerine güvenilmez: `ders-ozeti.cjs --sorular <harf>` ile okunur. Sayısal soru isteyen konularda (C, E) "sayı uydurma, yazmadan önce hesapla" kuralı görev iletisine yazılır.
+- 2b bitince sıra `YURUTME.md` 3. adıma geçer (yeni temalar; ilk tema Matematik · Eşlik ve Benzerlik). Kimya Çeşitlilik'in seslendirmesi ve yayını kullanıcıyı bekliyor.

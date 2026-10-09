@@ -784,6 +784,12 @@
       { q: 'Oksijen 6A grubundadır. Bu grubun numarayla adı hangisidir?',
         options: ['6. grup', '16. grup', '8. grup'], answer: 1,
         why: ['Altıncı grup ortadaki B sütunlarından biridir.', '8A on sekizinci grup olduğuna göre 6A on altıncı gruptur.', 'Sekizinci grup ortadaki B sütunlarından biridir.'], scene: 1 },
+      { q: 'Kriptonun 36 elektronu vardır ve dizilimi 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² 3d¹⁰ 4p⁶ olur. Kripton tabloda nerede yer alır?',
+        options: ['4. periyot, 8A', '4. periyot, 6A', '3. periyot, 8A'], answer: 0,
+        why: ['En yüksek enerji seviyesi dört; orada 4s² ve 4p⁶ ile 2 + 6 = 8 elektron var.', 'Yalnızca 4p⁶ sayılmış; 4s² de dördüncü enerji seviyesindedir.', 'Dizilimde dörtle başlayan orbitaller var; 3d¹⁰ en yüksek enerji seviyesini göstermez.'], scene: 5 },
+      { q: 'Ayşe: “Azotun dizilimi 1s² 2s² 2p³ ile biter. En sondaki sayı 3 olduğundan azot üçüncü periyottadır.” Ayşe’ye hangi karşılık verilmelidir?',
+        options: ['Haklı; periyodu dizilimin en sonundaki üst sayı gösterir.', 'Haksız; periyodu atomdaki toplam elektron sayısı gösterir.', 'Haksız; periyodu en yüksek enerji seviyesi gösterir, azot ikincidir.'], answer: 2,
+        why: ['Üstteki küçük sayılar elektron sayısıdır; periyodu göstermez.', 'Toplam elektron sayısı atomun kaç elektronu olduğunu söyler; periyodu en yüksek enerji seviyesi verir.', 'Azotun en yüksek enerji seviyesi iki (2s² 2p³); azot ikinci periyottadır.'], scene: 3 },
     ], summary: ['<b>Dizilimin sonu, elementin tablodaki adresidir.</b>', 'Periyot en yüksek enerji seviyesidir; A grubu oradaki s ve p elektronlarının toplamıdır.'],
     nextLesson: { href: 'f2-b-gruplari.html', label: 'Sonraki: Yeni örnek kuralı sınar ›' },
   });

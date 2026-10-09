@@ -575,7 +575,13 @@
       { q: 'Hangisi polimer kimyasının inceleyeceği bir malzemedir?',
         options: ['Sofra tuzu', 'Hormon', 'Kauçuk'], answer: 2,
         why: ['Tuzlar anorganik kimyanın konusudur.', 'Hormonlar biyokimyanın konusudur.', 'Kauçuk bir polimerdir.'], scene: 3 },
+      { q: 'Bir laboratuvar bir maden suyunda önce hangi minerallerin bulunduğunu, sonra her birinin miktarını buluyor. Sırasıyla hangi analizleri yapıyor?',
+        options: ['Önce nitel, sonra nicel analiz', 'Önce nicel, sonra nitel analiz', 'İki adımda da nicel analiz'], answer: 0,
+        why: ['Evet. “Ne var?” sorusu nitel, “ne kadar var?” sorusu nicel analizdir.', 'Sıra ters: bileşenin ne olduğunu bulmak nitel analizdir.', 'İlk adımda miktar ölçülmüyor; bileşenlerin ne olduğu bulunuyor.'], scene: 1 },
+      { q: 'Mert: “Plastiği organik kimya inceliyorsa polimer kimyası inceleyemez; bir ürün tek dalın konusudur.” Hangi karşılık doğrudur?',
+        options: ['Haklı; her ürünü yalnızca bir dal inceler.', 'Haksız; plastiği yalnızca polimer kimyası inceler.', 'Haksız; bir ürün birden çok dalın konusu olabilir.'], answer: 2,
+        why: ['Plastik iki dalda da incelenir; dallar aynı ürüne başka sorular sorar.', 'Plastik organik kimyanın da konusudur; tek dala bağlamak aynı yanılgıdır.', 'Evet. Plastik hem organik kimyada hem polimer kimyasında incelenir.'], scene: 4 },
     ], summary: ['<b>Kimya tek bilim, çok daldır; her dal maddeye başka bir soru sorar.</b>', 'Aynı kimya eğitimi, ilaçtan çevreye pek çok mesleğe açılır.'],
-    nextLesson: { href: 'b1-kazayi-anlamak.html', label: 'Sonraki: Kazayı neden zinciriyle tanımla ›' },
+    nextLesson: { href: 'a3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

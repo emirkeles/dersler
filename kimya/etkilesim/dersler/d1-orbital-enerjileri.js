@@ -697,7 +697,13 @@
         options: ['Üç orbitaldir ve eş enerjilidir.', 'Beş orbitaldir; enerjileri birbirinden farklıdır.', 'Beş orbitaldir ve eş enerjilidir.'], answer: 2,
         why: ['Üç orbital p türündedir; d türünde beş orbital vardır.', 'Aynı alt enerji seviyesindeki orbitaller eş enerjilidir.',
           'd türü beş özdeş orbitalden oluşur; aynı alt enerji seviyesinde oldukları için eş enerjilidir.'], scene: 4 },
+      { q: 'Bir atomda elektronu 3s, 3d ve 4p orbitallerinden her birine çıkarmak için gereken enerji ölçülüyor. Hangisine çıkarmak için en az enerji gerekir?',
+        options: ['3s orbitaline', '3d orbitaline', '4p orbitaline'], answer: 0,
+        why: ['Evet. Üçü içinde en altta 3s durur; daha az enerji isteyen orbital daha düşük enerjilidir.', '3d çizgileri 3s çizgisinin çok üstündedir; 3d’ye çıkmak daha çok enerji ister.', 'Genel sırada 4p bu üçünün en üstündedir; en çok enerjiyi o ister.'], scene: 5 },
+      { q: 'Ayşe: “3p ve 3d orbitalleri de üçüncü enerji seviyesinde olduğu için enerjileri eşittir.” Hangi karşılık doğrudur?',
+        options: ['Haklı; aynı enerji seviyesindeki bütün orbitallerin enerjisi eşittir.', 'Haksız; eş enerji yalnızca aynı alt enerji seviyesindeki orbitaller için geçerlidir.', 'Haksız; 3d orbitalleri 3p orbitallerinden daha düşük enerjilidir.'], answer: 1,
+        why: ['Aynı enerji seviyesinde olmak yetmez; 3p ve 3d farklı alt enerji seviyeleridir.', 'Evet. Eş enerji, aynı alt enerji seviyesinin orbitalleri içindir; 3p ile 3d’nin çizgileri farklı yüksekliktedir.', 'Sıra ters: diyagramda 3d çizgileri 3p çizgilerinin üstünde durur.'], scene: 4 },
     ], summary: ['<b>Sırayı numara değil, enerji belirler.</b>', 'Genel sıra: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p.'],
-    nextLesson: { href: 'e1-aufbau.html', label: 'Sonraki: Önce düşük enerji ›' },
+    nextLesson: { href: 'd2-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

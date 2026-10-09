@@ -660,6 +660,12 @@
       { q: 'Bir usta, güçlü kireç çözücüyü sulandırmadan balkon seramiklerine döküyor; derzler zarar görüyor. Bu olayda “hata” hangisidir?',
         options: ['Kireç çözücünün asit içermesi', 'Derzlerin zarar görmesi', 'Çözücüyü sulandırmadan dökmek'], answer: 2,
         why: ['Asit içermesi maddenin özelliğidir; bir davranış değildir.', 'Derzlerin zarar görmesi olayın sonucudur.', 'Hata, yapılan davranıştır: çözücü sulandırılmadan döküldü.'], scene: 2 },
+      { q: 'Boya üreten bir fabrika atık çözeltisini arıtmadan akarsuya veriyor; akarsudaki balıklar ölüyor. Zincirin “sonuç” halkasına hangisi yazılır?',
+        options: ['Akarsuda balıkların ölmesi', 'Atığı arıtmadan akarsuya vermek', 'Fabrikanın ürettiği atık çözelti'], answer: 0,
+        why: ['Evet. Sonuç, hatanın ardından ortaya çıkan zarardır.', 'Bu, fabrikanın yaptığı bir davranıştır; hata halkasına yazılır.', 'Atık çözelti kullanılan maddedir; madde halkasına yazılır.'], scene: 5 },
+      { q: '“Bir kazada sonucu yalnızca kullanılan madde belirler; madde aynıysa sonuç da hep aynıdır.” diyen öğrenciye hangi karşılık verilmelidir?',
+        options: ['Haklı; aynı madde her kullanımda aynı sonucu verir.', 'Haksız; sonucu madde değil, olayın geçtiği ortam belirler.', 'Haksız; sonucu özellik ile yapılan hata birlikte belirler.'], answer: 2,
+        why: ['Sodyum yağ içinde güvenle saklanır; aynı sodyum suya konunca şiddetli tepkime verir.', 'Ortamlar farklıydı; ortak olan, maddenin özelliğinin hesaba katılmamasıydı.', 'Evet. Her olayda sonucu maddenin özelliği ile yapılan hata birlikte belirledi.'], scene: 6 },
     ], summary: ['<b>Hangi madde, hangi hata, hangi sonuç?</b>', 'Bir kazayı bu üç halkayla tanımlamak, onu çözülebilir bir probleme çevirir.'],
     nextLesson: { href: 'b2-etiket-ve-guvenlik.html', label: 'Sonraki: Önlem kanıtla seçilir ›' },
   });

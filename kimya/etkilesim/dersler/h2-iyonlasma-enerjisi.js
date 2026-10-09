@@ -633,6 +633,12 @@
       { q: 'Berilyum ve bor ikinci periyotta yan yanadır. Berilyumun dizilimi 2s<sup>2</sup>, borunki 2s<sup>2</sup> 2p<sup>1</sup> ile biter. Hangisinin birinci iyonlaşma enerjisi daha büyüktür?',
         options: ['Bor', 'Berilyum', 'İkisi eşit'], answer: 1,
         why: ['Bor sağdadır; ama dizilimi yarı ya da tam dolu orbitallerle bitmez: 800 kJ/mol.', '2s orbitali tam dolu olan berilyum küresel simetri gösterir: 900 kJ/mol.', 'Dizilimleri farklı biter; küresel simetri gösteren berilyum daha kararlıdır.'], scene: 4 },
+      { q: 'Ece: “Brom atomunun çekirdeğinde klordan daha çok proton var; bu yüzden bromdan elektron koparmak daha zordur.” Brom, klorla aynı grupta (7A) ve bir alt periyottadır. Ece’ye hangi karşılık verilmelidir?',
+        options: ['Haklı; proton sayısı arttıkça çekirdek dış elektronu daha güçlü çeker.', 'Haksız; aşağı inildikçe dış elektron çekirdeğe daha yakın olur.', 'Haksız; aşağı inildikçe dış elektron çekirdekten uzaklaşır.'], answer: 2,
+        why: ['Proton sayısı artar ama dış elektronun çekirdeğe uzaklığı da artar. Uzak elektronu koparmak daha az enerji ister.', 'Grupta aşağı inildikçe atom büyür; dış elektron çekirdeğe yaklaşmaz, uzaklaşır.', 'Evet. Grupta aşağı inildikçe yarıçap büyür, elektron daha zayıf çekilir ve iyonlaşma enerjisi azalır.'], scene: 1 },
+      { q: 'Lityum ve flor ikinci periyottadır; flor, lityumun çok daha sağındadır. Hangisinden ilk elektronu koparmak daha çok enerji ister?',
+        options: ['Flor', 'Lityum', 'İkisi eşit'], answer: 0,
+        why: ['Evet. Periyotta sağa gidildikçe proton artar, çekim güçlenir ve iyonlaşma enerjisi genel olarak artar.', 'Lityum solda, protonu az; dış elektronu daha zayıf tutulur ve daha kolay kopar.', 'İkisinin proton sayısı farklıdır; çekirdeğin çekimi aynı kalmaz.'], scene: 2 },
     ], summary: ['<b>Yakın elektron zor kopar; ayrıntı için dizilime bak.</b>', 'İyonlaşma enerjisi grupta aşağı azalır, periyotta sağa genel olarak artar; 2A ve 5A artışı bozar.'],
     nextLesson: { href: 'h3-ardisik-enerjiler.html', label: 'Sonraki: Ardışık enerjiler ve valans ›' },
   });

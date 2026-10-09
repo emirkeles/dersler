@@ -548,6 +548,13 @@
       { q: 'Karbon, azot ve oksijen ikinci periyotta bu sırayla yan yanadır. Elektronegatifliği büyükten küçüğe sırala.',
         options: ['C > N > O', 'N > O > C', 'O > N > C'], answer: 2,
         why: ['Bu sıra küçükten büyüğedir; sağa gidildikçe değer artar.', 'Oksijen azotun sağındadır; değeri azotunkinden büyüktür.', 'Periyotta sağa gidildikçe elektronegatiflik artar; en sağdaki oksijen en büyüktür.'], scene: 3 },
+      { q: 'Sinem: “Bağ elektronları iki atomun ortak elektronlarıdır; bu yüzden iki atom bağ elektronlarını her zaman eşit çeker.” Sinem’e hangi karşılık verilmelidir?',
+        options: ['Haksız; elektronegatifliği büyük olan atom bağ elektronlarını daha çok çeker.', 'Haksız; atom yarıçapı büyük olan atom bağ elektronlarını daha çok çeker.', 'Haklı; ortak elektronlar iki atomun tam ortasında kalır.'], answer: 0,
+        why: ['Evet. Elektronegatifliği farklı iki atomda bağ elektronları büyük olana doğru kayar; halat çekme yarışındaki güçlü takım gibi.', 'Büyük atomda bağ elektronları çekirdekten uzaktır; çekim zayıflar. Yarıçap büyüdükçe elektronegatiflik genellikle azalır.', 'Elektronlar ortaktır ama çekme gücü farklıysa ortada kalmaz; güçlü çeken atoma yaklaşır.'], scene: 0 },
+      { q: 'Oksijen ve kükürt 6A grubundadır; kükürt, oksijenin bir alt periyodundadır. Birbirine bağlandıklarında bağ elektronlarını hangisi daha çok çeker?',
+        options: ['Kükürt', 'Oksijen', 'İkisi eşit'], answer: 1,
+        why: ['Kükürt daha büyüktür; bağ elektronları çekirdeğinden daha uzaktır ve daha zayıf çekilir.', 'Evet. Grupta yukarı çıkıldıkça yarıçap küçülür, bağ elektronları çekirdeğe yaklaşır ve elektronegatiflik artar.', 'Aynı grupta olmak değerleri eşitlemez; yarıçap farklıdır, çekme gücü de farklıdır.'], scene: 4 },
     ], summary: ['<b>Elektronegatiflik bağ elektronunu çekme gücüdür; sağa ve yukarı gidildikçe artar.</b>', 'Pauling değerleri birimsizdir; soy gazların elektronegatiflik değeri yoktur.'],
+    nextLesson: { href: 'h5-tekrar.html', label: 'Sonraki: Konu tekrarı ›' },
   });
 })();

@@ -616,6 +616,12 @@
       { q: 'Bir şemada 2s kutusuna aynı yönlü iki ok çizilmiş. Hangi kurala uyulmamıştır?',
         options: ['Hund kuralı', 'Aufbau ilkesi', 'Pauli dışlama ilkesi'], answer: 2,
         why: ['Hund kuralı, eş enerjili kutular arasındaki dağılımı düzenler.', 'Aufbau ilkesi, orbitallerin dolma sırasını düzenler.', 'Bir orbitaldeki iki elektron zıt yönlü olmak zorundadır.'], scene: 1 },
+      { q: 'Kaan: “Elektronlar önce aynı kutuyu çift çift doldurur; yeni kutuya ancak o dolunca geçer.” Hangi karşılık doğrudur?',
+        options: ['Haklı; elektronlar birbirini çeker, bu yüzden eşleşir.', 'Haksız; bir kutuya yalnızca bir elektron girebilir.', 'Haksız; eş enerjili kutulara önce birer birer yerleşirler.'], answer: 2,
+        why: ['Elektronlar eksi yüklüdür ve birbirini iter; ayrı kutulara yerleşince birbirinden uzaklaşıp enerjileri azalır.', 'Pauli dışlama ilkesi bir kutuya en çok iki zıt yönlü elektron koyar; tek elektronla sınırlamaz.', 'Evet. Hund kuralı: boş eş enerjili kutu dururken elektronlar eşleşmez, önce her kutuya bir elektron girer.'], scene: 3 },
+      { q: 'Kobaltın 3d orbitallerinde yedi elektron vardır. Beş 3d kutusunun kaçında elektronlar eşleşmiştir?',
+        options: ['İki kutuda', 'Bir kutuda', 'Üç kutuda'], answer: 0,
+        why: ['Evet. Önce beş kutuya birer elektron girer; kalan iki elektron iki kutuyu eşleştirir.', 'Tek eşleşme altı elektrona denk gelir; yedinci elektron da bir kutuyu daha eşleştirir.', 'Üç çift altı elektron eder ve boş kutu bırakır; oysa boş kutu dururken elektronlar eşleşmez.'], scene: 6 },
     ], summary: ['<b>Önce herkese bir koltuk, sonra yanına ikinci.</b>', 'Pauli dışlama ilkesi: bir orbitalde en çok iki zıt yönlü elektron. Hund kuralı: eş enerjili orbitallere önce birer birer.'],
     nextLesson: { href: 'e3-valans-ve-simetri.html', label: 'Sonraki: Dengeli doluluk ve valans ›' },
   });

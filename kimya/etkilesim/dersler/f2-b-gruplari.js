@@ -640,6 +640,12 @@
       { q: 'Galyumun dizilimi 4s² 3d¹⁰ 4p¹ ile biter. Galyumun yeri neresidir?',
         options: ['4. periyot, 3B', '4. periyot, 13A', '4. periyot, 3A'], answer: 2,
         why: ['Dizilim p ile biter; element A grubundadır.', '3d¹⁰ elektronları da sayılmış; A grubunda yalnızca dördüncü enerji seviyesindekiler sayılır.', 'Dizilim p ile biter; dördüncü enerji seviyesinde 2 + 1 = 3 elektron var.'], scene: 5 },
+      { q: 'Bir öğrenci “Dizilimi içinde d orbitali bulunan her element B grubundadır” diyor. Hangi dizilim bu sözün yanlış olduğunu gösterir?',
+        options: ['…4s² 3d⁷ ile biten dizilim', '…3p⁶ 4s² ile biten dizilim', '…4s² 3d¹⁰ 4p⁴ ile biten dizilim'], answer: 2,
+        why: ['Dizilim d ile biter ve element B grubundadır; söz bu elementte tutuyor.', 'Bu dizilimde d orbitali yok; söz bu elementle sınanmaz.', 'Dizilim 4p ile biter: A grubudur. 3d¹⁰ sayıma girmez; dördüncü enerji seviyesinde 2 + 4 = 6 elektron var: 6A.'], scene: 5 },
+      { q: 'İki element karşılaştırılıyor: birinin dizilimi …4s² 3d¹⁰ 4p², ötekinin dizilimi …4s² 3d² ile bitiyor. Yerleri için hangisi doğrudur?',
+        options: ['İkisi de 4. periyottadır; ilki 4A, ikincisi 4B grubundadır.', 'İkisi de 4. periyottadır; ikisi de 4B grubundadır.', 'İlki 3. periyot, ikincisi 4. periyottadır; ikisi de 4A grubundadır.'], answer: 0,
+        why: ['İkisinde de en yüksek enerji seviyesi dört. İlki p ile biter ve 2 + 2 = 4: 4A; ikincisi d ile biter ve 2 + 2 = 4: 4B.', 'İlkinin dizilimi p ile bitiyor; p ile biten element A grubundadır.', '3d¹⁰ elektronları en yüksek enerji seviyesinde değildir; ilki de dördüncü periyottadır. Ayrıca ikincisi d ile bittiği için B grubundadır.'], scene: 5 },
     ], summary: ['<b>Kural, yeni örnekte de tutuyorsa kuraldır.</b>', 'Dizilim d ile bitiyorsa en son s ve d elektronları toplanır: 8, 9, 10 → 8B; 11 → 1B; 12 → 2B.'],
     nextLesson: { href: 'f3-bloklar-ve-gruplar.html', label: 'Sonraki: Bloğu yerleşim türü söyler ›' },
   });
