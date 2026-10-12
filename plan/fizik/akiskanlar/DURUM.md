@@ -1,6 +1,6 @@
 # Durum — Fizik · Akışkanlar
 
-Son güncelleme: 12 Ekim 2026 (birinci oturum). Tema `plan/YURUTME.md` 3. adımın ikinci temasıdır (2a ile aynı düzen). Birinci oturumda 2a.1 ve 2a.2 bitti: ders kitabı (A bölümünü ana oturum, B–E bölümlerini dört Sonnet ajanı döküme çevirdi; ajan başına 75–100 bin token), `PLAN.md` kararları, konu A senaryosu, iskelet, kit, A1.
+Son güncelleme: 12 Ekim 2026 (birinci oturum; kullanıcı "devam et" dediği için 2a.3 ve 2a.4 de aynı oturumda yapıldı). Tema `plan/YURUTME.md` 3. adımın ikinci temasıdır (2a ile aynı düzen). Birinci oturumda 2a.1 ve 2a.2 bitti: ders kitabı (A bölümünü ana oturum, B–E bölümlerini dört Sonnet ajanı döküme çevirdi; ajan başına 75–100 bin token), `PLAN.md` kararları, konu A senaryosu, iskelet, kit, A1.
 
 | Adım | Durum |
 |---|---|
@@ -8,22 +8,55 @@ Son güncelleme: 12 Ekim 2026 (birinci oturum). Tema `plan/YURUTME.md` 3. adım�
 | 2 Plan | bitti (taslak 7 Ekim 2026; kararlardan sonraki ders listesi 12 Ekim 2026) |
 | 2b Ders kitabı | bitti (s. 130–195; `PLAN.md` bölüm 8) |
 | 3 Kararlar | bitti (`PLAN.md` bölüm 7, 24 karar) |
-| 4 Senaryolar | A bitti (`senaryolar/A-basinc.md`: A1, A2, A3 tekrar); B, C, D, E bekliyor |
+| 4 Senaryolar | bitti: A (ana oturum), B, C, D, E (dört Sonnet ajanı; 12 Ekim 2026) |
 | 5 İskelet | bitti: `index.html`, `tema.js` (`kural: 2`), `dersler/kit.js`, `dersler/a-araclar.js` |
-| 6 Dersler | A1 bitti; 19 dosya bekliyor (14 kısa ders, 5 konu tekrarı) |
+| 6 Dersler | Konu A bitti (A1, A2, A3 tekrar); 17 dosya bekliyor (13 kısa ders, 4 konu tekrarı) |
 | 7 Denetim | bekliyor |
 
 | Kısa ders | Senaryo | Ders | olc | Not |
 |---|---|---|---|---|
 | A1 | bitti | bitti | temiz | 6 sahne, 43 altyazı, 8:48; ana oturum yazdı; altı sahnenin son karesine ve üç ara kareye bakıldı |
-| A2 | bitti | bekliyor | | 7 sahne (tablolu üç sahne 25 kelimeyi aşabilir) |
-| A3 tekrar | bitti | bekliyor | | 1 sahne + 8 soru |
-| B1–B4, B5 tekrar | bekliyor | bekliyor | | |
-| C1–C3, C4 tekrar | bekliyor | bekliyor | | |
-| D1–D4, D5 tekrar | bekliyor | bekliyor | | |
-| E1–E2, E3 tekrar | bekliyor | bekliyor | | |
+| A2 | bitti | bitti | temiz | 7 sahne, 41 altyazı, 6:42; Sonnet (167 bin token, tek ölçüm turu); 4, 5, 6 ve 7. sahnelerin son karesine bakıldı; tablolu sahneler 26, 26 ve 58 kelime |
+| A3 tekrar | bitti | bitti | temiz | 1 sahne + 8 soru, 6 altyazı, 3:55; Sonnet (109 bin token); iki kareye bakıldı; ilk çizim ve son kare ana oturumda düzeltildi (aşağıda) |
+| B1 | bitti | bekliyor | | 7 sahne (Hatırla dahil) |
+| B2 | bitti | bekliyor | | 11 sahne; sahne 8 ana oturumda orana çevrildi (aşağıda) |
+| B3 | bitti | bekliyor | | 7 sahne; sayı yok |
+| B4 | bitti | bekliyor | | 9 sahne; kaynak kartları ve kontrol listesi |
+| B5 tekrar | bitti | bekliyor | | 1 sahne + 10 soru |
+| C1 | bitti | bekliyor | | 6 sahne + Hatırla |
+| C2 | bitti | bekliyor | | 6 sahne + Hatırla; temadaki tek sayısal hesap |
+| C3 | bitti | bekliyor | | 9 sahne + Hatırla |
+| C4 tekrar | bitti | bekliyor | | 1 sahne + 8 soru |
+| D1 | bitti | bekliyor | | 10 sahne |
+| D2 | bitti | bekliyor | | 10 sahne; hipotez sorusunda doğru şık yok (`tahminAl`) |
+| D3 | bitti | bekliyor | | 10 sahne; sahne 6 ana oturumda sadeleşti (aşağıda) |
+| D4 | bitti | bekliyor | | 12 sahne |
+| D5 tekrar | bitti | bekliyor | | 1 sahne + 10 soru |
+| E1 | bitti | bekliyor | | 10 sahne + Hatırla |
+| E2 | bitti | bekliyor | | 9 sahne + Hatırla |
+| E3 tekrar | bitti | bekliyor | | 1 sahne + 8 soru |
 
-Ölçüm (12 Ekim 2026): `olc.js akiskanlar/a1` bütün sayaçlar 0, konsol temiz, defter 12 kelime. `sure.js`: A1 8:48. `denetle.js` üç sorun gösteriyor, üçü de beklenen: iki pilot sayfası (`p1-…`, `p2-…`) `tema.js` içinde yok (karar 20), Konu A'nın konu tekrarı henüz yazılmadı.
+Ölçüm (12 Ekim 2026): A1, A2, A3 `olc.js` temiz. `sure.js`: A1 8:48, A2 6:42, A3 3:55; Konu A 19:25. `denetle.js` iki sorun gösteriyor, ikisi de beklenen: pilot sayfaları (`p1-…`, `p2-…`) `tema.js` içinde yok (karar 20).
+
+## Senaryoların denetimi (12 Ekim 2026)
+
+Dört senaryo ajanı 194–312 bin token harcadı (E 194, C 254, B 264, D 312; hedef 300: D aştı, beş dersli ve 850 satır). Dördü de dökümü ham metinden önce okudu. Ana oturum her senaryonun raporunu, ders başlıklarını, "Hatırla" sorularını ve işaretlenen sahneleri okudu; örnek verileri yeniden hesapladı (B2: 980, 1.960, 3.920, 2.940, 5.880 Pa; C2: 101.292,8 ≈ 101.300 Pa; D1: 0,98 N'luk dilimler, dinamometre 9,8 − F_k; D3: 980 ve 1.372 Pa, 9,8 ve 13,72 N, fark 3,92 N); kırmızı, siyah çizgi, "hız", kitap göndermesi taraması boş.
+
+Ana oturumun düzeltmeleri:
+
+- **B2 sahne 8** "Modelle hesap" değer yerine koyarak çarpma yaptırıyordu (0,5 · 1.000 · 9,8). Program bu modelde örnekleri değişkenlerin ilişkisini yorumlamakla sınırlıyor: sahne "Modelle çıkarım" oldu, çıkarım ölçülmüş değerden oranla yürüyor. B5'in 2. sorusu da orana çevrildi.
+- **D3 sahne 6**: çarpma anlatan iki altyazı ("980 çarpı 0,01") sayının kendisini söyleyen cümleye çevrildi; sahne farkın D1'deki 3,92 N ile aynı çıktığını gösteriyor.
+- **D1 sahne 2** (altın taç): hangisinin daha çok su taşırdığı kaynakta yok; iki kap aynı düzeyde çizilir, fark "≠" ile gösterilir.
+- **A senaryosu**: A2 çıkış sorusu 2'nin şıkları açık yazıldı ("2P", "P", "P / 2").
+- **A3 dersi**: ilk çizimde dar tabana 2, geniş tabana 4 ok konmuştu (basınç eşit görünüyordu); ikisi de 4 ok oldu. Sahnenin sonunda beş kural tam görünür hâle geliyor. İkisi de görev tanımına kural olarak yazıldı.
+
+Olduğu gibi bırakılan, bakılacak yerler:
+
+- C3 sahne 6 (yükselen balon), sahne 7 (dağcı) ve C1 sahne 5 (kulak): "içerideki basınç dışarıdakinden büyük kalır" karşılaştırmasıyla kurulu; gaz yasası ya da kapalı kap hesabı yok.
+- E1 sahne 7 (saç kurutma makinesi ve top): yalnızca topun akımın içinde kalması açıklanıyor (kitap dışı, karar 15). E2 sahne 4 (sprey) kitabın s. 192'deki anlatımını esas alıyor. E2 sahne 5'te yelken çizimi kitapta yok; ajan kurdu.
+- B2 sahne 5, 9, 10'da yan yüzeyde basınç okları var; kuvvet hesabı yok. B4'te kaynak kartlarındaki terimler uydurma örnektir; gerçek kurum, kişi, sayı yok.
+- D1'de yer çekimi ivmesi ayrı sahne (kitap sayıyor, program anmıyor; karar 4). D2 sahne 8'de model tek satırla sayıya dökülüyor (0,0001 · 1.000 · 9,8 = 0,98), öğrenci hesap yapmıyor.
+- Uzun dersler: B2 11, D1–D3 onar, D4 12, E1 10 + Hatırla, C3 9 + Hatırla sahne. `sure.js` 15 dakikayı aşan ders gösterirse iki fikir taşıyıp taşımadığı okunur.
 
 ## Kullanıcıya açık notlar
 
@@ -37,42 +70,41 @@ Son güncelleme: 12 Ekim 2026 (birinci oturum). Tema `plan/YURUTME.md` 3. adım�
 
 ## Sıradaki
 
-`YURUTME.md` 3. adım, 2a.3 ve 2a.4. Bu oturumda altı Sonnet ajanı açılır (A2, dört senaryo, sonra A3), sonra oturum biter (senaryolar bitince oturum sınırı).
+`YURUTME.md` 3. adım, 2a.5: B–E dersleri ve konu tekrarları (17 dosya), ders başına bir Sonnet ajanı, aynı anda en çok dört; her konuda ilk ders araç dosyasıyla önce yazılır; sekiz ajanda bir oturum sınırı. Görev tanımı `gorev/ders-gorevi.md` (A2 ve A3'ten çıkan kurallar eklendi). Örnek ders A1 (satır aralıkları görev tanımında); "Hatırla" ve iki kaydırıcılı sahne için ek örnek `dersler/a2-olc-kaydet-model.js` satır 95–126 (Hatırla) ve 357–391 (Dene); tekrar dersi örneği `dersler/a3-tekrar.js` (146 satır, tamamı okunur).
 
-**Önce birlikte açılacak beş ajan** (dört ajan sınırı ders ajanları içindir; senaryo ajanları ayrı dosyalara yazar):
+Önerilen sıra. Oturum 1: B1 (`b-araclar.js` açar), C1 (`c-araclar.js`), D1 (`d-araclar.js`), E1 (`e-araclar.js`) birlikte; bitince B2, B3, C2, D2. Oturum 2: B4, B5 tekrar, C3, C4 tekrar, D3, D4, E2, E3 tekrar. Oturum 3: D5 tekrar ve tema denetimi (2a.7).
 
-| Ajan | Görev tanımı | Yazacağı | Görev iletisine yazılacaklar |
-|---|---|---|---|
-| A2 dersi | `gorev/ders-gorevi.md` | `a2-olc-kaydet-model.html`, `dersler/a2-olc-kaydet-model.js` | senaryo `senaryolar/A-basinc.md` satır 1–14 (kılavuz) ve 167–298; kimlik `akiskanlar-a2`; `kicker: 'Konu A · Basınç'`; `accent: '#f5b04c'`; `nextLesson: { href: 'a3-tekrar.html', label: 'Sonraki: Konu tekrarı ›' }`; araç dosyası var, değiştirme (`basincOlcer` ilk kez kullanılacak); tablolu sahneler (2–5) 25 kelimeyi aşabilir, başka sahne aşmaz; iki kaydırıcılı "Dene" sahnesi; senaryodaki her sayıyı hesapla |
-| B senaryosu | `gorev/senaryo-gorevi.md` | `senaryolar/B-sivilarda-basinc.md` (B1–B4, B5 tekrar) | aşağıdaki satır aralıkları; kararlar 2, 3, 6, 10, 11, 16, 19, 23, 24 |
-| C senaryosu | aynı | `senaryolar/C-acik-hava-basinci.md` (C1–C3, C4 tekrar) | kararlar 2, 5, 8, 9, 16, 19, 20, 23, 24 |
-| D senaryosu | aynı | `senaryolar/D-kaldirma-kuvveti.md` (D1–D4, D5 tekrar) | kararlar 2, 4, 7, 12, 13, 19, 20, 22, 23, 24 |
-| E senaryosu | aynı | `senaryolar/E-bernoulli-ilkesi.md` (E1–E2, E3 tekrar) | kararlar 14, 15, 22, 23, 24 |
-
-A2 bitince: **A3 tekrar** (`a3-tekrar.html`, `dersler/a3-tekrar.js`; senaryo satır 1–14 ve 299–322; `nextLesson` yok; örnek tekrar dersi `matematik/eslik-ve-benzerlik/dersler/a6-tekrar.js`, tamamı okunur; A1 ve A2'nin düzeneği sorularda cümleyle verilmiş).
-
-Senaryo ajanlarının okuma aralıkları:
-
-| Konu | `MUFREDAT.md` | `PLAN.md` taslak | Kitap metni (`metin/tum.txt`) | Döküm |
+| Ders | Dosya adı | Senaryo (`senaryolar/`) | Kılavuz | Dersin satırları |
 |---|---|---|---|---|
-| B | 17–26, 71–73, 79–81, 91, 95 | 69–118 | 6727–7532 (s. 145–160) | `dokum/B.md` |
-| C | 27–32, 71–73, 79–81, 99 | 120–156 | 7532–7913 (s. 161–168) | `dokum/C.md` |
-| D | 33–41, 71–73, 79–81, 103, 107 | 158–206 | 7913–8671 (s. 169–184) | `dokum/D.md` |
-| E | 42–44, 71–73, 111 | 208–233 | 8671–9177 (s. 185–195) | `dokum/E.md` |
+| B1 | `b1-derine-dalmak` | `B-sivilarda-basinc.md` | 1–17 | 18–164 |
+| B2 | `b2-durgun-sivi-basinci` | aynı | 1–17 | 165–381 |
+| B3 | `b3-sivi-basinciyla-calisan-sistemler` | aynı | 1–17 | 382–516 |
+| B4 | `b4-merak-et-sor-dogrula` | aynı | 1–17 | 517–692 |
+| B5 | `b5-tekrar` | aynı | 1–17 | 693–720 |
+| C1 | `c1-hava-da-bir-akiskandir` | `C-acik-hava-basinci.md` | 1–14 | 15–161 |
+| C2 | `c2-torricelli` | aynı | 1–14 | 162–293 |
+| C3 | `c3-atmosfer-basinci-degisir` | aynı | 1–14 | 294–464 |
+| C4 | `c4-tekrar` | aynı | 1–14 | 465–491 |
+| D1 | `d1-kaldirma-kuvveti-deneyi` | `D-kaldirma-kuvveti.md` | 1–27 | 28–222 |
+| D2 | `d2-arsimet-ilkesi` | aynı | 1–27 | 223–393 |
+| D3 | `d3-kaldirma-kuvveti-nereden-gelir` | aynı | 1–27 | 394–561 |
+| D4 | `d4-gemi-denizalti-cop-adasi` | aynı | 1–27 | 562–792 |
+| D5 | `d5-tekrar` | aynı | 1–27 | 793–822 |
+| E1 | `e1-dar-yerde-hizli` | `E-bernoulli-ilkesi.md` | 1–31 | 32–247 |
+| E2 | `e2-bernoulli-her-yerde` | aynı | 1–31 | 248–417 |
+| E3 | `e3-tekrar` | aynı | 1–31 | 418–442 |
 
-Hepsi ayrıca `PLAN.md` içinde şunları okur: "Kısa ders listesi (kararlardan sonra)" 235–260, bilerek alınmayanlar 338–387, kararlar 412–441 (yalnızca numarası verilenler), bölüm 8'de kendi konusunun satırları ve son paragraf (443–sonu; `grep -n '^| <HARF> |'` ile). Örnek senaryo: `senaryolar/A-basinc.md` satır 1–14 ve 16–166.
+Başlıklar `PLAN.md` "Kısa ders listesi (kararlardan sonra)" tablosundadır (görev iletisine tam yazılır). Renkler: B `#3cc8e8`, C `#6ea8ff`, D `#3ddc97`, E `#c792ff`. `kicker`: 'Konu B · Sıvılarda basınç', 'Konu C · Açık hava basıncı', 'Konu D · Kaldırma kuvveti', 'Konu E · Bernoulli İlkesi'. `nextLesson` etiketi "Sonraki: <başlık> ›"; tekrar için "Sonraki: Konu tekrarı ›". Satır aralıkları senaryo düzeltilirse kayar: görev iletisini yazmadan önce `grep -n '^## ' senaryolar/<dosya>` ile doğrula.
 
-Senaryo ajanlarına görev iletisinde ayrıca söylenecekler:
+Ders ajanlarına görev iletisinde ayrıca söylenecekler:
 
-- Bölüm 3'teki ders tanımları 7 Ekim taslağıdır; çelişkide kısa ders listesi ve kararlar geçerlidir (D2 başlığı, C2 açılış sorusu).
-- Benzetim sayılarını modelden hesapla ve dersin başına "Örnek veri" satırıyla yaz; her sayıyı iki kez hesapla (g = 9,8 m/s²; su 1.000 kg/m³; cıva 13.600 kg/m³; C2: 0,76 · 13.600 · 9,8 = 101.292,8 ≈ 101.300 Pa).
-- Tahta koyudur: siyah çizgi yazma; kırmızı kullanılmaz. Ölçüm aracı rakam ve simgeleri de kelime sayar. Hareketi sayıyla yaz (ne, nereden nereye, kaç ms, hangi eğri).
-- Kitabın açıklamasız bıraktığı örnekler (dağcı, balon, pipet; saç kurutma makinesi ve top; baraj duvarı; delikli şişe) derste öğretilen ilkeden açıklanır; yeni ad, sayı, tarih eklenmez.
-- B4 sorgulama dersidir: ölçüm aracı yalnızca şıklara ve motorun düğmelerine basar; serbest metin girişi olmaz.
-- Rapor: ders listesi ve satır aralıkları, kitaptan alınıp `PLAN.md` bölüm 8'de olmayan her bilgi, hesaplanan sorular, kuşkulu içerik.
-
-Senaryolar gelince ana oturum: her senaryoyu program metniyle karşılaştırır (konunun "Program metniyle karşılaştırma" tablosu ve `PLAN.md` bölüm 4), örnek verileri yeniden hesaplar, kırmızı / siyah çizgi / "hız" / kitap göndermesi için `grep` yapar; A2 ve A3'ün raporunu, `olc` satırlarını ve en az ikişer karesini denetler; `tema.js` satırlarını yazar, `sure.js` çalıştırır; bu dosyayı, `TASKS.md` ve iş panosunu günceller; oturum biter.
+- Senaryolarda "sürükle", "sırala", "eşleştir" diye geçen etkileşimler kart başına seçimle kurulur (motor notu görev tanımında); E1 sahne 9'daki sıralama ve D1'deki üç kutu böyledir.
+- D2'deki hipotez sorusunda doğru şık yoktur: `KIT.tahminAl` kullanılır, seçime göre geri bildirim verilir.
+- Tablolu, formüllü ve kaynak kartlı sahneler 25 kelimeyi aşabilir; ajan aşan sahneyi raporda adıyla yazar. Uzun derslerde (B2, D1–D4, E1, C3) ölçüm birkaç dakika sürer.
+- Senaryodaki "Not (ana oturum…)" satırları bağlayıcıdır (B2 sahne 8, D3 sahne 6, D1 sahne 2).
+- Konunun ilk dersini yazan ajan araç dosyasını açar; senaryo raporlarındaki araç listeleri (boru düzeneği, dinamometre düzeneği, sıvı kabı ve sonda, cam boru ve cıva kabı) o ajana ipucu olarak verilir. C2 ve D2 düz vektörle çizilir; pilot dosyaları okunmaz.
+- Her sayıyı ajan yeniden hesaplar; tutmayanı düzeltmez, raporlar.
 
 **Ders kitabı dosyaları.** Geçici klasör: `/private/tmp/claude-501/-Users-emirkeles-matematik-sayilar/253eaf9c-728b-408b-8f85-63125e4b77db/scratchpad` (`kitap/fizik9.pdf`, `metin/tum.txt` kitabın tamamı, `dokum/B.md` … `E.md`, `png/A` … `png/E` sayfa görüntüleri, `venv` içinde pymupdf, `betik/dok.py`, `betik/png.py`). Basılı sayfa numarası PDF sayfa numarasıyla aynıdır. Klasör silinmişse yeniden kurulur: yeni scratchpad'de `python3 -m venv venv && venv/bin/pip install pymupdf`; PDF bağlantısı <https://tymm.meb.gov.tr/kitap/38/fizik-dersi-9sinif-ders-kitabi> sayfasındaki `/assets/pdf/….pdf` (54 MB); `venv/bin/python -I plan/fizik/akiskanlar/gorev/dok.py kitap/fizik9.pdf 1 272 metin/tum.txt` metni, `gorev/png.py` sayfa görüntüsünü üretir (PDF kendi boş klasöründe durur, betikler ayrı klasörde). Dökümler yeniden üretilemezse senaryo ajanı kitabın satırlarını doğrudan okur (yukarıdaki aralıklar aynı kalır). Ders ajanları kitabı okumaz.
 
-**Açık sorunlar:** yok. Bu oturumun dosyaları kullanıcı isteğiyle commit edildi (12 Ekim 2026): `fizik/akiskanlar/` altında `index.html`, `tema.js`, `a1-basinc-neye-bagli.html`, `dersler/kit.js`, `dersler/a-araclar.js`, `dersler/a1-basinc-neye-bagli.js`; `plan/fizik/akiskanlar/` altında `PLAN.md`, `DURUM.md`, `senaryolar/A-basinc.md`, `gorev/`; ayrıca `TASKS.md`, `plan/fizik/TEMALAR.md`, `plan/YURUTME.md`, `plan/YOL-HARITASI.md`, `plan/is-panosu.html`. Tema katalogda kapalıdır, seslendirilmedi.
+**Açık sorunlar:** yok. Bu oturumun dosyaları kullanıcı isteğiyle iki commit hâlinde `main`'e gönderildi (12 Ekim 2026: `696a097` ve A2, A3, senaryolar için ikinci commit). İlk commit'in dosyaları: `fizik/akiskanlar/` altında `index.html`, `tema.js`, `a1-basinc-neye-bagli.html`, `dersler/kit.js`, `dersler/a-araclar.js`, `dersler/a1-basinc-neye-bagli.js`; `plan/fizik/akiskanlar/` altında `PLAN.md`, `DURUM.md`, `senaryolar/A-basinc.md`, `gorev/`; ayrıca `TASKS.md`, `plan/fizik/TEMALAR.md`, `plan/YURUTME.md`, `plan/YOL-HARITASI.md`, `plan/is-panosu.html`. Tema katalogda kapalıdır, seslendirilmedi.

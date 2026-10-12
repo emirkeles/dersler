@@ -289,7 +289,7 @@ Sonra:
 ### Çıkış soruları
 
 1. 60 N ağırlığındaki bir kutu yere 0,03 m² yüzeyle değiyor. Yere yaptığı basınç kaç pascaldır? **2.000 Pa** / 1,8 Pa / 180 Pa. (sahne 5; 60 ÷ 0,03 = 2.000; 60 · 0,03 = 1,8)
-2. (yeni durum) Bir sandık yere P basıncı yapıyor. Üstüne kendi ağırlığında bir sandık daha konuyor; yere değen yüzey değişmiyor. Yeni basınç nedir? **2P** / P / P / 2. (sahne 3)
+2. (yeni durum) Bir sandık yere P basıncı yapıyor. Üstüne kendi ağırlığında bir sandık daha konuyor; yere değen yüzey değişmiyor. Yeni basınç nedir? **2P** · P · P / 2 (üç şık: "2P", "P", "P / 2"). (sahne 3)
 3. (yanılgı) Aynı kuvvet, iki kat büyük bir yüzeye yayılırsa basınç nasıl değişir? **Yarıya iner** / İki katına çıkar / Değişmez. (sahne 4)
 4. (yeni durum) Sekiz özdeş küpün dördü yerde, dördü onların üstünde duruyor. Küplerin hepsi yere tek sıra dizilirse basınç nasıl değişir? **2G / A'dan G / A'ya iner** / 2G / A olarak kalır / 2G / A'dan 4G / A'ya çıkar. (sahne 6; 8G ÷ 4A = 2G/A, 8G ÷ 8A = G/A)
 5. (yeni durum) Hangi değişiklik basıncı değiştirmez? **Kuvveti de yüzey alanını da iki katına çıkarmak** / Yalnızca kuvveti iki katına çıkarmak / Yalnızca yüzey alanını yarıya indirmek. (sahne 5; 2F ÷ 2A = F ÷ A)

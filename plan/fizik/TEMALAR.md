@@ -12,7 +12,7 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 |---|---|---|---|---|---|---|---|
 | 1 | Fizik Bilimi ve Kariyer Keşfi | `fizik-bilimi-ve-kariyer-kesfi` | <https://tymm.meb.gov.tr/fizik-dersi/unite/43> | 8 | 4 | 6 | yayında (7 Ekim 2026; 26 sahne, 93 klip); iki resim bekliyor, klipler dinlenmedi; 9 Ekim 2026: 12 ek çıkış sorusu ve dört konu tekrarı dersi (seslendirilmedi), tema 10 kısa ders |
 | 2 | Kuvvet ve Hareket | `kuvvet-ve-hareket` | <https://tymm.meb.gov.tr/fizik-dersi/unite/57> | 24 | 6 | 24 | yazıldı ve seslendirildi (8 Ekim 2026; 24 ders, 154 sahne, 1.472 klip; `olc.js` ve `denetle.js` temiz); yayında (8 Ekim 2026), kullanıcı henüz izlemedi; 9 Ekim 2026: her derste dört çıkış sorusu ve altı konu tekrarı dersi (sessiz), tema 30 kısa ders |
-| 3 | Akışkanlar | `akiskanlar` | <https://tymm.meb.gov.tr/fizik-dersi/unite/65> | 18 | 5 | 15 | yazımda (12 Ekim 2026'da işleme alındı): plan ve 24 karar, konu A senaryosu, A1 yazıldı (1 / 20 dosya: 15 kısa ders + 5 konu tekrarı); `akiskanlar/DURUM.md` |
+| 3 | Akışkanlar | `akiskanlar` | <https://tymm.meb.gov.tr/fizik-dersi/unite/65> | 18 | 5 | 15 | yazımda (12 Ekim 2026'da işleme alındı): plan ve 24 karar, beş konunun senaryosu, Konu A dersleri yazıldı (3 / 20 dosya: 15 kısa ders + 5 konu tekrarı); `akiskanlar/DURUM.md` |
 | 4 | Enerji | `enerji` | <https://tymm.meb.gov.tr/fizik-dersi/unite/82> | 18 | 6 | 15 | plan taslağı; işleme alınmayı bekliyor |
 | | **Toplam** | | | **68** | **21** | **60** | |
 

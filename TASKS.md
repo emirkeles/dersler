@@ -679,8 +679,8 @@ Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 15 kısa ders + 5 konu te
 - [x] 2a.1 Müfredat, ders kitabı (s. 130–195; A bölümü ana oturum, B–E dört Sonnet ajanı: dökümler geçici klasörde), `PLAN.md`: 24 karar, kararlardan sonraki ders listesi, denetim tablosunda `ders` / `benzetim` / `site dışı`, kitaptan alınanlar
 - [x] 2a.2 Konu A senaryosu (`senaryolar/A-basinc.md`: A1, A2, A3 tekrar), iskelet (`index.html`, `tema.js`, `dersler/kit.js`, `dersler/a-araclar.js`), A1 dersi (6 sahne, 43 altyazı, 8:48; `olc.js` bütün sayaçlar 0, konsol temiz; altı sahnenin son karesine bakıldı)
 - [x] Görev tanımları: `gorev/ders-gorevi.md`, `gorev/senaryo-gorevi.md` (hareket kuralı şablondan geldi); kitap betikleri `gorev/dok.py`, `gorev/png.py`
-- [ ] 2a.3 A2 dersi ve A3 konu tekrarı (Sonnet, ders başına bir ajan)
-- [ ] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan); senaryo ajanı kuralları burada ölçülür
+- [x] 2a.3 A2 dersi (7 sahne, 6:42) ve A3 konu tekrarı (1 sahne + 8 soru, 3:55): Sonnet, ders başına bir ajan (167 ve 109 bin token); ikisi `olc.js` temiz, kareler ana oturumda görüldü; A3'te iki düzeltme; Konu A 19:25
+- [x] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan): B 752, C 518, D 850, E 469 satır; 194–312 bin token (hedef 300; beş dersli D aştı); ana oturum denetledi, örnek verileri yeniden hesapladı; B2 sahne 8 ve D3 sahne 6 program sınırına göre düzeltildi (`DURUM.md` "Senaryoların denetimi")
 - [ ] 2a.5 B–E dersleri ve konu tekrarları (17 dosya)
 - [ ] 2a.7 Tema denetimi
 - [ ] 2a.8 Kullanıcı: temayı izle; seslendirme ve yayın ayrıca istenir
@@ -688,3 +688,19 @@ Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 15 kısa ders + 5 konu te
 - [ ] Tema yayına alınırken: A1'in iki hikâyesi `ortak/katalog.js` satırından `tema.js` dosyasına taşınır
 - [x] Commit ve push (12 Ekim 2026, kullanıcı istedi): birinci oturumun dosyaları
 - [x] İş panosu (sürüm 22, 12 Ekim 2026: Akışkanlar "Sürüyor" sütununda, 1 / 20 ders; kısa ders 212 / 539)
+- [x] İş panosu (sürüm 23, 12 Ekim 2026: Akışkanlar 3 / 20 ders, senaryolar bitti; kısa ders 213 / 539, konu tekrarı 55 / 144)
+
+## Hikâye: C4 Fotofiniş, hareket tasarımı yükseltmesi (12 Ekim 2026)
+
+Kullanıcı: "ses aynı kalacak şekilde daha profesyonel bir motion design"; plan temiz bağlamlı bir Opus alt ajanıyla yazıldı. Plan: `plan/matematik/sayilar/hikaye/C4-fotofinis-hareket.md` (teşhis, yön, 31 satırlık değişiklik tablosu, A0–A7 adımları, doğrulama). Ses, `T` tablosu, senaryo ve ekrandaki sözcükler sabit.
+
+- [x] Plan (v1 filmi 27 kare tabakası ve tween dökümüyle incelendi; `index.html` değişmedi)
+- [ ] Kullanıcı kararları K1–K9 (plan bölüm 6; her birinin varsayılanı yazılı, onay gelmese de uygulama aksamaz)
+- [ ] A0 Taban: `check` ve v1 tabakaları
+- [ ] A1 Sözlük, aşmasız giriş eğrisi, dört açık kusur (koşucular kadraj dışı, tabela belirir, `cy −410`, F3 durağan bitiş)
+- [ ] A2 Stadyum: ışık üç adımda, kimlik çipleri koşucudan tabelaya, paralaks, panel maskeyle açılır
+- [ ] A3 Dünya geçişi: panelden sayı doğrusuna kilitli itiş
+- [ ] A4 Sayı düzlemi: zemin paralaksı, tek dizgi etiket, büyütülmüş sıçrayış, madalya ve altın nokta girişleri
+- [ ] A5 Derin yakınlaşma ve geri çekilme: yeni `z` eğrisi, sabit altın okuma, noktaların çizgiye dönüşmesi
+- [ ] A6 Kapanış kartı
+- [ ] A7 Bütün: `check`, taslak işleme, plan bölüm 5 doğrulaması, kesin işleme (`renders/c4-fotofinis-v2.mp4`), −14 LUFS

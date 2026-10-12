@@ -6,6 +6,8 @@ KATALOG.tema('fizik', 'akiskanlar', {
   konular: [
     { harf: 'A', ad: 'Basınç', renk: '#f5b04c', dersler: [
       ['a1-basinc-neye-bagli.html', 'Basınç neye bağlı?', 'Karda botla yürürken batıyorsun, kar ayakkabısıyla batmıyorsun; ağırlığın aynıyken değişen ne?', 6, 528],
+      ['a2-olc-kaydet-model.html', 'Ölç, kaydet, modele ulaş', 'Bir tuğlanın kuma dikken yatıktan daha çok bastırdığını gördün; kaç kat daha çok?', 7, 402],
+      ['a3-tekrar.html', 'Konu tekrarı: Basınç', 'İki dersin kuralları aklında mı?', 1, 235],
     ] },
     { harf: 'B', ad: 'Sıvılarda basınç', renk: '#3cc8e8', dersler: [
     ] },
