@@ -450,47 +450,47 @@ Her satır programda yazılı bir istektir. Durum: `ders`, `benzetim` ya da `sit
 | Programın istediği | Durum | Hangi kısa ders (sahne) |
 |---|---|---|
 | Yansıma ve öteleme: özelliklere ve görüntüye ilişkin varsayım, genelleme, karşılaştırma, önerme (4.1.a–ç) | benzetim | A1 (S1–S5) |
-| Şekil ile görüntünün kenar ve çevre uzunluklarının eşitliği; değişen ve değişmeyen özellikler | ders | A1 (S1–S3), A2 |
+| Şekil ile görüntünün kenar ve çevre uzunluklarının eşitliği; değişen ve değişmeyen özellikler | ders | A1 (S1–S3), A2 (S4) |
 | Önerme: "Bir şeklin bir doğruya göre yansıma dönüşümü altındaki görüntüsü ile o şekil eştir." | ders | A1 (S5) |
-| Dönüşüm sonrası görüntü şekle eştir (her dönüşüm için vurgulanır) | ders | A1 (S5), A2, A4, A6 |
-| Öteleme = paralel iki doğruya göre sırayla iki yansıma | benzetim | A3 |
-| Dönme = kesişen iki doğruya göre sırayla iki yansıma | benzetim | A4 |
-| Dönme merkezi ve dönme açısı | ders | A2, A4 |
-| Dönme uygulanmış şekiller üzerinden özelliklere dair çıkarım | benzetim | A2 |
-| Önermeleri başka çıkarımlar için kullanma (4.1.d) | ders | A1 (S5), A3, A4, A5 |
-| Köprü: dönüşümler arasındaki ilişkiler | ders | A3, A4 |
-| Motif ve süsleme örnekleri; kilim ve halı motifleri; dönüşümlerin sanat ve mimarideki yeri | ders | A5 |
+| Dönüşüm sonrası görüntü şekle eştir (her dönüşüm için vurgulanır) | ders | A1 (S5), A2 (S5), A3 (S5), A4 (S6), A5 (S6), A6 |
+| Öteleme = paralel iki doğruya göre sırayla iki yansıma | benzetim | A3 (S2–S4) |
+| Dönme = kesişen iki doğruya göre sırayla iki yansıma | benzetim | A4 (S2–S5) |
+| Dönme merkezi ve dönme açısı | ders | A2 (S2, S3), A4 (S3, S4) |
+| Dönme uygulanmış şekiller üzerinden özelliklere dair çıkarım | benzetim | A2 (S3–S5) |
+| Önermeleri başka çıkarımlar için kullanma (4.1.d) | ders | A1 (S5), A3 (S5), A4 (S6), A5 (S3, S6) |
+| Köprü: dönüşümler arasındaki ilişkiler | ders | A3 (S2–S4), A4 (S2–S6) |
+| Motif ve süsleme örnekleri; kilim ve halı motifleri; dönüşümlerin sanat ve mimarideki yeri | ders | A5 (S2–S6) |
 | Millî kültüre ait eserleri inceleme, motifleri kendi süslemeleriyle karşılaştırma; motif tasarlama, poster, sergi (performans görevi) | site dışı | — (dayandığı bilgi A5) |
-| Matematik yazılımıyla şekil ve görüntü karşılaştırma (MAB5) | benzetim | A1 (S4), A2–A4 (kaydırıcılar) |
-| Tüm kenar uzunlukları belli olan sadece bir üçgen vardır | ders | B2 |
-| Geometrik dönüşümlerle bu üçgene eş üçgenler üretilebilir; süslemede eş üçgenler | ders | B1 |
-| Eşlik koşulları: Kenar-Kenar-Kenar, Kenar-Açı-Kenar, Açı-Kenar-Açı | ders | B2 |
-| "Tüm açıları karşılıklı eşit üçgenler eş midir?"; "Eş olmayan üçgenlerde açılar eşit olabilir mi?" | benzetim | B2, B3 |
-| Benzer üçgenlerde açılar eşit, karşılarındaki kenarlar orantılı | ders | B3, B4 |
-| Eş üçgenlerde benzerlik oranı 1 | ders | B3, B5 |
-| Açı-Açı benzerliği | ders | B4 |
-| Kenar-Kenar-Kenar benzerliği; Kenar-Açı-Kenar benzerliği ("gibi" kapsamında, karar 1) | ders | B5 |
-| Koşullara ilişkin varsayım, genelleme, karşılaştırma, önerme; yeni durumlar (4.2.a–d) | benzetim | B2–B5 |
-| Eş ve benzer üçgenlerle günlük hayatta karşılaşma | ders | B1–B5 (örnekler) |
+| Matematik yazılımıyla şekil ve görüntü karşılaştırma (MAB5) | benzetim | A1 (S4), A2 (S4), A3 (S4), A4 (S5) (kaydırıcılar) |
+| Tüm kenar uzunlukları belli olan sadece bir üçgen vardır | ders | B2 (S2) |
+| Geometrik dönüşümlerle bu üçgene eş üçgenler üretilebilir; süslemede eş üçgenler | ders | B1 (S2, S4, S6, S7) |
+| Eşlik koşulları: Kenar-Kenar-Kenar, Kenar-Açı-Kenar, Açı-Kenar-Açı | ders | B2 (S2–S4, S7) |
+| "Tüm açıları karşılıklı eşit üçgenler eş midir?"; "Eş olmayan üçgenlerde açılar eşit olabilir mi?" | benzetim | B2 (S5), B3 (S2) |
+| Benzer üçgenlerde açılar eşit, karşılarındaki kenarlar orantılı | ders | B3 (S2–S4), B4 (S2) |
+| Eş üçgenlerde benzerlik oranı 1 | ders | B3 (S3), B5 (S5) |
+| Açı-Açı benzerliği | ders | B4 (S2–S5) |
+| Kenar-Kenar-Kenar benzerliği; Kenar-Açı-Kenar benzerliği ("gibi" kapsamında, karar 1) | ders | B5 (S2–S4) |
+| Koşullara ilişkin varsayım, genelleme, karşılaştırma, önerme; yeni durumlar (4.2.a–d) | benzetim | B2 (S3, S5, S7), B3 (S3, S6), B4 (S2), B5 (S4, S7) |
+| Eş ve benzer üçgenlerle günlük hayatta karşılaşma | ders | B1 (S2, S6), B2 (S6), B3 (S5), B4 (S3, S5), B5 (S6) |
 | Grup çalışması, geometri tahtası, koşulları değerlendirme performans görevi | site dışı | — |
-| Benzer üçgen oluşturmak için çizimler; çizim ile koşul ilişkisi; tüm yolların denenmesi (4.3.a, b) | benzetim | C1, C2, C3 |
-| Kenara paralel çizerek içte veya dışta benzer üçgen | ders | C2 |
-| Dik üçgende dik açıdan yükseklikle oluşan üçgenler birbirine ve ilk üçgene benzer | ders | C3 |
-| Çıkarımları problemlerde ve teorem ispatlarında kullanma (4.3.c) | ders | C1–C3 (örnekler), D1–D5 |
+| Benzer üçgen oluşturmak için çizimler; çizim ile koşul ilişkisi; tüm yolların denenmesi (4.3.a, b) | benzetim | C1 (S2–S4), C2 (S2, S4, S5), C3 (S2, S3, S5) |
+| Kenara paralel çizerek içte veya dışta benzer üçgen | ders | C2 (S2, S4, S5) |
+| Dik üçgende dik açıdan yükseklikle oluşan üçgenler birbirine ve ilk üçgene benzer | ders | C3 (S2, S3, S5) |
+| Çıkarımları problemlerde ve teorem ispatlarında kullanma (4.3.c) | ders | C1 (S5), C2 (S6, S7), C3 (S4); D1 (S3, S4), D2 (S4, S5), D3 (S4, S5), D4 (S3, S4), D5 (S3, S4) |
 | Benzer üçgen oluşturma çalışma kâğıdı | site dışı | — |
-| Tales teoremi ve benzer üçgenle ispatı | ders | D1, D2 |
-| Öklid teoremi ve benzer üçgenle ispatı; dik kenar bağıntıları | ders | D3, D4 |
-| Pisagor teoreminin Öklid ve benzer üçgenle ispatı; benzer üçgenlerin önemi | ders | D5 |
-| İspat yöntemini yeni durumlara uyarlama (4.4.b) | ders | D1–D4 (son sahneler) |
-| Pisagor teoreminin dar ve geniş açılı üçgenlerle ilgili sonuçlarını yorumlama | benzetim | D6 |
+| Tales teoremi ve benzer üçgenle ispatı | ders | D1 (S2–S4), D2 (S2–S5) |
+| Öklid teoremi ve benzer üçgenle ispatı; dik kenar bağıntıları | ders | D3 (S2–S5), D4 (S2–S5) |
+| Pisagor teoreminin Öklid ve benzer üçgenle ispatı; benzer üçgenlerin önemi | ders | D5 (S2–S6) |
+| İspat yöntemini yeni durumlara uyarlama (4.4.b) | ders | D1 (S5), D2 (S7–S9), D3 (S6, S7), D4 (S6, S7) |
+| Pisagor teoreminin dar ve geniş açılı üçgenlerle ilgili sonuçlarını yorumlama | benzetim | D6 (S2–S5) |
 | Teoremler çalışma kâğıdı | site dışı | — |
-| Verilen ve istenenler, ilişkiler (4.5.a, b); matematiksel temsil ve kendi ifadesiyle açıklama (4.5.c, ç) | ders | E1 |
-| Strateji kurma, uygulama, kontrol (4.5.d, e, f) | ders | E2 |
-| Kısa yollar ve çıkmaz stratejiler (4.5.g) | ders | E3 |
-| Stratejinin uyduğu problem türleri; çıkarımların geçerliliği (4.5.ğ, h) | ders | E4 |
+| Verilen ve istenenler, ilişkiler (4.5.a, b); matematiksel temsil ve kendi ifadesiyle açıklama (4.5.c, ç) | ders | E1 (S2–S7) |
+| Strateji kurma, uygulama, kontrol (4.5.d, e, f) | ders | E2 (S2–S8) |
+| Kısa yollar ve çıkmaz stratejiler (4.5.g) | ders | E3 (S2–S7) |
+| Stratejinin uyduğu problem türleri; çıkarımların geçerliliği (4.5.ğ, h) | ders | E4 (S2–S6) |
 | Çözümleri arkadaşlarıyla karşılaştırma; proje ödevi | site dışı | — (dayandığı bilgi E3, E4) |
-| Anahtar kavramlar: benzerlik, dönme dönüşümü, eşlik, Öklid teoremi, Pisagor teoremi, Tales teoremi | ders | A2, B1, B3, D2, D3–D4, D5 |
-| Konu tekrarı | tekrar | A6, B6, C4, D7, E5 |
+| Anahtar kavramlar: benzerlik, dönme dönüşümü, eşlik, Öklid teoremi, Pisagor teoremi, Tales teoremi | ders | A2 (S2), B1 (S3), B3 (S3), D2 (S3), D3 (S5), D4 (S5), D5 (S2) |
+| Konu tekrarı | tekrar | A6, B6, C4, D7, E5 (tek sahne ve sorular) |
 
 ## 5. Bilerek alınmayanlar
 

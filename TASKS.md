@@ -607,9 +607,12 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] Düzeltmeler (ana oturum): "∥" → "//" (C2, B5; kural görev tanımında), B5 sahne 7 kartı yerinde belirir (koşuya göre çıkan üst üste yazı), C3 başlığı tam başlık, D2 sahne 2 yükseklik çizgisi, D3 sahne 6 yer çizgisi, E senaryosunda "dışarıda" → "içeride"
 - [x] 2a.5 C4 tekrar, D4, D5, D6, D7 tekrar, E2, E3, E4 (sekiz Sonnet ajanı, beşinci oturum, 12 Ekim 2026): sekizi `olc.js` temiz, her dersten en az iki kare görüldü; Konu C 29:55, Konu D 49:37, Konu E 37:26, tema 209:55 (27 ders); `tema.js` satırları; `denetle.js` tek sorun (E5 tekrar yok)
 - [x] Düzeltmeler (ana oturum, beşinci oturum): E2 sahne 6'da "60" ölçüsü (|BK| değil, masa kenarı–A), D5 sahne 6 harf eşlemesi ve sahne 8'de köşe harfi, E4 sahne 4'te "2,4" kutusu; iki senaryoya not; görev tanımına on yeni madde
-- [ ] 2a.5 E5 konu tekrarı (sonraki oturum, tek ajan; görev bilgisi `DURUM.md` "Sıradaki")
-- [ ] 2a.6 Her konudan sonra ölçüm, rapor denetimi, `tema.js` satırları
-- [ ] 2a.7 Tema denetimi: `sure.js`, `denetle.js`, denetim tablosuna sahne numaraları, `TEMALAR.md`
+- [x] 2a.5 E5 konu tekrarı (tek Sonnet ajanı, altıncı oturum, 12 Ekim 2026; 153 bin token): 1 sahne + 8 soru, 4:50, `olc.js` temiz; dört kare görüldü, sekiz sorunun hesabı denetlendi
+- [x] Düzeltmeler (ana oturum, altıncı oturum): E5 "Aracı seç" tablosu E2'deki adlara çevrildi (Açı-Açı, Tales), 3. sorunun gerekçesinde tanımsız |HX| kaldırıldı; üç kural görev tanımına yazıldı
+- [x] 2a.6 Her konudan sonra ölçüm, rapor denetimi, `tema.js` satırları (beş konu; Konu E 42:16)
+- [x] 2a.7 Tema denetimi (12 Ekim 2026): `sure.js` uyarısız (tema 214:45, 28 ders, 15 dakikayı aşan yok), `denetle.js` "sorun yok", tema sayfası görüldü, `PLAN.md` denetim tablosuna sahne numaraları, "uzun kenar, büyük açı" ön bilgisi program metniyle karşılaştırıldı (3. temanın önermesi), `TEMALAR.md`
+- [ ] 2a.8 Kullanıcı: Eşlik ve Benzerlik'i izle; seslendirme ve yayın ayrıca istenir (altıncı oturumun dosyaları 12 Ekim 2026'da commit edildi)
+- [ ] Sıradaki tema: Fizik · Akışkanlar (`YURUTME.md` 3. adım, 2a.1'den)
 - [ ] 2a.8 Rapor; kullanıcı izler (seslendirme, yayın ve commit ayrıca istenir)
 - [x] İş panosu (sürüm 14: Eşlik ve Benzerlik yazımda, 1/27 ders)
 - [x] İş panosu (sürüm 15: Eşlik ve Benzerlik 5/28 ders, senaryolar bitti)
@@ -617,6 +620,7 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] İş panosu (sürüm 16: Eşlik ve Benzerlik 11/28 ders, 203 kısa ders, 37 konu tekrarı)
 - [x] İş panosu (sürüm 17: Eşlik ve Benzerlik 19/28 ders, 210 kısa ders, 38 konu tekrarı)
 - [x] İş panosu (sürüm 18: Eşlik ve Benzerlik 27/28 ders, 216 kısa ders, 40 konu tekrarı)
+- [x] İş panosu (sürüm 19: Eşlik ve Benzerlik yazıldı, 28/28 ders, 216 kısa ders, 41 konu tekrarı)
 
 ## Bağlam bütçesi düzeltmeleri (12 Ekim 2026)
 

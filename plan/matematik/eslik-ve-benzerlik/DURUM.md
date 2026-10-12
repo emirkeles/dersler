@@ -1,6 +1,6 @@
 # Durum — Matematik · Eşlik ve Benzerlik
 
-Son güncelleme: 12 Ekim 2026 (beşinci oturum). Tema `plan/YURUTME.md` 3. adımın ilk temasıdır (2a ile aynı düzen). İkinci oturumda sekiz Sonnet ajanı çalıştı: A2–A5 dersleri ve B, C, D, E senaryoları. Üçüncü oturumda sekiz Sonnet ajanı: A6 konu tekrarı, A2 ve A5 düzeltmeleri, E3 senaryosunun bölünmesi, B1 (`b-araclar.js` ile), B2–B5. 2a.3 ve 2a.4 bitti. Dördüncü oturumda sekiz Sonnet ajanı: B6 konu tekrarı, C1 (`c-araclar.js`), D1 (`d-araclar.js`), E1 (`e-araclar.js`), C2, C3, D2, D3. Beşinci oturumda sekiz Sonnet ajanı: C4 konu tekrarı, D4, D5, D6, D7 konu tekrarı, E2, E3, E4. 2a.5'te 27 / 28 dosya bitti; yalnızca E5 konu tekrarı kaldı.
+Son güncelleme: 12 Ekim 2026 (altıncı oturum). Tema `plan/YURUTME.md` 3. adımın ilk temasıdır (2a ile aynı düzen). İkinci oturumda sekiz Sonnet ajanı çalıştı: A2–A5 dersleri ve B, C, D, E senaryoları. Üçüncü oturumda sekiz Sonnet ajanı: A6 konu tekrarı, A2 ve A5 düzeltmeleri, E3 senaryosunun bölünmesi, B1 (`b-araclar.js` ile), B2–B5. 2a.3 ve 2a.4 bitti. Dördüncü oturumda sekiz Sonnet ajanı: B6 konu tekrarı, C1 (`c-araclar.js`), D1 (`d-araclar.js`), E1 (`e-araclar.js`), C2, C3, D2, D3. Beşinci oturumda sekiz Sonnet ajanı: C4 konu tekrarı, D4, D5, D6, D7 konu tekrarı, E2, E3, E4. Altıncı oturumda tek Sonnet ajanı: E5 konu tekrarı; ardından tema denetimi (2a.7). **Yazım ve denetim bitti: 28 / 28 dosya.**
 
 | Adım | Durum |
 |---|---|
@@ -10,8 +10,8 @@ Son güncelleme: 12 Ekim 2026 (beşinci oturum). Tema `plan/YURUTME.md` 3. adım
 | 3 Kararlar | bitti (`PLAN.md` bölüm 7, 16 karar) |
 | 4 Senaryolar | bitti: A, B, C, D, E (9 Ekim 2026). E3 bölündü: E3, E4, E5 tekrar (karar 14) |
 | 5 İskelet | bitti: `index.html`, `tema.js` (`kural: 2`), `dersler/kit.js`, `dersler/a-araclar.js`, `b-araclar.js`, `c-araclar.js`, `d-araclar.js`, `e-araclar.js` |
-| 6 Dersler | A1–A6, B1–B6, C1–C4, D1–D7, E1–E4 bitti (27 dosya); E5 konu tekrarı bekliyor (1 dosya) |
-| 7 Denetim | bekliyor |
+| 6 Dersler | bitti: A1–A6, B1–B6, C1–C4, D1–D7, E1–E5 (28 dosya; 12 Ekim 2026) |
+| 7 Denetim | bitti (12 Ekim 2026): `sure.js` uyarısız, `denetle.js` "28 kısa ders, sorun yok", tema sayfası görüldü, `PLAN.md` denetim tablosunda sahne numaraları, `TEMALAR.md` güncel |
 
 | Kısa ders | Senaryo | Ders | olc | Not |
 |---|---|---|---|---|
@@ -42,9 +42,18 @@ Son güncelleme: 12 Ekim 2026 (beşinci oturum). Tema `plan/YURUTME.md` 3. adım
 | E2 | bitti | bitti | temiz | 8 sahne, 82 altyazı, 10:25; 4, 6, 7 ve 8. sahnelere bakıldı; denetim listeli sahne 33 kelime; sahne 6'da "60" ölçüsü düzeltildi (aşağıda) |
 | E3 | bitti | bitti | temiz | 7 sahne, 55 altyazı, 8:23; 4, 5, 6 ve 7. sahnelere bakıldı (ABC ~ AHB eşlemesi doğrulandı); tablolu sahneler 48, 39 ve 49 kelime |
 | E4 | bitti | bitti | temiz | 6 sahne, 57 altyazı, 8:10; 2 (ara ve son), 4 ve 6. sahnelere bakıldı; tablolu sahne 29 kelime; sahne 4'te "2,4" kutusu yerine alındı (aşağıda) |
-| E5 tekrar | bitti | bekliyor | | |
+| E5 tekrar | bitti | bitti | temiz | 1 sahne + 8 soru, 7 altyazı, 4:50; altı kuralın bitiş karesinden dördüne bakıldı; ipucu tablosu E2'deki adlara çevrildi (aşağıda) |
 
-Süreler (`sure.js`, 12 Ekim 2026, beşinci oturum): Konu A 41:01 (altı ders), Konu B 51:56 (altı ders), Konu C 29:55 (dört ders), Konu D 49:37 (yedi ders), Konu E 37:26 (dört ders); tema 209:55 (27 ders). En uzun ders B2 11:53; 15 dakikayı aşan ders yok. `denetle.js` tek sorun veriyor: E konusunda "son ders konu tekrarı değil" (E5 yazılınca kapanır). E4'ün `nextLesson` bağlantısı `e5-tekrar.html` dosyasını gösteriyor; dosya yazılınca oluşur. Ölçüm aracının altyazı sayısı kaydırıcılı sahnelerde koşudan koşuya bir oynuyor; altyazı silinmiş değildir.
+Süreler (`sure.js`, 12 Ekim 2026, altıncı oturum): Konu A 41:01 (altı ders), Konu B 51:56 (altı ders), Konu C 29:55 (dört ders), Konu D 49:37 (yedi ders), Konu E 42:16 (beş ders); tema 214:45 (28 ders). En uzun ders B2 11:53; 15 dakikayı aşan ders yok. `denetle.js`: "28 kısa ders, yayında değil. Sorun yok." `sure.js --kural`: çıkış sorusu ortalama 5,6; ilk sorudan önce en çok bir altyazı 0 / 28 ders; soruyla açılan sahne 7 / 132. Ölçüm aracının altyazı sayısı kaydırıcılı sahnelerde koşudan koşuya bir oynuyor; altyazı silinmiş değildir.
+
+## Altıncı oturum: E5 ve tema denetimi (12 Ekim 2026)
+
+- **E5 (Sonnet, tek ajan, 153 bin token; hedef 175):** iki turda temiz. Ana oturum iki düzeltme yaptı: "Aracı seç" tablosu "eşit açı → benzerlik, paralel → benzerlik" yazıyordu, E2 sahne 2'deki adlara çevrildi ("eşit açı → Açı-Açı", "paralel → Tales"; defter satırı "İpucu aracı gösterir: Açı-Açı, Tales, Öklid, Pisagor."); 3. sorunun gerekçesindeki tanımsız |HX| "uzaklık" oldu. Sekiz sorunun hesabı senaryoyla ve ana oturumun hesabıyla tutuyor (stor perde: 60 × 90 ÷ 135 = 40, x = 40 − 30 = 10). Doğru şık dizisi B A C A C B A C.
+- **E5'te senaryoya eklenenler (ajan raporu):** kural başlıkları ("Şekle dök", "Aracı seç", "Sırayla uygula", "Denetle", "İki yol", "Çıkmaz yol"); 3. kuralın örneği (3–4–5 üçgeni, sonra 6 / 3 = ? / 5), 5. kuralın örneği (h² = 4 · 9 ve 4 / h = h / 9, ikisi de h = 6); altı defter satırı. Şekilsiz sorular söze çevrildi: 3. soruya "H, A ile Halûk'un evi arasında" koşulu eklendi; 4. soru stor perdenin verilerini cümleyle veriyor; 8. soru Arda'nın yöntemini bir cümleyle anlatıyor. Sayı değişmedi.
+- **E5'te bilinen küçük pürüzler (düzeltilmedi):** 3. soru uzun (beş cümle; cetvel düzeneği şekilsiz anlatılıyor) ve 5 cm ile 200 cm aynı problemde; 4. sorudaki 75 cm ve 30 cm çözümde kullanılmıyor (bağlam); 4 ve 7. sorularda doğru şık çeldiricilerden 5–10 karakter uzun; "İki yol" tablosunun alt yarısı boş. Ajan soru ekranlarını tarayıcıda oynamadı (ölçüm aracı soruları kendiliğinden cevaplar).
+- **Tema denetimi (`ISLEME.md` 7):** `sure.js` ve `denetle.js` temiz; tema sayfası açıldı (beş konu, 6 + 6 + 4 + 7 + 5 ders, "yaklaşık 3 sa 35 dk"). `PLAN.md` bölüm 4 tablosuna sahne numaraları işlendi: programın `ders` ve `benzetim` durumundaki 36 isteğinin her birinin sahnesi var; "Hatırla" sahneleri dışında dayanağı olmayan sahne yok.
+- **"Uzun kenar, büyük açı" ön bilgisi (E2 sahne 5, çiçek deseni):** dersteki cümle "110° en büyük açı; karşısındaki AC en uzun kenar." Programın 3. temasındaki önermenin kendisidir ("Üçgende en uzun kenarın karşısındaki açının ölçüsü en büyüktür"; Geometrik Şekiller B1'de işleniyor): en uzun kenar ile en büyük açının karşılıklı durduğunu söyler, yeni bir kural eklemez. Değiştirilmedi.
+- Görev tanımına eklenenler: konu tekrarında `why` dizisi şıkların sırasını izler; tekrar dersinin `title` alanı da tam başlıktır; tekrar sorusu önceki bir dersin problemine dayanıyorsa düzeneği görev iletisi cümleyle verir (ajan E2'ye baktı).
 
 ## Beşinci oturumda düzeltilenler (12 Ekim 2026)
 
@@ -102,15 +111,13 @@ Senaryolarda A–D'de öğretilmeden "ön bilgi" olarak kullanılanlar: yöndeş
 
 ## Sıradaki
 
-Sıra `YURUTME.md` 2a.5'in son dosyası ve 2a.7. Görev tanımı: `plan/matematik/eslik-ve-benzerlik/gorev/ders-gorevi.md` (beşinci oturumda `zemin` seçenekleri, geçici `c.say` ile kare alma, şekilsiz `quiz`, `ispatTahtasi` numaraları, harf ve renk tutarlılığı, `KIT_E` ve `menteseGrafik` pürüzleri, iki defter notu kuralı eklendi).
+Temanın yazımı ve denetimi bitti (`YURUTME.md` 2a.1–2a.7). Kalan iş kullanıcıyı bekliyor (2a.8): temayı izleme; ayrıca istenirse seslendirme (`plan/SESLENDIRME.md`), yayın (`ortak/katalog.js` içinde `yayinda: true`) ve commit.
 
-Sonraki oturum (tek ajan, sonra tema denetimi):
+Sıradaki tema `YOL-HARITASI.md` 3. adımdaki tabloda ikinci sıradadır: **Fizik · Akışkanlar** (15 ders, 18 ders saati; sınıfta gerekeceği zaman ocak sonu). Yeni oturum `YURUTME.md` 3. adımı 2a.1'den başlatır: `plan/fizik/akiskanlar/` (`MUFREDAT.md`, varsa `PLAN.md` taslağı), `plan/ISLEME.md`, görev şablonları `plan/gorev/ders-gorevi.md` ve `plan/gorev/senaryo-gorevi.md` (hareket ve ses düzeyi kuralları şablonda; bu temanın `gorev/` kopyasına işlenmedi). Akışkanlar'da izometrik figür pilotları (Torricelli, Arşimet düzeneği) `030c424` ile depoda; yeni oturum önce `plan/fizik/akiskanlar/` altında `DURUM.md` var mı diye bakar.
 
-1. **E5 konu tekrarı** (Sonnet, tek ajan, hedef 175 bin token): `e5-tekrar`, kimlik `eslik-ve-benzerlik-e5`, başlık "Konu tekrarı: Eşlik ve benzerlik problemleri", `kicker` 'Konu E · Eşlik ve benzerlik problemleri', `accent` `#ff8a5b`, `nextLesson` yok; senaryo `E-problemler.md` satır 1–16 ve 652–679 (1 sahne + 8 soru); örnek `dersler/b6-tekrar.js` (tamamı) ve `b6-tekrar.html`; araçlar `kit.js`, `e-araclar.js`; `tema.js` açılış sorusu "Dört dersin kuralları aklında mı?". Görev iletisi kalıbı bu oturumun C4 ve D7 iletileridir: dosya adları, kimlik, senaryo satırları, örnek, araç dosyaları, "her sorunun cevabını kendin hesapla", doğru şıkkın yeri (aynı harf en çok üç kez), şekilsiz `quiz`, doğrulama komutu.
-2. Ajandan sonra ana oturum: `olc.js … --goruntu` ile yeniden ölçer (çıktı `| tail -9`), iki kareye bakar, `grep` ile başlığa ve "∥" simgesine bakar, `tema.js` satırını yazar.
-3. **Tema denetimi (2a.7, `ISLEME.md` 7):** `sure.js`, `denetle.js` (beklenen: 28 kısa ders, 0 sorun); `PLAN.md` bölüm 4 denetim tablosuna sahne numaraları (sayımı Haiku ajanı yapar); "uzun kenar, büyük açı" ön bilgisinin (E2 çiçek deseni) program metniyle karşılaştırılması; `plan/matematik/TEMALAR.md`; rapor (2a.8). Seslendirme, yayın ve commit kullanıcı isteyince.
+Bu temaya dönülürse (düzeltme, yeniden yazım) aşağıdaki satır aralıkları ve notlar geçerlidir.
 
-Bir ajana `SendMessage` ile en çok bir kez dönülür (bu oturumda hiçbirine dönülmedi; küçük düzeltmeleri ana oturum yaptı).
+Bir ajana `SendMessage` ile en çok bir kez dönülür (altı oturumda hiçbirine dönülmedi; küçük düzeltmeleri ana oturum yaptı).
 
 Senaryo satır aralıkları (okuma kılavuzu her dosyada ayrıca verilir):
 
@@ -132,4 +139,4 @@ Ders ajanlarına görev iletisinde ayrıca söylenecekler:
 
 **Ders kitabı dosyaları.** PDF ve çıkarılmış metin geçici klasördedir: `/private/tmp/claude-501/-Users-emirkeles-matematik-sayilar/9bc44fb5-23dc-4c73-875a-ae5981381ec3/scratchpad` (`kitap2/k2.pdf`, `metin/tema4.txt`, sayfa görüntüleri `png-B` … `png-E`; `venv` yok: Python `/private/tmp/claude-501/-Users-emirkeles-matematik-sayilar/b5e26d3f-6133-4c6e-aa63-87279fbfed0f/scratchpad/venv/bin/python`). Basılı sayfa numarası PDF sayfa numarasıyla aynıdır. Metinde satır aralıkları: A 224–1335 (s. 13–35), B 1336–3756 (s. 36–52), C 3757–4932 (s. 53–59), D 4933–7989 (s. 60–75), E 7990–9540 (s. 76–95). Klasör silinmişse yeniden kurulur: yeni scratchpad'de `python3 -m venv venv && venv/bin/pip install pymupdf`; PDF bağlantısı <https://tymm.meb.gov.tr/kitap/42/matematik-9sinif-ders-kitabi-2kitap> sayfasındaki `/assets/pdf/….pdf`; `venv/bin/python -I plan/matematik/eslik-ve-benzerlik/gorev/dok.py kitap2/k2.pdf 10 95 metin/tema4.txt` metni, `gorev/png.py` sayfa görüntüsünü üretir (PDF kendi boş klasöründe durur, betikler ayrı klasörde; Python `-I` ile çalışır). Ders ajanları kitabı okumaz; yalnızca E3'ü bölen ajan gerekirse bakar.
 
-**Açık sorunlar:** yok. İkinci, üçüncü ve dördüncü oturumun dosyaları commit edildi (`0676e12`). Beşinci oturumun dosyaları çalışma klasöründedir, commit edilmedi: C4, D4–D7, E2–E4 sayfaları ve ders dosyaları (16 dosya), `tema.js`, `senaryolar/D-tales-oklid-pisagor.md`, `senaryolar/E-problemler.md`, `gorev/ders-gorevi.md`, bu dosya. Tema katalogda kapalıdır (`yayinda` yok), seslendirilmedi. Commit yalnızca kullanıcı isteyince yapılır.
+**Açık sorunlar:** yok. Beşinci oturumun dosyaları commit edildi (`a2b1571`). Altıncı oturumun dosyaları da kullanıcı isteğiyle commit edildi (12 Ekim 2026): E5'in iki dosyası, `tema.js`, plan ve kayıt dosyaları. Tema katalogda kapalıdır (`yayinda` yok), seslendirilmedi. Commit yalnızca kullanıcı isteyince yapılır.

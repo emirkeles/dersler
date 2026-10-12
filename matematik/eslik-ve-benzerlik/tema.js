@@ -40,6 +40,7 @@ KATALOG.tema('matematik', 'eslik-ve-benzerlik', {
       ['e2-strateji.html', 'Strateji kur, uygula, kontrol et', 'Aynı şekilde hem Pisagor hem benzerlik kullanılabiliyorsa hangisinden başlarsın?', 8, 625],
       ['e3-kisa-yol-cikmaz-yol.html', 'Kısa yol ve çıkmaz yol', 'Arkadaşın aynı problemi başka yoldan çözdü; hangisi daha kısa, hangi deneme hiç sonuca varmaz?', 7, 503],
       ['e4-yol-baska-nerede.html', 'Bu yol başka nerede işe yarar?', 'Bir problemde işe yarayan yol, başka hangi problemlerde de işe yarar?', 6, 490],
+      ['e5-tekrar.html', 'Konu tekrarı: Eşlik ve benzerlik problemleri', 'Dört dersin kuralları aklında mı?', 1, 290],
     ] },
   ],
 });
