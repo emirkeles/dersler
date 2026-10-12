@@ -34,7 +34,7 @@ Yeni anlatım kuralları (`KURALLAR.md` 3–3.4) ilk kez gerçek bir konuda dene
    | 4 | Matematik · Algoritma ve Bilişim | 31 | ikinci dönem |
    | 5 | Matematik · İstatistiksel Araştırma Süreci | 24 | ikinci dönem |
    | 6 | Matematik · Veriden Olasılığa | 16 | ikinci dönem |
-   | 7 | Fizik · Enerji | 15 | ikinci dönem |
+   | 7 | Fizik · Enerji (sıra dışı yazıldı: 12 Ekim 2026; izleme, seslendirme ve yayın bekliyor) | 15 | ikinci dönem |
    | 8 | Kimya · Sürdürülebilirlik | 6 | ikinci dönem |
 
 4. **Eski temalarda anlatımın yeniden yazımı.** Ücretli seslendirme gerektirir; her tema için kullanıcı ayrıca ister. Sıra: Geometrik Şekiller B ve C (7 ders), Nicelikler ve Değişimler (32), Sayılar (28), Biyoloji Yaşam'ın eski anlatımlı 16 dersi. Kimya Etkileşim ile Kuvvet ve Hareket'in anlatımına dokunulmaz; yalnızca Kuvvet ve Hareket D1, E6 ve F1 (15 dakikayı geçiyor) iki fikir mi taşıyor diye okunur.

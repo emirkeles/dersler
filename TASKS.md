@@ -740,7 +740,7 @@ Plan: `plan/fizik/enerji/IZOMETRIK.md` (altı figür, 13 ders; Akışkanlar pilo
 - [x] Plan
 - [x] Kullanıcı kararı (12 Ekim 2026, "varsayılanlarla yürü"): altı figürün hepsi; tema sırası gelince; elektrikli ısıtıcı; Akışkanlar'a dokunulmaz
 - [x] Kitapla karşılaştırma (12 Ekim 2026): ısıtıcı kitabın çizdiği gaz ocağı oldu (düz tonlu alev); Ş5 kitap dışı düzenek; Ş6'dan termos kesiti çıktı, çift cam girdi
-- [ ] Figürler ve dersler: aşağıdaki "Fizik · Enerji" bölümünde
+- [x] Figürler ve dersler: aşağıdaki "Fizik · Enerji" bölümünde (12 Ekim 2026)
 
 ## Fizik · Enerji (12 Ekim 2026'da işleme alındı; kullanıcı istedi, yol haritası sırasının önünde)
 
@@ -752,7 +752,8 @@ Durum ve devir notu: `plan/fizik/enerji/DURUM.md`. Figürler: `plan/fizik/enerji
 - [x] 2a.4 B–F senaryoları (beş Sonnet ajanı; ana oturum denetledi, hesapları yeniden yaptı; C1 ve E2'de birer içerik düzeltmesi)
 - [x] Figürler Ş1–Ş6 (altı ajan; `sekil/` kaynakları, `dersler/*-sekil.js`; geometri ve çizgi denetimi 0; Ş2'ye tahta tonları ve konu renkleri için bir düzeltme turu)
 - [x] 2a.5 B–F dersleri ve konu tekrarları: 21 / 21 dosya yazıldı, `olc.js` temiz; `sure.js` çalıştı (tema 189:59)
-- [ ] D2, E2, F1'in ana oturum denetimi (ajanlar rapor veremeden durdu; dosyalar tam ve ölçüm temiz); B4 ve C3'ün kareleri; E2 15:24 "iki fikir mi"
-- [ ] 2a.7 Tema denetimi: `denetle.js`, tema sayfası, denetim tablosuna sahne numaraları, `TEMALAR.md`
-- [ ] Kayıtlar: `IZOMETRIK.md` bölüm 9, `YURUTME.md`, iş panosu
+- [x] D2, E2, F1'in ana oturum denetimi; B4 ve C3'ün kareleri (12 Ekim 2026, ikinci oturum: metinler senaryoyla tutuyor; D2 sahne 2'de geçiş çakışması ve E2 sahne 9'da figürün yeri düzeltildi; E2 15:24 tek fikir, bölünmedi)
+- [x] 2a.7 Tema denetimi: `sure.js` (tema 189:59), `denetle.js` "sorun yok", tema sayfası, denetim tablosuna sahne numaraları, `TEMALAR.md` (12 Ekim 2026)
+- [x] Kayıtlar: `IZOMETRIK.md` bölüm 9, `YURUTME.md`, `YOL-HARITASI.md`, iş panosu (12 Ekim 2026)
+- [x] Commit (12 Ekim 2026, kullanıcı istedi; push edilmedi)
 - [ ] 2a.8 Kullanıcı: temayı izle; seslendirme, yayın ve commit ayrıca istenir
