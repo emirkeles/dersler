@@ -14,9 +14,9 @@ Ders saati: 36. Program saati çıktılara ayırmıyor; dağılım uydurulmadı.
 | B · Eşlik ve benzerlik koşulları | MAT.9.4.2 İki üçgenin eş veya benzer olması için gerekli olan asgari koşullarla ilgili çıkarım yapabilme | B1–B5 + B6 tekrar | `#3ddc97` |
 | C · Benzer üçgenler oluşturma | MAT.9.4.3 Bir üçgenden hareketle ona benzer üçgenler oluşturma ile ilgili yansıtma yapabilme | C1–C3 + C4 tekrar | `#f5b04c` |
 | D · Tales, Öklid ve Pisagor teoremleri | MAT.9.4.4 Tales, Öklid ve Pisagor teoremlerini ispatlayabilme | D1–D6 + D7 tekrar | `#c792ff` |
-| E · Eşlik ve benzerlik problemleri | MAT.9.4.5 Eşlik ve benzerlikle ilgili çıkarım ve teoremleri içeren problemleri çözebilme | E1–E3 + E4 tekrar | `#ff8a5b` |
+| E · Eşlik ve benzerlik problemleri | MAT.9.4.5 Eşlik ve benzerlikle ilgili çıkarım ve teoremleri içeren problemleri çözebilme | E1–E4 + E5 tekrar | `#ff8a5b` |
 
-Toplam 5 konu, 22 kısa ders (saat başına 0,61) ve 5 konu tekrarı dersi: 27 dosya. Zincir: A → B1 (dönüşümle eş üçgen) → B2–B5 (koşullar) → C (benzer üçgen çizme) → D (teoremler, hep benzer üçgenle) → E.
+Toplam 5 konu, 23 kısa ders (saat başına 0,64) ve 5 konu tekrarı dersi: 28 dosya (E3 9 Ekim 2026'da ikiye bölündü, karar 14). Zincir: A → B1 (dönüşümle eş üçgen) → B2–B5 (koşullar) → C (benzer üçgen çizme) → D (teoremler, hep benzer üçgenle) → E.
 
 Programın sınırları: programda "değinilmez", "girilmez" biçiminde açık bir yasak cümlesi yoktur. Sınırlar programın kendi ifadelerindedir ve ilgili dersin "Sınır" satırına yazılmıştır: dönüşümler yalnızca yansıma, öteleme ve dönme; öteleme ve dönmenin yansımalarla ilişkisi paralel ve kesişen iki doğruya göre; Tales için "en az üç" paralel doğru; dar ve geniş açılı üçgen sonuçları için "yorumlamaları". Koordinatla dönüşüm formülü, homoteti, farklı Pisagor ispatları alınmaz (bölüm 5).
 
@@ -381,19 +381,32 @@ Yeni bilgi yok. Altı kural ve 8 karışık soru.
 - **Açılış sorusu:** Aynı şekilde hem Pisagor hem benzerlik kullanılabiliyorsa hangisinden başlarsın?
 - **Akılda kalıcı cümle:** "Aracı seç, uygula, sonucu denetle."
 
-#### E3 · Kısa yol, çıkmaz yol, genelleme
+#### E3 · Kısa yol ve çıkmaz yol
 
-- **Tek fikir:** Çözdükten sonra yola geri bakılır: hangi yol kısaydı, hangisi sonuca götürmedi, bu yol başka hangi problemlerde işe yarar.
-- **Anlatılacaklar:** aynı problemin iki çözümü yan yana; kısa yol ve çözüme ulaştırmayan strateji (4.5.g); stratejinin hangi tür problemlere uyduğu (4.5.ğ); çıkarımın başka problemlerle sınanması (4.5.h; s. 77–78 soru 7–10; s. 84 Kontrol Noktası).
-- **Örnekler:** Gözlem kulesi: dik kenarlar 6 ve 8 m, hipotenüse inen dikme (s. 81, 17. sıra sizde): benzerlikle tek adım, Öklid ile iki adım; iki lamba direği (s. 83, 18. sıra sizde).
-- **Güç kavramlar ve gösterimi:** İki çözüm iki sütunda, adım sayılarıyla; çıkmaz yol kırmızı çizgiyle biter ve nerede tıkandığı işaretlenir.
+- **Tek fikir:** Çözdükten sonra yola geri bakılır: aynı problemin iki çözümü yan yana konur, hangi yolun kısa olduğu ve hangi denemenin sonuca götürmediği bulunur.
+- **Anlatılacaklar:** aynı problemin iki çözümü yan yana; kısa yol ve çözüme ulaştırmayan strateji, eksik bilginin söylenmesi (4.5.g; s. 84 Kontrol Noktası, s. 77–78 soru 7–10).
+- **Örnekler:** Gözlem kulesi: dik kenarlar 6 ve 8 m, hipotenüse inen dikme (s. 81, 17. sıra sizde): benzerlikle üç adım, Öklid ile dört adım (ortak ilk adım Pisagor); çıkmaz yol: ABH'de Pisagor, Tales.
+- **Güç kavramlar ve gösterimi:** İki çözüm iki sütunda, adım sayılarıyla; çıkmaz yol gri kesikli çizgiyle biter, gri çarpı ve eksik bilgi yazılır; dört kartlı sınıflandırma.
+- **Hedeflenen yanılgı:** "Sonuca varmayan deneme boşa gitmiştir."
+- **Program dayanağı:** MAT.9.4.5 (g).
+- **Sınır:** Kitap bu problemi iki yolla çözmüyor ve çıkmaz yol göstermiyor; ikinci çözüm ve çıkmaz yol A–D'de öğretilen araçlarla kurulur, senaryoda adım adım denetlenir. Alan yöntemi ve "h = dik kenarların çarpımı ÷ hipotenüs" kuralı yok.
+- **Açılış sorusu:** Arkadaşın aynı problemi başka yoldan çözdü; hangisi daha kısa, hangi deneme hiç sonuca varmaz?
+- **Akılda kalıcı cümle:** "Kısa yolu seç, tıkanınca eksiği söyle."
+
+#### E4 · Bu yol başka nerede işe yarar?
+
+- **Tek fikir:** Çözüme ulaştıran yol başka problemlerde sınanır: hangi tür problemde işe yaradığı, hangisinde yaramadığı bulunur; çıkarım sayılar değiştirilerek ve yeni problemlerle doğrulanır.
+- **Anlatılacaklar:** stratejinin hangi tür problemlere uyduğu (4.5.ğ); çıkarımın başka problemlerle sınanması (4.5.h; s. 77–78 soru 7–10, s. 84 Kontrol Noktası).
+- **Örnekler:** İki lamba direği: 6 m, 10 m, 18 m, Necati 2 m (s. 83, 18. sıra sizde): Öklid çıkmaz, benzerlik 3 m; gölge direği geçmesin (b); gözlem kulesi 9–12–15 ve 3–4–5 ile (örnek veri); yol × problem tablosu; sınıflandırma.
+- **Güç kavramlar ve gösterimi:** Üç problem satırlı, iki yol sütunlu tablo (yeşil tik, gri çarpı); sayı değişince iki sütun yan yana.
 - **Hedeflenen yanılgı:** "Bir problemde işe yarayan yol her problemde işe yarar."
-- **Program dayanağı:** MAT.9.4.5 (g, ğ, h).
-- **Sınır:** Kitap hiçbir problemi iki yolla çözmüyor ve çıkmaz yol göstermiyor; ikinci çözüm ve çıkmaz yol A–D'de öğretilen araçlarla kurulur, senaryoda adım adım denetlenir.
-- **Açılış sorusu:** Arkadaşın aynı problemi başka yoldan çözdü; hangisi daha kısa, hangisi başka problemlerde de işe yarar?
-- **Akılda kalıcı cümle:** "Çözüm bitince yola da bak."
+- **Program dayanağı:** MAT.9.4.5 (ğ, h).
+- **Sınır:** Yeni teorem ve formül yok; gözlem kulesi yeniden çözülmez, yalnızca sayıları değişir.
+- **Hatırla:** E3 (kulede işe yarayan iki yol), B4 (ortak açı ve dik açı: Açı-Açı).
+- **Açılış sorusu:** Bir problemde işe yarayan yol, başka hangi problemlerde de işe yarar?
+- **Akılda kalıcı cümle:** "Yolu ipucuna göre seç, birçok örnekle sına."
 
-#### E4 · Konu tekrarı: Eşlik ve benzerlik problemleri (`e4-tekrar.html`)
+#### E5 · Konu tekrarı: Eşlik ve benzerlik problemleri (`e5-tekrar.html`)
 
 ### Kısa ders listesi
 
@@ -424,8 +437,9 @@ Yeni bilgi yok. Altı kural ve 8 karışık soru.
 | D7 | Konu tekrarı | `d7-tekrar` |
 | E1 | Çözmeden önce şekle dök | `e1-sekle-dok` |
 | E2 | Strateji kur, uygula, kontrol et | `e2-strateji` |
-| E3 | Kısa yol, çıkmaz yol, genelleme | `e3-yola-bak` |
-| E4 | Konu tekrarı | `e4-tekrar` |
+| E3 | Kısa yol ve çıkmaz yol | `e3-kisa-yol-cikmaz-yol` |
+| E4 | Bu yol başka nerede işe yarar? | `e4-yol-baska-nerede` |
+| E5 | Konu tekrarı | `e5-tekrar` |
 
 Bağımlılık: A1 → A3, A4; A2 → A4; C2 → D1 → D2; C3 → D3, D4 → D5 → D6.
 
@@ -472,10 +486,11 @@ Her satır programda yazılı bir istektir. Durum: `ders`, `benzetim` ya da `sit
 | Teoremler çalışma kâğıdı | site dışı | — |
 | Verilen ve istenenler, ilişkiler (4.5.a, b); matematiksel temsil ve kendi ifadesiyle açıklama (4.5.c, ç) | ders | E1 |
 | Strateji kurma, uygulama, kontrol (4.5.d, e, f) | ders | E2 |
-| Kısa yollar ve çıkmaz stratejiler; stratejinin uyduğu problem türleri; çıkarımların geçerliliği (4.5.g, ğ, h) | ders | E3 |
-| Çözümleri arkadaşlarıyla karşılaştırma; proje ödevi | site dışı | — (dayandığı bilgi E3) |
+| Kısa yollar ve çıkmaz stratejiler (4.5.g) | ders | E3 |
+| Stratejinin uyduğu problem türleri; çıkarımların geçerliliği (4.5.ğ, h) | ders | E4 |
+| Çözümleri arkadaşlarıyla karşılaştırma; proje ödevi | site dışı | — (dayandığı bilgi E3, E4) |
 | Anahtar kavramlar: benzerlik, dönme dönüşümü, eşlik, Öklid teoremi, Pisagor teoremi, Tales teoremi | ders | A2, B1, B3, D2, D3–D4, D5 |
-| Konu tekrarı | tekrar | A6, B6, C4, D7, E4 |
+| Konu tekrarı | tekrar | A6, B6, C4, D7, E5 |
 
 ## 5. Bilerek alınmayanlar
 
@@ -516,9 +531,13 @@ Yok. 7 Ekim taslağındaki on soru bölüm 7'de kapatıldı.
 | 8 | Motif ve süsleme | Ayrı ders (A5). Program motif ve süsleme örneklerinin incelenmesini adıyla istiyor; içerik üç sahneyi dolduruyor (şerit, aynalı şerit, rozet, sınıflandırma). Tasarlama ve sunma `site dışı`. Motifler şematik vektör çizimdir, gerçek eser kopyalanmaz. | K1, K4b, K6 |
 | 9 | C konusuna üçüncü çizim yolu | "İki kenarı aynı oranda bölme" ayrı ders (C1). Program "hangi çizimlerin yapılabileceği" ve "tüm yolların denenmesi"ni istiyor; kitabın ilk yolu budur (s. 53–54, 58). İşe yaramayan çizim (oranlar farklı) bu derste gösterilir. | K4, K5 |
 | 10 | E dersleri ve örnek problemler | Üç ders yeterli. Problemler ders kitabının 4.5 bölümünden (s. 76–86), sayılarıyla. E3'ün ikinci çözümü ve çıkmaz yolu kitapta yok; A–D araçlarıyla kurulur. | K4, K7 |
-| 11 | Ders sayısı | 22 kısa ders, 36 saat: 0,61; sınır 0,85. Birleştirme gerekmedi. `TEMALAR.md` satırı tema bitince güncellenir. | K5 |
+| 11 | Ders sayısı | 22 kısa ders, 36 saat: 0,61; sınır 0,85 (karar 14 ile 23 ders: 0,64). Birleştirme gerekmedi. `TEMALAR.md` satırı tema bitince güncellenir. | K5 |
 | 12 | "Yön" sözcüğü | Kitap "şeklin yönü" der ama tanımlamaz (s. 19, 22). Derslerde iki ayrı şey iki ayrı sözle söylenir: yansıma şekli "ters çevirir" (köşeleri dolaşma yönü değişir); dönme şeklin "baktığı yönü" değiştirir; öteleme ikisini de yapmaz. | K7 |
 | 13 | Dersin sırası (A2 dönme, sonra A3 ve A4) | Kitap dönmeyi kesişen iki yansımadan sonra tanıtıyor. Derslerde dönme önce kendi başına tanıtılır (A2), böylece A4'te "bu hangi dönüşüm?" sorusu sorulabilir. | K7 |
+| 14 | E3'ün bölünmesi (9 Ekim 2026, senaryo yazıldıktan sonra) | E3 senaryosu 11 sahne çıktı ve üç ayrı fikir taşıyor. İkiye bölünür: E3 "Kısa yol ve çıkmaz yol" (programın 4.5.g bendi; senaryonun 1–6. sahneleri ve 11. sahnedeki sınıflandırma), E4 "Bu yol başka nerede işe yarar?" (4.5.ğ ve h; 7–10. sahneler). Konu tekrarı E5 olur (`e5-tekrar.html`). Tema 23 kısa ders + 5 konu tekrarı. Bölme 9 Ekim 2026'da (üçüncü oturum) yapıldı; bölüm 3 ve kısa ders listesi güncel. Eski 11. sahnenin iki lamba kartı E4'ün son sahnesine gitti (lamba problemi E4'te öğretiliyor); E4'e iki kart eklendi (9–12–15 kulesi Öklid ile, stor perde Öklid ile; ikisi de dersin kendi sahnelerinden). | K5 (her ders bir fikir) |
+| 15 | D konusunda harfler ve D5'in gösterimi | İspatlar kitabın Öklid harfleriyle yazılır (hipotenüs a; b² + c² = a²); D5'in 6. sahnesi aynı teoremi a² + b² = c² biçimine çevirir, D6 ve D7 bu biçimi kullanır (kitap s. 66, 69, 73). Bölüm 3'te D5 için önerilen a·p ve a·k dikdörtgenleri alan resmidir ve karar 5 ile çelişir; yerine hipotenüs çubuğu (p ile k birleşip a olur) çizilir. | K7 |
+| 16 | Senaryoların bölüm 3 ve 8'den ayrıldığı yerler | B5: kitabın s. 44 tablosunda harf sırası orantıyı tutmuyor (ABC 6, 5, 4; DEF 10, 8, 12); üçgenler sıra tutacak biçimde yeniden adlandırıldı, sayılar "örnek veri". C3: Öklid adı ve genel bağıntı anılmaz; küçük üçgenler döndürülmeden önce ters çevrilir. E3: benzerlik yolu 3, Öklid yolu 4 adımdır (ortak ilk adım Pisagor). E: 13. uygulama (çantalar) alınmadı; çözümü kitapta yok, verisi yetmiyor. Bölüm 8'deki "32. örnekte harf tutarsızlığı" notu doğrulanmadı: iki ajan sayfa görüntüsünde metinle şekli tutarlı buldu. | K7 |
+| 17 | Senaryoda sayı düzeltmeleri (9 Ekim 2026, dersler yazılırken) | B4 sahne 2: 50°, 60°, 70° açılı üçgene yazılan 4, 5, 6 kenarları kaldırıldı; oranlar çizilen uzunluklardan gösterilir (bu açılarla kenarlar tam sayı çıkmaz, yuvarlanmış sayı da 1,5 oranını tam vermez). B2 sahne 3 "Sıra sende": 6, 8 ve 50° yerine 3, 8 ve 60° (üçüncü kenar tam 7). İkisi de örnek veridir, kitap sayısı değildir. | K7 |
 
 ## 8. Ders kitabından alınanlar
 
