@@ -60,7 +60,13 @@ Sayı doğrusu: taban çizgisi y = 640. Küçük sayı solda. Kazananın dereces
   cetvelinin içine giriş → sayı doğrusu.
 - Yakınlaşma logaritmik ölçekte yürür: her adım tam 10 kattır ve gözle eşit hızda görünür.
 - Girişler yavaşlayarak oturur (`power3.out`, `expo.out`), çıkışlar hızlanarak gider ve girişlerden kısadır.
-  Yaylanma yalnızca küçük, tek nesnelerde (işaret, madalya, altın nokta). Kamera yaylanmaz.
+  Nesneler 0,6 ölçekten gelir ve aşmadan oturur; yalnız madalya ve altın nokta yaklaşık %1,5 aşar. `back.out` yok.
+  Kamera yaylanmaz. Bütün süreler ve ease'ler tek sözlükten okunur (`D`, `E`).
+- Dünya hareket eder, yazı etmez: yere inmiş sayı, LED rakamı ve kart yazısı kımıldamaz; akarken okunamayacak
+  çizgi etiketleri kapanır.
+- Panelden sayı doğrusuna geçiş kilitli itiştir: cetvel, panel ve stadyum tek dönüşümden büyür; erime yok.
+- Katmanlar farklı hızda kayar: stadyumda yıldızlar, tribün ve ışıklar, pist; sayı düzleminde zemin çizgileri
+  yakınlaşmaya 0,3 hızla eşlik eder.
 - Aynı anda tek büyük hareket. Soru sorulan iki karede (3 ve 6) ekran durur.
 - LED rakam çevrilmez, yanar: parçalar 25 ms arayla sırayla yanar.
 - Bitiş kamerasının taraması sabit hızlıdır (makine); başka sabit hızlı hareket yok.

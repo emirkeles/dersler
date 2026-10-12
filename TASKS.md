@@ -712,12 +712,14 @@ Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 15 kısa ders + 5 konu te
 Kullanıcı: "ses aynı kalacak şekilde daha profesyonel bir motion design"; plan temiz bağlamlı bir Opus alt ajanıyla yazıldı. Plan: `plan/matematik/sayilar/hikaye/C4-fotofinis-hareket.md` (teşhis, yön, 31 satırlık değişiklik tablosu, A0–A7 adımları, doğrulama). Ses, `T` tablosu, senaryo ve ekrandaki sözcükler sabit.
 
 - [x] Plan (v1 filmi 27 kare tabakası ve tween dökümüyle incelendi; `index.html` değişmedi)
-- [ ] Kullanıcı kararları K1–K9 (plan bölüm 6; her birinin varsayılanı yazılı, onay gelmese de uygulama aksamaz)
-- [ ] A0 Taban: `check` ve v1 tabakaları
-- [ ] A1 Sözlük, aşmasız giriş eğrisi, dört açık kusur (koşucular kadraj dışı, tabela belirir, `cy −410`, F3 durağan bitiş)
-- [ ] A2 Stadyum: ışık üç adımda, kimlik çipleri koşucudan tabelaya, paralaks, panel maskeyle açılır
-- [ ] A3 Dünya geçişi: panelden sayı doğrusuna kilitli itiş
-- [ ] A4 Sayı düzlemi: zemin paralaksı, tek dizgi etiket, büyütülmüş sıçrayış, madalya ve altın nokta girişleri
-- [ ] A5 Derin yakınlaşma ve geri çekilme: yeni `z` eğrisi, sabit altın okuma, noktaların çizgiye dönüşmesi
-- [ ] A6 Kapanış kartı
-- [ ] A7 Bütün: `check`, taslak işleme, plan bölüm 5 doğrulaması, kesin işleme (`renders/c4-fotofinis-v2.mp4`), −14 LUFS
+- [ ] Kullanıcı kararları K1–K9 (plan bölüm 6): varsayılanlarla yüründü (bulanıklık yok, en derin düzey 6, çıktı `-v2`); farklı karar çıkarsa ilgili satır yeniden yapılır
+- [x] A0 Taban: `check` ve v1 tabakaları
+- [x] A1 Sözlük, aşmasız giriş eğrisi, dört açık kusur (koşucular kadraj dışı, tabela belirir, `cy −410`, F3 durağan bitiş)
+- [x] A2 Stadyum: ışık üç adımda, kimlik çipleri koşucudan tabelaya, paralaks, panel maskeyle açılır
+- [x] A3 Dünya geçişi: panelden sayı doğrusuna kilitli itiş
+- [x] A4 Sayı düzlemi: zemin paralaksı, tek dizgi etiket, sıçrayış, madalya ve altın nokta girişleri
+- [x] A5 Derin yakınlaşma ve geri çekilme: yeni `z` eğrisi, sabit altın okuma, noktaların çizgiye dönüşmesi
+- [x] A6 Kapanış kartı
+- [x] A7 Bütün: `check`, taslak işleme, plan bölüm 5 doğrulaması, kesin işleme (`renders/c4-fotofinis-v2.mp4`), −14 LUFS; sapmalar ve ölçümler plan bölüm 8'de
+- [ ] Kullanıcı: v2'yi sesli izler (film oynatılmadı; akıcılık kare tabakalarından okundu)
+- [ ] `STORYBOARD.md` kare notlarında eskiyen üç cümle (plan bölüm 8'in sonu); kullanıcı v2'yi onaylarsa düzeltilir

@@ -1,6 +1,6 @@
 # Plan — Fotofiniş: hareket tasarımı yükseltmesi
 
-**Durum (12 Ekim 2026):** yalnızca plan. `index.html` değişmedi, işleme yapılmadı. Uygulayan oturum bu dosya ve depo ile başlar.
+**Durum (12 Ekim 2026):** uygulandı (A0–A7). Çıktı `renders/c4-fotofinis-v2.mp4`; v1 yerinde. Plandan sapmalar ve ölçüm sonuçları bölüm 8'de. Kullanıcı filmi henüz izlemedi; K1–K9 varsayılanlarıyla yüründü.
 **İstek:** "Ses aynı kalsın; daha profesyonel bir hareket tasarımı."
 **Proje:** `matematik/sayilar/hikaye/c4-fotofinis/` (HyperFrames 0.8.149; tek `index.html`, tek duraklatılmış GSAP zaman çizelgesi; stadyum SVG, sayı doğrusu tuval).
 
@@ -190,3 +190,40 @@ Kayıt defterine bakıldı (`npx hyperframes catalog --query … --json`), hiçb
 ## 7. Kapsam dışı
 
 Ses (yeniden okuma, zamanlama, müzik, efekt), senaryo, sayılar ve ekrandaki sözcükler; koşucuların ve kulvarların yeniden çizimi, Lottie karakter, 3B kamera, shader geçişleri; `ortak/`, `araclar/`, öteki hikâyeler; altyazı (`.vtt`), derse bağlama, `HIKAYE-ANIMASYONLARI.md` bölüm 4'ün eşitlenmesi, yayın, commit ve push.
+
+## 8. Uygulama (12 Ekim 2026)
+
+K1–K9 için kullanıcı kararı beklenmedi; her birinde bölüm 6'daki varsayılan uygulandı: K1 bulanıklık yok (satır 8 ve 14 atlandı; `#kam-dis`, `#kam-bulanik`, `bul` oluşturulmadı), K2 en derin düzey 6, K3 ve K4 uygulandı, K5 çıktı `c4-fotofinis-v2.mp4`, K6 ses efekti yok, K7 tek dosya, K8 yok, K9 yok.
+
+### Plandan sapmalar
+
+| Satır | Planda | Yapılan | Neden |
+|---|---|---|---|
+| 6, 7 | `E.tasi` | kamera ve çipler `E.yakin` (`power2.inOut`) | K1 uygulanmadığında planın kendi kuralı; çipler de aynı eğriyle yürür ki kamerayla aralarındaki uzaklık düzgün değişsin |
+| 3 | durum anahtarı `los` | `#los` DOM tween'i | öğe yalnızca bir kez söner; durum nesnesine taşımak bir şey kazandırmıyor |
+| 13 | `#duzlem` 31,2 · 0,6 | 31,95 · 0,15; zemin çizgileri için yeni durum `dz` 32,15 · 0,5 (panel gövdesiyle birlikte) | panel kadrajı ancak 31,95'te kaplıyor; daha önce açılan düzlem gökyüzünün ardından görünürdü. Çizgiler tuvalde olduğu için (S5a) panelin üstüne binmesin diye ayrı anahtar |
+| 13 | — | `#dunya` ve `#panel` köklerinde `overflow: visible` | SVG kökü içeriğini kendi kutusuna kırpıyor; dönüşümle büyüyen panelin altı y = 921'de kesiliyordu |
+| 20 | yay yüksekliği 90u | 40u, nokta 7u | 90u'luk yay "9,784" etiketinin içinden geçiyor (etiketin taban çizgisi y − 80u, sağ kenarı x ≈ 883; yayın o aralıktaki yüksekliği 45u'yu geçemez). Sahneleme basış, atlayan nokta, halka ve yukarı alınan "?" ile büyüdü |
+| 23, 26 | altın etiket y − 46u | y − 76u | derin yakınlaşmada 60u'luk çizgiler yerinde duran okumanın içinden geçiyordu |
+| 29 | perde 67,95 · 0,5; kart 68,10; gölge `boxShadow` 68,55 | perde 67,90 · 0,3; kart 68,20; gölge ayrı katman (`#kart-golge`, `#kart-kap`) 68,60 | 68,2'de yarı saydam kartın ardından sayı doğrusu okunuyordu (A6 ölçütü). `#kart` üstünde üç `fromTo` lint uyarısı veriyordu; gölge dönüşümle kayıyor |
+| S1 | yedi ease | altı ad daha: `yumusak` (`power2.out`), `sol` (`power1.out`), `fren` (`power4.out`), `hizlan` (`power1.in`), `sicra` (`power1.inOut`), `salin` (`sine.out`) ve `dalis` (satır 24'ün fonksiyonu) | tablodaki ease'lerin hepsi sözlükten okunsun diye |
+| S5c | ortak önek bir kez yazılır | dizgi çizgiye ortalı kalır; "0" belirirken genişlik onunla birlikte büyür (yarım hane kayma, yakınlaşma sırasında) | sola yaslı bırakılsa her düzeyde yarım hane merkezden kaçardı |
+| 17 | — | beş adım ayracın 14u altında, her biri bir binde birlik aralıkta; çıkışta yazıyla birlikte söner | planda yer verilmemişti |
+| 18, 9 ve çıkışlar | 0,35–0,6 sn | `#kimin` 0,25 · `soru`, `sekA` 0,3 · `mer`, `g1`, `g2` 0,3 | S1: çıkış girişin en çok %65'i |
+| 6. kare | "9,785" etiketi y + 50u | y + 46u, saydamlık 0,86 | yakınlaşınca aynı yerdeki çizgi etiketine kaymadan devrediyor |
+
+### Ölçüm (bölüm 2'deki ölçüler)
+
+- (a) `back.out` 0; `ease:` değerlerinin hepsi `E.` (36 kullanım).
+- (b) ≥ 1,6 sn hareketsiz aralık 2 (`animation-map.mjs`, `sal` ve 6 sn'den uzunlar hariç, LED anları elle): 16,65–18,78 (tabela) ve 72,18–74,6 (kapanış kartı). v1'de 5'ti.
+- (c) Yakınlaşma hızı: iki adım 1,18 ve 1,33 düzey/sn tepe; derin yakınlaşma 1,63 tepe, tam düzeylerde 0,41. Geri çekilme 6,2 düzey/sn tepe, ince çizgiler kapalıyken (`ince = 0`, 61,95–63,85).
+- (d) Dünya geçişi: `#kil-a` (x = 880) ile 9,784 işareti aynı dönüşümden; kayma tanım gereği 0. Tabakalarda (30,8–32,8, 3 karede bir) hizalı.
+- (e) Kenarda kesilen etiket yok; çizgi etiketleri 56,2–63,7 arasında kapalı; altın okumanın son değeri 61,13–62,0 arasında durur (0,87 sn).
+- (f) Stadyumda üç katman (yıldızlar 0,5 · tribün ve ışıklar 0,88 · pist 1), sayı düzleminde iki (zemin 0,3 · doğru 1).
+- (g) Sıfır ölçekten giriş yok; nesneler 0,6'dan. Çizgi çizimleri (`scaleX`/`scaleY` 0 → 1: kulvar, bitiş, kart çizgisi, vurgu) silme hareketidir, giriş değil.
+- Belirlenimlilik: `Math.random`, `Date.now`, `performance.now` 0; beş an üç ayrı sırada alındı (`--no-browser-gpu`), dosyalar özdeş (md5).
+- Durağan kare: 20,5 ile 21,0 arasındaki fark yalnız `sal` salınımı (1 px yatay).
+- `check`: 0 hata; tek uyarı dosya uzunluğu (661 satır).
+
+Güncellenen belgeler: `STORYBOARD.md` içinde yalnız `motion:` satırları ve "Hareket ilkeleri"; `frame.md` içinde yalnız "Hareket". `STORYBOARD.md` kare notlarında eskiyen üç cümle kaldı (plan bu bölümleri kapsam dışı tutuyor): 2. karede "iki liderin üstüne birer ok iner" (artık kimlik çipi), 5. karede "Tabela ve panel solar" (artık kilitli itiş), başlıktaki "Sürüm: v1".
+

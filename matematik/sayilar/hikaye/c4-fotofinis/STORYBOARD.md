@@ -61,7 +61,16 @@ Kaynaklar `plan/matematik/sayilar/hikaye/C4-fotofinis.md` bölüm 5.
 - Girişler yavaşlayarak oturur ve çıkışlardan uzundur (Material, NN/g); doğrusal hareket yalnızca makinede
   (kamera taraması).
 - Aynı anda tek büyük hareket; sıra en durağandan en önemliye (Carbon, Material koreografi).
-- Sıfırdan büyüyerek giriş yok; küçük nesneler 0,4–0,7 ölçekten yaylanarak gelir (Emil Kowalski).
+- Sıfırdan büyüyerek giriş yok; nesneler 0,6 ölçekten gelir ve aşmadan oturur (sönümlü yayın kapalı biçimi, `pop`). Yalnız
+  madalya ve altın nokta yaklaşık %1,5 aşar. `back.out` yok (Emil Kowalski; HyperFrames "smooth beats bouncy").
+- Bütün süreler ve ease'ler tek sözlükten okunur (`index.html` içinde `D` ve `E`); çıkış girişten kısadır.
+- Dünya hareket eder, yazı etmez: yere inmiş sayı, LED rakamı ve kart yazısı bir daha kımıldamaz. Akarken okunamayacak
+  çizgi etiketleri kapanır (8. kare); altın okuma yerinde durur, yalnızca bir basamak uzar.
+- Kamera her seferinde tek, yavaşlayarak oturan bir hareket yapar. Dünya değişimi (4 → 5) kesme ya da erime değildir:
+  cetvel, panel ve stadyum aynı dönüşümden büyür.
+- Derinlik katmanların farklı hızından gelir: stadyumda yıldızlar, tribün ve ışıklar, pist; sayı düzleminde zemin
+  çizgileri ve doğru.
+- Yakınlaşma hızı ince çizgiler görünürken 2,5 düzey/sn'yi geçmez; hızlı geri çekilmede ince çizgiler kapalıdır.
 - Düşünce biten yerde ekran durur (Jellyvision: 1–1,5 sn sessizlik); sürekli hareket yok.
 - Görüntü sözcükle birlikte ya da hemen önce iner (ses-görüntü eşzamanlama eşikleri; çıkarım).
 - Sayılar yerinden oynamaz: etiketler ortalanır, okunurken yer değiştirmez; en az kelime başına 0,3 sn + 0,5 sn.
@@ -76,7 +85,7 @@ Kaynaklar `plan/matematik/sayilar/hikaye/C4-fotofinis.md` bölüm 5.
 - transition_in: cut
 - scene: Gece, boş mor pist; kulvar çizgileri çizilir, bitiş çizgisi iner, projektörler yanar
 - voiceover: "Paris, iki bin yirmi dört. Olimpiyatlarda yüz metre finali."
-- motion: svg-path-draw (kulvar çizgileri, 35 ms arayla) · multi-phase-camera (yavaş itiş, salınım)
+- motion: svg-path-draw (kulvar çizgileri, 35 ms arayla) · ışık sözle üç adımda (lambalar 2,60 · pistin aydınlanması 2,75 · bitiş çizgisi 3,55 · kamera 4,15) · multi-phase-camera (yavaş itiş, salınım; tribün ve ışıklar yatayda 0,88 hızla kayar)
 
 Önce yer (tribün, pist), sonra çizgiler, en son ışık: lambalar tek tek yanar, koniler bir kez titrer. Bitiş
 çizgisinin hizasında küçük bir kamera durur; 4. karenin habercisidir.
@@ -90,7 +99,7 @@ Kaynaklar `plan/matematik/sayilar/hikaye/C4-fotofinis.md` bölüm 5.
 - transition_in: continuous
 - scene: Sekiz koşucu soldan girer, bitişe doğru ağır çekim; çizgide donar, kamera iki lidere yaklaşır
 - voiceover: "Sekiz koşucu çizgiye neredeyse birlikte vardı. Öndeki ikisini gözle ayırmak imkânsızdı."
-- motion: coordinate-target-zoom (bitiş çizgisine) · hız rampası (`power4.out`) · flaş
+- motion: coordinate-target-zoom (bitiş çizgisine) · hız rampası (`power4.out`) · flaş · spring-pop-entrance (okların yerine kimlik çipleri: turuncu daire, nane eşkenar dörtgen; çizginin sağında, 0,6 ölçekten aşmadan oturur)
 
 Koşu döngüsü alınan yoldan hesaplanır; ağır çekimde bacaklar da yavaşlar. Birinci geriden gelir. Çizgide flaş
 patlar, öbür altı koşucu solar, iki liderin üstüne birer ok iner. Aradaki fark 4 pikseldir: görünmez.
@@ -104,7 +113,7 @@ patlar, öbür altı koşucu solar, iki liderin üstüne birer ok iner. Aradaki 
 - transition_in: continuous
 - scene: Kamera tabelaya kalkar; iki satır aynı sayıyı yakar: 9,79. Aralarında kararsız bir madalya
 - voiceover: "Tabela da ayıramadı. İkisinin derecesi aynıydı: dokuz virgül yetmiş dokuz saniye. Peki altın madalya kimin?"
-- motion: multi-phase-camera (kalkış ve itiş) · LED parçaları 25 ms arayla yanar
+- motion: paylaşılan öğe (çipler koşuculardan tabeladaki satırlarına uçar, kameradan iki kare önce kalkar) · multi-phase-camera (kalkış 11,70 · 1,75 sn; itiş 21,10 · 0,85 sn) · physics-press-reaction (çipler "ikisinin" sözünde sırayla bir kez basılır) · LED parçaları 25 ms arayla yanar · durağan bitiş 20,45–21,10
 
 Üçüncü basamağın yeri sönük durur: tabelada bir basamak daha var ama yanmıyor. Soruda madalya iki satır arasında
 bir yukarı bir aşağı gider, sonra ekran durur.
@@ -118,7 +127,7 @@ bir yukarı bir aşağı gider, sonra ekran durur.
 - transition_in: continuous
 - scene: Kameranın paneli açılır; tarama çizgisi şeridi soldan sağa kurar, iki derece cetvele düşer; tabela 9,784 ve 9,789 olur
 - voiceover: "Bitiş çizgisindeki kamera bir basamak daha okudu: dokuz virgül yedi yüz seksen dört ve dokuz virgül yedi yüz seksen dokuz."
-- motion: sabit hızlı tarama (tek doğrusal hareket) · LED satırı kırpışır, yeni basamak yanar
+- motion: anchored-layout-expand (önce kamera simgesi, sonra panel simgenin yanından maskeyle açılır; solma yok) · sabit hızlı tarama (tek doğrusal hareket) · LED satırı kırpışır, yeni basamak yanar
 
 Şeritte yatay eksen zamandır: her koşucunun izi çizgiye vardığı anda başlar. Tabeladaki 9,79'un 9'u 8'e döner:
 tabela yukarı yuvarlamıştı.
@@ -132,7 +141,7 @@ tabela yukarı yuvarlamıştı.
 - transition_in: zoom-through
 - scene: Panelin cetveli ekranı doldurur; 9,784 solda, 9,789 sağda; aralarına "<", kazananın üstüne madalya, altına 0,005 sn
 - voiceover: "Sayı doğrusunda soldaki küçüktür. Küçük süre, önce varan demek. Altın, saniyenin binde beşiyle kazanıldı."
-- motion: zoom-through (alt çerçevenin içine giriş) · spring-pop-entrance (madalya)
+- motion: kilitli itiş (card-morph-anchor: cetvel, panel ve stadyum tek dönüşümden büyür; panelin çerçevesi kadrajdan çıkar, içi sayı düzlemi olur; solan tabela yok) · halka ("Küçük süre") · spring-pop-entrance (madalya yukarıdan iner) · beş binde birlik adım sırayla yanar
 
 Tabela ve panel solar; cetvel aynı işaretlerle büyür. Geçiş kesme değil, aynı nesnenin büyümesidir.
 
@@ -145,7 +154,7 @@ Tabela ve panel solar; cetvel aynı işaretlerle büyür. Geçiş kesme değil, 
 - transition_in: continuous
 - scene: 9,784'ten 9,785'e alçak bir sıçrayış çizilir; konduğu çizgide halka ve "?"
 - voiceover: "Peki kazanan dereceden hemen sonraki sayı hangisi? Binde bir fazlası mı?"
-- motion: svg-path-draw (noktalı yay) · durağan bitiş
+- motion: physics-press-reaction (9,784 bir kez basılır) · yol hareketi (küçük bir nokta atlar, noktalı izini bırakır; konduğu yerde halka, üstünde "?") · durağan bitiş 46,0–47,4
 
 Dersin açılış yanılgısı ("0,5'ten sonra 0,6 gelir") burada hikâyenin sayılarıyla sorulur.
 
@@ -158,7 +167,7 @@ Dersin açılış yanılgısı ("0,5'ten sonra 0,6 gelir") burada hikâyenin say
 - transition_in: continuous
 - scene: İki kez 10 kat yakınlaşma; her seferinde araya altın bir sayı girer: 9,7845, sonra 9,78405
 - voiceover: "Yaklaşalım. İkisinin arasında bir sayı daha var. Daha da yaklaşalım: yine var."
-- motion: coordinate-target-zoom (sabit nokta 9,784, logaritmik) · spring-pop-entrance (altın nokta)
+- motion: coordinate-target-zoom (sabit nokta 9,784, logaritmik; zemin çizgileri 0,3 hızla eşlik eder) · spring-pop-entrance (altın nokta yukarıdan düşer; etiketi sonra belirir ve durur)
 
 Sağ üstte aralık göstergesi açılır: 0,001 sn → 0,0001 sn → 0,00001 sn. Yanında kamera simgesi durur.
 
@@ -171,7 +180,7 @@ Sağ üstte aralık göstergesi açılır: 0,001 sn → 0,0001 sn → 0,00001 sn
 - transition_in: continuous
 - scene: Kamera simgesi sınırında kalır; yakınlaşma hızlanarak sürer, her düzeyde araya yeni bir altın sayı girer
 - voiceover: "Kamera bir yerde durur; sayılar durmaz. Ne kadar yaklaşırsan yaklaş, araya hep yenisi girer."
-- motion: coordinate-target-zoom (hızlanan, `power1.in`) · counting-dynamic-scale (etiket bir basamak uzar)
+- motion: coordinate-target-zoom (dört düzey, 9,784000005'e kadar; hızlanır, her tam düzeyde yavaşlar, durmaz) · counting-dynamic-scale (yerinde duran altın okuma her düzeyde bir basamak uzar) · çizgi etiketleri akarken kapalı
 
 Kamera bir kez sallanır ve sönükleşir; gösterge onu geride bırakır. Etiket her düzeyde bir sıfır uzar.
 
@@ -184,7 +193,7 @@ Kamera bir kez sallanır ve sönükleşir; gösterge onu geride bırakır. Etike
 - transition_in: continuous
 - scene: Hızla geri çekilir; iki derecenin arası, her adımda her boşluğun ortasıyla dolar ve altın bir çizgi olur
 - voiceover: "İki derece birbirine ne kadar yakın olursa olsun, aralarına bir başkası sığar."
-- motion: coordinate-target-zoom (geri) · orta noktalarla çoğalma (1, 2, 4 … 64 nokta)
+- motion: zoom-out-workspace-reveal (ince çizgiler önce söner, tek geri çekilme; altın noktalar 9,784'e toplanır) · orta noktalarla çoğalma (1, 2, 4 … 64 nokta; noktalar birbirine değer ve çizgi olur)
 
 Orta nokta dersin kuralıdır: a ile b'nin ortası (a + b)/2 her zaman aradadır.
 
@@ -197,6 +206,6 @@ Orta nokta dersin kuralıdır: a ile b'nin ortası (a + b)/2 her zaman aradadır
 - transition_in: crossfade
 - scene: Krem kart: "Kesirlerde “bir sonraki sayı” yoktur." ve "9,784 < 9,7845 < 9,785"
 - voiceover: "Kesirlerde bir sonraki sayı yoktur."
-- motion: titlecard-reveal (öteki hikâyelerle aynı düzen)
+- motion: titlecard-reveal (kart oturur, altın gölgesi arkasından kayar) · waterfall-entry (satırlar maskeden yükselir) · css-marker-patterns (modelin uçları gelir, ortası araya girer, arkasından altın vurgu geçer)
 
 Cümle iki parça hâlinde, sesle birlikte gelir. Kart 3,3 saniye durur.
