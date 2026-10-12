@@ -27,7 +27,7 @@ KATALOG.tema('matematik', 'sayilar', {
       ['c1-her-kutu-bir-ihtiyac.html', 'Her kutu bir ihtiyaçtan doğdu', '3 − 5’in cevabı mı yok, yoksa cevabın konacağı kutu mu?', 5, 309],
       ['c2-ondalik-acilim.html', 'Ondalık açılımın adresi', '0,333… hiç bitmiyor. Bitmeyen bir sayı hâlâ kesir midir?', 4, 224],
       ['c3-sayi-dogrusundaki-delik.html', 'Sayı doğrusundaki delik', 'Karenin köşegenini ölçebilirsin. Peki kesir olarak yazabilir misin?', 4, 278],
-      ['c4-siralama-ve-arada-olma.html', 'Sıralama ve arada olma', '3’ten sonraki tam sayı 4. Peki 0,5’ten sonraki sayı hangisi?', 4, 237],
+      ['c4-siralama-ve-arada-olma.html', 'Sıralama ve arada olma', '3’ten sonraki tam sayı 4. Peki 0,5’ten sonraki sayı hangisi?', 5, 314],
       ['c5-ispat-mi-karsi-ornek-mi.html', 'İspat mı, karşı örnek mi?', 'Kaç örnek “her zaman” demeye yeter?', 3, 263],
       ['c6-tekrar.html', 'Konu tekrarı: Sayı kümeleri', 'Beş dersin kuralları aklında mı?', 1, 303],
     ] },
@@ -48,6 +48,7 @@ KATALOG.tema('matematik', 'sayilar', {
     { kod: 'A7', ders: 'Bilimsel gösterim', ad: '3 nanometre ne kadar küçük?', video: 'hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4', kapak: 'hikaye/a7-3-nanometre/renders/kapak.jpg' },
     { kod: 'A8', ders: 'Yaklaşık değer', ad: 'Bir dönüm tarla, kaç metre çit?', video: 'hikaye/a8-tarla-cit/renders/sesli-taslak.mp4', kapak: 'hikaye/a8-tarla-cit/renders/kapak.jpg' },
     { kod: 'B7', ders: 'Mutlak değerle aralık', ad: 'Kombi 22 derecede', video: 'hikaye/b7-kombi-22/renders/b7-kombi-22.mp4', kapak: 'hikaye/b7-kombi-22/renders/kapak.jpg' },
+    { kod: 'C4', ders: 'Sıralama ve arada olma', ad: 'Fotofiniş', video: 'hikaye/c4-fotofinis/renders/c4-fotofinis-v2.mp4', kapak: 'hikaye/c4-fotofinis/renders/kapak.jpg' },
     { kod: 'D3', ders: 'İse, ancak ve ancak', ad: 'Yıldızlar bunu giyiyor', video: 'hikaye/d3-yildizlar-bunu-giyiyor/renders/d3-yildizlar-bunu-giyiyor.mp4', kapak: 'hikaye/d3-yildizlar-bunu-giyiyor/renders/kapak.jpg' },
   ]
 });

@@ -685,7 +685,7 @@ Plan ve inceleme: `plan/matematik/sayilar/hikaye/C4-fotofinis.md`. Proje: `matem
 - [x] İşleme: `renders/c4-fotofinis.mp4` (1920×1080, 74,6 sn, `--crf 23`), −14 LUFS'e eşitlendi; `kapak.jpg`
 - [x] `plan/matematik/sayilar/HIKAYE-ANIMASYONLARI.md`: durum satırı, 2. satırın özü, doğruluk notu
 - [ ] Kullanıcı: filmi sesli izler (okunuş kulakla denetlenmedi; film baştan sona oynatılmadı)
-- [ ] Derse bağlama: C4'ün 5. sahnesi (video), `tema.js` içinde sahne sayısı 4 → 5 ve `hikayeler` satırı, `sure.js`, `olc.js`, `denetle.js` (kullanıcı filmi görünce)
+- [x] Derse bağlama (12 Ekim 2026, kullanıcı hikâyelerde göremeyince): C4'ün 5. sahnesi (video, `c4-fotofinis-v2.mp4`), `wrapScene` video sahnesini olduğu gibi geçirir, `tema.js` içinde sahne sayısı 4 → 5 ve `hikayeler` satırı. `sure.js`: C4 3:57 → 5:14. `olc.js sayilar/c4` ve `denetle.js matematik/sayilar` temiz. Commit ve push edildi
 - [ ] Altyazı dosyası; müzik ve efekt (öteki hikâyelerle ortak karar)
 - [x] Commit ve push (12 Ekim 2026, kullanıcı istedi): proje klasörü, plan dosyaları, `HIKAYE-ANIMASYONLARI.md`, bu bölüm
 

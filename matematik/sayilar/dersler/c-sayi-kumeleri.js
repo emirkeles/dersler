@@ -1791,7 +1791,7 @@
     return t.replace(/\s+/g, ' ').trim();
   }
   Ders.speakify = speakify;
-  const wrapScene = (sc) => ({ ...sc, run: (c) => { const say0 = c.say; c.say = (html, o = {}) => say0(html, o.speak ? o : { ...o, speak: speakify(html) }); return sc.run(c); } });
+  const wrapScene = (sc) => !sc.run ? sc : ({ ...sc, run: (c) => { const say0 = c.say; c.say = (html, o = {}) => say0(html, o.speak ? o : { ...o, speak: speakify(html) }); return sc.run(c); } });
 
   /* ================= KISA DERSLER ================= */
   /* Bölüm C kısa derslere ayrılır. Sayfa, hangi parçayı oynatacağını window.DERS_PARCA ile söyler. */
@@ -1970,6 +1970,7 @@
         { title: 'Sıraya diz', goal: 'Sayı doğrusunda soldaki küçüktür; negatiflerde de.', run: c4Sirala },
         { title: 'Tam sayıda boş, kesirde dolu', goal: 'İki kesrin ortası yine bir kesirdir: (a + b)/2.', run: c4Arada },
         { title: 'Sıra sende: arasına düşeni seç', goal: 'Arasındaki sayıyı bul; hangi kümelerde arada olma var?', run: c4Sec },
+        { title: 'Hikâye: Fotofiniş', goal: 'Arada olmayı bir yüz metre finalinde gör.', video: 'hikaye/c4-fotofinis/renders/c4-fotofinis-v2.mp4' },
       ],
       quiz: [
         {
