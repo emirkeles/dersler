@@ -596,11 +596,70 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] 2a.1 Müfredat, ders kitabı (2. Kitap s. 10–95; A bölümü ana oturum, B–E dört Sonnet ajanı), `PLAN.md` yeniden yazıldı: 13 karar, 22 kısa ders + 5 konu tekrarı, denetim tablosu (`ders` / `benzetim` / `site dışı`), kitaptan alınanlar
 - [x] 2a.2 Konu A senaryosu (`senaryolar/A-geometrik-donusumler.md`: A1–A5 ve A6 tekrar), iskelet (`index.html`, `tema.js`, `dersler/kit.js`), A1 dersi (5 sahne, 46 altyazı, 7:10; `olc.js` bütün sayaçlar 0, konsol temiz; her sahnenin son karesine bakıldı)
 - [x] Görev tanımları: `gorev/ders-gorevi.md`, `gorev/senaryo-gorevi.md`; kitap betikleri `gorev/dok.py`, `gorev/png.py`
-- [ ] 2a.3 A2–A6 dersleri (Sonnet; önce A2, sonra A3–A6 birlikte) ve denetim noktası
-- [ ] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan); program metniyle karşılaştırma
-- [ ] 2a.5 B–E dersleri ve konu tekrarları (ders başına bir ajan; sekiz ajanda bir oturum sınırı)
+- [x] 2a.3 A2–A5 dersleri (Sonnet, ders başına bir ajan; önce A2 ve `dersler/a-araclar.js`, sonra A3–A5 birlikte) ve denetim noktası: dördü `olc.js` temiz, her dersten üç sahnenin son karesine bakıldı, `sure.js` (Konu A 37:05), `tema.js` satırları (9 Ekim 2026, ikinci oturum)
+- [x] 2a.3 A6 konu tekrarı (1 sahne + 8 soru, 3:56; `olc.js` temiz; Konu A 41:01) (9 Ekim 2026, üçüncü oturum)
+- [x] A düzeltmeleri: A2 sahne 3'te C harfi şeklin dışına alındı; A5 sahne 4'te d₁ ve d₂ motifin dışına alındı; iki ders yeniden ölçüldü, kareler ana oturumda görüldü
+- [x] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan): B 755, C 463, D 1007, E 653 satır; dördü program metniyle karşılaştırıldı, D'nin altı ispatı ve E3'ün iki yollu çözümü ana oturumda adım adım yürütüldü; düzeltmeler: E'de kırmızı → gri, D'de siyah çizgi → açık renk (9 Ekim 2026)
+- [x] E3 senaryosu ikiye bölündü (E3 7 sahne, E4 6 sahne, E5 tekrar; yeni dört çıkış sorusunun hesabı ana oturumda yeniden yapıldı); `PLAN.md` bölüm 2, 3, 4, 7 ve kısa ders listesi güncel (23 kısa ders + 5 konu tekrarı)
+- [x] 2a.5 B1–B5 (Sonnet, ders başına bir ajan; B1 `dersler/b-araclar.js` dosyasını açtı): beşi `olc.js` temiz, her dersten en az üç kare görüldü, Konu B 47:14, tema 88:15; `tema.js` satırları
+- [x] Senaryoda iki sayı hatası düzeltildi (ders ajanları buldu): B4 sahne 2 (50°–60°–70° üçgene 4, 5, 6 kenarları), B2 sahne 3 (6, 8 ve 50° ile üçüncü kenar 7 değil); `PLAN.md` karar 17, görev tanımlarına kural
+- [x] 2a.5 B6 konu tekrarı, C1 (`c-araclar.js`), D1 (`d-araclar.js`), E1 (`e-araclar.js`), C2, C3, D2, D3 (sekiz Sonnet ajanı, dördüncü oturum): sekizi `olc.js` temiz, her dersten en az iki kare görüldü; Konu B 51:56, tema 152:28 (19 ders); `tema.js` satırları
+- [x] Düzeltmeler (ana oturum): "∥" → "//" (C2, B5; kural görev tanımında), B5 sahne 7 kartı yerinde belirir (koşuya göre çıkan üst üste yazı), C3 başlığı tam başlık, D2 sahne 2 yükseklik çizgisi, D3 sahne 6 yer çizgisi, E senaryosunda "dışarıda" → "içeride"
+- [ ] 2a.5 C4 tekrar, D4, D5, D6, D7 tekrar, E2, E3, E4 (sonraki oturum, sekiz ajan), ardından E5 tekrar (9 dosya; sıra `DURUM.md` "Sıradaki")
 - [ ] 2a.6 Her konudan sonra ölçüm, rapor denetimi, `tema.js` satırları
 - [ ] 2a.7 Tema denetimi: `sure.js`, `denetle.js`, denetim tablosuna sahne numaraları, `TEMALAR.md`
 - [ ] 2a.8 Rapor; kullanıcı izler (seslendirme, yayın ve commit ayrıca istenir)
 - [x] İş panosu (sürüm 14: Eşlik ve Benzerlik yazımda, 1/27 ders)
+- [x] İş panosu (sürüm 15: Eşlik ve Benzerlik 5/28 ders, senaryolar bitti)
 
+- [x] İş panosu (sürüm 16: Eşlik ve Benzerlik 11/28 ders, 203 kısa ders, 37 konu tekrarı)
+- [x] İş panosu (sürüm 17: Eşlik ve Benzerlik 19/28 ders, 210 kısa ders, 38 konu tekrarı)
+
+## Bağlam bütçesi düzeltmeleri (12 Ekim 2026)
+
+Ölçüm: 226 alt ajan kaydı (5–9 Ekim); sonuçlar `plan/YURUTME.md` "Bağlam bütçesi" başında.
+
+- [x] Hedefler yeniden yazıldı (tekrar 175, kısa ders 250, araç dosyası açan ya da sekiz sahneyi aşan 300, senaryo 300, ana oturum 300 bin); önbellek süresi 5 dakikada kalır
+- [x] Örnek ders satır aralığıyla okunur: `YURUTME.md` kalıp 2 ve "Alt ajan", `plan/gorev/ders-gorevi.md`, `plan/matematik/eslik-ve-benzerlik/gorev/ders-gorevi.md` (D3, D1, E1 aralıkları; B6 tekrar tamamı), `DURUM.md` "Sıradaki"
+- [x] Senaryo ajanının bütçesi: `YURUTME.md` "Senaryo ajanı" ve 2a.4; yeni şablon `plan/gorev/senaryo-gorevi.md`
+- [ ] Eşlik ve Benzerlik'in kalan dokuz ders ajanından sonra yeniden ölç: ajan başına en büyük bağlam hedefte mi, satır aralığıyla okuma ders niteliğini düşürdü mü
+- [ ] Senaryo ajanı kuralları ilk yeni temada ölçülür (bu temanın senaryoları bitti; `plan/matematik/eslik-ve-benzerlik/gorev/senaryo-gorevi.md` eski haliyle duruyor)
+
+## Motion Lab makalesinden alınanlar (12 Ekim 2026)
+
+Kaynak: x.com/flxrnc/status/2105311836190978392. Yalnızca plan dosyaları değişti; film, ders ve araç dosyasına dokunulmadı.
+
+- [x] Hikâye filmlerinde tek ses düzeyi hedefi (−14 LUFS, tepe −1 dB) ve komutu: `plan/matematik/sayilar/HIKAYE-ANIMASYONLARI.md` bölüm 2 (komut iki filmde denendi)
+- [x] Ekrandaki yazının bekleme süresi (kelime başına 0,3 sn + 0,5 sn): aynı bölüm
+- [x] Hareket sayıyla yazılır (ne, nereden nereye, kaç ms, hangi eğri): `plan/gorev/senaryo-gorevi.md` ve `plan/gorev/ders-gorevi.md`
+- [ ] Sekiz hikâye filmi yeni düzeye çekilir (kullanıcı isterse; ölçümler bölüm 2'de)
+- [ ] Ders seslendirme klipleri yaklaşık −31 LUFS; filmler −16 ile −20 arasında. Fark için karar gerekiyor (klipleri yükselt ya da filmi dersin düzeyine indir)
+- [ ] Hareket kuralı temaların `gorev/` kopyalarına işlenmedi (Eşlik ve Benzerlik yazımda; ilk yeni temada şablondan gelir)
+
+## Anatomy skill pilotu: Torricelli düzeneği (12 Ekim 2026)
+
+İzometrik figür skill'i (<https://github.com/wheresryan22/anatomy>, MIT, commit `689dcf9`) ders motoruyla denendi. Akışkanlar teması işleme alınmadı; pilot yalnızca `fizik/akiskanlar/` altına yazıldı.
+
+- [x] Skill'i ve kılavuzlarını oku; ders kitabından sayıları al (fizik 9, s. 164)
+- [x] Figür: `fizik/akiskanlar/pilot/torricelli/build.mjs` (kit kopyası `kit/`, çıktılar `torricelli.html`, `torricelli-light.html`)
+- [x] Ders motoru bağı: `dersler/torricelli-sekil.js` (üretilmiş), `p1-torricelli-pilot.html`, `dersler/p1-torricelli-pilot.js`
+- [x] Denetim: skill'in çizgi denetimi iki temada ve düşük basınç pozunda 0; `olc.js akiskanlar/p1` 1366×657 ve 750×402'de temiz (tek konsol notu: temanın `tema.js` dosyası henüz yok)
+- [ ] Kullanıcı kararı: figür derslerde kullanılacak mı; kit `ortak/` altına mı alınacak, temaya mı kopyalanacak
+- [ ] Akışkanlar işleme alınınca: pilot dersi C2'ye katılır ya da silinir (`p1-…` dosyaları `tema.js` içinde yok)
+
+## Anatomy: kaldırma kuvveti figürü (plan 12 Ekim 2026)
+
+Plan: `fizik/akiskanlar/pilot/kaldirma-kuvveti/PLAN.md`. Tek başına sayfa; ders motoruna ve projenin görsel diline uydurulmaz, skill'in iş akışı olduğu gibi uygulanır.
+
+- [x] Plan
+- [x] Kurulum: skill (kullanıcı `npx skills add wheresryan22/anatomy -g -a claude-code` ile kurdu; ilk `git clone` denemesi izin sınıflandırıcısınca reddedilmişti), Chrome yolu, kit kopyası, okuma (plan bölüm 2)
+- [x] `model.mjs`: batma, yay, taşan hacim, terazi, sıfırlama (bölüm 3); `node model-sina.mjs` 33 denetim temiz
+- [x] `build.mjs`: geometri ve kayıt; ilk sayfa işe başladıktan 24 dakika sonra açıldı (bölüm 6–7); 60 katı, 57 öğe
+- [x] Kart, döngü, tur, işaretçi, klavye (bölüm 8): `live.js`
+- [x] Geometri denetimi (`--audit`, 14 poz) ve çizgi denetimi (6 dinlenme pozu) iki temada 0 (bölüm 10)
+- [x] Yakın çekimler (4×, iki tema, üç poz), sayı denetimi, gözden geçirme listesi (bölüm 10)
+- [x] Rapor
+- [x] Ders motoru bağı (kullanıcı isteği, 12 Ekim 2026): `dersler/arsimet-sekil.js` (üretilmiş, `window.ARSIMET`), `p2-kaldirma-kuvveti-pilot.html`, `dersler/p2-kaldirma-kuvveti-pilot.js`. Konu D, D2'nin iki sahnelik kesiti. Çizim kodu `pilot/kaldirma-kuvveti/ciz.js` içine ayrıldı; sayfa ve ders aynı kodu kullanır
+- [x] Denetim: `olc.js akiskanlar/p2` 1366×657 ve 750×402'de temiz (tek konsol notu: temanın `tema.js` dosyası henüz yok); tek başına sayfalarda `--audit` ve çizgi denetimi yeniden 0
+- [ ] Kullanıcı kararı: plandan sapmalar (`PLAN.md` bölüm 12) kabul mü; su için WebGL katmanı istenir mi
+- [ ] Akışkanlar işleme alınınca: pilot dersi D2'ye katılır ya da silinir (`p2-…` dosyaları `tema.js` içinde yok, siteden bağlantısı yok; seslendirme üretilmedi)
