@@ -605,7 +605,9 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] Senaryoda iki sayı hatası düzeltildi (ders ajanları buldu): B4 sahne 2 (50°–60°–70° üçgene 4, 5, 6 kenarları), B2 sahne 3 (6, 8 ve 50° ile üçüncü kenar 7 değil); `PLAN.md` karar 17, görev tanımlarına kural
 - [x] 2a.5 B6 konu tekrarı, C1 (`c-araclar.js`), D1 (`d-araclar.js`), E1 (`e-araclar.js`), C2, C3, D2, D3 (sekiz Sonnet ajanı, dördüncü oturum): sekizi `olc.js` temiz, her dersten en az iki kare görüldü; Konu B 51:56, tema 152:28 (19 ders); `tema.js` satırları
 - [x] Düzeltmeler (ana oturum): "∥" → "//" (C2, B5; kural görev tanımında), B5 sahne 7 kartı yerinde belirir (koşuya göre çıkan üst üste yazı), C3 başlığı tam başlık, D2 sahne 2 yükseklik çizgisi, D3 sahne 6 yer çizgisi, E senaryosunda "dışarıda" → "içeride"
-- [ ] 2a.5 C4 tekrar, D4, D5, D6, D7 tekrar, E2, E3, E4 (sonraki oturum, sekiz ajan), ardından E5 tekrar (9 dosya; sıra `DURUM.md` "Sıradaki")
+- [x] 2a.5 C4 tekrar, D4, D5, D6, D7 tekrar, E2, E3, E4 (sekiz Sonnet ajanı, beşinci oturum, 12 Ekim 2026): sekizi `olc.js` temiz, her dersten en az iki kare görüldü; Konu C 29:55, Konu D 49:37, Konu E 37:26, tema 209:55 (27 ders); `tema.js` satırları; `denetle.js` tek sorun (E5 tekrar yok)
+- [x] Düzeltmeler (ana oturum, beşinci oturum): E2 sahne 6'da "60" ölçüsü (|BK| değil, masa kenarı–A), D5 sahne 6 harf eşlemesi ve sahne 8'de köşe harfi, E4 sahne 4'te "2,4" kutusu; iki senaryoya not; görev tanımına on yeni madde
+- [ ] 2a.5 E5 konu tekrarı (sonraki oturum, tek ajan; görev bilgisi `DURUM.md` "Sıradaki")
 - [ ] 2a.6 Her konudan sonra ölçüm, rapor denetimi, `tema.js` satırları
 - [ ] 2a.7 Tema denetimi: `sure.js`, `denetle.js`, denetim tablosuna sahne numaraları, `TEMALAR.md`
 - [ ] 2a.8 Rapor; kullanıcı izler (seslendirme, yayın ve commit ayrıca istenir)
@@ -614,6 +616,7 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 
 - [x] İş panosu (sürüm 16: Eşlik ve Benzerlik 11/28 ders, 203 kısa ders, 37 konu tekrarı)
 - [x] İş panosu (sürüm 17: Eşlik ve Benzerlik 19/28 ders, 210 kısa ders, 38 konu tekrarı)
+- [x] İş panosu (sürüm 18: Eşlik ve Benzerlik 27/28 ders, 216 kısa ders, 40 konu tekrarı)
 
 ## Bağlam bütçesi düzeltmeleri (12 Ekim 2026)
 
@@ -622,7 +625,7 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] Hedefler yeniden yazıldı (tekrar 175, kısa ders 250, araç dosyası açan ya da sekiz sahneyi aşan 300, senaryo 300, ana oturum 300 bin); önbellek süresi 5 dakikada kalır
 - [x] Örnek ders satır aralığıyla okunur: `YURUTME.md` kalıp 2 ve "Alt ajan", `plan/gorev/ders-gorevi.md`, `plan/matematik/eslik-ve-benzerlik/gorev/ders-gorevi.md` (D3, D1, E1 aralıkları; B6 tekrar tamamı), `DURUM.md` "Sıradaki"
 - [x] Senaryo ajanının bütçesi: `YURUTME.md` "Senaryo ajanı" ve 2a.4; yeni şablon `plan/gorev/senaryo-gorevi.md`
-- [ ] Eşlik ve Benzerlik'in kalan dokuz ders ajanından sonra yeniden ölç: ajan başına en büyük bağlam hedefte mi, satır aralığıyla okuma ders niteliğini düşürdü mü
+- [x] Eşlik ve Benzerlik'in sekiz ders ajanından sonra yeniden bakıldı (12 Ekim 2026; görev bildirimlerindeki toplam token): tekrar 142 ve 150 bin (hedef 175), kısa ders 210, 222, 273 bin (hedef 250; E4 aştı), sekiz sahneli 209, 241, 301 bin (hedef 300). Nitelik düşmedi: sekizi en çok üç turda temiz, ana oturum üç derste birer küçük düzeltme yaptı. Ayrıntı `plan/matematik/eslik-ve-benzerlik/DURUM.md`
 - [ ] Senaryo ajanı kuralları ilk yeni temada ölçülür (bu temanın senaryoları bitti; `plan/matematik/eslik-ve-benzerlik/gorev/senaryo-gorevi.md` eski haliyle duruyor)
 
 ## Motion Lab makalesinden alınanlar (12 Ekim 2026)

@@ -24,14 +24,22 @@ KATALOG.tema('matematik', 'eslik-ve-benzerlik', {
       ['c1-ayni-oranda-bol.html', 'İki kenarı aynı oranda böl', 'Üçgen bir havuzu tek bir düz bölmeyle ayırıp aynı biçimde küçük bir havuz elde edebilir misin?', 5, 539],
       ['c2-kenara-paralel.html', 'Kenara paralel çiz', 'Bir çatı makasına kirişe paralel bir ara çubuk takılınca üstte kalan küçük üçgen çatıya benzer mi?', 7, 536],
       ['c3-yukseklik-uc-benzer-ucgen.html', 'Dik köşeden inen yükseklik üç benzer üçgen verir', 'Bir gönyeyi dik köşesinden karşı kenara dik bir çizgiyle kesersen çıkan iki parça gönyeyle aynı biçimde midir?', 5, 448],
+      ['c4-tekrar.html', 'Konu tekrarı: Benzer üçgenler oluşturma', 'Üç dersin kuralları aklında mı?', 1, 272],
     ] },
     { harf: 'D', ad: 'Tales, Öklid ve Pisagor teoremleri', renk: '#c792ff', dersler: [
       ['d1-temel-oranti.html', 'Üçgende paralel doğru kenarları aynı oranda böler', 'Üçgen bir arsayı bir kenarına paralel bir çitle bölersen öbür iki kenar hangi oranda bölünür?', 6, 449],
       ['d2-tales.html', 'Tales teoremi: paraleller ve kesenler', 'Üç paralel sokağı iki cadde kesiyor; bloklar neden aynı oranda dizilir?', 10, 543],
       ['d3-oklid-yukseklik.html', 'Öklid teoremi: yüksekliğin karesi', 'Dik köşeden inen patikanın boyu, kenarı bölen iki parçadan bulunabilir mi?', 8, 428],
+      ['d4-oklid-dik-kenar.html', 'Öklid teoremi: dik kenarın karesi', 'Dik üçgen bir tarlanın bir kenarını, karşı kenarı ölçmeden bulabilir misin?', 8, 430],
+      ['d5-pisagor-ispati.html', 'Pisagor teoreminin ispatı', 'Duvara dayalı bir merdivenin boyu, yüksekliği ve duvara uzaklığı arasında neden hep aynı bağ vardır?', 8, 483],
+      ['d6-dar-ve-genis-aci.html', 'Açı dik değilse: dar ve geniş açılı üçgenler', 'Bir makasın kollarını açtıkça uçları arasındaki uzaklık nasıl değişir?', 5, 363],
+      ['d7-tekrar.html', 'Konu tekrarı: Tales, Öklid ve Pisagor teoremleri', 'Altı dersin kuralları aklında mı?', 1, 281],
     ] },
     { harf: 'E', ad: 'Eşlik ve benzerlik problemleri', renk: '#ff8a5b', dersler: [
       ['e1-sekle-dok.html', 'Çözmeden önce şekle dök', 'Bir tepenin yüksekliğini tırmanmadan, yere koyduğun bir aynayla bulabilir misin?', 7, 628],
+      ['e2-strateji.html', 'Strateji kur, uygula, kontrol et', 'Aynı şekilde hem Pisagor hem benzerlik kullanılabiliyorsa hangisinden başlarsın?', 8, 625],
+      ['e3-kisa-yol-cikmaz-yol.html', 'Kısa yol ve çıkmaz yol', 'Arkadaşın aynı problemi başka yoldan çözdü; hangisi daha kısa, hangi deneme hiç sonuca varmaz?', 7, 503],
+      ['e4-yol-baska-nerede.html', 'Bu yol başka nerede işe yarar?', 'Bir problemde işe yarayan yol, başka hangi problemlerde de işe yarar?', 6, 490],
     ] },
   ],
 });

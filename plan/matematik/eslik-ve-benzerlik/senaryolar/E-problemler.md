@@ -316,7 +316,7 @@ Birlikte çöz (`tag: 'Birlikte çöz'`): 60 / 135 = DB / 90. |DB| kaç santimet
 Sonra:
 7. |DB|, masaya 30 ve x'in toplamı: |DB| = 30 + x.
 8. 40 = 30 + x; x = 10 santimetre.
-9. Denetim: 10, ilk durumdaki 60'tan küçük.
+9. Denetim: 10, ilk durumdaki 60'tan küçük. [60 = perde açıkken ışığın masa kenarından sonra ulaştığı uzaklık: |AB| − 30 = 90 − 30; şemada masa kenarı ile A arasında ölçü olarak gösterilir, |BK| = 60 ile karıştırılmaz]
 10. Perde indikçe ışık masada daha az ilerler: sonuç şekle uyuyor.
 
 Soru (`tag: 'Sıra sende'`): Aynı perde 75 cm yerine 45 cm indirilseydi x kaç cm olurdu? **30 cm** / 60 cm / 90 cm. Dayandığı anlatım: 1–10. İpuçları: "Önce yeni |BK|'yı bul: 135 − 45." · "DB, masa kenarından 30 daha uzun; x onu çıkarır." [hesaplandı: BK = 135 − 45 = 90; oran 90 / 135 = 2 / 3; DB = 90 × 2 / 3 = 60; x = 60 − 30 = 30; çeldirici 60 = DB (30 çıkarılmamış), 90 = BK] Kontrol: 30 cm, 10 cm'den büyük ve 60 cm'den küçük: perde az indi, ışık daha uzağa ulaştı.

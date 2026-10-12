@@ -794,7 +794,7 @@ Anlatım:
 
 ### Sahne 6 · Aynı teorem, başka harfler
 
-Tahta: solda ispat üçgeni (hipotenüs a, dik kenarlar b ve c): "b² + c² = a²". Sağda kitaptaki gösterim (çizim verisi: kitaptaki gösterim): dik kenarlar a (yatay, turuncu) ve b (dikey, yeşil), hipotenüs c (mavi): "a² + b² = c²". Harfler oklarla eşlenir: b → a, c → b, a → c.
+Tahta: solda ispat üçgeni (hipotenüs a, dik kenarlar b ve c): "b² + c² = a²". Sağda kitaptaki gösterim (çizim verisi: kitaptaki gösterim): dik kenarlar a (yatay, turuncu) ve b (dikey, yeşil), hipotenüs c (mavi): "a² + b² = c²". Harfler oklarla eşlenir, her ok kendi kenarının renginde: c → a (kısa dik kenar, turuncu), b → b (uzun dik kenar, yeşil), a → c (hipotenüs, mavi).
 
 Anlatım:
 1. Harfleri değiştirsek de teorem değişmez.
