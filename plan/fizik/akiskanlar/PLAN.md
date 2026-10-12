@@ -17,10 +17,10 @@ Programın istediği deney ve gözlemler sitede etkileşimli benzetimle karşıl
 | FİZ.9.3.3 Sıvılarda basıncın kullanıldığı günlük hayat örneklerini sorgulama | B · Sıvılarda basınç | B3–B4 |
 | FİZ.9.3.4 Açık hava basıncına ilişkin çıkarım | C · Açık hava basıncı | C1–C3 |
 | FİZ.9.3.5 Kaldırma kuvvetini etkileyen değişkenleri belirlemeye yönelik deney | D · Kaldırma kuvveti | D1 |
-| FİZ.9.3.6 Kaldırma kuvveti ile sıvılardaki basınca neden olan kuvvet arasındaki ilişki | D · Kaldırma kuvveti | D2–D4 |
+| FİZ.9.3.6 Kaldırma kuvveti ile sıvılardaki basınca neden olan kuvvet arasındaki ilişki | D · Kaldırma kuvveti | D2–D5 |
 | FİZ.9.3.7 Kesit alanı, sürat ve basınç arasındaki ilişki (Bernoulli İlkesi) | E · Bernoulli İlkesi | E1–E2 |
 
-Toplam 5 konu, 15 kısa ders ve 5 konu tekrarı dersi (20 dosya). 18 ders saati için saat başına 0,83 (konu tekrarları sayılmaz); `ISLEME.md` kural 5'teki 0,85 sınırının altında. Birleştirme ve bölme yapılmadı (karar 1).
+Toplam 5 konu, 16 kısa ders ve 5 konu tekrarı dersi (21 dosya; D4 12 Ekim 2026'da ikiye bölündü, karar 25). 18 ders saati için saat başına 0,89 (konu tekrarları sayılmaz); `ISLEME.md` kural 5'teki 0,85 sınırının üstünde (gerekçe karar 25). Bölünmeden önce 15 kısa ders, 0,83. Birleştirme ve bölme yapılmadı (karar 1).
 
 ## 2. Konular
 
@@ -36,7 +36,7 @@ Kural "her öğrenme çıktısı bir konu"dur. Yedi çıktıyı beş konuya **ş
 
 **E · Bernoulli İlkesi** (FİZ.9.3.7). Borunun kesit alanı, akışkanın sürati ve boru çeperlerine yaptığı basınç arasındaki ilişkinin gözlenmesi; ilişkinin günlük hayat örnekleriyle genellenmesi. Tamamen kavramsal.
 
-Ders sırası: A1 → A2 → B1 → B2 → B3 → B4 → C1 → C2 → C3 → D1 → D2 → D3 → D4 → E1 → E2. B2, A2'deki "veriden modele" yolunu yineler; C1 ve C2, B2'nin modeline dayanır; D3, B2 ile D2'nin modellerini karşılaştırır; D4, D1'in verisine döner. E konusu ötekilerden bağımsızdır ama "basınç" kavramını A'dan alır.
+Ders sırası: A1 → A2 → B1 → B2 → B3 → B4 → C1 → C2 → C3 → D1 → D2 → D3 → D4 → D5 → E1 → E2. B2, A2'deki "veriden modele" yolunu yineler; C1 ve C2, B2'nin modeline dayanır; D3, B2 ile D2'nin modellerini karşılaştırır; D5, D1 ve D2'nin verisine döner. E konusu ötekilerden bağımsızdır ama "basınç" kavramını A'dan alır.
 
 ## 3. Kısa dersler
 
@@ -195,15 +195,25 @@ Ders sırası: A1 → A2 → B1 → B2 → B3 → B4 → C1 → C2 → C3 → D1
 
 #### D4 · Gemi, denizaltı, çöp adası
 
-- **Tek fikir:** Arşimet İlkesi, deniz araçlarının ve yüzen plastik atıkların davranışını açıklar; deney verisi bu ilkeyle değerlendirilir.
+- **Tek fikir:** Arşimet İlkesi, deniz araçlarının ve yüzen plastik atıkların davranışını açıklar. (Veri ve önerme değerlendirmesi 12 Ekim 2026'da D5'e ayrıldı; karar 25.)
 - **Anlatılacaklar:**
   1. Gemi ve denizaltı gibi deniz araçlarında kaldırma kuvvetinin uygulamaları; Türkiye'nin geliştirdiği deniz araçları (programın yazdığı kadarıyla; bölüm 6, soru 12).
   2. Denizlerdeki plastik atıkların oluşturduğu çöp adaları: bu atıklar suyun yüzeyinde kaldırma kuvvetinden dolayı yüzer.
   3. Atık sorununa kaldırma kuvvetinden yararlanan bir çözüm düşüncesi.
-  4. D1'in deney verisinin Arşimet İlkesi kapsamında değerlendirilmesi; kaldırma kuvveti ile basınca neden olan kuvvet ilişkisine dair değerlendirme.
 - **Program dayanağı:** FİZ.9.3.6 d) "Kaldırma kuvveti ve sıvılardaki basınca neden olan kuvvet arasındaki ilişkiye dair değerlendirme yapar." Uygulamalar: "Öğrencilere Arşimet İlkesi’ni pekiştirmeleri için Türkiye’nin millî çıkarları doğrultusunda geliştirdiği (D19.3) gemi, denizaltı gibi deniz araçları üzerinden kaldırma kuvvetinin uygulamaları hakkında bilgilendirici bir metin verilir… Denizlerdeki plastik atıklardan kaynaklanan kirliliğin oluşturduğu çöp adaları hakkında görsel ögeler kullanılarak öğrencilere bilgi verilir. Bu plastik atıkların suyun yüzeyinde kaldırma kuvvetinden dolayı yüzdüğü vurgulanır. Öğrencilerden… bu atık sorununa kaldırma kuvvetinden yararlanarak çözüm üretmeleri… istenir. ÖÖğrenciler, verilen örneklerden yararlanarak kaldırma kuvveti ile ilgili yaptıkları deneyden elde ettikleri verileri Arşimet İlkesi kapsamında değerlendirir." Köprü kurma: "Yoğunluk ve kaldırma kuvveti kavramları günlük hayattan örneklerle (gemiler, denizaltılar, denizlerdeki plastik adaları vb.) ilişkilendirilebilir."
 - **Açılış sorusu:** Çelik bir çivi batarken binlerce ton çelikten yapılmış gemi nasıl yüzer?
 - **Akılda kalıcı cümle:** Yüzen cisim, kendi ağırlığı kadar sıvıyı yerinden eder.
+
+#### D5 · Ölçümü de önermeyi de ilkeyle sına
+
+- **Tek fikir:** Arşimet İlkesi bir ölçüttür: deney verisi ve kaldırma kuvvetiyle ilgili bir önerme, ilkeyle ve F_k = F₂ − F₁ ilişkisiyle karşılaştırılarak değerlendirilir.
+- **Anlatılacaklar:**
+  1. Bir ölçümün ilkeyle uyumu: kaldırma kuvveti ile taşan sıvının ağırlığı eşit mi (çözülmüş iki örnek: uyumlu, uyumsuz); uyumsuz ölçüm yinelenir.
+  2. Ölçümlerin birbiriyle tutarlılığı: modelin orantıları (batan hacim, sıvının yoğunluğu).
+  3. Bir önermenin sınanması: "derine indikçe kaldırma kuvveti artar" önermesi silindirin iki derinliğiyle; ardından beş önermenin doğru–yanlış değerlendirmesi.
+- **Program dayanağı:** FİZ.9.3.6 d) "Kaldırma kuvveti ve sıvılardaki basınca neden olan kuvvet arasındaki ilişkiye dair değerlendirme yapar." Uygulamalar: "ÖÖğrenciler, verilen örneklerden yararlanarak kaldırma kuvveti ile ilgili yaptıkları deneyden elde ettikleri verileri Arşimet İlkesi kapsamında değerlendirir."
+- **Açılış sorusu:** Bir ölçümün hatalı olduğunu, deneyi yeniden yapmadan anlayabilir misin?
+- **Akılda kalıcı cümle:** Ölçümü de önermeyi de ilkeyle sına.
 
 ### Konu E · Bernoulli İlkesi
 
@@ -254,86 +264,87 @@ Dosya adı `<kod>-<ad>.html` ve `dersler/<kod>-<ad>.js`; kimlik `akiskanlar-<kod
 | D2 | `d2-arsimet-ilkesi` | Kaldırma kuvveti, yer değiştiren sıvının ağırlığı kadardır | s. 170, 180, 183 | Taşırma kabı ve terazi (kitap dışı düzenek, karar 19): kaldırma kuvveti ile taşan suyun ağırlığı yan yana; Arşimet İlkesi; F_k = V_b·d_s·g; orantı yorumları. Güç kavram: yer değiştiren sıvı; cismin sıvıdaki "boşluğu" kadar su | 2, 4, 19, 20 |
 | D3 | `d3-kaldirma-kuvveti-nereden-gelir` | Kaldırma kuvveti nereden gelir? | s. 176–177, 179–180, 183 | Sıvıdaki silindir: üstte F₁, altta F₂, yanlarda dengelenen kuvvetler; F_k = F₂ − F₁; iki modelin yan yana konması; derinlikten bağımsızlık. Güç kavram: basınç farkı; derinlikle uzayan oklar | 2 |
 | D4 | `d4-gemi-denizalti-cop-adasi` | Gemi, denizaltı, çöp adası | s. 169, 173, 175, 177–179, 181–183 | Çelik bilye ve gemi (ortalama yoğunluk); yüzme, askıda kalma, batma; denizaltının safra tankları; TCG Anadolu ve öteki adlar; çöp adaları ve yüzeyde toplama. Güç kavram: ortalama yoğunluk; içi boş gövde | 12, 13 |
-| D5 | `d5-tekrar` | Konu tekrarı: Kaldırma kuvveti | | 1 sahne + 8–10 soru | |
+| D5 | `d5-olcumu-ilkeyle-sina` | Ölçümü de önermeyi de ilkeyle sına | s. 176–177, 179–180, 183 | Ela'nın sekiz ölçümü (örnek veri): ilkeyle uyumlu ve uyumsuz satırlar, modelin orantılarıyla tutarlılık; silindirin iki derinliğiyle bir önermenin sınanması; beş önermenin doğru–yanlış değerlendirmesi (tanılayıcı ağaç, s. 179). Güç kavram: ilkenin ölçüt olması; satırda yan yana iki değer ve "=" / "≠" | 19, 25 |
+| D6 | `d6-tekrar` | Konu tekrarı: Kaldırma kuvveti | | 1 sahne + 10 soru | |
 | E1 | `e1-dar-yerde-hizli` | Dar yerde hızlı, hızlı yerde düşük basınç | s. 185–186, 188–190, 192, 194 | Bahçe hortumu; Venturi tüpü (A₁ > A₂ > A₃, v₃ > v₂ > v₁, P₁ > P₂ > P₃, h₁ > h₂ > h₃); kâğıda üfleme, asılı iki kâğıt, saç kurutma makinesi ve top. Güç kavram: basıncın düşmesi; düşey borulardaki su yüksekliği | 14, 15, 22 |
 | E2 | `e2-bernoulli-her-yerde` | Bernoulli her yerde | s. 187, 189–192, 195 | Çatı, sprey, yan yana araçlar, yelken, yarış arabasının arka kanadı; amaca göre sınıflama; şemsiye; uçak (tek cümle). Güç kavram: görünmeyen hava akışı; akış çizgileri sıklaşır | 15 |
 | E3 | `e3-tekrar` | Konu tekrarı: Bernoulli İlkesi | | 1 sahne + 6–8 soru | |
 
 ## 4. Müfredat denetimi
 
-Programın her isteği bir satır. Durum: `ders`, `benzetim` ya da `site dışı` (`KURALLAR.md` 2.2). Bu dosyadaki her kısa ders tabloda en az bir kez geçer. Sahne numaraları dersler yazılınca işlenir.
+Programın her isteği bir satır. Durum: `ders`, `benzetim` ya da `site dışı` (`KURALLAR.md` 2.2). Bu dosyadaki her kısa ders tabloda en az bir kez geçer. Sahne numaraları (S) yazılan dersteki sıradır ("Hatırla" S1; A1'de "Hatırla" yok), 12 Ekim 2026'da işlendi; C ve E senaryolarında "Hatırla" numarasız olduğu için dersteki numara senaryodakinden bir fazladır.
 
 | Programın istediği | Durum | Hangi kısa ders (sahne) |
 |---|---|---|
 | Tema amacı: basınç ve akışkanların basıncına yönelik çıkarım; sıvı basıncının günlük örneklerini sorgulama; açık hava basıncına ilişkin çıkarım; kaldırma kuvveti deneyi ve nedenlerine yönelik çıkarım; Bernoulli İlkesi'ne yönelik genelleme | ders | A2, B2, B4, C1–C3, D1–D3, E2 (tema geneli) |
-| FİZ.9.3.1 a) basınca etki eden etmenleri tanımlama | benzetim | A1 |
-| FİZ.9.3.1 b) basınçla ilgili verileri kaydetme | benzetim | A2 |
-| FİZ.9.3.1 c) verilerden ulaşılan matematiksel modelle basınca ilişkin çıkarım | ders | A2 |
-| Basıncın etkili olduğu günlük hayat örnekleri; konfor, kolaylık, işe yararlık açısından değerlendirme; iyileştirme fikri | ders | A1 |
-| Basınçla ilgili sistemlerin işleyişinde basıncın rolü | ders | A1 |
-| Basınç, basınca neden olan kuvvet ve yüzey alanı verilerinin benzetimle toplanması | benzetim | A2 |
-| Sınır: basınç modelinde değişkenlerin ilişkisini yorumlamakla sınırlı kalma | ders | A2 |
-| Köprü kurma: topuklu ayakkabı ve düz ayakkabı | ders | A1 |
-| FİZ.9.3.2 a) durgun sıvılarda basınca etki eden etmenleri tanımlama | ders | B1 |
-| FİZ.9.3.2 b) durgun sıvı basıncı verilerini kaydetme | benzetim | B2 |
-| FİZ.9.3.2 c) matematiksel modelle durgun sıvılarda basınca ilişkin çıkarım | ders | B2 |
-| Serbest dalış; derine dalmanın zor olmasının nedenleri; uygun teknik ve teçhizat; vurgun; su altı sporlarında sağlık riskleri | ders | B1 |
-| Durgun sıvılarda basıncı etkileyen değişkenleri belirlemeye yönelik deney tasarlama ve yapma | benzetim | B2 |
-| Sınır: durgun sıvı basıncı modelinde yorumlamayla sınırlı kalma; kabın yan yüzeylerine etki eden kuvvet hesabından kaçınma | ders | B2 |
-| Köprü kurma: baraj duvarları | ders | B2 |
-| FİZ.9.3.3 a) merak edilen konuyu belirleme | benzetim | B4 (örnekler B3'te sunulur) |
-| FİZ.9.3.3 b) merak edilen konuyla ilgili soru sorma | benzetim | B4 |
-| FİZ.9.3.3 c) bilgi toplama (araç seçimi, sistematik toplama) | benzetim | B4 |
-| FİZ.9.3.3 ç) toplanan bilgilerin doğruluğunu değerlendirme (doğruluk, güvenilirlik, amaca uygunluk, açıklık) | benzetim | B4 |
-| FİZ.9.3.3 d) toplanan bilgiler üzerinden çıkarım | benzetim | B4 |
-| Sıvı basıncıyla çalışan sistemlerin görselleri ve işleyişleri; su cendereleri, hidrolik sistemler | ders | B3 |
-| Sıvı basıncının kullanıldığı sistemlerde sıvı basıncının rolü | ders | B3 |
-| Çıkarımı fotoğraf, resim, tablo, şekil ya da grafikle destekleme | site dışı (metin, afiş, sunum sınıfta yapılır); destek türünü seçme benzetim | B4 |
-| FİZ.9.3.4 a) sıvı basıncı bilgisinden yararlanarak açık hava basıncına yönelik hipotez | benzetim | C1 |
-| FİZ.9.3.4 b) sıvı basıncıyla açık hava basıncı arasındaki ilişkileri listeleme | benzetim | C1 |
-| FİZ.9.3.4 c) sıvı basıncıyla açık hava basıncını karşılaştırma | ders | C2 (benzerlik ve farklar C1) |
-| FİZ.9.3.4 ç) açık hava basıncına ilişkin önermeler | benzetim | C3 |
-| FİZ.9.3.4 d) açık hava basıncı bilgisini farklı durumlarda değerlendirme | ders | C3 |
-| Sıvıda basınca neden olan kuvvetin sıvının ağırlığından kaynaklandığının hatırlatılması; havanın da akışkan olması | ders | C1 |
-| Sıvı homojen, havanın yoğunluğu homojen değil; derinlik ile yükseklik; yükseklerde basıncın daha az olması | ders | C1 |
-| Torricelli'nin ölçmesi ve ölçme yöntemi; cıva sütununun ağırlığı ile açık hava basıncının dengelenmesi | ders | C2 |
-| Atmosfer (atm) birimi ve temel birimler cinsinden hesaplanması | ders | C2 |
-| Açık hava basıncının sıcaklıkla genleşme ve yerel yoğunluk değişimine bağlı olarak değişmesi; "atmosfer basıncı" adı | ders | C3 |
-| Alçak ve yüksek basınç bölgeleri, rüzgârın oluşumu; rüzgâr ve yenilenebilen enerji | ders | C3 |
-| Günlük hayatta açık hava basıncıyla karşılaşılan durumlara örnekler | ders | C3 (açılış sorularında C1, C2) |
-| FİZ.9.3.5 a) kaldırma kuvvetini etkileyen değişkenleri belirlemeye yönelik deney tasarlama | benzetim | D1 |
-| FİZ.9.3.5 b) deney düzeneğinden veri toplayarak değişkenleri analiz etme | benzetim | D1 |
-| Arşimet ve Kral Hiero'nun Altın Tacı öyküsü | ders | D1 |
-| FİZ.9.3.6 a) kaldırma kuvveti ile yer değiştiren sıvının ağırlığı arasındaki ilişkiye dair hipotez | benzetim | D2 |
-| FİZ.9.3.6 b) deney verileriyle matematiksel modeli bulma | benzetim | D2 |
-| Sınır: kaldırma kuvveti modelinde nicelikler arasındaki orantısal ilişkilerle sınırlı kalma | ders | D2 |
-| FİZ.9.3.6 c) kaldırma kuvveti ve sıvı basıncı modellerini karşılaştırma | ders | D3 |
-| FİZ.9.3.6 ç) kaldırma kuvveti ile sıvılardaki basınca neden olan kuvvet arasındaki ilişkiye dair önerme | benzetim | D3 |
-| Sınır: karşılaştırmada sıvılardaki kaldırma kuvvetiyle sınırlı kalma | ders | D3 |
-| FİZ.9.3.6 d) kaldırma kuvveti ile basınca neden olan kuvvet ilişkisine dair değerlendirme | ders | D4 |
-| Arşimet İlkesi; gemi, denizaltı gibi deniz araçlarında kaldırma kuvvetinin uygulamaları | ders | D2 (ilke), D4 (uygulamalar) |
-| Plastik atıkların oluşturduğu çöp adaları; atıkların kaldırma kuvvetinden dolayı yüzmesi; çözüm üretme | ders; çözüm üretme benzetim (seçenekli) | D4 |
-| Deney verilerini Arşimet İlkesi kapsamında değerlendirme | benzetim | D4 |
-| Köprü kurma: yoğunluk ve kaldırma kuvveti (gemiler, denizaltılar, denizlerdeki plastik adaları) | ders | D4 |
-| FİZ.9.3.7 a) sürat ile basınç arasındaki ilişkiyi gözlemleyerek tespit etme | benzetim | E1 |
-| FİZ.9.3.7 b) sürat–basınç ilişkisini günlük hayat örnekleri üzerinden genelleme | ders | E2 |
-| Tahmin et-gözle-açıkla; kesit alanı azalınca akış süratindeki değişimi tahmin etme; tahmin ile gözlemi karşılaştırma | benzetim | E1 |
-| Bahçe hortumu örneği; saç kurutma makinesi ve masa tenisi topu gösterisi | benzetim | E1 |
-| Kesit alanı, sürat ve boru çeperlerine yapılan basınç arasındaki ilişki; Bernoulli İlkesi'ne ulaşma | ders | E1 |
-| Beş örnek: çatıların uçması, sprey püskürtücü, hızlı araçların yakınındaki nesneleri çekmesi, yelkenlinin rüzgâra karşı gitmesi, yarış arabası | ders | E2 |
-| Örneklerin amaca göre ortak olan ve olmayan özellikleri (havaya kaldırma, havalanmasını engelleme, yön değiştirme) | benzetim | E2 |
-| Uçakların havalanması ve uçmasında yalnızca Bernoulli İlkesi'nin etkili olmadığı | ders | E2 |
+| FİZ.9.3.1 a) basınca etki eden etmenleri tanımlama | benzetim | A1 (S2–S4) |
+| FİZ.9.3.1 b) basınçla ilgili verileri kaydetme | benzetim | A2 (S2–S4) |
+| FİZ.9.3.1 c) verilerden ulaşılan matematiksel modelle basınca ilişkin çıkarım | ders | A2 (S5–S7) |
+| Basıncın etkili olduğu günlük hayat örnekleri; konfor, kolaylık, işe yararlık açısından değerlendirme; iyileştirme fikri | ders | A1 (S1, S5, S6) |
+| Basınçla ilgili sistemlerin işleyişinde basıncın rolü | ders | A1 (S5, S6) |
+| Basınç, basınca neden olan kuvvet ve yüzey alanı verilerinin benzetimle toplanması | benzetim | A2 (S2–S4) |
+| Sınır: basınç modelinde değişkenlerin ilişkisini yorumlamakla sınırlı kalma | ders | A2 (S5–S7) |
+| Köprü kurma: topuklu ayakkabı ve düz ayakkabı | ders | A1 (S1, S6) |
+| FİZ.9.3.2 a) durgun sıvılarda basınca etki eden etmenleri tanımlama | ders | B1 (S3, S4, S7), B2 (S3–S5) |
+| FİZ.9.3.2 b) durgun sıvı basıncı verilerini kaydetme | benzetim | B2 (S3–S5) |
+| FİZ.9.3.2 c) matematiksel modelle durgun sıvılarda basınca ilişkin çıkarım | ders | B2 (S6–S11) |
+| Serbest dalış; derine dalmanın zor olmasının nedenleri; uygun teknik ve teçhizat; vurgun; su altı sporlarında sağlık riskleri | ders | B1 (S2, S3, S5) |
+| Durgun sıvılarda basıncı etkileyen değişkenleri belirlemeye yönelik deney tasarlama ve yapma | benzetim | B2 (S2–S5) |
+| Sınır: durgun sıvı basıncı modelinde yorumlamayla sınırlı kalma; kabın yan yüzeylerine etki eden kuvvet hesabından kaçınma | ders | B2 (S6–S11; yan yüzeyde yalnızca basınç okları: S5, S9, S10) |
+| Köprü kurma: baraj duvarları | ders | B2 (S9) |
+| FİZ.9.3.3 a) merak edilen konuyu belirleme | benzetim | B4 (S3); örnekler B3 (S6) |
+| FİZ.9.3.3 b) merak edilen konuyla ilgili soru sorma | benzetim | B4 (S3) |
+| FİZ.9.3.3 c) bilgi toplama (araç seçimi, sistematik toplama) | benzetim | B4 (S4) |
+| FİZ.9.3.3 ç) toplanan bilgilerin doğruluğunu değerlendirme (doğruluk, güvenilirlik, amaca uygunluk, açıklık) | benzetim | B4 (S5–S8) |
+| FİZ.9.3.3 d) toplanan bilgiler üzerinden çıkarım | benzetim | B4 (S8, S9) |
+| Sıvı basıncıyla çalışan sistemlerin görselleri ve işleyişleri; su cendereleri, hidrolik sistemler | ders | B3 (S2–S6) |
+| Sıvı basıncının kullanıldığı sistemlerde sıvı basıncının rolü | ders | B3 (S2, S4, S6, S7) |
+| Çıkarımı fotoğraf, resim, tablo, şekil ya da grafikle destekleme | site dışı (metin, afiş, sunum sınıfta yapılır); destek türünü seçme benzetim | B4 (S8) |
+| FİZ.9.3.4 a) sıvı basıncı bilgisinden yararlanarak açık hava basıncına yönelik hipotez | benzetim | C1 (S2, S4) |
+| FİZ.9.3.4 b) sıvı basıncıyla açık hava basıncı arasındaki ilişkileri listeleme | benzetim | C1 (S7) |
+| FİZ.9.3.4 c) sıvı basıncıyla açık hava basıncını karşılaştırma | ders | C2 (S3, S4); benzerlik ve farklar C1 (S7) |
+| FİZ.9.3.4 ç) açık hava basıncına ilişkin önermeler | benzetim | C3 (S6, S7) |
+| FİZ.9.3.4 d) açık hava basıncı bilgisini farklı durumlarda değerlendirme | ders | C3 (S7–S10) |
+| Sıvıda basınca neden olan kuvvetin sıvının ağırlığından kaynaklandığının hatırlatılması; havanın da akışkan olması | ders | C1 (S1, S2) |
+| Sıvı homojen, havanın yoğunluğu homojen değil; derinlik ile yükseklik; yükseklerde basıncın daha az olması | ders | C1 (S3–S5) |
+| Torricelli'nin ölçmesi ve ölçme yöntemi; cıva sütununun ağırlığı ile açık hava basıncının dengelenmesi | ders | C2 (S2, S3) |
+| Atmosfer (atm) birimi ve temel birimler cinsinden hesaplanması | ders | C2 (S5, S6) |
+| Açık hava basıncının sıcaklıkla genleşme ve yerel yoğunluk değişimine bağlı olarak değişmesi; "atmosfer basıncı" adı | ders | C3 (S2, S3) |
+| Alçak ve yüksek basınç bölgeleri, rüzgârın oluşumu; rüzgâr ve yenilenebilen enerji | ders | C3 (S3–S5) |
+| Günlük hayatta açık hava basıncıyla karşılaşılan durumlara örnekler | ders | C3 (S7–S10); açılış sorularında C1, C2 |
+| FİZ.9.3.5 a) kaldırma kuvvetini etkileyen değişkenleri belirlemeye yönelik deney tasarlama | benzetim | D1 (S5–S8) |
+| FİZ.9.3.5 b) deney düzeneğinden veri toplayarak değişkenleri analiz etme | benzetim | D1 (S6–S8, S10) |
+| Arşimet ve Kral Hiero'nun Altın Tacı öyküsü | ders | D1 (S2) |
+| FİZ.9.3.6 a) kaldırma kuvveti ile yer değiştiren sıvının ağırlığı arasındaki ilişkiye dair hipotez | benzetim | D2 (S2–S4) |
+| FİZ.9.3.6 b) deney verileriyle matematiksel modeli bulma | benzetim | D2 (S4–S6, S8) |
+| Sınır: kaldırma kuvveti modelinde nicelikler arasındaki orantısal ilişkilerle sınırlı kalma | ders | D2 (S7–S10) |
+| FİZ.9.3.6 c) kaldırma kuvveti ve sıvı basıncı modellerini karşılaştırma | ders | D3 (S9) |
+| FİZ.9.3.6 ç) kaldırma kuvveti ile sıvılardaki basınca neden olan kuvvet arasındaki ilişkiye dair önerme | benzetim | D3 (S9, S10) |
+| Sınır: karşılaştırmada sıvılardaki kaldırma kuvvetiyle sınırlı kalma | ders | D3 (S9) |
+| FİZ.9.3.6 d) kaldırma kuvveti ile basınca neden olan kuvvet ilişkisine dair değerlendirme | ders | D5 (S6, S7) |
+| Arşimet İlkesi; gemi, denizaltı gibi deniz araçlarında kaldırma kuvvetinin uygulamaları | ders | D2 (S5: ilke), D4 (S2–S4, S6, S8: uygulamalar) |
+| Plastik atıkların oluşturduğu çöp adaları; atıkların kaldırma kuvvetinden dolayı yüzmesi; çözüm üretme | ders; çözüm üretme benzetim (seçenekli) | D4 (S9, S10) |
+| Deney verilerini Arşimet İlkesi kapsamında değerlendirme | benzetim | D5 (S2–S5) |
+| Köprü kurma: yoğunluk ve kaldırma kuvveti (gemiler, denizaltılar, denizlerdeki plastik adaları) | ders | D4 (S2–S9) |
+| FİZ.9.3.7 a) sürat ile basınç arasındaki ilişkiyi gözlemleyerek tespit etme | benzetim | E1 (S3–S5, S10) |
+| FİZ.9.3.7 b) sürat–basınç ilişkisini günlük hayat örnekleri üzerinden genelleme | ders | E2 (S2–S9) |
+| Tahmin et-gözle-açıkla; kesit alanı azalınca akış süratindeki değişimi tahmin etme; tahmin ile gözlemi karşılaştırma | benzetim | E1 (S2, S6–S8) |
+| Bahçe hortumu örneği; saç kurutma makinesi ve masa tenisi topu gösterisi | benzetim | E1 (S2, S8) |
+| Kesit alanı, sürat ve boru çeperlerine yapılan basınç arasındaki ilişki; Bernoulli İlkesi'ne ulaşma | ders | E1 (S3–S9) |
+| Beş örnek: çatıların uçması, sprey püskürtücü, hızlı araçların yakınındaki nesneleri çekmesi, yelkenlinin rüzgâra karşı gitmesi, yarış arabası | ders | E2 (S2, S4–S7) |
+| Örneklerin amaca göre ortak olan ve olmayan özellikleri (havaya kaldırma, havalanmasını engelleme, yön değiştirme) | benzetim | E2 (S9, S10) |
+| Uçakların havalanması ve uçmasında yalnızca Bernoulli İlkesi'nin etkili olmadığı | ders | E2 (S8) |
 | Sınır: Bernoulli İlkesi kavramsal verilir, matematiksel modelden kaçınılır | ders | E1, E2 |
 | İçerik çerçevesi: Basınç | ders | A1, A2 |
 | İçerik çerçevesi: Sıvılarda Basınç | ders | B1–B4 |
 | İçerik çerçevesi: Açık Hava Basıncı | ders | C1–C3 |
-| İçerik çerçevesi: Kaldırma Kuvveti | ders | D1–D4 |
+| İçerik çerçevesi: Kaldırma Kuvveti | ders | D1–D5 |
 | İçerik çerçevesi: Bernoulli İlkesi | ders | E1, E2 |
-| Anahtar kavram: basınç | ders | A1 |
-| Anahtar kavram: kaldırma kuvveti | ders | D1 |
+| Anahtar kavram: basınç | ders | A1 (S2–S4) |
+| Anahtar kavram: kaldırma kuvveti | ders | D1 (S3) |
 | Temel kabuller (yoğunluk kavramı; katı ve sıvıların özellikleri) | ön bilgi | Ayrı ders yok; ön bilgi |
 | Grup çalışması, tartışma, beyin fırtınası; metin, afiş, poster, sunum, araştırma raporu, zihin haritası; çalışma yaprağı, test, performans görevi | site dışı (sınıfta yapılır) | Derslerde yok (bölüm 5) |
-| Konu tekrarı (`KURALLAR.md` 3.4): yeni bilgi yok, konunun kuralları ve 6–10 karışık soru | tekrar | A3, B5, C4, D5, E3 |
+| Konu tekrarı (`KURALLAR.md` 3.4): yeni bilgi yok, konunun kuralları ve 6–10 karışık soru | tekrar | A3, B5, C4, D6, E3 |
 
 ## 5. Bilerek alınmayanlar
 
@@ -439,6 +450,7 @@ Programın her isteği bir satır. Durum: `ders`, `benzetim` ya da `site dışı
 | 22 | Destekleme etkinlikleri | Asılı iki kâğıdın arasına üfleme kitapta da var (s. 188); E1'de örnek olarak kullanılır. Yüzen bardağa madenî para ekleme alınmaz; aynı fikir kitabın yüklü–boş gemi örneğiyle (s. 173, 175) D4'te verilir. | K2, K7 |
 | 23 | Adlar ve sözcükler | Program ve kitap "sürat" der; derslerde "hız" yazılmaz. "Pascal Yasası", "Arşimet İlkesi", "Bernoulli İlkesi", "Venturi tüpü", "safra tankı", "su cenderesi", "açık hava basıncı" (yeryüzündeki değişimi anlatılırken "atmosfer basıncı") kitabın yazımıyla kullanılır. | K4 |
 | 24 | Renkler | Kuvvet turuncu, yüzey alanı turkuaz, basınç sarı, sıvı mavi, kaldırma kuvveti mor (`dersler/kit.js`). Yeşil yalnızca doğru cevabın rengidir; kırmızı kullanılmaz. | K7 |
+| 25 | D4'ün bölünmesi (12 Ekim 2026) | D4 yazıldıktan sonra `sure.js` 16:50 ölçtü (12 sahne; anlatım 5:40, etkileşim 11:10). Ders iki fikir taşıyordu: (1) ilkenin deniz araçlarını ve yüzen atığı açıklaması, (2) deney verisinin ve önermelerin ilkeyle değerlendirilmesi (FİZ.9.3.6 d). İkincisi ayrı derse alındı: **D5 · Ölçümü de önermeyi de ilkeyle sına** (eski D4 sahne 10 ve 11; önüne çözülmüş örnekler, "Birlikte çöz" ve kendi çıkış soruları kondu; yeni bilgi yok, örnek veri sekiz ölçüme çıktı). D4 on sahneye indi; konu tekrarı D6 oldu. Kısa ders sayısı 16, saat başına 0,89: `ISLEME.md` kural 5'teki 0,85 sınırını aşıyor. Planın saydığı birleştirmeler (B3 + B4, D3'ün D2'ye katılması) uygulanmadı: ikisi de yazılmış derslerdir, birleşince iki fikir taşır ve 20 dakikayı bulur; aynı kural "iki fikir varsa ayrılır" der. Kullanıcıya raporlandı. | `KURALLAR.md` 3, `ISLEME.md` 5 |
 
 ## 8. Ders kitabından alınanlar
 

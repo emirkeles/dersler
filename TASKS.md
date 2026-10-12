@@ -691,21 +691,30 @@ Plan ve inceleme: `plan/matematik/sayilar/hikaye/C4-fotofinis.md`. Proje: `matem
 
 ## Fizik · Akışkanlar (`YURUTME.md` 3. adım, ikinci tema; 12 Ekim 2026'da başladı)
 
-Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 15 kısa ders + 5 konu tekrarı = 20 dosya.
+Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 16 kısa ders + 5 konu tekrarı = 21 dosya (D4 dördüncü oturumda bölündü; önce 15 + 5 = 20).
 
 - [x] 2a.1 Müfredat, ders kitabı (s. 130–195; A bölümü ana oturum, B–E dört Sonnet ajanı: dökümler geçici klasörde), `PLAN.md`: 24 karar, kararlardan sonraki ders listesi, denetim tablosunda `ders` / `benzetim` / `site dışı`, kitaptan alınanlar
 - [x] 2a.2 Konu A senaryosu (`senaryolar/A-basinc.md`: A1, A2, A3 tekrar), iskelet (`index.html`, `tema.js`, `dersler/kit.js`, `dersler/a-araclar.js`), A1 dersi (6 sahne, 43 altyazı, 8:48; `olc.js` bütün sayaçlar 0, konsol temiz; altı sahnenin son karesine bakıldı)
 - [x] Görev tanımları: `gorev/ders-gorevi.md`, `gorev/senaryo-gorevi.md` (hareket kuralı şablondan geldi); kitap betikleri `gorev/dok.py`, `gorev/png.py`
 - [x] 2a.3 A2 dersi (7 sahne, 6:42) ve A3 konu tekrarı (1 sahne + 8 soru, 3:55): Sonnet, ders başına bir ajan (167 ve 109 bin token); ikisi `olc.js` temiz, kareler ana oturumda görüldü; A3'te iki düzeltme; Konu A 19:25
 - [x] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan): B 752, C 518, D 850, E 469 satır; 194–312 bin token (hedef 300; beş dersli D aştı); ana oturum denetledi, örnek verileri yeniden hesapladı; B2 sahne 8 ve D3 sahne 6 program sınırına göre düzeltildi (`DURUM.md` "Senaryoların denetimi")
-- [ ] 2a.5 B–E dersleri ve konu tekrarları (17 dosya)
-- [ ] 2a.7 Tema denetimi
+- [x] 2a.5 B–E dersleri ve konu tekrarları (18 dosya; 12 Ekim 2026, dördüncü oturumda bitti)
+- [x] 2a.5 B1 (`b-araclar.js`), C1 (`c-araclar.js`), D1 (`d-araclar.js`), E1 (`e-araclar.js`), B2, B3, C2, D2 (sekiz Sonnet ajanı, ikinci oturum, 12 Ekim 2026; 172–287 bin token): sekizi `olc.js` temiz, her dersten en az üç kare görüldü; B1 ve D1 defter satırı, B2 sahne 2'de üst üste yazı, D2 defter satırı ana oturumda düzeltildi; Konu B 28:44, C 16:52, D 21:00, E 13:58, tema 99:59 (11 ders); `tema.js` satırları; dosyalar commit edilmedi
+- [x] 2a.5 B4, B5 tekrar, C3, C4 tekrar, D3, D4, E2, E3 tekrar (sekiz Sonnet ajanı, üçüncü oturum, 12 Ekim 2026; 109–277 bin token, hepsi hedefin içinde): sekizi `olc.js` temiz (ana oturum yeniden ölçtü), karelere bakıldı; C3 defter satırları (7 → 3), D3 defter satırı ve kısa ok, E2'de iki sahnenin etiket düzeni ana oturumda düzeltildi; Konu B 46:16, C 31:40, D 46:53, E 28:18, tema 172:32 (19 ders); `tema.js` satırları; dosyalar commit edilmedi
+- [x] D4 16:50 sürüyordu: ikiye bölündü (`PLAN.md` karar 25). Ana oturum senaryoyu böldü ve yeni D5 bölümünü yazdı ("Ölçümü de önermeyi de ilkeyle sına", 7 sahne; eski D4 sahne 10–11, önüne çözülmüş örnekler ve "Birlikte çöz"); D4 10 sahne, 14:19
+- [x] 2a.5 D5 ve D6 konu tekrarı (iki Sonnet ajanı, dördüncü oturum, 12 Ekim 2026; 192 ve 109 bin token): D5 7 sahne 8:53 (ajan D4'ü de kırptı), D6 1 sahne + 10 soru 5:29; üçü `olc.js` temiz (ana oturum yeniden ölçtü), karelere bakıldı; D5'te silindir ölçeği, etiket yeri ve "× 2" yazısı, D6'da bir açıklama cümlesi ana oturumda düzeltildi
+- [x] 2a.7 Tema denetimi (12 Ekim 2026): `sure.js` tema 184:23 (21 ders; Konu D 58:44), 15 dakikayı aşan ders yok; `denetle.js` yalnızca iki pilot sayfası (karar 20); tema sayfası görüntüsü (beş konu, 21 ders, konsol temiz); `PLAN.md` denetim tablosuna sahne numaraları (59 satır); `plan/fizik/TEMALAR.md`
+- [ ] Kullanıcı kararı: kısa ders sayısı 16, saat başına 0,89 (`ISLEME.md` kural 5 sınırı 0,85); bölme "iki fikir varsa ayrılır" kuralıyla yapıldı, planın saydığı birleştirmeler uygulanmadı (karar 25)
+- [ ] Commit ve push: ikinci, üçüncü ve dördüncü oturumun dosyaları (liste `DURUM.md` "Açık sorunlar"); kullanıcı isteyince
 - [ ] 2a.8 Kullanıcı: temayı izle; seslendirme ve yayın ayrıca istenir
 - [x] Kullanıcı kararı (12 Ekim 2026, "önerine göre devam et"): C2 ve D2 düz vektör kitle yazılır; izometrik pilot dosyaları olduğu gibi, siteden bağlantısız kalır. Yüzme, askıda kalma, batma D4'te kalır
 - [ ] Tema yayına alınırken: A1'in iki hikâyesi `ortak/katalog.js` satırından `tema.js` dosyasına taşınır
 - [x] Commit ve push (12 Ekim 2026, kullanıcı istedi): birinci oturumun dosyaları
 - [x] İş panosu (sürüm 22, 12 Ekim 2026: Akışkanlar "Sürüyor" sütununda, 1 / 20 ders; kısa ders 212 / 539)
 - [x] İş panosu (sürüm 23, 12 Ekim 2026: Akışkanlar 3 / 20 ders, senaryolar bitti; kısa ders 213 / 539, konu tekrarı 55 / 144)
+- [x] İş panosu (sürüm 24, 12 Ekim 2026: Akışkanlar 11 / 20 ders; kısa ders 221 / 539)
+- [x] İş panosu (sürüm 25, 12 Ekim 2026: Akışkanlar 19 / 20 ders; kısa ders 226 / 539, konu tekrarı 58 / 144)
+- [x] İş panosu (sürüm 26, 12 Ekim 2026: Akışkanlar yazıldı, "Sende bekliyor" sütununda, 21 ders; kısa ders 227 / 540, konu tekrarı 59 / 144; fizik 46 / 61)
 
 ## Hikâye: C4 Fotofiniş, hareket tasarımı yükseltmesi (12 Ekim 2026)
 
@@ -723,3 +732,27 @@ Kullanıcı: "ses aynı kalacak şekilde daha profesyonel bir motion design"; pl
 - [x] A7 Bütün: `check`, taslak işleme, plan bölüm 5 doğrulaması, kesin işleme (`renders/c4-fotofinis-v2.mp4`), −14 LUFS; sapmalar ve ölçümler plan bölüm 8'de
 - [ ] Kullanıcı: v2'yi sesli izler (film oynatılmadı; akıcılık kare tabakalarından okundu)
 - [ ] `STORYBOARD.md` kare notlarında eskiyen üç cümle (plan bölüm 8'in sonu); kullanıcı v2'yi onaylarsa düzeltilir
+
+## Enerji: izometrik figür planı (12 Ekim 2026)
+
+Plan: `plan/fizik/enerji/IZOMETRIK.md` (altı figür, 13 ders; Akışkanlar pilotlarının yolu). Tema işleme alınmadı; `plan/fizik/enerji/PLAN.md` bölüm 6'ya soru 14 eklendi. Yapılacaklar listesi plan dosyasının 9. bölümünde.
+
+- [x] Plan
+- [x] Kullanıcı kararı (12 Ekim 2026, "varsayılanlarla yürü"): altı figürün hepsi; tema sırası gelince; elektrikli ısıtıcı; Akışkanlar'a dokunulmaz
+- [x] Kitapla karşılaştırma (12 Ekim 2026): ısıtıcı kitabın çizdiği gaz ocağı oldu (düz tonlu alev); Ş5 kitap dışı düzenek; Ş6'dan termos kesiti çıktı, çift cam girdi
+- [ ] Figürler ve dersler: aşağıdaki "Fizik · Enerji" bölümünde
+
+## Fizik · Enerji (12 Ekim 2026'da işleme alındı; kullanıcı istedi, yol haritası sırasının önünde)
+
+Durum ve devir notu: `plan/fizik/enerji/DURUM.md`. Figürler: `plan/fizik/enerji/IZOMETRIK.md`. Kullanıcı kararı (12 Ekim 2026): bu temada bağlam bütçesi sınırları uygulanmaz.
+
+- [x] 2a.1 Ders kitabı (s. 206–254), `PLAN.md`: 23 karar, ders listesi (15 kısa ders + 6 konu tekrarı), denetim tablosunda durum sütunu, kitaptan alınanlar
+- [x] 2a.2 Konu A senaryosu, iskelet, `kit.js`, `a-araclar.js`, görev tanımları, A1 dersi
+- [x] 2a.3 A2 ve A3 konu tekrarı
+- [x] 2a.4 B–F senaryoları (beş Sonnet ajanı; ana oturum denetledi, hesapları yeniden yaptı; C1 ve E2'de birer içerik düzeltmesi)
+- [x] Figürler Ş1–Ş6 (altı ajan; `sekil/` kaynakları, `dersler/*-sekil.js`; geometri ve çizgi denetimi 0; Ş2'ye tahta tonları ve konu renkleri için bir düzeltme turu)
+- [x] 2a.5 B–F dersleri ve konu tekrarları: 21 / 21 dosya yazıldı, `olc.js` temiz; `sure.js` çalıştı (tema 189:59)
+- [ ] D2, E2, F1'in ana oturum denetimi (ajanlar rapor veremeden durdu; dosyalar tam ve ölçüm temiz); B4 ve C3'ün kareleri; E2 15:24 "iki fikir mi"
+- [ ] 2a.7 Tema denetimi: `denetle.js`, tema sayfası, denetim tablosuna sahne numaraları, `TEMALAR.md`
+- [ ] Kayıtlar: `IZOMETRIK.md` bölüm 9, `YURUTME.md`, iş panosu
+- [ ] 2a.8 Kullanıcı: temayı izle; seslendirme, yayın ve commit ayrıca istenir

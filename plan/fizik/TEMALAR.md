@@ -12,9 +12,9 @@ Tema numaraları ve ders saatleri her temanın kendi MEB sayfasından alındı (
 |---|---|---|---|---|---|---|---|
 | 1 | Fizik Bilimi ve Kariyer Keşfi | `fizik-bilimi-ve-kariyer-kesfi` | <https://tymm.meb.gov.tr/fizik-dersi/unite/43> | 8 | 4 | 6 | yayında (7 Ekim 2026; 26 sahne, 93 klip); iki resim bekliyor, klipler dinlenmedi; 9 Ekim 2026: 12 ek çıkış sorusu ve dört konu tekrarı dersi (seslendirilmedi), tema 10 kısa ders |
 | 2 | Kuvvet ve Hareket | `kuvvet-ve-hareket` | <https://tymm.meb.gov.tr/fizik-dersi/unite/57> | 24 | 6 | 24 | yazıldı ve seslendirildi (8 Ekim 2026; 24 ders, 154 sahne, 1.472 klip; `olc.js` ve `denetle.js` temiz); yayında (8 Ekim 2026), kullanıcı henüz izlemedi; 9 Ekim 2026: her derste dört çıkış sorusu ve altı konu tekrarı dersi (sessiz), tema 30 kısa ders |
-| 3 | Akışkanlar | `akiskanlar` | <https://tymm.meb.gov.tr/fizik-dersi/unite/65> | 18 | 5 | 15 | yazımda (12 Ekim 2026'da işleme alındı): plan ve 24 karar, beş konunun senaryosu, Konu A dersleri yazıldı (3 / 20 dosya: 15 kısa ders + 5 konu tekrarı); `akiskanlar/DURUM.md` |
-| 4 | Enerji | `enerji` | <https://tymm.meb.gov.tr/fizik-dersi/unite/82> | 18 | 6 | 15 | plan taslağı; işleme alınmayı bekliyor |
-| | **Toplam** | | | **68** | **21** | **60** | |
+| 3 | Akışkanlar | `akiskanlar` | <https://tymm.meb.gov.tr/fizik-dersi/unite/65> | 18 | 5 | 16 | yazıldı (12 Ekim 2026): plan ve 25 karar, beş konunun senaryosu, 16 kısa ders ve beş konu tekrarı (21 dosya; D4 ikiye bölündü, karar 25; saat başına 0,89); tema denetimi temiz, tema 184:23; katalogda kapalı, seslendirilmedi; izleme, seslendirme ve yayın kullanıcıyı bekliyor; `akiskanlar/DURUM.md` |
+| 4 | Enerji | `enerji` | <https://tymm.meb.gov.tr/fizik-dersi/unite/82> | 18 | 6 | 15 | yazımda (12 Ekim 2026'da işleme alındı): ders kitabı okundu, 20 karar, kararlardan sonraki ders listesi (15 kısa ders + 6 konu tekrarı), Konu A senaryosu, iskelet ve kit; ders yazılmadı (0 / 21 dosya); izometrik figür planı `enerji/IZOMETRIK.md`; `enerji/DURUM.md` |
+| | **Toplam** | | | **68** | **21** | **61** | |
 
 1. tema işleme alındı ve yazıldı; öteki üç temanın planı taslaktır, konu ve kısa ders sayıları işleme alınırken değişebilir. Her `PLAN.md` dosyasının 6. bölümündeki açık sorular, tema işleme alınınca `../ISLEME.md` içindeki kurallarla kapatılır ve kararlar aynı dosyaya yazılır.
 

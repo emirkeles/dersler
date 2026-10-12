@@ -1,6 +1,6 @@
 # Senaryolar — Konu D · Kaldırma kuvveti
 
-Yazıldı: 12 Ekim 2026. Dayanak: `../MUFREDAT.md` FİZ.9.3.5 ve FİZ.9.3.6, `../PLAN.md` bölüm 3 (D1–D4), "Kısa ders listesi (kararlardan sonra)", bölüm 5, bölüm 7 (karar 2, 4, 7, 12, 13, 19, 20, 22, 23, 24) ve bölüm 8 ("D" satırları, son paragraf). Biçim örneği: `A-basinc.md`.
+Yazıldı: 12 Ekim 2026. Dayanak: `../MUFREDAT.md` FİZ.9.3.5 ve FİZ.9.3.6, `../PLAN.md` bölüm 3 (D1–D5), "Kısa ders listesi (kararlardan sonra)", bölüm 5, bölüm 7 (karar 2, 4, 7, 12, 13, 19, 20, 22, 23, 24) ve bölüm 8 ("D" satırları, son paragraf). Biçim örneği: `A-basinc.md`. 12 Ekim 2026: D4 bölündü (`PLAN.md` karar 25); veri ve önerme değerlendirmesi D5 oldu, konu tekrarı D6.
 
 Okuma kılavuzu:
 
@@ -12,7 +12,7 @@ Okuma kılavuzu:
 - Tahta 1000 × 562 birimdir; ölçüler bu birimle verilir. Yazı en az 22 birim. Hareket sayıyla yazılır: ne, nereden nereye, kaç ms, hangi eğri (`out` beliren, `in` kaybolan, `inOut` yer değiştiren, `linear` sabit hız).
 - Düzenekler yandan görünüşle, düz vektörle çizilir; izometrik figür kullanılmaz (karar 20). Kit dışı düzenekler (dinamometre, taşırma kabı, tartı) kitap dışıdır; sayılar örnek veridir ve F_k = V_b · d_s · g ile hesaplanmıştır (karar 19). g = 9,8 m/s²; su 1.000 kg/m³. Başka sıvının yoğunluğu sayıyla yazılmaz: su "d", X sıvısı "2d".
 - Tablo sahnelerinde tahtadaki kelime sayısı 25'i aşabilir (A senaryosundaki istisna gibi); öteki sahnelerde 25 kelime ve 12 öğeyi aşmaz. Sayılar ve simgeler kelime sayılır.
-- Program modeli orantısal ilişkilerle sınırlar: sorular "ne artarsa ne olur", sıralama ve oran sorularıdır. Dinamometre farkı (havada okunan − sıvıda okunan) ve D3'teki gösterim hesapları öğrenciye hesaplatılmaz, gösterilir; tek istisna tek çıkarma işlemidir (D1 sahne 6 Birlikte çöz ve çıkış 1; D2 sahne 4 Birlikte çöz; D3 çıkış 1; D5 soru 1).
+- Program modeli orantısal ilişkilerle sınırlar: sorular "ne artarsa ne olur", sıralama ve oran sorularıdır. Dinamometre farkı (havada okunan − sıvıda okunan) ve D3'teki gösterim hesapları öğrenciye hesaplatılmaz, gösterilir; tek istisna tek çıkarma işlemidir (D1 sahne 6 Birlikte çöz ve çıkış 1; D2 sahne 4 Birlikte çöz; D3 çıkış 1; D5 çıkış 5; D6 soru 1).
 
 **Dinamometre düzeneği (D1 ve D2 ortak, `dersler/d-araclar.js`)**
 
@@ -561,11 +561,10 @@ Dene 2 (`tag: 'Dene'`; önerme). Kutular "Doğru" / "Yanlış". Kart başına ö
 
 ## D4 · Gemi, denizaltı, çöp adası
 
-- **Fikir:** Arşimet İlkesi, gemilerin, denizaltıların ve yüzen plastik atıkların davranışını açıklar; deney verileri bu ilkeyle değerlendirilir.
+- **Fikir:** Arşimet İlkesi, gemilerin, denizaltıların ve yüzen plastik atıkların davranışını açıklar.
 - **Giriş ekranı sorusu:** Çelik bir çivi batarken binlerce ton çelikten yapılmış gemi nasıl yüzer?
-- **Kaynak:** Ders kitabı s. 169 (denizaltı ve safra tankları: dalmak için tanklara su alınır, yoğunluk artar; yükselmek için hava pompalanır, yoğunluk azalır), s. 173 (Görsel 3.19; özdeş yüklü ve boş gemi), s. 174 (top ve tuzlu su), s. 175 (çelik gemi çoğunlukla havayla doludur, ortalama yoğunluğu suyunkinden küçüktür; 1–2–3 numaralı özdeş gemiler), s. 177–178 (TCG Anadolu (L-400) çok amaçlı amfibi hücum gemisi, TCG İstanbul (F-515) İ sınıfı fırkateyn, ADA sınıfı korvetler, Yeni Tip Denizaltı Projesi, Gölcük Tersanesi; çöp adaları: yılda yaklaşık bir trilyon plastik poşet, adalar Türkiye'nin yüz ölçümünden büyük; üç öneri), s. 179 (tanılayıcı ağaç), s. 180 (Arşimet İlkesi), s. 181 (yüzme, askıda kalma, batma; çelik bilye ve gemi), s. 182 (turistik denizaltı 30 m, araştırma denizaltısı 3.000 m), s. 183 (özet tablo: yüzme F_k = G, d_c < d_s; askıda kalma F_k = G, d_c = d_s; batma F_k < G, d_c > d_s). Kitap dışı: veri tablosu (karar 19) ve plastiğin yüzeyde toplanması fikri (`PLAN.md` bölüm 8, son paragraf).
+- **Kaynak:** Ders kitabı s. 169 (denizaltı ve safra tankları: dalmak için tanklara su alınır, yoğunluk artar; yükselmek için hava pompalanır, yoğunluk azalır), s. 173 (Görsel 3.19; özdeş yüklü ve boş gemi), s. 174 (top ve tuzlu su), s. 175 (çelik gemi çoğunlukla havayla doludur, ortalama yoğunluğu suyunkinden küçüktür; 1–2–3 numaralı özdeş gemiler), s. 177–178 (TCG Anadolu (L-400) çok amaçlı amfibi hücum gemisi, TCG İstanbul (F-515) İ sınıfı fırkateyn, ADA sınıfı korvetler, Yeni Tip Denizaltı Projesi, Gölcük Tersanesi; çöp adaları: yılda yaklaşık bir trilyon plastik poşet, adalar Türkiye'nin yüz ölçümünden büyük; üç öneri), s. 180 (Arşimet İlkesi), s. 181 (yüzme, askıda kalma, batma; çelik bilye ve gemi), s. 182 (turistik denizaltı 30 m, araştırma denizaltısı 3.000 m), s. 183 (özet tablo: yüzme F_k = G, d_c < d_s; askıda kalma F_k = G, d_c = d_s; batma F_k < G, d_c > d_s). Kitap dışı: plastiğin yüzeyde toplanması fikri (`PLAN.md` bölüm 8, son paragraf).
 - **Sınır:** Yüzme, askıda kalma, batma kitabın verdiği kadar (yoğunluk karşılaştırması ve F_k ile G ilişkisi); bunlara dair problem yok. Tonaj, boyut, yıl yok (karar 12). Gaz ortamı, balon, zeplin yok. Denizaltının gövde malzemesi yok (kitap açıklamıyor). Plastiğin yoğunluğu için sayı yok. Dalış derinlikleri kitaptaki iki sayıdır.
-- **Örnek veri (F_k = V_b · d_s · g ile hesaplandı):** Ela'nın dört ölçümü (sahne 10): 0,0002 m³ su → F_k 1,96 N, taşan su 1,96 N; 0,0003 m³ su → 2,94 N, 2,94 N; 0,0001 m³ su → 0,98 N, taşan su 1,96 N (uyumsuz); 0,0004 m³ X sıvısı (2d) → 7,84 N, 7,84 N.
 - **Güç kavramlar ve gösterimi:** (1) Ortalama yoğunluk: aynı çelik bilye kalıbından geniş, içi boş bir kaba dönüşür; kütle aynı (etiket), cismin tüm hacmini gösteren kesikli dış çizgi büyür. (2) Yüzme, askıda kalma, batma: üç kapta yan yana turuncu ağırlık oku ve mor kaldırma kuvveti oku; ilk ikisinde eşit boy, üçüncüde kaldırma oku kısa. (3) Yüzen cisim kendi ağırlığı kadar sıvıyı yerinden eder: cismin batan kısmı kadar mavi kesikli parça yanında aynı boyda turuncu ok. (4) Safra tankı: denizaltı kesitinde tank mavi (su) ya da soluk gri-mavi (hava) dolgu.
 - **Hedeflenen yanılgı:** "Çelik her zaman batar" ve "yük artınca kaldırma kuvveti değişmez".
 - **Akılda kalıcı cümle:** Yüzen cisim, kendi ağırlığı kadar sıvıyı yerinden eder.
@@ -714,49 +713,7 @@ Anlatım:
 
 Soru (`tag: 'Sıra sende'`; yeni durum, çözüm üretme): Plastikler suyun yüzeyinde yüzdüğüne göre kaldırma kuvvetinden yararlanan bir çözüm hangisidir? **Yüzeyde yüzen atıkları ağlarla yüzeyden toplamak** / Atıkları dibe batırmak / Denizin dibini taramak. Dayandığı anlatım: 4–7. İpuçları: "Atıklar suyun yüzeyinde duruyor." · "Yüzen atık yüzeyden toplanabilir."
 
-### Sahne 10 · Verileri Arşimet İlkesi'yle değerlendir
-
-Tahta: tablo (x 70–930, y 120; sütunlar "Ölçüm" 100, "Batan hacim (m³)" 200, "Sıvı" 130, "Kaldırma kuvveti (N)" 230 mor, "Taşan sıvının ağırlığı (N)" 200 turuncu; dört satır, 22 birim). Satırlar 3. cümleden sonra 400 ms `out` ile belirir: "A · 0,0002 · su · 1,96 · 1,96"; "B · 0,0003 · su · 2,94 · 2,94"; "C · 0,0001 · su · 0,98 · 1,96"; "D · 0,0004 · X (2d) · 7,84 · 7,84".
-
-Anlatım:
-1. Ela dört ölçüm yapıyor; her birinde cisim ağzına kadar dolu kaba batıyor.
-2. Arşimet İlkesi'ne göre kaldırma kuvveti, taşan sıvının ağırlığına eşit olmalı.
-3. Her satırda iki değeri karşılaştıracağız.
-
-Dene (`tag: 'Dene'`; sınıflandırma). Kutular "İlkeyle uyumlu" / "İlkeyle uyumsuz"; her satır bir kart. Yanlışta ipucu: "İlkeye göre iki değer eşit olmalı."
-
-| Kart | Kutu | Doğru geri bildirimi |
-|---|---|---|
-| A satırı | uyumlu | Evet. 1,96 N ile 1,96 N eşit. |
-| B satırı | uyumlu | Evet. 2,94 N ile 2,94 N eşit. |
-| C satırı | uyumsuz | Evet. 0,98 N ile 1,96 N eşit değil: ölçüm yinelenmeli. |
-| D satırı | uyumlu | Evet. 7,84 N ile 7,84 N eşit. |
-
-Sonra:
-4. İlkeyle uyuşmayan ölçüm yinelenir.
-5. Tutarlı ölçümler ilkeyi destekler.
-
-### Sahne 11 · Basınç ve kaldırma kuvveti: doğru mu?
-
-Tahta: ortada tek kart (x 120–880, y 200–300, 28 birim; en çok 12 kelime); altında iki kutu "Doğru" (x 120–470) ve "Yanlış" (x 530–880; y 400–470). Kart seçildikçe 500 ms `inOut` ile kutusuna gider.
-
-Anlatım:
-1. Şimdi kaldırma kuvveti ve basınç hakkındaki önermeleri değerlendirelim.
-
-Dene (`tag: 'Dene'`; doğru–yanlış). Yanlışta ipucu: "Silindir çiziminde alt ve üst yüzeye etki eden kuvvetleri düşün."
-
-| Kart (önerme) | Kutu | Doğru geri bildirimi |
-|---|---|---|
-| Kaldırma kuvvetinin varlığı ilk kez Pascal tarafından kanıtlanmıştır. | Yanlış | Evet. Bunu ilk kanıtlayan Arşimet. |
-| Basıncı oluşturan kuvvetlerin bileşkesi yukarı yönlüdür ve kaldırma kuvvetine eşittir. | Doğru | Evet. F_k = F₂ − F₁. |
-| Kuvvetlerin farkı cismin ağırlığından küçükse cisim batar. | Doğru | Evet. F_k < G ise cisim batar. |
-| Tamamen batmış cisim derine indikçe kaldırma kuvveti artar. | Yanlış | Evet. Alt ve üst kuvvetlerin farkı değişmez. |
-| Yüzen cisimde kaldırma kuvveti, cismin ağırlığına eşittir. | Doğru | Evet. F_k = G. |
-
-Sonra:
-2. Kaldırma kuvveti, sıvının cisme uyguladığı basınç kuvvetlerinin bileşkesidir.
-
-### Sahne 12 · Dene
+### Sahne 10 · Dene
 
 Dene 1 (`tag: 'Dene'`; sınıflandırma). Kutular "Yüzer" / "Askıda kalır" / "Batar". Altı kart, soru kalıbı: "<durum> cisim ne yapar?"
 
@@ -790,7 +747,153 @@ Dene 3 (`tag: 'Dene'`; eşleştirme). Soldaki dört ad sağdaki dört türe eşl
 
 Özet: Gemi içi boş yapısı sayesinde ortalama yoğunluğu suyunkinden küçüktür; yüzer. · Yüzen ve askıda kalan cisimde F_k = G; batan cisimde F_k < G. · **Yüzen cisim, kendi ağırlığı kadar sıvıyı yerinden eder.**
 
-## D5 · Konu tekrarı: Kaldırma kuvveti (`d5-tekrar.html`, 1 sahne + 10 soru)
+## D5 · Ölçümü de önermeyi de ilkeyle sına
+
+- **Fikir:** Arşimet İlkesi bir ölçüttür: deney verisi ve kaldırma kuvvetiyle ilgili bir önerme, ilkeyle ve F_k = F₂ − F₁ ilişkisiyle karşılaştırılarak değerlendirilir.
+- **Giriş ekranı sorusu:** Bir ölçümün hatalı olduğunu, deneyi yeniden yapmadan anlayabilir misin?
+- **Kaynak:** Ders kitabı s. 179 (tanılayıcı ağaç: kaldırma kuvveti ve basınç üzerine doğru–yanlış önermeler), s. 180 (Arşimet İlkesi; F_k = V_b · d_s · g), s. 176–177 (alt ve üst yüzeydeki kuvvetler; yan yüzeylerdeki kuvvetler dengelenir), s. 183 (yüzme F_k = G, batma F_k < G). Kitap dışı: veri tablosu (karar 19). Bu ders 12 Ekim 2026'da D4'ten ayrıldı (`PLAN.md` karar 25): eski D4 sahne 10 ve 11'in içeriği, önüne çözülmüş örnekler konarak.
+- **Sınır:** Yeni bilgi verilmez; D1–D4'te öğretilen ilişkiler ölçüm ve önerme değerlendirmek için kullanılır. Öğrenci hesap yapmaz: satırdaki iki değeri karşılaştırır, "iki katı" gibi oranları yorumlar; tek istisna çıkış 5'teki tek çıkarmadır. Ölçümün neden hatalı çıktığı (düzenek hatası, okuma hatası) anlatılmaz; uyumsuz ölçüm yinelenir. Gaz ortamı yok.
+- **Örnek veri (F_k = V_b · d_s · g ile hesaplandı; g = 9,8 m/s², su 1.000 kg/m³, X sıvısı 2d):** Ela'nın sekiz ölçümü. A: 0,0002 m³ su → F_k 1,96 N, taşan su 1,96 N. B: 0,0001 m³ su → 0,98 N, taşan su 1,96 N (uyumsuz). C: 0,0004 m³ su → 3,92 N, 3,92 N. D: 0,0004 m³ X sıvısı → 7,84 N, 7,84 N. E (B'nin yinelenmesi): 0,0001 m³ su → 0,98 N, 0,98 N. F: 0,0003 m³ su → 2,94 N, 2,94 N. G: 0,0003 m³ X sıvısı → 5,88 N, taşan sıvı 2,94 N (uyumsuz). H: 0,0002 m³ X sıvısı → 3,92 N, 3,92 N. Silindir (D3 sahne 8'in sayıları; taban alanı 0,01 m²): üst yüzey 0,1 m derinde F₁ 9,8 N, F₂ 13,72 N; 0,3 m derinde F₁ 29,4 N, F₂ 33,32 N; fark ikisinde 3,92 N.
+- **Güç kavramlar ve gösterimi:** (1) İlkenin ölçüt olması: her satırda mor kaldırma kuvveti ile turuncu taşan sıvı ağırlığı yan yana, aralarında "=" ya da gri "≠". (2) Ölçümlerin birbiriyle tutarlılığı: iki satırın kaldırma kuvveti hücreleri arasında mor "× 2". (3) Önermenin sınanması: silindir iki derinlikte; F₁ ve F₂ okları birlikte uzar, mor kaldırma kuvveti oku aynı boyda kalır.
+- **Hedeflenen yanılgı:** "İlkeye uymayan tek ölçüm ilkeyi çürütür" ve "derindeki cisme daha büyük kaldırma kuvveti etki eder".
+- **Akılda kalıcı cümle:** Ölçümü de önermeyi de ilkeyle sına.
+
+**Ölçüm tablosu (sahne 3–5).** x 70–930, y 120; sütunlar "Ölçüm" 100, "Batan hacim (m³)" 200, "Sıvı" 130, "Kaldırma kuvveti (N)" 230 mor, "Taşan sıvının ağırlığı (N)" 200 turuncu; başlıklar iki satır, 22 birim; satır yazıları 22 birim. Satırlar 400 ms `out` ile belirir. Tablo sahnelerinde tahtadaki kelime sayısı 25'i aşar (tablo istisnası).
+
+### Sahne 1 · Hatırla
+
+Açılış cümlesi: "Başlamadan önce iki şeyi hatırlayalım."
+
+1. Batan bir cisimde kaldırma kuvveti ile cismin ağırlığı arasındaki ilişki nedir? **Kaldırma kuvveti ağırlıktan küçüktür** / Kaldırma kuvveti ağırlığa eşittir / Kaldırma kuvveti ağırlıktan büyüktür. (D4) Yanlışta: "Yüzen ve askıda kalan cisimde F_k = G, batan cisimde F_k < G'dir."
+2. Kaldırma kuvveti dinamometreyle nasıl ölçülür? **Havadaki okumadan sıvıdaki okuma çıkarılır** / Havadaki ve sıvıdaki okuma toplanır / Yalnızca sıvıdaki okuma alınır. (D1) Yanlışta: "Cisim sıvıya girince dinamometre daha az gösterir; aradaki fark kaldırma kuvvetidir."
+
+Tahta: birinci soruda bir kap ve tabana oturmuş cisim (cevaptan sonra uzun turuncu ağırlık oku ve kısa mor kaldırma kuvveti oku belirir); ikinci soruda dinamometre düzeneği (`KIT_D.duzenek`, iki dilim batık, okuma "7,84 N").
+
+Sonra: "Bugün ölçümleri ve önermeleri Arşimet İlkesi'yle sınayacağız."
+
+### Sahne 2 · İlke bir ölçüttür
+
+Tahta: solda dinamometre düzeneği (190 birim sola kaydırılmış; kap x 60–460), cisim iki dilim batık, okuma "7,84 N". 2. cümlede cismin solunda mor kaldırma kuvveti oku (20 birim; 300 ms, `out`) ve kabın sağ üst köşesinden çıkan kısa boru ile altında küçük toplama kabı (x 470–560, y 440–520; içinde 30 birim yüksekliğinde mavi su) belirir (400 ms, `out`). Sağda (x 600–960) satırlar: 2. cümlede "kaldırma kuvveti" (mor, y 180, 28 birim) ve "taşan sıvının ağırlığı" (turuncu, y 320, 28 birim); 3. cümlede aralarında "=" (44 birim, y 250; 300 ms, `out`).
+
+Anlatım:
+1. Ela deneyini bitirdi; şimdi ölçümlerine güvenip güvenemeyeceğini soruyor.
+2. Her ölçümde iki değer kaydetti: kaldırma kuvveti ve taşan sıvının ağırlığı.
+3. Arşimet İlkesi'ne göre bu iki değer eşit olmalı.
+4. İlke, bir ölçümün tutarlı olup olmadığını sınamanın ölçütüdür.
+
+### Sahne 3 · İki ölçüm (çözülmüş örnek)
+
+Tahta: ölçüm tablosu, başlık satırı 1. cümlede belirir. 2. cümlede A satırı: "A · 0,0002 · su · 1,96 · 1,96". 4. cümlede A satırının son iki hücresi arasında "=" (22 birim; 300 ms, `out`). 5. cümlede B satırı: "B · 0,0001 · su · 0,98 · 1,96". 7. cümlede B satırının son iki hücresi arasında gri "≠". 8. cümlede B satırı 0,45 saydamlığa iner (300 ms, `in`).
+
+Anlatım:
+1. Ela her ölçümü tablonun bir satırına yazıyor.
+2. A ölçümünde cismin 0,0002 metreküpü suya batık.
+3. Kaldırma kuvveti 1,96 newton; taşan suyun ağırlığı da 1,96 newton.
+4. İki değer eşit: A ölçümü ilkeyle uyumlu.
+5. B ölçümünde kaldırma kuvveti 0,98 newton çıkmış.
+6. Taşan suyun ağırlığı ise 1,96 newton yazılmış.
+7. İki değer eşit değil: B ölçümü ilkeyle uyumsuz.
+8. İlkeyle uyuşmayan ölçüm yinelenir.
+
+### Sahne 4 · Ölçümler birbirini tutuyor mu?
+
+Tahta: ölçüm tablosu; A satırı tam, B satırı soluk (0,45). 3. cümlede C satırının ilk üç hücresi belirir: "C · 0,0004 · su"; son iki hücre Birlikte çöz'den sonra dolar.
+
+Anlatım:
+1. Tutarlı ölçümler birbirini de tutar: bunu model söyler.
+2. Modelde kaldırma kuvveti, batan hacimle doğru orantılıdır.
+3. C ölçümünde batan hacim 0,0004 metreküp: A'dakinin iki katı.
+
+Birlikte çöz (`tag: 'Birlikte çöz'`): C ölçümünde sıvı yine su, batan hacim A ölçümündekinin iki katı. Tutarlı bir ölçümde kaldırma kuvveti A'dakine göre nasıl olmalı? **İki katı olmalı** / Aynı olmalı / Yarısı olmalı. Dayandığı anlatım: bu sahne 1–3. İpuçları: "Sıvı aynıysa kaldırma kuvveti yalnızca batan hacimle değişir." · "Batan hacim iki katına çıkınca kaldırma kuvveti de iki katına çıkar."
+
+Gör: C satırı dolar: "3,92 · 3,92"; A satırının kaldırma kuvveti hücresinden C satırınınkine inen mor ince çizginin yanında "× 2" (mor, 22 birim; 300 ms, `out`).
+
+Sonra:
+4. C'de kaldırma kuvveti 3,92 newton: 1,96'nın iki katı.
+5. Taşan suyun ağırlığı da 3,92 newton: C ölçümü tutarlı.
+6. D ölçümünde batan hacim aynı, sıvı ise X sıvısı.
+7. X sıvısının yoğunluğu suyun iki katıdır.
+
+Tahta (7. cümleden sonra): D satırı bütünüyle belirir: "D · 0,0004 · X (2d) · 7,84 · 7,84".
+
+Soru (`tag: 'Sıra sende'`; yeni durum): D ölçümü tutarlı mı? **Evet: iki değer eşit, kaldırma kuvveti de C'dekinin iki katı** / Hayır: kaldırma kuvveti C'dekiyle aynı olmalıydı / Hayır: yoğunluk artınca kaldırma kuvveti azalmalıydı. Dayandığı anlatım: sahne 3, 4; bu sahne 2, 6–7. İpuçları: "Önce satırdaki iki değeri karşılaştır." · "Modelde kaldırma kuvveti sıvının yoğunluğuyla doğru orantılıdır."
+
+Gör: C satırının kaldırma kuvveti hücresinden D satırınınkine ikinci mor "× 2".
+
+Sonra:
+8. Yoğunluk iki katına çıktı; kaldırma kuvveti de iki katına çıktı.
+
+### Sahne 5 · Yeni ölçümleri değerlendir
+
+Tahta: ölçüm tablosu boşalır (başlık kalır); dört yeni satır 3. cümlede birlikte belirir: "E · 0,0001 · su · 0,98 · 0,98"; "F · 0,0003 · su · 2,94 · 2,94"; "G · 0,0003 · X (2d) · 5,88 · 2,94"; "H · 0,0002 · X (2d) · 3,92 · 3,92". Tablonun altında iki kutu: "İlkeyle uyumlu", "İlkeyle uyumsuz". Değerlendirilen satır vurgulanır; karar verilince satırın sonuna "=" ya da gri "≠" konur ve satırın adı kutusunda belirir.
+
+Anlatım:
+1. Ela ertesi gün dört ölçüm daha yapıyor.
+2. İlk işi, uyumsuz çıkan B ölçümünü yinelemek: E satırı.
+3. Her satırda iki değeri karşılaştır.
+
+Dene (`tag: 'Dene'`; sınıflandırma). Kutular "İlkeyle uyumlu" / "İlkeyle uyumsuz"; her satır bir kart. Yanlışta ipucu: "İlkeye göre iki değer eşit olmalı."
+
+| Kart | Kutu | Doğru geri bildirimi |
+|---|---|---|
+| E satırı | uyumlu | Evet. 0,98 N ile 0,98 N eşit: yinelenen ölçüm tuttu. |
+| F satırı | uyumlu | Evet. 2,94 N ile 2,94 N eşit. |
+| G satırı | uyumsuz | Evet. 5,88 N ile 2,94 N eşit değil: ölçüm yinelenmeli. |
+| H satırı | uyumlu | Evet. 3,92 N ile 3,92 N eşit. |
+
+Sonra:
+4. Sekiz ölçümün altısı ilkeyle uyumlu çıktı.
+5. Tutarlı ölçümler ilkeyi destekler; uyumsuz olanlar yinelenir.
+
+Defter (başlık "Veriyi sına"): Uyumlu ölçümde **F_k**, taşan sıvının ağırlığına eşittir.
+
+### Sahne 6 · Bir önermeyi sına (çözülmüş örnek)
+
+Tahta: sıvı kabı x 80–460, üst kenar y 80, taban y 540; su yüzeyi y 100 (mavi, 0,35 saydamlık). Sol iç duvarda iki çentik ve yazısı: "0,1 m" (y 200), "0,3 m" (y 400). Silindir yandan görünüşle dikdörtgen, 120 × 40 (x 230–350; 1.000 birim = 1 m, silindirin boyu 0,04 m), açık gri; üst kenarı y 200'de başlar. Oklar turuncu, ölçek 2,5 birim = 1 N: F₁ üst yüzeye yukarıdan aşağı (25 birim), F₂ alt yüzeye aşağıdan yukarı (34 birim). Silindirin solunda (x 190) mor kaldırma kuvveti oku, şematik 40 birim, yukarı. Sağ üstte önerme kartı (x 500–960, y 90–190; 22 birim, iki satır): "Batmış cisim derine indikçe kaldırma kuvveti artar." Kartın altında etiketler (x 520, 24 birim): 4. cümlede "F₁ 9,8 N" (y 300), "F₂ 13,72 N" (y 350), "fark 3,92 N" (mor, y 400). 5. cümlede silindir ve oklar 900 ms `inOut` ile 200 birim iner (üst kenar y 400); oklar aynı sürede uzar (F₁ 74, F₂ 83 birim); mor ok aynı boyda kalır. 6. cümlede etiketler değişir (eskiler 200 ms `in` ile kaybolur, yeniler 300 ms `out` ile belirir): "F₁ 29,4 N", "F₂ 33,32 N", "fark 3,92 N". 7. cümlede önerme kartı 0,45 saydamlığa iner, altında gri "yanlış" yazısı belirir (24 birim).
+
+Anlatım:
+1. Bir önerme de ölçüm gibi sınanır.
+2. Önerme şu: batmış cisim derine indikçe kaldırma kuvveti artar.
+3. Kaldırma kuvveti, alt ve üst yüzeydeki kuvvetlerin farkıdır.
+4. 0,1 metrede F₁ 9,8, F₂ 13,72 newton: fark 3,92.
+5. Silindir 0,3 metreye iniyor: iki kuvvet de büyüyor.
+6. F₁ 29,4, F₂ 33,32 newton oldu: fark yine 3,92.
+7. Fark değişmedi: kaldırma kuvveti artmadı, önerme yanlış.
+
+### Sahne 7 · Doğru mu, yanlış mı?
+
+Tahta: ortada tek kart (x 120–880, y 200–300, 28 birim; en çok 12 kelime); altında iki kutu "Doğru" (x 120–470) ve "Yanlış" (x 530–880; y 400–470). Kart seçilince yerinde küçülüp söner (`scale` 1 → 0,6, 400 ms, `in`), kutusunda bir işaret belirir.
+
+Anlatım:
+1. Şimdi beş önermeyi aynı yolla değerlendir.
+
+Dene (`tag: 'Dene'`; doğru–yanlış). Yanlışta ipucu: "Silindir çiziminde alt ve üst yüzeye etki eden kuvvetleri düşün."
+
+| Kart (önerme) | Kutu | Doğru geri bildirimi |
+|---|---|---|
+| Kaldırma kuvvetinin varlığı ilk kez Pascal tarafından kanıtlanmıştır. | Yanlış | Evet. Bunu ilk kanıtlayan Arşimet. |
+| Basıncı oluşturan kuvvetlerin bileşkesi yukarı yönlüdür ve kaldırma kuvvetine eşittir. | Doğru | Evet. F_k = F₂ − F₁. |
+| Kuvvetlerin farkı cismin ağırlığından küçükse cisim batar. | Doğru | Evet. F_k < G ise cisim batar. |
+| Yan yüzeylere etki eden kuvvetler kaldırma kuvvetini büyütür. | Yanlış | Evet. Yan yüzeylerdeki kuvvetler birbirini dengeler. |
+| Yüzen cisimde kaldırma kuvveti, cismin ağırlığına eşittir. | Doğru | Evet. F_k = G. |
+
+Sonra:
+2. Kaldırma kuvveti, sıvının cisme uyguladığı basınç kuvvetlerinin bileşkesidir.
+3. Ölçümü de önermeyi de ilkeyle sına.
+
+Defter: yalnızca akılda kalıcı cümle (3. cümle).
+
+### Çıkış soruları
+
+1. (yanılgı) Bir ölçümde kaldırma kuvveti 2,94 N, taşan suyun ağırlığı 1,96 N kaydedilmiş. Ne yapılmalı? **Ölçüm yinelenmeli: iki değer eşit çıkmalıydı** / Ölçüm kabul edilmeli: iki değer birbirine yakın / Arşimet İlkesi yanlış sayılmalı. (sahne 3)
+2. (yeni durum) Aynı sıvıda batan hacim üç katına çıkarılıyor. Tutarlı ölçümlerde taşan sıvının ağırlığı nasıl değişir? **Üç katına çıkar** / Aynı kalır / Üçte birine iner. (sahne 4)
+3. (yeni durum) İki ölçümde batan hacim aynı; ikinci sıvının yoğunluğu ilkinin yarısı. Ölçümler tutarlıysa ikinci ölçümde kaldırma kuvveti nasıl olur? **İlkinin yarısı olur** / İlkinin iki katı olur / İlkiyle aynı olur. (sahne 4)
+4. (yanılgı) "Daha derindeki cisme daha büyük kaldırma kuvveti etki eder." Tamamen batmış bir cisim için bu önerme neden yanlıştır? **Alt ve üst yüzeydeki kuvvetler aynı kadar artar; farkları değişmez** / Derine inildikçe sıvının basıncı azalır / Derinde yalnızca üst yüzeydeki kuvvet artar. (sahne 6)
+5. (yeni durum) Sıvıdaki bir cismin alt yüzeyine 12 N, üst yüzeyine 8 N kuvvet etki ediyor; cismin ağırlığı 6 N. Hangisi doğrudur? **Kaldırma kuvveti 4 N'dur; cisim batar** / Kaldırma kuvveti 4 N'dur; cisim yüzer / Kaldırma kuvveti 20 N'dur; cisim yüzer. (sahne 6, 7; 12 − 8 = 4, 4 < 6)
+
+Özet: Uyumlu ölçümde kaldırma kuvveti, taşan sıvının ağırlığına eşittir. · Tutarlı ölçümler modelin orantılarına da uyar. · **Ölçümü de önermeyi de ilkeyle sına.**
+
+## D6 · Konu tekrarı: Kaldırma kuvveti (`d6-tekrar.html`, 1 sahne + 10 soru)
 
 Yeni bilgi yok. Tek sahne ("Konunun kuralları"): altı kural, 3 × 2 kart olarak tahtada sırayla toplanır (kartlar x 60–340, 360–640, 660–940; y 110–290 ve 310–490), her biri küçük çizimiyle (kutu içinde 100 × 80) ve deftere düşer. Her kart 400 ms'de `out` ile belirir; bir öncekinin saydamlığı 0,45'e iner. Kartlar: (1) kapta cisim ve mor yukarı ok (yazı yok) · (2) "V_b, d_s, g" (üç küçük etiket: mor, mavi, turuncu) · (3) iki derinlikte aynı boyda mor ok, "derinlik etkisiz" · (4) taşırma kabı ve taşan damla, "F_k = V_b · d_s · g" · (5) silindir ve F₁, F₂ okları, "F_k = F₂ − F₁" · (6) üç küçük kap (yüzen, askıda, batan), "F_k = G · F_k < G". Kart yazıları toplam 24 kelimedir. Bu sahnede kural satırları kısadır; tablo istisnası gerekmez.
 
@@ -809,7 +912,7 @@ Sorular (`quiz`, karışık sırada):
 
 1. Bir cisim havada 8 N, suya tamamen batırılınca dinamometre 5 N gösteriyor. Kaldırma kuvveti kaç N'dur? **3 N** / 5 N / 13 N. — D1 (8 − 5 = 3)
 2. Tamamen batmış bir cisim havuzda 0,5 m derinlikten 1 m derinliğe iniyor. Kaldırma kuvveti nasıl değişir? **Değişmez** / İki katına çıkar / Yarıya iner. — D1, D3
-3. Aynı sıvıda bir cismin batan hacmi üç katına çıkıyor. Kaldırma kuvveti nasıl değişir? **Üç katına çıkar** / Aynı kalır / Dokuz katına çıkar. — D2
+3. Bir ölçümde kaldırma kuvveti 1,96 N, taşan suyun ağırlığı 0,98 N kaydedilmiş. Bu ölçüm için hangisi söylenir? **Arşimet İlkesi'yle uyumsuzdur; yinelenmelidir** / Arşimet İlkesi'yle uyumludur / Arşimet İlkesi'nin yanlış olduğunu gösterir. — D5
 4. Aynı cisim sırayla yoğunlukları d, 3d ve 2d olan üç sıvıya tamamen batırılıyor. Kaldırma kuvvetlerini büyükten küçüğe sıralayın. **3d, 2d, d** / d, 2d, 3d / 2d, 3d, d. — D2 (F_k, d_s ile doğru orantılı)
 5. Bir cisim taşırma kabına batırılınca ağırlığı 5 N olan su taşıyor. Aynı cisim aynı kadar batacak biçimde, yoğunluğu suyun iki katı olan sıvıyla dolu kaba batırılırsa taşan sıvının ağırlığı kaç N olur? **10 N** / 5 N / 2,5 N. — D2 (2 · 5 = 10)
 6. Hacimleri aynı iki cisimden biri ötekinden ağır; ikisi de aynı sıvıya tamamen batıyor. Hangisi doğrudur? **Kaldırma kuvvetleri eşittir** / Ağır olana daha büyük kaldırma kuvveti etki eder / Hafif olana daha büyük kaldırma kuvveti etki eder. — D2
@@ -831,20 +934,20 @@ Akılda kalıcı cümle: Kaldırma kuvveti, yerinden edilen sıvının ağırlı
 | Araştırma raporu hazırlama ve sunma | `site dışı` |
 | FİZ.9.3.6 a) Yer değiştiren sıvının ağırlığı ile ilişkiye dair hipotez kurar | D2 sahne 2 (Hipotez kur), sahne 3–4 (sınama) |
 | FİZ.9.3.6 b) Deney verilerinden matematiksel modeli bulur | D2 sahne 4 (veri), sahne 5–6 (ilke ve model), sahne 8 (modelin veriyle sınanması) |
-| Matematiksel model pekiştirilirken orantısal ilişkilerle sınırlı kalınır | D2 sahne 7–10 (orantı yorumları, "modelde cismin ağırlığı yok"); D2 çıkış 2, 4, 5; D5 soru 3, 4, 5 |
+| Matematiksel model pekiştirilirken orantısal ilişkilerle sınırlı kalınır | D2 sahne 7–10 (orantı yorumları, "modelde cismin ağırlığı yok"); D2 çıkış 2, 4, 5; D5 sahne 4, çıkış 2, 3; D6 soru 4, 5 |
 | Sıvı basıncı ve kaldırma kuvveti arasındaki ilişkiyi fark edebilecekleri görsel içerik | D3 sahne 2–8 (basınç okları, silindir, F₁ ve F₂) |
 | FİZ.9.3.6 c) Kaldırma kuvveti ve sıvı basıncı modellerini karşılaştırır; sıvılardaki kaldırma kuvveti ile sınırlı | D3 sahne 9 (iki model yan yana); gaz, balon yok |
 | FİZ.9.3.6 ç) Kaldırma kuvveti ve basınca neden olan kuvvet arasındaki ilişkiye dair önermede bulunur | D3 sahne 9 (neden–sonuç cümlesi, Sıra sende, defter), sahne 10 (Dene 2: önermeler); seçenekli önermeyle karşılanır (karar 16) |
-| FİZ.9.3.6 d) İlişkiye dair değerlendirme yapar | D4 sahne 10 (verilerin ilkeyle değerlendirilmesi), sahne 11 (önermelerin değerlendirilmesi) |
-| Deney verilerini Arşimet İlkesi kapsamında değerlendirme | D4 sahne 10 |
+| FİZ.9.3.6 d) İlişkiye dair değerlendirme yapar | D5 sahne 6 (çözülmüş örnek), sahne 7 (önermelerin değerlendirilmesi), çıkış 4, 5 |
+| Deney verilerini Arşimet İlkesi kapsamında değerlendirme | D5 sahne 2–5 (ölçüt, çözülmüş örnek, Birlikte çöz, sınıflandırma), çıkış 1–3; D6 soru 3 |
 | Gemi, denizaltı gibi deniz araçları üzerinden uygulamalar; Türkiye'nin millî çıkarları doğrultusunda geliştirdiği araçlar | D4 sahne 2–4, 6, 8 |
 | Araçların ekonomik kalkınma, tasarruf ve yatırım stratejileri kapsamında geliştirildiğinin belirtilmesi | D4 sahne 8 (2. cümle) |
 | Çöp adaları, görsel ögelerle bilgi; plastiğin yüzeyde kaldırma kuvvetiyle yüzdüğünün vurgulanması | D4 sahne 9 |
-| Beyin fırtınasıyla kaldırma kuvvetinden yararlanan çözüm üretme | D4 sahne 9 (seçenekli çözüm sorusu), sahne 12 (Dene 2: sınıflandırma); beyin fırtınası etkinliği `site dışı` |
+| Beyin fırtınasıyla kaldırma kuvvetinden yararlanan çözüm üretme | D4 sahne 9 (seçenekli çözüm sorusu), sahne 10 (Dene 2: sınıflandırma); beyin fırtınası etkinliği `site dışı` |
 | Köprü kurma: yoğunluk ve kaldırma kuvvetinin günlük hayatla ilişkisi (gemiler, denizaltılar, plastik adaları) | D4 sahne 2–9 |
 | Temel kabul: yoğunluk kavramı ve sıvıların özellikleri | D2 sahne 6 ve D4 sahne 2'de kullanılır, yeniden anlatılmaz |
 | Çalışma yaprağı, grup çalışması, öz değerlendirme | `site dışı` |
 
-Fazla olan: (1) dinamometre farkıyla ölçüm (D1 sahne 3–4) ve taşırma kabı ile tartı (D2): programın "deney tasarla ve ölçüm yap" ve "yer değiştiren sıvının ağırlığı" bentlerini benzetimde karşılamak için kurulan kitap dışı düzenekler (karar 19). (2) Yer çekimi ivmesi (D1 sahne 9): program metni anmaz; kitap sayar (s. 172, 175) ve karar 4 değişken sayar. (3) Yüzme, askıda kalma, batma ve ortalama yoğunluk (D4 sahne 2–5): program gemi, denizaltı ve yüzen atığı sayar, "yoğunluk ve kaldırma kuvveti" köprüsünü ister; üçlü sınıflama kitaptadır (s. 181, 183), karar 13. (4) Derin dalışta 100 katı sorusu (D4 sahne 7): B konusuna geri bağlanan tek oran; kitabın iki sayısıyla (s. 182). (5) D1 ve D2'de çıkarma işlemi, D3'te F₁ ve F₂ sayısal gösterimi: öğrenciye hesaplatılmaz, yalnızca gösterilir (çıkış 1'deki tek çıkarma ve D5 soru 1 hariç). Eksik olan: yok; yalnızca sınıf içi etkinlikler (grup çalışması, rapor, beyin fırtınası, çalışma yaprağı) `site dışı`.
+Fazla olan: (1) dinamometre farkıyla ölçüm (D1 sahne 3–4) ve taşırma kabı ile tartı (D2): programın "deney tasarla ve ölçüm yap" ve "yer değiştiren sıvının ağırlığı" bentlerini benzetimde karşılamak için kurulan kitap dışı düzenekler (karar 19). (2) Yer çekimi ivmesi (D1 sahne 9): program metni anmaz; kitap sayar (s. 172, 175) ve karar 4 değişken sayar. (3) Yüzme, askıda kalma, batma ve ortalama yoğunluk (D4 sahne 2–5): program gemi, denizaltı ve yüzen atığı sayar, "yoğunluk ve kaldırma kuvveti" köprüsünü ister; üçlü sınıflama kitaptadır (s. 181, 183), karar 13. (4) Derin dalışta 100 katı sorusu (D4 sahne 7): B konusuna geri bağlanan tek oran; kitabın iki sayısıyla (s. 182). (5) D1 ve D2'de çıkarma işlemi, D3'te F₁ ve F₂ sayısal gösterimi: öğrenciye hesaplatılmaz, yalnızca gösterilir (çıkış 1'deki tek çıkarma, D5 çıkış 5 ve D6 soru 1 hariç). Eksik olan: yok; yalnızca sınıf içi etkinlikler (grup çalışması, rapor, beyin fırtınası, çalışma yaprağı) `site dışı`.
 
-Hesaplanan örnek veri ve sorular: D1 tablo 1 (5 satır), tablo 2 (2 satır), tablo 3 (3 satır), kaydırıcı ızgarası (10 durum), sahne 4 örneği, sahne 6 Birlikte çöz, çıkış 1; D2 sahne 3 örneği, tablo (5 satır), model tablosu (5 satır), A ve B cisimleri (2 durum), Birlikte çöz, çıkış 1–5; D3 sahne 6 (P₁, P₂, F₁, F₂, F_k), sahne 8 (iki derinlik), kaydırıcı ızgarası (9 durum), çıkış 1, 3, 4; D4 dört ölçüm (A–D), sahne 7 (3.000 / 30 = 100), çıkış 1–5; D5 soru 1, 4, 5.
+Hesaplanan örnek veri ve sorular: D1 tablo 1 (5 satır), tablo 2 (2 satır), tablo 3 (3 satır), kaydırıcı ızgarası (10 durum), sahne 4 örneği, sahne 6 Birlikte çöz, çıkış 1; D2 sahne 3 örneği, tablo (5 satır), model tablosu (5 satır), A ve B cisimleri (2 durum), Birlikte çöz, çıkış 1–5; D3 sahne 6 (P₁, P₂, F₁, F₂, F_k), sahne 8 (iki derinlik), kaydırıcı ızgarası (9 durum), çıkış 1, 3, 4; D4 sahne 7 (3.000 / 30 = 100), çıkış 1–5; D5 sekiz ölçüm (A–H), sahne 6 (iki derinlik, D3 sahne 8'in sayıları), çıkış 1–5; D6 soru 1, 3, 4, 5.

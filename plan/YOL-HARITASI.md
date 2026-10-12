@@ -2,9 +2,9 @@
 
 Son güncelleme: 12 Ekim 2026. Nasıl yürütüleceği (kim ne yapar, hangi alt ajan hangi modelle): `YURUTME.md`. Sıranın gerekçesi ve sayılar `TASKS.md` içindeki "Araçlar: yeni anlatım kuralları ve eski temaların sayımı" bölümündedir. "Sınıfta gerekeceği zaman" sütunu ders saatlerinden çıkarılmış tahmindir, okul takvimiyle doğrulanmadı.
 
-## Şimdi: 3. adım (Fizik · Akışkanlar)
+## Şimdi: 3. adım (sıradaki tema: Biyoloji · Organizasyon)
 
-Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"); aşağıdaki "Pilot beğenilirse" sırası yürürlükte. 1. adım bitti (8 Ekim 2026: A konusu seslendirildi, commit edildi, yayında). 2. adım bitti: Kimya Çeşitlilik yazıldı ve commit edildi (8 Ekim 2026; seslendirme ve yayın bekliyor), yedi eski temanın ekleri yayında (9 Ekim 2026). 3. adımda Eşlik ve Benzerlik yazıldı ve commit edildi (12 Ekim 2026; seslendirme ve yayın bekliyor); Fizik · Akışkanlar yazımda (12 Ekim 2026: plan, beş senaryo ve Konu A dersleri bitti); sıradaki iş `YURUTME.md` 3. adım 2a.5, devir notu `plan/fizik/akiskanlar/DURUM.md`.
+Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"); aşağıdaki "Pilot beğenilirse" sırası yürürlükte. 1. adım bitti (8 Ekim 2026: A konusu seslendirildi, commit edildi, yayında). 2. adım bitti: Kimya Çeşitlilik yazıldı ve commit edildi (8 Ekim 2026; seslendirme ve yayın bekliyor), yedi eski temanın ekleri yayında (9 Ekim 2026). 3. adımda Eşlik ve Benzerlik yazıldı ve commit edildi (12 Ekim 2026; seslendirme ve yayın bekliyor); Fizik · Akışkanlar yazıldı (12 Ekim 2026: 16 kısa ders + 5 konu tekrarı, tema denetimi temiz; commit, seslendirme ve yayın bekliyor; `plan/fizik/akiskanlar/DURUM.md`). Sıradaki yeni tema Biyoloji · Organizasyon (`YURUTME.md` 3. adım, 2a.1'den). Fizik · Enerji sıra dışı, ayrı oturumda sürüyor.
 
 ### Pilotun kaydı
 
@@ -29,7 +29,7 @@ Yeni anlatım kuralları (`KURALLAR.md` 3–3.4) ilk kez gerçek bir konuda dene
    | Sıra | Tema | Ders | Sınıfta gerekeceği zaman |
    |---|---|---|---|
    | 1 | Matematik · Eşlik ve Benzerlik | 18 | ocak |
-   | 2 | Fizik · Akışkanlar | 15 | ocak sonu |
+   | 2 | Fizik · Akışkanlar | 16 | ocak sonu |
    | 3 | Biyoloji · Organizasyon | 20 | mart |
    | 4 | Matematik · Algoritma ve Bilişim | 31 | ikinci dönem |
    | 5 | Matematik · İstatistiksel Araştırma Süreci | 24 | ikinci dönem |
