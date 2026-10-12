@@ -12,7 +12,7 @@ Başlangıç: 8 Ekim 2026. Yürütme: `plan/YURUTME.md` adım 2a (ana oturum pla
 | 5 İskelet | bitti: `index.html`, `tema.js` (`kural: 2`), `dersler/kit.js`, `dersler/tema.css` |
 | 6 Dersler | bitti: 44 ders (A1 ana oturum; gerisi konu başına bir Sonnet ajanı). Her biri ana oturumca yeniden ölçüldü; konu başına en az iki sahnenin görüntüsüne bakıldı |
 | 7 Denetim | bitti (8 Ekim 2026): `sure.js` tema 398:02 (A 17:08, B 39:19, C 27:22, D 34:06, E 27:32, F 41:22, G 45:17, H 28:14, I 25:53, J 30:23, K 29:50, L 25:39, M 25:57); `denetle.js` "44 kısa ders, yayında değil. Sorun yok."; tema sayfası görüntüsü; denetim tablosuna sahne numaraları; `plan/kimya/TEMALAR.md` |
-| 8 Rapor | verildi (8 Ekim 2026). Commit, seslendirme, yayın ve görsel üretimi kullanıcıdan ayrıca istenir |
+| 8 Rapor | verildi (8 Ekim 2026). Commit edildi (`ef5629e`, 8 Ekim 2026; `origin/main` üzerinde, katalogda kapalı). Seslendirme, yayın ve görsel üretimi kullanıcıdan ayrıca istenir |
 
 | Kısa ders | Senaryo | Ders | olc | Not |
 |---|---|---|---|---|
@@ -94,6 +94,6 @@ Başlangıç: 8 Ekim 2026. Yürütme: `plan/YURUTME.md` adım 2a (ana oturum pla
 
 ## Sıradaki
 
-- Tema yazıldı, denetimi temiz; **commit edilmedi**. Kullanıcı izler; seslendirme, yayın (`ortak/katalog.js`) ve H1 sahne 2'nin yedi resmi (`GORSELLER.md`) ayrıca istenir. Seslendirmeden önce F konusundaki `oku()` okunuşları gözden geçirilir.
-- Yürütme sırası: `plan/YURUTME.md` 2b; Nicelikler ve Değişimler ile Sayılar bitti (8 Ekim 2026), sıradaki Geometrik Şekiller B ve C.
+- Tema yazıldı, denetimi temiz; commit edildi (`ef5629e`, 8 Ekim 2026; `990d78c` ile birlikte `origin/main`'e gitti, katalogda kapalı). Kullanıcı izler; seslendirme, yayın (`ortak/katalog.js`) ve H1 sahne 2'nin yedi resmi (`GORSELLER.md`) ayrıca istenir. Seslendirmeden önce F konusundaki `oku()` okunuşları gözden geçirilir.
+- Yürütme sırası: `plan/YURUTME.md` 2b bitti (9 Ekim 2026); sıra 3. adımda (Eşlik ve Benzerlik yazıldı, sıradaki Fizik · Akışkanlar).
 - Alt ajan görev tanımları: `plan/kimya/cesitlilik/gorev/senaryo-gorevi.md` ve `ders-gorevi.md` (içlerindeki geçici klasör yolları bu oturuma aittir; sonraki temada yollar yeniden yazılır). Sonradan eklenen kurallar: tahta ile altyazı her an aynı şeyi anlatır; örnek değişmeden önce `c.clearSay()`; tahmin dersin ilk işi olmaz.

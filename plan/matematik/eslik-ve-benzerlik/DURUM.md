@@ -111,7 +111,7 @@ Senaryolarda A–D'de öğretilmeden "ön bilgi" olarak kullanılanlar: yöndeş
 
 ## Sıradaki
 
-Temanın yazımı ve denetimi bitti (`YURUTME.md` 2a.1–2a.7). Kalan iş kullanıcıyı bekliyor (2a.8): temayı izleme; ayrıca istenirse seslendirme (`plan/SESLENDIRME.md`), yayın (`ortak/katalog.js` içinde `yayinda: true`) ve commit.
+Temanın yazımı ve denetimi bitti (`YURUTME.md` 2a.1–2a.7). Kalan iş kullanıcıyı bekliyor (2a.8): temayı izleme; ayrıca istenirse seslendirme (`plan/SESLENDIRME.md`), yayın (`ortak/katalog.js` içinde `yayinda: true`). Dosyalar commit edildi (`a2b1571`, `d435838`).
 
 Sıradaki tema `YOL-HARITASI.md` 3. adımdaki tabloda ikinci sıradadır: **Fizik · Akışkanlar** (15 ders, 18 ders saati; sınıfta gerekeceği zaman ocak sonu). Yeni oturum `YURUTME.md` 3. adımı 2a.1'den başlatır: `plan/fizik/akiskanlar/` (`MUFREDAT.md`, varsa `PLAN.md` taslağı), `plan/ISLEME.md`, görev şablonları `plan/gorev/ders-gorevi.md` ve `plan/gorev/senaryo-gorevi.md` (hareket ve ses düzeyi kuralları şablonda; bu temanın `gorev/` kopyasına işlenmedi). Akışkanlar'da izometrik figür pilotları (Torricelli, Arşimet düzeneği) `030c424` ile depoda; yeni oturum önce `plan/fizik/akiskanlar/` altında `DURUM.md` var mı diye bakar.
 

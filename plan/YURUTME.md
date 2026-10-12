@@ -111,7 +111,7 @@ Sonra kullanıcıya: kaç klip, kaç dakika, harcanan karakter, dinlenmesi gerek
 
 **İzin:** yazım için var (yol haritası onaylı). Seslendirme ve yayın her tema için ayrıca istenir.
 
-#### 2a. Kimya · Çeşitlilik (31 ders, 13 konu, her konuya bir konu tekrarı) (yazım bitti: 8 Ekim 2026; commit, seslendirme, yayın bekliyor)
+#### 2a. Kimya · Çeşitlilik (31 ders, 13 konu, her konuya bir konu tekrarı) (yazım bitti ve commit edildi: 8 Ekim 2026, `ef5629e`; seslendirme, yayın bekliyor)
 
 `ISLEME.md` baştan sona uygulanır; şablon `ortak/sablon/` (`kural: 2` satırı kalır).
 

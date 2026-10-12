@@ -483,7 +483,7 @@ Ayrıntı: `plan/matematik/geometrik-sekiller/DURUM.md` "Pilot" bölümü. Sonra
 - [x] "Hatırla" sahnelerinin açılış cümlesi eşitlendi; `olc.js`, `sure.js`, `denetle.js` yeniden temiz
 - [x] A konusunun seslendirilmesi: 199 klip (131 yeni), 14,0 dk; ayrıntı `DURUM.md` "Pilotun seslendirilmesi ve yayını"
 - [x] Pilotun commit'i ve yayını: `664a09a`, `main` üzerinde
-- [ ] `plan/YOL-HARITASI.md` 2. adım: Kimya Çeşitlilik ve yedi temaya sese dokunmayan ekler
+- [x] `plan/YOL-HARITASI.md` 2. adım: Kimya Çeşitlilik (yazıldı, 8 Ekim 2026) ve yedi temaya sese dokunmayan ekler (bitti, 9 Ekim 2026)
 
 ## Yürütme planı ve temiz oturuma devir (8 Ekim 2026)
 
@@ -520,7 +520,7 @@ Ayrıntı: `plan/kimya/cesitlilik/DURUM.md`.
 - [x] 2a.5 B–M dersleri ve konu tekrarları: 41 ders (konu başına bir Sonnet ajanı); her biri ana oturumca yeniden ölçüldü, konu başına en az iki sahnenin görüntüsüne bakıldı; tahta–altyazı kayması A–E'de düzeltildi, F–M kuralla yazıldı
 - [x] 2a.6 Konu başına ölçüm, `tema.js` satırları (13 konu, 44 satır; konu tekrarları sonraki konuya `nextLesson` ile bağlı)
 - [x] 2a.7 Tema denetimi: `sure.js` (tema 398:02; 15 dk'yı geçen F3 ve J2 tek fikir, kaldı; I1, L1, L2'de soruyla açılan sahneye anlatım eklendi), `denetle.js` "Sorun yok", tema sayfası görüntüsü, denetim tablosuna sahne numaraları, `plan/kimya/TEMALAR.md`
-- [x] 2a.8 Rapor (8 Ekim 2026). Commit edilmedi; seslendirme, yayın ve H1 için yedi resim kullanıcıdan ayrıca istenir
+- [x] 2a.8 Rapor (8 Ekim 2026). Commit edildi (`ef5629e`, `990d78c` ile birlikte `origin/main`'e gitti); seslendirme, yayın ve H1 için yedi resim kullanıcıdan ayrıca istenir
 
 ### 2b. Yedi eski temaya sese dokunmayan ekler (`plan/YURUTME.md` 2b)
 
@@ -613,7 +613,6 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] 2a.7 Tema denetimi (12 Ekim 2026): `sure.js` uyarısız (tema 214:45, 28 ders, 15 dakikayı aşan yok), `denetle.js` "sorun yok", tema sayfası görüldü, `PLAN.md` denetim tablosuna sahne numaraları, "uzun kenar, büyük açı" ön bilgisi program metniyle karşılaştırıldı (3. temanın önermesi), `TEMALAR.md`
 - [ ] 2a.8 Kullanıcı: Eşlik ve Benzerlik'i izle; seslendirme ve yayın ayrıca istenir (altıncı oturumun dosyaları 12 Ekim 2026'da commit edildi)
 - [ ] Sıradaki tema: Fizik · Akışkanlar (`YURUTME.md` 3. adım, 2a.1'den)
-- [ ] 2a.8 Rapor; kullanıcı izler (seslendirme, yayın ve commit ayrıca istenir)
 - [x] İş panosu (sürüm 14: Eşlik ve Benzerlik yazımda, 1/27 ders)
 - [x] İş panosu (sürüm 15: Eşlik ve Benzerlik 5/28 ders, senaryolar bitti)
 
@@ -621,6 +620,7 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] İş panosu (sürüm 17: Eşlik ve Benzerlik 19/28 ders, 210 kısa ders, 38 konu tekrarı)
 - [x] İş panosu (sürüm 18: Eşlik ve Benzerlik 27/28 ders, 216 kısa ders, 40 konu tekrarı)
 - [x] İş panosu (sürüm 19: Eşlik ve Benzerlik yazıldı, 28/28 ders, 216 kısa ders, 41 konu tekrarı)
+- [x] İş panosu (sürüm 20, 12 Ekim 2026: sayım düzeltildi. Kısa ders konu tekrarı olmadan sayılır: 211 / 539; konu tekrarı 54 / 144. Çeşitlilik'in 31 dersi ve 13 tekrarı ilk kez sayıldı; Akışkanlar pilotları ve ses düzeyi kararı için iki kart)
 
 ## Bağlam bütçesi düzeltmeleri (12 Ekim 2026)
 

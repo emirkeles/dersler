@@ -1,10 +1,10 @@
 # Yol haritası
 
-Son güncelleme: 8 Ekim 2026. Nasıl yürütüleceği (kim ne yapar, hangi alt ajan hangi modelle): `YURUTME.md`. Sıranın gerekçesi ve sayılar `TASKS.md` içindeki "Araçlar: yeni anlatım kuralları ve eski temaların sayımı" bölümündedir. "Sınıfta gerekeceği zaman" sütunu ders saatlerinden çıkarılmış tahmindir, okul takvimiyle doğrulanmadı.
+Son güncelleme: 12 Ekim 2026. Nasıl yürütüleceği (kim ne yapar, hangi alt ajan hangi modelle): `YURUTME.md`. Sıranın gerekçesi ve sayılar `TASKS.md` içindeki "Araçlar: yeni anlatım kuralları ve eski temaların sayımı" bölümündedir. "Sınıfta gerekeceği zaman" sütunu ders saatlerinden çıkarılmış tahmindir, okul takvimiyle doğrulanmadı.
 
-## Şimdi: 1. adım (pilotu kapat)
+## Şimdi: 3. adım (Fizik · Akışkanlar)
 
-Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"). Aşağıdaki "Pilot beğenilirse" sırası yürürlükte; sıradaki iş 1. adımdır: A konusunun seslendirilmesi (kullanıcı ayrıca ister), commit ve yayın.
+Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"); aşağıdaki "Pilot beğenilirse" sırası yürürlükte. 1. adım bitti (8 Ekim 2026: A konusu seslendirildi, commit edildi, yayında). 2. adım bitti: Kimya Çeşitlilik yazıldı ve commit edildi (8 Ekim 2026; seslendirme ve yayın bekliyor), yedi eski temanın ekleri yayında (9 Ekim 2026). 3. adımda Eşlik ve Benzerlik yazıldı ve commit edildi (12 Ekim 2026; seslendirme ve yayın bekliyor); sıradaki iş Fizik · Akışkanlar, `YURUTME.md` 3. adım 2a.1'den.
 
 ### Pilotun kaydı
 
