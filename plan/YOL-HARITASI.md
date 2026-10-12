@@ -41,7 +41,6 @@ Yeni anlatım kuralları (`KURALLAR.md` 3–3.4) ilk kez gerçek bir konuda dene
 5. **Karar bekleyenler** (herhangi bir adımı tutmuyor):
    - Türk Dili ve Edebiyatı yazılacak mı: tam plan, yalnızca okuma ve dil bilgisi, ya da hiç.
    - Tarih ve Coğrafya: ders kitabı, görsel ve harita lisansı soruları kapanmadan başlanmaz.
-   - Sitedeki "kısa ders" yazıları "ders" olsun mu.
    - D3 hikâyesi: kareler ve gerçek grubun logosunun yayınlanması.
    - Fizik hikâye adayları (20) ve Fizik B1'in iki resmi.
 

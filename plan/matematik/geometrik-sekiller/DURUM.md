@@ -108,7 +108,7 @@ Pilot denetimi (8 Ekim 2026): altı derste `olc.js` temiz; `sure.js` A konusunu 
 
 Kullanıcı onayı (8 Ekim 2026): A konusunu izledi, "bunları beğendim". "Hatırla" sahneleri aynı cümleyle açılacak biçimde eşitlendi ("Başlamadan önce iki şeyi hatırlayalım."); `olc.js` A2, A3, A5'te yeniden temiz, A konusu 37:25. Seslendirme dökümü (`ses-uret.js --liste`, API çağrısı yok): A1 17, A2 12, A3 41, A4 24 klip üretilecek (toplam 5.095 karakter; metni değişmeyen cümlelerin eski klipleri yeniden kullanılır); A5'in dökümü araçta takıldı, sayılamadı.
 
-Kullanıcının bakması gerekenler: A2'de "bir noktadan tek paralel" ve "doğru açı 180°" taşlarının "başka bilgilere dayanan" bilgi olarak durması (eski içerik); "Hatırla" sahnelerinin açılış cümleleri dersten derse farklı (A2 "Önce geçen dersten iki soru.", A5 "Önce hatırla: …"); A4'te senaryoda olmayan küçük soru; A5 "İkinci yol" tahtasındaki öğe sayısı.
+Kullanıcının bakması gerekenler: A2'de "bir noktadan tek paralel" ve "doğru açı 180°" taşlarının "başka bilgilere dayanan" bilgi olarak durması (eski içerik); "Hatırla" sahnelerinin açılış cümleleri dersten derse farklı (A2 "Önce geçen dersten iki soru.", A5 "Önce hatırla: …"); A4'te senaryoda olmayan küçük soru; A5 "İkinci yol" tahtasındaki öğe sayısı. Karar (kullanıcı, 12 Ekim 2026): A2 taşları olduğu gibi kalır.
 
 ## Pilotun seslendirilmesi ve yayını (8 Ekim 2026, `plan/YURUTME.md` adım 1)
 
@@ -140,7 +140,7 @@ Dinlenmesi gerekenler (kullanıcı):
 - Eski seslendirmeden kalan, tek harfe ek gelen dört klip (yeniden üretilmedi, ücretlenmesin diye): A3 sahne 5 "A’daki beta ve gama…" (`704b5818`), A4 sahne 2 "…C’den öteye uzatıyoruz" (`5582d0ff`), A5 sahne 4 "Önce A’daki açı: AC keseni boyunca C’ye taşınıyor" (`2db1b3e1`) ve "Şimdi B’deki açı: BC keseni boyunca C’ye kayıyor" (`d3cb4374`).
 - İki harfli adlar bitişik yazıldı ("AB kenarı", "AC keseni", "BC doğrusunu").
 
-Açık içerik sorusu: A2'de "bir noktadan tek paralel" ve "doğru açı 180°dir" taşları "başka bilgilere dayanan" bilgi olarak duruyor (eski içerik).
+Açık içerik sorusu: A2'de "bir noktadan tek paralel" ve "doğru açı 180°dir" taşları "başka bilgilere dayanan" bilgi olarak duruyor (eski içerik). Karar (kullanıcı, 12 Ekim 2026): olduğu gibi kalır (ders "bilgi" diyor; aksiyom–tanım ayrımı eklenmez). Soru kapandı.
 
 ## Yürütme planı 2b: B ve C konularına sese dokunmayan ekler (8 Ekim 2026)
 

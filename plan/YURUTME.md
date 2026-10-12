@@ -105,7 +105,7 @@ Alt ajanların önbellek süresi 5 dakikada kalır (`subagentPromptCacheTtl` aya
 | 1.6 | Kayıt: `DURUM.md`, `SESLENDIRME.md` durum satırı, `plan/matematik/TEMALAR.md`, `TASKS.md` | Sonnet ya da ana oturum | Dosyalar güncel |
 | 1.7 | Commit ve push: `matematik/geometrik-sekiller/` altındaki pilot dosyaları, `ses/` klipleri, plan dosyaları | ana oturum | `main` üzerinde; canlı sitede A1 sesli açılıyor |
 
-Sonra kullanıcıya: kaç klip, kaç dakika, harcanan karakter, dinlenmesi gereken klipler. Açık kalan içerik sorusu da hatırlatılır: A2'de "bir noktadan tek paralel" ve "doğru açı 180°dir" taşları "başka bilgilere dayanan" bilgi olarak duruyor.
+Sonra kullanıcıya: kaç klip, kaç dakika, harcanan karakter, dinlenmesi gereken klipler. Açık kalan içerik sorusu da hatırlatılır: A2'de "bir noktadan tek paralel" ve "doğru açı 180°dir" taşları "başka bilgilere dayanan" bilgi olarak duruyor. Karar (kullanıcı, 12 Ekim 2026): iki taş olduğu gibi kalır; soru kapandı.
 
 ### 2. İki iş birlikte
 

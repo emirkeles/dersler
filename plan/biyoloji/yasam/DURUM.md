@@ -235,7 +235,7 @@ Kullanıcı kararı ve içerik dökümü: `PLAN.md` bölüm 13. Kural: `plan/KUR
 | Senaryolar (D6, E1), `PLAN.md` denetim tablosu ve bölüm 13 | güncel |
 | Seslendirme | bitti (8 Ekim 2026): D6 36 klip (174,2 sn), E1 32 klip (143,6 sn); yeni metin denetlendi ve üretildi (yukarıdaki "Seslendirme" bölümü) |
 
-Kullanıcının bakması istenenler: E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulması (`PLAN.md` bölüm 13); D6 3. sahnedeki çoğalma canlandırması.
+Kullanıcının bakması istenenler: E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulması (`PLAN.md` bölüm 13); D6 3. sahnedeki çoğalma canlandırması. Karar (kullanıcı, 12 Ekim 2026): E1 satırı "Dışarıdan alınır mı?" olarak kalır.
 
 Yayındaki 37 dersin 21'i yeni anlatımla (D6 eklendi); E1'in ilk iki sahnesi eski anlatımda.
 

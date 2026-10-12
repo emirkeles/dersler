@@ -276,7 +276,7 @@ Yazılmamış temalar (hepsinde yalnızca müfredat ve plan taslağı):
 Depo:
 
 - [x] `origin` adresi `https://github.com/emirkeles/dersler.git` (8 Ekim 2026'da `git remote -v` ile bakıldı)
-- [ ] Altı uzak dal `main`'e girmiş durumda, silinebilir (`docs/claude-md-calisma-bicimi`, `hikaye-a8-tarla-cit`, `plan/yeni-dersler`, `tema/geometrik-sekiller`, `tema/nicelikler-ve-degisimler`, `yapi/ders-unite-klasorleri`)
+- [x] Altı uzak dal `main`'e girmiş durumda, silinebilir (`docs/claude-md-calisma-bicimi`, `hikaye-a8-tarla-cit`, `plan/yeni-dersler`, `tema/geometrik-sekiller`, `tema/nicelikler-ve-degisimler`, `yapi/ders-unite-klasorleri`) — silindi (12 Ekim 2026; altı uzak ve beş yerel dal, hepsi `main`'de)
 - [x] Kimya `PLAN.md` bölüm 4 denetim tablosu yeni sahne numaralarıyla eşlendi (8 Ekim 2026)
 
 ## Biyoloji D6 ve E1'i tamamla, E3 hikâyesini siteye bağla (8 Ekim 2026)
@@ -292,7 +292,7 @@ Kullanıcı: EBA'ya girilemeyen yerlerde konu, müfredata bakılarak az bilgi ve
 - [x] E3 filmi: `check` geçti, işlendi (71 sn, 17,6 MB), kapak; E3'ün 9. sahnesi ve `tema.js` `hikayeler`; `olc.js`, `denetle.js` temiz
 - [x] Kuvvet ve Hareket süreleri yeniden ölçüldü: 14 dersin süresi klipler üretilmeden önceki değerde kalmıştı
 - [x] Commit ve push
-- [ ] Kullanıcı D6 ve E1'i sitede izler; E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulmasına karar (`PLAN.md` bölüm 13)
+- [ ] Kullanıcı D6 ve E1'i sitede izler; E1'de "üretilir mi" satırının "Dışarıdan alınır mı?" diye sorulmasına karar (`PLAN.md` bölüm 13) Karar (kullanıcı, 12 Ekim 2026): satır "Dışarıdan alınır mı?" olarak kalır. İzleme açık
 - [ ] Kullanıcı filmi izler (7–12. kareler ve seslendirme işlemeden önce onaylanmamıştı); altyazı dosyası yok
 - [x] D6 ve E1 seslendirildi (biyoloji seslendirmesiyle birlikte, 8 Ekim 2026)
 
@@ -420,7 +420,7 @@ Kullanıcı: kısa ders kuralları kalksın; doğrudan soruya geçilmesin; konu 
 - [x] `plan/KURALLAR.md`: bölüm 1 ("5 dakikalık parçalar" kalktı), 3 (süre ve sahne ölçüsü kalktı), 3.1 (kanca açılışı kalktı; her derste önce anlatım), 3.2 (iskelet: anlat, örnekle göster, sor, gör, adlandır, dene, çıkış), 3.3 yeni (ayrıntı, örnek, görselleştirme), 4 ve 5'e birer cümle
 - [x] `plan/ISLEME.md`: plan ve senaryo içeriği (örnekler, görselleştirilecek kavramlar), karar kuralı 5 ve 7, ders yazımı ve görüntü denetimi
 - [x] `ortak/sablon/dersler/a1-ornek.js`: örnek ders anlat → örnek → sor sırasına çevrildi; ölçüm temiz (5 + 1 altyazı, bütçe ve yerleşim sıfır), son görüntüye bakıldı
-- [ ] Kullanıcı: "kısa ders" adı sitede ve dosyalarda duruyor; ad değişsin mi (öneri aşağıdaki raporda)
+- [x] Kullanıcı: "kısa ders" adı sitede ve dosyalarda duruyor; ad değişsin mi (öneri aşağıdaki raporda) Karar (kullanıcı, 12 Ekim 2026): "kısa ders" adı kalır ("ders" sitede Matematik, Fizik gibi dersler için kullanılıyor)
 - [ ] Kullanıcı: altyazı 12 kelime ve tahta 25 kelime sınırı korundu (ekran okunurluğu); gevşetilsin mi
 - [ ] Commit: kullanıcı ayrıca ister
 
@@ -621,6 +621,7 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] İş panosu (sürüm 18: Eşlik ve Benzerlik 27/28 ders, 216 kısa ders, 40 konu tekrarı)
 - [x] İş panosu (sürüm 19: Eşlik ve Benzerlik yazıldı, 28/28 ders, 216 kısa ders, 41 konu tekrarı)
 - [x] İş panosu (sürüm 20, 12 Ekim 2026: sayım düzeltildi. Kısa ders konu tekrarı olmadan sayılır: 211 / 539; konu tekrarı 54 / 144. Çeşitlilik'in 31 dersi ve 13 tekrarı ilk kez sayıldı; Akışkanlar pilotları ve ses düzeyi kararı için iki kart)
+- [x] İş panosu (sürüm 21, 12 Ekim 2026: dört kart kapandı. Eski dallar silindi; "kısa ders" adı kalır; A2'deki iki taş olduğu gibi kalır; E1 satırı "Dışarıdan alınır mı?" kalır)
 
 ## Bağlam bütçesi düzeltmeleri (12 Ekim 2026)
 
