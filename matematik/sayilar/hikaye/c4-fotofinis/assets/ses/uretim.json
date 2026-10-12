@@ -1,0 +1,57 @@
+{
+ "10": {
+  "metin": "İki derece birbirine ne kadar yakın olursa olsun, aralarına bir başkası sığar.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "11": {
+  "metin": "Kesirlerde [short pause] bir sonraki sayı yoktur.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "01": {
+  "metin": "Paris, iki bin yirmi dört. Olimpiyatlarda yüz metre finali.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "02": {
+  "metin": "Sekiz koşucu çizgiye neredeyse birlikte vardı. Öndeki ikisini gözle ayırmak imkânsızdı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "03": {
+  "metin": "Tabela da ayıramadı. İkisinin derecesi aynıydı: dokuz virgül yetmiş dokuz saniye.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "04": {
+  "metin": "[curious] Peki altın madalya kimin?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "05": {
+  "metin": "Bitiş çizgisindeki kamera bir basamak daha okudu: dokuz virgül yedi yüz seksen dört ve dokuz virgül yedi yüz seksen dokuz.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "06": {
+  "metin": "Sayı doğrusunda soldaki küçüktür. Küçük süre, önce varan demek. Altın, saniyenin binde beşiyle kazanıldı.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "07": {
+  "metin": "[thoughtful] Peki kazanan dereceden hemen sonraki sayı hangisi? Binde bir fazlası mı?",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "08": {
+  "metin": "Yaklaşalım. İkisinin arasında bir sayı daha var. Daha da yaklaşalım: yine var.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ },
+ "09": {
+  "metin": "Kamera bir yerde durur; sayılar durmaz. Ne kadar yaklaşırsan yaklaş, araya hep yenisi girer.",
+  "model": "eleven_v4",
+  "ses": "Hvrobr8BhLPfiaSv2cHi"
+ }
+}

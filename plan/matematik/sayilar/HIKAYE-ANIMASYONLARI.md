@@ -12,7 +12,8 @@ Araç: **HyperFrames**. İlk iki hikâye onunla üretildi.
 | 3 · B7 Kombi 22 derecede | Seslendirildi, işlendi (`hikaye/b7-kombi-22/renders/b7-kombi-22.mp4`) ve B7 dersinin son sahnesine bağlandı | Müzik, efekt, altyazı dosyası |
 | 5 · A7 3 nanometre | Seslendirildi (George, erkek ses; kullanıcı seçti), işlendi (`hikaye/a7-3-nanometre/renders/a7-3-nanometre.mp4`, 73,5 sn) ve A7 dersinin son sahnesine bağlandı (8 Ekim 2026; `hikaye/A7-3-nanometre.md`) | Müzik, efekt, altyazı dosyası |
 | 6 · D3 Yıldızlar bunu giyiyor | Seslendirildi (Gamze Özdemir, 11 klip, 62,8 sn konuşma), işlendi (`hikaye/d3-yildizlar-bunu-giyiyor/renders/d3-yildizlar-bunu-giyiyor.mp4`, 74,5 sn) ve D3 dersinin son sahnesine bağlandı (8 Ekim 2026; `hikaye/D3-yildizlar-bunu-giyiyor.md`) | Müzik, efekt, altyazı dosyası, sesli izleme |
-| 2 C4 · 4 C5 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
+| 2 · C4 Fotofiniş | Öz gözden geçirildi (gerçek yarış: Paris 2024; `hikaye/C4-fotofinis.md` bölüm 2), seslendirildi (Gamze Özdemir, 11 klip, 64,7 sn konuşma) ve işlendi (`hikaye/c4-fotofinis/renders/c4-fotofinis.mp4`, 74,6 sn, −14 LUFS) (12 Ekim 2026) | Kullanıcının izlemesi, derse bağlama, müzik, efekt, altyazı dosyası |
+| 4 C5 · 7 B5 · 8 D7 · 9 C3 | Başlanmadı | — |
 
 Motorda video sahnesi türü var (`ortak/API.md`). Tema sayfasında "Hikâyeler" başlığı var (7 Ekim 2026; liste `ortak/katalog.js` içinde). Kapanış kartında her zaman dersin akılda kalıcı cümlesi yazar; tek istisna C5'teki siyah kuğu cümlesidir (`senaryolar/C-sayi-kumeleri.md`).
 
@@ -75,7 +76,7 @@ Sıralama ölçütü: (1) program o fikir için gerçek yaşam bağlamını aç�
 | Sıra | Ders | Fikir | Hayatta nerede | Hikâye | Kapanış cümlesi |
 |---|---|---|---|---|---|
 | 1 | A8 Yaklaşık değer | Karekök çoğu zaman tam çıkmaz; yaklaşık değerle iş görülür | Alanı bilinen kare arsanın kenarı, çit ve fayans hesabı | Bir dönümlük (1000 m²) kare tarla çitle çevrilecek. Kenar √1000: tam çıkmaz, 31,6 metre alınır; 4 kenar 126,5 metre çit. Yuvarlamanın faturaya etkisi. | "Kök tam çıkmazsa yaklaşığıyla ölçer, biçeriz." |
-| 2 | C4 Sıralama ve arada olma | İki ondalık sayının arasına hep bir yenisi sığar | 100 metre finali ve fotofiniş | İki koşucu 9,58'de geliyor gibi görünür. Kamera saniyenin binde birine iner: 9,581 ve 9,584. Yetmezse on binde bire. | "Kesirlerde 'bir sonraki sayı' yoktur." |
+| 2 | C4 Sıralama ve arada olma | İki ondalık sayının arasına hep bir yenisi sığar | 100 metre finali ve fotofiniş | Paris 2024'ün 100 metre finalinde ilk iki koşucunun derecesi tabelada aynıdır: 9,79. Bitiş kamerası bir basamak daha okur: 9,784 ve 9,789; soldaki küçüktür, altın binde beş saniyeyle kazanılır. Peki 9,784'ten sonraki sayı 9,785 mi? Yaklaşınca araya 9,7845 girer, daha da yaklaşınca 9,78405. Kamera bir yerde durur, sayılar durmaz. Ayrıntılı plan: `hikaye/C4-fotofinis.md`. | "Kesirlerde 'bir sonraki sayı' yoktur." |
 | 3 | B7 Mutlak değerle aralık | \|x − a\| < r: hedefe uzaklık payın içinde | Kombi ve klima termostatı | Kombi 22 dereceye ayarlı; 1 derecelik payın dışına çıkınca çalışır. 21,4 de 22,8 de "tamam"; 20,9 değil. Önemli olan 22'ye uzaklık. | "Mutlak değer, hedefe uzaklıktır." |
 | 4 | C5 İspat mı, karşı örnek mi? | Bin örnek kanıtlamaz, tek karşı örnek çürütür | "Her zaman", "hiçbir zaman" diye başlayan iddialar | Avrupa'da yüzyıllarca "bütün kuğular beyazdır" denir; 1697'de Avustralya'da siyah kuğu görülür. Bugüne bağlanır: "bu uygulama hiç çökmez", "ben hiç geç kalmam". | "Bin beyaz kuğu kanıtlamaz, tek siyah kuğu çürütür." |
 | 5 | A7 Bilimsel gösterim | Üs, virgülün kaç basamak kaydığını sayar; çok küçük sayı böyle okunur | Telefon reklamındaki "3 nanometre" | Reklam "3 nanometre işlemci" diyor: metrenin milyarda üçü, dersteki 3 × 10⁻⁹. Ne kadar küçük? Bir saç teli yaklaşık 7 × 10⁻⁵ metre. Üsler −5 ve −9: arada dört basamak var; saç telinin kalınlığına yan yana on binlercesi sığar. | "Virgül kayar, üs sayar." |
@@ -100,12 +101,12 @@ Müfredat dayanağı:
 
 İlk beşi programın açıkça gerçek yaşam bağlamı istediği ya da örneğini verdiği fikirler; bunlar öncelikli. 6, 7 ve 8 çıktının ana içeriğini destekliyor. 9 programın ön bilgi saydığı bir konu; süre ya da bütçe daralırsa ilk vazgeçilecek olan o.
 
-Üretim sırası tablodaki sıradır: C4, C5, A7, D3, B5, D7, C3 (A8 ve B7 hazır).
+Üretim sırası tablodaki sıradır: C4, C5, A7, D3, B5, D7, C3 (A8, B7, A7, D3 ve C4 hazır; sırada C5).
 
 Doğruluk notları:
 
 - 1 dönüm 1000 m², √1000 ≈ 31,62.
-- 100 metre dünya rekoru 9,58 saniyedir (2009); hikâyedeki iki derece kurgudur.
+- Fotofiniş gerçek bir yarışı anlatır: Paris 2024 erkekler 100 metre finali; birinci 9,784, ikinci 9,789, ikisi de tabelada 9,79 (atletizmde derece yüzde bire yukarı yuvarlanır). Eski özdeki kurgu dereceler (9,58 · 9,581 · 9,584) bu kurala uymuyordu: tabelada 9,59 görünürlerdi. Kaynaklar `hikaye/C4-fotofinis.md` bölüm 5.
 - Siyah kuğular Avrupalılarca ilk kez 1697'de Batı Avustralya'da görüldü.
 - "3 nanometre" çipin üretim kuşağının adıdır; içindeki parçaların gerçek ölçüsü değildir. Hikâye "en küçük parça 3 nanometre" demez; reklamdaki sayının ne kadar küçük bir uzunluk olduğunu anlatır. Saç teli kişiye göre yaklaşık 2 × 10⁻⁵ ile 2 × 10⁻⁴ metre arasındadır; 7 × 10⁻⁵ alınırsa oran yaklaşık 23 000 olur, hikâyede "on binlerce" denir. A7 dersinin açılış sorusundaki "çipin en küçük parçası" ifadesi aynı gerekçeyle gevşek; A bölümü kapalı olduğu için dokunulmadı.
 - A serisi kâğıtların kenar oranı √2'dir (297 / 210 ≈ 1,414); A4'ten A3'e büyütme oranı makinelerde %141 olarak yazılır.

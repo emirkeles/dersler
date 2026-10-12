@@ -672,6 +672,23 @@ Plan: `fizik/akiskanlar/pilot/kaldirma-kuvveti/PLAN.md`. Tek başına sayfa; der
 - [ ] Kullanıcı kararı: plandan sapmalar (`PLAN.md` bölüm 12) kabul mü; su için WebGL katmanı istenir mi
 - [ ] Akışkanlar işleme alınınca: pilot dersi D2'ye katılır ya da silinir (`p2-…` dosyaları `tema.js` içinde yok, siteden bağlantısı yok; seslendirme üretilmedi)
 
+## Hikâye: C4 Fotofiniş (12 Ekim 2026)
+
+Plan ve inceleme: `plan/matematik/sayilar/hikaye/C4-fotofinis.md`. Proje: `matematik/sayilar/hikaye/c4-fotofinis/`. Üretilmemiş hikâyeler üç listede tarandı (Sayılar, matematik 2–7. temalar, fizik); sıradaki C4 çıktı.
+
+- [x] Üretilecek hikâyeleri tara, sırayı belirle: C4 (Sayılar listesinin kendi üretim sırası; programın kendi örneği; teması yayında)
+- [x] Eski özü incele: yuvarlama hatası (9,581 tabelada 9,59 görünür), kurgu yerine gerçek yarış (Paris 2024: 9,79 → 9,784 ve 9,789), kapanış cümlesine köprü, kameranın sınırı; yedi bulgu plan dosyasının 2. bölümünde
+- [x] Olguları doğrula (dereceler, sekiz finalist, mor pist, kameranın 40 000 karesi); hareket tasarımı kaynakları (Opus alt ajanı)
+- [x] Proje iskeleti (`hyperframes init` 0.8.149), `BRIEF.md`, `SCRIPT.md` (11 satır, 128 kelime), `frame.md`, `STORYBOARD.md` (10 kare)
+- [x] Ses: Gamze Özdemir, 11 klip, 871 karakter, 64,7 sn; düzey eşitleme ve duraklama ölçümü (`assets/ses-esit/olcum.json`)
+- [x] Kompozisyon: on kare, 74,6 sn; `check` temiz (tek uyarı: dosya uzunluğu); otuza yakın anın görüntüsüne bakıldı
+- [x] İşleme: `renders/c4-fotofinis.mp4` (1920×1080, 74,6 sn, `--crf 23`), −14 LUFS'e eşitlendi; `kapak.jpg`
+- [x] `plan/matematik/sayilar/HIKAYE-ANIMASYONLARI.md`: durum satırı, 2. satırın özü, doğruluk notu
+- [ ] Kullanıcı: filmi sesli izler (okunuş kulakla denetlenmedi; film baştan sona oynatılmadı)
+- [ ] Derse bağlama: C4'ün 5. sahnesi (video), `tema.js` içinde sahne sayısı 4 → 5 ve `hikayeler` satırı, `sure.js`, `olc.js`, `denetle.js` (kullanıcı filmi görünce)
+- [ ] Altyazı dosyası; müzik ve efekt (öteki hikâyelerle ortak karar)
+- [x] Commit ve push (12 Ekim 2026, kullanıcı istedi): proje klasörü, plan dosyaları, `HIKAYE-ANIMASYONLARI.md`, bu bölüm
+
 ## Fizik · Akışkanlar (`YURUTME.md` 3. adım, ikinci tema; 12 Ekim 2026'da başladı)
 
 Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 15 kısa ders + 5 konu tekrarı = 20 dosya.

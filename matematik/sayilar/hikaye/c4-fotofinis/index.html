@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1920, height=1080">
+    <title>Fotofiniş</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+          U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+          U+FEFF, U+FFFD;
+      }
+      @font-face {
+        font-family: "Plex Sans";
+        src: url(assets/fonts/plex-sans-latin-ext.woff2) format("woff2");
+        font-weight: 100 700;
+        unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+          U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+          U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* Renkler: frame.md. */
+      :root {
+        --gece: #14112b;
+        --koyu-mor: #211b4a;
+        --mor: #7e69d2;
+        --krem: #f4eedf;
+        --turuncu: #ff7a3d;
+        --nane: #4fd8b4;
+        --altin: #ffc94a;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #14112b;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: "Plex Sans", sans-serif;
+      }
+      #zemin,
+      #duzlem,
+      #dunya,
+      #dogru,
+      #panel,
+      #flas,
+      #doku {
+        position: absolute;
+        inset: 0;
+        width: 1920px;
+        height: 1080px;
+      }
+      #zemin {
+        background: #14112b;
+      }
+      /* Sayı doğrusunun düzlemi: bitiş kamerasının ince dikey şeritlerinin devamı. */
+      #duzlem {
+        background:
+          radial-gradient(1200px 620px at 50% 60%, rgba(126, 105, 210, 0.2), rgba(20, 17, 43, 0) 70%),
+          repeating-linear-gradient(90deg, rgba(244, 238, 223, 0.028) 0 2px, rgba(20, 17, 43, 0) 2px 30px), #14112b;
+      }
+      #flas {
+        background: #f4eedf;
+        pointer-events: none;
+      }
+      #doku {
+        pointer-events: none;
+        mix-blend-mode: overlay;
+        opacity: 0.32;
+      }
+      /* Sonradan gelen her şey saydam başlar; zaman çizelgesi açar. */
+      #duzlem,
+      #panel-govde,
+      #flas,
+      #perde,
+      #kart,
+      #kimin,
+      .led,
+      .cakar,
+      #ok-a,
+      #ok-b,
+      #cip-a,
+      #cip-b {
+        opacity: 0;
+      }
+      #dunya text,
+      #panel text {
+        font-family: "Plex Sans", sans-serif;
+      }
+      #kapanis {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      #perde {
+        position: absolute;
+        inset: 0;
+        background: rgba(20, 17, 43, 0.86);
+      }
+      #kart {
+        position: relative;
+        width: 1380px;
+        padding: 96px 110px 88px;
+        border: 8px solid #14112b;
+        border-radius: 30px;
+        background: #f4eedf;
+        box-shadow: 18px 18px 0 #ffc94a;
+        color: #14112b;
+      }
+      #cumle {
+        font-size: 80px;
+        font-weight: 600;
+        line-height: 1.16;
+        letter-spacing: -0.01em;
+      }
+      .satir {
+        display: block;
+        width: 100%;
+      }
+      #cizgi {
+        width: 100%;
+        height: 4px;
+        margin: 54px 0 40px;
+        border-radius: 2px;
+        background: #14112b;
+        opacity: 0.35;
+        transform-origin: 0 50%;
+      }
+      #model {
+        font-size: 48px;
+        font-weight: 600;
+        color: #14112b;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.01em;
+      }
+    </style>
+  </head>
+  <body>
+    <div data-hf-id="hf-b9cv" id="root" data-composition-id="main" data-start="0" data-duration="74.6" data-width="1920" data-height="1080">
+      <div data-hf-id="hf-ds6u" id="zemin"></div>
+      <div data-hf-id="hf-8wts" id="duzlem"></div>
+
+      <!-- Stadyum: tek dünya, tek kamera (#kam). İçeriği aşağıdaki betik kurar. -->
+      <svg data-hf-id="hf-adqh" id="dunya" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs data-hf-id="hf-mh0t">
+          <pattern data-hf-id="hf-rqt1" id="seyirci" width="34" height="26" patternUnits="userSpaceOnUse">
+            <circle data-hf-id="hf-gz0e" cx="6" cy="7" r="3.4" fill="#f4eedf" opacity="0.34" />
+            <circle data-hf-id="hf-65pk" cx="23" cy="5" r="3.4" fill="#7e69d2" opacity="0.7" />
+            <circle data-hf-id="hf-8fkv" cx="14" cy="19" r="3.4" fill="#ffc94a" opacity="0.3" />
+            <circle data-hf-id="hf-0ox7" cx="30" cy="20" r="3.4" fill="#f4eedf" opacity="0.2" />
+          </pattern>
+          <pattern data-hf-id="hf-m99x" id="reklam" width="190" height="50" patternUnits="userSpaceOnUse">
+            <rect data-hf-id="hf-8tg5" x="18" y="12" width="128" height="26" rx="5" fill="#f4eedf" opacity="0.1" />
+            <rect data-hf-id="hf-yp2e" x="156" y="12" width="14" height="26" rx="5" fill="#ffc94a" opacity="0.22" />
+          </pattern>
+        </defs>
+        <g data-hf-id="hf-90ub" id="kam" data-layout-allow-overflow="" />
+      </svg>
+
+      <!-- Bitiş kamerasının paneli (4. kare): şerit görüntüsü; cetveli #dogru çizer. -->
+      <svg data-hf-id="hf-8jyi" id="panel" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+        <defs data-hf-id="hf-vl9d">
+          <clippath data-hf-id="hf-clzk" id="tarama-kirp"><rect data-hf-id="hf-bbdk" id="tarama-alan" x="340" y="596" width="0" height="240" /></clippath>
+          <lineargradient data-hf-id="hf-zlzd" id="iz-a" x1="0" x2="1" y1="0" y2="0">
+            <stop data-hf-id="hf-l1uj" offset="0" stop-color="#ff7a3d" stop-opacity="1" />
+            <stop data-hf-id="hf-bfzb" offset="1" stop-color="#ff7a3d" stop-opacity="0" />
+          </lineargradient>
+          <lineargradient data-hf-id="hf-og82" id="iz-b" x1="0" x2="1" y1="0" y2="0">
+            <stop data-hf-id="hf-tvuc" offset="0" stop-color="#4fd8b4" stop-opacity="1" />
+            <stop data-hf-id="hf-92j8" offset="1" stop-color="#4fd8b4" stop-opacity="0" />
+          </lineargradient>
+          <pattern data-hf-id="hf-ydcy" id="yarik" width="8" height="240" patternUnits="userSpaceOnUse">
+            <rect data-hf-id="hf-8xou" x="0" y="0" width="2" height="240" fill="#14112b" opacity="0.22" />
+          </pattern>
+        </defs>
+        <g data-hf-id="hf-t6op" id="panel-govde">
+          <rect data-hf-id="hf-wfdq" x="300" y="556" width="1320" height="470" rx="22" fill="#0e0b20" stroke="#f4eedf" stroke-width="5" />
+          <!-- kamera simgesi: panelin kime ait olduğunu söyler -->
+          <g data-hf-id="hf-7gz7" transform="translate(238 588)"><g data-hf-id="hf-tki5" id="panel-kamera">
+            <rect data-hf-id="hf-66uq" x="-34" y="-22" width="68" height="46" rx="9" fill="#f4eedf" />
+            <rect data-hf-id="hf-lcy1" x="-16" y="-32" width="26" height="14" rx="4" fill="#f4eedf" />
+            <circle data-hf-id="hf-fylz" cx="0" cy="1" r="13" fill="#14112b" />
+            <circle data-hf-id="hf-dpkf" cx="0" cy="1" r="6" fill="#ffc94a" />
+          </g></g>
+          <g data-hf-id="hf-znpw" clip-path="url(#tarama-kirp)">
+            <g data-hf-id="hf-px68" id="serit" />
+            <rect data-hf-id="hf-yg1t" x="340" y="596" width="1240" height="240" fill="url(#yarik)" />
+            <rect data-hf-id="hf-73qe" id="iz-a-sekil" x="880" y="769" width="230" height="44" rx="22" fill="url(#iz-a)" />
+            <rect data-hf-id="hf-0mjj" id="iz-b-sekil" x="1280" y="679" width="230" height="44" rx="22" fill="url(#iz-b)" />
+          </g>
+          <rect data-hf-id="hf-10oz" id="tarama-cizgi" x="338" y="590" width="5" height="252" rx="2" fill="#f4eedf" />
+          <line data-hf-id="hf-hg5r" id="kil-a" x1="880" y1="596" x2="880" y2="836" stroke="#ff7a3d" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round" />
+          <line data-hf-id="hf-dzft" id="kil-b" x1="1280" y1="596" x2="1280" y2="836" stroke="#4fd8b4" stroke-width="4" stroke-dasharray="3 9" stroke-linecap="round" />
+        </g>
+      </svg>
+
+      <!-- Sayı doğrusu: her kare yalnızca durum nesnesinden (st) çizilir. -->
+      <canvas data-hf-id="hf-8tkm" id="dogru" width="1920" height="1080" data-layout-allow-overflow=""></canvas>
+
+      <div data-hf-id="hf-xiif" id="flas"></div>
+      <canvas data-hf-id="hf-t7zk" id="doku" width="1920" height="1080" data-layout-allow-overflow=""></canvas>
+
+      <!-- Kapanış kartı (10. kare). Klip değildir; perde ve kart son kareye kadar saydamdır. -->
+      <section data-hf-id="hf-kxgq" id="kapanis">
+        <div data-hf-id="hf-ia4r" id="perde"></div>
+        <div data-hf-id="hf-xslf" id="kart">
+          <p data-hf-id="hf-va8w" id="cumle">
+            <span data-hf-id="hf-wn6y" class="satir" id="c1">Kesirlerde</span>
+            <span data-hf-id="hf-ankg" class="satir" id="c2">“bir sonraki sayı” yoktur.</span>
+          </p>
+          <div data-hf-id="hf-96ft" id="cizgi"></div>
+          <p data-hf-id="hf-ori5" id="model">9,784 &lt; 9,7845 &lt; 9,785</p>
+        </div>
+      </section>
+
+      <!-- Anlatım (Gamze Özdemir, eleven_v4). Klipler düzeyi eşitlenmiş kopyalardır; ham hâlleri assets/ses/ içinde. -->
+      <audio data-hf-id="hf-91bp" id="ses-01" src="assets/ses-esit/01.mp3" data-start="0.5" data-duration="4.32" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-z06a" id="ses-02" src="assets/ses-esit/02.mp3" data-start="5.3" data-duration="6.32" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-2fde" id="ses-03" src="assets/ses-esit/03.mp3" data-start="12.2" data-duration="5.76" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-dfr1" id="ses-04" src="assets/ses-esit/04.mp3" data-start="18.6" data-duration="2.16" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-8zj0" id="ses-05" src="assets/ses-esit/05.mp3" data-start="21.5" data-duration="9.2" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-dllw" id="ses-06" src="assets/ses-esit/06.mp3" data-start="31.3" data-duration="9.36" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-3zun" id="ses-07" src="assets/ses-esit/07.mp3" data-start="41.4" data-duration="5.6" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-gt3u" id="ses-08" src="assets/ses-esit/08.mp3" data-start="47.6" data-duration="6.24" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-3cln" id="ses-09" src="assets/ses-esit/09.mp3" data-start="54.4" data-duration="7.2" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-gr63" id="ses-10" src="assets/ses-esit/10.mp3" data-start="62.3" data-duration="5.28" data-track-index="3" data-volume="1"></audio>
+      <audio data-hf-id="hf-aff3" id="ses-11" src="assets/ses-esit/11.mp3" data-start="68.5" data-duration="3.28" data-track-index="3" data-volume="1"></audio>
+    </div>
+
+    <script>
+      const kur = () => {
+        const R = { gece: "#14112b", koyuMor: "#211b4a", mor: "#7e69d2", krem: "#f4eedf", turuncu: "#ff7a3d", nane: "#4fd8b4", altin: "#ffc94a" };
+        const W = 1920, H = 1080;
+        const kis = (x, a, b) => Math.min(b, Math.max(a, x));
+        const rampa = (x, a, b) => kis((x - a) / (b - a), 0, 1);
+        const kar = (a, b, t) => a + (b - a) * t;
+        const yay = (t) => { const c = 1.9; const u = kis(t, 0, 1) - 1; return 1 + (c + 1) * u * u * u + c * u * u; }; /* back.out */
+        /* Tohumlu sayı üreteci: yıldızlar, flaşlar ve kâğıt dişi her karede aynı çıkar. */
+        const tohum = (a) => () => { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
+
+        /* ---- Kâğıt dişi: bir kez çizilir, durağandır. ---- */
+        (() => {
+          const c = document.getElementById("doku").getContext("2d");
+          const r = tohum(7);
+          const im = c.createImageData(W, H);
+          for (let i = 0; i < im.data.length; i += 4) { const v = 128 + (r() - 0.5) * 120; im.data[i] = im.data[i + 1] = im.data[i + 2] = v; im.data[i + 3] = 255; }
+          c.putImageData(im, 0, 0);
+        })();
+
+        /* ---- Stadyum ---- */
+        const PY = 520, KH = 60, FX = 1420; /* pistin üstü, kulvar yüksekliği, bitiş çizgisinin yakın kenarı */
+        const kam = document.getElementById("kam");
+        const r1 = tohum(11);
+        let h = "";
+        h += `<g id="yildizlar">`;
+        for (let i = 0; i < 90; i++) h += `<circle cx="${(-400 + r1() * 2700).toFixed(0)}" cy="${(-1500 + r1() * 1560).toFixed(0)}" r="${(1.6 + r1() * 2.6).toFixed(1)}" fill="${R.krem}" opacity="${(0.25 + r1() * 0.6).toFixed(2)}"></circle>`;
+        h += `</g>`;
+        /* tabela: tribünün üstünde, iki direkte */
+        h += `<g id="tabela"><rect x="622" y="-170" width="30" height="300" fill="#2c2560"></rect><rect x="1268" y="-170" width="30" height="300" fill="#2c2560"></rect>`;
+        h += `<g transform="translate(480 -580)"><rect x="0" y="0" width="960" height="420" rx="26" fill="${R.koyuMor}"></rect><rect x="16" y="16" width="928" height="388" rx="16" fill="#0e0b20" stroke="${R.krem}" stroke-opacity="0.9" stroke-width="5"></rect><g id="satirlar"></g>`;
+        h += `<g id="kimin"><circle cx="874" cy="210" r="44" fill="none" stroke="${R.altin}" stroke-width="7" stroke-dasharray="14 10"></circle><text data-layout-allow-occlusion data-layout-allow-overflow x="874" y="231" text-anchor="middle" font-size="58" font-weight="700" fill="${R.altin}">?</text></g></g></g>`;
+        /* projektör direkleri ve ışık konileri */
+        const direk = (x, yon) => {
+          let s = `<rect x="${x - 11}" y="100" width="22" height="380" fill="#2c2560"></rect><rect x="${x - 128}" y="14" width="256" height="96" rx="14" fill="#2c2560"></rect>`;
+          for (let j = 0; j < 3; j++) for (let i = 0; i < 6; i++) s += `<circle class="lamba" cx="${x - 100 + i * 40}" cy="${34 + j * 28}" r="10" fill="${R.krem}"></circle>`;
+          s += `<polygon class="koni" points="${x - 118},110 ${x + 118},110 ${x + 118 + yon * 560 + 360},1000 ${x - 118 + yon * 560 - 360},1000" fill="${R.krem}"></polygon>`;
+          return s;
+        };
+        h += `<g id="tribun"><rect x="-700" y="120" width="3400" height="352" fill="${R.koyuMor}"></rect><rect x="-700" y="150" width="3400" height="316" fill="url(#seyirci)"></rect>`;
+        h += `<rect x="-700" y="120" width="3400" height="28" fill="#2c2560"></rect><rect x="-700" y="252" width="3400" height="5" fill="${R.gece}"></rect><rect x="-700" y="362" width="3400" height="5" fill="${R.gece}"></rect>`;
+        const r2 = tohum(23);
+        for (let i = 0; i < 16; i++) h += `<circle class="cakar" cx="${(700 + r2() * 1100).toFixed(0)}" cy="${(170 + r2() * 280).toFixed(0)}" r="9" fill="${R.krem}"></circle>`;
+        h += `</g>`;
+        h += `<g id="isiklar">${direk(150, 1)}${direk(1770, -1)}</g>`;
+        h += `<g id="pist"><rect x="-700" y="470" width="3400" height="50" fill="#2a2157"></rect><rect x="-700" y="470" width="3400" height="50" fill="url(#reklam)"></rect>`;
+        h += `<rect id="pist-zemin" x="-700" y="${PY}" width="3400" height="${8 * KH}" fill="${R.mor}"></rect><rect x="-700" y="1000" width="3400" height="120" fill="#2b2259"></rect>`;
+        for (let i = 0; i <= 8; i++) h += `<rect class="kulvar" x="-700" y="${PY + i * KH - 2}" width="3400" height="4" fill="${R.krem}" opacity="0.92"></rect>`;
+        h += `<rect id="bitis" x="${FX}" y="${PY}" width="13" height="${8 * KH}" fill="${R.krem}"></rect>`;
+        /* bitiş çizgisinin hizasındaki kamera */
+        h += `<g transform="translate(${FX + 6} 474)"><g id="bitis-kamera"><rect x="-4" y="6" width="8" height="40" fill="${R.krem}"></rect><rect x="-24" y="-22" width="48" height="32" rx="7" fill="${R.krem}"></rect><circle cx="0" cy="-6" r="9" fill="${R.gece}"></circle><circle cx="0" cy="-6" r="4" fill="${R.altin}"></circle></g></g>`;
+        h += `</g><g id="kosucular"></g><g id="oklar"></g>`;
+        kam.innerHTML = h;
+
+        /* ---- Tabela: yedi parçalı rakamlar. Sönük parçalar hep görünür; yanan parçalar ayrı öğedir. ---- */
+        const PARCA = { a: [12, 0, 60, 0], b: [70, 10, 0, 60], c: [70, 80, 0, 60], d: [12, 136, 60, 0], e: [0, 80, 0, 60], f: [0, 10, 0, 60], g: [12, 68, 60, 0] };
+        const parcaNokta = ([x, y, w, hh]) => (w ? `${x},${y + 7} ${x + 7},${y} ${x + w - 7},${y} ${x + w},${y + 7} ${x + w - 7},${y + 14} ${x + 7},${y + 14}` : `${x + 7},${y} ${x + 14},${y + 7} ${x + 14},${y + hh - 7} ${x + 7},${y + hh} ${x},${y + hh - 7} ${x},${y + 7}`);
+        const RAKAM = { 9: "abcdfg", 7: "abc", 8: "abcdefg", 4: "bcfg" };
+        const HANE = [250, 400, 510, 620]; /* 9 , 7 9 [üçüncü basamak] */
+        let sat = "";
+        for (const [ad, y, renk, daire] of [["b", 45, R.nane, false], ["a", 225, R.turuncu, true]]) {
+          sat += `<g transform="translate(0 ${y})">`;
+          sat += daire ? `<circle id="cip-${ad}" cx="150" cy="75" r="30" fill="${renk}"></circle>` : `<polygon id="cip-${ad}" points="150,38 187,75 150,112 113,75" fill="${renk}"></polygon>`;
+          let sonuk = "", isik = "";
+          HANE.forEach((x, d) => {
+            sonuk += `<g transform="translate(${x} 0) skewX(-5)">`; isik += `<g transform="translate(${x} 0) skewX(-5)">`;
+            for (const p in PARCA) { sonuk += `<polygon points="${parcaNokta(PARCA[p])}" fill="#3b3270" opacity="0.5"></polygon>`; isik += `<polygon id="L-${ad}-${d}-${p}" class="led" points="${parcaNokta(PARCA[p])}" fill="${R.altin}"></polygon>`; }
+            sonuk += `</g>`; isik += `</g>`;
+          });
+          isik += `<path id="L-${ad}-v" class="led" d="M346 132 h18 v18 l-9 18 h-9 l6 -18 h-6 z" fill="${R.altin}"></path>`;
+          sat += `${sonuk}<g id="isik-${ad}">${isik}</g><text data-layout-allow-occlusion data-layout-allow-overflow x="738" y="148" font-size="60" font-weight="600" fill="${R.krem}" opacity="0.6">sn</text></g>`;
+        }
+        document.getElementById("satirlar").innerHTML = sat;
+
+        /* ---- Kamera şeridi: sekiz kulvar bandı ---- */
+        let ser = "";
+        for (let i = 0; i < 8; i++) ser += `<rect x="340" y="${596 + i * 30}" width="1240" height="30" fill="${i % 2 ? "#6f5bc4" : "#7e69d2"}" opacity="0.55"></rect>`;
+        document.getElementById("serit").innerHTML = ser;
+
+        /* ---- Koşucular: tek renkli piktogram, koşu döngüsü alınan yoldan hesaplanır. ---- */
+        const A = 6, B = 3; /* satırlar: A birinci (turuncu), B ikinci (nane) */
+        const SON = [81, 56, 22, 4, 30, 64, 0, 106]; /* bitişte lidere uzaklık (px): 1 px ≈ 1,2 cm; gerçek derecelerle orantılı (9,784 · 9,789 · 9,81 · 9,82 · 9,85 · 9,86 · 9,88 · 9,91) */
+        const BAS = [20, -14, 34, 0, 12, 40, 78, 26]; /* yarışın başında lidere uzaklık: birinci geriden gelir */
+        const TEMPO = [1, 0.94, 1.05, 0.98, 1.03, 0.92, 1.0, 1.07];
+        const FAZ = [0.4, 2.1, 4.4, 1.2, 5.3, 3.0, 0, 2.6];
+        const kg = document.getElementById("kosucular");
+        const kos = [];
+        for (let i = 0; i < 8; i++) {
+          const on = i === A ? R.turuncu : i === B ? R.nane : "#ece5fb";
+          const arka = i === A ? "#d2602c" : i === B ? "#37ab8c" : "#bdb1ea";
+          const g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          g.setAttribute("id", "k" + i);
+          g.innerHTML =
+            `<ellipse rx="46" ry="7" fill="${R.gece}" opacity="0.3"></ellipse>` +
+            `<polyline fill="none" stroke="${arka}" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"></polyline>` +
+            `<polyline fill="none" stroke="${arka}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"></polyline>` +
+            `<line stroke="${on}" stroke-width="25" stroke-linecap="round"></line><circle r="14.5" fill="${on}"></circle>` +
+            `<polyline fill="none" stroke="${on}" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"></polyline>` +
+            `<polyline fill="none" stroke="${on}" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"></polyline>`;
+          kg.appendChild(g);
+          const c = g.children;
+          kos.push({ g, golge: c[0], kolA: c[1], bacakA: c[2], govde: c[3], bas: c[4], bacakO: c[5], kolO: c[6], ayak: PY + i * KH + 46 });
+        }
+        document.getElementById("oklar").innerHTML =
+          `<g id="ok-a-yer"><polygon id="ok-a" points="-15,-20 15,-20 0,2" fill="${R.turuncu}"></polygon></g><g id="ok-b-yer"><polygon id="ok-b" points="-15,-20 15,-20 0,2" fill="${R.nane}"></polygon></g>`;
+        const okA = document.getElementById("ok-a-yer"), okB = document.getElementById("ok-b-yer");
+        const GOGUS = 45; /* kalçadan göğsün ön yüzüne yatay uzaklık (bitiş eğilmesinde) */
+        const f1 = (v) => v.toFixed(1);
+        const poz = (k, x, faz, egim) => {
+          const hy = k.ayak - 79 + 4 * Math.cos(2 * faz);
+          const bacak = (f) => {
+            const th = 0.1 + 0.92 * Math.sin(f), kn = 0.28 + 1.3 * Math.max(0, Math.cos(f + 0.55));
+            const dx = x + 40 * Math.sin(th), dy = hy + 40 * Math.cos(th);
+            return `${f1(x)},${f1(hy)} ${f1(dx)},${f1(dy)} ${f1(dx + 42 * Math.sin(th - kn))},${f1(dy + 42 * Math.cos(th - kn))}`;
+          };
+          const ox = x + 54 * Math.sin(egim), oy = hy - 54 * Math.cos(egim);
+          const kol = (f) => {
+            const ua = -0.95 * Math.sin(f), fa = ua + 1.5;
+            const ex = ox + 26 * Math.sin(ua), ey = oy + 6 + 26 * Math.cos(ua);
+            return `${f1(ox)},${f1(oy + 6)} ${f1(ex)},${f1(ey)} ${f1(ex + 24 * Math.sin(fa))},${f1(ey + 24 * Math.cos(fa))}`;
+          };
+          k.golge.setAttribute("cx", f1(x + 8)); k.golge.setAttribute("cy", k.ayak + 4);
+          k.bacakA.setAttribute("points", bacak(faz + Math.PI)); k.bacakO.setAttribute("points", bacak(faz));
+          k.kolA.setAttribute("points", kol(faz)); k.kolO.setAttribute("points", kol(faz + Math.PI));
+          k.govde.setAttribute("x1", f1(x)); k.govde.setAttribute("y1", f1(hy - 4)); k.govde.setAttribute("x2", f1(ox)); k.govde.setAttribute("y2", f1(oy + 4));
+          k.bas.setAttribute("cx", f1(ox + 20 * Math.sin(egim * 0.7) + 3)); k.bas.setAttribute("cy", f1(oy - 20 * Math.cos(egim * 0.7)));
+          return oy - 44;
+        };
+
+        /* ---- Durum: görüntü her an yalnızca bu değerlerden hesaplanır. ----
+           cx, cy, cs: stadyum kamerası (ekranın ortasındaki dünya noktası ve büyütme) · p: yarışın ilerleyişi · sal: kameranın hafif salınımı
+           nl…: sayı doğrusu. ax: 9,784'ün ekrandaki x'i · nk: z = 0'da binde birin piksel karşılığı · z: yakınlaşma (her 1 = 10 kat)
+           nu: çizgi ve yazı ölçeği · ny: taban çizgisi · tar: kamera taramasının ilerleyişi (panelde cetveli de açar) */
+        const st = {
+          cx: 960, cy: 522, cs: 1, p: 0, sal: 0, soluk: 0,
+          nl: 0, ax: 880, nk: 80, nu: 0.7, ny: 930, z: 0, tar: 0,
+          ma: 0, mb: 0, la: 0, lb: 0, kucuk: 0, med: 0, medD: 0, ay: 0, sek: 0, sekA: 0, soru: 0, s785: 0, halka: 0,
+          g1: 0, g2: 0, mer: 0, kamA: 0, kamDur: 0, dol: 0,
+        };
+        const cv = document.getElementById("dogru"), c = cv.getContext("2d");
+        const yildizlar = document.getElementById("yildizlar"), taramaAlan = document.getElementById("tarama-alan"), taramaCizgi = document.getElementById("tarama-cizgi");
+        const kilA = document.getElementById("kil-a"), kilB = document.getElementById("kil-b"), izA = document.getElementById("iz-a-sekil"), izB = document.getElementById("iz-b-sekil");
+        const yaz = (k, n) => { const s = String(Math.round(9784 * 10 ** k) + n); return s[0] + "," + s.slice(1); };
+        const font = (px, w = 700) => `${w} ${px.toFixed(1)}px "Plex Sans", sans-serif`;
+
+        const cizDogru = () => {
+          c.clearRect(0, 0, W, H);
+          if (st.nl < 0.004) return;
+          const u = st.nu, y = st.ny, K = st.nk * 10 ** st.z, ax = st.ax;
+          const X = (v) => ax + v * K; /* v: 9,784'ten binde bir cinsinden uzaklık */
+          c.save();
+          c.globalAlpha = st.nl;
+          if (st.tar < 1) { c.beginPath(); c.rect(0, 0, 340 + 1240 * st.tar, H); c.clip(); }
+          c.lineCap = "round"; c.textAlign = "center"; c.textBaseline = "alphabetic";
+          /* eksen: 9,78 ile 9,79 arasını aşmaz; yakınlaşınca ekranı doldurur */
+          const xl = Math.max(-40, X(-4) - 70 * u), xr = Math.min(W + 40, X(6) + 70 * u);
+          c.strokeStyle = R.krem; c.lineWidth = 5 * u; c.beginPath(); c.moveTo(xl, y); c.lineTo(xr, y); c.stroke();
+          /* çizgiler ve etiketleri: her düzey bir öncekinin onda biri aralıkla */
+          const esik = (sp) => rampa(sp, 200 * u, 300 * u);
+          const boyu = (sp) => u * kar(13, 60, rampa(Math.log10(sp), 0.8, 3));
+          for (let k = 0; k <= 9; k++) {
+            const sp = K * 10 ** -k;
+            if (sp < 5) break;
+            const gor = rampa(sp, 20, 50), boy = boyu(sp);
+            let la = esik(sp);
+            for (let j = k + 1; j <= 9; j++) la *= 1 - esik(K * 10 ** -j);
+            const n0 = Math.max(Math.ceil((-30 - ax) / sp), Math.round(-4 * 10 ** k)), n1 = Math.min(Math.floor((W + 30 - ax) / sp), Math.round(6 * 10 ** k));
+            c.strokeStyle = R.krem; c.fillStyle = R.krem; c.lineWidth = Math.max(2, 4 * u); c.font = font(34 * u, 600);
+            for (let n = n0; n <= n1; n++) {
+              const x = ax + n * sp;
+              if (k === 0 || n % 10 !== 0) { c.globalAlpha = st.nl * gor * 0.9; c.beginPath(); c.moveTo(x, y - boy); c.lineTo(x, y + boy); c.stroke(); }
+              if (la > 0.01) { c.globalAlpha = st.nl * la * 0.86; c.fillText(yaz(k, n), x, y + boy + 46 * u); }
+            }
+          }
+          /* 9,78 ve 9,79: uç çizgiler */
+          for (const [v, ad] of [[-4, "9,78"], [6, "9,79"]]) {
+            const x = X(v), sp = K * 10;
+            if (x < -60 || x > W + 60) continue;
+            c.globalAlpha = st.nl; c.strokeStyle = R.krem; c.lineWidth = 5 * u;
+            c.beginPath(); c.moveTo(x, y - 60 * u); c.lineTo(x, y + 60 * u); c.stroke();
+            c.globalAlpha = st.nl * (1 - esik(K)) * rampa(sp, 150 * u, 240 * u); c.fillStyle = R.krem; c.font = font(38 * u, 600);
+            c.fillText(ad, x, y + 112 * u);
+          }
+          /* 6. kare: 9,785'in etiketi (yakınlaşmadan önce) */
+          if (st.s785 > 0.01) { c.globalAlpha = st.nl * st.s785 * (1 - esik(K)); c.fillStyle = R.krem; c.font = font(34 * u, 600); c.fillText("9,785", X(1), y + boyu(K) + 50 * u); }
+          /* 5. kare: aradaki fark */
+          if (st.ay > 0.01) {
+            const m = (X(0) + X(5)) / 2, yy = y + 176 * u, yari = ((X(5) - X(0)) / 2) * st.ay;
+            c.globalAlpha = st.nl * Math.min(1, st.ay * 3); c.strokeStyle = R.altin; c.lineWidth = 5 * u;
+            c.beginPath(); c.moveTo(m - yari, yy - 16 * u); c.lineTo(m - yari, yy); c.lineTo(m + yari, yy); c.lineTo(m + yari, yy - 16 * u); c.stroke();
+            c.globalAlpha = st.nl * rampa(st.ay, 0.6, 1); c.fillStyle = R.altin; c.font = font(46 * u); c.fillText("0,005 sn", m, yy + 62 * u);
+          }
+          /* 6. kare: "bir sonraki" sıçrayışı: 9,784'ten 9,785'e alçak bir yay ve konduğu yerde bir halka; yakınlaştıkça yay araya girenlerin üstünden geçer */
+          if (st.sekA > 0.01) {
+            const x0 = X(0), x1 = X(1), N = 48, son = Math.max(1, Math.round(N * st.sek));
+            c.globalAlpha = st.nl * st.sekA * 0.9; c.strokeStyle = R.krem; c.lineWidth = 5 * u; c.setLineDash([2 * u, 13 * u]);
+            c.beginPath();
+            for (let i = 0; i <= son; i++) { const t = i / N, px = kar(x0, x1, t), py = y - 26 * u - 46 * u * 4 * t * (1 - t); i ? c.lineTo(px, py) : c.moveTo(px, py); }
+            c.stroke(); c.setLineDash([]);
+            if (st.soru > 0.01) {
+              const sx = Math.min(x1, W - 170);
+              if (x1 < W + 60) { c.lineWidth = 5 * u; c.beginPath(); c.arc(x1, y, 27 * u * yay(st.soru), 0, 7); c.stroke(); }
+              c.globalAlpha = st.nl * st.sekA * st.soru; c.fillStyle = R.krem; c.font = font(66 * u * (0.7 + 0.3 * yay(st.soru))); c.fillText("?", sx, y - 78 * u);
+            }
+          }
+          /* araya giren sayılar (altın): j. düzeyde 9,784 + 5·10^−(3+j) */
+          for (let j = 1; j <= 9; j++) {
+            const g = j === 1 ? st.g1 : j === 2 ? st.g2 : rampa(st.z, j - 0.4, j - 0.15) * st.mer;
+            if (g < 0.01) continue;
+            const x = X(5 * 10 ** -j);
+            if (x > W + 200) continue;
+            const s = yay(g);
+            c.globalAlpha = st.nl * Math.min(1, g * 2.5); c.fillStyle = R.altin;
+            c.beginPath(); c.arc(x, y, 15 * u * s, 0, 7); c.fill();
+            c.strokeStyle = R.gece; c.lineWidth = 4 * u; c.stroke();
+            c.font = font(46 * u * (0.7 + 0.3 * s)); c.fillText(yaz(j, 5), x, y - 46 * u);
+          }
+          /* 9. kare: iki derecenin arası dolar (her adımda her boşluğun ortası) */
+          if (st.dol > 0.01) {
+            const x0 = X(0), x1 = X(5);
+            for (let m = 1; m <= 7; m++) {
+              const g = rampa(st.dol, m - 1, m - 0.35);
+              if (g < 0.01) break;
+              const r = u * Math.max(3.2, 14 * 0.7 ** (m - 1)) * yay(g), ad = 2 ** (m - 1);
+              c.globalAlpha = st.nl * Math.min(1, g * 2) * (1 - rampa(st.dol, 7.2, 7.9)); c.fillStyle = R.altin;
+              for (let i = 0; i < ad; i++) { c.beginPath(); c.arc(kar(x0, x1, (2 * i + 1) / 2 ** m), y, r, 0, 7); c.fill(); }
+            }
+            const cz = rampa(st.dol, 6.9, 7.9);
+            if (cz > 0) { c.globalAlpha = st.nl * cz; c.strokeStyle = R.altin; c.lineWidth = 9 * u; c.beginPath(); c.moveTo(x0, y); c.lineTo(x1, y); c.stroke(); }
+          }
+          /* iki derecenin işaretleri: A daire (turuncu), B eşkenar dörtgen (nane) */
+          const isaret = (x, renk, a, la, ad, daire) => {
+            if (a < 0.01 || x > W + 300) return;
+            const s = yay(a), r = 19 * u * s;
+            if (daire && st.halka > 0.01 && st.halka < 0.99) { c.globalAlpha = st.nl * (1 - st.halka) * 0.9; c.strokeStyle = renk; c.lineWidth = 5 * u; c.beginPath(); c.arc(x, y, r + 54 * u * st.halka, 0, 7); c.stroke(); }
+            c.globalAlpha = st.nl * Math.min(1, a * 2.5); c.fillStyle = renk; c.strokeStyle = R.gece; c.lineWidth = 5 * u;
+            c.beginPath();
+            if (daire) c.arc(x, y, r, 0, 7); else { c.moveTo(x, y - r * 1.25); c.lineTo(x + r * 1.25, y); c.lineTo(x, y + r * 1.25); c.lineTo(x - r * 1.25, y); c.closePath(); }
+            c.fill(); c.stroke();
+            if (la > 0.01) { c.globalAlpha = st.nl * la; c.font = font(54 * u); c.fillText(ad, kis(x, 130, W - 130), y - 80 * u - 14 * u * (1 - yay(la))); }
+          };
+          isaret(X(5), R.nane, st.mb, st.lb, "9,789", false);
+          isaret(X(0), R.turuncu, st.ma, st.la, "9,784", true);
+          /* "soldaki küçüktür": iki derecenin arasında işaret */
+          if (st.kucuk > 0.01) { c.globalAlpha = st.nl * Math.min(1, st.kucuk * 2); c.fillStyle = R.krem; c.font = font(84 * u * yay(st.kucuk)); c.fillText("<", (X(0) + X(5)) / 2, y - 74 * u); }
+          /* madalya: kazananın üstünde */
+          if (st.med > 0.01) {
+            const s = yay(st.med) * u, x = kis(X(0), 130, W - 130), yy = y - 232 * u;
+            c.save(); c.translate(x, yy); c.rotate(st.medD); c.scale(s, s); c.globalAlpha = st.nl * Math.min(1, st.med * 2.5);
+            c.fillStyle = R.krem; c.beginPath(); c.moveTo(-30, -82); c.lineTo(-6, -82); c.lineTo(8, -30); c.lineTo(-14, -30); c.closePath(); c.fill();
+            c.fillStyle = R.turuncu; c.beginPath(); c.moveTo(30, -82); c.lineTo(6, -82); c.lineTo(-8, -30); c.lineTo(14, -30); c.closePath(); c.fill();
+            c.fillStyle = R.altin; c.beginPath(); c.arc(0, 0, 44, 0, 7); c.fill();
+            c.strokeStyle = R.gece; c.globalAlpha *= 0.28; c.lineWidth = 5; c.beginPath(); c.arc(0, 0, 31, 0, 7); c.stroke();
+            c.globalAlpha = st.nl * Math.min(1, st.med * 2.5); c.fillStyle = R.gece; c.font = font(46); c.fillText("1", 0, 16);
+            c.restore();
+          }
+          c.restore();
+          /* aralık göstergesi (sağ üst, ekrana sabit): iki çizginin arası kaç saniye; kamera en çok 0,000 025 sn'yi ayırır */
+          if (st.mer > 0.01) {
+            c.save(); c.globalAlpha = st.mer; c.textBaseline = "middle";
+            const mx = 1840, my = 190, ad = 76;
+            /* simge yazının solunda durur; yazı uzadıkça sola çekilir */
+            const deger = (i) => "0," + "0".repeat(2 + i) + "1 sn";
+            c.font = font(46);
+            const zt = Math.max(0, Math.floor(st.z)), gen = kar(c.measureText(deger(zt)).width, c.measureText(deger(zt + 1)).width, kis(st.z - zt, 0, 1));
+            const gx = mx - gen - 34;
+            c.strokeStyle = R.krem; c.lineWidth = 5; c.lineCap = "round";
+            c.beginPath(); c.moveTo(gx - 64, my - 26); c.lineTo(gx - 64, my + 26); c.moveTo(gx, my - 26); c.lineTo(gx, my + 26); c.stroke();
+            c.lineWidth = 3; c.beginPath(); c.moveTo(gx - 54, my); c.lineTo(gx - 10, my); c.moveTo(gx - 46, my - 7); c.lineTo(gx - 54, my); c.lineTo(gx - 46, my + 7); c.moveTo(gx - 18, my - 7); c.lineTo(gx - 10, my); c.lineTo(gx - 18, my + 7); c.stroke();
+            c.textAlign = "right";
+            for (let i = Math.max(0, Math.floor(st.z) - 1); i <= Math.floor(st.z) + 2; i++) {
+              const d = i - st.z, a = 1 - rampa(Math.abs(d), 0.25, 1.35);
+              if (a < 0.01) continue;
+              c.globalAlpha = st.mer * a; c.fillStyle = Math.abs(d) < 0.3 ? R.krem : "#b9aeea"; c.font = font(kar(34, 46, 1 - rampa(Math.abs(d), 0, 0.8)));
+              c.fillText(deger(i), mx, my + d * ad);
+            }
+            if (st.kamA > 0.01) {
+              const d = 1.55 - st.z, ky = my + d * ad, kx = gx - 124 + Math.sin(st.kamDur * Math.PI * 5) * 9 * (1 - st.kamDur) * (st.kamDur > 0 ? 1 : 0);
+              const a = st.kamA * (1 - rampa(-d, 1.6, 2.6));
+              if (a > 0.01) {
+                c.globalAlpha = st.mer * a * kar(1, 0.5, st.kamDur);
+                c.fillStyle = R.krem; c.beginPath(); c.roundRect(kx - 34, ky - 22, 68, 46, 9); c.fill(); c.beginPath(); c.roundRect(kx - 16, ky - 32, 26, 14, 4); c.fill();
+                c.fillStyle = R.gece; c.beginPath(); c.arc(kx, ky + 1, 13, 0, 7); c.fill(); c.fillStyle = R.altin; c.beginPath(); c.arc(kx, ky + 1, 6, 0, 7); c.fill();
+                c.globalAlpha = st.mer * a * st.kamDur; c.strokeStyle = R.krem; c.lineWidth = 5;
+                c.beginPath(); c.moveTo(kx + 50, ky); c.lineTo(mx, ky); c.stroke();
+              }
+            }
+            c.restore();
+          }
+        };
+
+        const ciz = () => {
+          /* stadyum kamerası */
+          const s = st.cs, dx = Math.sin(st.sal) * 5, dy = Math.sin(st.sal * 1.3) * 3;
+          kam.setAttribute("transform", `translate(${f1(960 + dx)} ${f1(540 + dy)}) scale(${s.toFixed(4)}) translate(${f1(-st.cx)} ${f1(-st.cy)})`);
+          yildizlar.setAttribute("transform", `translate(${f1((st.cx - 960) * 0.5)} ${f1((st.cy - 540) * 0.45)})`);
+          /* yarış: lider bitişe p = 1'de varır; öbürleri gerçek farklarıyla arkasındadır */
+          const lider = kar(0, FX - GOGUS, st.p);
+          for (let i = 0; i < 8; i++) {
+            const k = kos[i], x = lider - kar(BAS[i], SON[i], st.p);
+            const dip = i === A || i === B ? 0.36 * rampa(st.p, 0.9, 1) : 0.1 * rampa(st.p, 0.94, 1);
+            const tepe = poz(k, x, ((x + 400) / (300 * TEMPO[i])) * Math.PI * 2 + FAZ[i], 0.3 + dip);
+            if (i !== A && i !== B) k.g.setAttribute("opacity", (1 - 0.74 * st.soluk).toFixed(3));
+            if (i === A) okA.setAttribute("transform", `translate(${f1(x + 34)} ${f1(tepe - 14)})`);
+            if (i === B) okB.setAttribute("transform", `translate(${f1(x + 34)} ${f1(tepe - 14)})`);
+          }
+          /* kamera taraması: şerit soldan sağa kurulur; çizgi bir dereceyi geçince izi ve kılı belirir */
+          const tx = 340 + 1240 * st.tar;
+          taramaAlan.setAttribute("width", f1(1240 * st.tar));
+          taramaCizgi.setAttribute("x", f1(tx - 2)); taramaCizgi.setAttribute("opacity", st.tar > 0.001 && st.tar < 0.999 ? 1 : 0);
+          kilA.setAttribute("opacity", rampa(tx, 880, 912).toFixed(3)); kilB.setAttribute("opacity", rampa(tx, 1280, 1312).toFixed(3));
+          izA.setAttribute("opacity", rampa(tx, 880, 990).toFixed(3)); izB.setAttribute("opacity", rampa(tx, 1280, 1390).toFixed(3));
+          cizDogru();
+        };
+
+        const tl = gsap.timeline({ paused: true });
+        const simdi = { ...st };
+        const git = (t, sure, hedef, ease = "power2.inOut") => {
+          const bas = {};
+          for (const k in hedef) bas[k] = simdi[k];
+          tl.fromTo(st, bas, { ...hedef, duration: sure, ease, immediateRender: false, onUpdate: ciz }, t);
+          Object.assign(simdi, hedef);
+        };
+        const gir = (hedef, t, sure = 0.45, oz = {}) => tl.fromTo(hedef, { opacity: 0, ...(oz.bas || {}) }, { opacity: 1, duration: sure, ease: oz.ease || "power3.out", ...(oz.son || {}) }, t);
+        const cik = (hedef, t, sure = 0.3) => tl.fromTo(hedef, { opacity: 1 }, { opacity: 0, duration: sure, ease: "power2.in", immediateRender: false }, t);
+        const yak = (ad, hane, rakam, t) => [...RAKAM[rakam]].forEach((p, i) => tl.fromTo(`#L-${ad}-${hane}-${p}`, { opacity: 0 }, { opacity: 1, duration: 0.07, ease: "none" }, t + i * 0.025));
+
+        /* Zaman: karelerin başlangıçları (sn). Kliplerin gerçek sürelerinden çıkarıldı (assets/ses-esit/olcum.json);
+           karelerin içindeki işaret anları kliplerdeki duraklamalara göre yerleştirildi. Klipler yeniden üretilirse
+           bu tablo, <audio> öğeleri ve o anlar değişir. */
+        const T = { k1: 0, k2: 5.0, k3: 11.9, k4: 21.1, k5: 30.9, k6: 41.0, k7: 47.3, k8: 54.1, k9: 61.9, k10: 67.9, son: 74.6 };
+
+        /* kameranın hafif salınımı: bütün film boyunca, tek yazıcı ciz() */
+        git(0, T.son, { sal: Math.PI * 2 * 5 }, "none");
+
+        /* ---- Kare 1 — stadyum: önce yer, sonra çizgiler, en son ışık. ---- */
+        tl.fromTo("#tribun", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0.15);
+        tl.fromTo("#pist", { opacity: 0, y: 46 }, { opacity: 1, y: 0, duration: 0.8, ease: "expo.out" }, 0.3);
+        tl.fromTo(".kulvar", { scaleX: 0, svgOrigin: "-700 0" }, { scaleX: 1, duration: 0.9, ease: "power3.out", stagger: 0.035 }, 0.55);
+        tl.fromTo("#bitis", { scaleY: 0, svgOrigin: `${FX} ${PY}` }, { scaleY: 1, duration: 0.5, ease: "power3.out" }, 1.25);
+        tl.fromTo("#bitis-kamera", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2)" }, 1.6);
+        tl.fromTo("#isiklar", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 0.5);
+        tl.fromTo(".lamba", { opacity: 0.12 }, { opacity: 1, duration: 0.12, ease: "none", stagger: (i) => ((i * 7) % 36) * 0.018 }, 1.9);
+        tl.fromTo(".koni", { opacity: 0 }, { keyframes: [{ opacity: 0.1, duration: 0.08 }, { opacity: 0.02, duration: 0.1 }, { opacity: 0.085, duration: 0.5, ease: "power2.out" }] }, 2.05);
+        tl.fromTo("#yildizlar", { opacity: 0 }, { opacity: 1, duration: 1.2, ease: "none" }, 0.2);
+        git(0.1, 6.1, { cs: 1.04, cx: 985, cy: 531 }, "sine.inOut");
+
+        /* ---- Kare 2 — yarış: önce hızlı, bitişe doğru ağır çekim; çizgide donar. ---- */
+        git(T.k2 + 0.2, 2.1, { p: 0.86 }, "none");
+        git(T.k2 + 2.3, 1.4, { p: 1 }, "power4.out");
+        git(T.k2 + 1.3, 2.3, { cs: 1.32, cx: 1210, cy: 690 }, "power2.inOut");
+        tl.fromTo(".cakar", { opacity: 0, scale: 1 }, { keyframes: [{ opacity: 0.95, scale: 1.5, duration: 0.05 }, { opacity: 0, scale: 0.6, duration: 0.3 }], transformOrigin: "50% 50%", stagger: (i) => ((i * 5) % 16) * 0.11 }, T.k2 + 2.2);
+        tl.fromTo("#flas", { opacity: 0 }, { keyframes: [{ opacity: 0.55, duration: 0.05 }, { opacity: 0, duration: 0.45, ease: "power2.out" }] }, T.k2 + 3.62);
+        /* "öndeki ikisini gözle ayırmak imkânsızdı": bitişe yaklaş, öbürleri solar, iki ok iner */
+        git(T.k2 + 3.9, 1.5, { cs: 2.3, cx: FX - 66, cy: 740 }, "power3.inOut");
+        git(T.k2 + 4.05, 0.6, { soluk: 1 }, "power2.out");
+        tl.fromTo("#ok-b", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2.2)" }, T.k2 + 5.0);
+        tl.fromTo("#ok-a", { opacity: 0, y: -40 }, { opacity: 1, y: 0, duration: 0.4, ease: "back.out(2.2)" }, T.k2 + 5.15);
+
+        /* ---- Kare 3 — tabela: kamera yukarı kalkar; iki satır aynı sayıyı yakar. Soruda ekran durur. ---- */
+        git(T.k3, 1.9, { cs: 1.28, cx: 960, cy: -385 }, "power3.inOut");
+        tl.fromTo("#cip-b", { opacity: 0, scale: 0.4, svgOrigin: "150 75" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, T.k3 + 2.0);
+        tl.fromTo("#cip-a", { opacity: 0, scale: 0.4, svgOrigin: "150 75" }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(2)" }, T.k3 + 2.12);
+        for (const [ad, t] of [["b", 15.7], ["a", 16.25]]) {
+          yak(ad, 0, 9, t); tl.fromTo(`#L-${ad}-v`, { opacity: 0 }, { opacity: 1, duration: 0.07, ease: "none" }, t + 0.16);
+          yak(ad, 1, 7, t + 0.2); yak(ad, 2, 9, t + 0.3);
+        }
+        tl.fromTo("#kimin", { opacity: 0, scale: 0.5, svgOrigin: "874 210" }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(2)" }, 18.75);
+        tl.fromTo("#kimin", { y: 0 }, { keyframes: [{ y: -62, duration: 0.5, ease: "sine.inOut" }, { y: 62, duration: 0.8, ease: "sine.inOut" }, { y: 0, duration: 0.5, ease: "sine.inOut" }], immediateRender: false }, 19.25);
+
+        /* ---- Kare 4 — bitiş kamerası: tabela yukarı çekilir, panel gelir, tarama dereceleri bir basamak ince okur. ---- */
+        git(T.k4, 1.1, { cs: 1, cy: -150 }, "power2.inOut");
+        tl.fromTo("#panel-govde", { opacity: 0, y: 90 }, { opacity: 1, y: 0, duration: 0.7, ease: "expo.out" }, T.k4 + 0.35);
+        tl.fromTo("#panel-kamera", { scale: 0.4, svgOrigin: "0 0" }, { scale: 1, duration: 0.45, ease: "back.out(2.2)" }, T.k4 + 0.7);
+        git(T.k4 + 0.9, 0.3, { nl: 1 }, "none");
+        git(T.k4 + 1.2, 2.6, { tar: 1 }, "none");
+        git(23.45, 0.45, { ma: 1 }, "none"); /* tarama 9,784'ü geçer */
+        git(24.28, 0.45, { mb: 1 }, "none"); /* tarama 9,789'u geçer */
+        git(25.4, 0.4, { la: 1 }, "power2.out");
+        git(27.9, 0.4, { lb: 1 }, "power2.out");
+        const incelt = (ad, rakam, t) => {
+          tl.fromTo(`#isik-${ad}`, { opacity: 1 }, { opacity: 0.25, duration: 0.07, ease: "none", yoyo: true, repeat: 3, immediateRender: false }, t - 0.32);
+          tl.fromTo(`#L-${ad}-2-e`, { opacity: 0 }, { opacity: 1, duration: 0.07, ease: "none", immediateRender: false }, t); /* 9 → 8: tabela yukarı yuvarlamıştı */
+          [...RAKAM[rakam]].forEach((p, i) => tl.fromTo(`#L-${ad}-3-${p}`, { opacity: 0 }, { opacity: 1, duration: 0.07, ease: "none", immediateRender: false }, t + 0.04 + i * 0.03));
+        };
+        incelt("a", 4, 27.0);
+        incelt("b", 9, 30.2);
+        cik("#kimin", 26.2, 0.4);
+
+        /* ---- Kare 5 — sayı doğrusu: panelin cetvelinin içine girilir; cetvel ekranı doldurur. ---- */
+        cik("#panel-govde", T.k5, 0.45);
+        tl.fromTo("#dunya", { opacity: 1 }, { opacity: 0, duration: 0.7, ease: "power2.in", immediateRender: false }, T.k5 + 0.05);
+        tl.fromTo("#duzlem", { opacity: 0 }, { opacity: 1, duration: 0.9, ease: "power1.out" }, T.k5 + 0.2);
+        git(T.k5 + 0.05, 1.5, { ax: 810, nk: 150, nu: 1, ny: 640 }, "power3.inOut");
+        git(T.k5 + 0.05, 1.5, { cy: 260 }, "power3.in");
+        git(33.05, 0.5, { kucuk: 1 }, "none");
+        git(35.75, 0.6, { med: 1 }, "none");
+        tl.fromTo(st, { medD: 0 }, { keyframes: [{ medD: -0.16, duration: 0.16, ease: "sine.out" }, { medD: 0.12, duration: 0.24, ease: "sine.inOut" }, { medD: 0, duration: 0.3, ease: "sine.inOut" }], immediateRender: false, onUpdate: ciz }, 37.35);
+        git(38.2, 0.8, { ay: 1 }, "power3.out");
+
+        /* ---- Kare 6 — "bir sonraki sayı?": fark ve işaret çekilir, 9,784'ten 9,785'e bir sıçrayış çizilir. Soruda ekran durur. ---- */
+        git(T.k6, 0.35, { ay: 0, kucuk: 0 }, "power2.in");
+        git(42.3, 0.9, { halka: 1 }, "power2.out");
+        git(43.2, 0.01, { sekA: 1 }, "none");
+        git(43.2, 1.0, { sek: 1 }, "power2.inOut");
+        git(44.3, 0.35, { soru: 1 }, "power3.out");
+        git(45.6, 0.4, { s785: 1 }, "power3.out");
+
+        /* ---- Kare 7 — yaklaş: iki kez, her seferinde tam 10 kat. Her yakınlaşmada araya bir sayı girer. ---- */
+        git(T.k7 + 0.1, 0.5, { mer: 1, kamA: 1 }, "power2.out");
+        git(47.85, 1.7, { z: 1, ax: 480 }, "power2.inOut");
+        git(49.55, 0.5, { g1: 1 }, "none");
+        git(48.7, 0.5, { soru: 0, sekA: 0 }, "power2.in");
+        git(51.5, 1.5, { z: 2 }, "power2.inOut");
+        git(53.0, 0.5, { g2: 1 }, "none");
+
+        /* ---- Kare 8 — kamera durur, sayılar durmaz: gösterge kamerayı geride bırakır; yakınlaşma hızlanarak sürer. ---- */
+        git(54.9, 0.9, { kamDur: 1 }, "none");
+        git(56.2, 5.3, { z: 7.3 }, "power1.in");
+
+        /* ---- Kare 9 — geri çekil: iki derecenin arası, her adımda her boşluğun ortasıyla dolar. ---- */
+        git(T.k9 + 0.1, 1.8, { z: 0.12, ax: 465 }, "power3.inOut");
+        git(T.k9 + 0.1, 0.6, { mer: 0, g1: 0, g2: 0, s785: 0 }, "power2.in");
+        git(63.9, 3.2, { dol: 7.9 }, "power1.in");
+
+        /* ---- Kare 10 — kapanış: perde iner, kart gelir, cümle iki parça hâlinde okunur. ---- */
+        tl.fromTo("#perde", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power1.out" }, T.k10 + 0.05);
+        tl.fromTo("#kart", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, ease: "power3.out" }, T.k10 + 0.2);
+        tl.fromTo("#c1", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 68.45);
+        tl.fromTo("#c2", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "power3.out" }, 69.9);
+        tl.fromTo("#cizgi", { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: "power2.out" }, 71.0);
+        tl.fromTo("#model", { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: "expo.out" }, 71.25);
+
+        ciz();
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+      };
+      Promise.all([document.fonts.load('700 54px "Plex Sans"', "0123456789,<?sn"), document.fonts.load('600 34px "Plex Sans"', "0123456789,"), document.fonts.ready]).then(kur, kur);
+    </script>
+  </body>
+</html>
