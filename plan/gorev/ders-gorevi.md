@@ -1,6 +1,6 @@
 # Görev şablonu: bir kısa dersi bitmiş senaryodan yaz
 
-Bu dosya şablondur. Temayı yürüten oturum onu `plan/<ders>/<tema>/gorev/ders-gorevi.md` olarak kopyalar, `<…>` yerlerini ve "Temaya özgü" bölümünü doldurur, ajanların kaynakta aradığı her şeyi oraya ekler (`YURUTME.md` "Bağlam bütçesi"). Ajana giden görev iletisi kısa kalır: bu dosyanın yolu, dersin kodu ve dosya adı, senaryo dosyası ile dersin satır aralığı, `accent`, `nextLesson`, derse özgü notlar, konunun araç dosyasını bu ajanın açıp açmayacağı.
+Bu dosya şablondur. Temayı yürüten oturum onu `plan/<ders>/<tema>/gorev/ders-gorevi.md` olarak kopyalar, `<…>` yerlerini ve "Temaya özgü" bölümünü doldurur, ajanların kaynakta aradığı her şeyi oraya ekler (`YURUTME.md` "Bağlam bütçesi"). Örnek dersin dört parçasının satır aralığını `grep -n 'async function\|Ders.start' <örnek ders>` ile bulup "Oku" 2. maddesine yazar (toplam en çok 200 satır); konudan konuya örnek değişiyorsa aralıklar tablo olarak verilir. Ajana giden görev iletisi kısa kalır: bu dosyanın yolu, dersin kodu ve dosya adı, senaryo dosyası ile dersin satır aralığı, `accent`, `nextLesson`, derse özgü notlar, konunun araç dosyasını bu ajanın açıp açmayacağı.
 
 Kaynak: Kimya · Çeşitlilik'te kullanılan görev tanımı (8 Ekim 2026). Çizginin altı ajana giden metindir.
 
@@ -12,7 +12,7 @@ Proje kökü: `<mutlak yol>` (komutlar buradan çalışır). 9. sınıf için ba
 
 ## Oku (yalnızca bunlar, sırayla)
 1. Senaryo dosyasında baştaki okuma kılavuzu ile kendi dersinin bölümü (satır aralığı görev iletisinde; Read'e `offset` ve `limit` ver). Senaryo bağlayıcıdır: sahneler, anlatım cümleleri (altyazılar), sorular, şıklar, ipuçları, defter satırları, çıkış soruları oradan alınır.
-2. Örnek ders (üslup, yapı, kit kullanımı): `<ders>/<tema>/dersler/<ilk ders>.js` ve sayfası `<ders>/<tema>/<ilk ders>.html`. Konu tekrarı dersi yazıyorsan onun yerine `<ders>/<tema>/dersler/<ilk tekrar dersi>.js`.
+2. Örnek ders (üslup, yapı, kit kullanımı): `<ders>/<tema>/dersler/<ilk ders>.js`. Tamamını okuma; yalnızca şu satır aralıklarını oku (Read'e `offset` ve `limit` ver): <baş: kit satırları ve yerel yardımcılar> · <"Hatırla" sahnesi> · <bir anlatım sahnesi> · <`Ders.start` bloğunun başı, ilk çıkış sorusuna kadar>. Sayfası `<ders>/<tema>/<ilk ders>.html` kısadır, tamamı okunur. Bu parçalarda bulamadığın bir kalıp için aynı dosyada `grep -n 'async function'` ile tek sahne daha seç (en çok 80 satır) ve raporda "görev tanımında eksik" başlığıyla yaz. Konu tekrarı dersi yazıyorsan örnek `<ders>/<tema>/dersler/<ilk tekrar dersi>.js` dosyasıdır (kısa; tamamı okunur).
 3. `<ders>/<tema>/dersler/kit.js`; konunun araç dosyası varsa `<ders>/<tema>/dersler/<harf>-araclar.js`.
 4. `ortak/API.md` (ders motoru).
 
@@ -43,6 +43,7 @@ Konunun araç dosyası (`<harf>-araclar.js`, `window.KIT_<HARF>`; sayfada `kit.j
 - Motorda sürükle-bırak, eşleştirme ve sıralama çağrısı yok (`c.drag`, `c.match`, `c.sort` yazma). Senaryoda böyle geçen sahneler kart başına seçimle kurulur: kart öne çıkar, öğrenci kutuyu ya da eşini seçer, kart tahtada yerine oturur. Kaydırıcı (`c.slider`), seçenek (`c.choice`) ve `c.cont('Devam ›')` kullanılabilir.
 - Ölçüm ve seslendirme araçları sahneyi kendiliğinden geçer: yalnızca motorun düğmelerine ve şıklara basar. `c.h('button')` ile kendi düğmeni koyarsan sahne tamamlanmaz; "Tabloya yaz", "Kartı çevir" gibi düğmeler `c.cont('… ›')` ya da `c.choice` ile kurulur.
 - Zamanlama yalnızca `c.wait` / `c.tween` ile; `setTimeout`, `setInterval`, CSS animasyonu, `requestAnimationFrame` yok. Çizim her açılışta aynı görünür: `Math.random` kullanılmaz.
+- Hareketin süresi ve eğrisi senaryodan alınır: `c.tween(ms, fn, Ders.ease.<ad>)`. Senaryoda yazmıyorsa: beliren öğe `out`, kaybolan `in`, yer değiştiren `inOut`, sabit hız ve düzgün dönme `linear`; küçük hareket 300–500 ms, sahnenin ana hareketi 600–1200 ms; seçtiğini raporla. Yazı okunurken yer değiştirmez.
 - Bu makinede `timeout` komutu yok; uzun komutta aracın kendi süre sınırını 10 dakika ver.
 - <ajanların sorduğu ya da kaynakta aradığı her şey buraya eklenir>
 

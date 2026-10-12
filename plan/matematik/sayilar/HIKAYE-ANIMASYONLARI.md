@@ -42,8 +42,19 @@ Ek kurallar:
 | Görüntü | 16:9, 1920×1080, MP4 |
 | Ses | Anlatıcı Gamze Özdemir (`eleven_v4`), hafif fon müziği, birkaç efekt |
 | Anlatım | 110–150 kelime; üç perde: durum → şaşırtan an → "demek ki" |
+| Ses düzeyi | Bitmiş MP4 −14 LUFS (±0,5), tepe en çok −1 dB; her filmde aynı. Ölçüm ve komut aşağıda |
 | Kapanış | 4–5 saniyelik kart: akılda kalıcı cümle + formül |
+| Ekrandaki yazı | Görünen her yazı (kapanış kartı, etiket, sayı) en az kelime başına 0,3 sn + 0,5 sn durur; rakam ve simge de kelime sayılır. Yazı okunurken yer değiştirmez |
 | Altyazı | İsteğe bağlı açılır (sessiz izleyen için) |
+
+Ses düzeyi (12 Ekim 2026): kliplerin düzeyi film başına ayrı eşitlendiği için (`assets/ses-esit/`, ortalama −21,5 ile −22,4 dB) bitmiş filmler birbirini tutmuyor. Ölçüm: A7 −18,8 · A8 taslak −18,1 · B7 −17,5 · D3 −19,0 · fizik A1 çanta askısı −19,6 · A1 karda −16,0 · F1 −15,9 · E3 −18,4 LUFS. Hedef, işlemenin son adımında (bölüm 5, adım 6) bitmiş dosyaya uygulanır; görüntü yeniden işlenmez:
+
+    ffmpeg -i renders/<ad>.mp4 -af loudnorm=I=-14:TP=-1.5:LRA=11 -ar 48000 -c:v copy -c:a aac -b:a 192k -movflags +faststart renders/<ad>-esit.mp4
+    ffmpeg -hide_banner -nostats -i renders/<ad>-esit.mp4 -af ebur128=peak=true -f null - 2>&1 | grep -E "^ +(I|Peak):"
+
+`TP=-1.5` bilerek seçildi: AAC kodlaması tepeyi yaklaşık 0,5 dB yükseltir. `-ar 48000` olmazsa `loudnorm` sesi 192 kHz çıkarır. Yukarıdaki sekiz film henüz yeniden işlenmedi.
+
+Yazı süresi örneği: "Virgül kayar, üs sayar." (4 kelime) ile "3 nm = 3 × 10⁻⁹ m" (7 kelime) birlikte 11 × 0,3 + 0,5 = 3,8 sn ister; 4–5 saniyelik kart yeter.
 
 ## 3. Derste nereye girer
 

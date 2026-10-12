@@ -31,7 +31,7 @@ Denetim noktası (8 Ekim 2026): Sonnet'in yeni kurallarla yazdığı ilk dersler
 Her görev tek derslik ve kendi başına anlaşılır olur; okuma, çıktı ve görüntü sınırları "Bağlam bütçesi" bölümündedir. Temanın ortak görev tanımı `plan/<ders>/<tema>/gorev/` altında durur (oturuma özgü geçici klasörde değil: sonraki oturum da kullanır) ve `plan/gorev/ders-gorevi.md` şablonundan kopyalanıp temaya uyarlanır; görev iletisi yalnızca o derse özgü olanı söyler. Pilotta işe yarayan kalıp:
 
 1. Ne yazılacağı: dosya yolu, ders kimliği, dersin fikri.
-2. Önce okunacaklar, sırayla: senaryoda baştaki okuma kılavuzu ile yalnızca o dersin bölümü (satır aralığı görev iletisinde verilir); tek örnek ders (temanın kendi ilk dersi, yoksa `matematik/geometrik-sekiller/dersler/a1-olcmek-ispat-degildir.js`); temanın `kit.js` dosyası ve konunun araç dosyası; `ortak/API.md`. `KURALLAR.md` 3–3.4 ve 4'ün gereken maddeleri görev tanımına yazılır, ajan o dosyayı okumaz.
+2. Önce okunacaklar, sırayla: senaryoda baştaki okuma kılavuzu ile yalnızca o dersin bölümü (satır aralığı görev iletisinde verilir); tek örnek dersten satır aralığıyla dört parça (baş, "Hatırla" sahnesi, bir anlatım sahnesi, `Ders.start` bloğunun başı; toplam en çok 200 satır; örnek temanın kendi ilk dersidir, yoksa `matematik/geometrik-sekiller/dersler/a1-olcmek-ispat-degildir.js`; aralıkları ana oturum `grep -n 'async function\|Ders.start'` ile bulup görev tanımına yazar); temanın `kit.js` dosyası ve konunun araç dosyası; `ortak/API.md`. `KURALLAR.md` 3–3.4 ve 4'ün gereken maddeleri görev tanımına yazılır, ajan o dosyayı okumaz.
 3. Derste bulunması gerekenler: "Hatırla" sahnesi (başlığı tam böyle), `tag: 'Birlikte çöz'`, 4–5 çıkış sorusu ve her şık için `why`, akılda kalıcı cümle.
 4. Sınırlar: altyazı tek cümle ve en çok 12 kelime; tahtada en çok 25 kelime ve 12 öğe; rakam ve simge içeren altyazıda `speak`; yönerge yalnızca `[curious]`, `[thoughtful]`, `[short pause]`; öğrenciye kitap, sayfa, sınıf denmez.
 5. Kapsam: yalnızca kendi dosyası. `tema.js`, `kit.js`, sayfalar, `plan/`, `ortak/`, `araclar/` ve git yasak. Eksik araç yerelde yazılır ve raporlanır.
@@ -40,17 +40,40 @@ Her görev tek derslik ve kendi başına anlaşılır olur; okuma, çıktı ve g
 
 ## Bağlam bütçesi
 
-Her istek o andaki bağlamın tamamını yeniden okur; maliyet bağlamın boyuyla büyür. 8 Ekim 2026 ölçümü (Kimya Çeşitlilik): konu başına açılan ders ajanları (3–5 ders) 340–450 bin token'a, ana oturum 864 bin token'a çıktı; ajanlar ilk satırı yazmadan önce okumayla 150 bine ulaştı. Aşağıdaki kurallar bunun içindir; hedef ajan başına en çok 150–200 bin, ana oturumda en çok 300 bin token.
+Her istek o andaki bağlamın tamamını yeniden okur; maliyet bağlamın boyuyla büyür. 8 Ekim 2026 ölçümü (Kimya Çeşitlilik): konu başına açılan ders ajanları (3–5 ders) 340–450 bin token'a, ana oturum 864 bin token'a çıktı; ajanlar ilk satırı yazmadan önce okumayla 150 bine ulaştı. Aşağıdaki kurallar bunun içindir.
+
+12 Ekim 2026 ölçümü (kuraldan sonra açılan 27 ders ajanı, çoğu Eşlik ve Benzerlik): ajan başına en büyük bağlamın ortancası 404 binden 212 bine, süre 43 dakikadan 16 dakikaya indi; 11 ajan 250 bini, 4 ajan 300 bini aştı. İlk istekte bağlam 42 bin token'dır (sistem istemi ve araç tanımları; görev tanımıyla kısılmaz), ilk yazımdan önce 132 bine çıkar; kalanı ders dosyasının kendisi (40–50 KB) ve ajan başına yaklaşık 19 görüntüdür. Yazım öncesi okumanın en büyük kalemi örnek dersti. Konu başına açılan dört senaryo ajanı 289–395 bin token'a çıktı: `KURALLAR.md`, `MUFREDAT.md` ve örnek senaryonun yarısı, `PLAN.md` içinden 27–54 bin karakter, ikisinde kendi yazdığı senaryo yeniden okundu. "Ajan başına 150–200 bin" hedefi bu ders boyuyla tutmadı; hedefler:
+
+| Ajan | En çok |
+|---|---|
+| Konu tekrarı dersi, ek soru | 175 bin |
+| Kısa ders | 250 bin |
+| Konunun araç dosyasını açan ya da sekiz sahneyi aşan kısa ders | 300 bin |
+| Senaryo (en çok dört kısa ders) | 300 bin |
+| Ana oturum | 300 bin |
+
+Alt ajanların önbellek süresi 5 dakikada kalır (`subagentPromptCacheTtl` ayarlanmaz): aynı ölçümde istekler arası boşluğun ortancası 8,5 saniyeydi; 1 saatlik yazımın ek ücreti, kaçırılan önbellekten kazanılandan fazladır.
 
 ### Alt ajan
 
 - **Bir ajan, bir kısa ders** (sayfası ve ders dosyası). Konu tekrarı dersi ayrı ajandır. Konunun araç dosyasını (`<harf>-araclar.js`) konunun ilk dersini yazan ajan açar; o bitince konunun kalan dersleri paralel yazılır. Kalan ajanlar araç dosyasını okur, değiştirmez; eksik aracı kendi ders dosyasında yazar ve raporlar.
-- **Okuma listesi kapalıdır:** kalıbın 2. maddesindekiler. `KURALLAR.md`, `ISLEME.md`, `ortak/ders.js`, `ortak/ders.css`, `araclar/` ve öteki konuların ders dosyaları okunmaz. Görev tanımında cevabı olmayan bir şey için `grep -n` ile tek işleve bakılır ve eksik raporlanır.
+- **Okuma listesi kapalıdır:** kalıbın 2. maddesindekiler. Örnek dersin tamamı okunmaz: görev tanımı dört parçanın satır aralığını verir (toplam en çok 200 satır); ajan orada bulamadığı bir kalıp için aynı dosyadan tek sahne daha okur (en çok 80 satır) ve raporlar. Konu tekrarı dersinin örneği kısadır, tamamı okunur. `KURALLAR.md`, `ISLEME.md`, `ortak/ders.js`, `ortak/ders.css`, `araclar/` ve öteki konuların ders dosyaları okunmaz. Görev tanımında cevabı olmayan bir şey için `grep -n` ile tek işleve bakılır ve eksik raporlanır.
 - **Görev tanımı büyür, ajan aramaz:** ajanların kaynakta aradığı her şeyi (ölçüm aracı sahneyi nasıl geçer, kaydırıcı ve düğme nasıl kurulur, sık yapılan hata) ana oturum görev tanımına ekler.
 - **Komut çıktısı kısaltılır:** `| tail -20`, `grep -n`, `sed -n a,bp`. Dosya `cat` ile dökülmez; yüz satırı aşan çıktı alınmaz.
 - **Görüntü:** her sahnenin son karesi (`sNN-son.png`) ve soru sahnelerinde bir ara kare. Aynı kareye iki kez bakılmaz; düzeltmeden sonra yalnızca değişen sahne yeniden görülür.
 - **Dur kuralı:** en çok üç ölç-düzelt turu. Üçüncüden sonra temiz değilse ajan kalanı raporlar ve durur.
 - **Geri dönüş:** ana oturum bir ajana `SendMessage` ile en çok bir kez döner. Sonraki düzeltme, dosya yolunu ve düzeltme listesini alan yeni bir ajanla yapılır.
+
+### Senaryo ajanı
+
+12 Ekim 2026'da eklendi; ilk kullanıldığı temada ölçülür. Görev şablonu: `plan/gorev/senaryo-gorevi.md`.
+
+- **Bir ajan en çok dört kısa dersin senaryosunu yazar.** Dört dersi aşan konu sırayla iki ajana bölünür; her ajan kendi dosyasına yazar (`<HARF>-<ad>-1.md`, `<HARF>-<ad>-2.md`). İkinci ajan konu tekrarını ve "Program metniyle karşılaştırma" tablosunu da yazar; ilk dosyayı okumaz, `grep -n` ile ders başlıklarına ve akılda kalıcı cümlelerine bakar.
+- **Okuma satır aralığıyladır.** `MUFREDAT.md` içinde konunun bölümü ile "Temel kabuller"; `PLAN.md` içinde konunun kısa dersleri, konuyu ilgilendiren kararlar ve ders kitabı paragrafı; ders kitabı dökümünde konunun satırları. Aralıkları ana oturum `grep -n '^#'` ile bulup görev iletisine yazar. `KURALLAR.md` okunmaz: gereken maddeler görev tanımında yazılıdır.
+- **Örnek senaryo:** baştaki okuma kılavuzu ile tek dersin bölümü (satır aralığı görev tanımında); tamamı okunmaz.
+- **Kitap görüntüsü:** yalnızca senaryoya alınacak örneğin sayfası; her sayfaya bir kez bakılır.
+- **Ders ders yazılır.** İlk dersin bölümü `Write` ile, sonrakiler dosyanın sonuna eklenerek (`cat >> dosya <<'EOF'`) yazılır: tek çağrıda 70 KB yazmak dakikalar sürer, 5 dakikayı aşan istekte önbellek düşer. Ajan yazdığı dosyayı baştan okumaz; denetimi `grep -n` ile yapar.
+- Komut çıktısı ve dur kuralı alt ajandaki gibidir.
 
 ### Ana oturum
 
@@ -97,7 +120,7 @@ Sonra kullanıcıya: kaç klip, kaç dakika, harcanan karakter, dinlenmesi gerek
 | 2a.1 | `MUFREDAT.md`, ders kitabı (2b), açık soruların kapatılması, `PLAN.md` kararları, denetim tablosu | ana oturum |
 | 2a.2 | Konu A'nın senaryosu, iskelet, `kit.js`, A konusunun ilk dersi | ana oturum |
 | 2a.3 | **Denetim noktası:** A konusunun kalan dersleri ve konu tekrarı Sonnet ajanlarıyla yazılır; ana oturum görüntüleri pilotla karşılaştırır. Yeterliyse sürer; değilse ders kodu ana modelin ajanlarına geçer | Sonnet, sonra ana oturum |
-| 2a.4 | B–M konularının senaryoları (konu başına bir ajan, A senaryosu örnek) | Sonnet; her senaryoyu ana oturum program metniyle karşılaştırır |
+| 2a.4 | B–M konularının senaryoları (konu başına bir ajan, dört dersi aşan konuda sırayla iki ajan; A senaryosu örnek, satır aralığıyla; "Bağlam bütçesi" · Senaryo ajanı) | Sonnet; her senaryoyu ana oturum program metniyle karşılaştırır |
 | 2a.5 | B–M dersleri ve konu tekrarları (ders başına bir ajan; aynı anda en çok dört; her konuda ilk ders araç dosyasıyla önce yazılır; sekiz ajanda bir oturum sınırı) | Sonnet |
 | 2a.6 | Her konudan sonra: `olc.js` bütün derslerde, raporların denetimi, `tema.js` satırları, kite taşınacak araçlar | Haiku ölçer; ana oturum denetler ve yazar |
 | 2a.7 | Tema denetimi (`ISLEME.md` 7): `sure.js`, `denetle.js`, denetim tablosuna sahne numaraları, `TEMALAR.md` | ana oturum; sayım Haiku |
@@ -129,7 +152,7 @@ Biten: Nicelikler ve Değişimler (8 Ekim 2026; görev tanımı örneği `plan/m
 
 2a ile aynı düzen; sıra `YOL-HARITASI.md` 3. adımdaki tablodadır. Her tema bittiğinde kullanıcı izler, seslendirme ve yayın ayrıca istenir.
 
-Süren tema: Matematik · Eşlik ve Benzerlik (9 Ekim 2026'da başladı). 2a.1 ve 2a.2 bitti (9 Ekim 2026): plan (22 kısa ders + 5 konu tekrarı), konu A senaryosu, iskelet, `kit.js`, A1. Sıradaki 2a.3 ve 2a.4; devir notu `plan/matematik/eslik-ve-benzerlik/DURUM.md` "Sıradaki". Ders kitabının büyük bölümlerini (konu başına 8–20 sayfa) Sonnet ajanları döküme çevirdi; ana oturum yalnızca ilk konunun bölümünü ve Kontrol Noktası kutularını okudu. Sonraki temalarda da böyle yapılır: ana oturumun bağlamını bu korur.
+Süren tema: Matematik · Eşlik ve Benzerlik (9 Ekim 2026'da başladı). 2a.1 ve 2a.2 bitti (9 Ekim 2026): plan (22 kısa ders + 5 konu tekrarı), konu A senaryosu, iskelet, `kit.js`, A1. 2a.4 bitti (9 Ekim 2026, ikinci oturum): B, C, D, E senaryoları; A2–A5 dersleri. 2a.3 bitti (9 Ekim 2026, üçüncü oturum): A6 konu tekrarı, A2 ve A5 düzeltmeleri; E3 senaryosu bölündü (E3, E4, E5 tekrar); 2a.5'ten B1–B5 yazıldı (11 / 28 dosya). 2a.5 sürüyor (9 Ekim 2026, dördüncü oturum): B6 konu tekrarı, C1, D1, E1 (her biri konusunun araç dosyasıyla), C2, C3, D2, D3 yazıldı (19 / 28 dosya, tema 152 dk). Sıradaki: C4 tekrar, D4, D5, E2, sonra D6, D7 tekrar, E3, E4; ondan sonraki oturumda E5 tekrar ve tema denetimi (2a.7); devir notu `plan/matematik/eslik-ve-benzerlik/DURUM.md` "Sıradaki". Dördüncü oturumda ders ajanları senaryoda sayı hatası bulmadı; ana oturumun yaptığı küçük düzeltmeler (yazı tipinde bozuk çıkan "∥" yerine "//", ajanın kısalttığı ders başlığı, yazının altından geçen çizgi, koşudan koşuya çıkan üst üste yazı) görev tanımına kural olarak eklendi: ajan raporu temiz dese de her derste `grep` ve iki kare yeter, ders dosyası baştan sona okunmaz. Ders ajanları B2 ve B4'te senaryoda birer sayı hatası buldu (kenarları ve açısı birlikte verilen, birbirini tutmayan üçgen); senaryo ajanlarına "bir üçgene hem kenar hem açı yazıyorsan hesapla" baştan söylenir, senaryo denetiminde bu örnekler ana oturumda hesaplanır. Senaryo ajanlarına "tahta koyudur: siyah çizgi yazma; kırmızı kullanılmaz" ve "ölçüm aracı rakam ve simgeleri de kelime sayar" baştan söylenir (ikisi de bu oturumda sonradan düzeltildi). Ders kitabının büyük bölümlerini (konu başına 8–20 sayfa) Sonnet ajanları döküme çevirdi; ana oturum yalnızca ilk konunun bölümünü ve Kontrol Noktası kutularını okudu. Sonraki temalarda da böyle yapılır: ana oturumun bağlamını bu korur.
 
 ### 4. Eski temalarda anlatımın yeniden yazımı
 
