@@ -4,7 +4,7 @@ Son güncelleme: 12 Ekim 2026. Nasıl yürütüleceği (kim ne yapar, hangi alt 
 
 ## Şimdi: 3. adım (Fizik · Akışkanlar)
 
-Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"); aşağıdaki "Pilot beğenilirse" sırası yürürlükte. 1. adım bitti (8 Ekim 2026: A konusu seslendirildi, commit edildi, yayında). 2. adım bitti: Kimya Çeşitlilik yazıldı ve commit edildi (8 Ekim 2026; seslendirme ve yayın bekliyor), yedi eski temanın ekleri yayında (9 Ekim 2026). 3. adımda Eşlik ve Benzerlik yazıldı ve commit edildi (12 Ekim 2026; seslendirme ve yayın bekliyor); sıradaki iş Fizik · Akışkanlar, `YURUTME.md` 3. adım 2a.1'den.
+Kullanıcı pilotu izledi ve onayladı (8 Ekim 2026: "bunları beğendim"); aşağıdaki "Pilot beğenilirse" sırası yürürlükte. 1. adım bitti (8 Ekim 2026: A konusu seslendirildi, commit edildi, yayında). 2. adım bitti: Kimya Çeşitlilik yazıldı ve commit edildi (8 Ekim 2026; seslendirme ve yayın bekliyor), yedi eski temanın ekleri yayında (9 Ekim 2026). 3. adımda Eşlik ve Benzerlik yazıldı ve commit edildi (12 Ekim 2026; seslendirme ve yayın bekliyor); Fizik · Akışkanlar yazımda (12 Ekim 2026: plan, konu A senaryosu ve A1 bitti); sıradaki iş `YURUTME.md` 3. adım 2a.3 ve 2a.4, devir notu `plan/fizik/akiskanlar/DURUM.md`.
 
 ### Pilotun kaydı
 

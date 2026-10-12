@@ -612,7 +612,7 @@ Tema 7 · Kuvvet ve Hareket (görev tanımı: `plan/fizik/kuvvet-ve-hareket/gore
 - [x] 2a.6 Her konudan sonra ölçüm, rapor denetimi, `tema.js` satırları (beş konu; Konu E 42:16)
 - [x] 2a.7 Tema denetimi (12 Ekim 2026): `sure.js` uyarısız (tema 214:45, 28 ders, 15 dakikayı aşan yok), `denetle.js` "sorun yok", tema sayfası görüldü, `PLAN.md` denetim tablosuna sahne numaraları, "uzun kenar, büyük açı" ön bilgisi program metniyle karşılaştırıldı (3. temanın önermesi), `TEMALAR.md`
 - [ ] 2a.8 Kullanıcı: Eşlik ve Benzerlik'i izle; seslendirme ve yayın ayrıca istenir (altıncı oturumun dosyaları 12 Ekim 2026'da commit edildi)
-- [ ] Sıradaki tema: Fizik · Akışkanlar (`YURUTME.md` 3. adım, 2a.1'den)
+- [x] Sıradaki tema: Fizik · Akışkanlar (12 Ekim 2026'da başladı; aşağıda "Fizik · Akışkanlar" bölümü)
 - [x] İş panosu (sürüm 14: Eşlik ve Benzerlik yazımda, 1/27 ders)
 - [x] İş panosu (sürüm 15: Eşlik ve Benzerlik 5/28 ders, senaryolar bitti)
 
@@ -653,7 +653,7 @@ Kaynak: x.com/flxrnc/status/2105311836190978392. Yalnızca plan dosyaları deği
 - [x] Ders motoru bağı: `dersler/torricelli-sekil.js` (üretilmiş), `p1-torricelli-pilot.html`, `dersler/p1-torricelli-pilot.js`
 - [x] Denetim: skill'in çizgi denetimi iki temada ve düşük basınç pozunda 0; `olc.js akiskanlar/p1` 1366×657 ve 750×402'de temiz (tek konsol notu: temanın `tema.js` dosyası henüz yok)
 - [ ] Kullanıcı kararı: figür derslerde kullanılacak mı; kit `ortak/` altına mı alınacak, temaya mı kopyalanacak
-- [ ] Akışkanlar işleme alınınca: pilot dersi C2'ye katılır ya da silinir (`p1-…` dosyaları `tema.js` içinde yok)
+- [ ] Akışkanlar işleme alınınca: pilot dersi C2'ye katılır ya da silinir (`p1-…` dosyaları `tema.js` içinde yok); tema işleme alındı (12 Ekim 2026): dosyalara dokunulmadı, C2 düz vektör kitle yazılacak, karar kullanıcıda
 
 ## Anatomy: kaldırma kuvveti figürü (plan 12 Ekim 2026)
 
@@ -671,3 +671,20 @@ Plan: `fizik/akiskanlar/pilot/kaldirma-kuvveti/PLAN.md`. Tek başına sayfa; der
 - [x] Denetim: `olc.js akiskanlar/p2` 1366×657 ve 750×402'de temiz (tek konsol notu: temanın `tema.js` dosyası henüz yok); tek başına sayfalarda `--audit` ve çizgi denetimi yeniden 0
 - [ ] Kullanıcı kararı: plandan sapmalar (`PLAN.md` bölüm 12) kabul mü; su için WebGL katmanı istenir mi
 - [ ] Akışkanlar işleme alınınca: pilot dersi D2'ye katılır ya da silinir (`p2-…` dosyaları `tema.js` içinde yok, siteden bağlantısı yok; seslendirme üretilmedi)
+
+## Fizik · Akışkanlar (`YURUTME.md` 3. adım, ikinci tema; 12 Ekim 2026'da başladı)
+
+Durum ve devir notu: `plan/fizik/akiskanlar/DURUM.md`. 15 kısa ders + 5 konu tekrarı = 20 dosya.
+
+- [x] 2a.1 Müfredat, ders kitabı (s. 130–195; A bölümü ana oturum, B–E dört Sonnet ajanı: dökümler geçici klasörde), `PLAN.md`: 24 karar, kararlardan sonraki ders listesi, denetim tablosunda `ders` / `benzetim` / `site dışı`, kitaptan alınanlar
+- [x] 2a.2 Konu A senaryosu (`senaryolar/A-basinc.md`: A1, A2, A3 tekrar), iskelet (`index.html`, `tema.js`, `dersler/kit.js`, `dersler/a-araclar.js`), A1 dersi (6 sahne, 43 altyazı, 8:48; `olc.js` bütün sayaçlar 0, konsol temiz; altı sahnenin son karesine bakıldı)
+- [x] Görev tanımları: `gorev/ders-gorevi.md`, `gorev/senaryo-gorevi.md` (hareket kuralı şablondan geldi); kitap betikleri `gorev/dok.py`, `gorev/png.py`
+- [ ] 2a.3 A2 dersi ve A3 konu tekrarı (Sonnet, ders başına bir ajan)
+- [ ] 2a.4 B, C, D, E senaryoları (Sonnet, konu başına bir ajan); senaryo ajanı kuralları burada ölçülür
+- [ ] 2a.5 B–E dersleri ve konu tekrarları (17 dosya)
+- [ ] 2a.7 Tema denetimi
+- [ ] 2a.8 Kullanıcı: temayı izle; seslendirme ve yayın ayrıca istenir
+- [x] Kullanıcı kararı (12 Ekim 2026, "önerine göre devam et"): C2 ve D2 düz vektör kitle yazılır; izometrik pilot dosyaları olduğu gibi, siteden bağlantısız kalır. Yüzme, askıda kalma, batma D4'te kalır
+- [ ] Tema yayına alınırken: A1'in iki hikâyesi `ortak/katalog.js` satırından `tema.js` dosyasına taşınır
+- [x] Commit ve push (12 Ekim 2026, kullanıcı istedi): birinci oturumun dosyaları
+- [x] İş panosu (sürüm 22, 12 Ekim 2026: Akışkanlar "Sürüyor" sütununda, 1 / 20 ders; kısa ders 212 / 539)
